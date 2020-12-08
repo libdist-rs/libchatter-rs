@@ -74,6 +74,8 @@ pub struct Block {
 
     #[serde(skip_serializing, skip_deserializing)]
     pub hash: Hash,
+    // #[serde(skip_serializing, skip_deserializing)]
+    // pub cert:Certificate,
 }
 
 impl Block {
@@ -88,6 +90,7 @@ impl Block {
             header: BlockHeader::new(),
             body: BlockBody::new(txs),
             hash: EMPTY_HASH,
+            // cert: Certificate::empty_cert(),
         }
     }
 
@@ -108,4 +111,7 @@ pub const GENESIS_BLOCK: Block = Block{
         tx_hashes: Vec::new(),
     },
     hash: EMPTY_HASH,
+    // cert: Certificate{
+        // votes: vec![],
+    // },
 };

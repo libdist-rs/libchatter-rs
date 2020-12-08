@@ -35,7 +35,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
     
     // Are all the parents delivered?
     if !cx.storage.all_delivered_blocks_by_hash.contains_key(&block.header.prev) && block.header.height != GENESIS_BLOCK.header.height + 1 {
-        println!("Parent not found for the block: {:?}", block);
+        // println!("Parent not found for the block: {:?}", block);
         return;
         // TODO request the block first, and then try again
     }

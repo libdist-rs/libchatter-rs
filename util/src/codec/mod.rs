@@ -7,6 +7,7 @@ pub mod fblock;
 pub mod ftx;
 
 pub mod proto;
+pub mod synchs;
 
 pub struct EnCodec (pub LengthDelimitedCodec);
 

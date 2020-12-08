@@ -14,3 +14,5 @@ mod msg;
 pub use msg::*;
 
 pub const LIBP2P_MULTIADDR_FMT:&str = "/ip4/0.0.0.0/tcp";
+
+pub type View = u64;
