@@ -82,6 +82,10 @@ impl Context {
 
 
     pub fn next_leader(&self) -> Replica {
-        (self.last_leader+1)%self.num_nodes
+        self.next_of(self.last_leader)
+    }
+
+    pub fn next_of(&self, prev: Replica) -> Replica {
+        (prev+1)%self.num_nodes
     }
 }

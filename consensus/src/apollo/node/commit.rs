@@ -1,9 +1,32 @@
-use types::Propose;
+use types::{Propose, ProtocolMsg};
 
 use super::context::Context;
 
 pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
-    // println!("Proposing block with hash: {:?}", p.new_block.hash);
+    let forward_leader = cx.next_of(p.new_block.header.author);
+    let send_p = cx.net_send.clone();
+    let p_copy = p.clone();
+    let myid = cx.myid;
+    let forward_handle = tokio::spawn(async move {
+        if forward_leader == myid {
+            return;
+        }
+        if let Err(e) = send_p.send(
+            (
+                forward_leader, 
+                ProtocolMsg::NewProposal(p_copy)
+            )
+        ).await {
+            println!("Failed to forward proposal to the next leader: {}", e);
+        }
+    });
+    let cli_block = p.new_block.clone();
+    let cli_send_p = cx.cli_send.clone();
+    let cli_send = tokio::spawn(async move {
+        if let Err(e) = cli_send_p.send(cli_block).await {
+            print!("Error sending to the clients: {}", e);
+        }
+    });
     let new_block = &p.new_block;
     cx.height = new_block.header.height;
     cx.storage.all_delivered_blocks_by_hash.insert(
@@ -38,7 +61,10 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
     };
     // commit block
     cx.last_committed_block_ht = commit_height;
-    if let Err(e) = cx.cli_send.send(block.clone()).await {
-        print!("Error sending to the clients: {}", e);
+    if let Err(e) = cli_send.await {
+        println!("Failed to send the block to the client: {}", e);
+    }
+    if let Err(e) = forward_handle.await {
+        println!("Failed to forward the block to the next leader: {}", e);
     }
 }

@@ -34,7 +34,7 @@ pub async fn start(config:&Node) -> (Sender<Block>, Receiver<Transaction>) {
                     match new_blk_opt {
                         None => break,
                         Some(b) => {
-                            println!("Sending block to the client");
+                            // println!("Sending block to the client");
                             send_blk(&b, writers.clone()).await;
                         }
                     }

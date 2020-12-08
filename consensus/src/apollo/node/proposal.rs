@@ -27,7 +27,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
             println!("Equivocation detected");
             return;
         } else {
-            println!("Already have this block");
+            // println!("Already have this block");
             return;
         }
     }
@@ -35,16 +35,10 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
     
     // Are all the parents delivered?
     if !cx.storage.all_delivered_blocks_by_hash.contains_key(&block.header.prev) && block.header.height != GENESIS_BLOCK.header.height + 1 {
-        println!("Parent not found for the block");
+        println!("Parent not found for the block: {:?}", block);
         return;
         // TODO request the block first, and then try again
     }
-    // if cx.num_faults == 1 && 
-    //     block.header.height != GENESIS_BLOCK.header.height+1 
-    // {
-    //     println!("Parent not found for the block");
-    //     return;
-    // }
 
     // Remove transactions from the pool
     for h in &block.body.tx_hashes {

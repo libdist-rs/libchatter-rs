@@ -114,10 +114,10 @@ pub async fn start(config:&Node) ->
     // recv is what we will return to the outside to deal with incoming protocol
     // messages
 
-    let mut writers = Vec::new();
-    for (_id, mut conn) in send_socks {
+    let mut writers = HashMap::new();
+    for (id, mut conn) in send_socks {
         let (new_send,mut new_recv) = schannel::<ProtocolMsg>(100_000);
-        writers.push(new_send);
+        writers.insert(id, new_send);
         tokio::spawn(async move {
             loop {
                 match new_recv.recv().await {
@@ -133,21 +133,28 @@ pub async fn start(config:&Node) ->
             }
         });
     }
-    let send_all:u16 = config.num_nodes as u16;
+    // let send_all:u16 = config.num_nodes as u16;
     let (control_send, mut control_recv) = schannel::<(Replica, ProtocolMsg)>(100_000);
     tokio::spawn(async move{
         loop {
             let ev = control_recv.recv().await;
             if let Some((id, msg)) = ev {
-                if id == send_all {
-                    for w in &writers {
+                if id as usize != writers.len() {
+                    for (_, w) in &writers {
                         if let Err(e) = w.send(msg.clone()).await {
                             println!("failed to tell the workers to send a message, with error: {}", e);
                         }
                     }
                     continue;
                 }
-                if let Err(e) = writers[id as usize].send(msg).await {
+                let w = match writers.get(&id) {
+                    None => {
+                        println!("Writer {} not found", id);
+                        continue;
+                    },
+                    Some(x) => x,
+                };
+                if let Err(e) = w.send(msg).await {
                     println!("failed to tell the workers to send a message, with error: {}", e);
                 }
                 continue;

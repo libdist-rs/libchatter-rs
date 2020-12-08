@@ -13,7 +13,7 @@ testdata:
 	--target testdata/b400-n3
 
 node-apollo:
-	cargo build --package=apollo/node
+	cargo build --package=node-apollo
 
 client-sink:
 	cargo build --package=client-sink
