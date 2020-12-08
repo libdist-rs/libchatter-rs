@@ -1,0 +1,29 @@
+[package]
+name = "libapollo-rust"
+version = "0.1.0"
+authors = ["hermitsage <dth.bht@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[workspace]
+# This should only list projects that are not
+# in the dependency tree in any other way
+members = [
+    "types",
+    "config",
+    "crypto",
+    "tools/genconfig",
+    "consensus",
+    "net",
+    "examples/sink/client",
+    "examples/sink/replica",
+    "examples/apollo/node",
+    "examples/apollo/client",
+]
+
+# [[bin]]
+# name = "genconfig"
+# path = "tools/genconfig/src/main.rs"

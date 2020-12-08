@@ -1,0 +1,64 @@
+name: genconfig
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Generate config files for all the protocols
+args:
+    - num_nodes:
+        short: n
+        long: NumNodes
+        value_name: integer
+        help: specify the number of nodes in the protocol
+        takes_value: true
+        required: true
+    - delay:
+        short: d
+        long: delay
+        help: specify the worst case network delay (in milliseconds)
+        takes_value: true
+        required: true
+    - block_size:
+        short: b
+        long: blocksize
+        help: specify the number of commands per block
+        takes_value: true
+        required: true
+    - client_base_port:
+        short: C
+        long: client_base_port
+        help: the base port p such that the node i listens to client requests and transactions on port p+i
+        takes_value: true
+        required: true
+    - base_port:
+        short: P
+        long: base_port
+        help: the base port p such that the node i listens to other nodes on port p+i
+        takes_value: true
+        required: true
+    - crypto:
+        short: A
+        long: algorithm
+        help: 'Cryptographic public key algorithm to use: ED25519(default) or SECP256K1'
+        possible_values:
+          - ED25519
+          - SECP256K1
+        takes_value: true
+    - num_faults:
+        short: f
+        long: faults
+        help: number of faulty nodes, default is (n-1)/2
+        takes_value: true
+    - out_type:
+        short: o
+        long: out_type
+        help: config file format; binary or json (default)
+        possible_values:
+          - json
+          - binary
+          - toml
+          - yaml
+        takes_value: true
+    - target:
+        short: t
+        long: target
+        help: a directory to output the configurations files
+        takes_value: true

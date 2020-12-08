@@ -1,0 +1,18 @@
+[package]
+name = "genconfig"
+version = "0.1.0"
+authors = ["hermitsage <dth.bht@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = {version = "~2.27.0", features = ["yaml"]}
+config = { package = "config", path="../../config"}
+types = { package = "types", path="../../types"}
+crypto = { package = "crypto", path="../../crypto"}
+util = { package = "util", path="../../util"}
+
+[dependencies.libp2p]
+version = "0.31.2"
+default-features = true

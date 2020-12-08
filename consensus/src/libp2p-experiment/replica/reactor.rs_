@@ -1,0 +1,117 @@
+// use types::{
+//     Propose, 
+//     Storage,
+//     VoteType, 
+//     Vote, 
+//     Transaction
+// };
+// use config::Node;
+// use super::events::{ApolloEvent, ClientEvent};
+// use tokio::io::BufStream;
+// use tokio::io::{AsyncBufRead,AsyncWriteExt};
+// use tokio::sync::mpsc::Receiver;
+// use util::io::to_bytes;
+
+// type MyError = Box<dyn std::error::Error + Send + 'static>;
+
+// // We have received a new proposal what do we do?
+// pub fn on_recv_propose(proposal: Propose, bc:&mut Storage) -> Result<(), Box<dyn std::error::Error + Send + 'static>> {
+//     // Is this a valid proposal
+//     // Is this a duplicate proposal
+//     // Handle proposal
+//     Ok(())
+// }
+
+// pub fn on_recv_np_blame(vote: Vote, bc: &mut Storage) -> Result<(), MyError> {
+//     // Is the np_blame valid?
+//     // Is this a duplicate?
+//     // Handle np blame
+//     Ok(())
+// }
+
+// pub fn on_recv_eq_blame(vote: Vote, bc: &mut Storage) -> Result<(), MyError> {
+//     // Is the eq_blame valid?
+//     // Is this a duplicate?
+//     // Handle eq blame
+//     Ok(())
+// }
+
+// pub fn on_recv_new_tx(t: Transaction, bc: &mut Storage) -> Result<(), MyError> {
+//     // Add new transaction to the pool
+//     // If new, let the reactor know that the pool is full, and try to propose
+//     Ok(())
+// }
+
+// pub fn on_pool_full(bc: &mut Storage) -> Result<(), MyError> {
+//     // The pool is full, what to do?
+//     Ok(())
+// }
+
+// pub fn reactor(ctx:&Node, ev: ApolloEvent, bc:&mut Storage) {
+//     match ev {
+//         ApolloEvent::TimeOut(time) => {
+//             println!("Timed out");
+//         }
+//         ApolloEvent::Proposal(p) => {
+//             on_recv_propose(p, bc)
+//                 .expect("propose handling failed");
+//         }
+//         ApolloEvent::Blame(v) => {
+//             match v.msg.clone() {
+//                 VoteType::NoProgressBlame => {
+//                     on_recv_np_blame(v, bc)
+//                         .expect("np blame handling failed");
+//                 }
+//                 VoteType::EquivcationBlame(b,b_alt) => {
+//                     on_recv_eq_blame(v, bc)
+//                         .expect("eq blame handling failed");
+//                 }
+//             }
+//         }
+//         ApolloEvent::BlameCertified(c) => {
+//             println!("Received a blame certificate");
+//         }
+//         ApolloEvent::PoolFull => {
+//             // the pool is full, do something
+//             on_pool_full(bc)
+//                 .expect("pool full message handling failed");
+//         }
+//     };
+// }
+
+// pub async fn cli_reactor(recv: &mut Receiver<ClientEvent>) {
+//     let mut clients = Vec::new();
+//     loop {
+//         let clients = &mut clients;
+//         let ev = recv
+//             .recv()
+//             .await
+//             .expect("failed to receive from a client stream");
+//         match ev {
+//             ClientEvent::Tx(t) => {
+//                 println!("Received new transaction: {:?}", t);
+//                 // on_recv_new_tx(t, bc)
+//                     // .expect("new tx handling failed");
+//             }
+//             ClientEvent::Client(conn, from) => {
+//                 println!("new connection from a client: {}", from);
+//                 let buf = BufStream::new(conn);
+//                 clients.push(buf);
+//             }
+//             ClientEvent::BlockAck(b) => {
+//                 println!("new block committed");
+//                 for buf in clients {
+//                     // serialize block
+//                     let bytes = to_bytes(&b);
+//                     buf.write_all(&bytes)
+//                         .await
+//                         .expect("failed to write to client");
+//                     buf
+//                         .flush()
+//                         .await
+//                         .expect("failed to flush");
+//                 }
+//             }
+//         }
+//     }
+// }
