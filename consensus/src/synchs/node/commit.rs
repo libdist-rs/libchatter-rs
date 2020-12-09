@@ -13,11 +13,12 @@ pub async fn on_commit(b: Block, cx:&mut Context) {
     let ship_b = b.clone();
     let ship_block = tokio::spawn(async move {
         if let Err(e) = ship.send(ship_b).await {
-            println!("Error sending the block to the client");
+            println!("Error sending the block to the client: {}", e);
+            ()
         }
     });
     cx.last_committed_block_ht = b.header.height;
     cx.storage.committed_blocks_by_hash.insert(b.hash, b.clone());
     cx.storage.committed_blocks_by_ht.insert(b.header.height, b);
-    ship_block.await;
+    ship_block.await.unwrap();
 }

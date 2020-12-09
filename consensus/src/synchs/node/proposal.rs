@@ -149,10 +149,10 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
             (ship_nodes, ProtocolMsg::VoteMsg(my_vote, ship_p)))
             .await 
         {
-            println!("failed to send vote");
+            println!("failed to send vote: {}", e);
         }
     });
-    // Start 2\Delta timer
+    // Start 2\Delta timer (Moved to the reactor)
 
     cx.storage.all_delivered_blocks_by_hash.insert(p.new_block.hash, 
         p.new_block.clone());

@@ -1,10 +1,10 @@
 use std::time::Duration;
 
 use tokio::sync::mpsc::{channel, Sender, Receiver};
-use types::{Block, Height, View};
-use crypto::hash::Hash;
+use types::{Block};
+// use crypto::hash::Hash;
 use futures::stream::{FuturesUnordered, StreamExt};
-use super::context::Context;
+// use super::context::Context;
 
 /// This file implements the timers for Sync HotStuff.
 ///
@@ -27,7 +27,7 @@ pub enum OutMsg {
 }
 
 /// The time is in milliseconds
-pub async fn Manager(time: u64) -> (Sender<InMsg>, Receiver<OutMsg>) {
+pub async fn manager(time: u64) -> (Sender<InMsg>, Receiver<OutMsg>) {
     let (in_send, mut in_recv) = channel::<InMsg>(100_000);
     let (out_send, out_recv) = channel::<OutMsg>(100_000);
     let mut timers = FuturesUnordered::new();

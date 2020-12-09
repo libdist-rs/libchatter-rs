@@ -50,14 +50,11 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
         "There should be a difference of f+1 between the last committed block and the latest proposal");
     // Add all parents if not committed already
     let commit_height = cx.last_committed_block_ht + 1;
-    let block = match cx.storage.all_delivered_blocks_by_ht.get(
+    if !cx.storage.all_delivered_blocks_by_ht.contains_key(
         &commit_height) 
     {
-        None => {
-            println!("Could not find missing parent for block:{:?}",commit_height);
-            return;
-        },
-        Some(x) => x,
+        println!("Could not find missing parent for block:{:?}",commit_height);
+        return;
     };
     // commit block
     cx.last_committed_block_ht = commit_height;

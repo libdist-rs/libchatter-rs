@@ -1,11 +1,9 @@
-use tokio::sync::mpsc::{Sender, Receiver};
-use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg, Vote};
+use tokio::sync::mpsc::{Sender};
+use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
 use config::Node;
 use libp2p::{identity::Keypair, core::PublicKey};
 use std::collections::HashMap;
 use crypto::hash::Hash;
-
-use super::timer::{InMsg, OutMsg};
 
 pub struct Context {
     /// Networking context

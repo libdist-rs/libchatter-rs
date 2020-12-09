@@ -6,10 +6,10 @@
 use tokio::sync::mpsc::{Sender, Receiver};
 use types::{Block, synchs::ProtocolMsg, Replica, Transaction};
 use config::Node;
-use super::{commit::on_commit, proposal::*, timer::Manager, vote::on_vote};
-use super::blame::*;
+use super::{commit::on_commit, proposal::*, vote::on_vote};
+// use super::blame::*;
 use super::context::Context;
-use super::timer::{InMsg, OutMsg};
+use super::timer::{InMsg, OutMsg, manager};
 
 pub async fn reactor(
     config:&Node,
@@ -18,7 +18,7 @@ pub async fn reactor(
     cli_send: Sender<Block>,
     mut cli_recv: Receiver<Transaction>
 ) {
-    let (timein, mut timeout) = Manager(2*config.delta).await;
+    let (timein, mut timeout) = manager(2*config.delta).await;
     if let Err(e) = timein.send(InMsg::Start).await {
         println!("Failed to start the timers: {}", e);
     }

@@ -2,7 +2,7 @@ use types::{Certificate, Vote, VoteType, synchs::Propose};
 use context::Context;
 use crypto::hash::Hash;
 
-use super::{context, proposal::{check_hash_eq, check_proposal, on_receive_proposal}};
+use super::{context, proposal::{check_hash_eq, on_receive_proposal}};
 
 pub fn add_vote(v: &Vote, hash: Hash,cx: &mut Context) {
     if cx.cert_map.contains_key(&hash) {
