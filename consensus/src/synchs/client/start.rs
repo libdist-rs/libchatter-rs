@@ -76,6 +76,9 @@ pub async fn start(
                             num_cmds -= 1;
                         }
                     }
+                    if b.header.height % 100 == 0 {
+                        println!("Got 100 blocks");
+                    }
                 } else {
                     panic!("invalid content received from the server");
                 }

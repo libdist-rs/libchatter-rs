@@ -70,6 +70,7 @@ pub async fn reactor(
                         println!("Timer finished");
                     },
                     Some(OutMsg::Timeout(x)) => {
+                        // println!("Timer fired");
                         on_commit(x, &mut cx).await;
                     },
                 }

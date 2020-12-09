@@ -226,11 +226,9 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
         .insert(new_block.hash, new_block.clone());
     cx.storage.all_delivered_blocks_by_ht
         .insert(new_block.header.height, new_block.clone());
-    // The leader can commit immediately?
-    cx.storage.committed_blocks_by_hash
-        .insert(new_block.hash, new_block.clone());
-    cx.storage.committed_blocks_by_ht
-        .insert(new_block.header.height, new_block.clone());
+    // The leader can commit immediately? 
+    // NOOOO. 
+    // Commit normally, and tell the client after 2\Delta
     cx.vote_map.insert(new_block.hash, new_block_cert);
     cx.height = new_block.header.height;
     // the leader remains the same

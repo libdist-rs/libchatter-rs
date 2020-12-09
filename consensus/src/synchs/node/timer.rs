@@ -32,6 +32,7 @@ pub async fn manager(time: u64) -> (Sender<InMsg>, Receiver<OutMsg>) {
     let (out_send, out_recv) = channel::<OutMsg>(100_000);
     let mut timers = FuturesUnordered::new();
     let send_copy = out_send.clone();
+    let mut size = 0;
     tokio::spawn(async move {
         let new_send = send_copy;
         loop {
@@ -50,16 +51,18 @@ pub async fn manager(time: u64) -> (Sender<InMsg>, Receiver<OutMsg>) {
                                 ).await;
                                 return b;
                             });
+                            size += 1;
                         },
                         Some(InMsg::Start) => {
                             println!("Already running");
                         }
                     }
                 },
-                s = timers.next() => {
+                s = timers.next(), if size > 0 => {
                     match s {
                         None => {},
                         Some(b) => {
+                            // println!("timer fired");
                             if let Err(_e) = copy.send(OutMsg::Timeout(b)).await {
                                 println!("Error: {} while sending timeout block", _e);
                                 break;
