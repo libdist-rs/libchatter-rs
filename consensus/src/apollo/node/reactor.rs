@@ -17,9 +17,11 @@ pub async fn reactor(
     net_send: Sender<(Replica, ProtocolMsg)>,
     mut net_recv: Receiver<ProtocolMsg>,
     cli_send: Sender<Block>,
-    mut cli_recv: Receiver<Transaction>
+    mut cli_recv: Receiver<Transaction>,
+    is_client_apollo_enabled: bool,
 ) {
     let mut cx = Context::new(config, net_send, cli_send);
+    cx.is_client_apollo_enabled = is_client_apollo_enabled;
     let block_size = config.block_size;
     let myid = config.id;
     loop {

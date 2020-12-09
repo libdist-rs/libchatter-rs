@@ -5,7 +5,7 @@ use tokio_util::codec::{FramedRead};
 use std::{error::Error, time::SystemTime};
 use std::fs::File;
 use std::{io, io::BufRead};
-use util::{new_dummy_tx, codec::block::Codec};
+use util::{codec::block::Codec};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {

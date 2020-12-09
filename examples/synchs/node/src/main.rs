@@ -13,7 +13,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .expect("unable to convert config file into a string");
     let conf_file = std::path::Path::new(conf_str);
     let str = String::from(conf_str);
-    let config = match conf_file
+    let mut config = match conf_file
         .extension()
         .expect("Unable to get file extension")
         .to_str()
@@ -28,7 +28,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
     config
         .validate()
         .expect("The decoded config is not valid");
-
+    if let Some(f) = m.value_of("ip") {
+        config.update_config(util::io::file_to_ips(f.to_string()));
+    }
+    let config = config;
     println!("Successfully decoded the config file");
 
     let (send, recv) = net::replica::client::start(&config).await;

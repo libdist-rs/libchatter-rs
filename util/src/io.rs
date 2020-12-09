@@ -3,7 +3,18 @@ use serde_json::{to_vec_pretty};
 use toml::to_string_pretty;
 use serde_yaml::to_writer;
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::{self,prelude::*};
+
+pub fn file_to_ips(filename:String) -> Vec<String> {
+    let f = File::open(filename).expect("Failed to open the file");
+    let mut ips = Vec::new();
+    for line in io::BufReader::new(f).lines() {
+        if let Ok(s) = line {
+            ips.push(s.trim().to_string());
+        }
+    }
+    ips
+}
 
 pub fn to_bytes(obj: &impl Serialize) -> Vec<u8> {
     let mut s = flexbuffers::FlexbufferSerializer::new();

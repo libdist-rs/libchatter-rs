@@ -3,14 +3,15 @@ use std::{collections::HashMap, time::SystemTime};
 use config::Client;
 use types::{Transaction, Block};
 use tokio::sync::mpsc::{Receiver, Sender, channel};
-use util::{new_dummy_tx, io::to_bytes};
+use util::{new_dummy_tx};
 use crypto::hash::Hash;
 
 pub async fn start(
     c:&Client, 
     net_send: Sender<Transaction>, 
     mut net_recv: Receiver<Block>, 
-    metric: u64
+    metric: u64,
+    window: usize,
 ) {
     // Start with the sink implementation
     let (send, mut recv) = channel(100_000);
@@ -26,7 +27,7 @@ pub async fn start(
             }
         }
     });
-    let mut pending = c.block_size;
+    let mut pending = window;
     let mut time_map = HashMap::new();
     let mut count_map:HashMap<Hash, usize> = HashMap::new();
     // =============
@@ -35,7 +36,7 @@ pub async fn start(
     // println!("Using metric: {}", m);
     let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
-    let mut start = SystemTime::now();
+    let start = SystemTime::now();
     loop {
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {

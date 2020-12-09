@@ -117,4 +117,14 @@ impl Client {
             .unwrap();
         return c;
     }
+
+    pub fn update_config(&mut self, ips: Vec<String>) {
+        let mut idx = 0;
+        for ip in ips {
+            // Put others ips in the config
+            self.net_map.insert(idx, ip);
+            idx += 1;
+        }
+        println!("Talking to servers: {:?}", self.net_map);
+    }
 }

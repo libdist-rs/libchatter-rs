@@ -4,6 +4,7 @@ tools:
 	cargo build --package=genconfig
 
 testdata:
+	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \
@@ -11,6 +12,20 @@ testdata:
 	--base_port 4000 \
 	--client_base_port 10000 \
 	--target testdata/b400-n3
+	@./target/debug/genconfig \
+	-n 3 \
+	-d 50 \
+	--blocksize 100 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--target testdata/b100-n3
+	@./target/debug/genconfig \
+	-n 3 \
+	-d 50 \
+	--blocksize 800 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--target testdata/b800-n3
 
 # ============= APOLLO =================================================
 apollo-release: 

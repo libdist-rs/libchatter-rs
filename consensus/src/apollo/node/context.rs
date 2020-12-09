@@ -13,6 +13,7 @@ pub struct Context {
     pub my_secret_key: Keypair,
     pub net_send: Sender<(Replica, ProtocolMsg)>,
     pub cli_send: Sender<Block>,
+    pub is_client_apollo_enabled: bool,
 
     pub storage: Storage,
     pub height: Height,
@@ -57,6 +58,7 @@ impl Context {
             last_leader: 0,
             last_seen_block: GENESIS_BLOCK,
             last_committed_block_ht: 0,
+            is_client_apollo_enabled: false,
         };
         for (id,mut pk_data) in config.pk_map.clone() {
             if id == c.myid {

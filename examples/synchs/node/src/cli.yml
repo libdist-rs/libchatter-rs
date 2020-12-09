@@ -13,3 +13,10 @@ args:
         short: v
         multiple: true
         help: sets the verbosity level
+    - ip:
+        short: i
+        long: ip
+        help: A file containing all the ips for the other servers
+        takes_value: true
+        required: true
+        

@@ -9,6 +9,7 @@ edition = "2018"
 [dependencies]
 config = { package = "config", path="../../../config"}
 consensus = { package = "consensus", path="../../../consensus"}
+util = { package = "util", path="../../../util"}
 types = { package = "types", path="../../../types"}
 net = { package = "net", path="../../../net"}
 clap = {version = "~2.27.0", features = ["yaml"]}
