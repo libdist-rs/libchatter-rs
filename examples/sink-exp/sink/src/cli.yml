@@ -1,0 +1,32 @@
+name: sink
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Transaction sinking node
+args:
+    - relay:
+        short: r
+        long: relay
+        help: the node to forward the messages to
+        takes_value: true
+        multiple: true
+    - block_size:
+        short: b
+        long: blocksize
+        help: number of commands needed to calculate the number of blocks expected to sink from the relay(s)
+        takes_value: true
+    - stop:
+        short: s
+        long: commands
+        help: number of commands to sink from the relay(s)
+        takes_value: true
+    - stop_blocks:
+        short: m
+        long: stopblocks
+        help: number of blocks to sink from the relay(s)
+        takes_value: true
+    - servers:
+        short: s
+        long: servers
+        help: the config file in JSON containing all the IPs to relay to
+        takes_value: true
+    

@@ -1,0 +1,21 @@
+name: streamer
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Transaction streaming node
+args:
+    - relay:
+        short: r
+        long: relay
+        help: the node to forward the messages to
+        takes_value: true
+        multiple: true
+    - stop:
+        short: c
+        long: commands
+        help: number of commands to stream to the relay(s)
+        takes_value: true
+    - servers:
+        short: s
+        long: servers
+        help: the config file in JSON containing all the IPs to relay to
+        takes_value: true

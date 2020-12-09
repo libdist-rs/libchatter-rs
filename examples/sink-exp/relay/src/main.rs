@@ -1,0 +1,109 @@
+use clap::{load_yaml, App};
+use tokio::{io::{AsyncReadExt}, net::{TcpListener, TcpStream}, stream::StreamExt};
+use futures::SinkExt;
+use tokio_util::codec::{FramedRead, FramedWrite};
+use types::Block;
+use util::codec::{EnCodec, tx::{Codec as TxCodec}, block::{Codec as BCodec}};
+use std::{error::Error, time::SystemTime};
+use std::fs::File;
+use std::{io, io::BufRead};
+
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let yaml = load_yaml!("cli.yml");
+    let m = App::from_yaml(yaml).get_matches();
+
+    let port: u16 = m.value_of("port")
+        .expect("please provide port number")
+        .parse()
+        .expect("please provide a valid port number");
+
+    let payload: usize = m.value_of("payload")
+        .expect("please provide a payload")
+        .parse()
+        .expect("please provide a valid payload");
+
+    let count: usize = m.value_of("count")
+        .expect("please provide a count")
+        .parse()
+        .expect("please provide a valid count");
+
+    let blocksize:usize = m.value_of("block_size")
+        .expect("please provide a blocksize")
+        .parse()
+        .expect("please provide a valid blocksize");
+
+    let listener = TcpListener::bind(
+        format!("0.0.0.0:{}",port))
+        .await
+        .expect("Failed to bind to the port");
+
+    let mut indicator = vec![0 as u8;1];
+    let (one,_) = listener.accept().await.expect("Failed to accept a connection");
+    let (two,_) = listener.accept().await.expect("Failed to accept a connection");
+
+    let (mut r1,w1) = one.into_split();
+    let (mut r2,w2) = two.into_split();
+
+    r1.read_exact(&mut indicator)
+        .await
+        .expect("failed to read the indicator byte");
+    println!("Got indicator byte {:?} from the first reader", indicator);
+    let mut is_reversed = false;
+    // the one who sends 0 is the streamer
+    if indicator[0] != 0 {
+        is_reversed = true;
+    }
+    r2.read_exact(&mut indicator)
+        .await.expect("failed to read indicator byte");
+    println!("Got indicator byte {:?} from the second reader", indicator);
+    // Read and discard
+
+    let (r1, _w1, _r2, w2) = if is_reversed {
+        (r2,w2,r1,w1)
+    } else {
+        (r1,w1,r2,w2)
+    };
+
+    let mut read1 = FramedRead::new(r1, TxCodec::new());
+    let mut write2 = FramedWrite::new(w2, BCodec::new());
+
+    let mut txs = Vec::new();
+    let mut rtimes = Vec::new();
+    let mut wtimes = Vec::new();
+    for _i in 0..count*blocksize {
+        let time = SystemTime::now();
+        rtimes.push(time);
+        let tx = read1.next()
+            .await.expect("Failed to read tx from the source")
+            .expect("Failed to read tx from the source again");
+        let time = SystemTime::now();
+        rtimes.push(time);
+        txs.push(tx);
+        if txs.len() < blocksize {
+            continue;
+        }
+        println!("got {:?} blocks", txs);
+        wtimes.push(SystemTime::now());
+        let b = txs.drain(0..blocksize).collect();
+        let blk = Block::with_tx(b);
+        write2.send(blk).await.expect("failed to send the block to the sink");
+        wtimes.push(SystemTime::now());
+    }
+
+    for i in 0..rtimes.len() {
+        if i == 0 {
+            continue;
+        }
+        println!("RTime:{:?}", rtimes[i].duration_since(rtimes[i-1]));
+    }
+    for i in 0..wtimes.len() {
+        if i == 0 {
+            continue;
+        }
+        println!("WTime:{:?}", wtimes[i].duration_since(wtimes[i-1]));
+    }
+
+    Ok(())
+}

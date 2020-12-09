@@ -1,0 +1,29 @@
+name: relay
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Transaction relaying node
+args:
+    - block_size:
+        short: b
+        long: blocksize
+        help: number of commands needed to calculate the number of blocks expected to sink from the relay(s)
+        takes_value: true
+        required: true
+    - payload:
+        short: l
+        long: payload
+        help: the amount of information to put in the block as payload
+        takes_value: true
+        required: true
+    - port:
+        short: p
+        long: port
+        help: the port at which to listen to the clients
+        takes_value: true
+        required: true
+    - count:
+        short: c
+        long: count
+        help: the number of blocks to send
+        takes_value: true
+        required: true

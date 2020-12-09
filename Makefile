@@ -1,4 +1,4 @@
-.PHONY: testdata node-apollo client-sink tools sink apollo synchs
+.PHONY: testdata node-apollo tools apollo synchs sink streamer relay sinker sink-release
 
 tools:
 	cargo build --package=genconfig
@@ -23,13 +23,19 @@ client-apollo:
 	cargo build --package=client-apollo
 
 # ============== BUILD SINK ==============
-sink: client-sink replica-sink
+sink: streamer relay sinker
 
-client-sink:
-	cargo build --package=client-sink
+streamer:
+	cargo build --package=streamer
 
-replica-sink:
-	cargo build --package=replica-sink
+sinker:
+	cargo build --package=sinker
+
+relay:
+	cargo build --package=relay
+
+sink-release:
+	cargo build --package=streamer --package=sinker --package=relay --release
 
 # ============== SYNC HOTSTUFF ===========
 synchs: node-synchs client-synchs

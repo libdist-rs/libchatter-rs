@@ -1,3 +1,5 @@
+use types::Transaction;
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -8,3 +10,9 @@ mod tests {
 
 pub mod io;
 pub mod codec;
+
+pub fn new_dummy_tx(i:u64) -> Transaction {
+    Transaction{
+        data: i.to_be_bytes().to_vec(),
+    }
+}

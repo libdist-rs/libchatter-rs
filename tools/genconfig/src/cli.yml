@@ -62,3 +62,8 @@ args:
         long: target
         help: a directory to output the configurations files
         takes_value: true
+    - payload:
+        short: l
+        long: payload
+        help: the amount of payload to send in every block
+        takes_value: true

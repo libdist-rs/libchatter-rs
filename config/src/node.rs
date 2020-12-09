@@ -29,6 +29,7 @@ pub struct Node {
     pub num_faults: usize,
     pub block_size:usize,
     pub client_port: u16,
+    pub payload: usize,
     
     // Crypto primitives
     pub crypto_alg: Algorithm,
@@ -96,6 +97,7 @@ impl Node {
             num_nodes: 0,
             pk_map: HashMap::new(),
             secret_key_bytes: Vec::new(),
+            payload: 0,
         }
     }
 

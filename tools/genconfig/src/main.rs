@@ -47,7 +47,10 @@ fn main() {
         .unwrap_or("json");
     let target = m.value_of("target")
         .expect("target directory for the config not specified");
-
+    let payload:usize = m.value_of("payload")
+        .unwrap_or("0")
+        .parse()
+        .unwrap();
     let mut client = Client::new();
     client.block_size = blocksize;
     client.crypto_alg = t.clone();
@@ -67,6 +70,7 @@ fn main() {
         node[i].num_nodes = num_nodes;
         node[i].num_faults = num_faults;
         node[i].block_size = blocksize;
+        node[i].payload = payload;
         node[i].client_port = client_base_port+(i as u16);
 
         node[i].crypto_alg = t.clone();
