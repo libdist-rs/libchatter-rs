@@ -92,18 +92,49 @@ async fn main() -> Result<(), Box<dyn Error>> {
         wtimes.push(SystemTime::now());
     }
 
+    let mut sum:u128 = 0;
+    let mut highest:u128 = 0;
+    let mut lowest:u128 = std::u128::MAX;
     for i in 0..rtimes.len() {
         if i == 0 {
             continue;
         }
-        println!("RTime:{:?}", rtimes[i].duration_since(rtimes[i-1]));
+        let diff = rtimes[i].duration_since(rtimes[i-1]).expect("time differencing error");
+        let nv = diff.as_nanos();
+        sum += nv;
+        if nv < lowest {
+            lowest = nv;
+        }
+        if nv > highest {
+            highest = nv;
+        }
+        // println!("RTime:{:?}", nv);
     }
+    println!("Stats");
+    println!("Highest: {}", highest);
+    println!("Lowest: {}", lowest);
+    println!("Average: {}", sum/((rtimes.len()-1) as u128));
+    let mut sum:u128 = 0;
+    let mut highest:u128 = 0;
+    let mut lowest:u128 = std::u128::MAX;
     for i in 0..wtimes.len() {
         if i == 0 {
             continue;
         }
-        println!("WTime:{:?}", wtimes[i].duration_since(wtimes[i-1]));
+        let diff = wtimes[i].duration_since(wtimes[i-1]).expect("time differencing error");
+        let nv = diff.as_nanos();
+        sum += nv;
+        if nv < lowest {
+            lowest = nv;
+        }
+        if nv > highest {
+            highest = nv;
+        }
+        // println!("WTime:{:?}", nv);
     }
-
+    println!("Stats");
+    println!("Highest: {}", highest);
+    println!("Lowest: {}", lowest);
+    println!("Average: {}", sum/((wtimes.len()-1) as u128));
     Ok(())
 }

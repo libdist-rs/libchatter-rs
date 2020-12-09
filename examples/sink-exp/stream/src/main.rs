@@ -58,11 +58,27 @@ async fn main() -> Result<(), Box<dyn Error>> {
         let time_now = SystemTime::now();
         times.push(time_now);
     }
+    let mut sum:u128 = 0;
+    let mut highest:u128 = 0;
+    let mut lowest:u128 = std::u128::MAX;
     for i in 0..times.len() {
         if i == 0 {
             continue;
         }
-        println!("Time:{:?}", times[i].duration_since(times[i-1]));
+        let diff = times[i].duration_since(times[i-1]).expect("time differencing error");
+        let nv = diff.as_nanos();
+        sum += nv;
+        if nv < lowest {
+            lowest = nv;
+        }
+        if nv > highest {
+            highest = nv;
+        }
+        // println!("WTime:{:?}", nv);
     }
+    println!("Stats");
+    println!("Highest: {}", highest);
+    println!("Lowest: {}", lowest);
+    println!("Average: {}", sum/((times.len()-1) as u128));
     Ok(())
 }
