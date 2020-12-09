@@ -1,3 +1,5 @@
+use std::collections::{HashMap, HashSet};
+
 use config::Client;
 
 // use libp2p::{identity::Keypair, futures::SinkExt};
@@ -16,20 +18,23 @@ fn new_dummy_tx(idx: u64) -> Transaction {
 /// The client does the following:
 /// 1. Dial the known servers
 /// 2. 
-pub async fn start(config:Client) -> (Sender<Block>, Receiver<Block>) {
-    let (send, mut recv) = channel(100000);
-    let mut writers = Vec::new();
+pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
+    let (send, recv) = channel(100000);
+    let mut writers = HashMap::new();
     for i in config.net_map {
         let new_send = send.clone();
-        let tcp = TcpStream::connect(i.1).await.expect("failed to open a tcp stream");
+        let tcp = TcpStream::connect(i.1.clone()).await.expect("failed to open a tcp stream");
         let (rd, wr) = tcp.into_split();
         let writer = FramedWrite::new(wr, EnCodec::new());
-        writers.push(writer);
+        writers.insert(i,writer);
         let mut reader = FramedRead::new(rd, BlockCodec::new());
         tokio::spawn(async move {
             loop {
                 match reader.next().await {
-                    None => break,
+                    None => {
+                        // println!("Got nothing from the reader, breaking");
+                        break;
+                    },
                     Some(Err(e)) => {
                         println!("Got an error: {}", e);
                         break;
@@ -39,67 +44,40 @@ pub async fn start(config:Client) -> (Sender<Block>, Receiver<Block>) {
                 }
             }
         });
-        println!("connected to server {}", i.0);
+        println!("connected to server");
     }
     // for the outside world to talk to the network manager
-    // let (net_send, mut net_recv) = channel(100_000);
-    let (tx_send, mut tx_recv) = channel(100_000);
-    // net_rt.spawn(async move {
-    //     loop {
-    //         tokio::select! {
-    //             block = recv.recv() => {
-    //                 println!("Got a new block {:?} from the network", block);
-    //                 // net_get_send.send(block).await.expect("failed to send a new block outside the network");
-    //             },
-    //             tx_opt = net_recv.recv() => {
-    //                 let tx = match tx_opt {
-    //                     None => {break;},
-    //                     Some(t) => t,
-    //                 };
-    //                 println!("Sending transaction: {:?}", tx);
-    //                 for w in writers {
-    //                     w.send(tx.clone());
-    //                 }
-    //             }
-    //         }
-    //     }
-    // });
-
-    tokio::spawn(async move {
-        let mut tx_ctr = 1;
-        loop {
-            tx_send.send(new_dummy_tx(tx_ctr)).await
-                .expect("failed to send a new transaction to the network");
-            tx_ctr += 1;
-            // println
-        }
-    });
-    let mut pending:i64 = 500_000;
-    let mut num_blks = 0;
-    loop {
-        tokio::select! {
-            block_opt = recv.recv() => {
-                let _block = match block_opt {
-                    None => {break;},
-                    Some(b) => b,
-                };
-                // println!("Got a new block: {:?}", block);
-                pending += config.block_size as i64;
-                num_blks += 1;
-                if num_blks % 100 == 0 {
-                    println!("Got 100 blocks");
+    let (net_send, mut net_recv) = channel::<Transaction>(100_000);
+    let mut out_channels = HashMap::new();
+    for (id, mut conn) in writers {
+        let (new_send,mut new_recv) = channel::<Transaction>(100_000);
+        out_channels.insert(id, new_send);
+        tokio::spawn(async move {
+            loop {
+                match new_recv.recv().await {
+                    None => {
+                        return;
+                    },
+                    Some(msg) => {
+                        if let Err(e) = conn.send(msg).await {
+                            println!("Failed to send the protocol message to the workers with error: {}", e);
+                        } 
+                    }
                 }
-            },
-            tx_opt = tx_recv.recv(), if pending > 0 => {
-                let tx = match tx_opt {
-                    None => {break;},
-                    Some(t) => t,
-                };
-                pending -= 1;
-                for w in &mut writers {
-                    w.send(tx.clone()).await.expect("failed to send the new transaction to the network");
+            }
+        });
+    }
+    tokio::spawn(async move {
+    loop {
+        if let Some(t) = net_recv.recv().await {
+            for (_i,w) in &out_channels {
+                if let Err(e) = w.send(t.clone()).await {
+                    println!("Failed to send a message to the server: {}", e);
                 }
             }
         }
     }
+    });
+
+    return (net_send, recv);
 }

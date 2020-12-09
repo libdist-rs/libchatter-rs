@@ -174,7 +174,7 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
     decision
 }
 
-pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
+pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     // Build the proposal
     let parent = &cx.last_seen_block;
     let mut new_block = Block::with_tx(txs);
@@ -188,8 +188,8 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
     // Sign the block hash 
     let proof = match cx.my_secret_key.sign(&new_block.hash) {
         Err(e) => {
-            println!("Failed to sign the new proposal: {}", e);
-            return;
+            panic!("Failed to sign the new proposal: {}", e);
+            // return;
         },
         Ok(sig) => sig,
     };
@@ -216,8 +216,9 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
     // Ship the proposal
     let ship = cx.net_send.clone();
     let ship_num = cx.num_nodes as u16;
+    let ship_p = p.clone();
     let broadcast = tokio::spawn(async move {
-        if let Err(e) = ship.send((ship_num, ProtocolMsg::NewProposal(p))).await {
+        if let Err(e) = ship.send((ship_num, ProtocolMsg::NewProposal(ship_p))).await {
             println!("Error broadcasting the block to all the nodes: {}", e);
         }
     });
@@ -237,4 +238,5 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
     cx.last_committed_block_ht = cx.height;
     // the view remains the same
     broadcast.await.expect("failed to broadcast the proposal");
+    return p;
 }
