@@ -6,9 +6,10 @@
 use tokio::sync::mpsc::{Sender, Receiver};
 use types::{Block, synchs::ProtocolMsg, Replica, Transaction};
 use config::Node;
-use super::{proposal::*, vote::on_vote};
+use super::{commit::on_commit, proposal::*, timer::Manager, vote::on_vote};
 use super::blame::*;
 use super::context::Context;
+use super::timer::{InMsg, OutMsg};
 
 pub async fn reactor(
     config:&Node,
@@ -17,6 +18,11 @@ pub async fn reactor(
     cli_send: Sender<Block>,
     mut cli_recv: Receiver<Transaction>
 ) {
+    let (timein, mut timeout) = Manager(2*config.delta).await;
+    if let Err(e) = timein.send(InMsg::Start).await {
+        println!("Failed to start the timers: {}", e);
+    }
+    println!("Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
     let myid = config.id;
@@ -31,13 +37,18 @@ pub async fn reactor(
                 // println!("Received protocol message: {:?}", protmsg);
                 if let ProtocolMsg::NewProposal(mut p) = protmsg {
                     p.init();
-                    println!("Received a proposal: {:?}", p);
+                    // println!("Received a proposal: {:?}", p);
                     let decision = on_receive_proposal(&p, &mut cx).await;
                     println!("Decision for the incoming proposal is {}", decision);
+                    if decision {
+                        if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
+                            println!("Failed to send block to the timer thread: {}", e);
+                        }
+                    }
                 }
                 else if let ProtocolMsg::VoteMsg(v, mut p) = protmsg {
                     p.init();
-                    println!("Received a vote for a proposal: {:?}", p);
+                    // println!("Received a vote for a proposal: {:?}", p);
                     on_vote(&v,p, &mut cx).await;
                 }
                 
@@ -49,6 +60,17 @@ pub async fn reactor(
                     Some(tx) => {
                         cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx),tx);
                     }
+                }
+            },
+            b_opt = timeout.recv() => {
+                // Got something from the timer
+                match b_opt {
+                    None => {
+                        println!("Timer finished");
+                    },
+                    Some(OutMsg::Timeout(x)) => {
+                        on_commit(x, &mut cx).await;
+                    },
                 }
             }
         }

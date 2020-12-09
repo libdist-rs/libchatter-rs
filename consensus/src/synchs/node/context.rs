@@ -1,9 +1,11 @@
-use tokio::sync::mpsc::{Sender};
+use tokio::sync::mpsc::{Sender, Receiver};
 use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg, Vote};
 use config::Node;
 use libp2p::{identity::Keypair, core::PublicKey};
 use std::collections::HashMap;
 use crypto::hash::Hash;
+
+use super::timer::{InMsg, OutMsg};
 
 pub struct Context {
     /// Networking context
@@ -37,7 +39,7 @@ impl Context {
     pub fn new(
         config: &Node,
         net_send: Sender<(Replica, ProtocolMsg)>,
-        cli_send: Sender<Block>
+        cli_send: Sender<Block>,
     ) -> Self {
         let mut c = Context {
             net_send: net_send,

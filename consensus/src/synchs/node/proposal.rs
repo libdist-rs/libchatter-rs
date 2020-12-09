@@ -105,6 +105,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) -> bool {
         println!("We have already processed this block last time");
         return decision;
     }
+    
     // On receiving a proposal, check if it is in the same view
     // Check for the validity
     if !check_proposal(p, cx) {
