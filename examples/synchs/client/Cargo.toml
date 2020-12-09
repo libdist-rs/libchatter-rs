@@ -7,3 +7,9 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+config = { package = "config", path="../../../config"}
+consensus = { package = "consensus", path="../../../consensus"}
+net = { package = "net", path="../../../net"}
+types = { package = "types", path="../../../types"}
+clap = {version = "~2.27.0", features = ["yaml"]}
+tokio = { version = "0.3", features = ["full"] }

@@ -2,9 +2,9 @@ use config::Client;
 
 // use libp2p::{identity::Keypair, futures::SinkExt};
 use libp2p::futures::SinkExt;
-use tokio::{stream::{StreamExt}, net::TcpStream, sync::mpsc::channel};
+use tokio::{stream::{StreamExt}, net::TcpStream, sync::mpsc::{channel, Sender, Receiver}};
 use tokio_util::codec::{FramedRead, FramedWrite};
-use types::Transaction;
+use types::{Transaction, Block};
 use util::codec::{EnCodec, block::{Codec as BlockCodec}};
 
 fn new_dummy_tx(idx: u64) -> Transaction {
@@ -16,19 +16,7 @@ fn new_dummy_tx(idx: u64) -> Transaction {
 /// The client does the following:
 /// 1. Dial the known servers
 /// 2. 
-pub async fn start(config:Client) {
-    // create a keypair for myself
-    // let id_keys = match config.crypto_alg{
-    //     types::Algorithm::ED25519 => Keypair::generate_ed25519(),
-    //     types::Algorithm::SECP256K1 => Keypair::generate_secp256k1(),
-    //     _ => panic!("Unimplemented algorithm"),
-    // }; 
-
-    // let net_rt = tokio::runtime::Builder::new_multi_thread()
-    //     .enable_all()
-    //     .build()
-    //     .expect("failed to build the networking runtime");
-
+pub async fn start(config:Client) -> (Sender<Block>, Receiver<Block>) {
     let (send, mut recv) = channel(100000);
     let mut writers = Vec::new();
     for i in config.net_map {
