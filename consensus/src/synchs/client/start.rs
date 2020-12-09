@@ -32,14 +32,16 @@ pub async fn start(
     // =============
     // Statistics
     // =============
+    // println!("Using metric: {}", m);
     let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
+    let mut start = SystemTime::now();
     loop {
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {
                 if let Some(tx) = tx_opt {
-                    let bytes = to_bytes(&tx);
-                    let hash = crypto::hash::do_hash(&bytes);
+                    // let bytes = to_bytes(&tx);
+                    let hash = crypto::hash::ser_and_hash(&tx);
                     time_map.insert(hash, SystemTime::now());
                     net_send.send(tx).await
                         .expect("Failed to send to the client");
@@ -68,11 +70,15 @@ pub async fn start(
                     let now = SystemTime::now();
                     pending += c.block_size;
                     num_cmds += c.block_size as u128;
-                    for t in b.body.tx_hashes {
-                        if let Some(old) = time_map.get(&t) {
-                            let diff = old.duration_since(now).expect("time difference error").as_millis();
+                    for t in &b.body.tx_hashes {
+                        if let Some(old) = time_map.get(t) {
+                            let diff = now.duration_since(*old).expect("time difference error").as_millis();
                             latency_sum += diff;
                         } else {
+                            println!("transaction not found in time map");
+                            // println!("time map: {:?}", time_map);
+                            // println!("block hashes: {:?}", b.body.tx_hashes);
+                            // return;
                             num_cmds -= 1;
                         }
                     }
@@ -85,10 +91,12 @@ pub async fn start(
             }
         }
         if num_cmds > m as u128 {
+            let now = SystemTime::now();
             println!("Statistics:");
-            println!("Processed {} commands", num_cmds);
+            println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
             println!("Average latency: {}", 
                 (latency_sum as f64)/(num_cmds as f64));
+            return;
         }
     }
 }

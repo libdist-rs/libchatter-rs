@@ -39,7 +39,7 @@ pub async fn reactor(
                     p.init();
                     // println!("Received a proposal: {:?}", p);
                     let decision = on_receive_proposal(&p, &mut cx).await;
-                    println!("Decision for the incoming proposal is {}", decision);
+                    // println!("Decision for the incoming proposal is {}", decision);
                     if decision {
                         if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
                             println!("Failed to send block to the timer thread: {}", e);
@@ -55,7 +55,7 @@ pub async fn reactor(
             },
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
-                println!("Got a message from the client");
+                // println!("Got a message from the client");
                 match tx_opt {
                     None => break,
                     Some(tx) => {
@@ -94,7 +94,7 @@ pub async fn reactor(
                 txs.push(tx);
             }
             let p = do_propose(txs, &mut cx).await;
-            println!("Leader setting the timer now");
+            // println!("Leader setting the timer now");
             if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
                 println!("Failed to send block to the timer thread: {}", e);
             }

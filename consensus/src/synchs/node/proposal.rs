@@ -99,7 +99,7 @@ pub fn check_proposal(p: &Propose, cx:&Context) -> bool {
 pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) -> bool {
     let decision = false;
     // use decision to start commit timers in the reactor
-    println!("Received a proposal: {}", p.new_block.header.height);
+    // println!("Received a proposal: {}", p.new_block.header.height);
 
     if cx.storage.all_delivered_blocks_by_hash.contains_key(&p.new_block.hash) {
         println!("We have already processed this block last time");
@@ -170,7 +170,7 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
         println!("Failed to send vote to the others:{}", e);
         return decision;
     }
-    println!("Sent a vote to all the nodes");
+    // println!("Sent a vote to all the nodes");
     decision
 }
 
@@ -227,7 +227,8 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     cx.storage.all_delivered_blocks_by_ht
         .insert(new_block.header.height, new_block.clone());
     // The leader can commit immediately? 
-    // NOOOO. 
+    // NOOOO! I learn it painfully! If the leader commits now, then it must also
+    // acknowledge the client!
     // Commit normally, and tell the client after 2\Delta
     cx.vote_map.insert(new_block.hash, new_block_cert);
     cx.height = new_block.header.height;

@@ -1,7 +1,7 @@
 use serde::{Serialize, Deserialize};
 use super::{Transaction, Certificate};
 use crate::protocol::{Replica, Height};
-use crypto::hash::{EMPTY_HASH, Hash, do_hash};
+use crypto::hash::{EMPTY_HASH, Hash};
 
 #[derive(Serialize, Deserialize, Clone)]
 pub struct BlockBody {
@@ -12,7 +12,7 @@ impl BlockBody {
     pub fn new(txs: Vec<Transaction>) -> Self {
         let mut hashes = Vec::new();
         for tx in txs {
-            hashes.push(do_hash(&tx.data));
+            hashes.push(crypto::hash::ser_and_hash(&tx));
         }
         BlockBody{
             tx_hashes: hashes,

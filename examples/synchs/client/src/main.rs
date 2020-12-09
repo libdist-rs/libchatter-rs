@@ -29,7 +29,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .validate()
         .expect("The decoded config is not valid");
 
-    let metrics:u64 = m.value_of("metric").unwrap_or("500000").parse().unwrap();
+    let metrics:u64 = m.value_of("metrics").unwrap_or("500000").parse().unwrap();
     println!("Successfully decoded the config file");
     let (net_send,net_recv) = net::client::start(config.clone()).await;
     consensus::synchs::client::start(

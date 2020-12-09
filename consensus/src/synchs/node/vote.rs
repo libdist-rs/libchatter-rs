@@ -6,7 +6,7 @@ use super::{context, proposal::{check_hash_eq, on_receive_proposal}};
 
 pub fn add_vote(v: &Vote, hash: Hash,cx: &mut Context) {
     if cx.cert_map.contains_key(&hash) {
-        println!("Extra vote received. discarding");
+        // println!("Extra vote received. discarding");
         return;
     }
     match cx.vote_map.remove(&hash) {
@@ -31,7 +31,7 @@ pub fn add_vote(v: &Vote, hash: Hash,cx: &mut Context) {
 
 pub async fn on_vote(v: &Vote, p:Propose, cx: &mut Context) -> bool {
     let decision = false;
-    print!("Received a vote message: {:?}", v);
+    // print!("Received a vote message: {:?}", v);
 
     // Check if we have already processed the block for which we have the vote
     // and if not check if it is valid
@@ -67,7 +67,7 @@ pub async fn on_vote(v: &Vote, p:Propose, cx: &mut Context) -> bool {
             println!("Got an equivocation");
             return decision;
         } else {
-            println!("We have seen this block before, and have already voted for it");
+            // println!("We have seen this block before, and have already voted for it");
             // add vote for this
             add_vote(v, p.new_block.hash, cx);
             return decision;

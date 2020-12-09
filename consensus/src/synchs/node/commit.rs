@@ -16,7 +16,7 @@ pub async fn on_commit(b: Block, cx:&mut Context) {
             println!("Error sending the block to the client: {}", e);
             ()
         }
-        println!("Committed block and sending it to the client now");
+        // println!("Committed block and sending it to the client now");
     });
     cx.last_committed_block_ht = b.header.height;
     cx.storage.committed_blocks_by_hash.insert(b.hash, b.clone());

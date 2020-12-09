@@ -1,4 +1,4 @@
-.PHONY: testdata node-apollo tools apollo synchs sink streamer relay sinker sink-release
+.PHONY: testdata tools apollo apollo-release synchs synchs-release sink-exp sink-exp-release
 
 tools:
 	cargo build --package=genconfig
@@ -12,36 +12,23 @@ testdata:
 	--client_base_port 10000 \
 	--target testdata/b400-n3
 
-# ============= BUILD APOLLO ============
-apollo: 
+# ============= APOLLO =================================================
+apollo-release: 
 	cargo build --package=node-apollo --package=client-apollo --release
 
-node-apollo:
-	cargo build --package=node-apollo
+apollo:
+	cargo build --package=node-apollo --package=client-apollo
 
-client-apollo:
-	cargo build --package=client-apollo
-
-# ============== BUILD SINK ==============
-sink: streamer relay sinker
-
-streamer:
-	cargo build --package=streamer
-
-sinker:
-	cargo build --package=sinker
-
-relay:
-	cargo build --package=relay
-
-sink-release:
+# ============== SINK-EXP ===============================================
+sink-exp-release:
 	cargo build --package=streamer --package=sinker --package=relay --release
 
-# ============== SYNC HOTSTUFF ===========
-synchs: node-synchs client-synchs
+sink-exp:
+	cargo build --package=streamer --package=sinker --package=relay
 
-node-synchs:
-	cargo build --package=node-synchs
+# ============== SYNC HOTSTUFF ==========================================
+synchs-release: 
+	cargo build --package=node-synchs --package=client-synchs --release
 
-client-synchs:
-	cargo build --package=client-synchs
+synchs:
+	cargo build --package=node-synchs --package=client-synchs
