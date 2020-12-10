@@ -15,4 +15,7 @@ util = { package = "util", path="../../util"}
 
 [dependencies.libp2p]
 version = "0.31.2"
-default-features = true
+features = [
+    "identify",
+    "secp256k1"
+]
