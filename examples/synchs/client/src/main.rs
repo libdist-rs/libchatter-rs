@@ -1,7 +1,5 @@
-// use futures::prelude::*;
 use clap::{load_yaml, App};
 use config::Client;
-// use types::Replica;
 use std::{error::Error};
 
 #[tokio::main]

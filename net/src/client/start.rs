@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap};
 
 use config::Client;
 
@@ -8,12 +8,6 @@ use tokio::{stream::{StreamExt}, net::TcpStream, sync::mpsc::{channel, Sender, R
 use tokio_util::codec::{FramedRead, FramedWrite};
 use types::{Transaction, Block};
 use util::codec::{EnCodec, block::{Codec as BlockCodec}};
-
-fn new_dummy_tx(idx: u64) -> Transaction {
-    Transaction{
-        data: idx.to_be_bytes().to_vec(),
-    }
-}
 
 /// The client does the following:
 /// 1. Dial the known servers
@@ -61,6 +55,7 @@ pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
                     Some(msg) => {
                         if let Err(e) = conn.send(msg).await {
                             println!("Failed to send the protocol message to the workers with error: {}", e);
+                            break;
                         } 
                     }
                 }
@@ -75,6 +70,8 @@ pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
                     println!("Failed to send a message to the server: {}", e);
                 }
             }
+        } else {
+            break;
         }
     }
     });

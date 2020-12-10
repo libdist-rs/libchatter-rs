@@ -11,8 +11,9 @@ mod tests {
 pub mod io;
 pub mod codec;
 
-pub fn new_dummy_tx(i:u64) -> Transaction {
+pub fn new_dummy_tx(i:u64, payload:usize) -> Transaction {
     Transaction{
         data: i.to_be_bytes().to_vec(),
+        request: vec![1;payload],
     }
 }

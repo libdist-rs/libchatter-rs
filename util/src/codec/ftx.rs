@@ -5,6 +5,8 @@ use futures_codec::{Bytes, BytesMut};
 use std::io::{
     Error,
 };
+
+use crate::io::to_bytes;
 pub struct Codec (pub LengthCodec);
 
 impl Codec {
@@ -22,7 +24,7 @@ impl Encoder for Codec {
     type Error = Error;
 
     fn encode(&mut self, item: Self::Item, dst: &mut BytesMut) -> Result<(), Self::Error> {
-        let buf = Bytes::from(item.data);
+        let buf = Bytes::from(to_bytes(&item));
         return self.0.encode(buf, dst);
     }
 }
@@ -34,7 +36,7 @@ impl Decoder for Codec {
     fn decode(&mut self, src: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
         match self.0.decode(src)? {
             Some(in_data) => Ok(Some(
-                Transaction{data:in_data.to_vec()}
+                Transaction::from_bytes(&in_data),
             )),
             None => Ok(None),
         }

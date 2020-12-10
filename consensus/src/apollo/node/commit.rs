@@ -20,13 +20,6 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
             println!("Failed to forward proposal to the next leader: {}", e);
         }
     });
-    let cli_block = p.new_block.clone();
-    let cli_send_p = cx.cli_send.clone();
-    let cli_send = tokio::spawn(async move {
-        if let Err(e) = cli_send_p.send(cli_block).await {
-            print!("Error sending to the clients: {}", e);
-        }
-    });
     let new_block = &p.new_block;
     cx.height = new_block.header.height;
     cx.storage.all_delivered_blocks_by_hash.insert(
@@ -58,6 +51,41 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
     };
     // commit block
     cx.last_committed_block_ht = commit_height;
+    let block = cx.storage.all_delivered_blocks_by_ht
+        .get(&commit_height)
+        .expect("we committed this block. It must be delivered");
+    cx.storage.committed_blocks_by_ht.insert(commit_height, block.clone());
+    cx.storage.committed_blocks_by_hash.insert(block.hash, block.clone());
+
+    // let cli_send = if cx.is_client_apollo_enabled {
+    //     let cli_block = p.new_block.clone();
+    //     let cli_send_p = cx.cli_send.clone();
+    //     tokio::spawn(async move {
+    //         if let Err(e) = cli_send_p.send(cli_block).await {
+    //             print!("Error sending to the clients: {}", e);
+    //         }
+    //     })
+    // } else {
+    //     let cli_block = block;
+    //     let cli_send_p = cx.cli_send.clone();
+    //     tokio::spawn(async move {
+    //         if let Err(e) = cli_send_p.send(*cli_block).await {
+    //             print!("Error sending to the clients: {}", e);
+    //         }
+    //     })
+    // };
+    let cli_block = if cx.is_client_apollo_enabled {
+        p.new_block.clone()
+    } else {
+        block.clone()
+    };
+    let cli_send_p = cx.cli_send.clone();
+    let cli_send = tokio::spawn(async move {
+        if let Err(e) = cli_send_p.send(cli_block).await {
+            print!("Error sending to the clients: {}", e);
+        }
+    });
+
     if let Err(e) = cli_send.await {
         println!("Failed to send the block to the client: {}", e);
     }

@@ -24,6 +24,7 @@ pub struct Client {
     pub num_nodes: usize,
     pub num_faults: usize,
     pub block_size:usize,
+    pub payload:usize,
 }
 
 impl Client {
@@ -76,6 +77,7 @@ impl Client {
             num_faults: 0,
             num_nodes:0,
             server_pk: HashMap::new(),
+            payload:0,
         }
     } 
 
