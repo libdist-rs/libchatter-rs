@@ -16,4 +16,4 @@ tokio = { version = "0.3", features = ["full"] }
 futures = "^0.3"
 util = { package = "util", path="../../../util"}
 tokio-util = {version = "0.5.1", features = ["full"]}
-libp2p = "0.31.2"
+libp2p = { version = "0.31.2", features = ["identify", "secp256k1"]}
