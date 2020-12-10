@@ -18,4 +18,7 @@ futures = "0.3.8"
 
 [dependencies.libp2p]
 version = "0.31.1"
-default-features = true
+features = [
+    "identify",
+    "secp256k1"
+]

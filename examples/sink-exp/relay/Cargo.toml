@@ -17,5 +17,5 @@ tokio = { version = "0.3.5", features = ["full"] }
 futures = "^0.3"
 tokio-util = {version = "0.5.1", features = ["full"]}
 
-[dependencies.libp2p]
-version = "0.31.1"
+# [dependencies.libp2p]
+# version = "0.31.1"

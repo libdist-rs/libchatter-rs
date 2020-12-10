@@ -20,10 +20,6 @@ version = "0.31.2"
 default-features = true
 features = [
     "tcp-tokio",
-    "noise",
-    "mplex",
-    "ping",
-    "pnet",
+    "identify",
     "secp256k1",
-    "yamux",
 ]
