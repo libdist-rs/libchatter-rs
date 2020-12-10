@@ -14,6 +14,7 @@ pub struct Context {
     pub num_nodes: usize,
     pub myid: Replica,
     pub num_faults: usize,
+    pub payload:usize,
 
     /// PKI
     pub my_secret_key: Keypair,
@@ -71,6 +72,7 @@ impl Context {
             view: 0,
             last_seen_cert: Certificate::empty_cert(),
             vote_map: HashMap::new(),
+            payload:config.payload,
         };
         for (id,mut pk_data) in config.pk_map.clone() {
             // if id == c.myid {

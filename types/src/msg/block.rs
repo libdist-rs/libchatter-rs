@@ -6,6 +6,7 @@ use crypto::hash::{EMPTY_HASH, Hash};
 #[derive(Serialize, Deserialize, Clone)]
 pub struct BlockBody {
     pub tx_hashes: Vec<Hash>,
+    pub responses :Vec<u8>,
 }
 
 impl BlockBody {
@@ -16,6 +17,7 @@ impl BlockBody {
         }
         BlockBody{
             tx_hashes: hashes,
+            responses: Vec::new(),
         }
     }
 }
@@ -46,10 +48,12 @@ impl std::fmt::Debug for BlockBody {
                 .field("Length", &self.tx_hashes.len())
                 .field("First", &self.tx_hashes[0])
                 .field("Last", &self.tx_hashes[self.tx_hashes.len()-1])
+                .field("Payload", &self.responses)
                 .finish()
         } else {
             f.debug_struct("Block Body")
                 .field("Length", &self.tx_hashes.len())
+                .field("Payload", &self.responses)
                 .finish()
         }
     }
@@ -94,8 +98,14 @@ impl Block {
         }
     }
 
+    pub fn add_payload(&mut self, payload:usize) {
+        self.payload = vec![1; payload];
+    }
+
     pub fn update_hash(&mut self) {
+        let temp = self.payload.drain(..).collect();
         self.hash = crypto::hash::ser_and_hash(&self);
+        self.payload = temp;
     }
 }
 
@@ -109,6 +119,7 @@ pub const GENESIS_BLOCK: Block = Block{
     },
     body: BlockBody{
         tx_hashes: Vec::new(),
+        responses: Vec::new(),
     },
     hash: EMPTY_HASH,
     payload: vec![],

@@ -1,7 +1,7 @@
 use std::{collections::HashMap, time::SystemTime};
 
 use config::Client;
-use types::{Block, GENESIS_BLOCK, Height, Transaction};
+use types::{Transaction, Block};
 use tokio::sync::mpsc::{Receiver, Sender, channel};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
@@ -13,10 +13,10 @@ pub async fn start(
     metric: u64,
     window: usize,
 ) {
-    let payload = c.payload;
     // Start with the sink implementation
     let (send, mut recv) = channel(100_000);
     let m = metric;
+    let payload = c.payload;
     tokio::spawn(async move{
         let mut i = 0;
         loop {
@@ -30,10 +30,7 @@ pub async fn start(
     });
     let mut pending = window;
     let mut time_map = HashMap::new();
-    let mut height_map:HashMap<Height, Block> = HashMap::new();
-    let mut hash_map:HashMap<Hash, Block> = HashMap::new();
-    let mut last_committed_block = GENESIS_BLOCK;
-    let mut last_block:&Block; 
+    let mut count_map:HashMap<Hash, usize> = HashMap::new();
     // =============
     // Statistics
     // =============
@@ -59,44 +56,23 @@ pub async fn start(
             block_opt = net_recv.recv() => {
                 // println!("Got something from the network");
                 if let Some(mut b) = block_opt {
-                    let now = SystemTime::now();
                     b.update_hash();
                     let b = b;
-                    let is_in_ht_map = height_map.contains_key(
-                        &b.header.height);
-                    let is_in_hash_map = hash_map.contains_key(&b.hash);
-                    if is_in_ht_map && 
-                        !is_in_ht_map {
-                        // Got equivocating blocks
-                        panic!("Got equivocating blocks");
-                    }
-                    if is_in_hash_map {
-                        continue;
-                    }
-                    last_block = &b;
-                    height_map.insert(b.header.height, b.clone());
-                    hash_map.insert(b.hash, b.clone());
-                    if c.num_faults+1 > b.header.height as usize {
-                        continue;
-                    }
-                    if !hash_map.contains_key(&last_block.header.prev) {
-                        println!("Do not have parent for this block, yet");
-                    }
-                    let commit_block = height_map.get(
-                        &(b.header.height-c.num_faults as u64))
-                        .expect("Must be in the height map");
-                    if last_committed_block.hash != commit_block.header.prev {
-                        panic!("Hash chain broken by new blocks");
-                        // TODO: Add delivery
-                    }
-                    last_committed_block = commit_block.clone();
                     // println!("got a block:{:?}",b);
-
-                    // let commit_block = b.clone();
-                    // Use f+1 rule to commit the block
+                    // Check if the block is valid?
+                    if !count_map.contains_key(&b.hash) {
+                        count_map.insert(b.hash, 1);
+                        continue;
+                    }
+                    let ct = count_map.get(&b.hash).unwrap().clone();
+                    if ct < c.num_faults {
+                        count_map.insert(b.hash, ct+1);
+                        continue;
+                    }
+                    let now = SystemTime::now();
                     pending += c.block_size;
                     num_cmds += c.block_size as u128;
-                    for t in &commit_block.body.tx_hashes {
+                    for t in &b.body.tx_hashes {
                         if let Some(old) = time_map.get(t) {
                             let diff = now.duration_since(*old).expect("time difference error").as_millis();
                             latency_sum += diff;
