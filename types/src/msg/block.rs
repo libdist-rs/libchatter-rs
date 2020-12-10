@@ -99,7 +99,9 @@ impl Block {
     }
 
     pub fn add_payload(&mut self, payload:usize) {
-        self.payload = vec![1; payload];
+        for i in 0..payload {
+            self.payload.push( i as u8);
+        }
     }
 
     pub fn update_hash(&mut self) {
