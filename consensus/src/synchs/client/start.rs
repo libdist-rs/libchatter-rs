@@ -37,7 +37,6 @@ pub async fn start(
     // println!("Using metric: {}", m);
     let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
-    let mut cmds_sent = 0;
     // let timeout = tokio::time::sleep(tokio::time::Duration::from_secs_f64(10.0));
     let start = SystemTime::now();
     loop {
@@ -50,7 +49,6 @@ pub async fn start(
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
-                    cmds_sent+=1;
                     // println!("Sending transaction to the leader");
                 } else {
                     println!("Finished sending messages");
@@ -99,7 +97,7 @@ pub async fn start(
         let now = SystemTime::now();
         if now.duration_since(start).expect("Failed to measure the time difference").as_secs() > 30 {
             println!("Statistics:");
-            println!("Processed {} commands with throughput {}", num_cmds, (cmds_sent as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
+            println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
             println!("Average latency: {}", 
                 (latency_sum as f64)/(num_cmds as f64));
             return;
