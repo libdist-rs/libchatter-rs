@@ -72,7 +72,7 @@ impl Context {
             view: 0,
             last_seen_cert: Certificate::empty_cert(),
             vote_map: HashMap::new(),
-            payload:config.payload,
+            payload:config.payload*config.block_size,
         };
         for (id,mut pk_data) in config.pk_map.clone() {
             // if id == c.myid {

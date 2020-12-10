@@ -60,7 +60,7 @@ impl Context {
             last_seen_block: GENESIS_BLOCK,
             last_committed_block_ht: 0,
             is_client_apollo_enabled: false,
-            payload: config.payload,
+            payload: config.payload*config.block_size,
         };
         for (id,mut pk_data) in config.pk_map.clone() {
             if id == c.myid {
