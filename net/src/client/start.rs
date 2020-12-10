@@ -17,7 +17,8 @@ pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
     let mut writers = HashMap::new();
     for i in config.net_map {
         let new_send = send.clone();
-        let tcp = TcpStream::connect(i.1.clone()).await.expect("failed to open a tcp stream");
+        let tcp = TcpStream::connect(i.1.clone()).await
+            .expect("failed to open a tcp stream");
         let (rd, wr) = tcp.into_split();
         let writer = FramedWrite::new(wr, EnCodec::new());
         writers.insert(i,writer);

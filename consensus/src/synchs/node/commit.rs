@@ -15,7 +15,7 @@ pub async fn on_commit(b: Block, cx:&mut Context) {
     let ship_block = tokio::spawn(async move {
         let mut ship_b = ship_b;
         ship_b.add_payload(payload);
-        println!("sending block: {:?}", ship_b);
+        // println!("sending block: {:?}", ship_b);
         if let Err(e) = ship.send(ship_b).await {
             println!("Error sending the block to the client: {}", e);
             ()
