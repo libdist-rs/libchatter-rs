@@ -5,9 +5,8 @@ tools:
 
 testdata:
 	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3 \
-	testdata/b800-n3-p128 testdata/b400-n2-p128 testdata/b100-n3-p128 \
-	testdata/b800-n3-p1024 testdata/b400-n2-p1024 testdata/b100-n3-p1024
-	# For p = 0
+	testdata/b800-n3-p128 testdata/b400-n3-p128 testdata/b100-n3-p128 \
+	testdata/b800-n3-p1024 testdata/b400-n3-p1024 testdata/b100-n3-p1024
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \
@@ -29,7 +28,6 @@ testdata:
 	--base_port 4000 \
 	--client_base_port 10000 \
 	--target testdata/b800-n3
-	# For p = 128
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \
@@ -54,7 +52,6 @@ testdata:
 	--client_base_port 10000 \
 	--payload 128 \
 	--target testdata/b100-n3-p128
-	# For p = 1024
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \
