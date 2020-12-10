@@ -95,7 +95,7 @@ pub async fn start(
             
         }
         let now = SystemTime::now();
-        if now.duration_since(start).expect("Failed to measure the time difference").as_secs() > 10 {
+        if now.duration_since(start).expect("Failed to measure the time difference").as_secs() > 30 {
             println!("Statistics:");
             println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
             println!("Average latency: {}", 
