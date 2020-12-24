@@ -6,6 +6,7 @@ use std::io;
 
 use crate::io::to_bytes;
 
+#[derive(Debug)]
 pub struct Codec (pub LengthDelimitedCodec);
 
 impl Codec {

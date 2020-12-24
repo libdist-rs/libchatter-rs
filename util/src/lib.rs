@@ -10,6 +10,7 @@ mod tests {
 
 pub mod io;
 pub mod codec;
+// pub mod channel;
 
 pub fn new_dummy_tx(i:u64, payload:usize) -> Transaction {
     Transaction{

@@ -1,6 +1,10 @@
 use types::{Block};
 // use tokio_codec::{Decoder, Encoder};
-use tokio_util::codec::{Decoder, Encoder, length_delimited::LengthDelimitedCodec};
+use tokio_util::codec::{
+    Decoder, 
+    Encoder, 
+    length_delimited::LengthDelimitedCodec
+};
 use bytes::{Bytes, BytesMut};
 use std::io::{
     Error,
@@ -15,7 +19,7 @@ impl Codec {
     }
 }
 
-impl Encoder<Block> for Codec {
+impl Encoder<Block> for super::EnCodec {
     type Error = Error;
 
     fn encode(&mut self, item: Block, dst: &mut BytesMut) -> Result<(), Self::Error> {

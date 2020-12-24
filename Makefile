@@ -6,7 +6,15 @@ tools:
 testdata:
 	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3 \
 	testdata/b800-n3-p128 testdata/b400-n3-p128 testdata/b100-n3-p128 \
-	testdata/b800-n3-p1024 testdata/b400-n3-p1024 testdata/b100-n3-p1024
+	testdata/b800-n3-p1024 testdata/b400-n3-p1024 testdata/b100-n3-p1024 \
+	testdata/test
+	@./target/debug/genconfig \
+	-n 3 \
+	-d 50 \
+	--blocksize 1 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--target testdata/test
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \

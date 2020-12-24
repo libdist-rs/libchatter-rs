@@ -2,18 +2,18 @@ use std::collections::{HashMap};
 
 use config::Client;
 
-// use libp2p::{identity::Keypair, futures::SinkExt};
 use libp2p::futures::SinkExt;
-use tokio::{stream::{StreamExt}, net::TcpStream, sync::mpsc::{channel, Sender, Receiver}};
+use tokio::{net::TcpStream, sync::mpsc::{channel, Sender, Receiver}};
 use tokio_util::codec::{FramedRead, FramedWrite};
 use types::{Transaction, Block};
 use util::codec::{EnCodec, block::{Codec as BlockCodec}};
+use tokio_stream::StreamExt;
 
 /// The client does the following:
 /// 1. Dial the known servers
 /// 2. 
 pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
-    let (send, recv) = channel(100000);
+    let (send, recv) = channel(100_000);
     let mut writers = HashMap::new();
     for i in config.net_map {
         let new_send = send.clone();
@@ -27,7 +27,7 @@ pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
             loop {
                 match reader.next().await {
                     None => {
-                        // println!("Got nothing from the reader, breaking");
+                        println!("Disconnected from a server, breaking");
                         break;
                     },
                     Some(Err(e)) => {

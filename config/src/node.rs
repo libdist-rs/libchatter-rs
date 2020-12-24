@@ -160,4 +160,10 @@ impl Node {
         }
         // println!("Talking to servers: {:?}", self.net_map);
     }
+
+    pub fn my_ip(&self) -> String {
+        self.net_map.get(&self.id)
+            .expect("Failed to obtain IP for self. Incorrect config file.")
+            .clone()
+    }
 }

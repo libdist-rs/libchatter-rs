@@ -13,6 +13,7 @@ serde_yaml = "0.8"
 toml = "0.5"
 flexbuffers = "0.2.1"
 futures_codec = "0.4.1"
-tokio-util = {version = "0.5.1", features = ["full"]}
-bytes = "0.6.0"
+tokio = {version = "1.0", features = ["full"]}
+bytes = "1.0"
 types = {package = "types", path = "../types"}
+tokio-util = {version="0.6", features= ["full"]}

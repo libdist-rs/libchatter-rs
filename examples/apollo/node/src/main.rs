@@ -4,8 +4,7 @@ use config::Node;
 // use types::Replica;
 use std::{error::Error};
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let yaml = load_yaml!("cli.yml");
     let m = App::from_yaml(yaml).get_matches();
 
@@ -38,8 +37,27 @@ async fn main() -> Result<(), Box<dyn Error>> {
     } 
     println!("Successfully decoded the config file");
 
-    let (send, recv) = net::replica::client::start(&config).await;
-    let out = net::replica::start(&config).await;
+    let cli_net_rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    let prot_net_rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    let core_rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .worker_threads(2)
+        .build()
+        .unwrap();
+    let (send, recv) = cli_net_rt.block_on(
+        net::replica::client::start(&config)
+    );
+    // let (send, recv) = net::replica::client::start(&config).await;
+    // let out = net::replica::start(&config).await;
+    let out = prot_net_rt.block_on(
+        net::replica::start(&config)
+    );
     let (send_protocol, recv_protocol) = match out {
         Some((x, y)) => (x,y),
         None => {
@@ -48,13 +66,16 @@ async fn main() -> Result<(), Box<dyn Error>> {
         },
     };
     // Start the dummy consensus protocol
-    consensus::apollo::node::reactor(&config,
+    core_rt.block_on(
+        consensus::apollo::node::reactor(
+                &config,
         send_protocol, 
         recv_protocol, 
         send, 
         recv,
-        is_client_apollo_enabled
-    ).await;
+                is_client_apollo_enabled
+            )
+    );
     Ok(())
 }
 

@@ -1,169 +1,154 @@
-use std::collections::HashMap;
+use std::time::Duration;
 
 use config::Node;
-use tokio::sync::{mpsc::{Receiver, Sender}, oneshot::channel};
-use tokio::{net::{TcpListener, TcpStream}, sync::mpsc::channel as schannel};
-use tokio_util::codec::{FramedRead, FramedWrite};
-use types::{ProtocolMsg, Replica};
-use util::codec::{proto::Codec, EnCodec};
-use libp2p::futures::{SinkExt, StreamExt};
+use tokio::{
+    net::{
+        tcp::OwnedWriteHalf, 
+        TcpListener, 
+        TcpStream,
+    },
+    sync::{
+        mpsc::{
+            Receiver, 
+            Sender,
+            channel as schannel,
+        }
+    }
+};
+use tokio_util::codec::{
+    FramedRead, 
+    FramedWrite
+};
+use types::{
+    ProtocolMsg, 
+    Replica
+};
+use util::codec::EnCodec;
+use libp2p::futures::SinkExt;
+use tokio_stream::StreamExt;
 
-pub async fn start(config:&Node) -> 
-    Option<(Sender<(Replica, ProtocolMsg)>,Receiver<ProtocolMsg>)>
+use super::super::combine_streams;
+
+pub async fn start(
+    config:&Node
+) -> Option<(Sender<(Replica, ProtocolMsg)>,Receiver<ProtocolMsg>)>
 {
     let my_net_map = config.net_map.clone();
-    let proto_listen = TcpListener::bind(
-        config.net_map[&config.id].clone()
+    let _myid = config.id;
+    let listener = TcpListener::bind(
+        config.my_ip()
     ).await
-    .expect("Failed to bind to client port");
-    // Channels to talk to the network via protocol network
-    let (send, recv) = schannel(100_000);
-    let mut recv_socks = Vec::new();
-
-    let mut connected = 0;
-    let to_connect = config.num_nodes - 1;
-    let my_id = config.id;
-
-    let (oneshot_send, one_shot_recv) = channel();
-    let listen = tokio::spawn(async move {
-        // Then wait for others to connect to you
-        while connected < to_connect {
-            match proto_listen.accept().await {
-                Err(e) => {
-                    println!("Error listening to the server: {}", e);
-                    continue;
-                },
-                Ok((conn, from)) => {
-                    println!("Incoming connection accepted for {}", from);
-                    let (rd, _wr) = conn.into_split();
-                    let reader = FramedRead::new(rd, Codec::new());
-                    recv_socks.push(reader);
-                    connected += 1;
-                },
-            }
+    .expect("Failed to bind at my address");
+    let n = config.num_nodes;
+    let conn_everyone = tokio::spawn(async move{
+        let mut readers = Vec::with_capacity(n);
+        for _i in 1..n {
+            let (conn, from) = listener
+                .accept()
+                .await
+                .expect("Failed to accept a connection");
+            println!("Connected to {}", from);
+            let (rd, wr) = conn.into_split();
+            let reader = FramedRead::new(rd, util::codec::proto::Codec::new());
+            readers.push(reader);
+            drop(wr);
         }
-        if let Err(_e) = oneshot_send.send(recv_socks) {
-            panic!("Cannot send recv socks out");
-        }
-        println!("Finished listening. Connected to read.");
+        readers
     });
-
-    // Spawn connection to the others first
-    tokio::time::sleep(std::time::Duration::from_secs_f64(2.0)).await;
-
-    println!("Trying to connect to the other nodes");
-    let mut send_socks = HashMap::new();
-    let mut idx = 0;
-    let mut retry_count:i32 = 300;
-    // for (id,addr) in my_net_map {
-    loop {
-        if (idx as usize) > to_connect {
-            break;
-        }
-        if retry_count == 0 {
-            println!("Failed to connect to the server: {}", idx);
-            break;
-        }
-        if idx == my_id {
-            idx += 1;
+    tokio::time::sleep(Duration::from_secs_f64(2.0)).await;
+    let mut writers = Vec::new();
+    for i in 0..n {
+        if i as Replica == config.id {
+            writers.push((i,None));
             continue;
         }
-        let addr= match my_net_map.get(&idx) {
-            None => panic!("No address for server: {}", idx),
-            Some(x) => x,
-        };
-        println!("Trying to connect to: {}", addr.clone());
-        match TcpStream::connect(addr).await {
-            Err(e) => {
-                println!("Failed to connected to server: {}, with error: {}", idx, e);
-                    retry_count -= 1;
-            },
-            Ok(conn) => {
-                println!("Successfully connected to write to server: {}", addr.clone() );
-                let (_rd, wr) = conn.into_split();
-                let writer = FramedWrite::new(wr, EnCodec::new());
-                send_socks.insert(idx,writer);
-                retry_count = 300;
-            }
-        }
-        idx += 1;
+        let id = i as Replica;
+        let peer = &my_net_map[&id];
+        let conn = TcpStream::connect(peer)
+            .await
+            .expect("Failed to connect to a peer");
+        let (rd, wr) = conn.into_split();
+        writers.push((i,Some(FramedWrite::new(wr, EnCodec::new()))));
+        drop(rd);
+        println!("Connected to peer: {}", id);
     }
-    listen.await.expect("failed to connect to all the nodes");
-    let recv_socks = one_shot_recv.await.expect("Failed to finish the listening thread");
-    println!("All servers connected to me :)");
-    // Setup read threads
-    for mut conn in recv_socks {
-        let send = send.clone();
-        tokio::spawn(async move {
-            loop {
-                match conn.next().await {
-                    None => {},
-                    Some(Err(e)) => {
-                        println!("Error receiving a message from the server: {}", e);
-                        break;
-                    }
-                    Some(Ok(x)) => {
-                        if let Err(e) = send.send(x).await {
-                            println!("Failed to send a protocol message to the server: {}", e);
-                        }
-                    }
-                }
-            }
-        });
-    }
-    // recv is what we will return to the outside to deal with incoming protocol
-    // messages
-
-    let mut writers = HashMap::new();
-    for (id, mut conn) in send_socks {
-        let (new_send,mut new_recv) = schannel::<ProtocolMsg>(100_000);
-        writers.insert(id, new_send);
-        tokio::spawn(async move {
-            loop {
-                match new_recv.recv().await {
-                    None => {
-                        return;
-                    },
-                    Some(msg) => {
-                        if let Err(e) = conn.send(msg).await {
-                            println!("Failed to send the protocol message to the workers with error: {}", e);
-                        } 
-                    }
-                }
-            }
-        });
-    }
-    // let send_all:u16 = config.num_nodes as u16;
-    let (control_send, mut control_recv) = schannel::<(Replica, ProtocolMsg)>(100_000);
+    // println!("Writers: {:?}", writers);
+    
+    // Wait till we are connected to everyone
+    let readers = conn_everyone
+        .await
+        .expect("Failed to connected to everyone");
+    // Convert readers into a stream
+    // let mut stream = stream::setup(readers);
+    let mut stream = combine_streams(readers);
+    let (proto_msg_in_send, proto_msg_in_recv) = schannel(100_000);
+    let (proto_msg_out_send, mut proto_msg_out_recv) = 
+        schannel::<(Replica, ProtocolMsg)>(100_000);
     tokio::spawn(async move{
         loop {
-            let ev = control_recv.recv().await;
-            if let Some((id, msg)) = ev {
-                if id as usize != writers.len() {
-                    for (_, w) in &writers {
-                        if let Err(e) = w.send(msg.clone()).await {
-                            println!("failed to tell the workers to send a message, with error: {}", e);
-                        }
-                    }
-                    continue;
-                }
-                let w = match writers.get(&id) {
-                    None => {
-                        println!("Writer {} not found", id);
-                        continue;
-                    },
-                    Some(x) => x,
-                };
-                if let Err(e) = w.send(msg).await {
-                    println!("failed to tell the workers to send a message, with error: {}", e);
-                }
-                continue;
-            }
-            if let None = ev {
-                break;
-            }
+            let in_msg = stream.next()
+            .await
+            .expect("Failed to read from the combined stream");
+            proto_msg_in_send.send(
+                in_msg.1.unwrap()
+            ).await
+            .expect("Failed to send the message outside the networking module");
         }
     });
-    
-    Some((control_send, recv))
+    tokio::spawn(async move{
+        let mut writers = writers;
+        loop {
+            let (sender_id, msg) = proto_msg_out_recv.recv()
+                .await
+                .expect("Failed to receive incoming message from the outside world");
+            // println!("Node {}: trying to send a message to {}", myid, sender_id);
+            if sender_id < n as u16 {
+                send_one(
+                    writers[sender_id as usize].1.as_mut().unwrap(), 
+                    msg
+                ).await;
+                continue;
+            }
+            writers = send_all(&mut writers, msg).await;
+        }
+    });
+    println!("Successfully connected to all the nodes");
+    Some((proto_msg_out_send, proto_msg_in_recv))
+    // None
+}
+
+async fn send_one(writer: &mut FramedWrite<OwnedWriteHalf, EnCodec>, 
+    msg:ProtocolMsg) 
+{
+    writer.send(msg).await.unwrap();
+}
+
+async fn send_all(writers: &mut Vec<(usize,Option<FramedWrite<OwnedWriteHalf, EnCodec>>)>, msg: ProtocolMsg) -> Vec<(usize,Option<FramedWrite<OwnedWriteHalf, EnCodec>>)>
+{
+    let mut return_writers = Vec::with_capacity(writers.len());
+    for i in 0..writers.len() {
+        return_writers.push((i,None));
+    }
+    let mut handles = Vec::with_capacity(writers.len());
+    let m = &msg;
+    for _i in 0..writers.len() {
+        let c = m.clone();
+        match writers.pop() {
+            Some((id, Some(mut wr))) => {
+                handles.push(tokio::spawn(async move {
+                    wr.send(c).await.unwrap();
+                    (id,wr)
+                }));
+            },
+            Some((id, None)) => {
+                return_writers[id] = (id,None);
+            }
+            None => {},
+        }
+    }
+    for h in handles {
+        let (x,y) = h.await.unwrap();
+        return_writers[x] = (x,Some(y));
+    }
+    return_writers
 }

@@ -13,4 +13,4 @@ net = { package = "net", path="../../../net"}
 util = { package = "util", path="../../../util"}
 types = { package = "types", path="../../../types"}
 clap = {version = "~2.27.0", features = ["yaml"]}
-tokio = { version = "0.3", features = ["full"] }
+tokio = { version = "1.0", features = ["full"] }

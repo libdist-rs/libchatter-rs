@@ -9,6 +9,7 @@ pub mod ftx;
 pub mod proto;
 pub mod synchs;
 
+#[derive(Debug)]
 pub struct EnCodec (pub LengthDelimitedCodec);
 
 impl EnCodec {

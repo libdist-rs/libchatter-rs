@@ -1,11 +1,10 @@
 use clap::{load_yaml, App};
-use tokio::{io::{AsyncReadExt}, net::{TcpListener}, stream::StreamExt};
-use futures::SinkExt;
+use tokio::{io::{AsyncReadExt}, net::{TcpListener}};
+use futures::{SinkExt, StreamExt};
 use tokio_util::codec::{FramedRead, FramedWrite};
 use types::Block;
 use util::codec::{tx::{Codec as TxCodec}, block::{Codec as BCodec}};
 use std::{error::Error, time::SystemTime};
-
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {

@@ -12,8 +12,8 @@ consensus = { package = "consensus", path="../../../consensus"}
 net = { package = "net", path="../../../net"}
 types = { package = "types", path="../../../types"}
 clap = {version = "~2.27.0", features = ["yaml"]}
-tokio = { version = "0.3", features = ["full"] }
+tokio = { version = "1.0", features = ["full"] }
 futures = "^0.3"
 util = { package = "util", path="../../../util"}
-tokio-util = {version = "0.5.1", features = ["full"]}
+tokio-util = {version = "0.6", features = ["full"]}
 libp2p = { version = "0.30.1", features = ["identify", "secp256k1"]}
