@@ -92,12 +92,12 @@ apollo-release:
 apollo:
 	cargo build --package=node-apollo --package=client-apollo
 
-# ============== SINK-EXP ===============================================
-sink-exp-release:
-	cargo build --package=streamer --package=sinker --package=relay --release
+# ============== PING-EXP ===============================================
+ping-release:
+	cargo build --package=ping --package=echo --release
 
-sink-exp:
-	cargo build --package=streamer --package=sinker --package=relay
+ping:
+	cargo build --package=ping --package=echo
 
 # ============== SYNC HOTSTUFF ==========================================
 synchs-release: 

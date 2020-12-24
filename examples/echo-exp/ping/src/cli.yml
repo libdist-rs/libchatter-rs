@@ -16,7 +16,7 @@ args:
         takes_value: true
         required: true
     - interval:
-        short: I
+        short: i
         long: interval
         help: the duration (in milliseconds) to wait before every message
         takes_value: true
@@ -24,6 +24,12 @@ args:
     - count:
         short: c
         long: count
-        help: the number of times to do the ping
+        help: the number of times to do the ping in every interval
+        takes_value: true
+        required: true
+    - total:
+        short: t
+        long: total
+        help: the total number of iterations to perform the ping
         takes_value: true
         required: true

@@ -1,21 +1,16 @@
-use std::net::SocketAddr;
-
 use config::Node;
-use futures::Sink;
-use tokio_stream::{Stream, StreamMap};
+use tokio_stream::StreamMap;
 use libp2p::futures::SinkExt;
 use tokio::{
     net::{
         TcpListener,
         TcpStream,
-        tcp::{
-            OwnedReadHalf, 
-            OwnedWriteHalf
-        },
+        tcp::OwnedWriteHalf
     }, 
-    sync::{
-        Mutex, 
-        mpsc::channel
+    sync::mpsc::{
+        channel,
+        Sender,
+        Receiver,
     },
 };
 use tokio_util::codec::{
@@ -26,12 +21,11 @@ use types::{
     Block, 
     Transaction
 };
-use util::codec::{EnCodec, block::{Codec as BlockCodec}, tx::{Codec as TxCodec}};
-use tokio::sync::mpsc::{Sender, Receiver};
+use util::codec::{
+    EnCodec, 
+    tx::Codec as TxCodec
+};
 use tokio_stream::StreamExt;
-use std::sync::Arc;
-
-use crate::combine_streams;
 
 pub async fn start(
     config:&Node
@@ -128,7 +122,7 @@ async fn send_blk(b: &Block, writers: Vec<FramedWrite<OwnedWriteHalf, EnCodec>>)
             tokio::spawn(async move {
                 match wr.send(new_b).await {
                     Ok(()) => Some(wr),
-                    Err(e) => None,
+                    Err(_e) => None,
                 }
             })
         );

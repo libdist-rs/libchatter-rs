@@ -11,6 +11,3 @@ pub mod replica;
 
 mod read_all;
 pub use read_all::*;
-
-mod write_all;
-pub use write_all::*;
