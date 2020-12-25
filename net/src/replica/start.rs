@@ -7,13 +7,6 @@ use tokio::{
         TcpListener, 
         TcpStream,
     },
-    sync::{
-        mpsc::{
-            Receiver, 
-            Sender,
-            channel as schannel,
-        }
-    }
 };
 use tokio_util::codec::{
     FramedRead, 
@@ -26,12 +19,19 @@ use types::{
 use util::codec::EnCodec;
 use libp2p::futures::SinkExt;
 use tokio_stream::StreamExt;
+use crossfire::mpsc::{
+    SharedFutureBoth, 
+    RxFuture, 
+    TxFuture, 
+    bounded_future_both,
+};
 
 use super::super::combine_streams;
 
 pub async fn start(
     config:&Node
-) -> Option<(Sender<(Replica, ProtocolMsg)>,Receiver<ProtocolMsg>)>
+// ) -> Option<(Sender<(Replica, ProtocolMsg)>,Receiver<ProtocolMsg>)>
+) -> Option<(TxFuture<(Replica, ProtocolMsg),SharedFutureBoth>,RxFuture<ProtocolMsg, SharedFutureBoth>)>
 {
     let my_net_map = config.net_map.clone();
     let _myid = config.id;
@@ -81,9 +81,12 @@ pub async fn start(
     // Convert readers into a stream
     // let mut stream = stream::setup(readers);
     let mut stream = combine_streams(readers);
-    let (proto_msg_in_send, proto_msg_in_recv) = schannel(100_000);
-    let (proto_msg_out_send, mut proto_msg_out_recv) = 
-        schannel::<(Replica, ProtocolMsg)>(100_000);
+    // let (proto_msg_in_send, proto_msg_in_recv) = schannel(100_000);
+    let (proto_msg_in_send, proto_msg_in_recv) = bounded_future_both(100_000);
+    // let (proto_msg_out_send, mut proto_msg_out_recv) = 
+    let (proto_msg_out_send, proto_msg_out_recv) = 
+        // schannel::<(Replica, ProtocolMsg)>(100_000);
+        bounded_future_both::<(Replica, ProtocolMsg)>(100_000);
     tokio::spawn(async move{
         loop {
             let in_msg = stream.next()

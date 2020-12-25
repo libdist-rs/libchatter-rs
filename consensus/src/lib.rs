@@ -1,3 +1,5 @@
+use crossfire::mpsc::{RxFuture, SharedFutureBoth, TxFuture};
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -11,3 +13,5 @@ pub mod synchs;
 pub mod dummy;
 
 // mod start
+type Sender<T> = TxFuture<T, SharedFutureBoth>;
+type Receiver<T> = RxFuture<T, SharedFutureBoth>;

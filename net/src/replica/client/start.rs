@@ -1,4 +1,12 @@
 use config::Node;
+use crossfire::{
+    mpsc::{
+        bounded_future_both, 
+        RxFuture, 
+        SharedFutureBoth, 
+        TxFuture
+    }
+};
 use tokio_stream::StreamMap;
 use libp2p::futures::SinkExt;
 use tokio::{
@@ -7,11 +15,11 @@ use tokio::{
         TcpStream,
         tcp::OwnedWriteHalf
     }, 
-    sync::mpsc::{
-        channel,
-        Sender,
-        Receiver,
-    },
+    // sync::mpsc::{
+    //     channel,
+    //     Sender,
+    //     Receiver,
+    // },
 };
 use tokio_util::codec::{
     FramedRead, 
@@ -29,19 +37,20 @@ use tokio_stream::StreamExt;
 
 pub async fn start(
     config:&Node
-) -> (Sender<Block>, Receiver<Transaction>) 
+// ) -> (Sender<Block>, Receiver<Transaction>) 
+) -> (TxFuture<Block, SharedFutureBoth>, RxFuture<Transaction, SharedFutureBoth>) 
 {
     let cli_listen = TcpListener::bind(
         format!("0.0.0.0:{}", config.client_port)
     ).await
     .expect("Failed to bind to client port");
     
-    let (send, recv) = channel(100_000);
-    let (blk_send, mut blk_recv) = channel::<Block>(100_000);
+    let (send, recv) = bounded_future_both(100_000);
+    let (blk_send, blk_recv) = bounded_future_both::<Block>(100_000);
     let mut readers = StreamMap::new();
     let mut writers = Vec::new();
     // Start listening to new client connections
-    let mut new_conn_ch = cli_manager(cli_listen).await;
+    let new_conn_ch = cli_manager(cli_listen).await;
     // Main client event loop
     tokio::spawn(async move {
         loop {
@@ -50,8 +59,8 @@ pub async fn start(
                 // If the consensus has a block to send to the others
                 blk_opt = blk_recv.recv() => {
                     match blk_opt {
-                        None => break,
-                        Some(b) => {
+                        Err(_e) => break,
+                        Ok(b) => {
                             // println!("Sending block to the client");
                             writers = send_blk(&b, writers).await;
                         }
@@ -59,7 +68,7 @@ pub async fn start(
                 },
                 // If we have a new connection
                 conn_opt = new_conn_ch.recv() => {
-                    if let None = conn_opt {
+                    if let Err(_e) = conn_opt {
                         break;
                     }
                     let conn = conn_opt.unwrap();
@@ -89,9 +98,9 @@ pub async fn start(
 
 async fn cli_manager(
     listener: TcpListener,
-) -> Receiver<TcpStream>
+) -> RxFuture<TcpStream, SharedFutureBoth>
 {
-    let (send, recv) = channel(100_000);
+    let (send, recv) = bounded_future_both(100_000);
     tokio::spawn(async move {
         loop {
             let conn = listener.accept().await;
@@ -142,50 +151,3 @@ async fn send_blk(b: &Block, writers: Vec<FramedWrite<OwnedWriteHalf, EnCodec>>)
     }
     writers_vec
 }
-
-// async fn handle_client(new_client: Result<(TcpStream, SocketAddr)>, send: Sender<Transaction>) -> Option<Sender<Block>> {
-    //     let client = match new_client {
-        //         Err(e) => {
-            //             println!("got an error: {}", e);
-            //             return None;
-            //         },
-            //         Ok((conn,from)) => {
-                //             println!("Connected to a new client {}", from);
-                //             conn
-                //         },
-                //     };
-                //     let (rd, wr) = client.into_split();
-                //     let mut reader = FramedRead::new(rd, TxCodec::new());
-                //     tokio::spawn(async move {
-                    //         loop 
-                    //         {
-                        //             let tx_opt = reader.next().await;
-                        //             let tx = match tx_opt {
-                            //                 None => return,
-                            //                 Some(Ok(t)) => t,
-                            //                 Some(Err(e)) => {
-                                //                     println!("Got an error [{}] when reading the transaction from the client", e);
-                                //                     return;
-                                //                 }
-                                //             };
-                                //             send.send(tx).await.expect("failed to send the transaction to the outside world");
-                                //         }
-                                //     });
-                                //     let (send, mut recv) = channel(100_000);
-                                //     let mut out = FramedWrite::new(wr, BlockCodec::new());
-                                //     tokio::spawn(async move {
-                                    //         loop {
-                                        //             match recv.recv().await {
-                                            //                 None => return,
-                                            //                 Some(x) => match out.send(x).await {
-                                                //                     Err(e) => {
-                                                    //                         println!("Error [{}] sending the block to the client", e);
-                                                    //                         return;
-                                                    //                     },
-                                                    //                     Ok(()) => {},
-                                                    //                 },
-                                                    //             } 
-                                                    //         }
-                                                    //     });
-                                                    //     return Some(send);
-                                                    // }

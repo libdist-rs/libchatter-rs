@@ -1,9 +1,10 @@
 # A script to test quickly
 
-killall node-apollo
+killall node-apollo &> /dev/null
 
 TESTDIR=${TESTDIR:="testdata/b100-n3"}
 TYPE=${TYPE:="release"}
+W=${W:="3000"}
 
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-0.json \
@@ -23,8 +24,8 @@ sleep 5
 ./target/$TYPE/client-apollo \
     --config $TESTDIR/client.json \
     -i cli_ip_file \
-    -w 1200 \
+    -w $W \
     -m 1000000
 
 # Client has finished; Kill the nodes
-killall ./target/$TYPE/node-apollo
+killall ./target/$TYPE/node-apollo &> /dev/null

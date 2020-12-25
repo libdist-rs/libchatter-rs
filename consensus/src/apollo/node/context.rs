@@ -1,9 +1,12 @@
 use std::collections::HashMap;
 
 use libp2p::{identity::Keypair, core::PublicKey};
-use tokio::sync::mpsc::{Sender};
+// use tokio::sync::mpsc::{Sender};
+use crate::Sender;
 use types::{Block, GENESIS_BLOCK, Height, ProtocolMsg, Replica, Storage};
 use config::Node;
+
+// type Sender<T> = TxFuture<T, SharedFutureBoth>;
 
 pub struct Context {
     pub num_nodes: u16,

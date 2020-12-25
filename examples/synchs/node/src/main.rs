@@ -1,8 +1,9 @@
-// use futures::prelude::*;
-use clap::{load_yaml, App};
+use clap::{
+    load_yaml, 
+    App
+};
 use config::Node;
-// use types::Replica;
-use std::{error::Error};
+use std::error::Error;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {

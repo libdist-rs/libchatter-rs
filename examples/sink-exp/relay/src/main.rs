@@ -1,6 +1,6 @@
 use clap::{load_yaml, App};
 use tokio::{io::{AsyncReadExt}, net::{TcpListener}};
-use futures::{SinkExt, StreamExt};
+use futures::{StreamExt};
 use tokio_util::codec::{FramedRead, FramedWrite};
 use types::Block;
 use util::codec::{tx::{Codec as TxCodec}, block::{Codec as BCodec}};

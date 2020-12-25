@@ -1,4 +1,5 @@
-use tokio::sync::mpsc::{Sender};
+// use tokio::sync::mpsc::{Sender};
+use crate::Sender;
 use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
 use config::Node;
 use libp2p::{identity::Keypair, core::PublicKey};

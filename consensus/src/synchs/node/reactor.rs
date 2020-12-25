@@ -3,7 +3,8 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-use tokio::sync::mpsc::{Sender, Receiver};
+// use tokio::sync::mpsc::{Sender, Receiver};
+use crate::{Sender, Receiver};
 use types::{Block, synchs::ProtocolMsg, Replica, Transaction};
 use config::Node;
 use super::{commit::on_commit, proposal::*, vote::on_vote};
@@ -14,9 +15,9 @@ use super::timer::{InMsg, OutMsg, manager};
 pub async fn reactor(
     config:&Node,
     net_send: Sender<(Replica, ProtocolMsg)>,
-    mut net_recv: Receiver<ProtocolMsg>,
+    net_recv: Receiver<ProtocolMsg>,
     cli_send: Sender<Block>,
-    mut cli_recv: Receiver<Transaction>
+    cli_recv: Receiver<Transaction>
 ) {
     let (timein, mut timeout) = manager(2*config.delta).await;
     if let Err(e) = timein.send(InMsg::Start).await {
@@ -31,8 +32,8 @@ pub async fn reactor(
             pmsg_opt = net_recv.recv() => {
                 // Received a protocol message
                 let protmsg = match pmsg_opt {
-                    None => break,
-                    Some(x) => x,
+                    Err(_e) => break,
+                    Ok(x) => x,
                 };
                 // println!("Received protocol message: {:?}", protmsg);
                 if let ProtocolMsg::NewProposal(mut p) = protmsg {
@@ -57,8 +58,8 @@ pub async fn reactor(
                 // We received a message from the client
                 // println!("Got a message from the client");
                 match tx_opt {
-                    None => break,
-                    Some(tx) => {
+                    Err(_e) => break,
+                    Ok(tx) => {
                         cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx),tx);
                     }
                 }

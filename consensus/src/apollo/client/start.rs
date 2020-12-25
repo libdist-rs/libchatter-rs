@@ -30,6 +30,7 @@ pub async fn start(
     });
     let mut pending = window;
     let mut time_map = HashMap::new();
+    let mut latency_map = HashMap::new();
     let mut height_map:HashMap<Height, Block> = HashMap::new();
     let mut hash_map:HashMap<Hash, Block> = HashMap::new();
     let mut last_committed_block = GENESIS_BLOCK;
@@ -37,8 +38,6 @@ pub async fn start(
     // =============
     // Statistics
     // =============
-    // println!("Using metric: {}", m);
-    let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
     let start = SystemTime::now();
     loop {
@@ -99,8 +98,7 @@ pub async fn start(
                     num_cmds += c.block_size as u128;
                     for t in &commit_block.body.tx_hashes {
                         if let Some(old) = time_map.get(t) {
-                            let diff = now.duration_since(*old).expect("time difference error").as_millis();
-                            latency_sum += diff;
+                            latency_map.insert(t.clone(), (old.clone(), now));
                         } else {
                             println!("transaction not found in time map");
                             // println!("time map: {:?}", time_map);
@@ -119,11 +117,36 @@ pub async fn start(
         }
         if num_cmds > m as u128 {
             let now = SystemTime::now();
-            println!("Statistics:");
-            println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
-            println!("Average latency: {}", 
-                (latency_sum as f64)/(num_cmds as f64));
+            // println!("Processed {} commands with throughput {}", 
+            //     num_cmds, 
+            //     (num_cmds as f64)/now.duration_since(start)
+            //         .expect("Time differencing error")
+            //         .as_secs_f64()
+            // );
+            statistics(now, start, latency_map);
             return;
         }
     }
+}
+
+fn statistics(now: SystemTime, start:SystemTime, latency_map:HashMap<Hash, (SystemTime, SystemTime)>)
+{
+    let mut idx = 0 ;
+    let mut total_time = 0;
+    for (_hash, (begin, end)) in latency_map {
+        let time = end.duration_since(begin)
+            .expect("time differencing errors")
+            .as_millis();
+        println!("{}: {}", idx, time);
+        idx += 1;
+        total_time += time;
+    }
+    println!("Statistics:");
+    println!("Processed {} commands with throughput {}", idx, 
+        (idx as f64)/(now.duration_since(start)
+            .expect("time differencing errors")
+            .as_secs_f64())
+    );
+    println!("Average latency: {}", 
+                (total_time as f64)/(idx as f64));
 }

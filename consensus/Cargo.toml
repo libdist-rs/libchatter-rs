@@ -12,9 +12,9 @@ types = { package = "types", path="../types"}
 crypto = { package = "crypto", path="../crypto"}
 util = { package = "util", path="../util"}
 tokio = { version = "1.0", features = ["full"] }
-futures_codec = "0.4.1"
+crossfire = "0.1"
 futures = "^0.3"
-bytes = "0.6"
+bytes = "1.0"
 
 [dependencies.libp2p]
 version = "0.30.1"
