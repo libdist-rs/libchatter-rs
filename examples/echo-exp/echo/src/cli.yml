@@ -1,0 +1,11 @@
+name: relay
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Transaction relaying node
+args:
+    - port:
+        short: p
+        long: port
+        help: the port at which to listen to the clients
+        takes_value: true
+        required: true
