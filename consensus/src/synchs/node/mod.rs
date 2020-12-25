@@ -14,6 +14,6 @@ mod blame;
 
 mod vote;
 
-mod timer;
+// mod timer;
 
 mod commit;

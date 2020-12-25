@@ -3,14 +3,24 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-// use tokio::sync::mpsc::{Sender, Receiver};
-use crate::{Sender, Receiver};
-use types::{Block, synchs::ProtocolMsg, Replica, Transaction};
+use crate::{
+    Sender, 
+    Receiver
+};
+use types::{
+    Block, 
+    synchs::ProtocolMsg, 
+    Replica, 
+    Transaction
+};
 use config::Node;
-use super::{commit::on_commit, proposal::*, vote::on_vote};
-// use super::blame::*;
+use super::{
+    commit::on_commit, 
+    proposal::*, 
+    vote::on_vote
+};
 use super::context::Context;
-use super::timer::{InMsg, OutMsg, manager};
+use tokio_stream::StreamExt;
 
 pub async fn reactor(
     config:&Node,
@@ -19,10 +29,8 @@ pub async fn reactor(
     cli_send: Sender<Block>,
     cli_recv: Receiver<Transaction>
 ) {
-    let (timein, mut timeout) = manager(2*config.delta).await;
-    if let Err(e) = timein.send(InMsg::Start).await {
-        println!("Failed to start the timers: {}", e);
-    }
+    let d2 = std::time::Duration::from_millis(2*config.delta);
+    let mut queue = tokio_util::time::DelayQueue::new();
     println!("Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
@@ -42,9 +50,7 @@ pub async fn reactor(
                     let decision = on_receive_proposal(&p, &mut cx).await;
                     // println!("Decision for the incoming proposal is {}", decision);
                     if decision {
-                        if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
-                            println!("Failed to send block to the timer thread: {}", e);
-                        }
+                        queue.insert(p.new_block, d2);
                     }
                 }
                 else if let ProtocolMsg::VoteMsg(v, mut p) = protmsg {
@@ -52,7 +58,6 @@ pub async fn reactor(
                     // println!("Received a vote for a proposal: {:?}", p);
                     on_vote(&v,p, &mut cx).await;
                 }
-                
             },
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
@@ -64,16 +69,20 @@ pub async fn reactor(
                     }
                 }
             },
-            b_opt = timeout.recv() => {
+            b_opt = queue.next(), if !queue.is_empty() => {
                 // Got something from the timer
                 match b_opt {
                     None => {
                         println!("Timer finished");
                     },
-                    Some(OutMsg::Timeout(x)) => {
+                    Some(Ok(b)) => {
                         // println!("Timer fired");
-                        on_commit(x, &mut cx).await;
+                        on_commit(b.into_inner(), &mut cx).await;
                     },
+                    Some(Err(_e)) => {
+                        println!("Timer misfired: {}", _e);
+                        continue;
+                    }
                 }
             }
         }
@@ -96,9 +105,10 @@ pub async fn reactor(
             }
             let p = do_propose(txs, &mut cx).await;
             // println!("Leader setting the timer now");
-            if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
-                println!("Failed to send block to the timer thread: {}", e);
-            }
+            // if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
+            //     println!("Failed to send block to the timer thread: {}", e);
+            // }
+            queue.insert(p.new_block, d2);
         } 
     }
 }

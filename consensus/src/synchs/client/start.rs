@@ -5,6 +5,7 @@ use types::{Transaction, Block};
 use tokio::sync::mpsc::{Receiver, Sender, channel};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
+use crate::statistics;
 
 pub async fn start(
     c:&Client, 
@@ -31,11 +32,12 @@ pub async fn start(
     let mut pending = window;
     let mut time_map = HashMap::new();
     let mut count_map:HashMap<Hash, usize> = HashMap::new();
+    let mut latency_map = HashMap::new();
     // =============
     // Statistics
     // =============
     // println!("Using metric: {}", m);
-    let mut latency_sum:u128 = 0;
+    // let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
     let start = SystemTime::now();
     loop {
@@ -74,8 +76,9 @@ pub async fn start(
                     num_cmds += c.block_size as u128;
                     for t in &b.body.tx_hashes {
                         if let Some(old) = time_map.get(t) {
-                            let diff = now.duration_since(*old).expect("time difference error").as_millis();
-                            latency_sum += diff;
+                            // let diff = now.duration_since(*old).expect("time difference error").as_millis();
+                            // latency_sum += diff;
+                            latency_map.insert(t.clone(), (old.clone(),now));
                         } else {
                             println!("transaction not found in time map");
                             // println!("time map: {:?}", time_map);
@@ -94,10 +97,11 @@ pub async fn start(
         }
         if num_cmds > m as u128 {
             let now = SystemTime::now();
-            println!("Statistics:");
-            println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
-            println!("Average latency: {}", 
-                (latency_sum as f64)/(num_cmds as f64));
+            // println!("Statistics:");
+            // println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
+            // println!("Average latency: {}", 
+            //     (latency_sum as f64)/(num_cmds as f64));
+            statistics(now, start, latency_map);
             return;
         }
     }

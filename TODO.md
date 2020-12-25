@@ -2,7 +2,7 @@
 
 - [x] Used a new improved channel implementation
 - [x] Write a new wake based stream 
-- [ ] Write a new efficient delay queue implementation
+- [x] Write a new efficient delay queue implementation
 - [ ] Write a new wake based sink
 - [ ] Look for parallelization opportunities (in consensus)
 - [ ] Write plot script like hotstuff

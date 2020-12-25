@@ -5,6 +5,7 @@ use types::{Block, GENESIS_BLOCK, Height, Transaction};
 use tokio::sync::mpsc::{Receiver, Sender, channel};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
+use crate::statistics;
 
 pub async fn start(
     c:&Client, 
@@ -127,26 +128,4 @@ pub async fn start(
             return;
         }
     }
-}
-
-fn statistics(now: SystemTime, start:SystemTime, latency_map:HashMap<Hash, (SystemTime, SystemTime)>)
-{
-    let mut idx = 0 ;
-    let mut total_time = 0;
-    for (_hash, (begin, end)) in latency_map {
-        let time = end.duration_since(begin)
-            .expect("time differencing errors")
-            .as_millis();
-        println!("{}: {}", idx, time);
-        idx += 1;
-        total_time += time;
-    }
-    println!("Statistics:");
-    println!("Processed {} commands with throughput {}", idx, 
-        (idx as f64)/(now.duration_since(start)
-            .expect("time differencing errors")
-            .as_secs_f64())
-    );
-    println!("Average latency: {}", 
-                (total_time as f64)/(idx as f64));
 }

@@ -102,7 +102,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) -> bool {
     // println!("Received a proposal: {}", p.new_block.header.height);
 
     if cx.storage.all_delivered_blocks_by_hash.contains_key(&p.new_block.hash) {
-        println!("We have already processed this block last time");
+        // println!("We have already processed this block last time");
         return decision;
     }
     
