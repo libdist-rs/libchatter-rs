@@ -1,4 +1,4 @@
-use std::{collections::HashMap, time::{SystemTime}};
+use std::{collections::{HashMap, HashSet}, time::{SystemTime}};
 
 use config::Client;
 use types::{Transaction, Block};
@@ -32,6 +32,7 @@ pub async fn start(
     let mut pending = window;
     let mut time_map = HashMap::new();
     let mut count_map:HashMap<Hash, usize> = HashMap::new();
+    let mut finished_map:HashSet<Hash> = HashSet::new();
     let mut latency_map = HashMap::new();
     // =============
     // Statistics
@@ -72,6 +73,9 @@ pub async fn start(
                         continue;
                     }
                     let now = SystemTime::now();
+                    if finished_map.contains(&b.hash) {
+                        continue;
+                    }
                     pending += c.block_size;
                     num_cmds += c.block_size as u128;
                     for t in &b.body.tx_hashes {
@@ -87,6 +91,7 @@ pub async fn start(
                             num_cmds -= 1;
                         }
                     }
+                    finished_map.insert(b.hash);
                     if b.header.height % 100 == 0 {
                         println!("Got 100 blocks");
                     }

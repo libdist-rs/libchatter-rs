@@ -1,9 +1,10 @@
 use serde::{Serialize, Deserialize};
 
-use crate::{Propose, Vote};
+use crate::{Propose, Replica, Vote, WireReady};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum ProtocolMsg {
+    Identify(Replica),
     NewProposal(Propose),
     Blame(Vote),
 }
@@ -15,3 +16,5 @@ impl ProtocolMsg {
         return c;
     }
 }
+
+impl WireReady for ProtocolMsg {}

@@ -37,6 +37,7 @@ pub async fn reactor(
                     Ok(ProtocolMsg::Blame(v)) => {
                         on_receive_blame(v, &mut cx).await;
                     }
+                    _ => {},
                 };
             },
             tx_opt = cli_recv.recv() => {

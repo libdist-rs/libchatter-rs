@@ -12,7 +12,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let yaml = load_yaml!("cli.yml");
     let m = App::from_yaml(yaml).get_matches();
 
-    let mut total:u64;
+    let total:u64;
     if let Some(x) = m.value_of("stop_blocks") {
         total = x.parse().expect("invalid stop blocks");
     } else if let Some(x) = m.value_of("block_size") {

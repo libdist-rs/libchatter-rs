@@ -1,9 +1,22 @@
-use serde::{Serialize, Deserialize};
+use serde::{
+    Serialize, 
+    Deserialize
+};
 
-use crate::{Certificate, synchs::Propose, Vote, View, msg::block::Block};
+use crate::{
+    Certificate, 
+    Replica, 
+    View, 
+    Vote, 
+    msg::block::Block, 
+    synchs::Propose,
+    WireReady
+};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum ProtocolMsg {
+    /// Identification message to tell the other node that I am node ID
+    Identify(Replica),
     /// New Proposal
     NewProposal(Propose),
     /// Can be a blame or a vote
@@ -23,3 +36,5 @@ impl ProtocolMsg {
         return c;
     }
 }
+
+impl WireReady for ProtocolMsg {}

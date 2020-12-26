@@ -36,7 +36,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     println!("Successfully decoded the config file");
-    let (net_send,net_recv) = net::client::start(config.clone()).await;
+    let (net_send,net_recv) = net::client::start(&config).await;
     consensus::synchs::client::start(
         &config, net_send, net_recv, metrics, window).await;
     Ok(())

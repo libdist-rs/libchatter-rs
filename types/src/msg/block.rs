@@ -1,6 +1,6 @@
 use serde::{Serialize, Deserialize};
 use super::{Transaction, Certificate};
-use crate::protocol::{Replica, Height};
+use crate::{WireReady, protocol::{Replica, Height}};
 use crypto::hash::{EMPTY_HASH, Hash};
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -129,3 +129,5 @@ pub const GENESIS_BLOCK: Block = Block{
         // votes: vec![],
     // },
 };
+
+impl WireReady for Block {}

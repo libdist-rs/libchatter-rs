@@ -1,6 +1,6 @@
 use serde::{Serialize, Deserialize};
 
-use crate::protocol::*;
+use crate::{WireReady, protocol::*};
 use super::block::*;
 use super::super::View;
 
@@ -60,3 +60,5 @@ impl Transaction {
         return c;
     }
 }
+
+impl WireReady for Transaction {}

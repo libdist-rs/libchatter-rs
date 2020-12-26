@@ -1,81 +1,61 @@
-use std::collections::{HashMap};
-
 use config::Client;
 
-use libp2p::futures::SinkExt;
 use tokio::{net::TcpStream, sync::mpsc::{channel, Sender, Receiver}};
-use tokio_util::codec::{FramedRead, FramedWrite};
 use types::{Transaction, Block};
 use util::codec::{EnCodec, block::{Codec as BlockCodec}};
-use tokio_stream::StreamExt;
+use tokio_stream::{StreamExt, StreamMap};
+
+use crate::peer::Peer;
 
 /// The client does the following:
 /// 1. Dial the known servers
 /// 2. 
-pub async fn start(config:Client) -> (Sender<Transaction>, Receiver<Block>) {
-    let (send, recv) = channel(100_000);
-    let mut writers = HashMap::new();
-    for i in config.net_map {
-        let new_send = send.clone();
-        let tcp = TcpStream::connect(i.1.clone()).await
+pub async fn start(config:&Client) -> (Sender<Transaction>, Receiver<Block>) {
+    let n = config.num_nodes;
+    let mut peers:Vec<Sender<Transaction>> = Vec::with_capacity(n);
+    let mut map = StreamMap::with_capacity(n);
+    for (i,addr) in &config.net_map {
+        let tcp = TcpStream::connect(addr.clone()).await
             .expect("failed to open a tcp stream");
         let (rd, wr) = tcp.into_split();
-        let writer = FramedWrite::new(wr, EnCodec::new());
-        writers.insert(i,writer);
-        let mut reader = FramedRead::new(rd, BlockCodec::new());
-        tokio::spawn(async move {
-            loop {
-                match reader.next().await {
-                    None => {
-                        println!("Disconnected from a server, breaking");
-                        break;
-                    },
-                    Some(Err(e)) => {
-                        println!("Got an error: {}", e);
-                        break;
-                    },
-                    Some(Ok(b)) => new_send.send(b).await.
-                        expect("failed to send the new block outside the network"),
-                }
+        let enc = EnCodec::new();
+        let dec = BlockCodec::new();
+        let p = Peer::add_peer(rd, wr, dec, enc);
+        peers.push(p.send);
+        let mut p_recv = p.recv;
+        let recv = Box::pin(async_stream::stream! {
+            while let Some(item) = p_recv.recv().await {
+                yield item;
             }
-        });
-        println!("connected to server");
+      }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item = Block> + Send>>;
+        map.insert(i.clone(), recv);
     }
     // for the outside world to talk to the network manager
-    let (net_send, mut net_recv) = channel::<Transaction>(100_000);
-    let mut out_channels = HashMap::new();
-    for (id, mut conn) in writers {
-        let (new_send,mut new_recv) = channel::<Transaction>(100_000);
-        out_channels.insert(id, new_send);
-        tokio::spawn(async move {
-            loop {
-                match new_recv.recv().await {
-                    None => {
-                        return;
-                    },
-                    Some(msg) => {
-                        if let Err(e) = conn.send(msg).await {
-                            println!("Failed to send the protocol message to the workers with error: {}", e);
+    let (net_in_send, mut net_in_recv) = channel::<Transaction>(100_000);
+    let (net_out_send, net_out_recv) = channel::<Block>(100_000);
+    
+    tokio::spawn(async move{
+        loop {
+            tokio::select! {
+                in_opt = net_in_recv.recv() => {
+                    if let Some(tx) = in_opt {
+                        for i in &peers {
+                            i.send(tx.clone()).await.unwrap();
+                        }
+                    }
+                },
+                out_opt = map.next() => {
+                    if let Some((_id, x)) = out_opt {
+                        if let Err(_e) = net_out_send.send(x).await {
                             break;
-                        } 
+                        }
+                    } else {
+                        break;
                     }
                 }
             }
-        });
-    }
-    tokio::spawn(async move {
-    loop {
-        if let Some(t) = net_recv.recv().await {
-            for (_i,w) in &out_channels {
-                if let Err(e) = w.send(t.clone()).await {
-                    println!("Failed to send a message to the server: {}", e);
-                }
-            }
-        } else {
-            break;
         }
-    }
     });
 
-    return (net_send, recv);
+    return (net_in_send, net_out_recv);
 }
