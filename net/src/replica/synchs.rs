@@ -48,6 +48,7 @@ pub async fn start(
                 .accept()
                 .await
                 .expect("Failed to accept a connection");
+            conn.set_nodelay(true).unwrap();
             println!("Connected to {}", from);
             let (rd, wr) = conn.into_split();
             let mut reader = FramedRead::new(rd, util::codec::synchs::Codec::new());
@@ -72,6 +73,7 @@ pub async fn start(
         let conn = TcpStream::connect(peer)
             .await
             .expect("Failed to connect to a peer");
+        conn.set_nodelay(true).unwrap();
         let (rd, wr) = conn.into_split();
         let mut writer = FramedWrite::new(wr, EnCodec::new());
         writer.send(ProtocolMsg::Identify(_myid)).await

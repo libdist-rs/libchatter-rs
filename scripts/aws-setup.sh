@@ -21,6 +21,4 @@ git clone https://github.com/adithyabhatkajake/libchatter-rs.git
 cd libchatter-rs
 
 # Build experiments
-make apollo-release
-make synchs-release
-make ping-release
+cargo build --all

@@ -47,8 +47,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let indicator = vec![1 as u8;1];
     let mut receivers = Vec::new();
     for addr in relays {
-        let (rd, mut _wr) = TcpStream::connect(addr).await
-            .expect("failed to connected one of the relays")
+        let conn = TcpStream::connect(addr).await
+            .expect("failed to connected one of the relays");
+        conn.set_nodelay(true).unwrap();
+        let (rd, mut _wr) = conn
             .into_split();
         _wr.write(&indicator).await
             .expect("failed to write the indicator byte");

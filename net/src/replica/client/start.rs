@@ -106,6 +106,7 @@ async fn cli_manager(
             let conn = listener.accept().await;
             let conn = match conn {
                 Ok((a,_b)) => {
+                    a.set_nodelay(true).unwrap();
                     a
                 },
                 Err(e) => {

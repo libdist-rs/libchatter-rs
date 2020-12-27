@@ -44,6 +44,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut ser = TcpStream::connect(server)
         .await
         .expect("Failed to connect to the server");
+    ser.set_nodelay(true).unwrap();
     let mut msg = vec![1;message];
     let mut times = Vec::new();
     let mut ticker = interval(

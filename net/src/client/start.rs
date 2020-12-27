@@ -17,6 +17,7 @@ pub async fn start(config:&Client) -> (Sender<Transaction>, Receiver<Block>) {
     for (i,addr) in &config.net_map {
         let tcp = TcpStream::connect(addr.clone()).await
             .expect("failed to open a tcp stream");
+        tcp.set_nodelay(true).unwrap();
         let (rd, wr) = tcp.into_split();
         let enc = EnCodec::new();
         let dec = BlockCodec::new();

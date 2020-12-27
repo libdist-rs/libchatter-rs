@@ -23,6 +23,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             break;
         }
         let (mut stream, from) = conn.unwrap();
+        stream.set_nodelay(true).unwrap();
         println!("Connected to a sink: {}", from);
         loop {
             let x = stream.read(&mut buf).await;

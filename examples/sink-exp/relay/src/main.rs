@@ -39,7 +39,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let mut indicator = vec![0 as u8;1];
     let (one,_) = listener.accept().await.expect("Failed to accept a connection");
+    one.set_nodelay(true).unwrap();
     let (two,_) = listener.accept().await.expect("Failed to accept a connection");
+    two.set_nodelay(true).unwrap();
 
     let (mut r1,w1) = one.into_split();
     let (mut r2,w2) = two.into_split();
