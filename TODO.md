@@ -3,8 +3,8 @@
 - [x] Used a new improved channel implementation
 - [x] Write a new wake based stream 
 - [x] Write a new efficient delay queue implementation
-- [ ] Write a new wake based sink
-- [ ] Look for parallelization opportunities (in consensus)
+- [x] Write a new wake based sink
+- [x] Look for parallelization opportunities (in consensus)
 - [ ] Write plot script like hotstuff
     - [ ] Log client tx data as time stamps
     - [ ] Python script to read data
