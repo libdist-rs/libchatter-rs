@@ -1,5 +1,8 @@
-# Update the system and associated built utils
-sudo pacman -Syu
+# Update packages
+sudo pacman -Syu --noconfirm
+
+# Install git
+sudo pacman -S git --noconfirm
 
 # Setup rust
 # Download rust
@@ -11,9 +14,6 @@ source $HOME/.cargo/env
 # Remove install script
 rm -rf script.sh
 
-# Install git
-sudo pacman -S git
-
 # Clone our code
 git clone https://github.com/adithyabhatkajake/libchatter-rs.git
 
@@ -21,4 +21,4 @@ git clone https://github.com/adithyabhatkajake/libchatter-rs.git
 cd libchatter-rs
 
 # Build experiments
-cargo build --all
+cargo build --all --release
