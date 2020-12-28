@@ -4,7 +4,7 @@ killall node-apollo &> /dev/null
 
 TESTDIR=${TESTDIR:="testdata/b100-n3"}
 TYPE=${TYPE:="release"}
-W=${W:="40000"}
+W=${W:="100000"}
 
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-0.json \

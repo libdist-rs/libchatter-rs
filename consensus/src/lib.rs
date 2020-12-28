@@ -38,16 +38,16 @@ pub fn statistics(
         let time = end.duration_since(begin)
             .expect("time differencing errors")
             .as_millis();
-        println!("{}: {}", idx, time);
+        // println!("{}: {}", idx, time);
         idx += 1;
         total_time += time;
     }
-    println!("Statistics:");
-    println!("Processed {} commands with throughput {}", idx, 
+    // println!("Statistics:");
+    println!("DP[Throughput]: {}", 
         (idx as f64)/(now.duration_since(start)
             .expect("time differencing errors")
             .as_secs_f64())
     );
-    println!("Average latency: {}", 
+    println!("DP[Latency]: {}", 
                 (total_time as f64)/(idx as f64));
 }

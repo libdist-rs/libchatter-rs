@@ -92,9 +92,9 @@ pub async fn start(
                         }
                     }
                     finished_map.insert(b.hash);
-                    if b.header.height % 100 == 0 {
-                        println!("Got 100 blocks");
-                    }
+                    // if b.header.height % 100 == 0 {
+                        // println!("Got 100 blocks");
+                    // }
                 } else {
                     panic!("invalid content received from the server");
                 }
