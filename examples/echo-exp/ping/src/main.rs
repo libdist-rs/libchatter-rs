@@ -47,12 +47,15 @@ async fn main() -> Result<(), Box<dyn Error>> {
     ser.set_nodelay(true).unwrap();
     let mut msg = vec![1;message];
     let mut times = Vec::new();
+    let mut num_in_interval = Vec::with_capacity(total);
     let mut ticker = interval(
         Duration::from_millis(interval_dur)
     );
+    ticker.tick().await;
     for _i in 0..total {
         let mut finished = false;
         let mut to_break = false;
+        let mut sent:u128 = 0;
         for _i in 0..count {
             let start = SystemTime::now();
             tokio::select! {
@@ -62,6 +65,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                     continue;
                 },
                 _x = ser.write_all(&msg) => {
+                    sent += 1;
                     // println!("Sent a message");
                     let end = SystemTime::now();
                     let iter_time = end.duration_since(start)
@@ -74,13 +78,22 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 },
             }
             if to_break {
+                num_in_interval.push(sent);
                 break;
             }
         }
     }
-    
-    for i in times {
-        println!("Time: {}", i);
-    }
+    statistics(times, num_in_interval);
     Ok(())
+}
+
+fn statistics(ping_times: Vec<u128>, interval_send_count: Vec<u128>) {
+    println!("Ping time Data Points");
+    for i in ping_times {
+        println!("DP[Time]: {}", i);
+    }
+    println!("Number of messages sent in an interval");
+    for num in interval_send_count {
+        println!("DP[Int]: {}", num);
+    }
 }
