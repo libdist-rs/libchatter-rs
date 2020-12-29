@@ -41,16 +41,9 @@ if __name__ == "__main__":
                     default=sys.stdin)
     parser.add_argument('output', nargs='?', type=argparse.FileType('w'),
                     default=sys.stdout)
-    parser.add_argument('--extract','-e', choices=["ping", "interval"], required=True)
     args = parser.parse_args()
     filter_func = filter_ping
     out_func = ping_process
-    if args.extract == "interval":
-        # print("Unimplemented")
-        filter_func = filter_interval
-        out_func = interval_process
-        # exit(0)
-    counter = 1
     data = []
     for line in args.input:
         if (val := filter_func(line)) != None:

@@ -1,0 +1,1 @@
+rm -rf scripts/data/ping/*

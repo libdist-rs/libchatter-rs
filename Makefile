@@ -1,7 +1,13 @@
-.PHONY: testdata tools apollo apollo-release synchs synchs-release sink-exp sink-exp-release
+.PHONY: testdata tools apollo apollo-release synchs synchs-release sink-exp sink-exp-release release debug
+
+release:
+	cargo build --all --release
+
+debug:
+	cargo build --all
 
 tools:
-	cargo build --package=genconfig
+	cargo build --package=genconfig --release
 
 testdata:
 	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3 \
