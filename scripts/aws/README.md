@@ -9,6 +9,7 @@
 
 3. Run the following command to update compilers, install Rust, clone the code, and build the binaries.
    ```bash
+   # Script to update packages, install build-utils and setup Rust
    $ bash scripts/aws/do_setup.sh < scripts/aws/aws_ips.log 
    ```
    Note: Change `scripts/aws/setup.sh` if using other AMIs such as ubuntu.
@@ -28,21 +29,32 @@
 3. Run the following command to start the experiment:
     ```bash
     # Takes two arguments: AWS Public IP file and the private IP file
-    $ bash scripts/aws/ping/do_ping-exp.sh \
-    scripts/aws/ping/aws_ips.log scripts/aws/ping/pvt_ips.log
+    $ bash scripts/aws/ping/ping-exp.sh \
+    scripts/aws/ping/aws_ips.log \
+    scripts/aws/ping/pvt_ips.log
     ```
     Note: By default this will result in all numbers being reported on the terminal. You can redirect this to a raw file to debug any errors. Otherwise, a third optional argument can be provided that will redirect all the output to the file, for later processing as follows:
     ```bash
     # Use the third optional argument to get results: 
-    $ bash scripts/aws/ping/do_ping-exp.sh \
-    scripts/aws/ping/aws_ips.log scripts/aws/ping/pvt_ips.log \
+    $ bash scripts/aws/ping/ping-exp.sh \
+    scripts/aws/ping/aws_ips.log \
+    scripts/aws/ping/pvt_ips.log \
     scripts/aws/ping/ping-raw.log # This is the default value if nothing is specified
     ```
 4. To parse the raw log file into a csv file for plotting use the parse script `scripts/ping/parse-ping-exp.py` as follows:
     ```bash
+    # Script takes two arguments: 
+    # 1) Path to the RAW log file
+    # 2) Where to output the CSV file
     $ python scripts/ping/parse-ping-exp.py \
-    scripts/aws/ping/ping-raw.log \ # Path to the RAW log file
-    scripts/aws/ping/ping.csv \ # Where to output the CSV file
-    --extract ping # Extract ping information
+    scripts/aws/ping/ping-raw.log \
+    scripts/aws/ping/ping.csv
     ```
 5. Finally, I use the ipython file `scripts/ping/plot-ping.ipynb` to manage the plots used in the paper. Modify this file as per taste.
+
+## Throughput vs. Latency Experiments
+
+0. Setup instructions:
+    - Ensure that the instances are setup as defined as previously.
+    - Set up $n$ instances on AWS, and set up their public IPs in `scripts/ aws/aws_ips.log` and private IPs of every node in `scripts/aws/pvt_ips.log`.
+1. 
