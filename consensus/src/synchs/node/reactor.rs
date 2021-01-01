@@ -3,10 +3,9 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-use crate::{
-    Sender, 
-    Receiver
-};
+use tokio::sync::mpsc::{Sender, Receiver};
+// use crate::{Sender, Receiver};
+use tokio_util::time::DelayQueue;
 use types::{
     Block, 
     synchs::ProtocolMsg, 
@@ -21,16 +20,18 @@ use super::{
 };
 use super::context::Context;
 use tokio_stream::StreamExt;
+use std::sync::Arc;
+use std::borrow::Borrow;
 
 pub async fn reactor(
     config:&Node,
-    net_send: Sender<(Replica, ProtocolMsg)>,
-    net_recv: Receiver<ProtocolMsg>,
-    cli_send: Sender<Block>,
-    cli_recv: Receiver<Transaction>
+    net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
+    mut net_recv: Receiver<Arc<ProtocolMsg>>,
+    cli_send: Sender<Arc<Block>>,
+    mut cli_recv: Receiver<Arc<Transaction>>
 ) {
     let d2 = std::time::Duration::from_millis(2*config.delta);
-    let mut queue = tokio_util::time::DelayQueue::new();
+    let mut queue:DelayQueue<Arc<Block>> = tokio_util::time::DelayQueue::new();
     println!("Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
@@ -40,21 +41,19 @@ pub async fn reactor(
             pmsg_opt = net_recv.recv() => {
                 // Received a protocol message
                 let protmsg = match pmsg_opt {
-                    Err(_e) => break,
-                    Ok(x) => x,
+                    None => break,
+                    Some(x) => x,
                 };
                 // println!("Received protocol message: {:?}", protmsg);
-                if let ProtocolMsg::NewProposal(mut p) = protmsg {
-                    p.init();
+                if let ProtocolMsg::NewProposal(p) = protmsg.borrow() {
                     // println!("Received a proposal: {:?}", p);
                     let decision = on_receive_proposal(&p, &mut cx).await;
                     // println!("Decision for the incoming proposal is {}", decision);
                     if decision {
-                        queue.insert(p.new_block, d2);
+                        queue.insert(cx.last_seen_block.clone(), d2);
                     }
                 }
-                else if let ProtocolMsg::VoteMsg(v, mut p) = protmsg {
-                    p.init();
+                else if let ProtocolMsg::VoteMsg(v, p) = protmsg.borrow() {
                     // println!("Received a vote for a proposal: {:?}", p);
                     on_vote(&v,p, &mut cx).await;
                 }
@@ -62,12 +61,13 @@ pub async fn reactor(
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
                 // println!("Got a message from the client");
-                match tx_opt {
-                    Err(_e) => break,
-                    Ok(tx) => {
-                        cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx),tx);
+                let tx = match tx_opt {
+                    None => break,
+                    Some(x) => {
+                        ((x.borrow() as &Transaction).clone(),x)
                     }
-                }
+                };
+                cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx.0),tx.0);
             },
             b_opt = queue.next(), if !queue.is_empty() => {
                 // Got something from the timer
@@ -103,12 +103,9 @@ pub async fn reactor(
                 };
                 txs.push(tx);
             }
-            let p = do_propose(txs, &mut cx).await;
-            // println!("Leader setting the timer now");
-            // if let Err(e) = timein.send(InMsg::NewTimer(p.new_block.clone())).await {
-            //     println!("Failed to send block to the timer thread: {}", e);
-            // }
-            queue.insert(p.new_block, d2);
+            let _p = do_propose(txs, &mut cx).await;
+            // Leader setting the timer now
+            queue.insert(cx.last_seen_block.clone(), d2);
         } 
     }
 }

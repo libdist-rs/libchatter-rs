@@ -2,7 +2,7 @@ use bytes::{Bytes, BytesMut};
 use tokio_util::codec::{Decoder, Encoder, LengthDelimitedCodec};
 use types::synchs::ProtocolMsg;
 
-use std::io;
+use std::{io, borrow::Borrow, sync::Arc};
 
 use crate::io::to_bytes;
 
@@ -33,6 +33,17 @@ impl Encoder<ProtocolMsg> for super::EnCodec {
     
     fn encode(&mut self, item: ProtocolMsg, dst: &mut BytesMut) -> Result<(), Self::Error> {
         let data = to_bytes(&item);
+        let buf = Bytes::from(data);
+        return self.0.encode(buf, dst);
+    }
+}
+
+impl Encoder<Arc<ProtocolMsg>> for super::EnCodec {
+    type Error = io::Error;
+    
+    fn encode(&mut self, item: Arc<ProtocolMsg>, dst: &mut BytesMut) -> Result<(), Self::Error> {
+        let bor:&ProtocolMsg = item.borrow();
+        let data = to_bytes(bor);
         let buf = Bytes::from(data);
         return self.0.encode(buf, dst);
     }

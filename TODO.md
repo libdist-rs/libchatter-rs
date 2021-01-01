@@ -1,12 +1,17 @@
 # Things to improve in the library
 
-- [x] Used a new improved channel implementation
+- [x] Used a new improved channel implementation (crossfire is dangerous; It causes non-determinstic freezes/deadlocks in the program)
 - [x] Write a new wake based stream 
 - [x] Write a new efficient delay queue implementation
 - [x] Write a new wake based sink
-- [x] Look for parallelization opportunities (in consensus)\
-- [ ] Write test files
-- [ ] Write plot script like hotstuff
-    - [ ] Log client tx data as time stamps
-    - [ ] Python script to read data
-    - [ ] Python plotting script
+- [x] Look for parallelization opportunities (in consensus)
+- [ ] Make testdata for 
+    - [ ] Vary d experiment
+    - [ ] Vary f experiment
+- [ ] Fix exp.sh for vary f
+- [ ] Fix exp.sh for vary d
+- [x] Change apollo client pending command manager: send f blocks first, then start tracking pending commands.
+- [ ] Util: Write one generic encoder
+- [x] Use Arcs to avoid cloning of protocol messages
+- [x] Initialize protocol messages and blocks only once before arcing
+- [ ] Net: Generalize to be protocol agnostic

@@ -3,6 +3,7 @@ use std::collections::{HashSet};
 use super::context::Context;
 use crypto::hash::EMPTY_HASH;
 use types::{Block, Certificate, Transaction, VoteType, Vote, synchs::{Propose, ProtocolMsg}};
+use std::sync::Arc;
 
 pub fn check_hash_eq(left:&[u8], right:&[u8]) -> bool {
     // return left == right;
@@ -146,7 +147,7 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
     let ship_p = p.clone();
     let vote_ship = tokio::spawn(async move {
         if let Err(e) = ship.send(
-            (ship_nodes, ProtocolMsg::VoteMsg(my_vote, ship_p)))
+            (ship_nodes, Arc::new(ProtocolMsg::VoteMsg(my_vote, ship_p))))
             .await 
         {
             println!("failed to send vote: {}", e);
@@ -154,15 +155,16 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
     });
     // Start 2\Delta timer (Moved to the reactor)
 
+    let new_block_ref = Arc::new(p.new_block.clone());
     cx.storage.all_delivered_blocks_by_hash.insert(p.new_block.hash, 
-        p.new_block.clone());
+        new_block_ref.clone());
     cx.storage.all_delivered_blocks_by_ht.insert(p.new_block.header.height, 
-        p.new_block.clone());
+        new_block_ref.clone());
     for tx in &p.new_block.body.tx_hashes {
         cx.storage.pending_tx.remove(tx);
     }
     cx.height = p.new_block.header.height;
-    cx.last_seen_block = p.new_block.clone();
+    cx.last_seen_block = new_block_ref.clone();
     cx.last_seen_cert = p.cert.clone();
 
     // wait for voting to finish?
@@ -203,8 +205,9 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     new_block_cert.votes.push(self_vote);
     let new_block_cert = new_block_cert;
     // The block is ready, build proposal
-    let new_block = &new_block;
-    let mut p = Propose::new(new_block.clone());
+    let new_block_ref = Arc::new(new_block.clone());
+    let mut p = Propose::new(new_block);
+    // let new_block = &p.new_block;
     p.proof = proof;
     p.cert = match cx.cert_map.get(&parent.hash) {
         None => {
@@ -218,22 +221,24 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     let ship_num = cx.num_nodes as u16;
     let ship_p = p.clone();
     let broadcast = tokio::spawn(async move {
-        if let Err(e) = ship.send((ship_num, ProtocolMsg::NewProposal(ship_p))).await {
+        if let Err(e) = ship.send(
+            (ship_num, Arc::new(ProtocolMsg::NewProposal(ship_p)))
+        ).await {
             println!("Error broadcasting the block to all the nodes: {}", e);
         }
     });
     cx.storage.all_delivered_blocks_by_hash
-        .insert(new_block.hash, new_block.clone());
+        .insert(new_block_ref.hash, new_block_ref.clone());
     cx.storage.all_delivered_blocks_by_ht
-        .insert(new_block.header.height, new_block.clone());
+        .insert(new_block_ref.header.height, new_block_ref.clone());
     // The leader can commit immediately? 
     // NOOOO! I learn it painfully! If the leader commits now, then it must also
     // acknowledge the client!
     // Commit normally, and tell the client after 2\Delta
-    cx.vote_map.insert(new_block.hash, new_block_cert);
-    cx.height = new_block.header.height;
+    cx.vote_map.insert(new_block_ref.hash, new_block_cert);
+    cx.height = new_block_ref.header.height;
     // the leader remains the same
-    cx.last_seen_block = new_block.clone();
+    cx.last_seen_block = new_block_ref.clone();
     cx.last_committed_block_ht = cx.height;
     // the view remains the same
     broadcast.await.expect("failed to broadcast the proposal");

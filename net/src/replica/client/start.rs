@@ -1,25 +1,18 @@
 use config::Node;
-use crossfire::{
-    mpsc::{
-        bounded_future_both, 
-        RxFuture, 
-        SharedFutureBoth, 
-        TxFuture
-    }
-};
+// use crossfire::{
+    // mpsc::{
+        // bounded_future_both, 
+    // }
+// };
+use tokio::sync::mpsc::{Sender, Receiver, channel};
 use tokio_stream::StreamMap;
-use libp2p::futures::SinkExt;
+use futures::SinkExt;
 use tokio::{
     net::{
         TcpListener,
         TcpStream,
         tcp::OwnedWriteHalf
-    }, 
-    // sync::mpsc::{
-    //     channel,
-    //     Sender,
-    //     Receiver,
-    // },
+    },
 };
 use tokio_util::codec::{
     FramedRead, 
@@ -34,23 +27,24 @@ use util::codec::{
     tx::Codec as TxCodec
 };
 use tokio_stream::StreamExt;
+// use crate::{Sender, Receiver};
+use std::sync::Arc;
 
 pub async fn start(
     config:&Node
-// ) -> (Sender<Block>, Receiver<Transaction>) 
-) -> (TxFuture<Block, SharedFutureBoth>, RxFuture<Transaction, SharedFutureBoth>) 
+) -> (Sender<Arc<Block>>, Receiver<Arc<Transaction>>) 
 {
     let cli_listen = TcpListener::bind(
         format!("0.0.0.0:{}", config.client_port)
     ).await
     .expect("Failed to bind to client port");
     
-    let (send, recv) = bounded_future_both(100_000);
-    let (blk_send, blk_recv) = bounded_future_both::<Block>(100_000);
+    let (send, recv) = channel(100_000);
+    let (blk_send, mut blk_recv) = channel::<Arc<Block>>(100_000);
     let mut readers = StreamMap::new();
     let mut writers = Vec::new();
     // Start listening to new client connections
-    let new_conn_ch = cli_manager(cli_listen).await;
+    let mut new_conn_ch = cli_manager(cli_listen).await;
     // Main client event loop
     tokio::spawn(async move {
         loop {
@@ -59,16 +53,16 @@ pub async fn start(
                 // If the consensus has a block to send to the others
                 blk_opt = blk_recv.recv() => {
                     match blk_opt {
-                        Err(_e) => break,
-                        Ok(b) => {
+                        None => break,
+                        Some(b) => {
                             // println!("Sending block to the client");
-                            writers = send_blk(&b, writers).await;
+                            writers = send_blk(b, writers).await;
                         }
                     }
                 },
                 // If we have a new connection
                 conn_opt = new_conn_ch.recv() => {
-                    if let Err(_e) = conn_opt {
+                    if let None = conn_opt {
                         break;
                     }
                     let conn = conn_opt.unwrap();
@@ -84,6 +78,7 @@ pub async fn start(
                     match tx_opt {
                         Some((_id,Ok(tx))) => {
                             // println!("Got a transaction: {:?}",tx);
+                            let tx = Arc::new(tx);
                             send.send(tx).await.unwrap();
                         },
                         _ => {},
@@ -98,9 +93,9 @@ pub async fn start(
 
 async fn cli_manager(
     listener: TcpListener,
-) -> RxFuture<TcpStream, SharedFutureBoth>
+) -> Receiver<TcpStream>
 {
-    let (send, recv) = bounded_future_both(100_000);
+    let (send, recv) = channel(100_000);
     tokio::spawn(async move {
         loop {
             let conn = listener.accept().await;
@@ -120,7 +115,7 @@ async fn cli_manager(
     recv
 }
 
-async fn send_blk(b: &Block, writers: Vec<FramedWrite<OwnedWriteHalf, EnCodec>>) -> Vec<FramedWrite<OwnedWriteHalf, EnCodec>>
+async fn send_blk(b: Arc<Block>, writers: Vec<FramedWrite<OwnedWriteHalf, EnCodec>>) -> Vec<FramedWrite<OwnedWriteHalf, EnCodec>>
 {
     let mut writers_vec = writers;
     let len = writers_vec.len();

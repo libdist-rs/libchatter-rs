@@ -6,33 +6,27 @@ use tokio::{
         TcpListener, 
         TcpStream,
     },
-    sync::mpsc::Sender,
 };
-use tokio_util::codec::{
-    FramedRead, 
-    FramedWrite
-};
+use tokio_util::codec::{FramedRead, FramedWrite};
 use types::{
     synchs::ProtocolMsg, 
     Replica
 };
 use util::codec::EnCodec;
 use tokio_stream::{StreamExt, StreamMap};
-use crossfire::{
-    mpsc::{
-        SharedFutureBoth, 
-        RxFuture, 
-        TxFuture, 
-        bounded_future_both
-    }
-};
+// use crossfire::{
+    // mpsc::{
+        // bounded_future_both
+    // }
+// };
+use tokio::sync::mpsc::{Sender, Receiver, channel};
 use futures::SinkExt;
-
-use crate::peer::Peer;
+use std::sync::Arc;
+use crate::{peer::Peer};
 
 pub async fn start(
     config:&Node
-) -> Option<(TxFuture<(Replica, ProtocolMsg),SharedFutureBoth>,RxFuture<ProtocolMsg, SharedFutureBoth>)>
+) -> Option<(Sender<(Replica, Arc<ProtocolMsg>)>,Receiver<Arc<ProtocolMsg>>)>
 {
     let my_net_map = config.net_map.clone();
     let _myid = config.id;
@@ -91,7 +85,7 @@ pub async fn start(
     // Convert readers into a stream
     // let mut stream = stream::setup(readers);
     let mut map = StreamMap::new();
-    let mut peers:HashMap<Replica, Sender<ProtocolMsg>> = HashMap::with_capacity(n);
+    let mut peers:HashMap<Replica, Sender<Arc<ProtocolMsg>>> = HashMap::with_capacity(n);
 
     for i in 0..n {
         if i as Replica == config.id {
@@ -106,9 +100,20 @@ pub async fn start(
         let mut p_recv = p.recv;
         let recv = Box::pin(async_stream::stream! {
             while let Some(item) = p_recv.recv().await {
-                yield item;
+                let item = match item {
+                    ProtocolMsg::NewProposal(mut p) => {
+                        p.init();
+                        ProtocolMsg::NewProposal(p)
+                    },
+                    ProtocolMsg::VoteMsg(v, mut p) => {
+                        p.init();
+                        ProtocolMsg::VoteMsg(v, p)
+                    }
+                    x => x,
+                };
+                yield Arc::new(item);
             }
-      }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item = ProtocolMsg> + Send>>;
+      }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item = Arc<ProtocolMsg>> + Send>>;
         // let recv = p.recv;
         map.insert(repl_id, recv);
         peers.insert(repl_id, p.send);
@@ -116,8 +121,8 @@ pub async fn start(
 
     // let x = map.next();
 
-    let (msg_rd_send, msg_rd_recv) = bounded_future_both(100_000);
-    let (msg_wr_send, msg_wr_recv) = bounded_future_both::<(Replica, ProtocolMsg)>(100_000);
+    let (msg_rd_send, msg_rd_recv) = channel(100_000);
+    let (msg_wr_send, mut msg_wr_recv) = channel::<(Replica, Arc<ProtocolMsg>)>(100_000);
 
     tokio::spawn(async move {
         loop {
@@ -133,7 +138,7 @@ pub async fn start(
                     }
                 },
                 opt_out = msg_wr_recv.recv() => {
-                    if let Ok((id,msg)) = opt_out {
+                    if let Some((id,msg)) = opt_out {
                         if id == n as Replica {
                             for (_i,p) in &peers {
                                 p.send(msg.clone()).await.unwrap();

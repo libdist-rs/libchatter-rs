@@ -1,8 +1,10 @@
 use types::Block;
 
 use super::context::Context;
+use std::sync::Arc;
+use std::borrow::Borrow;
 
-pub async fn on_commit(b: Block, cx:&mut Context) {
+pub async fn on_commit(b: Arc<Block>, cx:&mut Context) {
     // Commit this block and all its ancestors
     // Check if we have already committed this block and its ancestors
     if cx.storage.committed_blocks_by_hash.contains_key(&b.hash) {
@@ -13,10 +15,10 @@ pub async fn on_commit(b: Block, cx:&mut Context) {
     let ship_b = b.clone();
     let payload = cx.payload;
     let ship_block = tokio::spawn(async move {
-        let mut ship_b = ship_b;
+        let mut ship_b = (ship_b.borrow() as &Block).clone();
         ship_b.add_payload(payload);
         // println!("sending block: {:?}", ship_b);
-        if let Err(e) = ship.send(ship_b).await {
+        if let Err(e) = ship.send(Arc::new(ship_b)).await {
             println!("Error sending the block to the client: {}", e);
             ()
         }

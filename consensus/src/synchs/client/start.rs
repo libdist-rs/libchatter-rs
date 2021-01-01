@@ -2,15 +2,19 @@ use std::{collections::{HashMap, HashSet}, time::{SystemTime}};
 
 use config::Client;
 use types::{Transaction, Block};
-use tokio::sync::mpsc::{Receiver, Sender, channel};
+use tokio::sync::mpsc::{channel};
+use tokio::sync::mpsc::{Sender, Receiver};
+// use crate::{Sender, Receiver};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
 use crate::statistics;
+use std::sync::Arc;
+use std::borrow::Borrow;
 
 pub async fn start(
     c:&Client, 
-    net_send: Sender<Transaction>, 
-    mut net_recv: Receiver<Block>, 
+    net_send: Sender<Arc<Transaction>>, 
+    mut net_recv: Receiver<Arc<Block>>, 
     metric: u64,
     window: usize,
 ) {
@@ -23,9 +27,9 @@ pub async fn start(
         loop {
             let tx = new_dummy_tx(i,payload);
             i += 1;
-            if let Err(e) = send.send(tx).await {
+            if let Err(e) = send.send(Arc::new(tx)).await {
                 println!("Closing tx producer channel: {}", e);
-                break;
+                std::process::exit(0);
             }
         }
     });
@@ -44,23 +48,22 @@ pub async fn start(
     loop {
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {
-                if let Some(tx) = tx_opt {
+                if let Some(x) = tx_opt {
                     // let bytes = to_bytes(&tx);
-                    let hash = crypto::hash::ser_and_hash(&tx);
-                    net_send.send(tx).await
+                    let hash = crypto::hash::ser_and_hash(x.borrow() as &Transaction);
+                    net_send.send(x).await
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
                     // println!("Sending transaction to the leader");
                 } else {
                     println!("Finished sending messages");
+                    break;
                 }
             },
             block_opt = net_recv.recv() => {
-                // println!("Got something from the network");
-                if let Some(mut b) = block_opt {
-                    b.update_hash();
-                    let b = b;
+                // Got something from the network
+                if let Some(b) = block_opt {
                     // println!("got a block:{:?}",b);
                     // Check if the block is valid?
                     if !count_map.contains_key(&b.hash) {
@@ -102,10 +105,6 @@ pub async fn start(
         }
         if num_cmds > m as u128 {
             let now = SystemTime::now();
-            // println!("Statistics:");
-            // println!("Processed {} commands with throughput {}", num_cmds, (num_cmds as f64)/now.duration_since(start).expect("Time differencing error").as_secs_f64());
-            // println!("Average latency: {}", 
-            //     (latency_sum as f64)/(num_cmds as f64));
             statistics(now, start, latency_map);
             return;
         }

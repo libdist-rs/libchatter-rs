@@ -13,4 +13,8 @@ impl Propose {
             proof:Vec::new(),
         }
     }
+
+    pub fn init(&mut self) {
+        self.new_block.update_hash();
+    }
 }

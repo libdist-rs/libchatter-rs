@@ -1,19 +1,18 @@
 use types::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Transaction};
 
 use super::{context::Context, commit::on_finish_propose};
+use std::sync::Arc;
 
 pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
-    // println!("Handling proposal: {}, {:?}", p.new_block.header.height, p.new_block.header);
-    // Update the hashes first
-    let mut block = p.new_block.clone();
-    block.update_hash();
-    let mut p = p.clone();
-    p.new_block = block;
-    let p = p;
+    // println!("Handling proposal by [{}]: {}, {:?}", cx.myid, p.new_block.header.height, p.new_block.header);
+
+    // let mut p = p.clone();
+    // p.new_block = block;
+    // let p = p;
     let block = &p.new_block; // Make the block immutable again, so we dont accidently move something
     // 1) Is it correctly signed?
     if let Some(pk) = cx.pub_key_map.get(&block.header.author) {
-        let bytes = util::io::to_bytes(&p.new_block);
+        let bytes = util::io::to_bytes(&block);
         if !pk.verify(&bytes, &p.proof) {
             println!("Block verification failed.");
             return;
@@ -27,7 +26,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
             println!("Equivocation detected");
             return;
         } else {
-            // println!("Already have this block");
+            // println!("{} - Already have this block", cx.myid);
             return;
         }
     }
@@ -45,7 +44,7 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
         cx.storage.pending_tx.remove(h);
     }
     // Commit any possible blocks and process proposal
-    on_finish_propose(&p, cx).await;
+    on_finish_propose(p, cx).await;
 }
 
 pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
@@ -60,14 +59,16 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
 
     new_block.update_hash();
 
-    let mut p = Propose::new(new_block.clone());
+    let mut p = Propose::new(new_block);
     let bytes = util::io::to_bytes(&p.new_block);
     p.proof = cx.my_secret_key.sign(&bytes)
         .expect("failed to sign the proposal");
     // The leader broadcasts the transaction
-    if let Err(e) = cx.net_send.send((cx.num_nodes, ProtocolMsg::NewProposal(p.clone()))).await {
+    if let Err(e) = cx.net_send.send(
+        (cx.num_nodes, Arc::new(ProtocolMsg::NewProposal(p.clone())))
+    ).await {
         println!("Server channel closed with error: {}", e);
     };
-    // println!("Proposing block with hash: {:?}", p.new_block.hash);
+    // println!("Proposing block with hash: {:?}", p.new_block.header);
     on_finish_propose(&p, cx).await;
 }

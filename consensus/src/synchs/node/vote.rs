@@ -29,7 +29,7 @@ pub fn add_vote(v: &Vote, hash: Hash,cx: &mut Context) {
     }
 }
 
-pub async fn on_vote(v: &Vote, p:Propose, cx: &mut Context) -> bool {
+pub async fn on_vote(v: &Vote, p:&Propose, cx: &mut Context) -> bool {
     let decision = false;
     // print!("Received a vote message: {:?}", v);
 

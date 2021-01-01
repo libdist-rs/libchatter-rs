@@ -1,18 +1,22 @@
 use config::Client;
 
-use tokio::{net::TcpStream, sync::mpsc::{channel, Sender, Receiver}};
+use tokio::net::TcpStream;
 use types::{Transaction, Block};
 use util::codec::{EnCodec, block::{Codec as BlockCodec}};
 use tokio_stream::{StreamExt, StreamMap};
+// use crate::{Sender, Receiver};
+// use crossfire::mpsc::bounded_future_both;
+use tokio::sync::mpsc::{Sender, Receiver, channel};
 
 use crate::peer::Peer;
+use std::sync::Arc;
 
 /// The client does the following:
 /// 1. Dial the known servers
 /// 2. 
-pub async fn start(config:&Client) -> (Sender<Transaction>, Receiver<Block>) {
+pub async fn start(config:&Client) -> (Sender<Arc<Transaction>>, Receiver<Arc<Block>>) {
     let n = config.num_nodes;
-    let mut peers:Vec<Sender<Transaction>> = Vec::with_capacity(n);
+    let mut peers:Vec<Sender<Arc<Transaction>>> = Vec::with_capacity(n);
     let mut map = StreamMap::with_capacity(n);
     for (i,addr) in &config.net_map {
         let tcp = TcpStream::connect(addr.clone()).await
@@ -25,15 +29,16 @@ pub async fn start(config:&Client) -> (Sender<Transaction>, Receiver<Block>) {
         peers.push(p.send);
         let mut p_recv = p.recv;
         let recv = Box::pin(async_stream::stream! {
-            while let Some(item) = p_recv.recv().await {
-                yield item;
+            while let Some(mut item) = p_recv.recv().await {
+                item.update_hash();
+                yield Arc::new(item);
             }
-      }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item = Block> + Send>>;
+      }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item = Arc<Block>> + Send>>;
         map.insert(i.clone(), recv);
     }
     // for the outside world to talk to the network manager
-    let (net_in_send, mut net_in_recv) = channel::<Transaction>(100_000);
-    let (net_out_send, net_out_recv) = channel::<Block>(100_000);
+    let (net_in_send, mut net_in_recv) = channel::<Arc<Transaction>>(100_000);
+    let (net_out_send, net_out_recv) = channel::<Arc<Block>>(100_000);
     
     tokio::spawn(async move{
         loop {

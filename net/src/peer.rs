@@ -1,17 +1,21 @@
 use std::collections::VecDeque;
 
 use futures::{SinkExt, stream};
-use tokio::{net::tcp::{OwnedReadHalf, OwnedWriteHalf}, sync::mpsc::{Sender, Receiver, channel}};
+use tokio::{net::tcp::{OwnedReadHalf, OwnedWriteHalf}};
 use tokio_util::codec::{Decoder, Encoder, FramedRead, FramedWrite};
 use types::WireReady;
 use tokio_stream::{StreamExt};
+use std::sync::Arc;
+use tokio::sync::mpsc::{Sender, Receiver, channel};
+// use crate::{Sender, Receiver};
+// use crossfire::mpsc::bounded_future_both;
 
 pub struct Peer<I,O> 
 where I: WireReady,
 O: WireReady,
 {
     // Send O msg to this peer
-    pub send: Sender<O>,
+    pub send: Sender<Arc<O>>,
     // Get I msg from this peer
     pub recv: Receiver<I>,
     
@@ -23,18 +27,18 @@ enum InternalInMsg {
 }
 
 enum InternalOutMsg<O> {
-    Batch(VecDeque<O>),
+    Batch(VecDeque<Arc<O>>),
 }
 
 impl<'de,I,O> Peer<I,O> 
-where I: WireReady + 'static,
-O: WireReady + 'static + Clone,
+where I: WireReady+'static+Sync+Unpin,
+O: WireReady+'static + Clone+Sync,
 {
     pub fn add_peer(
         rd: OwnedReadHalf,
         wr: OwnedWriteHalf,
         d: impl Decoder<Item=I, Error=std::io::Error> + Send + 'static,
-        e: impl Encoder<O> + Send + 'static
+        e: impl Encoder<Arc<O>> + Send + 'static
     ) -> Self 
     {
         // channels used by the peer to talk to the sockets: 
@@ -43,13 +47,13 @@ O: WireReady + 'static + Clone,
         //
         // 
         let (send_in, recv_in) = channel::<I>(100_000);
-        let (send_out, mut recv_out) = channel::<O>(100_000);
+        let (send_out, mut recv_out) = channel::<Arc<O>>(100_000);
         
         let mut reader = FramedRead::new(rd, d);
         let mut writer = FramedWrite::new(wr, e);
         let handle = tokio::runtime::Handle::current();
         let (internal_ch_in_send, mut internal_ch_in_recv) = channel(100_000);
-        let (internal_ch_out_send, mut internal_ch_out_recv) = channel(100_000);
+        let (internal_ch_out_send, mut internal_ch_out_recv) = channel::<InternalOutMsg<O>>(100_000);
         handle.spawn(async move {
             loop {
                 let opt = internal_ch_out_recv.recv().await;

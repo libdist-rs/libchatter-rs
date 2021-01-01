@@ -1,10 +1,22 @@
 use std::collections::HashMap;
 
-use libp2p::{identity::Keypair, core::PublicKey};
-// use tokio::sync::mpsc::{Sender};
-use crate::Sender;
-use types::{Block, GENESIS_BLOCK, Height, ProtocolMsg, Replica, Storage};
+// use crossfire::mpsc::{SharedSenderFRecvB, TxFuture};
+use libp2p::{
+    identity::Keypair, 
+    core::PublicKey
+};
+use tokio::sync::mpsc::{Sender};
+// use crate::Sender;
+use types::{
+    Block, 
+    GENESIS_BLOCK, 
+    Height, 
+    ProtocolMsg, 
+    Replica, 
+    Storage
+};
 use config::Node;
+use std::sync::Arc;
 
 // type Sender<T> = TxFuture<T, SharedFutureBoth>;
 
@@ -14,14 +26,14 @@ pub struct Context {
     pub myid: Replica,
     pub pub_key_map:HashMap<Replica, PublicKey>,
     pub my_secret_key: Keypair,
-    pub net_send: Sender<(Replica, ProtocolMsg)>,
+    pub net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
     pub cli_send: Sender<Block>,
     pub is_client_apollo_enabled: bool,
 
     pub storage: Storage,
     pub height: Height,
     pub last_leader: Replica,
-    pub last_seen_block: Block,
+    pub last_seen_block: Arc<Block>,
     pub last_committed_block_ht: Height,
     pub payload:usize,
 }
@@ -30,7 +42,7 @@ const EXTRA_SPACE:usize = 100;
 
 impl Context {
     pub fn new(config:&Node,
-        net_send: Sender<(Replica, ProtocolMsg)>,
+        net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
         cli_send: Sender<Block>) -> Self {
         let mut c = Context{
             num_nodes: config.num_nodes as u16,
@@ -60,13 +72,13 @@ impl Context {
             /// is of height 0 and its author is replica 0
             height: 0,
             last_leader: 0,
-            last_seen_block: GENESIS_BLOCK,
+            last_seen_block: Arc::new(GENESIS_BLOCK),
             last_committed_block_ht: 0,
             is_client_apollo_enabled: false,
             payload: config.payload*config.block_size,
         };
-        for (id,mut pk_data) in config.pk_map.clone() {
-            if id == c.myid {
+        for (id,mut pk_data) in &config.pk_map {
+            if *id == c.myid {
                 continue;
             }
             let pk = match config.crypto_alg {
@@ -82,7 +94,7 @@ impl Context {
                 }
                 _ => panic!("Unimplemented algorithm"),
             };
-            c.pub_key_map.insert(id, pk);
+            c.pub_key_map.insert(*id, pk);
         }
         c
     }

@@ -3,9 +3,6 @@ use tokio_util::codec::LengthDelimitedCodec;
 pub mod tx;
 pub mod block;
 
-pub mod fblock;
-pub mod ftx;
-
 pub mod proto;
 pub mod synchs;
 

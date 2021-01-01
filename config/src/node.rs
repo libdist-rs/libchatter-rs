@@ -162,6 +162,7 @@ impl Node {
     }
 
     pub fn my_ip(&self) -> String {
+        // Small string, so it is okay to clone
         self.net_map.get(&self.id)
             .expect("Failed to obtain IP for self. Incorrect config file.")
             .clone()

@@ -1,15 +1,16 @@
-// use tokio::sync::mpsc::{Sender};
-use crate::Sender;
+use tokio::sync::mpsc::{Sender};
+// use crate::Sender;
 use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
 use config::Node;
 use libp2p::{identity::Keypair, core::PublicKey};
 use std::collections::HashMap;
 use crypto::hash::Hash;
+use std::sync::Arc;
 
 pub struct Context {
     /// Networking context
-    pub net_send: Sender<(Replica, ProtocolMsg)>,
-    pub cli_send: Sender<Block>,
+    pub net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
+    pub cli_send: Sender<Arc<Block>>,
 
     /// Data context
     pub num_nodes: usize,
@@ -26,7 +27,7 @@ pub struct Context {
     pub cert_map: HashMap<Hash, Certificate>, // contains all fully certified blocks
     pub height: Height,
     pub last_leader: Replica,
-    pub last_seen_block: Block,
+    pub last_seen_block: Arc<Block>,
     pub last_seen_cert: Certificate,
     pub last_committed_block_ht: Height,
     pub vote_map: HashMap<Hash, Certificate>,
@@ -38,9 +39,10 @@ const EXTRA_SPACE:usize = 10;
 impl Context {
     pub fn new(
         config: &Node,
-        net_send: Sender<(Replica, ProtocolMsg)>,
-        cli_send: Sender<Block>,
+        net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
+        cli_send: Sender<Arc<Block>>,
     ) -> Self {
+        let genesis_arc = Arc::new(GENESIS_BLOCK);
         let mut c = Context {
             net_send: net_send,
             num_nodes: config.num_nodes,
@@ -67,7 +69,7 @@ impl Context {
             storage: Storage::new(EXTRA_SPACE*config.block_size),
             height: 0,
             last_leader: 0,
-            last_seen_block: GENESIS_BLOCK,
+            last_seen_block: genesis_arc.clone(),
             last_committed_block_ht: 0,
             cert_map: HashMap::new(),
             view: 0,
@@ -95,13 +97,13 @@ impl Context {
             c.pub_key_map.insert(id, pk);
         }
         c.storage.all_delivered_blocks_by_hash
-            .insert(GENESIS_BLOCK.hash, GENESIS_BLOCK);
+            .insert(GENESIS_BLOCK.hash, genesis_arc.clone());
         c.storage.all_delivered_blocks_by_ht
-            .insert(0, GENESIS_BLOCK);
+            .insert(0, genesis_arc.clone());
         c.storage.committed_blocks_by_hash
-            .insert(GENESIS_BLOCK.hash, GENESIS_BLOCK);
+            .insert(GENESIS_BLOCK.hash, genesis_arc.clone());
         c.storage.committed_blocks_by_ht
-            .insert(0, GENESIS_BLOCK);
+            .insert(0, genesis_arc);
         c.cert_map.insert(GENESIS_BLOCK.hash, Certificate::empty_cert());
         c
     }

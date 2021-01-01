@@ -1,12 +1,19 @@
-use types::{Propose, ProtocolMsg};
+use types::{Block, Propose, ProtocolMsg};
+use std::sync::Arc;
+use std::borrow::Borrow;
 
 use super::context::Context;
 
 pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
+    // println!("On finish: {:?} from [{}]", p.new_block.header, cx.myid);
+    // println!("Last seen {:?} from {}", cx.last_seen_block.header, cx.myid);
     let forward_leader = cx.next_of(p.new_block.header.author);
     let send_p = cx.net_send.clone();
     let p_copy = p.clone();
     let myid = cx.myid;
+    let new_block = &p.new_block;
+    let new_block_ref = Arc::new(new_block.clone());
+
     let forward_handle = tokio::spawn(async move {
         if forward_leader == myid {
             return;
@@ -14,25 +21,24 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
         if let Err(e) = send_p.send(
             (
                 forward_leader, 
-                ProtocolMsg::NewProposal(p_copy)
+                Arc::new(ProtocolMsg::NewProposal(p_copy))
             )
         ).await {
             println!("Failed to forward proposal to the next leader: {}", e);
         }
     });
-    let new_block = &p.new_block;
     cx.height = new_block.header.height;
     cx.storage.all_delivered_blocks_by_hash.insert(
-        new_block.hash, new_block.clone());
+        new_block.hash, new_block_ref.clone());
     cx.storage.all_delivered_blocks_by_ht.insert(
-        new_block.header.height, new_block.clone());
+        new_block.header.height, new_block_ref.clone());
     // change the leader
     cx.last_leader = new_block.header.author;
 
     assert_eq!(cx.last_seen_block.hash, new_block.header.prev, "blocks must be delivered before this step");
     assert_eq!(cx.last_seen_block.header.height+1, 
         new_block.header.height, "blocks must be processed in order");
-    cx.last_seen_block = new_block.clone();
+    cx.last_seen_block = Arc::new(new_block.clone());
     // Do we have any blocks to commit?
     if cx.height < cx.num_faults as u64 {
         println!("Nothing to commit");
@@ -58,21 +64,22 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
     cx.storage.committed_blocks_by_hash.insert(block.hash, block.clone());
 
     let cli_block = if cx.is_client_apollo_enabled {
-        p.new_block.clone()
+        new_block_ref
     } else {
         block.clone()
     };
-    let payload = cx.payload;
     let cli_send_p = cx.cli_send.clone();
     let cli_send = tokio::spawn(async move {
-        let mut cli_block = cli_block;
-        cli_block.add_payload(payload);
-        if let Err(e) = cli_send_p.send(cli_block.clone()).await {
+        let cli_block = (cli_block.borrow() as &Block).clone();
+        let res = cli_send_p.send(cli_block).await;
+        if let Err(e) = res {
             print!("Error sending to the clients: {}", e);
         }
-        // println!("Sending block: {:?}", cli_block);
     });
 
+    // The server need not wait for the client to get the blocks, it can proceed
+    // to handling the next proposal
+    
     if let Err(e) = cli_send.await {
         println!("Failed to send the block to the client: {}", e);
     }

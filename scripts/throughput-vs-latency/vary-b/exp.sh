@@ -20,46 +20,46 @@ for w in ${SW_List[@]}; do
     echo "DP[Window]: $w"
     W=$w bash scripts/synchs-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b100-synchs-run.log
+done >> $1/b100-synchs-run.log
 
 for w in ${W_List[@]}; do
     echo "DP[Window]: $w"
     W=$w bash scripts/quick-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b100-apollo-run.log
+done >> $1/b100-apollo-run.log
 
 for w in ${SW2_List[@]}; do
     echo "DP[Window]: $w"
     W=$w TESTDIR="testdata/b400-n3" bash scripts/synchs-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b400-synchs-run.log
+done >> $1/b400-synchs-run.log
 
 for w in ${W2_List[@]}; do
     echo "DP[Window]: $w"
     W=$w TESTDIR="testdata/b400-n3" bash scripts/quick-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b400-apollo-run.log
+done >> $1/b400-apollo-run.log
 
 for w in ${SW3_List[@]}; do
     echo "DP[Window]: $w"
     W=$w TESTDIR="testdata/b800-n3" bash scripts/synchs-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b800-synchs-run.log
+done >> $1/b800-synchs-run.log
 
 for w in ${W3_List[@]}; do
     echo "DP[Window]: $w"
     W=$w TESTDIR="testdata/b800-n3" bash scripts/quick-test.sh | grep "DP\["
     sleep 2
-done >> scripts/throughput-vs-latency/vary-b/$1-b800-apollo-run.log
+done >> $1/b800-apollo-run.log
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b100-synchs-run.log scripts/throughput-vs-latency/vary-b/$1-b100-synchs.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b100-synchs-run.log $1/b100-synchs.csv
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b100-apollo-run.log scripts/throughput-vs-latency/vary-b/$1-b100-apollo.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b100-apollo-run.log $1/b100-apollo.csv
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b400-synchs-run.log scripts/throughput-vs-latency/vary-b/$1-b400-synchs.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b400-synchs-run.log $1/b400-synchs.csv
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b400-apollo-run.log scripts/throughput-vs-latency/vary-b/$1-b400-apollo.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b400-apollo-run.log $1/b400-apollo.csv
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b800-synchs-run.log scripts/throughput-vs-latency/vary-b/$1-b800-synchs.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b800-synchs-run.log $1/b800-synchs.csv
 
-python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-b800-apollo-run.log scripts/throughput-vs-latency/vary-b/$1-b800-apollo.csv
+python scripts/throughput-vs-latency/vary-b/parse-exp.py $1/b800-apollo-run.log $1/b800-apollo.csv

@@ -4,11 +4,12 @@ use std::{
 };
 use crypto::hash::Hash;
 
-use crossfire::mpsc::{
-    RxFuture, 
-    SharedFutureBoth, 
-    TxFuture
-};
+// use crossfire::mpsc::{
+    // RxFuture, 
+    // SharedFutureBoth, 
+    // TxFuture
+// };
+// use tokio::sync::mpsc::Sender;
 
 #[cfg(test)]
 mod tests {
@@ -23,8 +24,8 @@ pub mod synchs;
 pub mod dummy;
 
 // mod start
-type Sender<T> = TxFuture<T, SharedFutureBoth>;
-type Receiver<T> = RxFuture<T, SharedFutureBoth>;
+// type Sender<T> = Sender<T>;
+// type Receiver<T> = Receiver<T>;
 
 pub fn statistics(
     now: SystemTime, 
