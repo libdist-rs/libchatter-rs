@@ -46,7 +46,7 @@ pub async fn start(
     let mut num_cmds:u128 = 0;
     // Send f blocks worth of transactions first
     let first_send = c.num_faults*c.block_size;
-    println!("First sending {} tx", first_send);
+    // println!("First sending {} tx", first_send);
     let net_send_p = net_send.clone();
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
@@ -56,7 +56,7 @@ pub async fn start(
     recv
     });
     let first_recv = c.num_faults;
-    println!("First receiving {} blocks", first_recv);
+    // println!("First receiving {} blocks", first_recv);
     let first_recv_b = tokio::spawn(async move{
     for _ in 0..(first_recv) {
         let b = net_recv.recv().await.unwrap();
@@ -78,7 +78,7 @@ pub async fn start(
     let mut net_recv = val.0;
     let mut height_map = val.1;
     let mut hash_map = val.2;
-    println!("Finished sending first few blocks");
+    // println!("Finished sending first few blocks");
     let start = SystemTime::now();
     loop {
         tokio::select! {
@@ -115,9 +115,9 @@ pub async fn start(
                     continue;
                 }
                 last_block = &b;
-                if last_block.header.height % 100 == 0 {
-                    println!("Got 100 blocks");
-                }
+                // if last_block.header.height % 100 == 0 {
+                //     println!("Got 100 blocks");
+                // }
                 height_map.insert(b.header.height,b.clone());
                 hash_map.insert(b.hash, b.clone());
                 if c.num_faults+1 > b.header.height as usize {
