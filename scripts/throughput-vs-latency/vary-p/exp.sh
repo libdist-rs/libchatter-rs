@@ -38,13 +38,13 @@ done >> $1/p128-apollo-run.log
 
 for w in ${SW_List[@]}; do
     echo "DP[Window]: $w"
-    W=$w TESTDIR="testdata/b400-n3-p1024" bash scripts/synchs-test.sh #| grep "DP\["
+    W=$w TESTDIR="testdata/b400-n3-p1024" bash scripts/synchs-test.sh | grep "DP\["
     sleep 2
 done >> $1/p1024-synchs-run.log
 
 for w in ${W_List[@]}; do
     echo "DP[Window]: $w"
-    W=$w TESTDIR="testdata/b400-n3-p1024" bash scripts/quick-test.sh #| grep "DP\["
+    W=$w TESTDIR="testdata/b400-n3-p1024" bash scripts/quick-test.sh | grep "DP\["
     sleep 2
 done >> $1/p1024-apollo-run.log
 
@@ -59,5 +59,3 @@ python scripts/throughput-vs-latency/vary-p/parse-exp.py $1/p128-apollo-run.log 
 python scripts/throughput-vs-latency/vary-p/parse-exp.py $1/p1024-synchs-run.log $1/p1024-synchs.csv
 
 python scripts/throughput-vs-latency/vary-p/parse-exp.py $1/p1024-apollo-run.log $1/p1024-apollo.csv
-
-# python scripts/throughput-vs-latency/vary-b/parse-exp.py scripts/throughput-vs-latency/vary-b/$1-apollo-run.log scripts/throughput-vs-latency/vary-b/$1-apollo.csv
