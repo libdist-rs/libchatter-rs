@@ -39,8 +39,8 @@ pub async fn start(
     ).await
     .expect("Failed to bind to client port");
     
-    let (send, recv) = channel(100_000);
-    let (blk_send, mut blk_recv) = channel::<Arc<Block>>(100_000);
+    let (send, recv) = channel(util::CHANNEL_SIZE);
+    let (blk_send, mut blk_recv) = channel::<Arc<Block>>(util::CHANNEL_SIZE);
     let mut readers = StreamMap::new();
     let mut writers = Vec::new();
     // Start listening to new client connections
@@ -95,7 +95,7 @@ async fn cli_manager(
     listener: TcpListener,
 ) -> Receiver<TcpStream>
 {
-    let (send, recv) = channel(100_000);
+    let (send, recv) = channel(util::CHANNEL_SIZE);
     tokio::spawn(async move {
         loop {
             let conn = listener.accept().await;

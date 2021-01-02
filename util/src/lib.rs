@@ -18,3 +18,5 @@ pub fn new_dummy_tx(i:u64, payload:usize) -> Transaction {
         request: vec![1;payload],
     }
 }
+
+pub const CHANNEL_SIZE:usize = 100_000;

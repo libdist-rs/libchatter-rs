@@ -78,7 +78,7 @@ pub async fn start(config:Client) {
         )
     ).build();
 
-    let (send, mut recv) = channel(config.block_size*(config.num_faults+1));
+    let (send, mut recv) = channel(util::CHANNEL_SIZE);
     tokio::spawn(async move {
         let mut tx_ctr = 1;
         loop {

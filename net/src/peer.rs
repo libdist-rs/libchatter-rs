@@ -46,14 +46,14 @@ O: WireReady+'static + Clone+Sync,
         // network
         //
         // 
-        let (send_in, recv_in) = channel::<I>(100_000);
-        let (send_out, mut recv_out) = channel::<Arc<O>>(100_000);
+        let (send_in, recv_in) = channel::<I>(util::CHANNEL_SIZE);
+        let (send_out, mut recv_out) = channel::<Arc<O>>(util::CHANNEL_SIZE);
         
         let mut reader = FramedRead::new(rd, d);
         let mut writer = FramedWrite::new(wr, e);
         let handle = tokio::runtime::Handle::current();
-        let (internal_ch_in_send, mut internal_ch_in_recv) = channel(100_000);
-        let (internal_ch_out_send, mut internal_ch_out_recv) = channel::<InternalOutMsg<O>>(100_000);
+        let (internal_ch_in_send, mut internal_ch_in_recv) = channel(util::CHANNEL_SIZE);
+        let (internal_ch_out_send, mut internal_ch_out_recv) = channel::<InternalOutMsg<O>>(util::CHANNEL_SIZE);
         handle.spawn(async move {
             loop {
                 let opt = internal_ch_out_recv.recv().await;

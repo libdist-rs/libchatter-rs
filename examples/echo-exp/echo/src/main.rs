@@ -15,7 +15,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let sock = TcpListener::bind(format!("0.0.0.0:{}",port))
         .await
         .expect("Failed to bind to port");
-    let mut buf = [0 as u8; 100_000];
+    let mut buf = [0 as u8; 1_000_000]; // Nearly 1 MB buffer
     loop {
         let conn = sock.accept().await;
         if let Err(e) = conn {

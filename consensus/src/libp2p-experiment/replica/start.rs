@@ -67,7 +67,7 @@ pub async fn start(mut config: Node) -> Result<(), Box<dyn Error>> {
     
 //     // create a channel to process client events
     let (cli_send, mut cli_recv) = 
-        channel(config.block_size);
+        channel(util::CHANNEL_SIZE);
     let blocksize = config.block_size;
     tokio::spawn(async move {
         let mut txs = Vec::with_capacity(blocksize as usize);

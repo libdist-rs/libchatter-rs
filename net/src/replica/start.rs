@@ -124,8 +124,8 @@ pub async fn start(
 
     // let x = map.next();
 
-    let (msg_rd_send, msg_rd_recv) = channel(100_000);
-    let (msg_wr_send, mut msg_wr_recv) = channel::<(Replica, Arc<ProtocolMsg>)>(100_000);
+    let (msg_rd_send, msg_rd_recv) = channel(util::CHANNEL_SIZE);
+    let (msg_wr_send, mut msg_wr_recv) = channel::<(Replica, Arc<ProtocolMsg>)>(util::CHANNEL_SIZE);
 
     tokio::spawn(async move {
         loop {

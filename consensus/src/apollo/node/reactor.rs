@@ -22,7 +22,7 @@ pub async fn reactor(
     is_client_apollo_enabled: bool,
 ) {
     // let cli_ship_p = cli_send.clone();
-    let (send, mut recv) = channel(100_000);
+    let (send, mut recv) = channel(util::CHANNEL_SIZE);
     let mut cx = Context::new(config, net_send, send);
     cx.is_client_apollo_enabled = is_client_apollo_enabled;
     let block_size = config.block_size;

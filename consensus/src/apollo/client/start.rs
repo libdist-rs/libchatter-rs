@@ -20,7 +20,7 @@ pub async fn start(
 ) {
     let payload = c.payload;
     // Start with the sink implementation
-    let (send, mut recv) = channel(100_000);
+    let (send, mut recv) = channel(util::CHANNEL_SIZE);
     let m = metric;
     tokio::spawn(async move{
         let mut i = 0;

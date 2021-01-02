@@ -37,8 +37,8 @@ pub async fn start(config:&Client) -> (Sender<Arc<Transaction>>, Receiver<Arc<Bl
         map.insert(i.clone(), recv);
     }
     // for the outside world to talk to the network manager
-    let (net_in_send, mut net_in_recv) = channel::<Arc<Transaction>>(100_000);
-    let (net_out_send, net_out_recv) = channel::<Arc<Block>>(100_000);
+    let (net_in_send, mut net_in_recv) = channel::<Arc<Transaction>>(util::CHANNEL_SIZE);
+    let (net_out_send, net_out_recv) = channel::<Arc<Block>>(util::CHANNEL_SIZE);
     
     tokio::spawn(async move{
         loop {
