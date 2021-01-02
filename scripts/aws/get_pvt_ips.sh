@@ -8,7 +8,7 @@ done < $FILE
 for ip in "${IPS[@]}"
 do
     ssh arch@$ip 'ip address show' | \
-    grep "inet .* eth0" | \
+    grep "inet .* brd" | \
     sed 's/ brd.*//g' | \
     sed 's/inet //' | \
     sed 's;/.*;;g' | \
