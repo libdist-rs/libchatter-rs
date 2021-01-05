@@ -17,3 +17,4 @@ tokio = {version = "1.0", features = ["full"]}
 bytes = "1.0"
 types = {package = "types", path = "../types"}
 tokio-util = {version="0.6", features= ["full"]}
+log = "*"
