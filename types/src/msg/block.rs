@@ -105,9 +105,10 @@ impl Block {
     }
 
     pub fn update_hash(&mut self) {
-        let temp = self.payload.drain(..).collect();
+        let empty_vec = vec![0; 0];
+        let old_vec = std::mem::replace(&mut self.payload, empty_vec);
         self.hash = crypto::hash::ser_and_hash(&self);
-        self.payload = temp;
+        let _ = std::mem::replace(&mut self.payload, old_vec);
     }
 }
 
