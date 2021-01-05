@@ -54,3 +54,9 @@ impl Decoder for Codec {
         }
     }
 }
+
+impl std::clone::Clone for Codec {
+    fn clone(&self) -> Self {
+        Codec::new()
+    }
+}

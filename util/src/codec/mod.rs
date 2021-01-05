@@ -14,3 +14,9 @@ impl EnCodec {
         EnCodec(LengthDelimitedCodec::new())
     }
 }
+
+impl std::clone::Clone for EnCodec {
+    fn clone(&self) -> Self {
+        EnCodec::new()
+    }
+}

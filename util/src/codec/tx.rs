@@ -9,6 +9,7 @@ use std::{sync::Arc, borrow::Borrow};
 
 use crate::io::to_bytes;
 
+#[derive(Debug)]
 pub struct Codec (pub LengthDelimitedCodec);
 
 impl Codec {
@@ -51,5 +52,11 @@ impl Decoder for Codec {
             )),
             None => Ok(None),
         }
+    }
+}
+
+impl std::clone::Clone for Codec {
+    fn clone(&self) -> Self {
+        Codec::new()
     }
 }

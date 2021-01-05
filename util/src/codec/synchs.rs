@@ -48,3 +48,9 @@ impl Encoder<Arc<ProtocolMsg>> for super::EnCodec {
         return self.0.encode(buf, dst);
     }
 }
+
+impl std::clone::Clone for Codec {
+    fn clone(&self) -> Self {
+        Codec::new()
+    }
+}
