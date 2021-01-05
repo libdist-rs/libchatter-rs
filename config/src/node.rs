@@ -158,7 +158,7 @@ impl Node {
             self.net_map.insert(idx, ip);
             idx += 1;
         }
-        // println!("Talking to servers: {:?}", self.net_map);
+        log::info!(target:"config", "Talking to servers: {:?}", self.net_map);
     }
 
     pub fn my_ip(&self) -> String {
@@ -166,5 +166,11 @@ impl Node {
         self.net_map.get(&self.id)
             .expect("Failed to obtain IP for self. Incorrect config file.")
             .clone()
+    }
+
+    /// Returns the address at which a server should listen to incoming client
+    /// connections
+    pub fn client_ip(&self) -> String {
+        format!("0.0.0.0:{}", self.client_port)
     }
 }

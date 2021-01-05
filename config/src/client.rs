@@ -127,6 +127,6 @@ impl Client {
             self.net_map.insert(idx, ip);
             idx += 1;
         }
-        println!("Talking to servers: {:?}", self.net_map);
+        log::info!(target:"config", "Talking to servers: {:?}", self.net_map);
     }
 }
