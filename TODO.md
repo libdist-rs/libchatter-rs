@@ -12,6 +12,8 @@
 - [ ] Fix exp.sh for vary d
 - [x] Change apollo client pending command manager: send f blocks first, then start tracking pending commands.
 - [ ] Util: Write one generic encoder
+- [ ] Util: Write one generic decoder
 - [x] Use Arcs to avoid cloning of protocol messages
 - [x] Initialize protocol messages and blocks only once before arcing
-- [ ] Net: Generalize to be protocol agnostic
+- [x] Net: Generalize to be protocol agnostic
+- [ ] Reorg library
