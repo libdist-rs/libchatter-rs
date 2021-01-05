@@ -35,6 +35,21 @@ impl ProtocolMsg {
             .expect("failed to decode the protocol message");
         return c;
     }
+
+    pub fn init(self) -> Self {
+        match self {
+            ProtocolMsg::NewProposal(mut p) => {
+                p.init();
+                return ProtocolMsg::NewProposal(p)
+            },
+            ProtocolMsg::VoteMsg(_v, mut p) => {
+                p.init();
+                return ProtocolMsg::VoteMsg(_v, p);
+            },
+            _ => (),
+        }
+        self
+    }
 }
 
 impl WireReady for ProtocolMsg {}
