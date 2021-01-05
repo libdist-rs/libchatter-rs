@@ -23,6 +23,18 @@ async fn main() -> Result<(), Box<dyn Error>> {
         "yaml" => Client::from_yaml(str),
         _ => panic!("Invalid config file extension"),
     };
+
+    simple_logger::SimpleLogger::new().init().unwrap();
+    let x = m.occurrences_of("debug");
+    match x {
+        0 => log::set_max_level(log::LevelFilter::Info),
+        1 => log::set_max_level(log::LevelFilter::Debug),
+        2 | _ => log::set_max_level(log::LevelFilter::Trace),
+    }
+    
+    log::info!(target:"app", "using log level {}, got input {}", 
+        log::max_level(), x);
+
     config
         .validate()
         .expect("The decoded config is not valid");
@@ -36,8 +48,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     println!("Successfully decoded the config file");
-    let (net_send,net_recv) = net::client::start(&config).await;
+    
     consensus::synchs::client::start(
-        &config, net_send, net_recv, metrics, window).await;
+        &config, metrics, window).await;
     Ok(())
 }

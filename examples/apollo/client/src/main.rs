@@ -30,14 +30,23 @@ async fn main() -> Result<(), Box<dyn Error>> {
         config.update_config(util::io::file_to_ips(f.to_string()));
     }
     let config = config;
-    println!("Successfully decoded the config file");
+
+    simple_logger::SimpleLogger::new().init().unwrap();
+    let x = m.occurrences_of("debug");
+    match x {
+        0 => log::set_max_level(log::LevelFilter::Info),
+        1 => log::set_max_level(log::LevelFilter::Debug),
+        2 | _ => log::set_max_level(log::LevelFilter::Trace),
+    }
+
+    log::info!(target:"app", "Successfully decoded the config file");
     let metrics:u64 = m.value_of("metrics").unwrap_or("500000")
         .parse().unwrap();
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     println!("Successfully decoded the config file");
-    let (net_send,net_recv) = net::client::start(&config).await;
+    
     consensus::apollo::client::start(
-        &config, net_send, net_recv, metrics, window).await;
+        &config, metrics, window).await;
     Ok(())
 }
