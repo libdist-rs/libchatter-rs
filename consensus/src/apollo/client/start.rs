@@ -3,21 +3,25 @@ use std::{collections::HashMap, time::SystemTime};
 use config::Client;
 use types::{Block, GENESIS_BLOCK, Height, Transaction};
 use tokio::sync::mpsc::{channel};
-use tokio::sync::mpsc::{Sender, Receiver};
-// use crate::{Sender, Receiver};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
+use util::codec::{EnCodec, block::Codec};
 use std::borrow::Borrow;
 
 pub async fn start(
     c:&Client, 
-    net_send: Sender<Arc<Transaction>>, 
-    mut net_recv: Receiver<Arc<Block>>, 
     metric: u64,
     window: usize,
 ) {
+
+    let mut client_network = net::Client::<Block, Transaction>::new();
+    let servers = c.net_map.clone();
+    let send_id = c.num_nodes;
+    let (net_send,mut net_recv) = 
+        client_network.setup(servers, EnCodec::new(), Codec::new()).await;
+
     let payload = c.payload;
     // Start with the sink implementation
     let (send, mut recv) = channel(util::CHANNEL_SIZE);
@@ -28,7 +32,7 @@ pub async fn start(
             let tx = new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
-                println!("Closing tx producer channel: {}", e);
+                log::info!(target:"consensus","Closing tx producer channel: {}", e);
                 std::process::exit(0);
             }
         }
@@ -46,20 +50,22 @@ pub async fn start(
     let mut num_cmds:u128 = 0;
     // Send f blocks worth of transactions first
     let first_send = c.num_faults*c.block_size;
-    // println!("First sending {} tx", first_send);
+    log::debug!(target:"consensus", "Sending {} number of transactions initially", first_send);
     let net_send_p = net_send.clone();
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
         let next = recv.recv().await.unwrap();
-        net_send_p.send(next).await.unwrap();
+        net_send_p.send((send_id as u16,next)).await.unwrap();
     }
     recv
     });
     let first_recv = c.num_faults;
-    // println!("First receiving {} blocks", first_recv);
+    log::debug!(target:"consensus", "Receiving first {} blocks", first_recv);
     let first_recv_b = tokio::spawn(async move{
     for _ in 0..(first_recv) {
-        let b = net_recv.recv().await.unwrap();
+        let (_, mut b) = net_recv.recv().await.unwrap();
+        b.update_hash();
+        let b = Arc::new(b);
         let is_in_ht_map = height_map.contains_key(&b.header.height);
         let is_in_hash_map = hash_map.contains_key(&b.hash);
         if is_in_ht_map && !is_in_ht_map {
@@ -78,7 +84,7 @@ pub async fn start(
     let mut net_recv = val.0;
     let mut height_map = val.1;
     let mut hash_map = val.2;
-    // println!("Finished sending first few blocks");
+    log::debug!(target:"consensus", "Finished sending first few blocks");
     let start = SystemTime::now();
     loop {
         tokio::select! {
@@ -86,14 +92,14 @@ pub async fn start(
                 if let Some(x) = tx_opt {
                     let tx = x.borrow() as &Transaction;
                     let hash = crypto::hash::ser_and_hash(tx);
-                    net_send.send(x).await
+                    net_send.send((send_id as u16,x)).await
                     .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
                     // println!("Sending transaction to the leader");
                 } else {
                     println!("Finished sending messages");
-                    break;
+                    std::process::exit(0);
                 }
             },
             block_opt = net_recv.recv() => {
@@ -101,7 +107,9 @@ pub async fn start(
                 if let None = block_opt {
                     panic!("invalid content received from the server");
                 }
-                let b = block_opt.unwrap(); 
+                let (_, mut b) = block_opt.unwrap(); 
+                b.update_hash();
+                let b = Arc::new(b);
                 // println!("Got a block {:?}",b);
                 let now = SystemTime::now();
                 let is_in_ht_map = height_map.contains_key(&b.header.height);

@@ -26,9 +26,9 @@ use std::borrow::Borrow;
 pub async fn reactor(
     config:&Node,
     net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-    mut net_recv: Receiver<Arc<ProtocolMsg>>,
+    mut net_recv: Receiver<(Replica, ProtocolMsg)>,
     cli_send: Sender<Arc<Block>>,
-    mut cli_recv: Receiver<Arc<Transaction>>
+    mut cli_recv: Receiver<Transaction>
 ) {
     let d2 = std::time::Duration::from_millis(2*config.delta);
     let mut queue:DelayQueue<Arc<Block>> = tokio_util::time::DelayQueue::new();
@@ -42,12 +42,14 @@ pub async fn reactor(
                 // Received a protocol message
                 let protmsg = match pmsg_opt {
                     None => break,
-                    Some(x) => x,
+                    Some((_, x)) => {
+                        x.init()
+                    },
                 };
                 // println!("Received protocol message: {:?}", protmsg);
-                if let ProtocolMsg::NewProposal(p) = protmsg.borrow() {
+                if let ProtocolMsg::NewProposal(p) = &protmsg {
                     // println!("Received a proposal: {:?}", p);
-                    let decision = on_receive_proposal(&p, &mut cx).await;
+                    let decision = on_receive_proposal(p, &mut cx).await;
                     // println!("Decision for the incoming proposal is {}", decision);
                     if decision {
                         queue.insert(cx.last_seen_block.clone(), d2);
@@ -64,10 +66,10 @@ pub async fn reactor(
                 let tx = match tx_opt {
                     None => break,
                     Some(x) => {
-                        ((x.borrow() as &Transaction).clone(),x)
+                        x
                     }
                 };
-                cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx.0),tx.0);
+                cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx),tx);
             },
             b_opt = queue.next(), if !queue.is_empty() => {
                 // Got something from the timer

@@ -3,21 +3,24 @@ use std::{collections::{HashMap, HashSet}, time::{SystemTime}};
 use config::Client;
 use types::{Transaction, Block};
 use tokio::sync::mpsc::{channel};
-use tokio::sync::mpsc::{Sender, Receiver};
-// use crate::{Sender, Receiver};
 use util::{new_dummy_tx};
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
+use util::codec::{EnCodec, block::Codec};
 use std::borrow::Borrow;
 
 pub async fn start(
     c:&Client, 
-    net_send: Sender<Arc<Transaction>>, 
-    mut net_recv: Receiver<Arc<Block>>, 
     metric: u64,
     window: usize,
 ) {
+    let mut client_network = net::Client::<Block, Transaction>::new();
+    let servers = c.net_map.clone();
+    let send_id = c.num_nodes as u16;
+    let (net_send,mut net_recv) = 
+        client_network.setup(servers, EnCodec::new(), Codec::new()).await;
+
     // Start with the sink implementation
     let (send, mut recv) = channel(util::CHANNEL_SIZE);
     let m = metric;
@@ -28,7 +31,7 @@ pub async fn start(
             let tx = new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
-                println!("Closing tx producer channel: {}", e);
+                log::info!(target:"consensus", "Closing tx producer channel: {}", e);
                 std::process::exit(0);
             }
         }
@@ -51,19 +54,21 @@ pub async fn start(
                 if let Some(x) = tx_opt {
                     // let bytes = to_bytes(&tx);
                     let hash = crypto::hash::ser_and_hash(x.borrow() as &Transaction);
-                    net_send.send(x).await
+                    net_send.send((send_id, x)).await
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
                     // println!("Sending transaction to the leader");
                 } else {
-                    println!("Finished sending messages");
-                    break;
+                    log::info!(target:"client", "Finished sending messages");
+                    std::process::exit(0);
                 }
             },
             block_opt = net_recv.recv() => {
                 // Got something from the network
-                if let Some(b) = block_opt {
+                if let Some((_, mut b)) = block_opt {
+                    b.update_hash();
+                    let b = Arc::new(b);
                     // println!("got a block:{:?}",b);
                     // Check if the block is valid?
                     if !count_map.contains_key(&b.hash) {
@@ -83,21 +88,13 @@ pub async fn start(
                     num_cmds += c.block_size as u128;
                     for t in &b.body.tx_hashes {
                         if let Some(old) = time_map.get(t) {
-                            // let diff = now.duration_since(*old).expect("time difference error").as_millis();
-                            // latency_sum += diff;
                             latency_map.insert(t.clone(), (old.clone(),now));
                         } else {
                             println!("transaction not found in time map");
-                            // println!("time map: {:?}", time_map);
-                            // println!("block hashes: {:?}", b.body.tx_hashes);
-                            // return;
                             num_cmds -= 1;
                         }
                     }
                     finished_map.insert(b.hash);
-                    // if b.header.height % 100 == 0 {
-                        // println!("Got 100 blocks");
-                    // }
                 } else {
                     panic!("invalid content received from the server");
                 }

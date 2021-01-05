@@ -3,10 +3,8 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-use tokio::sync::mpsc::{Receiver, Sender, channel};
-// use crate::{Sender, Receiver};
-// use crossfire::mpsc::bounded_tx_future_rx_blocking;
-use types::{Block, ProtocolMsg, Replica, Transaction};
+use tokio::sync::mpsc::{channel, Sender, Receiver};
+use types::{Block, Replica, ProtocolMsg, Transaction};
 use config::Node;
 use super::{proposal::*};
 use super::blame::*;
@@ -15,13 +13,13 @@ use std::{sync::Arc, borrow::Borrow};
 
 pub async fn reactor(
     config:&Node,
-    net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-    mut net_recv: Receiver<Arc<ProtocolMsg>>,
-    cli_send: Sender<Arc<Block>>,
-    mut cli_recv: Receiver<Arc<Transaction>>,
     is_client_apollo_enabled: bool,
+    net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
+    mut net_recv: Receiver<(Replica, ProtocolMsg)>,
+    cli_send: Sender<Arc<Block>>,
+    mut cli_recv: Receiver<Transaction>,
 ) {
-    // let cli_ship_p = cli_send.clone();
+    // Optimization to improve latency when the payloads are high
     let (send, mut recv) = channel(util::CHANNEL_SIZE);
     let mut cx = Context::new(config, net_send, send);
     cx.is_client_apollo_enabled = is_client_apollo_enabled;
@@ -44,14 +42,14 @@ pub async fn reactor(
             pmsg_opt = net_recv.recv() => {
                 // Received a protocol message
                 if let None = pmsg_opt {
-                    break;
+                    log::error!(target:"node", "Protocol message channel closed");
+                    std::process::exit(0);
                 }
-                let pmsg = pmsg_opt.unwrap();
-                let bor:&types::ProtocolMsg = pmsg.borrow();
-                match bor {
-                    ProtocolMsg::NewProposal(p) => {
-                        // let p_arc = Arc::new(p.clone());
-                        on_receive_proposal(p, &mut cx).await;
+                let (_, pmsg) = pmsg_opt.unwrap();
+                match pmsg {
+                    ProtocolMsg::NewProposal(mut p) => {
+                        p.new_block.update_hash();
+                        on_receive_proposal(&p, &mut cx).await;
                     },
                     ProtocolMsg::Blame(v) => {
                         on_receive_blame(v.clone(), &mut cx).await;
