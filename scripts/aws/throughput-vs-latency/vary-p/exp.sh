@@ -15,9 +15,6 @@ mkdir -p "$1"
 W_List=(800 1000 2000 4000 7000 10000 20000 40000 60000 80000)
 SW_List=(800 1000 2000 4000 7000 10000 20000 40000 60000 80000)
 
-# W_List=(800)
-# SW_List=(800)
-
 for w in ${SW_List[@]}; do
     echo "DP[Window]: $w"
     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b400-n3" $w "synchs"

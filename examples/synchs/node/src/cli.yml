@@ -19,4 +19,7 @@ args:
         help: A file containing all the ips for the other servers
         takes_value: true
         required: true
-        
+    - delta:
+        short: d
+        long: delta
+        help: the protocol delta value

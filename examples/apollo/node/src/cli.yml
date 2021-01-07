@@ -23,4 +23,7 @@ args:
         short: s
         help: is the client apollo enabled
         takes_value: false
-    
+    - delta:
+        short: d
+        long: delta
+        help: the protocol delta value

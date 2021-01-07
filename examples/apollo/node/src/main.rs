@@ -24,6 +24,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         "yaml" => Node::from_yaml(str),
         _ => panic!("Invalid config file extension"),
     };
+    if let Some(v) = m.value_of("delta") {
+        config.delta = v.parse().expect("unexpected delta value provided");
+    }
     config
         .validate()
         .expect("The decoded config is not valid");

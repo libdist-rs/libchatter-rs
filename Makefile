@@ -13,7 +13,7 @@ testdata:
 	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3 \
 	testdata/b800-n3-p128 testdata/b400-n3-p128 testdata/b100-n3-p128 \
 	testdata/b800-n3-p1024 testdata/b400-n3-p1024 testdata/b100-n3-p1024 \
-	testdata/test
+	testdata/test testdata/b400-p0-f{1,4,8,32}
 	@./target/debug/genconfig \
 	-n 3 \
 	-d 50 \
@@ -90,6 +90,39 @@ testdata:
 	--client_base_port 10000 \
 	--payload 1024 \
 	--target testdata/b100-n3-p1024
+	# testdata/b400-p0-f{1,4,8,32}
+	@./target/debug/genconfig \
+	-n 3 \
+	-d 50 \
+	--blocksize 400 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--payload 0 \
+	--target testdata/b400-p0-f1
+	@./target/debug/genconfig \
+	-n 9 \
+	-d 50 \
+	--blocksize 400 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--payload 0 \
+	--target testdata/b400-p0-f4
+	@./target/debug/genconfig \
+	-n 17 \
+	-d 50 \
+	--blocksize 400 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--payload 0 \
+	--target testdata/b400-p0-f8
+	@./target/debug/genconfig \
+	-n 64 \
+	-d 50 \
+	--blocksize 400 \
+	--base_port 4000 \
+	--client_base_port 10000 \
+	--payload 0 \
+	--target testdata/b400-p0-f32
 
 # ============= APOLLO =================================================
 apollo-release: 
