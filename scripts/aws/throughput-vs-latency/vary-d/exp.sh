@@ -23,13 +23,13 @@ SW=10000
 
 N=$(( (2*$F)+1 ))
 for d in ${DELAY[@]};do
-    echo "DP[N]: $N"
+    echo "DP[Delay]: $d"
     bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$W" "synchs" "$N" "$d"
     sleep 2
 done >> $1/$F-synchs-run.log
 
 for d in ${DELAY[@]};do
-    echo "DP[N]: $N"
+    echo "DP[Delay]: $d"
     bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$W" "apollo" "$N" "$d"
     sleep 2
 done >> $1/$F-apollo-run.log

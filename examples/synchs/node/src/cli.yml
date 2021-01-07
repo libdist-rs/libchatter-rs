@@ -24,3 +24,7 @@ args:
         long: delta
         help: the protocol delta value
         takes_value: true
+    - sleep:
+        long: sleep
+        help: the initial sleep time (in seconds) to ensure that all the other nodes are up and ready for the protocol
+        takes_value: true

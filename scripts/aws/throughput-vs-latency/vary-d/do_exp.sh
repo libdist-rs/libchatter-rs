@@ -13,6 +13,8 @@ TYPE=${4:-"apollo"}
 N=${5:-"3"}
 DELAY=${6:-"50"}
 
+# echo "Using: $TYPE $TESTDIR $DELAY"
+
 while IFS= read -r line; do
     ACTUAL_IPS+=($line)
 done < $IN_FILE

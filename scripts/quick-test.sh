@@ -19,7 +19,7 @@ W=${W:="100000"}
     --ip ip_file \
     -s &
 
-sleep 5
+sleep 20
 # Nodes must be ready by now
 ./target/$TYPE/client-apollo \
     --config $TESTDIR/client.json \

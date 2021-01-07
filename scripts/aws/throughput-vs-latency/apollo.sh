@@ -4,7 +4,8 @@ DELAY=${3:-"50"}
 
 cd libchatter-rs
 
-echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
+sleep 30
+# echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
 
 ./target/release/node-apollo \
     --config $TESTDIR/nodes-$ID.json \

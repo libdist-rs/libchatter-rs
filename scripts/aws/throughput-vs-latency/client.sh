@@ -4,6 +4,8 @@ TYPE=${3:-"apollo"}
 
 cd libchatter-rs
 
+sleep 30
+
 ./target/release/client-$TYPE \
     --config $TESTDIR/client.json \
     -i cli_ip_file \

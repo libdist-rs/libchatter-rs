@@ -30,6 +30,12 @@ fn main() -> Result<(), Box<dyn Error>> {
         config.delta = v.parse().expect("unexpected delta value provided");
     }
 
+    if let Some(v) = m.value_of("sleep") {
+        unsafe {
+            config::SLEEP_TIME = v.parse().expect("unexpected sleep time");
+        }
+    }
+
     simple_logger::SimpleLogger::new().init().unwrap();
     match m.occurrences_of("verbosity") {
         0 => log::set_max_level(log::LevelFilter::Info),

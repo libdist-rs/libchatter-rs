@@ -8,15 +8,18 @@ W=${W:="100000"}
 
 ./target/$TYPE/node-synchs \
     --config $TESTDIR/nodes-0.json \
+    --delta 50 \
     --ip ip_file &
 ./target/$TYPE/node-synchs \
     --config $TESTDIR/nodes-1.json \
+    --delta 50 \
     --ip ip_file &
 ./target/$TYPE/node-synchs \
     --config $TESTDIR/nodes-2.json \
+    --delta 50 \
     --ip ip_file &
 
-sleep 5
+sleep 20
 # Nodes must be ready by now
 ./target/$TYPE/client-synchs \
     --config $TESTDIR/client.json \

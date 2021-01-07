@@ -2,7 +2,7 @@
 use clap::{load_yaml, App};
 use config::Node;
 use types::{Transaction, Block, ProtocolMsg};
-use std::{error::Error};
+use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let yaml = load_yaml!("cli.yml");
@@ -27,6 +27,13 @@ fn main() -> Result<(), Box<dyn Error>> {
     if let Some(v) = m.value_of("delta") {
         config.delta = v.parse().expect("unexpected delta value provided");
     }
+
+    if let Some(v) = m.value_of("sleep") {
+        unsafe {
+            config::SLEEP_TIME = v.parse().expect("unexpected sleep time");
+        }
+    }
+
     config
         .validate()
         .expect("The decoded config is not valid");
