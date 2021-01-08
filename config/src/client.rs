@@ -1,15 +1,14 @@
-// Client configs
-
-// config:
-
-// Client Config:
-//     map[id]ip, n, f, blocksize
-
-use serde::{Serialize, Deserialize};
-use types::{Replica};
+use serde::{
+    Serialize, 
+    Deserialize
+};
+use types::Replica;
 use crypto::Algorithm;
 use std::collections::HashMap;
-use super::{ParseError,is_valid_replica};
+use super::{
+    ParseError,
+    is_valid_replica
+};
 use std::fs::File;
 use std::io::prelude::*;
 use serde_json::from_reader;

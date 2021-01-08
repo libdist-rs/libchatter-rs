@@ -1,17 +1,14 @@
-// Protocol Config:
-//     n, delta, blocksize, f, id
-
-// Network Config:
-//     client_port, map[id]ip
-
-// Crypto Config:
-//     algorithm_type, pvt_key, map[id]public_key
-
-use serde::{Serialize, Deserialize};
-use types::{Replica};
+use serde::{
+    Serialize, 
+    Deserialize
+};
+use types::Replica;
 use crypto::Algorithm;
 use std::collections::HashMap;
-use super::{ParseError,is_valid_replica};
+use super::{
+    ParseError,
+    is_valid_replica
+};
 use std::fs::File;
 use std::io::prelude::*;
 use serde_json::from_reader;
@@ -19,10 +16,10 @@ use toml::from_str;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Node {
-    // Node network config
+    /// Node network config
     pub net_map: HashMap<Replica, String>,
 
-    // protocol details
+    /// Protocol details
     pub delta: u64,
     pub id: Replica,
     pub num_nodes: usize,
@@ -31,7 +28,7 @@ pub struct Node {
     pub client_port: u16,
     pub payload: usize,
     
-    // Crypto primitives
+    /// Crypto primitives
     pub crypto_alg: Algorithm,
     pub pk_map: HashMap<Replica, Vec<u8>>,
     pub secret_key_bytes: Vec<u8>,
