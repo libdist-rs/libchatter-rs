@@ -13,11 +13,11 @@ from csv import writer
 
 def filter_data(s: str):
     if s.count("DP[Window]:") == 1:
-        return int(s.split(":")[1].strip())
+        return int(s.split("DP[Window]:")[1].strip())
     elif s.count("DP[Throughput]:") == 1:
-        return float(s.split(":")[1].strip())
+        return float(s.split("DP[Throughput]:")[1].strip())
     elif s.count("DP[Latency]:") == 1:
-        return float(s.split(":")[1].strip())
+        return float(s.split("DP[Latency]:")[1].strip())
     else:
         return None
 

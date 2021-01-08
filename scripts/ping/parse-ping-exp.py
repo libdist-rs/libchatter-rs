@@ -17,18 +17,18 @@ from csv import writer
 
 def is_message(s: str):
     if s.count("DP[Message]:") == 1:
-        return s.split(":")[1].strip()
+        return s.split("DP[Message]:")[1].strip()
     return None
 
 def filter_ping(s: str):
     if s.count("DP[Time]:") == 1:
-        return s.split(":")[1].strip()
+        return s.split("DP[Time]:")[1].strip()
     else:
         return None
 
 def filter_interval(s: str):
     if s.count("DP[Int]:") == 1:
-        return s.split(":")[1].strip()
+        return s.split("DP[Int]:")[1].strip()
     else:
         return None
 
