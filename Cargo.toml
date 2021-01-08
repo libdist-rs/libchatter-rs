@@ -1,12 +1,12 @@
-[package]
-name = "libapollo-rust"
-version = "0.1.0"
-authors = ["hermitsage <dth.bht@gmail.com>"]
-edition = "2018"
+# [package]
+# name = "libchatter-rust"
+# version = "0.1.0"
+# authors = ["hermitsage <dth.bht@gmail.com>"]
+# edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+# [dependencies]
 
 [workspace]
 # This should only list projects that are not
@@ -29,7 +29,3 @@ members = [
     "examples/echo-exp/echo",
     "examples/echo-exp/ping",
 ]
-
-# [[bin]]
-# name = "genconfig"
-# path = "tools/genconfig/src/main.rs"
