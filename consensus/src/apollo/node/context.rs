@@ -1,12 +1,9 @@
 use std::collections::HashMap;
-
-// use crossfire::mpsc::{SharedSenderFRecvB, TxFuture};
 use libp2p::{
     identity::Keypair, 
     core::PublicKey
 };
-use tokio::sync::mpsc::{Sender};
-// use crate::Sender;
+use tokio::sync::mpsc::UnboundedSender;
 use types::{
     Block, 
     GENESIS_BLOCK, 
@@ -18,16 +15,14 @@ use types::{
 use config::Node;
 use std::sync::Arc;
 
-// type Sender<T> = TxFuture<T, SharedFutureBoth>;
-
 pub struct Context {
     pub num_nodes: u16,
     pub num_faults: u16,
     pub myid: Replica,
     pub pub_key_map:HashMap<Replica, PublicKey>,
     pub my_secret_key: Keypair,
-    pub net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-    pub cli_send: Sender<Block>,
+    pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+    pub cli_send: UnboundedSender<Block>,
     pub is_client_apollo_enabled: bool,
 
     pub storage: Storage,
@@ -42,8 +37,8 @@ const EXTRA_SPACE:usize = 100;
 
 impl Context {
     pub fn new(config:&Node,
-        net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-        cli_send: Sender<Block>) -> Self {
+        net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+        cli_send: UnboundedSender<Block>) -> Self {
         let mut c = Context{
             num_nodes: config.num_nodes as u16,
             num_faults: config.num_faults as u16,

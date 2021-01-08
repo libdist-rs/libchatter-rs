@@ -1,13 +1,26 @@
-use std::{collections::{HashMap, HashSet}, time::{SystemTime}};
-
+use std::{
+    collections::{
+        HashMap, 
+        HashSet
+    }, 
+    time::SystemTime
+};
 use config::Client;
-use types::{Transaction, Block};
-use tokio::sync::mpsc::{channel};
-use util::{new_dummy_tx};
+use types::{
+    Transaction, 
+    Block
+};
+use tokio::sync::mpsc::{
+    channel
+};
+use util::new_dummy_tx;
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
-use util::codec::{EnCodec, block::Codec};
+use util::codec::{
+    EnCodec, 
+    block::Codec
+};
 use std::borrow::Borrow;
 
 pub async fn start(
@@ -41,24 +54,20 @@ pub async fn start(
     let mut count_map:HashMap<Hash, usize> = HashMap::new();
     let mut finished_map:HashSet<Hash> = HashSet::new();
     let mut latency_map = HashMap::new();
-    // =============
-    // Statistics
-    // =============
-    // println!("Using metric: {}", m);
-    // let mut latency_sum:u128 = 0;
     let mut num_cmds:u128 = 0;
+
     let start = SystemTime::now();
     loop {
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {
                 if let Some(x) = tx_opt {
-                    // let bytes = to_bytes(&tx);
                     let hash = crypto::hash::ser_and_hash(x.borrow() as &Transaction);
-                    net_send.send((send_id, x)).await
+                    net_send.send((send_id, x))
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
-                    // println!("Sending transaction to the leader");
+                    log::debug!(target:"consensus", 
+                        "Sending transaction to the leader");
                 } else {
                     log::info!(target:"client", "Finished sending messages");
                     std::process::exit(0);
@@ -69,7 +78,8 @@ pub async fn start(
                 if let Some((_, mut b)) = block_opt {
                     b.update_hash();
                     let b = Arc::new(b);
-                    // println!("got a block:{:?}",b);
+                    log::debug!(target:"consensus", "got a block:{:?}",b);
+                    
                     // Check if the block is valid?
                     if !count_map.contains_key(&b.hash) {
                         count_map.insert(b.hash, 1);
@@ -90,7 +100,8 @@ pub async fn start(
                         if let Some(old) = time_map.get(t) {
                             latency_map.insert(t.clone(), (old.clone(),now));
                         } else {
-                            println!("transaction not found in time map");
+                            log::warn!(target:"consensus", 
+                                "transaction not found in time map");
                             num_cmds -= 1;
                         }
                     }

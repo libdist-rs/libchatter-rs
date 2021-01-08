@@ -42,12 +42,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
         config.update_config(util::io::file_to_ips(f.to_string()));
     }
     let config = config;
-    println!("Successfully decoded the config file");
     let metrics:u64 = m.value_of("metrics").unwrap_or("500000")
         .parse().unwrap();
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
-    println!("Successfully decoded the config file");
     
     consensus::synchs::client::start(
         &config, metrics, window).await;

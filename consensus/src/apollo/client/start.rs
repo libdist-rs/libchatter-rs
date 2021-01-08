@@ -1,13 +1,24 @@
-use std::{collections::HashMap, time::SystemTime};
+use std::{
+    collections::HashMap, 
+    time::SystemTime
+};
 
 use config::Client;
-use types::{Block, GENESIS_BLOCK, Height, Transaction};
-use tokio::sync::mpsc::{channel};
-use util::{new_dummy_tx};
+use types::{
+    Block, 
+    GENESIS_BLOCK, 
+    Height, 
+    Transaction
+};
+use tokio::sync::mpsc::channel;
+use util::new_dummy_tx;
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
-use util::codec::{EnCodec, block::Codec};
+use util::codec::{
+    EnCodec, 
+    block::Codec
+};
 use std::borrow::Borrow;
 
 pub async fn start(
@@ -55,7 +66,7 @@ pub async fn start(
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
         let next = recv.recv().await.unwrap();
-        net_send_p.send((send_id as u16,next)).await.unwrap();
+        net_send_p.send((send_id as u16,next)).unwrap();
     }
     recv
     });
@@ -92,8 +103,8 @@ pub async fn start(
                 if let Some(x) = tx_opt {
                     let tx = x.borrow() as &Transaction;
                     let hash = crypto::hash::ser_and_hash(tx);
-                    net_send.send((send_id as u16,x)).await
-                    .expect("Failed to send to the client");
+                    net_send.send((send_id as u16,x))
+                        .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
                     // println!("Sending transaction to the leader");

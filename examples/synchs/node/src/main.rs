@@ -50,7 +50,6 @@ fn main() -> Result<(), Box<dyn Error>> {
         config.update_config(util::io::file_to_ips(f.to_string()));
     }
     let config = config;
-    println!("Successfully decoded the config file");
 
     let cli_net_rt = tokio::runtime::Builder::new_multi_thread()
         .enable_all()

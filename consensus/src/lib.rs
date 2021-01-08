@@ -16,6 +16,8 @@ pub fn statistics(
 {
     let mut idx = 0 ;
     let mut total_time = 0;
+    log::info!(target:"statistics", "DP[Start]: {:?}", start);
+    log::info!(target:"statistics", "DP[End]: {:?}", now);
     for (_hash, (begin, end)) in latency_map {
         let time = end.duration_since(begin)
             .expect("time differencing errors")

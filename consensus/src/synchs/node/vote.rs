@@ -1,12 +1,21 @@
-use types::{Certificate, Vote, VoteType, synchs::Propose};
-use context::Context;
+use types::{
+    Certificate, 
+    Vote, 
+    VoteType, 
+    synchs::Propose
+};
 use crypto::hash::Hash;
-
-use super::{context, proposal::{check_hash_eq, on_receive_proposal}};
+use super::{
+    context::Context, 
+    proposal::{
+        check_hash_eq, 
+        on_receive_proposal
+    }
+};
 
 pub fn add_vote(v: &Vote, hash: Hash,cx: &mut Context) {
     if cx.cert_map.contains_key(&hash) {
-        // println!("Extra vote received. discarding");
+        log::debug!(target:"consensus","Extra vote received. discarding");
         return;
     }
     match cx.vote_map.remove(&hash) {
@@ -37,7 +46,7 @@ pub async fn on_vote(v: &Vote, p:&Propose, cx: &mut Context) -> bool {
     // and if not check if it is valid
     let pk = match cx.pub_key_map.get(&v.origin) {
         None => {
-            println!("vote from an unknown origin");
+            log::warn!(target:"consensus", "vote from an unknown origin");
             return decision;
         },
         Some(x) => x,
@@ -47,12 +56,12 @@ pub async fn on_vote(v: &Vote, p:&Propose, cx: &mut Context) -> bool {
         _ => unreachable!("other vote types cant be here"),
     };
     if !pk.verify(&data, &v.auth) {
-        println!("vote not correctly signed");
+        log::warn!(target:"consensus", "vote not correctly signed");
         return decision;
     }
 
     if !check_hash_eq(data, &p.new_block.hash) {
-        println!("vote not for the corresponding hash");
+        log::warn!(target:"consensus", "vote not for the corresponding hash");
         return decision;
     }
     let hash = p.new_block.hash;
@@ -67,7 +76,7 @@ pub async fn on_vote(v: &Vote, p:&Propose, cx: &mut Context) -> bool {
             println!("Got an equivocation");
             return decision;
         } else {
-            // println!("We have seen this block before, and have already voted for it");
+            log::debug!("We have seen this block before, and have already voted for it");
             // add vote for this
             add_vote(v, p.new_block.hash, cx);
             return decision;

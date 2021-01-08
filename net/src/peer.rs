@@ -1,5 +1,4 @@
 use std::collections::VecDeque;
-
 use futures::{
     SinkExt, 
     stream
@@ -20,9 +19,9 @@ use types::WireReady;
 use tokio_stream::StreamExt;
 use std::sync::Arc;
 use tokio::sync::mpsc::{
-    Sender, 
-    Receiver, 
-    channel
+    UnboundedSender, 
+    UnboundedReceiver, 
+    unbounded_channel
 };
 
 /// A Peer is a network object that abstracts as a type that is a stream of type
@@ -37,9 +36,9 @@ where I: WireReady,
 O: WireReady,
 {
     /// Send O msg to this peer
-    pub send: Sender<Arc<O>>,
+    pub send: UnboundedSender<Arc<O>>,
     /// Get I msg from this peer
-    pub recv: Receiver<I>,
+    pub recv: UnboundedReceiver<I>,
 }
 
 enum InternalInMsg {
@@ -67,14 +66,16 @@ O: WireReady+'static + Clone+Sync,
         // network
         //
         // 
-        let (send_in, recv_in) = channel::<I>(util::CHANNEL_SIZE);
-        let (send_out, mut recv_out) = channel::<Arc<O>>(util::CHANNEL_SIZE);
+        let (send_in, recv_in) = unbounded_channel::<I>();
+        let (send_out, mut recv_out) = unbounded_channel::<Arc<O>>();
         
         let mut reader = FramedRead::new(rd, d);
         let mut writer = FramedWrite::new(wr, e);
         let handle = tokio::runtime::Handle::current();
-        let (internal_ch_in_send, mut internal_ch_in_recv) = channel(util::CHANNEL_SIZE);
-        let (internal_ch_out_send, mut internal_ch_out_recv) = channel::<InternalOutMsg<O>>(util::CHANNEL_SIZE);
+        let (internal_ch_in_send, mut internal_ch_in_recv) = 
+            unbounded_channel();
+        let (internal_ch_out_send, mut internal_ch_out_recv) = 
+            unbounded_channel::<InternalOutMsg<O>>();
         handle.spawn(async move {
             loop {
                 let opt = internal_ch_out_recv.recv().await;
@@ -84,7 +85,7 @@ O: WireReady+'static + Clone+Sync,
                         log::error!(target:"peer","Failed to write a message to a peer");
                         std::process::exit(0);
                     }
-                    if let Err(_e) = internal_ch_in_send.send(InternalInMsg::Ready).await {
+                    if let Err(_e) = internal_ch_in_send.send(InternalInMsg::Ready) {
                         log::error!(target:"peer", "Failed to send a message to the internal channel");
                     }
                 } else {
@@ -105,7 +106,7 @@ O: WireReady+'static + Clone+Sync,
                             std::process::exit(0);
                         }
                         if let Some(Ok(x)) = in_opt {
-                            if let Err(_e) = send_in.send(x).await {
+                            if let Err(_e) = send_in.send(x) {
                                 log::warn!(target:"peer", "Error in sending out");
                                 std::process::exit(0);
                             }
@@ -121,7 +122,7 @@ O: WireReady+'static + Clone+Sync,
                             // buffer and try again later
                             if ready {
                                 buffers.push_back(x);
-                                if let Err(_e) = internal_ch_out_send.send(InternalOutMsg::Batch(buffers)).await {
+                                if let Err(_e) = internal_ch_out_send.send(InternalOutMsg::Batch(buffers)) {
                                     log::warn!(target:"net", "Error in sending message out");
                                     std::process::exit(0);
                                 }

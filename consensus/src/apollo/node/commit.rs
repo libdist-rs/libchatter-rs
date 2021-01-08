@@ -23,7 +23,7 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
                 forward_leader, 
                 Arc::new(ProtocolMsg::NewProposal(p_copy))
             )
-        ).await {
+        ) {
             println!("Failed to forward proposal to the next leader: {}", e);
         }
     });
@@ -71,7 +71,7 @@ pub async fn on_finish_propose(p: &Propose, cx: &mut Context) {
     let cli_send_p = cx.cli_send.clone();
     let cli_send = tokio::spawn(async move {
         let cli_block = (cli_block.borrow() as &Block).clone();
-        let res = cli_send_p.send(cli_block).await;
+        let res = cli_send_p.send(cli_block);
         if let Err(e) = res {
             print!("Error sending to the clients: {}", e);
         }

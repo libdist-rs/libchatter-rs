@@ -14,10 +14,10 @@ use tokio::{
         TcpStream
     }, 
     sync::mpsc::{
-        Receiver, 
-        Sender,
-        channel,
-    }
+        UnboundedReceiver, 
+        UnboundedSender,
+        unbounded_channel,
+    },
 };
 use tokio_util::codec::{
     Decoder, 
@@ -48,7 +48,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         node_addr: HashMap<Replica, String>, 
         enc: impl Encoder<Arc<O>> + Clone + Send + Sync + 'static, 
         dec: impl Decoder<Item=I, Error=Err> + Clone + Send + Sync + 'static
-    ) -> (Sender<(Replica, Arc<O>)>, Receiver<(Replica, I)>)
+    ) -> (UnboundedSender<(Replica, Arc<O>)>, UnboundedReceiver<(Replica, I)>)
     {
         // Task that receives connections from everyone
         let incoming_conn_task = 
@@ -57,7 +57,10 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         );
         
         // Sleep for sometime until we are sure everyone is listening
-        tokio::time::sleep(std::time::Duration::from_secs(5)).await;
+        let sleep_time = unsafe {
+            config::SLEEP_TIME
+        };
+        tokio::time::sleep(std::time::Duration::from_secs(sleep_time)).await;
         
         // Start connecting to other nodes
         let mut writers = outgoing_conn(self.my_id, &node_addr)
@@ -96,8 +99,8 @@ O:WireReady + Clone + Sync + 'static + Unpin,
 
         // Create channels so that the outside world can communicate with the
         // network
-        let (in_send, in_recv) = channel::<(Replica, I)>(util::CHANNEL_SIZE);
-        let (out_send, out_recv) = channel(util::CHANNEL_SIZE);
+        let (in_send, in_recv) = unbounded_channel::<(Replica, I)>();
+        let (out_send, out_recv) = unbounded_channel();
 
         // Start the event loop that processes network messages
         tokio::spawn(
@@ -117,10 +120,10 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         listen: String,
         enc: impl Encoder<Arc<O>> + Clone + Send + Sync + 'static, 
         dec: impl Decoder<Item=I, Error=Err> + Clone + Send + Sync + 'static
-    ) -> (Sender<Arc<O>>, Receiver<I>) 
+    ) -> (UnboundedSender<Arc<O>>, UnboundedReceiver<I>) 
     {
-        let (cli_in_send, cli_in_recv) = channel(util::CHANNEL_SIZE);
-        let (cli_out_send, cli_out_recv) = channel(util::CHANNEL_SIZE);
+        let (cli_in_send, cli_in_recv) = unbounded_channel();
+        let (cli_out_send, cli_out_recv) = unbounded_channel();
         
         let cli_manager_stream = cli_manager(listen).await;
         tokio::spawn(
@@ -216,10 +219,10 @@ async fn outgoing_conn(
 
 async fn protocol_event_loop<I,O>(
     num_nodes: Replica, 
-    in_send: Sender<(Replica, I)>,
-    mut out_recv: Receiver<(Replica, Arc<O>)>,
+    in_send: UnboundedSender<(Replica, I)>,
+    mut out_recv: UnboundedReceiver<(Replica, Arc<O>)>,
     mut reading_net: impl Stream<Item=(Replica, I)>+Unpin,
-    writers: HashMap<Replica, Sender<Arc<O>>>
+    writers: HashMap<Replica, UnboundedSender<Arc<O>>>
 )
 {
     loop {
@@ -230,7 +233,7 @@ async fn protocol_event_loop<I,O>(
                     std::process::exit(0);
                 }
                 let msg = opt_in.unwrap();
-                if let Err(e) = in_send.send(msg).await {
+                if let Err(e) = in_send.send(msg) {
                     log::error!(target:"manager", "Failed to send a protocol message outside the network, with error {}", e);
                     std::process::exit(0);
                 }
@@ -242,14 +245,14 @@ async fn protocol_event_loop<I,O>(
                 }
                 let (to, msg) = opt_out.unwrap();
                 if to < num_nodes {
-                    if let Err(_e) = writers[&to].send(msg).await {
+                    if let Err(_e) = writers[&to].send(msg) {
                         log::error!(target:"manager",
                             "Failed to send msg to peer {}", to);
                         std::process::exit(0);
                     }
                 } else {
                     for (id, writer) in &writers {
-                        if let Err(e) = writer.send(msg.clone()).await {
+                        if let Err(e) = writer.send(msg.clone()) {
                             log::error!(target:"net", "Failed to send msg to peer {} with error {}", id, e);
                             std::process::exit(0);
                             // TODO Handle disconnection from peer
@@ -261,7 +264,7 @@ async fn protocol_event_loop<I,O>(
     }
 }
 
-async fn cli_manager(addr: String) -> Receiver<TcpStream> {
+async fn cli_manager(addr: String) -> UnboundedReceiver<TcpStream> {
     // Wait for new connections
     let cli_sock = TcpListener::bind(addr)
         .await
@@ -269,7 +272,7 @@ async fn cli_manager(addr: String) -> Receiver<TcpStream> {
 
     // Create channels to let the world know that we have a new client
     // connection
-    let (conn_ch_send, conn_ch_recv) = channel(util::CHANNEL_SIZE);
+    let (conn_ch_send, conn_ch_recv) = unbounded_channel();
     tokio::spawn(async move {
         loop {
             let conn_opt = cli_sock.accept().await;
@@ -286,7 +289,7 @@ async fn cli_manager(addr: String) -> Receiver<TcpStream> {
                     conn
                 }
             };
-            if let Err(e) = conn_ch_send.send(conn).await {
+            if let Err(e) = conn_ch_send.send(conn) {
                 log::error!(target:"manager", "Failed to send out new client connection: {}", e);
                 std::process::exit(0);
             }
@@ -298,9 +301,9 @@ async fn cli_manager(addr: String) -> Receiver<TcpStream> {
 async fn client_event_loop<I,O>(
     enc: impl Encoder<Arc<O>> + Clone + Send + Sync + 'static, 
     dec: impl Decoder<Item=I, Error=Err> + Clone + Send + Sync + 'static,
-    mut send_out_ch: Receiver<Arc<O>>,
-    new_in_ch: Sender<I>,
-    mut new_conn_ch: Receiver<TcpStream>
+    mut send_out_ch: UnboundedReceiver<Arc<O>>,
+    new_in_ch: UnboundedSender<I>,
+    mut new_conn_ch: UnboundedReceiver<TcpStream>
 ) where I:WireReady + Sync + Unpin + 'static,
 O: WireReady + Clone+Unpin+Sync + 'static,
 {
@@ -317,7 +320,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                     std::process::exit(0);
                 }
                 let (_id, msg) = in_opt.unwrap();
-                if let Err(e) = new_in_ch.send(msg).await {
+                if let Err(e) = new_in_ch.send(msg) {
                     log::error!(target:"manager", "Failed to send an incoming client message outside, with error {}", e);
                     std::process::exit(0);
                 }
@@ -349,7 +352,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                 }
                 let msg = out_opt.unwrap();
                 for (id, writer) in &writers {
-                    if let Err(e) = writer.send(msg.clone()).await {
+                    if let Err(e) = writer.send(msg.clone()) {
                         log::info!(target:"net","Disconnected from client with error: {}", e);
                         to_remove.push(*id);
                     }

@@ -1,16 +1,27 @@
-use tokio::sync::mpsc::{Sender};
-// use crate::Sender;
-use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
+use tokio::sync::mpsc::UnboundedSender;
+use types::{
+    Block, 
+    Certificate, 
+    GENESIS_BLOCK, 
+    Height, 
+    Replica, 
+    Storage, 
+    View, 
+    synchs::ProtocolMsg
+};
 use config::Node;
-use libp2p::{identity::Keypair, core::PublicKey};
+use libp2p::{
+    identity::Keypair, 
+    core::PublicKey
+};
 use std::collections::HashMap;
 use crypto::hash::Hash;
 use std::sync::Arc;
 
 pub struct Context {
     /// Networking context
-    pub net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-    pub cli_send: Sender<Arc<Block>>,
+    pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+    pub cli_send: UnboundedSender<Arc<Block>>,
 
     /// Data context
     pub num_nodes: usize,
@@ -24,7 +35,7 @@ pub struct Context {
 
     /// State context
     pub storage: Storage,
-    pub cert_map: HashMap<Hash, Certificate>, // contains all fully certified blocks
+    pub cert_map: HashMap<Hash, Certificate>, // Contains all certified blocks
     pub height: Height,
     pub last_leader: Replica,
     pub last_seen_block: Arc<Block>,
@@ -39,8 +50,8 @@ const EXTRA_SPACE:usize = 10;
 impl Context {
     pub fn new(
         config: &Node,
-        net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-        cli_send: Sender<Arc<Block>>,
+        net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+        cli_send: UnboundedSender<Arc<Block>>,
     ) -> Self {
         let genesis_arc = Arc::new(GENESIS_BLOCK);
         let mut c = Context {
@@ -78,9 +89,6 @@ impl Context {
             payload:config.payload*config.block_size,
         };
         for (id,mut pk_data) in config.pk_map.clone() {
-            // if id == c.myid {
-            //     continue;
-            // }
             let pk = match config.crypto_alg {
                 crypto::Algorithm::ED25519 => {
                     let kp = libp2p::identity::ed25519::PublicKey::decode(
@@ -96,6 +104,8 @@ impl Context {
             };
             c.pub_key_map.insert(id, pk);
         }
+
+        // Initialize storage
         c.storage.all_delivered_blocks_by_hash
             .insert(GENESIS_BLOCK.hash, genesis_arc.clone());
         c.storage.all_delivered_blocks_by_ht

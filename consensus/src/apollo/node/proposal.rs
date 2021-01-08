@@ -1,32 +1,39 @@
-use types::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Transaction};
-
-use super::{context::Context, commit::on_finish_propose};
+use types::{
+    Block, 
+    GENESIS_BLOCK, 
+    Propose, 
+    ProtocolMsg, 
+    Transaction
+};
+use super::{
+    context::Context, 
+    commit::on_finish_propose
+};
 use std::sync::Arc;
 
 pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
-    // println!("Handling proposal by [{}]: {}, {:?}", cx.myid, p.new_block.header.height, p.new_block.header);
+    log::debug!(target:"consensus", "Handling proposal by [{}]: {}, {:?}", cx.myid, p.new_block.header.height, p.new_block.header);
 
-    // let mut p = p.clone();
-    // p.new_block = block;
-    // let p = p;
     let block = &p.new_block; // Make the block immutable again, so we dont accidently move something
+
     // 1) Is it correctly signed?
-    if let Some(pk) = cx.pub_key_map.get(&block.header.author) {
-        let bytes = util::io::to_bytes(&block);
-        if !pk.verify(&bytes, &p.proof) {
-            println!("Block verification failed.");
-            return;
-        }
+    let pk = cx.pub_key_map.get(&block.header.author).unwrap(); 
+    let bytes = util::io::to_bytes(&block);
+    if !pk.verify(&bytes, &p.proof) {
+        println!("Block verification failed.");
+        return;
     }
+
     // Do we already have this block?
     if let Some(x) = cx.storage.all_delivered_blocks_by_hash.get(
         &block.hash) 
     {
         if x.hash != block.hash {
-            println!("Equivocation detected");
+            log::warn!(target:"consensus", "Equivocation detected");
             return;
         } else {
-            // println!("{} - Already have this block", cx.myid);
+            log::debug!(target:"consensus", 
+                "{} - Already have this block", cx.myid);
             return;
         }
     }
@@ -34,7 +41,8 @@ pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) {
     
     // Are all the parents delivered?
     if !cx.storage.all_delivered_blocks_by_hash.contains_key(&block.header.prev) && block.header.height != GENESIS_BLOCK.header.height + 1 {
-        // println!("Parent not found for the block: {:?}", block);
+        log::debug!(target:"consensus", 
+            "Parent not found for the block: {:?}", block);
         return;
         // TODO request the block first, and then try again
     }
@@ -66,7 +74,7 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) {
     // The leader broadcasts the transaction
     if let Err(e) = cx.net_send.send(
         (cx.num_nodes, Arc::new(ProtocolMsg::NewProposal(p.clone())))
-    ).await {
+    ) {
         println!("Server channel closed with error: {}", e);
     };
     // println!("Proposing block with hash: {:?}", p.new_block.header);

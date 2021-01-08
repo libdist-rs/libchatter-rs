@@ -44,7 +44,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .parse().unwrap();
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
-    println!("Successfully decoded the config file");
     
     consensus::apollo::client::start(
         &config, metrics, window).await;

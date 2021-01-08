@@ -3,38 +3,55 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-use tokio::sync::mpsc::{channel, Sender, Receiver};
-use types::{Block, Replica, ProtocolMsg, Transaction};
+use tokio::sync::mpsc::{
+    unbounded_channel, 
+    UnboundedSender, 
+    UnboundedReceiver
+};
+use types::{
+    Block, 
+    Replica, 
+    ProtocolMsg, 
+    Transaction
+};
 use config::Node;
-use super::{proposal::*};
-use super::blame::*;
-use super::context::Context;
-use std::{sync::Arc, borrow::Borrow};
+use super::{
+    proposal::*,
+    context::Context,
+    blame::*,
+};
+use std::{
+    sync::Arc, 
+    borrow::Borrow
+};
 
 pub async fn reactor(
     config:&Node,
     is_client_apollo_enabled: bool,
-    net_send: Sender<(Replica, Arc<ProtocolMsg>)>,
-    mut net_recv: Receiver<(Replica, ProtocolMsg)>,
-    cli_send: Sender<Arc<Block>>,
-    mut cli_recv: Receiver<Transaction>,
+    net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+    mut net_recv: UnboundedReceiver<(Replica, ProtocolMsg)>,
+    cli_send: UnboundedSender<Arc<Block>>,
+    mut cli_recv: UnboundedReceiver<Transaction>,
 ) {
     // Optimization to improve latency when the payloads are high
-    let (send, mut recv) = channel(util::CHANNEL_SIZE);
+    let (send, mut recv) = unbounded_channel();
+
     let mut cx = Context::new(config, net_send, send);
     cx.is_client_apollo_enabled = is_client_apollo_enabled;
     let block_size = config.block_size;
     let myid = config.id;
     let pl_size = config.payload;
-    let cli_send_p = cli_send.clone();
-    let rt = tokio::runtime::Builder::new_multi_thread().enable_all().build().unwrap();
+    let cli_send_p = cli_send;
+    let rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
     rt.spawn(async move {
         let cli_send = cli_send_p;
         loop {
             let mut x = recv.recv().await.unwrap();
             x.add_payload(pl_size);
-            cli_send.send(Arc::new(x)).await.unwrap();
-            // tokio::runtime::Handle::
+            cli_send.send(Arc::new(x)).unwrap();
         }
     });
     loop {

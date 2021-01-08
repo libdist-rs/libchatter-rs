@@ -1,5 +1,5 @@
 use tokio::sync::mpsc::{
-    Sender
+    UnboundedSender
 };
 use types::{
     Replica, 
@@ -15,7 +15,7 @@ pub struct Client<I,O>
 where I:WireReady,
 O:WireReady,
 {
-    pub(crate) peers: HashMap<Replica, Sender<Arc<O>>>,
+    pub(crate) peers: HashMap<Replica, UnboundedSender<Arc<O>>>,
     phantom: PhantomData<(I,O)>,
 }
 

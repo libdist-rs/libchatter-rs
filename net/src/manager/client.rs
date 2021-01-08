@@ -1,12 +1,29 @@
-use tokio::{net::TcpStream, sync::mpsc::{Receiver, Sender, channel}};
+use tokio::{
+    net::TcpStream, 
+    sync::mpsc::{
+        UnboundedReceiver, 
+        UnboundedSender, 
+        unbounded_channel
+    }
+};
 use tokio_stream::StreamMap;
 use tokio_util::codec::{
     Decoder, 
     Encoder
 };
-use std::{io::Error, sync::Arc, collections::HashMap};
-use types::{Replica, WireReady};
-use crate::{Client, peer::Peer};
+use std::{
+    io::Error, 
+    sync::Arc, 
+    collections::HashMap
+};
+use types::{
+    Replica, 
+    WireReady
+};
+use crate::{
+    Client, 
+    peer::Peer
+};
 use tokio_stream::StreamExt;
 
 impl<I,O> Client<I,O>
@@ -18,7 +35,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         node_addr: HashMap<Replica, String>, 
         enc: impl Encoder<Arc<O>> + Send + Clone + 'static, 
         dec: impl Decoder<Item=I, Error=Error> + Clone + Send + 'static
-    ) -> (Sender<(Replica, Arc<O>)>, Receiver<(Replica, I)>)
+    ) -> (UnboundedSender<(Replica, Arc<O>)>, UnboundedReceiver<(Replica, I)>)
     {
         let n = node_addr.len();
         let mut read_stream = StreamMap::with_capacity(n);
@@ -69,11 +86,11 @@ O:WireReady + Clone + Sync + 'static + Unpin,
     pub(crate) fn start_event_loop(
         &mut self,
         mut stream: impl tokio_stream::Stream<Item=(Replica, I)> + Unpin + Send + 'static
-    ) -> (Sender<(Replica, Arc<O>)>, Receiver<(Replica, I)>) {
+    ) -> (UnboundedSender<(Replica, Arc<O>)>, UnboundedReceiver<(Replica, I)>) {
         let (in_send, mut in_recv) 
-            = channel::<(Replica, Arc<O>)>(util::CHANNEL_SIZE);
+            = unbounded_channel::<(Replica, Arc<O>)>();
         let (out_send, out_recv) 
-            = channel(util::CHANNEL_SIZE);
+            = unbounded_channel();
         // I hope no new peers will be added later
         let n = self.peers.len();
         let peers = self.peers.clone();
@@ -90,13 +107,13 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                         }
                         let (to, msg) = to_send_opt.unwrap();
                         if (to as usize) < n {
-                            let opt = peers[&to].send(msg).await;
+                            let opt = peers[&to].send(msg);
                             if let Err(e) = opt {
                                 panic!("failed to send a message out to peer {} with error {}", to, e);
                             }
                         } else {
                             for (_i, sender) in &peers {
-                                let opt = sender.send(msg.clone()).await;
+                                let opt = sender.send(msg.clone());
                                 if let Err(e) = opt {
                                     panic!("failed to send a message out to peer {} with error {}", to, e);
                                 }
@@ -110,7 +127,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                             // TODO: Handle client disconnection from the server
                         }
                         let recvd_msg = recvd_msg_opt.unwrap();
-                        let out_opt = out_send.send(recvd_msg).await;
+                        let out_opt = out_send.send(recvd_msg);
                         if let Err(e) = out_opt {
                             panic!("Failed a received message outside: {}", e);
                         }

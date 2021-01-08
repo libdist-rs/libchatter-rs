@@ -1,8 +1,17 @@
-use std::collections::{HashSet};
-
+use std::collections::HashSet;
 use super::context::Context;
 use crypto::hash::EMPTY_HASH;
-use types::{Block, Certificate, Transaction, VoteType, Vote, synchs::{Propose, ProtocolMsg}};
+use types::{
+    Block, 
+    Certificate, 
+    Transaction, 
+    VoteType, 
+    Vote, 
+    synchs::{
+        Propose, 
+        ProtocolMsg
+    }
+};
 use std::sync::Arc;
 
 pub fn check_hash_eq(left:&[u8], right:&[u8]) -> bool {
@@ -26,35 +35,43 @@ pub fn check_hash_eq(left:&[u8], right:&[u8]) -> bool {
 }
 
 pub fn check_proposal(p: &Propose, cx:&Context) -> bool {
+    // Check if the author is correct
     if p.new_block.header.author != cx.leader_of_view() {
-        println!("Got a proposal from an incorrect leader for the view");
-        return false;
-    }
-    if p.new_block.header.height == 1 &&
-        p.new_block.header.prev != EMPTY_HASH 
-    {
-        println!("First block does not extend the genesis block");
-        return false;
-    }
-    if p.new_block.header.height > 1 && p.cert.votes.len() <= cx.num_faults {
-        println!("Insufficient votes in the proposal");
-        println!("Rejecting the proposal");
+        log::warn!(target:"consensus", 
+            "Got a proposal from an incorrect leader for the view");
         return false;
     }
 
-    let pk = match cx.pub_key_map.get(&p.new_block.header.author) {
-        None => {unreachable!("Must have rejected before getting here");},
-        Some(x) => x,
-    };
-    if !pk.verify(&p.new_block.hash, &p.proof) {
-        println!("Got an incorrectly signed block");
+    // Check if the first block extends the genesis block
+    if p.new_block.header.height == 1 &&
+        p.new_block.header.prev != EMPTY_HASH 
+    {
+        log::warn!(target:"consensus", 
+            "First block does not extend the genesis block");
         return false;
     }
+
+    // Check if the block has sufficient votes
+    if p.new_block.header.height > 1 && p.cert.votes.len() <= cx.num_faults {
+        log::warn!(target:"consensus", 
+            "Insufficient votes in the proposal, rejecting the proposal");
+        return false;
+    }
+
+    // Check signature for the proposal
+    let pk = cx.pub_key_map.get(&p.new_block.header.author).unwrap();
+    if !pk.verify(&p.new_block.hash, &p.proof) {
+        log::warn!(target:"consensus", 
+            "Got an incorrectly signed block");
+        return false;
+    }
+
+    // Check if the view is correct
     if cx.view != p.view {
         panic!("This view check should be unreachable");
     }
 
-    // Check parent certificate
+    // If the parent is genesis block, then the parent is correctly certified
     if p.new_block.header.height == 1 {
         return true;
     }
@@ -64,19 +81,20 @@ pub fn check_proposal(p: &Propose, cx:&Context) -> bool {
         if let VoteType::Vote(data) = &v.msg {
             // Check if vote message is the same as that in the proposal
             if !check_hash_eq(data, &p.new_block.header.prev) {
-                println!("The message of the vote is not the hash of the proposed block's prev");
+                log::warn!(target:"consensus", 
+                    "The message of the vote is not the hash of the proposed block's prev");
                 return false;
             }
             // check signature
             let pk = match cx.pub_key_map.get(&v.origin) {
                 None => {
-                    println!("Invalid vote origin");
+                    log::warn!(target:"consensus", "Invalid vote origin");
                     return false;
                 }
                 Some(x) => x,
             };
             if !pk.verify(data, &v.auth) {
-                println!("Invalid vote signature");
+                log::warn!(target:"consensus", "Invalid vote signature");
                 return false;
             }
             // Add this unique vote
@@ -90,7 +108,7 @@ pub fn check_proposal(p: &Propose, cx:&Context) -> bool {
     }
     // Is it extending the last known parent?
     if p.new_block.header.prev != cx.last_seen_block.hash {
-        println!("Parent undelivered");
+        log::warn!(target:"consensus", "Parent undelivered");
         return false;
         // TODO add delivery
     }
@@ -98,32 +116,35 @@ pub fn check_proposal(p: &Propose, cx:&Context) -> bool {
 }
 
 pub async fn on_receive_proposal(p: &Propose, cx: &mut Context) -> bool {
+    // Use decision to start commit timers in the reactor
     let decision = false;
-    // use decision to start commit timers in the reactor
-    // println!("Received a proposal: {}", p.new_block.header.height);
+    
+    log::debug!(target: "consensus", 
+        "Received a proposal: {}", p.new_block.header.height);
 
     if cx.storage.all_delivered_blocks_by_hash.contains_key(&p.new_block.hash) {
-        // println!("We have already processed this block last time");
+        log::debug!("We have already processed this block last time");
         return decision;
     }
     
     // On receiving a proposal, check if it is in the same view
     // Check for the validity
     if !check_proposal(p, cx) {
-        println!("Proposal checking failed");
+        log::warn!(target:"consensus", "Proposal checking failed");
         return decision;
     }
     return on_new_valid_proposal(p, cx).await;
 }
     
 pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
-    let decision = false;
+    let mut decision = false;
 
     // Is the parent delivered?
     if !cx.storage.all_delivered_blocks_by_hash.contains_key(
         &p.new_block.header.prev) 
     {
-        println!("We do not have the parent for this block");
+        log::warn!(target:"consensus", 
+            "We do not have the parent for this block");
         // TODO: Request and Deliver blocks
         return decision;
     }
@@ -141,25 +162,33 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
             }
         },
     };
-    let decision = true;
+
+    decision = true;
+
+    // Create a scope and send the proposal to other nodes
     let ship = cx.net_send.clone();
     let ship_nodes = cx.num_nodes as u16;
     let ship_p = p.clone();
     let vote_ship = tokio::spawn(async move {
         if let Err(e) = ship.send(
-            (ship_nodes, Arc::new(ProtocolMsg::VoteMsg(my_vote, ship_p))))
-            .await 
+            (ship_nodes, Arc::new(ProtocolMsg::VoteMsg(my_vote, ship_p)))) 
         {
-            println!("failed to send vote: {}", e);
+            log::warn!(target:"consensus", 
+                "failed to send vote: {}", e);
         }
     });
-    // Start 2\Delta timer (Moved to the reactor)
 
     let new_block_ref = Arc::new(p.new_block.clone());
-    cx.storage.all_delivered_blocks_by_hash.insert(p.new_block.hash, 
-        new_block_ref.clone());
-    cx.storage.all_delivered_blocks_by_ht.insert(p.new_block.header.height, 
-        new_block_ref.clone());
+
+    // Update the consensus context
+    cx.storage.all_delivered_blocks_by_hash.insert(
+        p.new_block.hash, 
+        new_block_ref.clone()
+    );
+    cx.storage.all_delivered_blocks_by_ht.insert(
+        p.new_block.header.height, 
+        new_block_ref.clone()
+    );
     for tx in &p.new_block.body.tx_hashes {
         cx.storage.pending_tx.remove(tx);
     }
@@ -169,10 +198,12 @@ pub async fn on_new_valid_proposal(p: &Propose, cx: &mut Context) -> bool {
 
     // wait for voting to finish?
     if let Err(e) = vote_ship.await {
-        println!("Failed to send vote to the others:{}", e);
+        log::warn!(target:"consensus", 
+            "Failed to send vote to the others:{}", e);
         return decision;
     }
-    // println!("Sent a vote to all the nodes");
+
+    log::debug!(target:"consensus", "Sent a vote to all the nodes");
     decision
 }
 
@@ -180,34 +211,37 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     // Build the proposal
     let parent = &cx.last_seen_block;
     let mut new_block = Block::with_tx(txs);
-    // update block contents here
+
+    // Update block contents here
     new_block.header.author = cx.myid;
     new_block.header.prev = parent.hash;
-    // new_block.header.extra =
     new_block.header.height = parent.header.height+1;
+    
     // Update the hash at the end
     new_block.update_hash();
+    
     // Sign the block hash 
     let proof = match cx.my_secret_key.sign(&new_block.hash) {
         Err(e) => {
             panic!("Failed to sign the new proposal: {}", e);
-            // return;
         },
         Ok(sig) => sig,
     };
+
     // Add self vote to the certificate map
     let self_vote = Vote{
         msg: VoteType::Vote(new_block.hash.to_vec()),
         origin: cx.myid,
         auth: proof.clone(),
     };
+
     let mut new_block_cert = Certificate::empty_cert();
     new_block_cert.votes.push(self_vote);
     let new_block_cert = new_block_cert;
+
     // The block is ready, build proposal
     let new_block_ref = Arc::new(new_block.clone());
     let mut p = Propose::new(new_block);
-    // let new_block = &p.new_block;
     p.proof = proof;
     p.cert = match cx.cert_map.get(&parent.hash) {
         None => {
@@ -216,6 +250,7 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
         Some(x) => x.clone(),
     };
     p.view = cx.view;
+
     // Ship the proposal
     let ship = cx.net_send.clone();
     let ship_num = cx.num_nodes as u16;
@@ -223,24 +258,28 @@ pub async fn do_propose(txs: Vec<Transaction>, cx: &mut Context) -> Propose {
     let broadcast = tokio::spawn(async move {
         if let Err(e) = ship.send(
             (ship_num, Arc::new(ProtocolMsg::NewProposal(ship_p)))
-        ).await {
+        ) {
             println!("Error broadcasting the block to all the nodes: {}", e);
         }
     });
+
+    // Update consensus context
     cx.storage.all_delivered_blocks_by_hash
         .insert(new_block_ref.hash, new_block_ref.clone());
     cx.storage.all_delivered_blocks_by_ht
         .insert(new_block_ref.header.height, new_block_ref.clone());
-    // The leader can commit immediately? 
-    // NOOOO! I learn it painfully! If the leader commits now, then it must also
-    // acknowledge the client!
+
+    // Q) Can the leader commit immediately? 
+    // A) NOOOO! I learnt it painfully! If the leader commits now, then it must
+    // also acknowledge the client now, which becomes a problem!
     // Commit normally, and tell the client after 2\Delta
     cx.vote_map.insert(new_block_ref.hash, new_block_cert);
     cx.height = new_block_ref.header.height;
-    // the leader remains the same
+    // The leader remains the same
     cx.last_seen_block = new_block_ref.clone();
     cx.last_committed_block_ht = cx.height;
-    // the view remains the same
+    // The view remains the same
     broadcast.await.expect("failed to broadcast the proposal");
-    return p;
+
+    p
 }
