@@ -223,24 +223,27 @@ async fn protocol_event_loop<I,O>(
     mut out_recv: UnboundedReceiver<(Replica, Arc<O>)>,
     mut reading_net: impl Stream<Item=(Replica, I)>+Unpin,
     writers: HashMap<Replica, UnboundedSender<Arc<O>>>
-)
+) where I: WireReady
 {
     loop {
         tokio::select!{
             opt_in = reading_net.next() => {
                 if let None = opt_in {
-                    log::error!(target:"manager", "Failed to read a protocol message from a peer");
+                    log::error!(target:"manager", 
+                        "Failed to read a protocol message from a peer");
                     std::process::exit(0);
                 }
-                let msg = opt_in.unwrap();
-                if let Err(e) = in_send.send(msg) {
-                    log::error!(target:"manager", "Failed to send a protocol message outside the network, with error {}", e);
+                let (id, msg) = opt_in.unwrap();
+                if let Err(e) = in_send.send((id, msg.init())) {
+                    log::error!(target:"manager", 
+                        "Failed to send a protocol message outside the network, with error {}", e);
                     std::process::exit(0);
                 }
             },
             opt_out = out_recv.recv() => {
                 if let None = opt_out {
-                    log::error!(target:"manager", "Failed to read a protocol message to send outside the network");
+                    log::error!(target:"manager", 
+                        "Failed to read a protocol message to send outside the network");
                     std::process::exit(0);
                 }
                 let (to, msg) = opt_out.unwrap();
@@ -307,7 +310,7 @@ async fn client_event_loop<I,O>(
 ) where I:WireReady + Sync + Unpin + 'static,
 O: WireReady + Clone+Unpin+Sync + 'static,
 {
-    let mut read_stream = StreamMap::new();
+    let mut read_stream:StreamMap<usize, Pin<Box<dyn Stream<Item=I>+Send>>> = StreamMap::new();
     let mut client_id = 0 as usize;
     let mut writers = HashMap::new();
     let mut to_remove = Vec::new();
@@ -320,6 +323,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                     std::process::exit(0);
                 }
                 let (_id, msg) = in_opt.unwrap();
+                let msg = msg.init();
                 if let Err(e) = new_in_ch.send(msg) {
                     log::error!(target:"manager", "Failed to send an incoming client message outside, with error {}", e);
                     std::process::exit(0);
@@ -339,7 +343,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                     while let Some(item) = client_recv.recv().await {
                         yield(item);
                     }
-                }));
+                }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item=I> +Send>>);
                 writers.insert(client_id, client_peer.send);
 
                 client_id = client_id + 1;
