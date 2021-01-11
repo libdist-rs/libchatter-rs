@@ -9,15 +9,15 @@ W=${W:="100000"}
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-0.json \
     --ip ip_file \
-    -s &
+    -s $1 > 0.log &
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-1.json \
     --ip ip_file \
-    -s &
+    -s $1 > 1.log &
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-2.json \
     --ip ip_file \
-    -s &
+    -s $1 > 2.log &
 
 sleep 20
 # Nodes must be ready by now
@@ -25,7 +25,7 @@ sleep 20
     --config $TESTDIR/client.json \
     -i cli_ip_file \
     -w $W \
-    -m 1000000
+    -m 1000000 $1
 
 # Client has finished; Kill the nodes
 killall ./target/$TYPE/node-apollo &> /dev/null

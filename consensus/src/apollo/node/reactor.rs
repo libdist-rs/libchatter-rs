@@ -8,21 +8,12 @@ use tokio::sync::mpsc::{
     UnboundedSender, 
     UnboundedReceiver
 };
-use types::{
-    Block, 
-    Replica, 
-    ProtocolMsg, 
-    Transaction
-};
+use types::{Block, ClientMsg, Payload, Propose, ProtocolMsg, Replica, Transaction};
 use config::Node;
-use super::{
-    proposal::*,
-    context::Context,
-    blame::*,
-};
+use super::{blame::*, context::Context, proposal::*, request::{handle_request, handle_response}};
 use std::{
     sync::Arc, 
-    borrow::Borrow
+    borrow::Borrow,
 };
 
 pub async fn reactor(
@@ -30,7 +21,7 @@ pub async fn reactor(
     is_client_apollo_enabled: bool,
     net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
     mut net_recv: UnboundedReceiver<(Replica, ProtocolMsg)>,
-    cli_send: UnboundedSender<Arc<Block>>,
+    cli_send: UnboundedSender<Arc<ClientMsg>>,
     mut cli_recv: UnboundedReceiver<Transaction>,
 ) {
     // Optimization to improve latency when the payloads are high
@@ -38,9 +29,11 @@ pub async fn reactor(
 
     let mut cx = Context::new(config, net_send, send);
     cx.is_client_apollo_enabled = is_client_apollo_enabled;
+
     let block_size = config.block_size;
     let myid = config.id;
     let pl_size = config.payload;
+
     let cli_send_p = cli_send;
     let rt = tokio::runtime::Builder::new_multi_thread()
         .enable_all()
@@ -49,9 +42,18 @@ pub async fn reactor(
     rt.spawn(async move {
         let cli_send = cli_send_p;
         loop {
-            let mut x = recv.recv().await.unwrap();
-            x.add_payload(pl_size);
-            cli_send.send(Arc::new(x)).unwrap();
+            let prop_arc = recv.recv().await.unwrap();
+            let payload = Payload::with_payload(pl_size);
+            let bl = (prop_arc
+                .block
+                .clone()
+                .unwrap()
+                .borrow() as &Block)
+                .clone();
+            let prop = (prop_arc
+                .borrow() as &Propose)
+                .clone();
+            cli_send.send(Arc::new(ClientMsg::RawNewBlock(prop, bl, payload))).unwrap();
         }
     });
     loop {
@@ -59,18 +61,27 @@ pub async fn reactor(
             pmsg_opt = net_recv.recv() => {
                 // Received a protocol message
                 if let None = pmsg_opt {
-                    log::error!(target:"node", "Protocol message channel closed");
+                    log::error!(target:"node", 
+                        "Protocol message channel closed");
                     std::process::exit(0);
                 }
-                let (_, pmsg) = pmsg_opt.unwrap();
+                let (sender, pmsg) = pmsg_opt.unwrap();
                 match pmsg {
-                    ProtocolMsg::NewProposal(mut p) => {
-                        p.new_block.update_hash();
-                        on_receive_proposal(&p, &mut cx).await;
+                    ProtocolMsg::NewProposal(p) => {
+                        on_receive_proposal(Arc::new(p), &mut cx).await;
                     },
                     ProtocolMsg::Blame(v) => {
-                        on_receive_blame(v.clone(), &mut cx).await;
+                        on_receive_blame(v, &mut cx).await;
                     },
+                    ProtocolMsg::Relay(p) => {
+                        on_relay(sender, p, &mut cx).await;
+                    }
+                    ProtocolMsg::Request(rid, h) => {
+                        handle_request(sender, rid, h, &cx).await;
+                    },
+                    ProtocolMsg::Response(rid, p) => {
+                        handle_response(rid, p, &mut cx).await;
+                    }
                     _ => {},
                 };
             },
@@ -79,26 +90,18 @@ pub async fn reactor(
                 match tx_opt {
                     None => break,
                     Some(tx) => {
-                        cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(tx.borrow() as &Transaction),(tx.borrow() as &Transaction).clone());
+                        cx.storage.add_transaction(tx);
                     }
                 }
             }
         }
         // Do we have sufficient commands, and are we the next leader?
-        if cx.storage.pending_tx.len() >= block_size && 
+        if cx.storage.get_tx_pool_size() >= block_size && 
             cx.next_leader() == myid 
         {
-            // println!("I {} am the leader and, I am proposing", cx.myid);
-            let mut txs = Vec::with_capacity(block_size);
-            for _i in 0..block_size {
-                let tx = match cx.storage.pending_tx.pop_front() {
-                    Some((_hash, trans)) => trans,
-                    None => {
-                        panic!("Dequeued when tx pool was not block size");
-                    },
-                };
-                txs.push(tx);
-            }
+            log::debug!(target:"consensus",
+                "I {} am the leader and, I am proposing", cx.myid);
+            let txs = cx.storage.cleave(block_size);
             do_propose(txs, &mut cx).await;
         } 
     }

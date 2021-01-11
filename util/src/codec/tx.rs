@@ -1,6 +1,6 @@
 use bytes::{BytesMut, Bytes};
 use tokio_util::codec::{Decoder, Encoder, LengthDelimitedCodec};
-use types::{Transaction};
+use types::{Transaction, WireReady};
 
 use std::io::{
     Error,

@@ -1,7 +1,7 @@
 // use futures::prelude::*;
 use clap::{load_yaml, App};
 use config::Node;
-use types::{Transaction, Block, ProtocolMsg};
+use types::{ClientMsg, ProtocolMsg, Transaction};
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -64,10 +64,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Setup client network
     let (cli_send, cli_recv) = 
     cli_net_rt.block_on(
-        net::Protocol::<Transaction, Block>::client_setup(
+        net::Protocol::<Transaction, ClientMsg>::client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
-            util::codec::tx::Codec::new()
+            util::codec::tx::Codec::new(),
         )
     );
 

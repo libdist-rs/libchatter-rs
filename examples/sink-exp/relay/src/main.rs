@@ -87,7 +87,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
         }
         println!("got {:?} blocks", txs);
         wtimes.push(SystemTime::now());
-        let b = txs.drain(0..blocksize).collect();
+        let b = txs
+            .drain(0..blocksize)
+            .map(|c| std::sync::Arc::new(c))
+            .collect();
         let blk = Block::with_tx(b);
         write2.send(blk).await.expect("failed to send the block to the sink");
         wtimes.push(SystemTime::now());

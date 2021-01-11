@@ -1,17 +1,11 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
+use crypto::hash::Hash;
 use libp2p::{
     identity::Keypair, 
     core::PublicKey
 };
 use tokio::sync::mpsc::UnboundedSender;
-use types::{
-    Block, 
-    GENESIS_BLOCK, 
-    Height, 
-    ProtocolMsg, 
-    Replica, 
-    Storage
-};
+use types::{Block, GENESIS_BLOCK, Height, Propose, ProtocolMsg, Replica, Storage};
 use config::Node;
 use std::sync::Arc;
 
@@ -22,7 +16,7 @@ pub struct Context {
     pub pub_key_map:HashMap<Replica, PublicKey>,
     pub my_secret_key: Keypair,
     pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
-    pub cli_send: UnboundedSender<Block>,
+    pub cli_send: UnboundedSender<Arc<Propose>>,
     pub is_client_apollo_enabled: bool,
 
     pub storage: Storage,
@@ -31,6 +25,11 @@ pub struct Context {
     pub last_seen_block: Arc<Block>,
     pub last_committed_block_ht: Height,
     pub payload:usize,
+    pub req_ctr:u64,
+
+    /// Map block hash with propose
+    pub waiting: HashSet<Hash>,
+    pub prop_map: HashMap<Hash, Arc<Propose>>,
 }
 
 const EXTRA_SPACE:usize = 100;
@@ -38,7 +37,7 @@ const EXTRA_SPACE:usize = 100;
 impl Context {
     pub fn new(config:&Node,
         net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
-        cli_send: UnboundedSender<Block>) -> Self {
+        cli_send: UnboundedSender<Arc<Propose>>) -> Self {
         let mut c = Context{
             num_nodes: config.num_nodes as u16,
             num_faults: config.num_faults as u16,
@@ -71,6 +70,9 @@ impl Context {
             last_committed_block_ht: 0,
             is_client_apollo_enabled: false,
             payload: config.payload*config.block_size,
+            req_ctr:0,
+            waiting: HashSet::new(),
+            prop_map:HashMap::new(),
         };
         for (id,mut pk_data) in &config.pk_map {
             if *id == c.myid {
@@ -91,6 +93,10 @@ impl Context {
             };
             c.pub_key_map.insert(*id, pk);
         }
+        // Initialize storage
+        c.storage.add_delivered_block(
+            c.last_seen_block.clone()
+        );
         c
     }
 

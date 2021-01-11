@@ -4,7 +4,7 @@ use clap::{
 };
 use config::Node;
 use std::error::Error;
-use types::{Transaction, Block, synchs::ProtocolMsg};
+use types::{synchs::ClientMsg, Transaction, synchs::ProtocolMsg};
 
 fn main() -> Result<(), Box<dyn Error>> {
     let yaml = load_yaml!("cli.yml");
@@ -37,7 +37,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
 
     simple_logger::SimpleLogger::new().init().unwrap();
-    match m.occurrences_of("verbosity") {
+    match m.occurrences_of("debug") {
         0 => log::set_max_level(log::LevelFilter::Info),
         1 => log::set_max_level(log::LevelFilter::Debug),
         2 | _ => log::set_max_level(log::LevelFilter::Trace),
@@ -59,7 +59,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Setup client network
     let (cli_send, cli_recv) = 
     cli_net_rt.block_on(
-        net::Protocol::<Transaction, Block>::client_setup(
+        net::Protocol::<Transaction, ClientMsg>::client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
             util::codec::tx::Codec::new()

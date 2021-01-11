@@ -4,21 +4,14 @@ use std::{
 };
 
 use config::Client;
-use types::{
-    Block, 
-    GENESIS_BLOCK, 
-    Height, 
-    Transaction
-};
+use types::{Block, ClientMsg, GENESIS_BLOCK, Height, Transaction};
 use tokio::sync::mpsc::channel;
 use util::new_dummy_tx;
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
-use util::codec::{
-    EnCodec, 
-    block::Codec
-};
+use util::codec::EnCodec;
+use types::ClientMsgCodec;
 use std::borrow::Borrow;
 
 pub async fn start(
@@ -27,11 +20,11 @@ pub async fn start(
     window: usize,
 ) {
 
-    let mut client_network = net::Client::<Block, Transaction>::new();
+    let mut client_network = net::Client::<ClientMsg, Transaction>::new();
     let servers = c.net_map.clone();
     let send_id = c.num_nodes;
     let (net_send,mut net_recv) = 
-        client_network.setup(servers, EnCodec::new(), Codec::new()).await;
+        client_network.setup(servers, EnCodec::new(), ClientMsgCodec::new()).await;
 
     let payload = c.payload;
     // Start with the sink implementation
@@ -74,9 +67,12 @@ pub async fn start(
     log::debug!(target:"consensus", "Receiving first {} blocks", first_recv);
     let first_recv_b = tokio::spawn(async move{
     for _ in 0..(first_recv) {
-        let (_, mut b) = net_recv.recv().await.unwrap();
-        b.update_hash();
-        let b = Arc::new(b);
+        let (_, b) = net_recv.recv().await.unwrap();
+        let blk = match b {
+            ClientMsg::NewBlock(p,_pl) => p.block.unwrap(),
+            _ => continue,
+        };
+        let b = blk;
         let is_in_ht_map = height_map.contains_key(&b.header.height);
         let is_in_hash_map = hash_map.contains_key(&b.hash);
         if is_in_ht_map && !is_in_ht_map {
@@ -118,10 +114,14 @@ pub async fn start(
                 if let None = block_opt {
                     panic!("invalid content received from the server");
                 }
-                let (_, mut b) = block_opt.unwrap(); 
-                b.update_hash();
-                let b = Arc::new(b);
-                // println!("Got a block {:?}",b);
+                let (_, b) = block_opt.unwrap();
+                log::debug!(target:"consensus","Got a client message: {:?}", b);
+                let blk = match b {
+                    ClientMsg::NewBlock(p, _pl) => p.block.unwrap(),
+                    _ => continue,
+                };
+                let b = blk;
+                log::trace!(target:"consensus","Got a block {:?}",b);
                 let now = SystemTime::now();
                 let is_in_ht_map = height_map.contains_key(&b.header.height);
                 let is_in_hash_map = hash_map.contains_key(&b.hash);

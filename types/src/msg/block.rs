@@ -2,28 +2,78 @@ use serde::{Serialize, Deserialize};
 use super::{Transaction, Certificate};
 use crate::{WireReady, protocol::{Replica, Height}};
 use crypto::hash::{EMPTY_HASH, Hash};
+use std::{sync::Arc, borrow::Borrow};
 
-#[derive(Serialize, Deserialize, Clone)]
-pub struct BlockBody {
-    pub tx_hashes: Vec<Hash>,
-    pub responses :Vec<u8>,
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct Block {
+    pub header: Header,
+    pub body: Body,
+
+    // Cache
+    #[serde(skip_serializing, skip_deserializing)]
+    pub hash: Hash,
 }
 
-impl BlockBody {
-    pub fn new(txs: Vec<Transaction>) -> Self {
+impl Block {
+    pub fn with_tx(txs: Vec<Arc<Transaction>>) -> Self {
+        Block{
+            header: Header::new(),
+            body: Body::new(txs),
+            hash: EMPTY_HASH,
+        }
+    }
+
+    pub fn compute_hash(&self) -> Hash {
+        crypto::hash::ser_and_hash(self)
+    }
+}
+
+pub const GENESIS_BLOCK: Block = Block{
+    header: Header{
+        prev:EMPTY_HASH,
+        extra: Vec::new(),
+        author: 0,
+        height: 0,
+        blame_certificates: Vec::new(),
+    },
+    body: Body{
+        tx_hashes: Vec::new(),
+    },
+    hash: EMPTY_HASH,
+};
+
+impl WireReady for Block {
+    fn from_bytes(data: &[u8]) -> Self {
+        let c:Block = flexbuffers::from_slice(data)
+            .expect("failed to decode the block");
+        c.init()
+    }
+    
+    fn init(mut self) -> Self {
+        self.hash = self.compute_hash();
+        self
+    }
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+pub struct Body {
+    pub tx_hashes: Vec<Hash>,
+}
+
+impl Body {
+    pub fn new(txs: Vec<Arc<Transaction>>) -> Self {
         let mut hashes = Vec::new();
         for tx in txs {
-            hashes.push(crypto::hash::ser_and_hash(&tx));
+            hashes.push(crypto::hash::ser_and_hash(tx.borrow() as &Transaction));
         }
-        BlockBody{
+        Self{
             tx_hashes: hashes,
-            responses: Vec::new(),
         }
     }
 }
 
 #[derive(Serialize, Deserialize,Clone)]
-pub struct BlockHeader {
+pub struct Header {
     pub prev: Hash,
     pub extra: Vec<u8>,
     pub author: Replica,
@@ -31,7 +81,7 @@ pub struct BlockHeader {
     pub blame_certificates: Vec<Certificate>,
 }
 
-impl std::fmt::Debug for BlockHeader {
+impl std::fmt::Debug for Header {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("Block Header")
             .field("author", &self.author)
@@ -41,27 +91,25 @@ impl std::fmt::Debug for BlockHeader {
     }
 }
 
-impl std::fmt::Debug for BlockBody {
+impl std::fmt::Debug for Body {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         if self.tx_hashes.len() > 0 {
             f.debug_struct("Block Body")
                 .field("Length", &self.tx_hashes.len())
                 .field("First", &self.tx_hashes[0])
                 .field("Last", &self.tx_hashes[self.tx_hashes.len()-1])
-                .field("Payload", &self.responses)
                 .finish()
         } else {
             f.debug_struct("Block Body")
                 .field("Length", &self.tx_hashes.len())
-                .field("Payload", &self.responses)
                 .finish()
         }
     }
 }
 
-impl BlockHeader {
+impl Header {
     pub fn new() -> Self {
-        BlockHeader{
+        Header{
             prev:EMPTY_HASH,
             extra: Vec::new(),
             author: 0,
@@ -71,64 +119,3 @@ impl BlockHeader {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct Block {
-    pub header: BlockHeader,
-    pub body: BlockBody,
-
-    #[serde(skip_serializing, skip_deserializing)]
-    pub hash: Hash,
-    // #[serde(skip_serializing, skip_deserializing)]
-    pub payload: Vec<u8>,
-}
-
-impl Block {
-    pub fn from_bytes(bytes: Vec<u8>) -> Self {
-        let c:Block = flexbuffers::from_slice(&bytes)
-            .expect("failed to decode the block");
-        return c;
-    }
-
-    pub fn with_tx(txs: Vec<Transaction>) -> Self {
-        Block{
-            header: BlockHeader::new(),
-            body: BlockBody::new(txs),
-            hash: EMPTY_HASH,
-            payload: Vec::new(),
-        }
-    }
-
-    pub fn add_payload(&mut self, payload:usize) {
-        for i in 0..payload {
-            self.payload.push( i as u8);
-        }
-    }
-
-    pub fn update_hash(&mut self) {
-        let empty_vec = vec![0; 0];
-        let old_vec = std::mem::replace(&mut self.payload, empty_vec);
-        self.hash = crypto::hash::ser_and_hash(&self);
-        let _ = std::mem::replace(&mut self.payload, old_vec);
-    }
-}
-
-pub const GENESIS_BLOCK: Block = Block{
-    header: BlockHeader{
-        prev:EMPTY_HASH,
-        extra: Vec::new(),
-        author: 0,
-        height: 0,
-        blame_certificates: Vec::new(),
-    },
-    body: BlockBody{
-        tx_hashes: Vec::new(),
-        responses: Vec::new(),
-    },
-    hash: EMPTY_HASH,
-    payload: vec![],
-    // cert: Certificate{
-        // votes: vec![],
-    // },
-};
-
-impl WireReady for Block {}

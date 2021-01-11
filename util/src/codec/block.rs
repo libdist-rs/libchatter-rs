@@ -1,4 +1,4 @@
-use types::{Block};
+use types::{Block, WireReady};
 use tokio_util::codec::{
     Decoder, 
     Encoder, 
@@ -49,7 +49,10 @@ impl Decoder for Codec {
 
     fn decode(&mut self, src: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
         match self.0.decode(src)? {
-            Some(data) => Ok(Some(Block::from_bytes(data.to_vec()))),
+            Some(data) => {
+                let b = Block::from_bytes(&data);
+                Ok(Some(b))
+            },
             None => Ok(None),
         }
     }

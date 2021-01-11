@@ -1,20 +1,23 @@
 use serde::{Serialize, Deserialize};
-use super::Block;
+use crypto::hash::Hash;
+use std::sync::Arc;
+use crate::Block;
+
 #[derive(Serialize, Deserialize, Debug,Clone)]
 pub struct Propose {
-    pub new_block: Block,
     pub proof: Vec<u8>,
+    pub block_hash: Hash,
+
+    #[serde(skip_serializing, skip_deserializing)]
+    pub block: Option<Arc<Block>>,
 }
 
 impl Propose {
-    pub fn new(b: Block) -> Self {
+    pub fn new(block_hash: Hash) -> Self {
         Propose{
-            new_block: b,
             proof:Vec::new(),
+            block_hash,
+            block:None,
         }
-    }
-
-    pub fn init(&mut self) {
-        self.new_block.update_hash();
     }
 }

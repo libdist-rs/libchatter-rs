@@ -6,21 +6,14 @@ use std::{
     time::SystemTime
 };
 use config::Client;
-use types::{
-    Transaction, 
-    Block
-};
-use tokio::sync::mpsc::{
-    channel
-};
+use types::{synchs::ClientMsg, Transaction};
+use tokio::sync::mpsc::channel;
 use util::new_dummy_tx;
 use crypto::hash::Hash;
 use crate::statistics;
 use std::sync::Arc;
-use util::codec::{
-    EnCodec, 
-    block::Codec
-};
+use util::codec::EnCodec;
+use types::synchs::ClientMsgCodec as Codec;
 use std::borrow::Borrow;
 
 pub async fn start(
@@ -28,10 +21,10 @@ pub async fn start(
     metric: u64,
     window: usize,
 ) {
-    let mut client_network = net::Client::<Block, Transaction>::new();
+    let mut client_network = net::Client::<ClientMsg, Transaction>::new();
     let servers = c.net_map.clone();
     let send_id = c.num_nodes as u16;
-    let (net_send,mut net_recv) = 
+    let (net_send, mut net_recv) = 
         client_network.setup(servers, EnCodec::new(), Codec::new()).await;
 
     // Start with the sink implementation
@@ -74,10 +67,16 @@ pub async fn start(
                 }
             },
             block_opt = net_recv.recv() => {
+                log::debug!(target:"consensus",
+                    "Got {:?} from the network", block_opt);
                 // Got something from the network
-                if let Some((_, mut b)) = block_opt {
-                    b.update_hash();
-                    let b = Arc::new(b);
+                if let Some((_, b)) = block_opt {
+                    let b = match b {
+                        ClientMsg::NewBlock(b, _) => {
+                            b
+                        },
+                        _ => continue,
+                    };
                     log::debug!(target:"consensus", "got a block:{:?}",b);
                     
                     // Check if the block is valid?

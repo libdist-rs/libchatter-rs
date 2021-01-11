@@ -1,8 +1,8 @@
 use bytes::{Bytes, BytesMut};
 use tokio_util::codec::{Decoder, Encoder, LengthDelimitedCodec};
-use types::ProtocolMsg;
+use types::{ClientMsg, ProtocolMsg, WireReady};
 
-use std::{io, sync::Arc, borrow::Borrow};
+use std::{borrow::Borrow, io, sync::Arc};
 
 use crate::io::to_bytes;
 
@@ -22,7 +22,7 @@ impl Decoder for Codec {
     fn decode(&mut self, src: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
         match self.0.decode(src)? {
             Some(in_data) => {Ok(
-                Some(ProtocolMsg::from_bytes(in_data.to_vec()))
+                Some(ProtocolMsg::from_bytes(&in_data))
             )},
             None => Ok(None),
         }
@@ -53,5 +53,16 @@ impl Encoder<Arc<ProtocolMsg>> for super::EnCodec {
 impl std::clone::Clone for Codec {
     fn clone(&self) -> Self {
         Codec::new()
+    }
+}
+
+impl Encoder<Arc<ClientMsg>> for super::EnCodec {
+    type Error = io::Error;
+
+    fn encode(&mut self, item: Arc<ClientMsg>, dst: &mut BytesMut) -> Result<(), Self::Error> {
+        let bor:&ClientMsg = item.borrow();
+        let data = to_bytes(bor);
+        let buf = Bytes::from(data);
+        return self.0.encode(buf, dst);
     }
 }

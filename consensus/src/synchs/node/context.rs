@@ -1,14 +1,5 @@
 use tokio::sync::mpsc::UnboundedSender;
-use types::{
-    Block, 
-    Certificate, 
-    GENESIS_BLOCK, 
-    Height, 
-    Replica, 
-    Storage, 
-    View, 
-    synchs::ProtocolMsg
-};
+use types::{Block, Certificate, synchs::ClientMsg, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
 use config::Node;
 use libp2p::{
     identity::Keypair, 
@@ -21,7 +12,7 @@ use std::sync::Arc;
 pub struct Context {
     /// Networking context
     pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
-    pub cli_send: UnboundedSender<Arc<Block>>,
+    pub cli_send: UnboundedSender<Arc<ClientMsg>>,
 
     /// Data context
     pub num_nodes: usize,
@@ -51,7 +42,7 @@ impl Context {
     pub fn new(
         config: &Node,
         net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
-        cli_send: UnboundedSender<Arc<Block>>,
+        cli_send: UnboundedSender<Arc<ClientMsg>>,
     ) -> Self {
         let genesis_arc = Arc::new(GENESIS_BLOCK);
         let mut c = Context {
@@ -106,14 +97,8 @@ impl Context {
         }
 
         // Initialize storage
-        c.storage.all_delivered_blocks_by_hash
-            .insert(GENESIS_BLOCK.hash, genesis_arc.clone());
-        c.storage.all_delivered_blocks_by_ht
-            .insert(0, genesis_arc.clone());
-        c.storage.committed_blocks_by_hash
-            .insert(GENESIS_BLOCK.hash, genesis_arc.clone());
-        c.storage.committed_blocks_by_ht
-            .insert(0, genesis_arc);
+        c.storage.add_delivered_block(genesis_arc.clone());
+        c.storage.add_committed_block(genesis_arc);
         c.cert_map.insert(GENESIS_BLOCK.hash, Certificate::empty_cert());
         c
     }

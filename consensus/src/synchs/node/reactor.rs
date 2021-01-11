@@ -8,12 +8,7 @@ use tokio::sync::mpsc::{
     UnboundedReceiver
 };
 use tokio_util::time::DelayQueue;
-use types::{
-    Block, 
-    synchs::ProtocolMsg, 
-    Replica, 
-    Transaction
-};
+use types::{Replica, Transaction, synchs::ClientMsg, synchs::{Propose, ProtocolMsg}};
 use config::Node;
 use super::{
     commit::on_commit, 
@@ -23,17 +18,16 @@ use super::{
 };
 use tokio_stream::StreamExt;
 use std::sync::Arc;
-use std::borrow::Borrow;
 
 pub async fn reactor(
     config:&Node,
     net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
     mut net_recv: UnboundedReceiver<(Replica, ProtocolMsg)>,
-    cli_send: UnboundedSender<Arc<Block>>,
+    cli_send: UnboundedSender<Arc<ClientMsg>>,
     mut cli_recv: UnboundedReceiver<Transaction>
 ) {
     let d2 = std::time::Duration::from_millis(2*config.delta);
-    let mut queue:DelayQueue<Arc<Block>> = tokio_util::time::DelayQueue::new();
+    let mut queue:DelayQueue<Arc<Propose>> = tokio_util::time::DelayQueue::new();
     log::debug!(target:"consensus", "Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
@@ -45,39 +39,38 @@ pub async fn reactor(
                 // Received a protocol message
                 let protmsg = match pmsg_opt {
                     None => break,
-                    Some((_, x)) => {
-                        x.init()
-                    },
+                    Some((_, x)) => x,
                 };
                 log::debug!(target:"consensus", 
                     "Received protocol message: {:?}", protmsg);
-                if let ProtocolMsg::NewProposal(p) = &protmsg {
+                if let ProtocolMsg::NewProposal(p) = protmsg {
                     log::debug!(target:"consensus", 
                         "Received a proposal: {:?}", p);
-                    let decision = on_receive_proposal(p, &mut cx).await;
+                    let p = Arc::new(p);
+                    let decision = on_receive_proposal(p.clone(), &mut cx).await;
                     log::debug!(target:"consensus", 
                         "Decision for the incoming proposal is {}", decision);
                     if decision {
-                        queue.insert(cx.last_seen_block.clone(), d2);
+                        queue.insert(p, d2);
                     }
                 }
-                else if let ProtocolMsg::VoteMsg(v, p) = protmsg.borrow() {
+                else if let ProtocolMsg::VoteMsg(v,p) = protmsg {
                     log::debug!(target:"consensus", 
-                        "Received a vote for a proposal: {:?}", p);
-                    on_vote(&v,p, &mut cx).await;
+                        "Received a vote for a proposal: {:?}", v);
+                    on_vote(v, p, &mut cx).await;
                 }
             },
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
-                log::debug!(target:"consensus", 
-                    "Got a message from the client");
+                log::trace!(target:"consensus", 
+                    "Got tx from the client: {:?}", tx_opt);
                 let tx = match tx_opt {
                     None => break,
                     Some(x) => {
                         x
                     }
                 };
-                cx.storage.pending_tx.insert(crypto::hash::ser_and_hash(&tx),tx);
+                cx.storage.add_transaction(tx);
             },
             b_opt = queue.next(), if !queue.is_empty() => {
                 // Got something from the timer
@@ -98,24 +91,15 @@ pub async fn reactor(
         }
         // Do we have sufficient commands, and are we the next leader?
         // Also, do we have sufficient votes?
-        if cx.storage.pending_tx.len() >= block_size && 
+        if cx.storage.get_tx_pool_size() >= block_size && 
             cx.next_leader() == myid && 
             cx.cert_map.contains_key(&cx.last_seen_block.hash)
         {
             log::debug!("I {} am the leader and, I am proposing", cx.myid);
-            let mut txs = Vec::with_capacity(block_size);
-            for _i in 0..block_size {
-                let tx = match cx.storage.pending_tx.pop_front() {
-                    Some((_hash, trans)) => trans,
-                    None => {
-                        panic!("Dequeued when tx pool was not block size");
-                    },
-                };
-                txs.push(tx);
-            }
-            let _p = do_propose(txs, &mut cx).await;
+            let txs = cx.storage.cleave(block_size);
+            let p = do_propose(txs, &mut cx).await;
             // Leader setting the timer now
-            queue.insert(cx.last_seen_block.clone(), d2);
+            queue.insert(p, d2);
         }
     }
 }
