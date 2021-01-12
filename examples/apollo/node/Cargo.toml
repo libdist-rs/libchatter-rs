@@ -17,10 +17,3 @@ tokio = { version = "1.0", features = ["full"] }
 futures = "0.3.8"
 log="*"
 simple_logger="*"
-
-[dependencies.libp2p]
-version = "0.30.1"
-features = [
-    "identify",
-    "secp256k1"
-]

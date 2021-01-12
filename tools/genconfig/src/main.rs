@@ -1,15 +1,13 @@
 // A tool that builds config files for all the nodes and the clients for the
 // protocol.
 
-use libp2p::core::identity::{ed25519, secp256k1};
+use crypto::{ed25519, secp256k1};
 use config::{Node, Client};
 use clap::{load_yaml, App};
 use types::{Replica};
 use crypto::Algorithm;
 use std::{collections::HashMap};
 use util::io::*;
-// use types::LIBP2P_MULTIADDR_FMT;
-
 
 fn main() {
     let yaml = load_yaml!("cli.yml");

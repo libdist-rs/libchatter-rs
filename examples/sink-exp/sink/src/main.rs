@@ -1,6 +1,6 @@
 use clap::{load_yaml, App};
 use tokio::{io::AsyncWriteExt, net::{TcpStream}};
-use libp2p::futures::{StreamExt};
+use futures::StreamExt;
 use tokio_util::codec::{FramedRead};
 use std::{error::Error, time::SystemTime};
 use std::fs::File;

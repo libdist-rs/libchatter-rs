@@ -12,10 +12,3 @@ config = { package = "config", path="../../config"}
 types = { package = "types", path="../../types"}
 crypto = { package = "crypto", path="../../crypto"}
 util = { package = "util", path="../../util"}
-
-[dependencies.libp2p]
-version = "0.30.1"
-features = [
-    "identify",
-    "secp256k1"
-]
