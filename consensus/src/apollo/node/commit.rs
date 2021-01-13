@@ -1,39 +1,41 @@
-use types::{Block, Propose, ProtocolMsg};
+use types::{Block, Height, Propose, ProtocolMsg};
 use std::sync::Arc;
-use std::borrow::Borrow;
-
 use super::context::Context;
 
+/// This function forwards the proposal/relays to the other nodes
+/// and updates the context (by committing blocks)
+///
+/// Note: Call this function after ensuring the proposal is delivered
+/// Note: Must be only called once for every proposal
 pub async fn on_finish_propose(
     p_arc: Arc<Propose>, 
     is_forward: bool,
     cx: &mut Context
 ) 
 {
-    log::debug!(target:"consensus","On finish propose: {:?}", p_arc);
-    
-    let new_block = p_arc.block.clone().unwrap();
-    log::trace!(target:"consensus","On finish: {:?} from [{}]", 
-        new_block.header, cx.myid);
-    log::debug!(target:"consensus", "Last seen {:?} from {}", 
-        cx.last_seen_block.header, cx.myid);
-    
-    let p = p_arc.borrow() as &Propose;
+    log::debug!(target:"consensus","Finishing proposal: {:?}", p_arc);
+    log::debug!(target:"consensus", 
+        "Last seen {:?}", cx.last_seen_block.header);
 
+    let new_block = p_arc.block.clone().unwrap();
+
+    // Send or relay the block to the others
     let forward_leader = cx.next_of(new_block.header.author);
     let send_p = cx.net_send.clone();
-    let p_copy = p.clone();
+    let p_copy = p_arc.as_ref().clone();
     let myid = cx.myid;
-    let new_block_ref = new_block.clone();
-    let blk_ship = new_block_ref.clone();
-
+    let ship_b_ref = new_block.clone();
     let forward_handle = tokio::spawn(async move {
         if forward_leader == myid {
             return;
         }
         let msg = if is_forward {
-            let blk_to_send = (blk_ship.borrow() as &Block).clone();
-            Arc::new(ProtocolMsg::RawNewProposal(p_copy, blk_to_send))
+            Arc::new(
+                ProtocolMsg::RawNewProposal(
+                        p_copy, 
+                        ship_b_ref.as_ref().clone()
+                    )
+            )
         } else {
             Arc::new(ProtocolMsg::Relay(p_copy))
         };
@@ -43,74 +45,88 @@ pub async fn on_finish_propose(
                 msg
             )
         ) {
-            println!("Failed to forward proposal to the next leader: {}", e);
+            log::error!(target:"consensus", 
+                "Failed to forward proposal to the next leader: {}", e);
         }
     });
-    cx.height = new_block.header.height;
-    // change the leader
+
+    // Update the leader
     cx.last_leader = new_block.header.author;
+    cx.prop_chain.insert(p_arc.block_hash, p_arc.clone());
 
     assert_eq!(cx.last_seen_block.hash, new_block.header.prev, 
-        "blocks must be delivered before this step");
+        "blocks {:?} {:?} must be delivered before this step", cx.last_seen_block, new_block);
     assert_eq!(cx.last_seen_block.header.height+1, 
         new_block.header.height, "blocks must be processed in order");
-    cx.last_seen_block = new_block_ref.clone();
-    // Do we have any blocks to commit?
-    if cx.height < cx.num_faults as u64 {
-        println!("Nothing to commit");
-        return;
-    }
-    assert_eq!(cx.last_committed_block_ht+cx.num_faults as u64, 
-        new_block.header.height, 
-        "There should be a difference of f+1 between the last committed block and the latest proposal");
-
-    // Add all parents if not committed already
-    let commit_height = cx.last_committed_block_ht + 1;
-    // if !cx.storage.all_delivered_blocks_by_ht.contains_key(
-        // &commit_height) 
-    if !cx.storage.is_delivered_by_ht(commit_height)
-    {
-        panic!("Could not find missing parent for block:{:?}",commit_height);
-    };
     
-    // commit block
-    cx.last_committed_block_ht = commit_height;
-    let block = cx.storage
-        .delivered_block_from_ht(commit_height)
-        .expect("we committed this block. It must be delivered");
-    cx.storage.add_committed_block(block.clone());
+    cx.last_seen_block = new_block.clone();
 
-    let is_client_apollo_enabled = cx.is_client_apollo_enabled;
-    let cli_block = if cx.is_client_apollo_enabled {
-        new_block_ref
-    } else {
-        block
-    };
-    let cli_send_p = cx.cli_send.clone();
-    let ship_p= p_arc.clone();
-    let cli_send = tokio::spawn(async move {
-        if is_client_apollo_enabled {
-            let res = cli_send_p.send(ship_p);
-            if let Err(e) = res {
-                print!("Error sending to the clients: {}", e);
-            }
-        } else {
-            let res = cli_send_p.send(ship_p);
-            if let Err(e) = res {
-                print!("Error sending to the clients: {}", e);
-            }
+    let committed_block = do_commit(cx);
+    if cx.is_client_apollo_enabled {
+        send_client(p_arc, cx).await;
+    } else if committed_block.is_some() {
+        let committed_block = &committed_block.unwrap();
+        if committed_block.header.height > 0 {
+            let send_arc = cx.prop_chain.get(&committed_block.hash).unwrap();
+            send_client(send_arc.clone(), cx).await;
         }
-        // let cli_block = (cli_block.borrow() as &Block).clone();
-        
-    });
-
-    // The server must wait for the client to get the blocks, it can proceed
-    // to handling the next proposal
-    
-    if let Err(e) = cli_send.await {
-        println!("Failed to send the block to the client: {}", e);
     }
     if let Err(e) = forward_handle.await {
         println!("Failed to forward the block to the next leader: {}", e);
+    }
+
+    log::debug!(target:"consensus", "Next leader is: {}", cx.next_leader());
+}
+
+pub fn do_commit(cx: &mut Context) -> Option<Arc<Block>> {
+    log::debug!(target:"consensus", "Trying to commit blocks");
+
+    let new_block = cx.last_seen_block.as_ref();
+    let last_seen_height = new_block.header.height;
+
+    // Do we have any blocks to commit?
+    // Commit if new_block_ht >= f
+    // Or return if new_block_ht < f 
+    if last_seen_height < cx.num_faults as Height
+    {
+        log::info!(target:"consensus", "Nothing to commit");
+        return None;
+    }
+
+    // assert_eq!(last_committed_height+cx.num_faults as u64, 
+    //     new_block.header.height, 
+    //     "There should be a difference of f+1 between the last committed block and the latest proposal");
+
+    // Add all parents if not committed already
+    let commit_height = last_seen_height - cx.num_faults as Height;
+
+    let block=  match cx.storage.delivered_block_from_ht(commit_height)
+    {
+        None => panic!("Could not find missing parent for block:{:?}",commit_height),
+        Some(x) => x,
+    };
+
+    // commit block
+    cx.storage.add_committed_block(block.clone());
+    Some(block)
+}
+
+/// Based on whether or not Apollo client is enabled or not, notify the client
+/// of the proposal
+pub async fn send_client(p_arc: Arc<Propose>, cx: &Context) {
+    log::debug!(target:"consensus", "Sending {:?} to the client", p_arc);
+
+    let cli_send_p = cx.cli_send.clone();
+    let ship_p= p_arc.clone();
+    let cli_send = tokio::spawn(async move {
+        let res = cli_send_p.send(ship_p);
+        if let Err(e) = res {
+            log::error!(target:"consensus",
+                "Error sending to the clients: {}", e);
+        }
+    });
+
+    if let Err(e) = cli_send.await {
+        println!("Failed to send the block to the client: {}", e);
     }
 }

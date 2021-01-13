@@ -68,7 +68,7 @@ pub async fn reactor(
                 let (sender, pmsg) = pmsg_opt.unwrap();
                 match pmsg {
                     ProtocolMsg::NewProposal(p) => {
-                        on_receive_proposal(Arc::new(p), &mut cx).await;
+                        on_receive_proposal(sender, p, &mut cx).await;
                     },
                     ProtocolMsg::Blame(v) => {
                         on_receive_blame(v, &mut cx).await;
@@ -80,7 +80,7 @@ pub async fn reactor(
                         handle_request(sender, rid, h, &cx).await;
                     },
                     ProtocolMsg::Response(rid, p) => {
-                        handle_response(rid, p, &mut cx).await;
+                        handle_response(sender, rid, p, &mut cx).await;
                     }
                     _ => {},
                 };

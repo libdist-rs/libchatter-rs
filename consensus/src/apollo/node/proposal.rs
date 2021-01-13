@@ -1,20 +1,40 @@
-use types::{Block, Propose, ProtocolMsg, Replica, Transaction};
+use types::{Block, Propose, ProtocolMsg, Replica, Transaction, WireReady};
 use super::{
     context::Context, 
     commit::on_finish_propose
 };
-use std::{
-    sync::Arc,
-    borrow::Borrow,
-};
+use std::sync::Arc;
 
-pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
+/// Called when a proposal is received due to:
+/// - A block getting delivered
+/// - Receiving a proposal directly
+///
+/// Note: This will only execute once all the block for of the proposal is delivered
+pub async fn on_receive_proposal(sender: Replica, p: Propose, cx: &mut Context) {
+    // Triggered if we have already called on_finish_proposal
+    if cx.prop_chain.contains_key(&p.block_hash) {
+        log::debug!(target:"consensus", "Already dealt with proposal {:?}", p);
+        return;
+    }
+
+    log::debug!(target:"consensus", 
+        "Handling proposal: {:?}", p);
+
     let block = p.block.clone().unwrap();
-    log::debug!(target:"consensus", "Handling proposal by [{}]: {}, {:?}", cx.myid, block.header.height, block.header);
 
-    let proposal = p.borrow() as &Propose;
+    // Check if the parent is delivered
+    if !cx.storage.is_delivered_by_hash(&block.header.prev) {
+        log::debug!(target:"consensus", 
+            "Parent not found for the block: {:?}", block);
+        let dest = sender;
+        let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, block.header.prev));
+        cx.prop_waiting_parent.insert(block.header.prev, p);
+        cx.net_send.send((dest, msg)).unwrap();
+        return;
+    }
+
     // Check if the hash in the proposal is for the correct block
-    if crypto::hash::ser_and_hash(block.borrow() as &Block) != proposal.block_hash {
+    if crypto::hash::ser_and_hash(block.as_ref()) != p.block_hash {
         log::warn!(target:"consensus", 
             "Invalid hash in the proposal");
         return;
@@ -22,17 +42,9 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
 
     // 1) Is it correctly signed?
     let pk = cx.pub_key_map.get(&block.header.author).unwrap(); 
-    let bytes = util::io::to_bytes(block.borrow() as &Block);
-    if !pk.verify(&bytes, &proposal.proof) {
+    let bytes = util::io::to_bytes(block.as_ref());
+    if !pk.verify(&bytes, &p.proof) {
         println!("Block verification failed.");
-        return;
-    }
-
-    // Do we already have this block?
-    if cx.storage.is_delivered_by_hash(&block.hash) && !cx.waiting.contains(&block.hash)
-    {
-        log::debug!(target:"consensus", 
-            "{} - Already have this block", cx.myid);
         return;
     }
 
@@ -42,30 +54,34 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
     // this height. If there is one, it must be an equivocation. Because, if
     // this was a repeated block, we must have returned from the previous check
     // for repeated blocks.
-    if cx.storage.is_delivered_by_ht(block.header.height) {
-        log::warn!(target:"consensus",
-            "Equivocation detected: {:?}, {:?}", cx.storage.delivered_block_from_ht(block.header.height), block);
+    if let Some(x) = cx.storage.delivered_block_from_ht(block.header.height) {
+        if (x.hash != block.hash) && x.header.author == block.header.author {
+            log::warn!(target:"consensus",
+                "Equivocation detected: {:?}, {:?}", cx.storage.delivered_block_from_ht(block.header.height), block);
+            return;
+        }
     }
+
+    on_new_valid_proposal(Arc::new(p), cx).await;
+    let mut bhash = block.hash;
+    while let Some(p_new) = cx.prop_waiting_parent.remove(&bhash) {
+        bhash = p_new.block_hash;
+        on_new_valid_proposal(Arc::new(p_new), cx).await;
+    }
+}
+
+/// Called once for every proposal of a height
+///
+/// Before calling, ensure that the block for this proposal and its parents are
+/// delivered
+pub async fn on_new_valid_proposal(p: Arc<Propose>, cx:&mut Context) {
+    let block = p.block.clone().unwrap();
 
     // Check validity
     cx.storage.add_delivered_block(block.clone());
-    cx.prop_map.insert(block.hash, p.clone());
-    
-    // Are all the parents delivered?
-    if let None = cx.storage.delivered_block_from_hash(&block.header.prev) {
-        log::debug!(target:"consensus", 
-            "Parent not found for the block: {:?}", block);
-        // TODO request the block first, and then try again
-        let dest = block.header.author;
-        let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, block.header.prev));
-        cx.waiting.insert(block.header.prev);
-        cx.net_send.send((dest, msg)).unwrap();
-        return;
-    }
-
-    // All parents are delivered, if we are waiting for this block's hash dont
-    // wait anymore
-    cx.waiting.remove(&block.hash);
+    // If we were waiting for this proposal, do not wait anymore
+    cx.prop_waiting.remove(&block.hash);
+    cx.prop_waiting_parent.remove(&block.hash);
 
     // Remove transactions from the pool
     cx.storage.clear(&block.body.tx_hashes);
@@ -76,29 +92,30 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
     on_finish_propose(p, false, cx).await;
 }
 
+/// Creates a block using the last seen block as the parent
+/// Then adds the block as delivered
 pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
-    let mut new_block = Block::with_tx(txs);
+    // Get the parent
     let parent = cx.last_seen_block.as_ref();
-    new_block.header.prev = parent.hash;
-    assert_eq!(new_block.header.prev, parent.hash, "Hash has moved");
 
-    // new_block.header.extra = 
+    // Create a block
+    let mut new_block = Block::with_tx(txs);
+    new_block.header.prev = parent.hash;
     new_block.header.author = cx.myid; 
     new_block.header.height =  parent.header.height+1;
-    // new_block.header.blame_certificates = 
 
     // Finally, compute the hash
-    let new_block_hash = new_block.compute_hash();
-    
-    let mut p = Propose::new(new_block_hash);
-    p.block_hash = new_block_hash;
-    new_block.hash = new_block_hash;
+    let new_block = new_block.init();
 
-    let bytes = util::io::to_bytes(&new_block);
-    p.proof = cx.my_secret_key.sign(&bytes)
+    let serialized_block = util::io::to_bytes(&new_block);
+
+    // Create a proposal
+    let mut p = Propose::new(new_block.hash);
+    p.proof = cx.my_secret_key.sign(&serialized_block)
         .expect("failed to sign the proposal");
-
+    p.block_hash = new_block.hash; // Set proposal hash
     p.block = Some(Arc::new(new_block.clone()));
+
     let p = p;
     let block = p.block.clone().unwrap();
 
@@ -112,30 +129,41 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
         log::warn!(target:"consensus",
             "Server channel closed with error: {}", e);
     };
+
     log::debug!(target:"consensus", 
         "Proposing block with hash: {:?}", p.block.clone().unwrap().hash);
 
     let p_arc = Arc::new(p);
 
-    cx.prop_map.insert(block.hash, p_arc.clone());
+    // Make this block delivered
     cx.storage.add_delivered_block(block);
 
     on_finish_propose(p_arc, true, cx).await;
 }
 
+/// Check if 
 pub async fn on_relay(sender: Replica, p: Propose, cx: &mut Context) {
     log::debug!(target:"consensus", "Got a relay message {:?}", p);
     let bhash = p.block_hash;
 
-    // Do we have the block corresponding to the relay
-    if cx.storage.is_delivered_by_hash(&bhash) {
-        // We have the block, so we must have already handled the proposal
-        return;
-    } else {
-        let dest = sender;
-        let msg = ProtocolMsg::Request(cx.req_ctr, bhash);
-        cx.waiting.insert(p.block_hash);
-        cx.net_send.send((dest, Arc::new(msg))).unwrap();
+    // Do we have the block corresponding to the relay and have we handled it
+    // before?
+    if cx.prop_chain.contains_key(&bhash) {
+        // We have already processed this proposal before
         return;
     }
+    if cx.prop_waiting.contains_key(&bhash) {
+        // We are already waiting for this proposal, do not request again
+        // TODO: Request Again?
+        return;
+    }
+
+    log::debug!(target:"consensus",
+        "Got a relay {:?}, but we dont have the block yet.", p);
+
+    let dest = sender;
+    let msg = ProtocolMsg::Request(cx.req_ctr, bhash);
+    cx.prop_waiting.insert(p.block_hash,p);
+    cx.net_send.send((dest, Arc::new(msg))).unwrap();
+    return;
 }

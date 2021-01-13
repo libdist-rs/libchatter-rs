@@ -1,32 +1,38 @@
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 use tokio::sync::mpsc::UnboundedSender;
-use types::{Block, GENESIS_BLOCK, Height, Propose, ProtocolMsg, Replica, Storage};
+use types::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Replica, Storage};
 use config::Node;
 use std::sync::Arc;
 
 pub struct Context {
+    /// Config context
     pub num_nodes: u16,
     pub num_faults: u16,
     pub myid: Replica,
     pub pub_key_map:HashMap<Replica, PublicKey>,
     pub my_secret_key: Keypair,
-    pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
-    pub cli_send: UnboundedSender<Arc<Propose>>,
+    pub payload:usize,
     pub is_client_apollo_enabled: bool,
 
+    /// Network context
+    pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
+    pub cli_send: UnboundedSender<Arc<Propose>>,
+
+    /// Storage context
+    /// Where the blockchain and transactions are stored
     pub storage: Storage,
-    pub height: Height,
+
+    /// Protocol State
     pub last_leader: Replica,
     pub last_seen_block: Arc<Block>,
-    pub last_committed_block_ht: Height,
-    pub payload:usize,
     pub req_ctr:u64,
-
-    /// Map block hash with propose
-    pub waiting: HashSet<Hash>,
-    pub prop_map: HashMap<Hash, Arc<Propose>>,
+    /// The blocks we are waiting for, to handle propose messages
+    pub prop_waiting: HashMap<Hash, Propose>,
+    pub prop_waiting_parent: HashMap<Hash, Propose>,
+    /// The chain of proposals
+    pub prop_chain: HashMap<Hash, Arc<Propose>>,
 }
 
 const EXTRA_SPACE:usize = 100;
@@ -56,20 +62,17 @@ impl Context {
                 _ => panic!("Unimplemented algorithm"),
             },
             pub_key_map: HashMap::with_capacity(config.num_nodes),
-            net_send: net_send,
-            cli_send: cli_send,
+            net_send,
+            cli_send,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
-            /// The height and next leader are both 1 because the genesis block
-            /// is of height 0 and its author is replica 0
-            height: 0,
             last_leader: 0,
             last_seen_block: Arc::new(GENESIS_BLOCK),
-            last_committed_block_ht: 0,
             is_client_apollo_enabled: false,
             payload: config.payload*config.block_size,
             req_ctr:0,
-            waiting: HashSet::new(),
-            prop_map:HashMap::new(),
+            prop_waiting:HashMap::new(),
+            prop_waiting_parent: HashMap::new(),
+            prop_chain: HashMap::new(),
         };
         for (id,mut pk_data) in &config.pk_map {
             if *id == c.myid {
