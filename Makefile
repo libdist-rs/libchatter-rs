@@ -10,118 +10,23 @@ tools:
 	cargo build --package=genconfig --release
 
 testdata:
-	@mkdir -p testdata/b400-n3 testdata/b100-n3 testdata/b800-n3 \
-	testdata/b800-n3-p128 testdata/b400-n3-p128 testdata/b100-n3-p128 \
-	testdata/b800-n3-p1024 testdata/b400-n3-p1024 testdata/b100-n3-p1024 \
-	testdata/test testdata/b400-p0-f{1,4,8,32}
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 1 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--target testdata/test
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--target testdata/b400-n3
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 100 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--target testdata/b100-n3
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 800 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--target testdata/b800-n3
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 800 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 128 \
-	--target testdata/b800-n3-p128
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 128 \
-	--target testdata/b400-n3-p128
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 100 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 128 \
-	--target testdata/b100-n3-p128
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 800 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 1024 \
-	--target testdata/b800-n3-p1024
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 1024 \
-	--target testdata/b400-n3-p1024
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 100 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 1024 \
-	--target testdata/b100-n3-p1024
-	@./target/release/genconfig \
-	-n 3 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 0 \
-	--target testdata/b400-p0-f1
-	@./target/release/genconfig \
-	-n 9 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 0 \
-	--target testdata/b400-p0-f4
-	@./target/release/genconfig \
-	-n 17 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 0 \
-	--target testdata/b400-p0-f8
-	@./target/release/genconfig \
-	-n 64 \
-	-d 50 \
-	--blocksize 400 \
-	--base_port 4000 \
-	--client_base_port 10000 \
-	--payload 0 \
-	--target testdata/b400-p0-f32
+	@mkdir -p testdata/b{100,400,800}-n3 \
+	testdata/b{100,400,800}-n3-p{128,1024} \
+	testdata/b400-p0-f{1,4,8,32} \
+	testdata/test
+	for b in 100 400 800 ; do \
+		./target/release/genconfig -n 3 -d 50 --blocksize $$b --base_port 4000 --client_base_port 10000 --target testdata/b$$b-n3 ; \
+	done
+	for b in 100 400 800 ; do \
+		for p in 128 1024 ; do \
+			./target/release/genconfig -n 3 -d 50 --blocksize $$b --base_port 4000 --client_base_port 10000 --payload $$p --target testdata/b$$b-n3-p$$p ; \
+		done \
+	done
+	for f in 1 4 8 32 ; do \
+		N=$$(( 2*$$f + 1 )) ; \
+		./target/release/genconfig -n $$N -d 50 --blocksize 400 --base_port 4000 --client_base_port 10000 --payload 0 --target testdata/b400-p0-f$$f ;\
+	done
+	@./target/release/genconfig -n 7 -d 50 --blocksize 1 --base_port 4000 --client_base_port 10000 --target testdata/test
 
 # ============= APOLLO =================================================
 apollo-release: 
