@@ -57,9 +57,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         .unwrap();
     
     // Setup client network
+    let client_network = net::Protocol::<Transaction, ClientMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
     let (cli_send, cli_recv) = 
     cli_net_rt.block_on(
-        net::Protocol::<Transaction, ClientMsg>::client_setup(
+        client_network.client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
             util::codec::tx::Codec::new()
@@ -72,7 +73,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     .unwrap();
 
     // Setup networking
-    let protocol_network = net::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes as u16);
+    let protocol_network = net::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
 
     // Setup the protocol network
     let (net_send, net_recv) = 

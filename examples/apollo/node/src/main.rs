@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
     let config = config;
     let mut is_client_apollo_enabled = false;
-    if let Some(_x) = m.value_of("special_client") {
+    if m.is_present("special_client") {
         is_client_apollo_enabled = true;
     } 
 
@@ -62,9 +62,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         .unwrap();
     
     // Setup client network
+    let cli_network = net::Protocol::<Transaction, ClientMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
     let (cli_send, cli_recv) = 
     cli_net_rt.block_on(
-        net::Protocol::<Transaction, ClientMsg>::client_setup(
+        cli_network.client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
             util::codec::tx::Codec::new(),
@@ -77,7 +78,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     .unwrap();
 
     // Setup networking
-    let protocol_network = net::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes as u16);
+    let protocol_network = net::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
 
     // Setup the protocol network
     let (net_send, net_recv) = 
@@ -95,6 +96,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .build()
         .unwrap();
     
+    log::info!(target:"app","Using special apollo client: {}", is_client_apollo_enabled);
     // Start the Apollo consensus protocol
     core_rt.block_on(
         consensus::apollo::node::reactor(
