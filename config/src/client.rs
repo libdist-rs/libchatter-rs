@@ -24,6 +24,9 @@ pub struct Client {
     pub num_faults: usize,
     pub block_size:usize,
     pub payload:usize,
+
+    // Root certificate
+    pub root_cert: Vec<u8>,
 }
 
 impl Client {
@@ -77,6 +80,7 @@ impl Client {
             num_nodes:0,
             server_pk: HashMap::new(),
             payload:0,
+            root_cert:Vec::new(),
         }
     } 
 

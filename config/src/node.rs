@@ -32,6 +32,11 @@ pub struct Node {
     pub crypto_alg: Algorithm,
     pub pk_map: HashMap<Replica, Vec<u8>>,
     pub secret_key_bytes: Vec<u8>,
+
+    /// OpenSSL Certificate Details
+    pub my_cert: Vec<u8>,
+    pub my_cert_key: Vec<u8>,
+    pub root_cert: Vec<u8>,
 }
 
 impl Node {
@@ -95,6 +100,9 @@ impl Node {
             pk_map: HashMap::new(),
             secret_key_bytes: Vec::new(),
             payload: 0,
+            my_cert: Vec::new(),
+            root_cert:Vec::new(),
+            my_cert_key: Vec::new(),
         }
     }
 
