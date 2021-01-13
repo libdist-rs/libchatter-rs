@@ -6,6 +6,7 @@ use tokio::{
         unbounded_channel
     }
 };
+use tokio_rustls::webpki::DNSNameRef;
 use tokio_stream::StreamMap;
 use tokio_util::codec::{
     Decoder, 
@@ -76,8 +77,11 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         conn.set_nodelay(true)
             .expect("Failed to speed up the socket");
 
+        let domain = DNSNameRef::try_from_ascii_str("nodes.com").unwrap();
+        let conn = self.connector.connect(domain, conn).await.unwrap();
+
         // Split the socket into read and write components
-        let (read, write) = conn.into_split();
+        let (read, write) = tokio::io::split(conn);
 
         // Return the peer
         Peer::new(read, write, dec, enc)

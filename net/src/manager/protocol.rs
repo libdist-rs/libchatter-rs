@@ -19,6 +19,7 @@ use tokio::{
         unbounded_channel,
     },
 };
+use tokio_rustls::TlsAcceptor;
 use tokio_util::codec::{
     Decoder, 
     Encoder, 
@@ -117,6 +118,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
     }
 
     pub async fn client_setup(
+        &self,
         listen: String,
         enc: impl Encoder<Arc<O>> + Clone + Send + Sync + 'static, 
         dec: impl Decoder<Item=I, Error=Err> + Clone + Send + Sync + 'static
@@ -127,7 +129,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         
         let cli_manager_stream = cli_manager(listen).await;
         tokio::spawn(
-            client_event_loop(enc, dec, cli_out_recv, cli_in_send, cli_manager_stream)
+            client_event_loop(enc, dec, cli_out_recv, cli_in_send, cli_manager_stream, self.cli_acceptor.clone())
         );
         (cli_out_send, cli_in_recv)
     }
@@ -306,7 +308,8 @@ async fn client_event_loop<I,O>(
     dec: impl Decoder<Item=I, Error=Err> + Clone + Send + Sync + 'static,
     mut send_out_ch: UnboundedReceiver<Arc<O>>,
     new_in_ch: UnboundedSender<I>,
-    mut new_conn_ch: UnboundedReceiver<TcpStream>
+    mut new_conn_ch: UnboundedReceiver<TcpStream>,
+    cli_acceptor: TlsAcceptor
 ) where I:WireReady + Sync + Unpin + 'static,
 O: WireReady + Clone+Unpin+Sync + 'static,
 {
@@ -336,7 +339,9 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                     std::process::exit(0);
                 }
                 let conn = conn_opt.unwrap();
-                let (read, write) = conn.into_split();
+                let new_acceptor = cli_acceptor.clone();
+                let conn = new_acceptor.accept(conn).await.unwrap();
+                let (read, write) = tokio::io::split(conn);
                 let client_peer = Peer::new(read, write, dec.clone(), enc.clone());
                 let mut client_recv = client_peer.recv;
                 read_stream.insert(client_id, Box::pin(async_stream::stream! {

@@ -1,12 +1,9 @@
 use std::collections::VecDeque;
-use futures::{
-    SinkExt, 
-    stream
-};
+use futures::{SinkExt, stream};
 use tokio::{
-    net::tcp::{
-        OwnedReadHalf, 
-        OwnedWriteHalf
+    io::{
+        AsyncRead,
+        AsyncWrite
     }
 };
 use tokio_util::codec::{
@@ -54,8 +51,8 @@ where I: WireReady+'static+Sync+Unpin,
 O: WireReady+'static + Clone+Sync,
 {
     pub fn new(
-        rd: OwnedReadHalf,
-        wr: OwnedWriteHalf,
+        rd: impl AsyncRead + Unpin + Send + 'static,
+        wr: impl AsyncWrite + Unpin + Send + 'static,
         d: impl Decoder<Item=I, Error=std::io::Error> + Send + 'static,
         e: impl Encoder<Arc<O>> + Send + 'static
     ) -> Self 
