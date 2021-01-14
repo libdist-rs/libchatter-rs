@@ -26,7 +26,7 @@ for d in ${DELAY[@]};do
     echo "DP[Delay]: $d"
     bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$W" "synchs" "$N" "$d"
     sleep 2
-done >> $1/$F-synchs-run.log
+done &>> $1/$F-synchs-run.log
 
 for d in ${DELAY[@]};do
     echo "DP[Delay]: $d"
