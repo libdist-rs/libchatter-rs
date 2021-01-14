@@ -7,7 +7,7 @@ fi
 
 if [ -e $1 ]; then
     echo "Run directory [$1] already exists"
-    exit 0
+    # exit 0
 fi
 
 mkdir -p "$1"

@@ -22,7 +22,7 @@ testdata:
 			./target/release/genconfig -n 3 -d 50 --blocksize $$b --base_port 4000 --client_base_port 10000 --payload $$p --target testdata/b$$b-n3-p$$p ; \
 		done \
 	done
-	for f in 1 4 8 32 ; do \
+	for f in 1 4 8 16 32 ; do \
 		N=$$(( 2*$$f + 1 )) ; \
 		./target/release/genconfig -n $$N -d 50 --blocksize 400 --base_port 4000 --client_base_port 10000 --payload 0 --target testdata/b400-p0-f$$f ;\
 	done
