@@ -26,7 +26,7 @@ testdata:
 		N=$$(( 2*$$f + 1 )) ; \
 		./target/release/genconfig -n $$N -d 50 --blocksize 400 --base_port 4000 --client_base_port 10000 --payload 0 --target testdata/b400-p0-f$$f ;\
 	done
-	@./target/release/genconfig -n 7 -d 50 --blocksize 1 --base_port 4000 --client_base_port 10000 --target testdata/test
+	@./target/release/genconfig -n 7 -d 50 --blocksize 100 --base_port 4000 --client_base_port 10000 --target testdata/test
 
 # ============= APOLLO =================================================
 apollo-release: 
