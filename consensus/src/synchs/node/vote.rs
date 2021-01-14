@@ -67,7 +67,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     }
 
     if !cx.storage.is_delivered_by_hash(&blk_hash) {
-        log::warn!(target:"consensus", 
+        log::debug!(target:"consensus", 
             "Received vote for an undelivered block");
         return decision;
     }
