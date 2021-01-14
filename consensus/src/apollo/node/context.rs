@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 use tokio::sync::mpsc::UnboundedSender;
@@ -29,9 +29,9 @@ pub struct Context {
     pub last_seen_block: Arc<Block>,
     pub req_ctr:u64,
     /// The blocks we are waiting for, to handle propose messages
-    pub prop_waiting: HashMap<Hash, Propose>,
+    pub prop_waiting: HashSet<Hash>,
     pub prop_waiting_parent: HashMap<Hash, Propose>,
-    /// The chain of proposals
+    /// The chain of proposals: Map of block hash to its proposal
     pub prop_chain: HashMap<Hash, Arc<Propose>>,
 }
 
@@ -70,7 +70,7 @@ impl Context {
             is_client_apollo_enabled: false,
             payload: config.payload*config.block_size,
             req_ctr:0,
-            prop_waiting:HashMap::new(),
+            prop_waiting:HashSet::new(),
             prop_waiting_parent: HashMap::new(),
             prop_chain: HashMap::new(),
         };

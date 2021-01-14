@@ -28,6 +28,7 @@ pub async fn on_receive_proposal(sender: Replica, p: Propose, cx: &mut Context) 
             "Parent not found for the block: {:?}", block);
         let dest = sender;
         let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, block.header.prev));
+        cx.prop_waiting.insert(block.header.prev);
         cx.prop_waiting_parent.insert(block.header.prev, p);
         cx.net_send.send((dest, msg)).unwrap();
         return;
@@ -64,6 +65,7 @@ pub async fn on_receive_proposal(sender: Replica, p: Propose, cx: &mut Context) 
 
     on_new_valid_proposal(Arc::new(p), cx).await;
     let mut bhash = block.hash;
+    cx.prop_waiting.remove(&bhash);
     while let Some(p_new) = cx.prop_waiting_parent.remove(&bhash) {
         bhash = p_new.block_hash;
         on_new_valid_proposal(Arc::new(p_new), cx).await;
@@ -77,11 +79,15 @@ pub async fn on_receive_proposal(sender: Replica, p: Propose, cx: &mut Context) 
 pub async fn on_new_valid_proposal(p: Arc<Propose>, cx:&mut Context) {
     let block = p.block.clone().unwrap();
 
+    // Needed since this can be directly invoked from elsewhere
+    if cx.prop_chain.contains_key(&block.hash) {
+        return;
+    }
+
     // Check validity
     cx.storage.add_delivered_block(block.clone());
     // If we were waiting for this proposal, do not wait anymore
     cx.prop_waiting.remove(&block.hash);
-    cx.prop_waiting_parent.remove(&block.hash);
 
     // Remove transactions from the pool
     cx.storage.clear(&block.body.tx_hashes);
@@ -152,7 +158,7 @@ pub async fn on_relay(sender: Replica, p: Propose, cx: &mut Context) {
         // We have already processed this proposal before
         return;
     }
-    if cx.prop_waiting.contains_key(&bhash) {
+    if cx.prop_waiting.contains(&bhash) {
         // We are already waiting for this proposal, do not request again
         // TODO: Request Again?
         return;
@@ -163,7 +169,7 @@ pub async fn on_relay(sender: Replica, p: Propose, cx: &mut Context) {
 
     let dest = sender;
     let msg = ProtocolMsg::Request(cx.req_ctr, bhash);
-    cx.prop_waiting.insert(p.block_hash,p);
+    cx.prop_waiting.insert(p.block_hash);
     cx.net_send.send((dest, Arc::new(msg))).unwrap();
     return;
 }

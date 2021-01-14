@@ -23,7 +23,7 @@ pub async fn handle_response(sender:Replica, _req_id: u64, p: Propose, cx: &mut 
         "Got response for {} with {:?}", _req_id, p);
     let mut bhash = p.block_hash;
     // If we have not processed it yet
-    if cx.prop_waiting.contains_key(&bhash) {
+    if cx.prop_waiting.remove(&bhash) {
         on_receive_proposal(sender,p, cx).await;
     } 
     while let Some(p_new) = cx.prop_waiting_parent.remove(&bhash) {
