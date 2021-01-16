@@ -12,9 +12,6 @@ pub fn do_hash(bytes: &[u8]) -> Hash {
 } 
 
 pub fn ser_and_hash(obj: &impl Serialize) -> Hash {
-    let mut s = flexbuffers::FlexbufferSerializer::new();
-    obj.serialize(&mut s)
-        .unwrap();
-    let bytes = s.view();
-    return do_hash(bytes);
+    let serialized_bytes = bincode::serialize(obj).unwrap();
+    return do_hash(&serialized_bytes);
 }

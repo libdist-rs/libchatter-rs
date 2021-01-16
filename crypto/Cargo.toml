@@ -10,7 +10,7 @@ edition = "2018"
 # types = { package = "types", path="../types"}
 sha2 = "0.9.2"
 serde = { version = "1.0", features = ["derive"] }
-flexbuffers = "0.2.1"
+bincode = "1"
 libsecp256k1 = { version = "0.3" }
 asn1_der = "0.6"
 # serde_asn1_der = "0.6"
