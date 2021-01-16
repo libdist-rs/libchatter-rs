@@ -1,7 +1,8 @@
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap, HashSet, VecDeque};
 use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
-use tokio::sync::mpsc::UnboundedSender;
+// use tokio::sync::mpsc::UnboundedSender;
+use futures::channel::mpsc::UnboundedSender;
 use types::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Replica, Storage};
 use config::Node;
 use std::sync::Arc;
@@ -19,6 +20,9 @@ pub struct Context {
     /// Network context
     pub net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
     pub cli_send: UnboundedSender<Arc<Propose>>,
+    pub relay_buf: VecDeque<(Replica, Propose)>,
+    pub prop_buf: VecDeque<(Replica, Propose)>,
+    pub other_buf: VecDeque<(Replica, ProtocolMsg)>,
 
     /// Storage context
     /// Where the blockchain and transactions are stored
@@ -43,6 +47,7 @@ impl Context {
         cli_send: UnboundedSender<Arc<Propose>>) -> Self {
         let mut c = Context{
             num_nodes: config.num_nodes as u16,
+            relay_buf: VecDeque::new(),
             num_faults: config.num_faults as u16,
             myid: config.id,
             my_secret_key: match config.crypto_alg {
@@ -73,6 +78,8 @@ impl Context {
             prop_waiting:HashSet::new(),
             prop_waiting_parent: HashMap::new(),
             prop_chain: HashMap::new(),
+            prop_buf: VecDeque::new(),
+            other_buf: VecDeque::new(),
         };
         for (id,mut pk_data) in &config.pk_map {
             if *id == c.myid {

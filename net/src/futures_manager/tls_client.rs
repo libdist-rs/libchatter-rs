@@ -1,11 +1,17 @@
 use tokio::{
     net::TcpStream, 
-    sync::mpsc::{
-        UnboundedReceiver, 
-        UnboundedSender, 
-        unbounded_channel
-    }
+    // sync::mpsc::{
+        // UnboundedReceiver, 
+        // UnboundedSender, 
+        // unbounded_channel
+    // }
 };
+use futures::channel::mpsc::{
+    UnboundedReceiver,
+    UnboundedSender,
+    unbounded as unbounded_channel,
+};
+use futures::SinkExt;
 use tokio_rustls::webpki::DNSNameRef;
 use tokio_stream::StreamMap;
 use tokio_util::codec::{
@@ -21,13 +27,13 @@ use types::{
     Replica, 
     WireReady
 };
-use crate::{
-    Client, 
-    peer::Peer
+use super::{
+    TlsClient, 
 };
+use super::peer::Peer;
 use tokio_stream::StreamExt;
 
-impl<I,O> Client<I,O>
+impl<I,O> TlsClient<I,O>
 where I:WireReady + Send + Sync + 'static + Unpin,
 O:WireReady + Clone + Sync + 'static + Unpin, 
 {
@@ -45,14 +51,14 @@ O:WireReady + Clone + Sync + 'static + Unpin,
             let peer = self.add_new_peer(addr, enc.clone(), dec.clone()).await;
             
             // Add the receive part of the peer to the read stream
-            let mut recv = peer.recv;
+            let recv = peer.recv;
             
             // Create a read stream from a receiver
-            let recv = Box::pin(async_stream::stream!{
-                while let Some(item) = recv.recv().await {
-                    yield item;
-                }
-            }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item=I> +Send>>;
+            // let recv = Box::pin(async_stream::stream!{
+            //     while let Some(item) = recv.recv().await {
+            //         yield item;
+            //     }
+            // }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item=I> +Send>>;
             
             // Add it to our maps
             read_stream.insert(i, recv);
@@ -93,16 +99,16 @@ O:WireReady + Clone + Sync + 'static + Unpin,
     ) -> (UnboundedSender<(Replica, Arc<O>)>, UnboundedReceiver<(Replica, I)>) {
         let (in_send, mut in_recv) 
             = unbounded_channel::<(Replica, Arc<O>)>();
-        let (out_send, out_recv) 
+        let (mut out_send, out_recv) 
             = unbounded_channel();
         // I hope no new peers will be added later
         let n = self.peers.len();
         let peers = self.peers.clone();
-        log::trace!(target:"net", "Using peers: {:?}", peers);
+        // log::trace!(target:"net", "Using peers: {:?}", peers);
         tokio::spawn(async move {
             loop {
                 tokio::select! {
-                    to_send_opt = in_recv.recv() => {
+                    to_send_opt = in_recv.next() => {
                         if let None = to_send_opt {
                             log::warn!(target:"manager","Network receiver closed");
                             std::process::exit(0);
@@ -111,13 +117,13 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                         }
                         let (to, msg) = to_send_opt.unwrap();
                         if (to as usize) < n {
-                            let opt = peers[&to].send(msg);
+                            let opt = peers[&to].clone().send(msg).await;
                             if let Err(e) = opt {
                                 panic!("failed to send a message out to peer {} with error {}", to, e);
                             }
                         } else {
                             for (_i, sender) in &peers {
-                                let opt = sender.send(msg.clone());
+                                let opt = sender.clone().send(msg.clone()).await;
                                 if let Err(e) = opt {
                                     panic!("failed to send a message out to peer {} with error {}", to, e);
                                 }
@@ -131,7 +137,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                             // TODO: Handle client disconnection from the server
                         }
                         let recvd_msg = recvd_msg_opt.unwrap();
-                        let out_opt = out_send.send(recvd_msg);
+                        let out_opt = out_send.send(recvd_msg).await;
                         if let Err(e) = out_opt {
                             panic!("Failed a received message outside: {}", e);
                         }

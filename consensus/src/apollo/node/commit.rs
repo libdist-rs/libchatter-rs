@@ -1,6 +1,7 @@
 use types::{Block, Height, Propose, ProtocolMsg};
 use std::sync::Arc;
 use super::context::Context;
+use futures::SinkExt;
 
 /// This function forwards the proposal/relays to the other nodes
 /// and updates the context (by committing blocks)
@@ -21,11 +22,12 @@ pub async fn on_finish_propose(
 
     // Send or relay the block to the others
     let forward_leader = cx.next_of(new_block.header.author);
-    let send_p = cx.net_send.clone();
-    let p_copy = p_arc.as_ref().clone();
+    let mut send_p = cx.net_send.clone();
+    let p_copy = p_arc.clone();
     let myid = cx.myid;
     let ship_b_ref = new_block.clone();
     let forward_handle = tokio::spawn(async move {
+        let p_copy = p_copy.as_ref().clone();
         if forward_leader == myid {
             return;
         }
@@ -37,14 +39,20 @@ pub async fn on_finish_propose(
                     )
             )
         } else {
-            Arc::new(ProtocolMsg::Relay(p_copy))
+            Arc::new(
+                // ProtocolMsg::RawRelay(
+                ProtocolMsg::Relay(
+                    p_copy, 
+                    // ship_b_ref.as_ref().clone(),
+                )
+            )
         };
         if let Err(e) = send_p.send(
             (
                 forward_leader, 
                 msg
             )
-        ) {
+        ).await {
             log::error!(target:"consensus", 
                 "Failed to forward proposal to the next leader: {}", e);
         }
@@ -54,9 +62,9 @@ pub async fn on_finish_propose(
     cx.last_leader = new_block.header.author;
     cx.prop_chain.insert(p_arc.block_hash, p_arc.clone());
 
-    assert_eq!(cx.last_seen_block.hash, new_block.header.prev, 
+    debug_assert_eq!(cx.last_seen_block.hash, new_block.header.prev, 
         "blocks {:?} {:?} must be delivered before this step", cx.last_seen_block, new_block);
-    assert_eq!(cx.last_seen_block.header.height+1, 
+    debug_assert_eq!(cx.last_seen_block.header.height+1, 
         new_block.header.height, "blocks must be processed in order");
     
     cx.last_seen_block = new_block.clone();
@@ -116,10 +124,10 @@ pub fn do_commit(cx: &mut Context) -> Option<Arc<Block>> {
 pub async fn send_client(p_arc: Arc<Propose>, cx: &Context) {
     log::debug!(target:"consensus", "Sending {:?} to the client", p_arc);
 
-    let cli_send_p = cx.cli_send.clone();
+    let mut cli_send_p = cx.cli_send.clone();
     let ship_p= p_arc.clone();
     let cli_send = tokio::spawn(async move {
-        let res = cli_send_p.send(ship_p);
+        let res = cli_send_p.send(ship_p).await;
         if let Err(e) = res {
             log::error!(target:"consensus",
                 "Error sending to the clients: {}", e);

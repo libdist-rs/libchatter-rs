@@ -18,7 +18,7 @@ use std::sync::Arc;
 use tokio::sync::mpsc::{
     UnboundedSender, 
     UnboundedReceiver, 
-    unbounded_channel
+    unbounded_channel,
 };
 
 /// A Peer is a network object that abstracts as a type that is a stream of type

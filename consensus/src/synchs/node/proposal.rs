@@ -5,9 +5,7 @@ use types::{Block, CertType, Certificate, Transaction, Vote, synchs::{
         Propose, 
         ProtocolMsg
     }};
-use std::{
-    sync::Arc,
-};
+use std::sync::Arc;
 
 // pub fn check_hash_eq(left:&[u8], right:&[u8]) -> bool {
 //     // return left == right;
@@ -176,7 +174,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     let vote_ship = tokio::spawn(async move {
         let msg = Arc::new(ship_v);
         if let Err(e) = ship.send(
-            (ship_nodes, msg)) 
+            (ship_nodes, msg))
         {
             log::warn!(target:"consensus", 
                 "failed to send vote: {}", e);

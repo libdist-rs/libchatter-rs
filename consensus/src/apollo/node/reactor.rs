@@ -3,17 +3,22 @@
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
 
-use tokio::sync::mpsc::{
-    unbounded_channel, 
-    UnboundedSender, 
-    UnboundedReceiver
+use futures::channel::mpsc::{
+    UnboundedReceiver,
+    UnboundedSender,
+    unbounded as unbounded_channel,
 };
-use types::{Block, ClientMsg, Payload, Propose, ProtocolMsg, Replica, Transaction};
+use futures::{StreamExt, SinkExt};
+// use tokio::sync::mpsc::{
+//     unbounded_channel, 
+//     UnboundedSender, 
+//     UnboundedReceiver
+// };
+use types::{ClientMsg, Payload, ProtocolMsg, Replica, Transaction};
 use config::Node;
-use super::{blame::*, context::Context, proposal::*, request::{handle_request, handle_response}};
+use super::{context::Context, proposal::*,message::*};
 use std::{
     sync::Arc, 
-    borrow::Borrow,
 };
 
 pub async fn reactor(
@@ -40,25 +45,18 @@ pub async fn reactor(
         .build()
         .unwrap();
     rt.spawn(async move {
-        let cli_send = cli_send_p;
+        let mut cli_send = cli_send_p;
         loop {
-            let prop_arc = recv.recv().await.unwrap();
+            let prop_arc = recv.next().await.unwrap();
             let payload = Payload::with_payload(pl_size);
-            let bl = (prop_arc
-                .block
-                .clone()
-                .unwrap()
-                .borrow() as &Block)
-                .clone();
-            let prop = (prop_arc
-                .borrow() as &Propose)
-                .clone();
-            cli_send.send(Arc::new(ClientMsg::RawNewBlock(prop, bl, payload))).unwrap();
+            let prop = prop_arc.as_ref().clone();
+            let bl = prop.block.as_ref().unwrap().as_ref().clone();
+            cli_send.send(Arc::new(ClientMsg::RawNewBlock(prop, bl, payload))).await.unwrap();
         }
     });
     loop {
         tokio::select! {
-            pmsg_opt = net_recv.recv() => {
+            pmsg_opt = net_recv.next() => {
                 // Received a protocol message
                 if let None = pmsg_opt {
                     log::error!(target:"node", 
@@ -66,26 +64,13 @@ pub async fn reactor(
                     std::process::exit(0);
                 }
                 let (sender, pmsg) = pmsg_opt.unwrap();
-                match pmsg {
-                    ProtocolMsg::NewProposal(p) => {
-                        on_receive_proposal(sender, p, &mut cx).await;
-                    },
-                    ProtocolMsg::Blame(v) => {
-                        on_receive_blame(v, &mut cx).await;
-                    },
-                    ProtocolMsg::Relay(p) => {
-                        on_relay(sender, p, &mut cx).await;
-                    }
-                    ProtocolMsg::Request(rid, h) => {
-                        handle_request(sender, rid, h, &cx).await;
-                    },
-                    ProtocolMsg::Response(rid, p) => {
-                        handle_response(sender, rid, p, &mut cx).await;
-                    }
-                    _ => {},
-                };
+                handle_message(sender, pmsg, &mut cx);
+                while let Ok(Some((sender, pmsg))) = net_recv.try_next() {
+                    handle_message(sender, pmsg, &mut cx);
+                }
+                process_message(&mut cx).await;
             },
-            tx_opt = cli_recv.recv() => {
+            tx_opt = cli_recv.next() => {
                 // We received a message from the client
                 match tx_opt {
                     None => break,

@@ -12,7 +12,8 @@ use crate::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
 use types::ClientMsgCodec;
-use std::borrow::Borrow;
+use futures::{SinkExt, StreamExt};
+use net::futures_manager::TlsClient;
 
 pub async fn start(
     c:&Client, 
@@ -20,10 +21,10 @@ pub async fn start(
     window: usize,
 ) {
 
-    let mut client_network = net::Client::<ClientMsg, Transaction>::new(c.root_cert.clone());
+    let mut client_network = TlsClient::<ClientMsg, Transaction>::new(c.root_cert.clone());
     let servers = c.net_map.clone();
     let send_id = c.num_nodes;
-    let (net_send,mut net_recv) = 
+    let (mut net_send,mut net_recv) = 
         client_network.setup(servers, EnCodec::new(), ClientMsgCodec::new()).await;
 
     let payload = c.payload;
@@ -55,11 +56,11 @@ pub async fn start(
     // Send f blocks worth of transactions first
     let first_send = c.num_faults*c.block_size;
     log::debug!(target:"consensus", "Sending {} number of transactions initially", first_send);
-    let net_send_p = net_send.clone();
+    let mut net_send_p = net_send.clone();
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
         let next = recv.recv().await.unwrap();
-        net_send_p.send((send_id as u16,next)).unwrap();
+        net_send_p.send((send_id as u16,next)).await.unwrap();
     }
     recv
     });
@@ -67,7 +68,7 @@ pub async fn start(
     log::debug!(target:"consensus", "Receiving first {} blocks", first_recv);
     let first_recv_b = tokio::spawn(async move{
     for _ in 0..(first_recv) {
-        let (_, b) = net_recv.recv().await.unwrap();
+        let (_, b) = net_recv.next().await.unwrap();
         let blk = match b {
             ClientMsg::NewBlock(p,_pl) => p.block.unwrap(),
             _ => continue,
@@ -97,9 +98,9 @@ pub async fn start(
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {
                 if let Some(x) = tx_opt {
-                    let tx = x.borrow() as &Transaction;
+                    let tx = x.as_ref();
                     let hash = crypto::hash::ser_and_hash(tx);
-                    net_send.send((send_id as u16,x))
+                    net_send.send((send_id as u16,x)).await
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
@@ -109,7 +110,7 @@ pub async fn start(
                     std::process::exit(0);
                 }
             },
-            block_opt = net_recv.recv() => {
+            block_opt = net_recv.next() => {
                 // println!("Got something from the network");
                 if let None = block_opt {
                     panic!("invalid content received from the server");

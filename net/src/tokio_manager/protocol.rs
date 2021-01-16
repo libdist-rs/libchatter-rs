@@ -30,9 +30,9 @@ use types::{
 };
 use futures::Stream;
 use tokio_stream::{StreamMap, StreamExt};
-use crate::peer::Peer;
+use super::peer::Peer;
 
-use crate::Protocol;
+use super::Protocol;
 
 const ID_BYTE_SIZE:usize = std::mem::size_of::<Replica>();
 
@@ -94,6 +94,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                         yield(item);
                     }
                 }) as Pin<Box<dyn Stream<Item=I>+Send>>
+                // recv_ch
             );
             writer_end_points.insert(i as Replica, peer.send);
         }
@@ -344,11 +345,15 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                 let (read, write) = tokio::io::split(conn);
                 let client_peer = Peer::new(read, write, dec.clone(), enc.clone());
                 let mut client_recv = client_peer.recv;
-                read_stream.insert(client_id, Box::pin(async_stream::stream! {
+                read_stream.insert(
+                    client_id, 
+                Box::pin(async_stream::stream! {
                     while let Some(item) = client_recv.recv().await {
                         yield(item);
                     }
-                }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item=I> +Send>>);
+                }) as std::pin::Pin<Box<dyn futures_util::stream::Stream<Item=I> +Send>>
+                    // Box::pin(client_recv)
+                );
                 writers.insert(client_id, client_peer.send);
 
                 client_id = client_id + 1;

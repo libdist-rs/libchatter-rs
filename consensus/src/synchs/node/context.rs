@@ -1,4 +1,5 @@
 use tokio::sync::mpsc::UnboundedSender;
+// use futures::channel::mpsc::UnboundedSender;
 use types::{Block, Certificate, synchs::ClientMsg, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ProtocolMsg};
 use config::Node;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
@@ -43,9 +44,9 @@ impl Context {
     ) -> Self {
         let genesis_arc = Arc::new(GENESIS_BLOCK);
         let mut c = Context {
-            net_send: net_send,
+            net_send,
             num_nodes: config.num_nodes,
-            cli_send: cli_send,
+            cli_send,
             my_secret_key: match config.crypto_alg {
                 crypto::Algorithm::ED25519 => {
                     let mut sk_copy = config.secret_key_bytes.clone();

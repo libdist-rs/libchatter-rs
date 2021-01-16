@@ -14,14 +14,14 @@ use crate::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
 use types::synchs::ClientMsgCodec as Codec;
-use std::borrow::Borrow;
+use net::tokio_manager::TlsClient as NClient;
 
 pub async fn start(
     c:&Client, 
     metric: u64,
     window: usize,
 ) {
-    let mut client_network = net::Client::<ClientMsg, Transaction>::new(c.root_cert.clone());
+    let mut client_network = NClient::<ClientMsg, Transaction>::new(c.root_cert.clone());
     let servers = c.net_map.clone();
     let send_id = c.num_nodes as u16;
     let (net_send, mut net_recv) = 
@@ -54,7 +54,7 @@ pub async fn start(
         tokio::select! {
             tx_opt = recv.recv(), if pending > 0 => {
                 if let Some(x) = tx_opt {
-                    let hash = crypto::hash::ser_and_hash(x.borrow() as &Transaction);
+                    let hash = crypto::hash::ser_and_hash(x.as_ref());
                     net_send.send((send_id, x))
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());

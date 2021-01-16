@@ -1,7 +1,8 @@
 use rustls::{Certificate, NoClientAuth, PrivateKey, ServerConfig};
-use tokio::sync::mpsc::{
-    UnboundedSender
-};
+// use tokio::sync::mpsc::{
+//     UnboundedSender
+// };
+use futures::channel::mpsc::UnboundedSender;
 use tokio_rustls::{TlsAcceptor, TlsConnector, rustls::{self, ClientConfig}};
 use types::{
     Replica, 
@@ -13,7 +14,7 @@ use std::{
     sync::Arc
 };
 
-pub struct Client<I,O> 
+pub struct TlsClient<I,O> 
 where I:WireReady,
 O:WireReady,
 {
@@ -22,7 +23,7 @@ O:WireReady,
     phantom: PhantomData<(I,O)>,
 }
 
-impl<I,O> Client<I,O> 
+impl<I,O> TlsClient<I,O> 
 where I:WireReady,
 O:WireReady,
 {
