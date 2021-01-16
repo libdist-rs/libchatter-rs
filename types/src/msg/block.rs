@@ -44,7 +44,7 @@ pub const GENESIS_BLOCK: Block = Block{
 
 impl WireReady for Block {
     fn from_bytes(data: &[u8]) -> Self {
-        let c:Block = flexbuffers::from_slice(data)
+        let c:Block = bincode::deserialize(data)
             .expect("failed to decode the block");
         c.init()
     }

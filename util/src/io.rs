@@ -17,10 +17,7 @@ pub fn file_to_ips(filename:String) -> Vec<String> {
 }
 
 pub fn to_bytes(obj: &impl Serialize) -> Vec<u8> {
-    let mut s = flexbuffers::FlexbufferSerializer::new();
-    obj.serialize(&mut s)
-        .unwrap();
-    let bytes = s.view();
+    let bytes = bincode::serialize(obj).expect("Failed to serialize object");
     return bytes.to_vec();
 }
 
@@ -38,11 +35,8 @@ pub fn write_json(filename:String, obj :&impl Serialize) {
 pub fn write_bin(filename:String, obj :&impl Serialize) {
     let mut f = File::create(filename)
         .unwrap();
-    let mut s = flexbuffers::FlexbufferSerializer::new();
-    obj.serialize(&mut s)
-        .unwrap();
-    let bytes = s.view();
-    f.write_all(bytes)
+    let bytes = bincode::serialize(obj).expect("Failed to serialize object");
+    f.write_all(&bytes)
         .unwrap();
 }
 

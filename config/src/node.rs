@@ -140,7 +140,7 @@ impl Node {
         f.read_to_end(&mut buf)
             .unwrap();
         let bytes:&[u8] = &buf;
-        let c:Node = flexbuffers::from_slice(bytes)
+        let c:Node = bincode::deserialize(bytes)
             .unwrap();
         return c;
     }

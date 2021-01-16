@@ -17,7 +17,7 @@ impl Transaction {
 
 impl WireReady for Transaction {
     fn from_bytes(data: &[u8]) -> Self {
-        let c:Transaction = flexbuffers::from_slice(data)
+        let c:Transaction = bincode::deserialize(data)
             .expect("failed to decode the block");
         c.init()
     }

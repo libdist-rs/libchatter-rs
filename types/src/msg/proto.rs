@@ -6,19 +6,27 @@ use crypto::hash::Hash;
 use std::sync::Arc;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
+#[repr(u8)]
 pub enum ProtocolMsg {
+    /// Raw Proposal
     RawNewProposal(Propose, Block),
-    Relay(Propose),
-    Blame(Vote),
     NewProposal(Propose),
+
+    /// Raw Relay
+    // RawRelay(Propose, Block),
+    Relay(Propose),
+
+    Blame(Vote),
     Request(u64, Hash),
+    
+    /// RawResponse
     RawResponse(u64, Propose, Block),
     Response(u64, Propose),
 }
 
 impl WireReady for ProtocolMsg {
     fn from_bytes(bytes:&[u8]) -> Self {
-        let c:ProtocolMsg = flexbuffers::from_slice(bytes)
+        let c:ProtocolMsg = bincode::deserialize(bytes)
             .expect("failed to decode the protocol message");
         c.init()
     }
@@ -34,7 +42,12 @@ impl WireReady for ProtocolMsg {
                 block.hash = block.compute_hash();
                 prop.block = Some(Arc::new(block));
                 ProtocolMsg::Response(_i, prop)
-            }
+            },
+            // ProtocolMsg::RawRelay(mut prop, mut block) => {
+            //     block = block.init();
+            //     prop.block = Some(Arc::new(block));
+            //     ProtocolMsg::Relay(prop)
+            // },
             _x => _x,
         }
     }
@@ -57,7 +70,7 @@ pub enum ClientMsg {
 
 impl WireReady for ClientMsg {
     fn from_bytes(bytes: &[u8]) -> Self {
-        let c:ClientMsg = flexbuffers::from_slice(bytes)
+        let c:ClientMsg = bincode::deserialize(bytes)
             .expect("failed to decode the protocol message");
         c.init()
     }

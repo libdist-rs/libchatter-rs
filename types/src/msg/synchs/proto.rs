@@ -35,7 +35,7 @@ impl ProtocolMsg {
 
 impl WireReady for ProtocolMsg {
     fn from_bytes(bytes: &[u8]) -> Self {
-        let c:ProtocolMsg = flexbuffers::from_slice(bytes)
+        let c:ProtocolMsg = bincode::deserialize(bytes)
             .expect("failed to decode the protocol message");
         c.init()
     }
@@ -90,7 +90,7 @@ pub enum ClientMsg {
 
 impl WireReady for ClientMsg {
     fn from_bytes(bytes: &[u8]) -> Self {
-        let c:ClientMsg = flexbuffers::from_slice(bytes)
+        let c:ClientMsg = bincode::deserialize(bytes)
             .expect("failed to decode the protocol message");
         c.init()
     }

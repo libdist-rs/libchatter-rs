@@ -118,7 +118,7 @@ impl Client {
         f.read_to_end(&mut buf)
             .unwrap();
         let bytes:&[u8] = &buf;
-        let c:Client = flexbuffers::from_slice(bytes)
+        let c:Client = bincode::deserialize(bytes)
             .unwrap();
         return c;
     }

@@ -13,5 +13,5 @@ crypto = { package = "crypto", path="../crypto"}
 serde_json = "1.0"
 serde_yaml = "0.8"
 toml = "0.5"
-flexbuffers = "0.2.1"
+bincode = "1"
 log="*"
