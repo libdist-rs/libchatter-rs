@@ -4,7 +4,7 @@ killall node-synchs &> /dev/null
 
 TESTDIR=${TESTDIR:="testdata/b100-n3"}
 TYPE=${TYPE:="release"}
-W=${W:="100000"}
+W=${W:="80000"}
 
 ./target/$TYPE/node-synchs \
     --config $TESTDIR/nodes-0.json \

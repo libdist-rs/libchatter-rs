@@ -4,23 +4,23 @@ killall node-apollo &> /dev/null
 
 TESTDIR=${TESTDIR:="testdata/b100-n3"}
 TYPE=${TYPE:="release"}
-W=${W:="100000"}
+W=${W:="80000"}
 
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-0.json \
     --ip ip_file \
     --sleep 20 \
-    -s $1 > 0.log &
+    -s $1 &> 0.log &
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-1.json \
     --ip ip_file \
     --sleep 20 \
-    -s $1 > 1.log &
+    -s $1 &> 1.log &
 ./target/$TYPE/node-apollo \
     --config $TESTDIR/nodes-2.json \
     --ip ip_file \
     --sleep 20 \
-    -s $1 > 2.log &
+    -s $1 &> 2.log &
 
 sleep 20
 # Nodes must be ready by now

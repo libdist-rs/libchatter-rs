@@ -25,7 +25,7 @@ do
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR &
 done
 
-sleep 5
+sleep 60
 
 client=${ACTUAL_IPS[$N]}
 ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $TYPE
