@@ -10,11 +10,11 @@ tools:
 	cargo build --package=genconfig --release
 
 testdata:
-	@mkdir -p testdata/b{100,400,800}-n3 \
+	@mkdir -p testdata/b{100,400,800,2000}-n3 \
 	testdata/b{100,400,800}-n3-p{128,1024} \
 	testdata/b400-p0-f{1,4,8,16,32} \
 	testdata/test
-	for b in 100 400 800 ; do \
+	for b in 100 400 800 2000 ; do \
 		./target/release/genconfig -n 3 -d 50 --blocksize $$b --base_port 4000 --client_base_port 10000 --target testdata/b$$b-n3 ; \
 	done
 	for b in 100 400 800 ; do \
