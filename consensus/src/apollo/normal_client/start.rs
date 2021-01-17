@@ -20,6 +20,18 @@ struct Context {
     num_cmds: u128,
 }
 
+impl std::fmt::Debug for Context {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Context")
+            .field("Pending", &self.pending)
+            .field("count_map", &self.count_map.len())
+            .field("time_map", &self.time_map.len())
+            .field("latency_map", &self.latency_map.len())
+            .field("num_cmds", &self.num_cmds)
+            .finish()
+    }
+}
+
 impl Context {
     pub fn new() -> Self {
         Self {
@@ -86,6 +98,7 @@ pub async fn start(
                 }
             },
             block_opt = net_recv.next() => {
+                let now = SystemTime::now();
                 log::debug!(target:"consensus",
                     "Got {:?} from the network", block_opt);
                 // Got something from the network
@@ -94,12 +107,13 @@ pub async fn start(
                 } else {
                     panic!("Got invalid block from the nodes: {:?}", block_opt);
                 };
-                log::debug!(target:"consensus", "got a block:{:?}",b);
-                
+                log::trace!(target:"consensus", "got a block:{:?}",b);
+                new_blocks.push_back(b);
                 while let Ok(Some((_, ClientMsg::NewBlock(p,_)))) = net_recv.try_next() {
                     new_blocks.push_back(p.block.clone().unwrap());
                 }
-                process_blocks(c, &mut new_blocks, &mut cx);
+                process_blocks(c, now, &mut new_blocks, &mut cx);
+                log::debug!(target:"consensus", "Sending {} commands to the nodes", cx.pending);
             }
         }
         if cx.num_cmds > m as u128 {
@@ -110,8 +124,10 @@ pub async fn start(
     }
 }
 
-fn process_blocks(c:&Client, new_blocks: &mut VecDeque<Arc<Block>>, cx: &mut Context) {
-    for b in new_blocks {
+fn process_blocks(c:&Client, now: SystemTime, new_blocks: &mut VecDeque<Arc<Block>>, cx: &mut Context) {
+    log::debug!(target:"block-processor", "Processing new {:?}", new_blocks);
+    log::debug!(target:"block-processor", "Before processing: {:?}", cx);
+    for b in new_blocks.into_iter() {
         // Check if the block is valid?
         if !cx.count_map.contains_key(&b.hash) {
             cx.count_map.insert(b.hash, 1);
@@ -122,7 +138,6 @@ fn process_blocks(c:&Client, new_blocks: &mut VecDeque<Arc<Block>>, cx: &mut Con
             cx.count_map.insert(b.hash, ct+1);
             continue;
         }
-        let now = SystemTime::now();
         if cx.finished_map.contains(&b.hash) {
             continue;
         }
@@ -139,4 +154,5 @@ fn process_blocks(c:&Client, new_blocks: &mut VecDeque<Arc<Block>>, cx: &mut Con
         }
         cx.finished_map.insert(b.hash);
     }
+    log::debug!(target:"block-processor", "After processing: {:?}", cx);
 }
