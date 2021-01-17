@@ -22,7 +22,7 @@ W=${W:="80000"}
     --sleep 20 \
     -s $1 &> 2.log &
 
-sleep 20
+sleep 60
 # Nodes must be ready by now
 ./target/$TYPE/client-apollo \
     --config $TESTDIR/client.json \

@@ -34,6 +34,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         unsafe {
             config::SLEEP_TIME = v.parse().expect("unexpected sleep time");
         }
+    } else {
+        unsafe {
+            config::SLEEP_TIME = (5 + config.num_nodes) as u64;
+        }
     }
 
     simple_logger::SimpleLogger::new().init().unwrap();

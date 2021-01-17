@@ -19,7 +19,7 @@ W=${W:="80000"}
     --delta 50 \
     --ip ip_file $1 > 2.log &
 
-sleep 20
+sleep 60
 # Nodes must be ready by now
 ./target/$TYPE/client-synchs \
     --config $TESTDIR/client.json \

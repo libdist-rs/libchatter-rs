@@ -8,12 +8,15 @@ use futures::SinkExt;
 
 pub async fn process_message(cx:&mut Context) 
 {
+    log::debug!(target:"message", "Handling proposals {:?}", cx.prop_buf);
     while let Some((sender, p)) = cx.prop_buf.pop_front() {
         delivery_check(sender, p, cx).await;
     }
+    log::debug!(target:"message", "Handling relays {:?}", cx.relay_buf);
     while let Some((sender, p)) = cx.relay_buf.pop_front() {
         delivery_check(sender, p, cx).await;
     }
+    log::debug!(target:"message", "Handling others: {:?}", cx.other_buf);
     while let Some((sender, pmsg)) = cx.other_buf.pop_front() {
         match pmsg {
             ProtocolMsg::Request(rid, h) => {
@@ -46,6 +49,7 @@ pub fn handle_message(sender: Replica, message: ProtocolMsg, cx: &mut Context) {
 pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
     // Check if the proposals are already processed
     if cx.prop_chain.contains_key(&p.block_hash) {
+        log::debug!(target:"message", "Already handled {:?} before", p);
         return;
     }
 
