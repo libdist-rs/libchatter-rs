@@ -30,10 +30,10 @@ testdata:
 
 # ============= APOLLO =================================================
 apollo-release: 
-	cargo build --package=node-apollo --package=client-apollo --release
+	cargo build --package=node-apollo --package=client-apollo --package=normal-client-apollo --release
 
 apollo:
-	cargo build --package=node-apollo --package=client-apollo
+	cargo build --package=node-apollo --package=client-apollo --package=normal-client-apollo
 
 # ============== PING-EXP ===============================================
 ping-release:

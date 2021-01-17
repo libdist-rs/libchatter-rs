@@ -4,7 +4,7 @@ DELAY=${3:-"50"}
 
 cd libchatter-rs
 
-sleep 30
+# sleep 30
 # echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
 
 ./target/release/node-synchs \

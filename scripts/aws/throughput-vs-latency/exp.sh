@@ -10,6 +10,18 @@ IN_FILE=${1:-"scripts/aws/aws_ips.log"}
 TESTDIR=${2:-"testdata/b100-n3"}
 W=${3:-"50000"}
 TYPE=${4:-"apollo"}
+CLI_TYPE=${5:-"default"}
+DELAY=${6:-"50"}
+
+if [ $TYPE == "synchs" ]; then 
+    CLI_TYPE="client-$TYPE"
+elif [ $TYPE == "apollo" ]; then
+    if [ $CLI_TYPE == "default" ]; then 
+        CLI_TYPE="client-apollo"
+    else 
+        CLI_TYPE="normal-client-apollo"
+    fi
+fi
 
 while IFS= read -r line; do
     ACTUAL_IPS+=($line)
@@ -22,13 +34,13 @@ do
     ip=${ACTUAL_IPS[$i]}
     ssh arch@$ip 'killall node-apollo node-synchs'
     # sleep 1
-    ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR &
+    ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY $CLI_TYPE &
 done
 
 sleep 60
 
 client=${ACTUAL_IPS[$N]}
-ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $TYPE
+ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE
 
 for((i=0;i<$N;i++))
 do

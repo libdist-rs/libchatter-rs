@@ -8,4 +8,6 @@ for file in $1/* ; do
     grep "DP\[.*\]:" $file >> "$1"/$fname-cleaned.log
     sed -i "/\[Start\]/d" "$1"/$fname-cleaned.log
     sed -i "/\[End\]/d" "$1"/$fname-cleaned.log
+
+    python scripts/throughput-vs-latency/vary-b/parse-exp.py "$1"/$fname-cleaned.log "$1"/$fname-cleaned.csv
 done

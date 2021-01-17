@@ -1,12 +1,12 @@
 TESTDIR=${1:-"testdata/b100-n3"}
 W=${2:-"50000"}
-TYPE=${3:-"apollo"}
+CLI_TYPE=${3:-"client-apollo"}
 
 cd libchatter-rs
 
-sleep 30
+# sleep 30
 
-./target/release/client-$TYPE \
+./target/release/$CLI_TYPE \
     --config $TESTDIR/client.json \
     -i cli_ip_file \
     -w $W \
