@@ -106,13 +106,7 @@ impl Context {
 
     /// For sync hotstuff, the next leader is the current leader
     pub fn next_leader(&self) -> Replica {
-        // Apparently this is faster than % operator which is expensive in terms
-        // of CPU cycles
-        if self.last_leader == self.num_nodes as Replica {
-            0 as Replica
-        } else {
-            (self.last_leader + 1) as Replica
-        }
+       self.last_leader
     }
 
     /// Leader of a view
