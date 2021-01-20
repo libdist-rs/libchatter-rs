@@ -2,11 +2,11 @@ use serde::{Serialize, Deserialize};
 use crate::{Replica, Vote, View};
 use crypto::hash::Hash;
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub enum CertType {
     Blame(Replica, View),
-    Vote(Hash),
-    QuitView(View),
+    Vote(View, Hash),
+    QuitView(View, Hash),
     DEFAULT,
 }
 

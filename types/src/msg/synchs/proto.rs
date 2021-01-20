@@ -6,7 +6,7 @@ use serde::{
 };
 use tokio_util::codec::{Decoder, LengthDelimitedCodec};
 use std::sync::Arc;
-use crate::{CertType, Certificate, Payload, WireReady, msg::block::Block, synchs::Propose};
+use crate::{CertType, Certificate, Payload, View, WireReady, msg::block::Block, synchs::Propose};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum ProtocolMsg {
@@ -22,10 +22,15 @@ pub enum ProtocolMsg {
     /// 2) The two equivocating blocks
     EquivcationBlameMsg(Block, Block, Certificate),
     NoProgressBlameMsg(Certificate),
+    
+    /// A message to change the view
+    /// View is the old view
+    /// Certificate is the certificate for the old view
+    ChangeView(View, Certificate),
     /// Certificate saying that all the nodes are waiting to quit the view
-    QuitViewMsg(Certificate), 
+    QuitViewMsg(View, Certificate), 
     /// Status: Contains the block and its certificate
-    StatusMsg(Block, Certificate),
+    StatusMsg(Certificate),
     /// Invalid message
     INVALID,
 }
@@ -48,9 +53,10 @@ impl WireReady for ProtocolMsg {
                 ProtocolMsg::NewProposal(p)
             },
             ProtocolMsg::VoteMsg(ref c, _) => {
-                if let CertType::Vote(_) = &c.msg {
-                    return self;
+                if let CertType::Vote(_,_) = &c.msg {
+                    self
                 } else {
+                    log::debug!("Invalid {:?}", self);
                     ProtocolMsg::INVALID
                 }
             },
@@ -58,6 +64,7 @@ impl WireReady for ProtocolMsg {
                 if let CertType::Blame(_,_) = &c.msg {
                     return self;
                 } else {
+                    log::debug!("Invalid {:?}", self);
                     ProtocolMsg::INVALID
                 }
             },
@@ -65,9 +72,23 @@ impl WireReady for ProtocolMsg {
                 if let CertType::Blame(_,_) = &c.msg {
                     return self;
                 } else {
+                    log::debug!("Invalid {:?}", self);
                     ProtocolMsg::INVALID
                 }
             },
+            ProtocolMsg::ChangeView(ref v, ref c) => {
+                if let CertType::Vote(ref x,_) = c.msg {
+                    if *v == *x {
+                        self
+                    } else {
+                        log::debug!("Invalid {:?}", self);
+                        ProtocolMsg::INVALID
+                    }
+                } else {
+                    log::debug!("Invalid {:?}", self);
+                    ProtocolMsg::INVALID
+                }
+            }
             _x => _x,
         }
     }
