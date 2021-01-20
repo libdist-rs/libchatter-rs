@@ -1,9 +1,9 @@
 # Do the setup on the AWS Server
 
 FILE="${1:-/dev/stdin}"
-PVT_IP_FILE=${1:-"scripts/aws/pvt_ips.log"}
-IPS_FILE=${2:-"scripts/aws/ips_file.log"}
-CLI_IPS_FILE=${3:-"scripts/aws/cli_ips.log"}
+PVT_IP_FILE=${2:-"scripts/aws/pvt_ips.log"}
+IPS_FILE=${3:-"scripts/aws/ips_file.log"}
+CLI_IPS_FILE=${4:-"scripts/aws/cli_ips.log"}
 IPS=()
 
 # Create Private IP files

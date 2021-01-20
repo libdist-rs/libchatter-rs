@@ -12,9 +12,13 @@ W=${3:-"50000"}
 TYPE=${4:-"apollo"}
 CLI_TYPE=${5:-"default"}
 DELAY=${6:-"50"}
+M=${M:-"1000000"}
 
 if [ $TYPE == "synchs" ]; then 
     CLI_TYPE="client-$TYPE"
+elif [ $TYPE == "synchs-rr" ] ; then
+    M="100000"
+    CLI_TYPE="client-synchs"
 elif [ $TYPE == "apollo" ]; then
     if [ $CLI_TYPE == "default" ]; then 
         CLI_TYPE="client-apollo"
@@ -32,7 +36,7 @@ N=3
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs'
+    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr'
     # sleep 1
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY $CLI_TYPE &
 done
@@ -45,5 +49,5 @@ ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TE
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs'
+    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr'
 done

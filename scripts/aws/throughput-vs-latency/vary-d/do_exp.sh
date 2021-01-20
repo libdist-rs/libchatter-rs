@@ -12,8 +12,13 @@ W=${3:-"50000"}
 TYPE=${4:-"apollo"}
 N=${5:-"3"}
 DELAY=${6:-"50"}
+CLI_TYPE="client-synchs"
 
-# echo "Using: $TYPE $TESTDIR $DELAY"
+if [ $TYPE == "apollo" ]; then
+    CLI_TYPE="client-apollo"
+fi
+
+echo "Using: $TYPE $TESTDIR $DELAY $CLI_TYPE"
 
 while IFS= read -r line; do
     ACTUAL_IPS+=($line)
@@ -31,7 +36,7 @@ done
 sleep 60
 
 client=${ACTUAL_IPS[$N]}
-ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $TYPE
+ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE
 
 for((i=0;i<$N;i++))
 do

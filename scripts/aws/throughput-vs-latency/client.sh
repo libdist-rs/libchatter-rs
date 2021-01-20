@@ -1,6 +1,7 @@
 TESTDIR=${1:-"testdata/b100-n3"}
 W=${2:-"50000"}
 CLI_TYPE=${3:-"client-apollo"}
+M=${4:-"1000000"}
 
 cd libchatter-rs
 
@@ -10,4 +11,4 @@ cd libchatter-rs
     --config $TESTDIR/client.json \
     -i cli_ip_file \
     -w $W \
-    -m 1000000
+    -m $M
