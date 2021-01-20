@@ -7,8 +7,7 @@ use tokio::sync::mpsc::{
     UnboundedSender, 
     UnboundedReceiver
 };
-use tokio_util::time::DelayQueue;
-use types::{Replica, Transaction, synchs::ClientMsg, synchs::{Propose, ProtocolMsg}};
+use types::{Replica, Transaction, synchs::ClientMsg, synchs::ProtocolMsg};
 use config::Node;
 use super::{
     commit::on_commit, 
@@ -27,7 +26,6 @@ pub async fn reactor(
     mut cli_recv: UnboundedReceiver<Transaction>
 ) {
     let d2 = std::time::Duration::from_millis(2*config.delta);
-    let mut queue:DelayQueue<Arc<Propose>> = tokio_util::time::DelayQueue::new();
     log::debug!(target:"consensus", "Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
@@ -51,7 +49,7 @@ pub async fn reactor(
                     log::debug!(target:"consensus", 
                         "Decision for the incoming proposal is {}", decision);
                     if decision {
-                        queue.insert(p, d2);
+                        cx.commit_queue.insert(p, d2);
                     }
                 }
                 else if let ProtocolMsg::VoteMsg(v,p) = protmsg {
@@ -72,7 +70,7 @@ pub async fn reactor(
                 };
                 cx.storage.add_transaction(tx);
             },
-            b_opt = queue.next(), if !queue.is_empty() => {
+            b_opt = cx.commit_queue.next(), if !cx.commit_queue.is_empty() => {
                 // Got something from the timer
                 match b_opt {
                     None => {
@@ -99,7 +97,7 @@ pub async fn reactor(
             let txs = cx.storage.cleave(block_size);
             let p = do_propose(txs, &mut cx).await;
             // Leader setting the timer now
-            queue.insert(p, d2);
+            cx.commit_queue.insert(p, d2);
         }
     }
 }

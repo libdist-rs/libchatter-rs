@@ -59,7 +59,7 @@ pub async fn start(
                         .expect("Failed to send to the client");
                     time_map.insert(hash, SystemTime::now());
                     pending -= 1;
-                    log::debug!(target:"consensus", 
+                    log::trace!(target:"consensus", 
                         "Sending transaction to the leader");
                 } else {
                     log::info!(target:"client", "Finished sending messages");

@@ -1,5 +1,5 @@
-use std::collections::HashSet;
-use super::context::Context;
+use std::collections::{HashMap, HashSet};
+use super::{context::Context, phase::Phase};
 use crypto::hash::EMPTY_HASH;
 use types::{
     Block, CertType, Certificate, Transaction, Vote, 
@@ -13,7 +13,7 @@ use std::sync::Arc;
 pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     let new_block = p.block.clone().unwrap();
     // Check if the author is correct
-    if new_block.header.author != cx.leader_of_view() {
+    if new_block.header.author != cx.next_leader() {
         log::warn!(target:"consensus", 
             "Got a proposal from an incorrect leader for the view");
         return false;
@@ -54,15 +54,19 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     }
     // Otherwise check if all the parent certificates are correctly signed
     let mut uniq_votes = HashSet::with_capacity(cx.num_faults+1);
-    if let CertType::Vote(_v, h) = &p.cert.msg {
+    if let CertType::Vote(v, h) = &p.cert.msg {
         // Check if vote message is the same as that in the proposal
         if *h != new_block.header.prev {
             log::warn!(target:"consensus", 
                     "The message of the vote is not the hash of the proposed block's prev");
             return false;
+        } else if *v < cx.view-1 {
+            log::warn!("Got a vote {:?} from an old view", p.cert);
+            return false;
         }
     } else {
         // Invalid certificate
+        log::warn!("Invalid certificate: {:?}", p.cert);
         return false;
     }
 
@@ -85,6 +89,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
         uniq_votes.insert(v.origin);
     }
     if uniq_votes.len() < cx.num_faults {
+        log::warn!("Insufficient unique votes in certificate: {:?}", p.cert);
         return false;
     }
     // Is it extending the last known parent?
@@ -102,7 +107,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     let new_block = p.block.clone().unwrap();
 
     log::debug!(target: "consensus", 
-        "Received a proposal: {}", new_block.header.height);
+        "Received a proposal of height: {}", new_block.header.height);
 
     if cx.storage.is_delivered_by_hash(&new_block.hash) {
         log::debug!("We have already processed this block last time");
@@ -130,6 +135,9 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
         // TODO: Request and Deliver blocks
         return decision;
     }
+
+    cx.phase = Phase::CollectVote;
+
     // Everything looks fine, initiate voting and continue to process this
     // proposal
     let mut my_vote = Certificate::empty_cert();
@@ -147,6 +155,11 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
             my_vote.votes.push(v);
         },
     };
+
+    // Add self vote to the map
+    let mut new_map = HashMap::new();
+    new_map.insert(cx.myid, my_vote.clone());
+    cx.vote_map.insert(new_block.hash, new_map);
 
     decision = true;
 
@@ -168,8 +181,10 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     cx.storage.add_delivered_block(new_block.clone());
     cx.storage.clear(&new_block.body.tx_hashes);
     cx.height = new_block.header.height;
+    if cx.last_seen_block.header.height < new_block.header.height-1 {
+        cx.last_seen_cert = Arc::new(p.cert.clone());
+    }
     cx.last_seen_block = new_block.clone();
-    cx.last_seen_cert = p.cert.clone();
 
     // wait for voting to finish?
     if let Err(e) = vote_ship.await {
@@ -232,8 +247,9 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) -> Arc<Pro
         None => {
             panic!("Must call propose only if the parent is certified");
         },
-        Some(x) => x.clone(),
+        Some(x) => x.as_ref().clone(),
     };
+    log::debug!("Proposing with view: {}", cx.view);
     p.view = cx.view;
 
     // Ship the proposal
@@ -251,11 +267,15 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) -> Arc<Pro
     // Update consensus context
     cx.storage.add_delivered_block(new_block_ref.clone());
 
+    cx.phase = Phase::CollectVote;
+
     // Q) Can the leader commit immediately? 
     // A) NOOOO! I learnt it painfully! If the leader commits now, then it must
     // also acknowledge the client now, which becomes a problem!
     // Commit normally, and tell the client after 2\Delta
-    cx.vote_map.insert(new_block_ref.hash, new_block_cert);
+    let mut new_vote_map = HashMap::new();
+    new_vote_map.insert(cx.myid,new_block_cert);
+    cx.vote_map.insert(new_block_ref.hash, new_vote_map);
     cx.height = new_block_ref.header.height;
     // The leader remains the same
     cx.last_seen_block = new_block_ref.clone();

@@ -13,21 +13,22 @@ pub fn add_vote(mut c: Certificate, hash: Hash, cx: &mut Context) {
         log::debug!(target:"consensus","Extra vote received. discarding");
         return;
     }
-    match cx.vote_map.remove(&hash) {
+    let mut cert = match cx.vote_map.remove(&hash) {
         None => {
             // First vote
             cx.vote_map.insert(hash, c);
+            return;
         },
-        Some(mut cert) => {
-            // Add the vote to the certificate
-            cert.votes.push(c.votes.pop().unwrap());
-            // Promote it to a full certificate if it has f+1 signatures
-            if cert.votes.len() > cx.num_faults {
-                cx.cert_map.insert(hash, cert);
-            } else {
-                cx.vote_map.insert(hash, cert);
-            }
-        },
+        Some(cert) => cert,
+    };
+    // Add the vote to the certificate
+    cert.votes.push(c.votes.pop().unwrap());
+    // Promote it to a full certificate if it has f+1 signatures
+    if cert.votes.len() > cx.num_faults {
+        cx.cert_map.insert(hash, cert.clone());
+        cx.last_seen_cert = cert;
+    } else {
+        cx.vote_map.insert(hash, cert);
     }
 }
 
@@ -52,7 +53,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
         Some(x) => x,
     };
     let (sign_data, blk_hash) = match &c.msg {
-        CertType::Vote(d) => (util::io::to_bytes(&c.msg), *d),
+        CertType::Vote(_v, d) => (util::io::to_bytes(&c.msg), *d),
         _ => unreachable!("other vote types cant be here"),
     };
 
