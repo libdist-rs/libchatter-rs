@@ -41,10 +41,12 @@ do
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY $CLI_TYPE &
 done
 
-sleep 60
+sleep 150
+
+echo "Using M: $M"
 
 client=${ACTUAL_IPS[$N]}
-ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE
+ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE $M
 
 for((i=0;i<$N;i++))
 do

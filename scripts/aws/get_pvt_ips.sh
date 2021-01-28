@@ -7,7 +7,7 @@ done < $FILE
 
 for ip in "${IPS[@]}"
 do
-    ssh arch@$ip 'ip address show' | \
+    ssh -o StrictHostKeyChecking=accept-new arch@$ip 'ip address show' | \
     grep "inet .* brd" | \
     sed 's/ brd.*//g' | \
     sed 's/inet //' | \

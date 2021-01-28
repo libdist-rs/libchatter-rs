@@ -18,4 +18,5 @@ fi
     --config $TESTDIR/nodes-$ID.json \
     --ip ips_file \
     --delta "$DELAY" \
+    --sleep 120 \
     $CLI_TYPE &

@@ -8,7 +8,7 @@
 
 IN_FILE=${1:-"scripts/aws/aws_ips.log"}
 TESTDIR=${2:-"testdata/b100-n3"}
-W=${3:-"50000"}
+W=${3:-"40000"}
 TYPE=${4:-"apollo"}
 N=${5:-"3"}
 DELAY=${6:-"50"}
@@ -33,7 +33,7 @@ do
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY &
 done
 
-sleep 60
+sleep 180
 
 client=${ACTUAL_IPS[$N]}
 ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE

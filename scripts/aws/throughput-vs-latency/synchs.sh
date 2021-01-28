@@ -10,4 +10,5 @@ cd libchatter-rs
 ./target/release/node-synchs \
     --config $TESTDIR/nodes-$ID.json \
     --delta "$DELAY" \
+    --sleep 120 \
     --ip ips_file &
