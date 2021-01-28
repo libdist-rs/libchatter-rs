@@ -94,11 +94,8 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
         // }
     }
 
-    // This is a vote for a new block
-    // add the vote for the block anyways since it may not be currently valid,
-    // but may become valid after we get the missing blocks
+    // This is a vote for a new delivered block
     add_vote(c, blk_hash, cx);
-
 
     // Let the reactor know that we have to start the commit timers for this
     // block, if this is a new proposal
