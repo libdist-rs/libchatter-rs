@@ -1,0 +1,1664 @@
+DP[Delay]: 50
+Setting up: 3.137.139.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.218.144.226
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.171.202
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.170.28
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.129.6.91
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.22.123
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.138.173.71
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.188.52
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 52.14.97.154
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.12.104.112
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.119.88
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.19.77.102
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.222.176.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.227.210
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:52:53,570 INFO  [config] Talking to servers: {16: "10.100.100.89:4016", 14: "10.100.100.228:4014", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 1: "10.100.100.4:4001", 0: "0.0.0.0:4000", 2: "10.100.100.75:4002", 13: "10.100.100.155:4013", 9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 4: "10.100.100.238:4004", 12: "10.100.100.107:4012", 3: "10.100.100.233:4003", 5: "10.100.100.163:4005", 15: "10.100.100.132:4015", 6: "10.100.100.63:4006", 8: "10.100.100.130:4008"}
+2021-01-14 09:52:54,085 INFO  [config] Talking to servers: {14: "10.100.100.228:4014", 6: "10.100.100.63:4006", 1: "0.0.0.0:4001", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 4: "10.100.100.238:4004", 3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 15: "10.100.100.132:4015", 10: "10.100.100.111:4010", 13: "10.100.100.155:4013", 0: "10.100.100.241:4000", 2: "10.100.100.75:4002"}
+2021-01-14 09:52:54,624 INFO  [config] Talking to servers: {13: "10.100.100.155:4013", 10: "10.100.100.111:4010", 5: "10.100.100.163:4005", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 3: "10.100.100.233:4003", 4: "10.100.100.238:4004", 8: "10.100.100.130:4008", 9: "10.100.100.48:4009", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 7: "10.100.100.46:4007", 2: "0.0.0.0:4002", 11: "10.100.100.181:4011", 15: "10.100.100.132:4015", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000"}
+2021-01-14 09:52:55,087 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 8: "10.100.100.130:4008", 2: "10.100.100.75:4002", 1: "10.100.100.4:4001", 7: "10.100.100.46:4007", 6: "10.100.100.63:4006", 4: "10.100.100.238:4004", 13: "10.100.100.155:4013", 0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 3: "0.0.0.0:4003", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 14: "10.100.100.228:4014", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005"}
+2021-01-14 09:52:56,175 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 8: "10.100.100.130:4008", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 13: "10.100.100.155:4013", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 12: "10.100.100.107:4012", 16: "10.100.100.89:4016", 14: "10.100.100.228:4014", 2: "10.100.100.75:4002", 5: "0.0.0.0:4005", 4: "10.100.100.238:4004", 10: "10.100.100.111:4010", 0: "10.100.100.241:4000", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001"}
+2021-01-14 09:52:56,575 INFO  [config] Talking to servers: {8: "10.100.100.130:4008", 5: "10.100.100.163:4005", 0: "10.100.100.241:4000", 3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 7: "10.100.100.46:4007", 13: "10.100.100.155:4013", 15: "10.100.100.132:4015", 16: "10.100.100.89:4016", 10: "10.100.100.111:4010", 2: "10.100.100.75:4002", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 12: "10.100.100.107:4012", 4: "0.0.0.0:4004"}
+2021-01-14 09:52:56,688 INFO  [config] Talking to servers: {5: "10.100.100.163:4005", 1: "10.100.100.4:4001", 7: "10.100.100.46:4007", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 13: "10.100.100.155:4013", 16: "10.100.100.89:4016", 8: "10.100.100.130:4008", 3: "10.100.100.233:4003", 9: "10.100.100.48:4009", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 14: "10.100.100.228:4014", 0: "10.100.100.241:4000", 6: "0.0.0.0:4006", 15: "10.100.100.132:4015"}
+2021-01-14 09:52:57,185 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 5: "10.100.100.163:4005", 6: "10.100.100.63:4006", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 10: "10.100.100.111:4010", 1: "10.100.100.4:4001", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 7: "0.0.0.0:4007", 8: "10.100.100.130:4008", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 4: "10.100.100.238:4004", 3: "10.100.100.233:4003", 12: "10.100.100.107:4012", 9: "10.100.100.48:4009"}
+2021-01-14 09:52:57,677 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 4: "10.100.100.238:4004", 8: "0.0.0.0:4008", 1: "10.100.100.4:4001", 3: "10.100.100.233:4003", 14: "10.100.100.228:4014", 2: "10.100.100.75:4002", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 0: "10.100.100.241:4000", 6: "10.100.100.63:4006", 16: "10.100.100.89:4016", 7: "10.100.100.46:4007"}
+2021-01-14 09:52:58,177 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 13: "10.100.100.155:4013", 9: "0.0.0.0:4009", 14: "10.100.100.228:4014", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 4: "10.100.100.238:4004", 10: "10.100.100.111:4010", 2: "10.100.100.75:4002", 3: "10.100.100.233:4003", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000", 11: "10.100.100.181:4011", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001", 16: "10.100.100.89:4016"}
+2021-01-14 09:52:58,734 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 3: "10.100.100.233:4003", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 2: "10.100.100.75:4002", 10: "0.0.0.0:4010", 11: "10.100.100.181:4011", 4: "10.100.100.238:4004", 14: "10.100.100.228:4014", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 5: "10.100.100.163:4005"}
+2021-01-14 09:52:59,233 INFO  [config] Talking to servers: {8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 3: "10.100.100.233:4003", 13: "10.100.100.155:4013", 1: "10.100.100.4:4001", 11: "0.0.0.0:4011", 2: "10.100.100.75:4002", 10: "10.100.100.111:4010", 9: "10.100.100.48:4009", 12: "10.100.100.107:4012", 15: "10.100.100.132:4015", 4: "10.100.100.238:4004", 0: "10.100.100.241:4000", 5: "10.100.100.163:4005", 6: "10.100.100.63:4006", 7: "10.100.100.46:4007", 16: "10.100.100.89:4016"}
+2021-01-14 09:52:59,731 INFO  [config] Talking to servers: {12: "0.0.0.0:4012", 3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 13: "10.100.100.155:4013", 0: "10.100.100.241:4000", 9: "10.100.100.48:4009", 4: "10.100.100.238:4004", 14: "10.100.100.228:4014", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006", 10: "10.100.100.111:4010", 16: "10.100.100.89:4016", 15: "10.100.100.132:4015", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005", 8: "10.100.100.130:4008", 7: "10.100.100.46:4007"}
+2021-01-14 09:53:00,193 INFO  [config] Talking to servers: {2: "10.100.100.75:4002", 10: "10.100.100.111:4010", 3: "10.100.100.233:4003", 8: "10.100.100.130:4008", 15: "10.100.100.132:4015", 13: "0.0.0.0:4013", 9: "10.100.100.48:4009", 16: "10.100.100.89:4016", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 7: "10.100.100.46:4007", 4: "10.100.100.238:4004", 11: "10.100.100.181:4011", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005", 6: "10.100.100.63:4006"}
+2021-01-14 09:53:00,664 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 15: "10.100.100.132:4015", 5: "10.100.100.163:4005", 4: "10.100.100.238:4004", 0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 1: "10.100.100.4:4001", 14: "0.0.0.0:4014", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016", 3: "10.100.100.233:4003", 6: "10.100.100.63:4006", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 7: "10.100.100.46:4007", 13: "10.100.100.155:4013"}
+2021-01-14 09:53:01,213 INFO  [config] Talking to servers: {3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 0: "10.100.100.241:4000", 15: "0.0.0.0:4015", 2: "10.100.100.75:4002", 9: "10.100.100.48:4009", 4: "10.100.100.238:4004", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 8: "10.100.100.130:4008", 6: "10.100.100.63:4006", 16: "10.100.100.89:4016", 7: "10.100.100.46:4007", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005"}
+2021-01-14 09:53:01,722 INFO  [config] Talking to servers: {4: "10.100.100.238:4004", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 10: "10.100.100.111:4010", 16: "0.0.0.0:4016", 0: "10.100.100.241:4000", 6: "10.100.100.63:4006", 8: "10.100.100.130:4008", 12: "10.100.100.107:4012", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005"}
+2021-01-14 09:53:38,583 INFO  [net] New incoming connection from 10.100.100.241:35894
+2021-01-14 09:53:38,580 INFO  [net] New incoming connection from 10.100.100.241:58478
+2021-01-14 09:53:38,575 INFO  [net] New incoming connection from 10.100.100.241:39822
+2021-01-14 09:53:38,579 INFO  [net] New incoming connection from 10.100.100.241:39062
+2021-01-14 09:53:38,582 INFO  [net] New incoming connection from 10.100.100.241:52898
+2021-01-14 09:53:38,584 INFO  [net] New incoming connection from 10.100.100.241:38710
+2021-01-14 09:53:38,580 INFO  [net] New incoming connection from 10.100.100.241:56386
+2021-01-14 09:53:38,580 INFO  [net] New incoming connection from 10.100.100.241:34508
+2021-01-14 09:53:38,584 INFO  [net] New incoming connection from 10.100.100.241:34846
+2021-01-14 09:53:38,585 INFO  [net] New incoming connection from 10.100.100.241:57020
+2021-01-14 09:53:38,576 INFO  [net] New incoming connection from 10.100.100.241:41308
+2021-01-14 09:53:38,582 INFO  [net] New incoming connection from 10.100.100.241:38118
+2021-01-14 09:53:38,582 INFO  [net] New incoming connection from 10.100.100.241:33502
+2021-01-14 09:53:38,580 INFO  [net] New incoming connection from 10.100.100.241:38326
+2021-01-14 09:53:38,580 INFO  [net] New incoming connection from 10.100.100.241:58594
+2021-01-14 09:53:38,576 INFO  [net] New incoming connection from 10.100.100.241:56630
+2021-01-14 09:53:39,093 INFO  [net] New incoming connection from 10.100.100.4:55138
+2021-01-14 09:53:39,095 INFO  [net] New incoming connection from 10.100.100.4:34840
+2021-01-14 09:53:39,099 INFO  [net] New incoming connection from 10.100.100.4:49088
+2021-01-14 09:53:39,102 INFO  [net] New incoming connection from 10.100.100.4:60414
+2021-01-14 09:53:39,100 INFO  [net] New incoming connection from 10.100.100.4:48456
+2021-01-14 09:53:39,101 INFO  [net] New incoming connection from 10.100.100.4:42410
+2021-01-14 09:53:39,097 INFO  [net] New incoming connection from 10.100.100.4:55720
+2021-01-14 09:53:39,100 INFO  [net] New incoming connection from 10.100.100.4:36352
+2021-01-14 09:53:39,096 INFO  [net] New incoming connection from 10.100.100.4:33156
+2021-01-14 09:53:39,098 INFO  [net] New incoming connection from 10.100.100.4:40840
+2021-01-14 09:53:39,104 INFO  [net] New incoming connection from 10.100.100.4:40260
+2021-01-14 09:53:39,097 INFO  [net] New incoming connection from 10.100.100.4:52778
+2021-01-14 09:53:39,100 INFO  [net] New incoming connection from 10.100.100.4:54194
+2021-01-14 09:53:39,094 INFO  [net] New incoming connection from 10.100.100.4:57706
+2021-01-14 09:53:39,098 INFO  [net] New incoming connection from 10.100.100.4:60326
+2021-01-14 09:53:39,101 INFO  [net] New incoming connection from 10.100.100.4:39260
+2021-01-14 09:53:39,628 INFO  [net] New incoming connection from 10.100.100.75:43738
+2021-01-14 09:53:39,634 INFO  [net] New incoming connection from 10.100.100.75:57710
+2021-01-14 09:53:39,628 INFO  [net] New incoming connection from 10.100.100.75:35810
+2021-01-14 09:53:39,633 INFO  [net] New incoming connection from 10.100.100.75:43588
+2021-01-14 09:53:39,634 INFO  [net] New incoming connection from 10.100.100.75:45392
+2021-01-14 09:53:39,629 INFO  [net] New incoming connection from 10.100.100.75:43376
+2021-01-14 09:53:39,633 INFO  [net] New incoming connection from 10.100.100.75:39672
+2021-01-14 09:53:39,627 INFO  [net] New incoming connection from 10.100.100.75:50404
+2021-01-14 09:53:39,632 INFO  [net] New incoming connection from 10.100.100.75:52702
+2021-01-14 09:53:39,631 INFO  [net] New incoming connection from 10.100.100.75:52462
+2021-01-14 09:53:39,628 INFO  [net] New incoming connection from 10.100.100.75:42876
+2021-01-14 09:53:39,627 INFO  [net] New incoming connection from 10.100.100.75:53024
+2021-01-14 09:53:39,628 INFO  [net] New incoming connection from 10.100.100.75:56330
+2021-01-14 09:53:39,631 INFO  [net] New incoming connection from 10.100.100.75:48048
+2021-01-14 09:53:39,631 INFO  [net] New incoming connection from 10.100.100.75:42286
+2021-01-14 09:53:39,637 INFO  [net] New incoming connection from 10.100.100.75:50244
+2021-01-14 09:53:40,098 INFO  [net] New incoming connection from 10.100.100.233:39270
+2021-01-14 09:53:40,097 INFO  [net] New incoming connection from 10.100.100.233:43910
+2021-01-14 09:53:40,096 INFO  [net] New incoming connection from 10.100.100.233:45022
+2021-01-14 09:53:40,094 INFO  [net] New incoming connection from 10.100.100.233:38186
+2021-01-14 09:53:40,095 INFO  [net] New incoming connection from 10.100.100.233:54968
+2021-01-14 09:53:40,099 INFO  [net] New incoming connection from 10.100.100.233:58410
+2021-01-14 09:53:40,093 INFO  [net] New incoming connection from 10.100.100.233:42892
+2021-01-14 09:53:40,101 INFO  [net] New incoming connection from 10.100.100.233:41842
+2021-01-14 09:53:40,097 INFO  [net] New incoming connection from 10.100.100.233:36636
+2021-01-14 09:53:40,092 INFO  [net] New incoming connection from 10.100.100.233:58736
+2021-01-14 09:53:40,095 INFO  [net] New incoming connection from 10.100.100.233:52572
+2021-01-14 09:53:40,096 INFO  [net] New incoming connection from 10.100.100.233:33564
+2021-01-14 09:53:40,092 INFO  [net] New incoming connection from 10.100.100.233:49388
+2021-01-14 09:53:40,096 INFO  [net] New incoming connection from 10.100.100.233:34546
+2021-01-14 09:53:40,102 INFO  [net] New incoming connection from 10.100.100.233:56796
+2021-01-14 09:53:40,098 INFO  [net] New incoming connection from 10.100.100.233:45038
+2021-01-14 09:53:41,187 INFO  [net] New incoming connection from 10.100.100.163:42478
+2021-01-14 09:53:41,186 INFO  [net] New incoming connection from 10.100.100.163:56604
+2021-01-14 09:53:41,187 INFO  [net] New incoming connection from 10.100.100.163:32990
+2021-01-14 09:53:41,184 INFO  [net] New incoming connection from 10.100.100.163:49192
+2021-01-14 09:53:41,184 INFO  [net] New incoming connection from 10.100.100.163:35370
+2021-01-14 09:53:41,190 INFO  [net] New incoming connection from 10.100.100.163:47870
+2021-01-14 09:53:41,185 INFO  [net] New incoming connection from 10.100.100.163:45748
+2021-01-14 09:53:41,190 INFO  [net] New incoming connection from 10.100.100.163:58088
+2021-01-14 09:53:41,182 INFO  [net] New incoming connection from 10.100.100.163:49500
+2021-01-14 09:53:41,180 INFO  [net] New incoming connection from 10.100.100.163:58790
+2021-01-14 09:53:41,191 INFO  [net] New incoming connection from 10.100.100.163:40090
+2021-01-14 09:53:41,185 INFO  [net] New incoming connection from 10.100.100.163:52158
+2021-01-14 09:53:41,188 INFO  [net] New incoming connection from 10.100.100.163:45482
+2021-01-14 09:53:41,185 INFO  [net] New incoming connection from 10.100.100.163:33570
+2021-01-14 09:53:41,188 INFO  [net] New incoming connection from 10.100.100.163:60738
+2021-01-14 09:53:41,183 INFO  [net] New incoming connection from 10.100.100.163:40268
+2021-01-14 09:53:41,579 INFO  [net] New incoming connection from 10.100.100.238:35372
+2021-01-14 09:53:41,576 INFO  [net] New incoming connection from 10.100.100.238:44632
+2021-01-14 09:53:41,578 INFO  [net] New incoming connection from 10.100.100.238:41246
+2021-01-14 09:53:41,582 INFO  [net] New incoming connection from 10.100.100.238:49400
+2021-01-14 09:53:41,577 INFO  [net] New incoming connection from 10.100.100.238:53872
+2021-01-14 09:53:41,574 INFO  [net] New incoming connection from 10.100.100.238:44454
+2021-01-14 09:53:41,577 INFO  [net] New incoming connection from 10.100.100.238:55768
+2021-01-14 09:53:41,583 INFO  [net] New incoming connection from 10.100.100.238:48706
+2021-01-14 09:53:41,580 INFO  [net] New incoming connection from 10.100.100.238:51402
+2021-01-14 09:53:41,575 INFO  [net] New incoming connection from 10.100.100.238:56412
+2021-01-14 09:53:41,576 INFO  [net] New incoming connection from 10.100.100.238:49314
+2021-01-14 09:53:41,573 INFO  [net] New incoming connection from 10.100.100.238:60230
+2021-01-14 09:53:41,580 INFO  [net] New incoming connection from 10.100.100.238:37180
+2021-01-14 09:53:41,580 INFO  [net] New incoming connection from 10.100.100.238:39176
+2021-01-14 09:53:41,575 INFO  [net] New incoming connection from 10.100.100.238:33030
+2021-01-14 09:53:41,579 INFO  [net] New incoming connection from 10.100.100.238:48814
+2021-01-14 09:53:41,698 INFO  [net] New incoming connection from 10.100.100.63:47914
+2021-01-14 09:53:41,701 INFO  [net] New incoming connection from 10.100.100.63:45128
+2021-01-14 09:53:41,697 INFO  [net] New incoming connection from 10.100.100.63:49548
+2021-01-14 09:53:41,695 INFO  [net] New incoming connection from 10.100.100.63:56886
+2021-01-14 09:53:41,700 INFO  [net] New incoming connection from 10.100.100.63:46932
+2021-01-14 09:53:41,701 INFO  [net] New incoming connection from 10.100.100.63:54404
+2021-01-14 09:53:41,700 INFO  [net] New incoming connection from 10.100.100.63:55072
+2021-01-14 09:53:41,697 INFO  [net] New incoming connection from 10.100.100.63:43976
+2021-01-14 09:53:41,694 INFO  [net] New incoming connection from 10.100.100.63:35828
+2021-01-14 09:53:41,697 INFO  [net] New incoming connection from 10.100.100.63:53832
+2021-01-14 09:53:41,693 INFO  [net] New incoming connection from 10.100.100.63:49344
+2021-01-14 09:53:41,697 INFO  [net] New incoming connection from 10.100.100.63:48050
+2021-01-14 09:53:41,704 INFO  [net] New incoming connection from 10.100.100.63:49080
+2021-01-14 09:53:41,700 INFO  [net] New incoming connection from 10.100.100.63:40088
+2021-01-14 09:53:41,700 INFO  [net] New incoming connection from 10.100.100.63:38878
+2021-01-14 09:53:41,694 INFO  [net] New incoming connection from 10.100.100.63:34414
+2021-01-14 09:53:42,189 INFO  [net] New incoming connection from 10.100.100.46:48822
+2021-01-14 09:53:42,187 INFO  [net] New incoming connection from 10.100.100.46:42336
+2021-01-14 09:53:42,191 INFO  [net] New incoming connection from 10.100.100.46:41800
+2021-01-14 09:53:42,196 INFO  [net] New incoming connection from 10.100.100.46:34996
+2021-01-14 09:53:42,195 INFO  [net] New incoming connection from 10.100.100.46:60886
+2021-01-14 09:53:42,196 INFO  [net] New incoming connection from 10.100.100.46:47642
+2021-01-14 09:53:42,193 INFO  [net] New incoming connection from 10.100.100.46:55468
+2021-01-14 09:53:42,191 INFO  [net] New incoming connection from 10.100.100.46:54390
+2021-01-14 09:53:42,195 INFO  [net] New incoming connection from 10.100.100.46:45540
+2021-01-14 09:53:42,190 INFO  [net] New incoming connection from 10.100.100.46:49274
+2021-01-14 09:53:42,189 INFO  [net] New incoming connection from 10.100.100.46:59000
+2021-01-14 09:53:42,194 INFO  [net] New incoming connection from 10.100.100.46:34120
+2021-01-14 09:53:42,186 INFO  [net] New incoming connection from 10.100.100.46:51964
+2021-01-14 09:53:42,188 INFO  [net] New incoming connection from 10.100.100.46:33142
+2021-01-14 09:53:42,192 INFO  [net] New incoming connection from 10.100.100.46:57690
+2021-01-14 09:53:42,198 INFO  [net] New incoming connection from 10.100.100.46:54618
+2021-01-14 09:53:42,679 INFO  [net] New incoming connection from 10.100.100.130:45248
+2021-01-14 09:53:42,677 INFO  [net] New incoming connection from 10.100.100.130:40578
+2021-01-14 09:53:42,681 INFO  [net] New incoming connection from 10.100.100.130:40234
+2021-01-14 09:53:42,674 INFO  [net] New incoming connection from 10.100.100.130:49602
+2021-01-14 09:53:42,677 INFO  [net] New incoming connection from 10.100.100.130:34416
+2021-01-14 09:53:42,677 INFO  [net] New incoming connection from 10.100.100.130:36684
+2021-01-14 09:53:42,680 INFO  [net] New incoming connection from 10.100.100.130:53472
+2021-01-14 09:53:42,683 INFO  [net] New incoming connection from 10.100.100.130:43192
+2021-01-14 09:53:42,680 INFO  [net] New incoming connection from 10.100.100.130:59592
+2021-01-14 09:53:42,678 INFO  [net] New incoming connection from 10.100.100.130:37620
+2021-01-14 09:53:42,674 INFO  [net] New incoming connection from 10.100.100.130:59154
+2021-01-14 09:53:42,679 INFO  [net] New incoming connection from 10.100.100.130:40156
+2021-01-14 09:53:42,677 INFO  [net] New incoming connection from 10.100.100.130:44154
+2021-01-14 09:53:42,684 INFO  [net] New incoming connection from 10.100.100.130:55468
+2021-01-14 09:53:42,674 INFO  [net] New incoming connection from 10.100.100.130:33818
+2021-01-14 09:53:42,678 INFO  [net] New incoming connection from 10.100.100.130:60556
+2021-01-14 09:53:43,177 INFO  [net] New incoming connection from 10.100.100.48:53962
+2021-01-14 09:53:43,173 INFO  [net] New incoming connection from 10.100.100.48:33500
+2021-01-14 09:53:43,179 INFO  [net] New incoming connection from 10.100.100.48:39102
+2021-01-14 09:53:43,181 INFO  [net] New incoming connection from 10.100.100.48:49738
+2021-01-14 09:53:43,182 INFO  [net] New incoming connection from 10.100.100.48:40724
+2021-01-14 09:53:43,177 INFO  [net] New incoming connection from 10.100.100.48:54026
+2021-01-14 09:53:43,183 INFO  [net] New incoming connection from 10.100.100.48:43426
+2021-01-14 09:53:43,177 INFO  [net] New incoming connection from 10.100.100.48:45598
+2021-01-14 09:53:43,172 INFO  [net] New incoming connection from 10.100.100.48:39546
+2021-01-14 09:53:43,180 INFO  [net] New incoming connection from 10.100.100.48:37354
+2021-01-14 09:53:43,180 INFO  [net] New incoming connection from 10.100.100.48:36268
+2021-01-14 09:53:43,178 INFO  [net] New incoming connection from 10.100.100.48:43604
+2021-01-14 09:53:43,177 INFO  [net] New incoming connection from 10.100.100.48:59958
+2021-01-14 09:53:43,178 INFO  [net] New incoming connection from 10.100.100.48:44662
+2021-01-14 09:53:43,185 INFO  [net] New incoming connection from 10.100.100.48:51572
+2021-01-14 09:53:43,176 INFO  [net] New incoming connection from 10.100.100.48:53682
+2021-01-14 09:53:43,734 INFO  [net] New incoming connection from 10.100.100.111:52286
+2021-01-14 09:53:43,740 INFO  [net] New incoming connection from 10.100.100.111:34470
+2021-01-14 09:53:43,735 INFO  [net] New incoming connection from 10.100.100.111:34590
+2021-01-14 09:53:43,737 INFO  [net] New incoming connection from 10.100.100.111:42658
+2021-01-14 09:53:43,732 INFO  [net] New incoming connection from 10.100.100.111:43124
+2021-01-14 09:53:43,735 INFO  [net] New incoming connection from 10.100.100.111:60130
+2021-01-14 09:53:43,740 INFO  [net] New incoming connection from 10.100.100.111:42674
+2021-01-14 09:53:43,734 INFO  [net] New incoming connection from 10.100.100.111:40816
+2021-01-14 09:53:43,740 INFO  [net] New incoming connection from 10.100.100.111:56540
+2021-01-14 09:53:43,738 INFO  [net] New incoming connection from 10.100.100.111:33310
+2021-01-14 09:53:43,731 INFO  [net] New incoming connection from 10.100.100.111:59392
+2021-01-14 09:53:43,735 INFO  [net] New incoming connection from 10.100.100.111:49164
+2021-01-14 09:53:43,738 INFO  [net] New incoming connection from 10.100.100.111:44320
+2021-01-14 09:53:43,742 INFO  [net] New incoming connection from 10.100.100.111:53006
+2021-01-14 09:53:43,733 INFO  [net] New incoming connection from 10.100.100.111:49270
+2021-01-14 09:53:43,735 INFO  [net] New incoming connection from 10.100.100.111:50906
+2021-01-14 09:53:44,226 INFO  [net] New incoming connection from 10.100.100.181:50434
+2021-01-14 09:53:44,230 INFO  [net] New incoming connection from 10.100.100.181:59050
+2021-01-14 09:53:44,233 INFO  [net] New incoming connection from 10.100.100.181:37482
+2021-01-14 09:53:44,230 INFO  [net] New incoming connection from 10.100.100.181:51082
+2021-01-14 09:53:44,235 INFO  [net] New incoming connection from 10.100.100.181:48878
+2021-01-14 09:53:44,230 INFO  [net] New incoming connection from 10.100.100.181:50964
+2021-01-14 09:53:44,233 INFO  [net] New incoming connection from 10.100.100.181:58426
+2021-01-14 09:53:44,233 INFO  [net] New incoming connection from 10.100.100.181:55368
+2021-01-14 09:53:44,236 INFO  [net] New incoming connection from 10.100.100.181:36760
+2021-01-14 09:53:44,233 INFO  [net] New incoming connection from 10.100.100.181:56308
+2021-01-14 09:53:44,231 INFO  [net] New incoming connection from 10.100.100.181:46736
+2021-01-14 09:53:44,233 INFO  [net] New incoming connection from 10.100.100.181:49326
+2021-01-14 09:53:44,228 INFO  [net] New incoming connection from 10.100.100.181:38070
+2021-01-14 09:53:44,227 INFO  [net] New incoming connection from 10.100.100.181:33414
+2021-01-14 09:53:44,230 INFO  [net] New incoming connection from 10.100.100.181:47930
+2021-01-14 09:53:44,230 INFO  [net] New incoming connection from 10.100.100.181:34714
+2021-01-14 09:53:44,733 INFO  [net] New incoming connection from 10.100.100.107:58630
+2021-01-14 09:53:44,733 INFO  [net] New incoming connection from 10.100.100.107:37910
+2021-01-14 09:53:44,733 INFO  [net] New incoming connection from 10.100.100.107:56104
+2021-01-14 09:53:44,730 INFO  [net] New incoming connection from 10.100.100.107:55094
+2021-01-14 09:53:44,736 INFO  [net] New incoming connection from 10.100.100.107:46700
+2021-01-14 09:53:44,739 INFO  [net] New incoming connection from 10.100.100.107:60090
+2021-01-14 09:53:44,738 INFO  [net] New incoming connection from 10.100.100.107:59306
+2021-01-14 09:53:44,737 INFO  [net] New incoming connection from 10.100.100.107:55688
+2021-01-14 09:53:44,738 INFO  [net] New incoming connection from 10.100.100.107:48546
+2021-01-14 09:53:44,740 INFO  [net] New incoming connection from 10.100.100.107:41518
+2021-01-14 09:53:44,733 INFO  [net] New incoming connection from 10.100.100.107:41050
+2021-01-14 09:53:44,737 INFO  [net] New incoming connection from 10.100.100.107:60848
+2021-01-14 09:53:44,737 INFO  [net] New incoming connection from 10.100.100.107:49506
+2021-01-14 09:53:44,730 INFO  [net] New incoming connection from 10.100.100.107:50772
+2021-01-14 09:53:44,732 INFO  [net] New incoming connection from 10.100.100.107:50280
+2021-01-14 09:53:44,734 INFO  [net] New incoming connection from 10.100.100.107:35876
+2021-01-14 09:53:45,196 INFO  [net] New incoming connection from 10.100.100.155:47974
+2021-01-14 09:53:45,200 INFO  [net] New incoming connection from 10.100.100.155:60874
+2021-01-14 09:53:45,200 INFO  [net] New incoming connection from 10.100.100.155:56760
+2021-01-14 09:53:45,194 INFO  [net] New incoming connection from 10.100.100.155:44746
+2021-01-14 09:53:45,199 INFO  [net] New incoming connection from 10.100.100.155:44682
+2021-01-14 09:53:45,197 INFO  [net] New incoming connection from 10.100.100.155:54576
+2021-01-14 09:53:45,199 INFO  [net] New incoming connection from 10.100.100.155:47654
+2021-01-14 09:53:45,199 INFO  [net] New incoming connection from 10.100.100.155:43254
+2021-01-14 09:53:45,202 INFO  [net] New incoming connection from 10.100.100.155:40426
+2021-01-14 09:53:45,202 INFO  [net] New incoming connection from 10.100.100.155:38768
+2021-01-14 09:53:45,193 INFO  [net] New incoming connection from 10.100.100.155:43076
+2021-01-14 09:53:45,197 INFO  [net] New incoming connection from 10.100.100.155:37682
+2021-01-14 09:53:45,197 INFO  [net] New incoming connection from 10.100.100.155:34496
+2021-01-14 09:53:45,198 INFO  [net] New incoming connection from 10.100.100.155:50726
+2021-01-14 09:53:45,204 INFO  [net] New incoming connection from 10.100.100.155:50394
+2021-01-14 09:53:45,195 INFO  [net] New incoming connection from 10.100.100.155:58770
+2021-01-14 09:53:45,674 INFO  [net] New incoming connection from 10.100.100.228:33120
+2021-01-14 09:53:45,675 INFO  [net] New incoming connection from 10.100.100.228:38132
+2021-01-14 09:53:45,676 INFO  [net] New incoming connection from 10.100.100.228:41994
+2021-01-14 09:53:45,677 INFO  [net] New incoming connection from 10.100.100.228:34400
+2021-01-14 09:53:45,673 INFO  [net] New incoming connection from 10.100.100.228:47410
+2021-01-14 09:53:45,672 INFO  [net] New incoming connection from 10.100.100.228:35564
+2021-01-14 09:53:45,671 INFO  [net] New incoming connection from 10.100.100.228:53288
+2021-01-14 09:53:45,675 INFO  [net] New incoming connection from 10.100.100.228:47582
+2021-01-14 09:53:45,667 INFO  [net] New incoming connection from 10.100.100.228:47584
+2021-01-14 09:53:45,669 INFO  [net] New incoming connection from 10.100.100.228:48912
+2021-01-14 09:53:45,671 INFO  [net] New incoming connection from 10.100.100.228:48930
+2021-01-14 09:53:45,671 INFO  [net] New incoming connection from 10.100.100.228:54138
+2021-01-14 09:53:45,675 INFO  [net] New incoming connection from 10.100.100.228:57112
+2021-01-14 09:53:45,672 INFO  [net] New incoming connection from 10.100.100.228:48418
+2021-01-14 09:53:45,679 INFO  [net] New incoming connection from 10.100.100.228:53696
+2021-01-14 09:53:45,675 INFO  [net] New incoming connection from 10.100.100.228:48128
+2021-01-14 09:53:46,220 INFO  [net] New incoming connection from 10.100.100.132:60398
+2021-01-14 09:53:46,225 INFO  [net] New incoming connection from 10.100.100.132:43586
+2021-01-14 09:53:46,223 INFO  [net] New incoming connection from 10.100.100.132:53888
+2021-01-14 09:53:46,220 INFO  [net] New incoming connection from 10.100.100.132:59810
+2021-01-14 09:53:46,225 INFO  [net] New incoming connection from 10.100.100.132:46398
+2021-01-14 09:53:46,223 INFO  [net] New incoming connection from 10.100.100.132:44432
+2021-01-14 09:53:46,226 INFO  [net] New incoming connection from 10.100.100.132:59832
+2021-01-14 09:53:46,222 INFO  [net] New incoming connection from 10.100.100.132:60702
+2021-01-14 09:53:46,227 INFO  [net] New incoming connection from 10.100.100.132:56920
+2021-01-14 09:53:46,218 INFO  [net] New incoming connection from 10.100.100.132:44324
+2021-01-14 09:53:46,220 INFO  [net] New incoming connection from 10.100.100.132:32898
+2021-01-14 09:53:46,223 INFO  [net] New incoming connection from 10.100.100.132:49688
+2021-01-14 09:53:46,218 INFO  [net] New incoming connection from 10.100.100.132:45906
+2021-01-14 09:53:46,223 INFO  [net] New incoming connection from 10.100.100.132:46362
+2021-01-14 09:53:46,222 INFO  [net] New incoming connection from 10.100.100.132:46216
+2021-01-14 09:53:46,221 INFO  [net] New incoming connection from 10.100.100.132:38950
+2021-01-14 09:53:46,717 INFO  [net] New incoming connection from 10.100.100.89:34264
+2021-01-14 09:53:46,717 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,725 INFO  [net] New incoming connection from 10.100.100.89:50676
+2021-01-14 09:53:46,725 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,720 INFO  [net] New incoming connection from 10.100.100.89:48324
+2021-01-14 09:53:46,721 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,724 INFO  [net] New incoming connection from 10.100.100.89:50486
+2021-01-14 09:53:46,724 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,721 INFO  [net] New incoming connection from 10.100.100.89:55650
+2021-01-14 09:53:46,721 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,723 INFO  [net] New incoming connection from 10.100.100.89:33572
+2021-01-14 09:53:46,723 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,721 INFO  [net] New incoming connection from 10.100.100.89:42958
+2021-01-14 09:53:46,721 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,725 INFO  [net] New incoming connection from 10.100.100.89:40104
+2021-01-14 09:53:46,725 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,727 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,717 INFO  [net] New incoming connection from 10.100.100.89:46748
+2021-01-14 09:53:46,717 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,727 INFO  [net] New incoming connection from 10.100.100.89:56982
+2021-01-14 09:53:46,727 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,724 INFO  [net] New incoming connection from 10.100.100.89:41736
+2021-01-14 09:53:46,724 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,720 INFO  [net] New incoming connection from 10.100.100.89:49328
+2021-01-14 09:53:46,720 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,721 INFO  [net] New incoming connection from 10.100.100.89:52448
+2021-01-14 09:53:46,721 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,724 INFO  [net] New incoming connection from 10.100.100.89:44144
+2021-01-14 09:53:46,724 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,723 INFO  [net] New incoming connection from 10.100.100.89:35920
+2021-01-14 09:53:46,723 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:53:46,722 INFO  [net] New incoming connection from 10.100.100.89:42390
+2021-01-14 09:53:46,722 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:54:01,726 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:54:01,726 INFO  [config] Talking to servers: {1: "10.100.100.4:10001", 8: "10.100.100.130:10008", 16: "10.100.100.89:10016", 0: "10.100.100.241:10000", 14: "10.100.100.228:10014", 7: "10.100.100.46:10007", 15: "10.100.100.132:10015", 6: "10.100.100.63:10006", 3: "10.100.100.233:10003", 13: "10.100.100.155:10013", 12: "10.100.100.107:10012", 5: "10.100.100.163:10005", 11: "10.100.100.181:10011", 4: "10.100.100.238:10004", 9: "10.100.100.48:10009", 10: "10.100.100.111:10010", 2: "10.100.100.75:10002"}
+2021-01-14 09:54:14,585 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610618041, tv_nsec: 774353328 }
+2021-01-14 09:54:14,585 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610618054, tv_nsec: 585551887 }
+2021-01-14 09:54:14,615 INFO  [statistics] DP[Throughput]: 78087.93185062366
+2021-01-14 09:54:14,615 INFO  [statistics] DP[Latency]: 125.54050279888045
+2021-01-14 09:54:14,618 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:54:14,628 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,619 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,622 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,620 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,622 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,620 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,625 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,623 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,616 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,619 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,624 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,619 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,622 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,621 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,626 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,617 WARN  [peer] Disconnected from peer
+2021-01-14 09:54:14,616 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 100
+Setting up: 3.137.139.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.218.144.226
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.171.202
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.170.28
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.129.6.91
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.22.123
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.138.173.71
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.188.52
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 52.14.97.154
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.12.104.112
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.119.88
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.19.77.102
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.222.176.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.227.210
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:54:56,011 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 10: "10.100.100.111:4010", 15: "10.100.100.132:4015", 3: "10.100.100.233:4003", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 12: "10.100.100.107:4012", 7: "10.100.100.46:4007", 9: "10.100.100.48:4009", 16: "10.100.100.89:4016", 11: "10.100.100.181:4011", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 5: "10.100.100.163:4005", 4: "10.100.100.238:4004"}
+2021-01-14 09:54:56,464 INFO  [config] Talking to servers: {5: "10.100.100.163:4005", 4: "10.100.100.238:4004", 9: "10.100.100.48:4009", 15: "10.100.100.132:4015", 8: "10.100.100.130:4008", 7: "10.100.100.46:4007", 12: "10.100.100.107:4012", 1: "0.0.0.0:4001", 16: "10.100.100.89:4016", 14: "10.100.100.228:4014", 6: "10.100.100.63:4006", 3: "10.100.100.233:4003", 13: "10.100.100.155:4013", 10: "10.100.100.111:4010", 11: "10.100.100.181:4011", 2: "10.100.100.75:4002", 0: "10.100.100.241:4000"}
+2021-01-14 09:54:56,974 INFO  [config] Talking to servers: {3: "10.100.100.233:4003", 12: "10.100.100.107:4012", 10: "10.100.100.111:4010", 15: "10.100.100.132:4015", 2: "0.0.0.0:4002", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 9: "10.100.100.48:4009", 0: "10.100.100.241:4000", 4: "10.100.100.238:4004", 7: "10.100.100.46:4007"}
+2021-01-14 09:54:57,488 INFO  [config] Talking to servers: {6: "10.100.100.63:4006", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 13: "10.100.100.155:4013", 4: "10.100.100.238:4004", 1: "10.100.100.4:4001", 2: "10.100.100.75:4002", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 15: "10.100.100.132:4015", 0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 3: "0.0.0.0:4003", 10: "10.100.100.111:4010", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016"}
+2021-01-14 09:54:58,009 INFO  [config] Talking to servers: {12: "10.100.100.107:4012", 0: "10.100.100.241:4000", 3: "10.100.100.233:4003", 13: "10.100.100.155:4013", 11: "10.100.100.181:4011", 16: "10.100.100.89:4016", 9: "10.100.100.48:4009", 14: "10.100.100.228:4014", 5: "10.100.100.163:4005", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 10: "10.100.100.111:4010", 4: "0.0.0.0:4004", 15: "10.100.100.132:4015", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001"}
+2021-01-14 09:54:58,504 INFO  [config] Talking to servers: {12: "10.100.100.107:4012", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 4: "10.100.100.238:4004", 6: "10.100.100.63:4006", 5: "0.0.0.0:4005", 3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 16: "10.100.100.89:4016", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 15: "10.100.100.132:4015", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 1: "10.100.100.4:4001", 0: "10.100.100.241:4000"}
+2021-01-14 09:54:59,059 INFO  [config] Talking to servers: {11: "10.100.100.181:4011", 4: "10.100.100.238:4004", 6: "0.0.0.0:4006", 9: "10.100.100.48:4009", 12: "10.100.100.107:4012", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 16: "10.100.100.89:4016", 7: "10.100.100.46:4007", 13: "10.100.100.155:4013", 5: "10.100.100.163:4005", 15: "10.100.100.132:4015", 2: "10.100.100.75:4002", 0: "10.100.100.241:4000", 3: "10.100.100.233:4003", 8: "10.100.100.130:4008"}
+2021-01-14 09:54:59,543 INFO  [config] Talking to servers: {3: "10.100.100.233:4003", 11: "10.100.100.181:4011", 9: "10.100.100.48:4009", 6: "10.100.100.63:4006", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005", 4: "10.100.100.238:4004", 15: "10.100.100.132:4015", 2: "10.100.100.75:4002", 13: "10.100.100.155:4013", 7: "0.0.0.0:4007", 10: "10.100.100.111:4010", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 12: "10.100.100.107:4012", 8: "10.100.100.130:4008"}
+2021-01-14 09:55:00,067 INFO  [config] Talking to servers: {10: "10.100.100.111:4010", 3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 2: "10.100.100.75:4002", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012", 13: "10.100.100.155:4013", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001", 4: "10.100.100.238:4004", 7: "10.100.100.46:4007", 8: "0.0.0.0:4008", 9: "10.100.100.48:4009"}
+2021-01-14 09:55:00,541 INFO  [config] Talking to servers: {11: "10.100.100.181:4011", 4: "10.100.100.238:4004", 12: "10.100.100.107:4012", 10: "10.100.100.111:4010", 6: "10.100.100.63:4006", 0: "10.100.100.241:4000", 1: "10.100.100.4:4001", 14: "10.100.100.228:4014", 7: "10.100.100.46:4007", 2: "10.100.100.75:4002", 9: "0.0.0.0:4009", 13: "10.100.100.155:4013", 15: "10.100.100.132:4015", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005", 3: "10.100.100.233:4003"}
+2021-01-14 09:55:01,070 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 3: "10.100.100.233:4003", 10: "0.0.0.0:4010", 0: "10.100.100.241:4000", 2: "10.100.100.75:4002", 4: "10.100.100.238:4004", 16: "10.100.100.89:4016", 14: "10.100.100.228:4014", 11: "10.100.100.181:4011", 12: "10.100.100.107:4012", 8: "10.100.100.130:4008", 9: "10.100.100.48:4009", 13: "10.100.100.155:4013", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005", 7: "10.100.100.46:4007"}
+2021-01-14 09:55:01,544 INFO  [config] Talking to servers: {10: "10.100.100.111:4010", 7: "10.100.100.46:4007", 11: "0.0.0.0:4011", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 16: "10.100.100.89:4016", 0: "10.100.100.241:4000", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 6: "10.100.100.63:4006", 5: "10.100.100.163:4005", 1: "10.100.100.4:4001", 9: "10.100.100.48:4009", 15: "10.100.100.132:4015"}
+2021-01-14 09:55:02,067 INFO  [config] Talking to servers: {11: "10.100.100.181:4011", 14: "10.100.100.228:4014", 10: "10.100.100.111:4010", 15: "10.100.100.132:4015", 0: "10.100.100.241:4000", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 13: "10.100.100.155:4013", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002", 7: "10.100.100.46:4007", 9: "10.100.100.48:4009", 5: "10.100.100.163:4005", 3: "10.100.100.233:4003", 12: "0.0.0.0:4012"}
+2021-01-14 09:55:02,560 INFO  [config] Talking to servers: {16: "10.100.100.89:4016", 4: "10.100.100.238:4004", 7: "10.100.100.46:4007", 13: "0.0.0.0:4013", 8: "10.100.100.130:4008", 5: "10.100.100.163:4005", 6: "10.100.100.63:4006", 9: "10.100.100.48:4009", 2: "10.100.100.75:4002", 3: "10.100.100.233:4003", 15: "10.100.100.132:4015", 14: "10.100.100.228:4014", 10: "10.100.100.111:4010", 11: "10.100.100.181:4011", 1: "10.100.100.4:4001", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000"}
+2021-01-14 09:55:03,056 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 3: "10.100.100.233:4003", 14: "0.0.0.0:4014", 6: "10.100.100.63:4006", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 4: "10.100.100.238:4004", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 10: "10.100.100.111:4010", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005", 9: "10.100.100.48:4009", 11: "10.100.100.181:4011", 15: "10.100.100.132:4015", 1: "10.100.100.4:4001", 7: "10.100.100.46:4007"}
+2021-01-14 09:55:03,476 INFO  [config] Talking to servers: {1: "10.100.100.4:4001", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 6: "10.100.100.63:4006", 12: "10.100.100.107:4012", 13: "10.100.100.155:4013", 0: "10.100.100.241:4000", 3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 4: "10.100.100.238:4004", 5: "10.100.100.163:4005", 15: "0.0.0.0:4015", 14: "10.100.100.228:4014", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 9: "10.100.100.48:4009", 10: "10.100.100.111:4010"}
+2021-01-14 09:55:04,002 INFO  [config] Talking to servers: {12: "10.100.100.107:4012", 8: "10.100.100.130:4008", 16: "0.0.0.0:4016", 7: "10.100.100.46:4007", 4: "10.100.100.238:4004", 11: "10.100.100.181:4011", 6: "10.100.100.63:4006", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 13: "10.100.100.155:4013", 2: "10.100.100.75:4002", 3: "10.100.100.233:4003", 0: "10.100.100.241:4000"}
+2021-01-14 09:55:41,011 INFO  [net] New incoming connection from 10.100.100.241:41338
+2021-01-14 09:55:41,018 INFO  [net] New incoming connection from 10.100.100.241:52934
+2021-01-14 09:55:41,010 INFO  [net] New incoming connection from 10.100.100.241:56638
+2021-01-14 09:55:41,018 INFO  [net] New incoming connection from 10.100.100.241:33534
+2021-01-14 09:55:41,020 INFO  [net] New incoming connection from 10.100.100.241:35946
+2021-01-14 09:55:41,024 INFO  [net] New incoming connection from 10.100.100.241:38754
+2021-01-14 09:55:41,022 INFO  [net] New incoming connection from 10.100.100.241:57068
+2021-01-14 09:55:41,015 INFO  [net] New incoming connection from 10.100.100.241:38362
+2021-01-14 09:55:41,016 INFO  [net] New incoming connection from 10.100.100.241:38134
+2021-01-14 09:55:41,014 INFO  [net] New incoming connection from 10.100.100.241:34522
+2021-01-14 09:55:41,014 INFO  [net] New incoming connection from 10.100.100.241:56398
+2021-01-14 09:55:41,016 INFO  [net] New incoming connection from 10.100.100.241:58620
+2021-01-14 09:55:41,016 INFO  [net] New incoming connection from 10.100.100.241:39108
+2021-01-14 09:55:41,011 INFO  [net] New incoming connection from 10.100.100.241:39876
+2021-01-14 09:55:41,018 INFO  [net] New incoming connection from 10.100.100.241:34860
+2021-01-14 09:55:41,017 INFO  [net] New incoming connection from 10.100.100.241:58522
+2021-01-14 09:55:41,473 INFO  [net] New incoming connection from 10.100.100.4:48480
+2021-01-14 09:55:41,469 INFO  [net] New incoming connection from 10.100.100.4:33184
+2021-01-14 09:55:41,478 INFO  [net] New incoming connection from 10.100.100.4:60432
+2021-01-14 09:55:41,466 INFO  [net] New incoming connection from 10.100.100.4:57722
+2021-01-14 09:55:41,475 INFO  [net] New incoming connection from 10.100.100.4:42446
+2021-01-14 09:55:41,478 INFO  [net] New incoming connection from 10.100.100.4:40298
+2021-01-14 09:55:41,470 INFO  [net] New incoming connection from 10.100.100.4:34888
+2021-01-14 09:55:41,475 INFO  [net] New incoming connection from 10.100.100.4:39290
+2021-01-14 09:55:41,473 INFO  [net] New incoming connection from 10.100.100.4:49116
+2021-01-14 09:55:41,472 INFO  [net] New incoming connection from 10.100.100.4:52816
+2021-01-14 09:55:41,474 INFO  [net] New incoming connection from 10.100.100.4:36384
+2021-01-14 09:55:41,471 INFO  [net] New incoming connection from 10.100.100.4:60360
+2021-01-14 09:55:41,471 INFO  [net] New incoming connection from 10.100.100.4:55754
+2021-01-14 09:55:41,467 INFO  [net] New incoming connection from 10.100.100.4:55186
+2021-01-14 09:55:41,471 INFO  [net] New incoming connection from 10.100.100.4:40868
+2021-01-14 09:55:41,474 INFO  [net] New incoming connection from 10.100.100.4:54226
+2021-01-14 09:55:41,969 INFO  [net] New incoming connection from 10.100.100.75:53036
+2021-01-14 09:55:41,980 INFO  [net] New incoming connection from 10.100.100.75:50270
+2021-01-14 09:55:41,973 INFO  [net] New incoming connection from 10.100.100.75:42920
+2021-01-14 09:55:41,979 INFO  [net] New incoming connection from 10.100.100.75:57756
+2021-01-14 09:55:41,970 INFO  [net] New incoming connection from 10.100.100.75:56350
+2021-01-14 09:55:41,977 INFO  [net] New incoming connection from 10.100.100.75:43628
+2021-01-14 09:55:41,970 INFO  [net] New incoming connection from 10.100.100.75:50432
+2021-01-14 09:55:41,972 INFO  [net] New incoming connection from 10.100.100.75:43398
+2021-01-14 09:55:41,974 INFO  [net] New incoming connection from 10.100.100.75:42292
+2021-01-14 09:55:41,982 INFO  [net] New incoming connection from 10.100.100.75:45440
+2021-01-14 09:55:41,975 INFO  [net] New incoming connection from 10.100.100.75:52496
+2021-01-14 09:55:41,973 INFO  [net] New incoming connection from 10.100.100.75:35844
+2021-01-14 09:55:41,977 INFO  [net] New incoming connection from 10.100.100.75:39702
+2021-01-14 09:55:41,974 INFO  [net] New incoming connection from 10.100.100.75:43792
+2021-01-14 09:55:41,974 INFO  [net] New incoming connection from 10.100.100.75:48076
+2021-01-14 09:55:41,977 INFO  [net] New incoming connection from 10.100.100.75:52742
+2021-01-14 09:55:42,496 INFO  [net] New incoming connection from 10.100.100.233:36676
+2021-01-14 09:55:42,490 INFO  [net] New incoming connection from 10.100.100.233:34550
+2021-01-14 09:55:42,489 INFO  [net] New incoming connection from 10.100.100.233:58772
+2021-01-14 09:55:42,500 INFO  [net] New incoming connection from 10.100.100.233:58438
+2021-01-14 09:55:42,498 INFO  [net] New incoming connection from 10.100.100.233:56810
+2021-01-14 09:55:42,495 INFO  [net] New incoming connection from 10.100.100.233:43958
+2021-01-14 09:55:42,498 INFO  [net] New incoming connection from 10.100.100.233:41876
+2021-01-14 09:55:42,488 INFO  [net] New incoming connection from 10.100.100.233:49418
+2021-01-14 09:55:42,491 INFO  [net] New incoming connection from 10.100.100.233:38208
+2021-01-14 09:55:42,492 INFO  [net] New incoming connection from 10.100.100.233:54992
+2021-01-14 09:55:42,494 INFO  [net] New incoming connection from 10.100.100.233:33600
+2021-01-14 09:55:42,488 INFO  [net] New incoming connection from 10.100.100.233:42912
+2021-01-14 09:55:42,495 INFO  [net] New incoming connection from 10.100.100.233:45070
+2021-01-14 09:55:42,492 INFO  [net] New incoming connection from 10.100.100.233:52608
+2021-01-14 09:55:42,495 INFO  [net] New incoming connection from 10.100.100.233:45072
+2021-01-14 09:55:42,496 INFO  [net] New incoming connection from 10.100.100.233:39328
+2021-01-14 09:55:43,009 INFO  [net] New incoming connection from 10.100.100.238:49426
+2021-01-14 09:55:43,011 INFO  [net] New incoming connection from 10.100.100.238:48738
+2021-01-14 09:55:43,007 INFO  [net] New incoming connection from 10.100.100.238:51422
+2021-01-14 09:55:43,010 INFO  [net] New incoming connection from 10.100.100.238:39214
+2021-01-14 09:55:43,004 INFO  [net] New incoming connection from 10.100.100.238:56458
+2021-01-14 09:55:43,001 INFO  [net] New incoming connection from 10.100.100.238:60272
+2021-01-14 09:55:43,003 INFO  [net] New incoming connection from 10.100.100.238:33066
+2021-01-14 09:55:43,005 INFO  [net] New incoming connection from 10.100.100.238:48816
+2021-01-14 09:55:43,004 INFO  [net] New incoming connection from 10.100.100.238:49344
+2021-01-14 09:55:43,005 INFO  [net] New incoming connection from 10.100.100.238:53898
+2021-01-14 09:55:43,004 INFO  [net] New incoming connection from 10.100.100.238:44662
+2021-01-14 09:55:43,001 INFO  [net] New incoming connection from 10.100.100.238:44478
+2021-01-14 09:55:43,008 INFO  [net] New incoming connection from 10.100.100.238:37216
+2021-01-14 09:55:43,007 INFO  [net] New incoming connection from 10.100.100.238:41286
+2021-01-14 09:55:43,009 INFO  [net] New incoming connection from 10.100.100.238:35424
+2021-01-14 09:55:43,005 INFO  [net] New incoming connection from 10.100.100.238:55800
+2021-01-14 09:55:43,515 INFO  [net] New incoming connection from 10.100.100.163:40124
+2021-01-14 09:55:43,516 INFO  [net] New incoming connection from 10.100.100.163:47886
+2021-01-14 09:55:43,505 INFO  [net] New incoming connection from 10.100.100.163:58844
+2021-01-14 09:55:43,512 INFO  [net] New incoming connection from 10.100.100.163:33038
+2021-01-14 09:55:43,513 INFO  [net] New incoming connection from 10.100.100.163:60774
+2021-01-14 09:55:43,507 INFO  [net] New incoming connection from 10.100.100.163:40298
+2021-01-14 09:55:43,508 INFO  [net] New incoming connection from 10.100.100.163:49222
+2021-01-14 09:55:43,514 INFO  [net] New incoming connection from 10.100.100.163:58120
+2021-01-14 09:55:43,509 INFO  [net] New incoming connection from 10.100.100.163:52176
+2021-01-14 09:55:43,510 INFO  [net] New incoming connection from 10.100.100.163:56634
+2021-01-14 09:55:43,508 INFO  [net] New incoming connection from 10.100.100.163:45760
+2021-01-14 09:55:43,508 INFO  [net] New incoming connection from 10.100.100.163:35396
+2021-01-14 09:55:43,511 INFO  [net] New incoming connection from 10.100.100.163:45504
+2021-01-14 09:55:43,505 INFO  [net] New incoming connection from 10.100.100.163:49532
+2021-01-14 09:55:43,509 INFO  [net] New incoming connection from 10.100.100.163:33606
+2021-01-14 09:55:43,513 INFO  [net] New incoming connection from 10.100.100.163:42534
+2021-01-14 09:55:44,070 INFO  [net] New incoming connection from 10.100.100.63:45154
+2021-01-14 09:55:44,065 INFO  [net] New incoming connection from 10.100.100.63:55090
+2021-01-14 09:55:44,060 INFO  [net] New incoming connection from 10.100.100.63:49384
+2021-01-14 09:55:44,069 INFO  [net] New incoming connection from 10.100.100.63:49090
+2021-01-14 09:55:44,068 INFO  [net] New incoming connection from 10.100.100.63:54438
+2021-01-14 09:55:44,063 INFO  [net] New incoming connection from 10.100.100.63:56938
+2021-01-14 09:55:44,068 INFO  [net] New incoming connection from 10.100.100.63:38914
+2021-01-14 09:55:44,060 INFO  [net] New incoming connection from 10.100.100.63:34438
+2021-01-14 09:55:44,066 INFO  [net] New incoming connection from 10.100.100.63:40108
+2021-01-14 09:55:44,066 INFO  [net] New incoming connection from 10.100.100.63:47958
+2021-01-14 09:55:44,064 INFO  [net] New incoming connection from 10.100.100.63:53864
+2021-01-14 09:55:44,064 INFO  [net] New incoming connection from 10.100.100.63:44020
+2021-01-14 09:55:44,064 INFO  [net] New incoming connection from 10.100.100.63:49588
+2021-01-14 09:55:44,059 INFO  [net] New incoming connection from 10.100.100.63:35842
+2021-01-14 09:55:44,064 INFO  [net] New incoming connection from 10.100.100.63:48080
+2021-01-14 09:55:44,068 INFO  [net] New incoming connection from 10.100.100.63:46980
+2021-01-14 09:55:44,550 INFO  [net] New incoming connection from 10.100.100.46:54630
+2021-01-14 09:55:44,546 INFO  [net] New incoming connection from 10.100.100.46:45546
+2021-01-14 09:55:44,543 INFO  [net] New incoming connection from 10.100.100.46:59040
+2021-01-14 09:55:44,549 INFO  [net] New incoming connection from 10.100.100.46:47668
+2021-01-14 09:55:44,540 INFO  [net] New incoming connection from 10.100.100.46:52010
+2021-01-14 09:55:44,548 INFO  [net] New incoming connection from 10.100.100.46:34148
+2021-01-14 09:55:44,552 INFO  [net] New incoming connection from 10.100.100.46:35016
+2021-01-14 09:55:44,542 INFO  [net] New incoming connection from 10.100.100.46:33188
+2021-01-14 09:55:44,543 INFO  [net] New incoming connection from 10.100.100.46:54396
+2021-01-14 09:55:44,543 INFO  [net] New incoming connection from 10.100.100.46:48856
+2021-01-14 09:55:44,541 INFO  [net] New incoming connection from 10.100.100.46:42384
+2021-01-14 09:55:44,546 INFO  [net] New incoming connection from 10.100.100.46:57722
+2021-01-14 09:55:44,549 INFO  [net] New incoming connection from 10.100.100.46:60930
+2021-01-14 09:55:44,547 INFO  [net] New incoming connection from 10.100.100.46:55510
+2021-01-14 09:55:44,544 INFO  [net] New incoming connection from 10.100.100.46:49322
+2021-01-14 09:55:44,545 INFO  [net] New incoming connection from 10.100.100.46:41834
+2021-01-14 09:55:45,073 INFO  [net] New incoming connection from 10.100.100.130:55488
+2021-01-14 09:55:45,070 INFO  [net] New incoming connection from 10.100.100.130:59618
+2021-01-14 09:55:45,071 INFO  [net] New incoming connection from 10.100.100.130:43200
+2021-01-14 09:55:45,063 INFO  [net] New incoming connection from 10.100.100.130:33838
+2021-01-14 09:55:45,065 INFO  [net] New incoming connection from 10.100.100.130:59204
+2021-01-14 09:55:45,075 INFO  [net] New incoming connection from 10.100.100.130:40288
+2021-01-14 09:55:45,071 INFO  [net] New incoming connection from 10.100.100.130:45310
+2021-01-14 09:55:45,068 INFO  [net] New incoming connection from 10.100.100.130:40186
+2021-01-14 09:55:45,066 INFO  [net] New incoming connection from 10.100.100.130:44186
+2021-01-14 09:55:45,068 INFO  [net] New incoming connection from 10.100.100.130:37656
+2021-01-14 09:55:45,066 INFO  [net] New incoming connection from 10.100.100.130:40604
+2021-01-14 09:55:45,063 INFO  [net] New incoming connection from 10.100.100.130:49638
+2021-01-14 09:55:45,068 INFO  [net] New incoming connection from 10.100.100.130:34450
+2021-01-14 09:55:45,066 INFO  [net] New incoming connection from 10.100.100.130:60576
+2021-01-14 09:55:45,067 INFO  [net] New incoming connection from 10.100.100.130:36712
+2021-01-14 09:55:45,070 INFO  [net] New incoming connection from 10.100.100.130:53502
+2021-01-14 09:55:45,548 INFO  [net] New incoming connection from 10.100.100.48:51580
+2021-01-14 09:55:45,540 INFO  [net] New incoming connection from 10.100.100.48:53698
+2021-01-14 09:55:45,547 INFO  [net] New incoming connection from 10.100.100.48:37390
+2021-01-14 09:55:45,539 INFO  [net] New incoming connection from 10.100.100.48:39600
+2021-01-14 09:55:45,549 INFO  [net] New incoming connection from 10.100.100.48:40748
+2021-01-14 09:55:45,548 INFO  [net] New incoming connection from 10.100.100.48:43454
+2021-01-14 09:55:45,542 INFO  [net] New incoming connection from 10.100.100.48:45612
+2021-01-14 09:55:45,542 INFO  [net] New incoming connection from 10.100.100.48:43624
+2021-01-14 09:55:45,543 INFO  [net] New incoming connection from 10.100.100.48:44678
+2021-01-14 09:55:45,543 INFO  [net] New incoming connection from 10.100.100.48:60000
+2021-01-14 09:55:45,544 INFO  [net] New incoming connection from 10.100.100.48:36294
+2021-01-14 09:55:45,538 INFO  [net] New incoming connection from 10.100.100.48:33542
+2021-01-14 09:55:45,547 INFO  [net] New incoming connection from 10.100.100.48:49786
+2021-01-14 09:55:45,543 INFO  [net] New incoming connection from 10.100.100.48:54012
+2021-01-14 09:55:45,545 INFO  [net] New incoming connection from 10.100.100.48:39144
+2021-01-14 09:55:45,543 INFO  [net] New incoming connection from 10.100.100.48:54072
+2021-01-14 09:55:46,066 INFO  [net] New incoming connection from 10.100.100.111:59418
+2021-01-14 09:55:46,079 INFO  [net] New incoming connection from 10.100.100.111:42696
+2021-01-14 09:55:46,075 INFO  [net] New incoming connection from 10.100.100.111:44344
+2021-01-14 09:55:46,078 INFO  [net] New incoming connection from 10.100.100.111:53036
+2021-01-14 09:55:46,076 INFO  [net] New incoming connection from 10.100.100.111:34502
+2021-01-14 09:55:46,074 INFO  [net] New incoming connection from 10.100.100.111:42702
+2021-01-14 09:55:46,071 INFO  [net] New incoming connection from 10.100.100.111:50936
+2021-01-14 09:55:46,069 INFO  [net] New incoming connection from 10.100.100.111:49304
+2021-01-14 09:55:46,070 INFO  [net] New incoming connection from 10.100.100.111:52316
+2021-01-14 09:55:46,070 INFO  [net] New incoming connection from 10.100.100.111:40852
+2021-01-14 09:55:46,072 INFO  [net] New incoming connection from 10.100.100.111:49210
+2021-01-14 09:55:46,067 INFO  [net] New incoming connection from 10.100.100.111:43148
+2021-01-14 09:55:46,075 INFO  [net] New incoming connection from 10.100.100.111:56562
+2021-01-14 09:55:46,071 INFO  [net] New incoming connection from 10.100.100.111:60164
+2021-01-14 09:55:46,072 INFO  [net] New incoming connection from 10.100.100.111:34632
+2021-01-14 09:55:46,074 INFO  [net] New incoming connection from 10.100.100.111:33346
+2021-01-14 09:55:46,545 INFO  [net] New incoming connection from 10.100.100.181:49354
+2021-01-14 09:55:46,549 INFO  [net] New incoming connection from 10.100.100.181:48900
+2021-01-14 09:55:46,546 INFO  [net] New incoming connection from 10.100.100.181:36774
+2021-01-14 09:55:46,539 INFO  [net] New incoming connection from 10.100.100.181:38120
+2021-01-14 09:55:46,541 INFO  [net] New incoming connection from 10.100.100.181:34746
+2021-01-14 09:55:46,538 INFO  [net] New incoming connection from 10.100.100.181:33458
+2021-01-14 09:55:46,545 INFO  [net] New incoming connection from 10.100.100.181:58472
+2021-01-14 09:55:46,543 INFO  [net] New incoming connection from 10.100.100.181:56328
+2021-01-14 09:55:46,541 INFO  [net] New incoming connection from 10.100.100.181:51114
+2021-01-14 09:55:46,542 INFO  [net] New incoming connection from 10.100.100.181:46760
+2021-01-14 09:55:46,543 INFO  [net] New incoming connection from 10.100.100.181:55374
+2021-01-14 09:55:46,541 INFO  [net] New incoming connection from 10.100.100.181:47954
+2021-01-14 09:55:46,545 INFO  [net] New incoming connection from 10.100.100.181:37530
+2021-01-14 09:55:46,542 INFO  [net] New incoming connection from 10.100.100.181:59096
+2021-01-14 09:55:46,538 INFO  [net] New incoming connection from 10.100.100.181:50482
+2021-01-14 09:55:46,541 INFO  [net] New incoming connection from 10.100.100.181:50992
+2021-01-14 09:55:47,065 INFO  [net] New incoming connection from 10.100.100.107:50788
+2021-01-14 09:55:47,075 INFO  [net] New incoming connection from 10.100.100.107:41548
+2021-01-14 09:55:47,074 INFO  [net] New incoming connection from 10.100.100.107:60114
+2021-01-14 09:55:47,066 INFO  [net] New incoming connection from 10.100.100.107:50302
+2021-01-14 09:55:47,074 INFO  [net] New incoming connection from 10.100.100.107:60888
+2021-01-14 09:55:47,077 INFO  [net] New incoming connection from 10.100.100.107:59348
+2021-01-14 09:55:47,069 INFO  [net] New incoming connection from 10.100.100.107:56136
+2021-01-14 09:55:47,069 INFO  [net] New incoming connection from 10.100.100.107:35910
+2021-01-14 09:55:47,073 INFO  [net] New incoming connection from 10.100.100.107:46750
+2021-01-14 09:55:47,064 INFO  [net] New incoming connection from 10.100.100.107:55116
+2021-01-14 09:55:47,071 INFO  [net] New incoming connection from 10.100.100.107:49524
+2021-01-14 09:55:47,069 INFO  [net] New incoming connection from 10.100.100.107:41084
+2021-01-14 09:55:47,073 INFO  [net] New incoming connection from 10.100.100.107:48560
+2021-01-14 09:55:47,070 INFO  [net] New incoming connection from 10.100.100.107:37956
+2021-01-14 09:55:47,072 INFO  [net] New incoming connection from 10.100.100.107:55714
+2021-01-14 09:55:47,070 INFO  [net] New incoming connection from 10.100.100.107:58692
+2021-01-14 09:55:47,567 INFO  [net] New incoming connection from 10.100.100.155:38788
+2021-01-14 09:55:47,571 INFO  [net] New incoming connection from 10.100.100.155:40438
+2021-01-14 09:55:47,562 INFO  [net] New incoming connection from 10.100.100.155:37694
+2021-01-14 09:55:47,562 INFO  [net] New incoming connection from 10.100.100.155:58802
+2021-01-14 09:55:47,571 INFO  [net] New incoming connection from 10.100.100.155:50426
+2021-01-14 09:55:47,568 INFO  [net] New incoming connection from 10.100.100.155:47700
+2021-01-14 09:55:47,560 INFO  [net] New incoming connection from 10.100.100.155:43118
+2021-01-14 09:55:47,566 INFO  [net] New incoming connection from 10.100.100.155:60908
+2021-01-14 09:55:47,563 INFO  [net] New incoming connection from 10.100.100.155:54588
+2021-01-14 09:55:47,565 INFO  [net] New incoming connection from 10.100.100.155:44698
+2021-01-14 09:55:47,567 INFO  [net] New incoming connection from 10.100.100.155:56792
+2021-01-14 09:55:47,567 INFO  [net] New incoming connection from 10.100.100.155:43306
+2021-01-14 09:55:47,563 INFO  [net] New incoming connection from 10.100.100.155:48018
+2021-01-14 09:55:47,560 INFO  [net] New incoming connection from 10.100.100.155:44780
+2021-01-14 09:55:47,565 INFO  [net] New incoming connection from 10.100.100.155:50772
+2021-01-14 09:55:47,564 INFO  [net] New incoming connection from 10.100.100.155:34542
+2021-01-14 09:55:48,068 INFO  [net] New incoming connection from 10.100.100.228:57128
+2021-01-14 09:55:48,069 INFO  [net] New incoming connection from 10.100.100.228:34428
+2021-01-14 09:55:48,072 INFO  [net] New incoming connection from 10.100.100.228:42030
+2021-01-14 09:55:48,068 INFO  [net] New incoming connection from 10.100.100.228:33174
+2021-01-14 09:55:48,064 INFO  [net] New incoming connection from 10.100.100.228:53304
+2021-01-14 09:55:48,064 INFO  [net] New incoming connection from 10.100.100.228:48978
+2021-01-14 09:55:48,061 INFO  [net] New incoming connection from 10.100.100.228:47640
+2021-01-14 09:55:48,063 INFO  [net] New incoming connection from 10.100.100.228:48960
+2021-01-14 09:55:48,064 INFO  [net] New incoming connection from 10.100.100.228:35580
+2021-01-14 09:55:48,072 INFO  [net] New incoming connection from 10.100.100.228:53728
+2021-01-14 09:55:48,063 INFO  [net] New incoming connection from 10.100.100.228:54162
+2021-01-14 09:55:48,065 INFO  [net] New incoming connection from 10.100.100.228:47426
+2021-01-14 09:55:48,068 INFO  [net] New incoming connection from 10.100.100.228:38158
+2021-01-14 09:55:48,067 INFO  [net] New incoming connection from 10.100.100.228:48150
+2021-01-14 09:55:48,066 INFO  [net] New incoming connection from 10.100.100.228:48458
+2021-01-14 09:55:48,068 INFO  [net] New incoming connection from 10.100.100.228:47616
+2021-01-14 09:55:48,481 INFO  [net] New incoming connection from 10.100.100.132:45926
+2021-01-14 09:55:48,492 INFO  [net] New incoming connection from 10.100.100.132:43626
+2021-01-14 09:55:48,489 INFO  [net] New incoming connection from 10.100.100.132:59860
+2021-01-14 09:55:48,489 INFO  [net] New incoming connection from 10.100.100.132:49738
+2021-01-14 09:55:48,488 INFO  [net] New incoming connection from 10.100.100.132:53940
+2021-01-14 09:55:48,485 INFO  [net] New incoming connection from 10.100.100.132:46228
+2021-01-14 09:55:48,492 INFO  [net] New incoming connection from 10.100.100.132:56976
+2021-01-14 09:55:48,484 INFO  [net] New incoming connection from 10.100.100.132:60718
+2021-01-14 09:55:48,484 INFO  [net] New incoming connection from 10.100.100.132:60444
+2021-01-14 09:55:48,483 INFO  [net] New incoming connection from 10.100.100.132:59830
+2021-01-14 09:55:48,487 INFO  [net] New incoming connection from 10.100.100.132:46418
+2021-01-14 09:55:48,486 INFO  [net] New incoming connection from 10.100.100.132:44444
+2021-01-14 09:55:48,484 INFO  [net] New incoming connection from 10.100.100.132:38972
+2021-01-14 09:55:48,484 INFO  [net] New incoming connection from 10.100.100.132:32938
+2021-01-14 09:55:48,488 INFO  [net] New incoming connection from 10.100.100.132:46410
+2021-01-14 09:55:48,481 INFO  [net] New incoming connection from 10.100.100.132:44354
+2021-01-14 09:55:49,008 INFO  [net] New incoming connection from 10.100.100.89:50714
+2021-01-14 09:55:49,008 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,006 INFO  [net] New incoming connection from 10.100.100.89:57014
+2021-01-14 09:55:49,006 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:48,997 INFO  [net] New incoming connection from 10.100.100.89:49346
+2021-01-14 09:55:48,997 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,003 INFO  [net] New incoming connection from 10.100.100.89:50528
+2021-01-14 09:55:49,003 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,003 INFO  [net] New incoming connection from 10.100.100.89:40114
+2021-01-14 09:55:49,003 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:48,996 INFO  [net] New incoming connection from 10.100.100.89:46792
+2021-01-14 09:55:48,996 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,000 INFO  [net] New incoming connection from 10.100.100.89:42408
+2021-01-14 09:55:49,000 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,005 INFO  [net] New incoming connection from 10.100.100.89:41778
+2021-01-14 09:55:49,005 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,000 INFO  [net] New incoming connection from 10.100.100.89:35926
+2021-01-14 09:55:49,000 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,001 INFO  [net] New incoming connection from 10.100.100.89:48376
+2021-01-14 09:55:49,006 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,002 INFO  [net] New incoming connection from 10.100.100.89:33596
+2021-01-14 09:55:49,002 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,000 INFO  [net] New incoming connection from 10.100.100.89:42978
+2021-01-14 09:55:49,000 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:48,996 INFO  [net] New incoming connection from 10.100.100.89:34306
+2021-01-14 09:55:48,996 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,003 INFO  [net] New incoming connection from 10.100.100.89:44180
+2021-01-14 09:55:49,003 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,001 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,001 INFO  [net] New incoming connection from 10.100.100.89:55696
+2021-01-14 09:55:49,001 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:55:49,001 INFO  [net] New incoming connection from 10.100.100.89:52490
+2021-01-14 09:55:49,001 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:56:04,015 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:56:04,016 INFO  [config] Talking to servers: {3: "10.100.100.233:10003", 4: "10.100.100.238:10004", 2: "10.100.100.75:10002", 13: "10.100.100.155:10013", 9: "10.100.100.48:10009", 8: "10.100.100.130:10008", 14: "10.100.100.228:10014", 1: "10.100.100.4:10001", 16: "10.100.100.89:10016", 7: "10.100.100.46:10007", 10: "10.100.100.111:10010", 6: "10.100.100.63:10006", 11: "10.100.100.181:10011", 0: "10.100.100.241:10000", 15: "10.100.100.132:10015", 5: "10.100.100.163:10005", 12: "10.100.100.107:10012"}
+2021-01-14 09:56:25,648 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610618164, tv_nsec: 38414837 }
+2021-01-14 09:56:25,648 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610618185, tv_nsec: 648483809 }
+2021-01-14 09:56:25,675 INFO  [statistics] DP[Throughput]: 46293.23494044422
+2021-01-14 09:56:25,675 INFO  [statistics] DP[Latency]: 213.00222111155537
+2021-01-14 09:56:25,678 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:56:25,677 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,686 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,679 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,676 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,684 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,684 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,682 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,688 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,679 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,682 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,681 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,679 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,679 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,675 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,683 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,680 WARN  [peer] Disconnected from peer
+2021-01-14 09:56:25,682 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 200
+Setting up: 3.137.139.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.218.144.226
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.171.202
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.170.28
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.129.6.91
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.22.123
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.138.173.71
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.188.52
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 52.14.97.154
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.12.104.112
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.119.88
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.19.77.102
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.222.176.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.227.210
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:57:09,128 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 10: "10.100.100.111:4010", 16: "10.100.100.89:4016", 4: "10.100.100.238:4004", 0: "0.0.0.0:4000", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012", 1: "10.100.100.4:4001", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 9: "10.100.100.48:4009", 6: "10.100.100.63:4006", 3: "10.100.100.233:4003"}
+2021-01-14 09:57:09,651 INFO  [config] Talking to servers: {3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 9: "10.100.100.48:4009", 6: "10.100.100.63:4006", 1: "0.0.0.0:4001", 0: "10.100.100.241:4000", 13: "10.100.100.155:4013", 10: "10.100.100.111:4010", 2: "10.100.100.75:4002", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 7: "10.100.100.46:4007", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 15: "10.100.100.132:4015", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014"}
+2021-01-14 09:57:10,172 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 3: "10.100.100.233:4003", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 2: "0.0.0.0:4002", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009", 8: "10.100.100.130:4008", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005", 10: "10.100.100.111:4010", 11: "10.100.100.181:4011", 4: "10.100.100.238:4004"}
+2021-01-14 09:57:10,684 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 6: "10.100.100.63:4006", 12: "10.100.100.107:4012", 3: "0.0.0.0:4003", 11: "10.100.100.181:4011", 4: "10.100.100.238:4004", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 0: "10.100.100.241:4000", 15: "10.100.100.132:4015", 14: "10.100.100.228:4014", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005"}
+2021-01-14 09:57:11,151 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 5: "10.100.100.163:4005", 4: "0.0.0.0:4004", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 3: "10.100.100.233:4003", 1: "10.100.100.4:4001", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 13: "10.100.100.155:4013", 11: "10.100.100.181:4011", 12: "10.100.100.107:4012", 7: "10.100.100.46:4007", 10: "10.100.100.111:4010", 15: "10.100.100.132:4015", 6: "10.100.100.63:4006", 16: "10.100.100.89:4016"}
+2021-01-14 09:57:11,666 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 5: "0.0.0.0:4005", 14: "10.100.100.228:4014", 10: "10.100.100.111:4010", 6: "10.100.100.63:4006", 15: "10.100.100.132:4015", 3: "10.100.100.233:4003", 1: "10.100.100.4:4001", 12: "10.100.100.107:4012", 13: "10.100.100.155:4013", 16: "10.100.100.89:4016", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 8: "10.100.100.130:4008", 0: "10.100.100.241:4000", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002"}
+2021-01-14 09:57:12,181 INFO  [config] Talking to servers: {16: "10.100.100.89:4016", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 6: "0.0.0.0:4006", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 14: "10.100.100.228:4014", 0: "10.100.100.241:4000", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 5: "10.100.100.163:4005", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009"}
+2021-01-14 09:57:12,679 INFO  [config] Talking to servers: {5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 14: "10.100.100.228:4014", 4: "10.100.100.238:4004", 7: "0.0.0.0:4007", 10: "10.100.100.111:4010", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009", 1: "10.100.100.4:4001", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 13: "10.100.100.155:4013"}
+2021-01-14 09:57:13,187 INFO  [config] Talking to servers: {7: "10.100.100.46:4007", 3: "10.100.100.233:4003", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002", 13: "10.100.100.155:4013", 6: "10.100.100.63:4006", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 5: "10.100.100.163:4005", 1: "10.100.100.4:4001", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 8: "0.0.0.0:4008", 9: "10.100.100.48:4009", 12: "10.100.100.107:4012", 16: "10.100.100.89:4016"}
+2021-01-14 09:57:13,707 INFO  [config] Talking to servers: {8: "10.100.100.130:4008", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002", 9: "0.0.0.0:4009", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 7: "10.100.100.46:4007", 16: "10.100.100.89:4016", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 12: "10.100.100.107:4012", 10: "10.100.100.111:4010", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001"}
+2021-01-14 09:57:14,185 INFO  [config] Talking to servers: {3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 1: "10.100.100.4:4001", 0: "10.100.100.241:4000", 7: "10.100.100.46:4007", 15: "10.100.100.132:4015", 6: "10.100.100.63:4006", 4: "10.100.100.238:4004", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 10: "0.0.0.0:4010", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 9: "10.100.100.48:4009"}
+2021-01-14 09:57:14,684 INFO  [config] Talking to servers: {8: "10.100.100.130:4008", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 5: "10.100.100.163:4005", 4: "10.100.100.238:4004", 9: "10.100.100.48:4009", 14: "10.100.100.228:4014", 15: "10.100.100.132:4015", 12: "10.100.100.107:4012", 1: "10.100.100.4:4001", 6: "10.100.100.63:4006", 7: "10.100.100.46:4007", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 0: "10.100.100.241:4000", 11: "0.0.0.0:4011", 10: "10.100.100.111:4010"}
+2021-01-14 09:57:15,182 INFO  [config] Talking to servers: {2: "10.100.100.75:4002", 13: "10.100.100.155:4013", 16: "10.100.100.89:4016", 5: "10.100.100.163:4005", 1: "10.100.100.4:4001", 4: "10.100.100.238:4004", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 0: "10.100.100.241:4000", 10: "10.100.100.111:4010", 6: "10.100.100.63:4006", 3: "10.100.100.233:4003", 12: "0.0.0.0:4012", 11: "10.100.100.181:4011", 15: "10.100.100.132:4015", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008"}
+2021-01-14 09:57:15,651 INFO  [config] Talking to servers: {4: "10.100.100.238:4004", 10: "10.100.100.111:4010", 14: "10.100.100.228:4014", 15: "10.100.100.132:4015", 3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 9: "10.100.100.48:4009", 8: "10.100.100.130:4008", 13: "0.0.0.0:4013", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 1: "10.100.100.4:4001", 0: "10.100.100.241:4000", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006"}
+2021-01-14 09:57:16,155 INFO  [config] Talking to servers: {15: "10.100.100.132:4015", 11: "10.100.100.181:4011", 5: "10.100.100.163:4005", 8: "10.100.100.130:4008", 14: "0.0.0.0:4014", 12: "10.100.100.107:4012", 9: "10.100.100.48:4009", 3: "10.100.100.233:4003", 10: "10.100.100.111:4010", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 4: "10.100.100.238:4004", 0: "10.100.100.241:4000", 2: "10.100.100.75:4002", 1: "10.100.100.4:4001", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007"}
+2021-01-14 09:57:16,668 INFO  [config] Talking to servers: {7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 0: "10.100.100.241:4000", 9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 15: "0.0.0.0:4015", 14: "10.100.100.228:4014", 13: "10.100.100.155:4013", 1: "10.100.100.4:4001", 16: "10.100.100.89:4016", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006", 4: "10.100.100.238:4004", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012"}
+2021-01-14 09:57:17,195 INFO  [config] Talking to servers: {14: "10.100.100.228:4014", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 9: "10.100.100.48:4009", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 8: "10.100.100.130:4008", 1: "10.100.100.4:4001", 2: "10.100.100.75:4002", 3: "10.100.100.233:4003", 15: "10.100.100.132:4015", 16: "0.0.0.0:4016", 6: "10.100.100.63:4006", 10: "10.100.100.111:4010", 0: "10.100.100.241:4000"}
+2021-01-14 09:57:54,146 INFO  [net] New incoming connection from 10.100.100.241:38762
+2021-01-14 09:57:54,134 INFO  [net] New incoming connection from 10.100.100.241:38168
+2021-01-14 09:57:54,127 INFO  [net] New incoming connection from 10.100.100.241:56668
+2021-01-14 09:57:54,136 INFO  [net] New incoming connection from 10.100.100.241:58546
+2021-01-14 09:57:54,139 INFO  [net] New incoming connection from 10.100.100.241:57102
+2021-01-14 09:57:54,128 INFO  [net] New incoming connection from 10.100.100.241:39902
+2021-01-14 09:57:54,133 INFO  [net] New incoming connection from 10.100.100.241:39134
+2021-01-14 09:57:54,134 INFO  [net] New incoming connection from 10.100.100.241:58652
+2021-01-14 09:57:54,136 INFO  [net] New incoming connection from 10.100.100.241:35962
+2021-01-14 09:57:54,131 INFO  [net] New incoming connection from 10.100.100.241:38378
+2021-01-14 09:57:54,135 INFO  [net] New incoming connection from 10.100.100.241:34890
+2021-01-14 09:57:54,129 INFO  [net] New incoming connection from 10.100.100.241:41380
+2021-01-14 09:57:54,133 INFO  [net] New incoming connection from 10.100.100.241:56450
+2021-01-14 09:57:54,136 INFO  [net] New incoming connection from 10.100.100.241:52974
+2021-01-14 09:57:54,133 INFO  [net] New incoming connection from 10.100.100.241:34580
+2021-01-14 09:57:54,139 INFO  [net] New incoming connection from 10.100.100.241:33578
+2021-01-14 09:57:54,657 INFO  [net] New incoming connection from 10.100.100.4:60370
+2021-01-14 09:57:54,660 INFO  [net] New incoming connection from 10.100.100.4:54246
+2021-01-14 09:57:54,657 INFO  [net] New incoming connection from 10.100.100.4:55766
+2021-01-14 09:57:54,658 INFO  [net] New incoming connection from 10.100.100.4:40888
+2021-01-14 09:57:54,672 INFO  [net] New incoming connection from 10.100.100.4:60480
+2021-01-14 09:57:54,662 INFO  [net] New incoming connection from 10.100.100.4:49158
+2021-01-14 09:57:54,665 INFO  [net] New incoming connection from 10.100.100.4:40328
+2021-01-14 09:57:54,657 INFO  [net] New incoming connection from 10.100.100.4:33238
+2021-01-14 09:57:54,654 INFO  [net] New incoming connection from 10.100.100.4:55232
+2021-01-14 09:57:54,655 INFO  [net] New incoming connection from 10.100.100.4:57774
+2021-01-14 09:57:54,660 INFO  [net] New incoming connection from 10.100.100.4:48512
+2021-01-14 09:57:54,662 INFO  [net] New incoming connection from 10.100.100.4:42466
+2021-01-14 09:57:54,664 INFO  [net] New incoming connection from 10.100.100.4:39308
+2021-01-14 09:57:54,660 INFO  [net] New incoming connection from 10.100.100.4:52852
+2021-01-14 09:57:54,657 INFO  [net] New incoming connection from 10.100.100.4:34908
+2021-01-14 09:57:54,662 INFO  [net] New incoming connection from 10.100.100.4:36436
+2021-01-14 09:57:55,169 INFO  [net] New incoming connection from 10.100.100.75:48082
+2021-01-14 09:57:55,166 INFO  [net] New incoming connection from 10.100.100.75:53078
+2021-01-14 09:57:55,173 INFO  [net] New incoming connection from 10.100.100.75:52550
+2021-01-14 09:57:55,174 INFO  [net] New incoming connection from 10.100.100.75:52758
+2021-01-14 09:57:55,170 INFO  [net] New incoming connection from 10.100.100.75:43814
+2021-01-14 09:57:55,165 INFO  [net] New incoming connection from 10.100.100.75:50460
+2021-01-14 09:57:55,177 INFO  [net] New incoming connection from 10.100.100.75:50312
+2021-01-14 09:57:55,171 INFO  [net] New incoming connection from 10.100.100.75:42324
+2021-01-14 09:57:55,185 INFO  [net] New incoming connection from 10.100.100.75:45474
+2021-01-14 09:57:55,169 INFO  [net] New incoming connection from 10.100.100.75:43434
+2021-01-14 09:57:55,166 INFO  [net] New incoming connection from 10.100.100.75:56380
+2021-01-14 09:57:55,169 INFO  [net] New incoming connection from 10.100.100.75:35874
+2021-01-14 09:57:55,169 INFO  [net] New incoming connection from 10.100.100.75:42960
+2021-01-14 09:57:55,174 INFO  [net] New incoming connection from 10.100.100.75:39742
+2021-01-14 09:57:55,175 INFO  [net] New incoming connection from 10.100.100.75:57790
+2021-01-14 09:57:55,173 INFO  [net] New incoming connection from 10.100.100.75:43654
+2021-01-14 09:57:55,690 INFO  [net] New incoming connection from 10.100.100.233:45082
+2021-01-14 09:57:55,702 INFO  [net] New incoming connection from 10.100.100.233:58478
+2021-01-14 09:57:55,694 INFO  [net] New incoming connection from 10.100.100.233:56852
+2021-01-14 09:57:55,689 INFO  [net] New incoming connection from 10.100.100.233:55036
+2021-01-14 09:57:55,688 INFO  [net] New incoming connection from 10.100.100.233:52642
+2021-01-14 09:57:55,685 INFO  [net] New incoming connection from 10.100.100.233:49456
+2021-01-14 09:57:55,692 INFO  [net] New incoming connection from 10.100.100.233:45098
+2021-01-14 09:57:55,684 INFO  [net] New incoming connection from 10.100.100.233:42956
+2021-01-14 09:57:55,690 INFO  [net] New incoming connection from 10.100.100.233:43974
+2021-01-14 09:57:55,684 INFO  [net] New incoming connection from 10.100.100.233:58796
+2021-01-14 09:57:55,691 INFO  [net] New incoming connection from 10.100.100.233:39340
+2021-01-14 09:57:55,693 INFO  [net] New incoming connection from 10.100.100.233:36702
+2021-01-14 09:57:55,688 INFO  [net] New incoming connection from 10.100.100.233:38250
+2021-01-14 09:57:55,690 INFO  [net] New incoming connection from 10.100.100.233:33622
+2021-01-14 09:57:55,694 INFO  [net] New incoming connection from 10.100.100.233:41906
+2021-01-14 09:57:55,688 INFO  [net] New incoming connection from 10.100.100.233:34610
+2021-01-14 09:57:56,135 INFO  [net] New incoming connection from 10.100.100.238:44500
+2021-01-14 09:57:56,139 INFO  [net] New incoming connection from 10.100.100.238:49374
+2021-01-14 09:57:56,147 INFO  [net] New incoming connection from 10.100.100.238:48780
+2021-01-14 09:57:56,141 INFO  [net] New incoming connection from 10.100.100.238:53940
+2021-01-14 09:57:56,145 INFO  [net] New incoming connection from 10.100.100.238:41322
+2021-01-14 09:57:56,138 INFO  [net] New incoming connection from 10.100.100.238:60306
+2021-01-14 09:57:56,144 INFO  [net] New incoming connection from 10.100.100.238:37250
+2021-01-14 09:57:56,137 INFO  [net] New incoming connection from 10.100.100.238:33078
+2021-01-14 09:57:56,139 INFO  [net] New incoming connection from 10.100.100.238:56476
+2021-01-14 09:57:56,147 INFO  [net] New incoming connection from 10.100.100.238:39232
+2021-01-14 09:57:56,143 INFO  [net] New incoming connection from 10.100.100.238:51448
+2021-01-14 09:57:56,144 INFO  [net] New incoming connection from 10.100.100.238:35450
+2021-01-14 09:57:56,140 INFO  [net] New incoming connection from 10.100.100.238:44698
+2021-01-14 09:57:56,143 INFO  [net] New incoming connection from 10.100.100.238:48868
+2021-01-14 09:57:56,147 INFO  [net] New incoming connection from 10.100.100.238:49478
+2021-01-14 09:57:56,142 INFO  [net] New incoming connection from 10.100.100.238:55832
+2021-01-14 09:57:56,666 INFO  [net] New incoming connection from 10.100.100.163:58862
+2021-01-14 09:57:56,671 INFO  [net] New incoming connection from 10.100.100.163:35442
+2021-01-14 09:57:56,672 INFO  [net] New incoming connection from 10.100.100.163:45526
+2021-01-14 09:57:56,672 INFO  [net] New incoming connection from 10.100.100.163:33050
+2021-01-14 09:57:56,665 INFO  [net] New incoming connection from 10.100.100.163:49548
+2021-01-14 09:57:56,675 INFO  [net] New incoming connection from 10.100.100.163:56682
+2021-01-14 09:57:56,671 INFO  [net] New incoming connection from 10.100.100.163:33634
+2021-01-14 09:57:56,677 INFO  [net] New incoming connection from 10.100.100.163:40166
+2021-01-14 09:57:56,686 INFO  [net] New incoming connection from 10.100.100.163:47940
+2021-01-14 09:57:56,670 INFO  [net] New incoming connection from 10.100.100.163:49254
+2021-01-14 09:57:56,670 INFO  [net] New incoming connection from 10.100.100.163:45790
+2021-01-14 09:57:56,672 INFO  [net] New incoming connection from 10.100.100.163:52222
+2021-01-14 09:57:56,667 INFO  [net] New incoming connection from 10.100.100.163:40314
+2021-01-14 09:57:56,676 INFO  [net] New incoming connection from 10.100.100.163:58154
+2021-01-14 09:57:56,675 INFO  [net] New incoming connection from 10.100.100.163:42564
+2021-01-14 09:57:56,678 INFO  [net] New incoming connection from 10.100.100.163:60812
+2021-01-14 09:57:57,184 INFO  [net] New incoming connection from 10.100.100.63:48102
+2021-01-14 09:57:57,181 INFO  [net] New incoming connection from 10.100.100.63:34476
+2021-01-14 09:57:57,191 INFO  [net] New incoming connection from 10.100.100.63:49132
+2021-01-14 09:57:57,188 INFO  [net] New incoming connection from 10.100.100.63:47982
+2021-01-14 09:57:57,180 INFO  [net] New incoming connection from 10.100.100.63:35880
+2021-01-14 09:57:57,185 INFO  [net] New incoming connection from 10.100.100.63:49608
+2021-01-14 09:57:57,199 INFO  [net] New incoming connection from 10.100.100.63:45204
+2021-01-14 09:57:57,186 INFO  [net] New incoming connection from 10.100.100.63:40132
+2021-01-14 09:57:57,181 INFO  [net] New incoming connection from 10.100.100.63:49408
+2021-01-14 09:57:57,188 INFO  [net] New incoming connection from 10.100.100.63:54456
+2021-01-14 09:57:57,188 INFO  [net] New incoming connection from 10.100.100.63:47006
+2021-01-14 09:57:57,191 INFO  [net] New incoming connection from 10.100.100.63:38944
+2021-01-14 09:57:57,184 INFO  [net] New incoming connection from 10.100.100.63:44036
+2021-01-14 09:57:57,186 INFO  [net] New incoming connection from 10.100.100.63:53908
+2021-01-14 09:57:57,188 INFO  [net] New incoming connection from 10.100.100.63:55148
+2021-01-14 09:57:57,184 INFO  [net] New incoming connection from 10.100.100.63:56976
+2021-01-14 09:57:57,693 INFO  [net] New incoming connection from 10.100.100.46:35042
+2021-01-14 09:57:57,685 INFO  [net] New incoming connection from 10.100.100.46:54662
+2021-01-14 09:57:57,674 INFO  [net] New incoming connection from 10.100.100.46:42396
+2021-01-14 09:57:57,677 INFO  [net] New incoming connection from 10.100.100.46:59062
+2021-01-14 09:57:57,675 INFO  [net] New incoming connection from 10.100.100.46:52044
+2021-01-14 09:57:57,679 INFO  [net] New incoming connection from 10.100.100.46:49356
+2021-01-14 09:57:57,681 INFO  [net] New incoming connection from 10.100.100.46:55530
+2021-01-14 09:57:57,681 INFO  [net] New incoming connection from 10.100.100.46:41878
+2021-01-14 09:57:57,676 INFO  [net] New incoming connection from 10.100.100.46:33214
+2021-01-14 09:57:57,685 INFO  [net] New incoming connection from 10.100.100.46:34176
+2021-01-14 09:57:57,678 INFO  [net] New incoming connection from 10.100.100.46:54438
+2021-01-14 09:57:57,684 INFO  [net] New incoming connection from 10.100.100.46:47718
+2021-01-14 09:57:57,682 INFO  [net] New incoming connection from 10.100.100.46:60946
+2021-01-14 09:57:57,682 INFO  [net] New incoming connection from 10.100.100.46:45592
+2021-01-14 09:57:57,681 INFO  [net] New incoming connection from 10.100.100.46:57748
+2021-01-14 09:57:57,680 INFO  [net] New incoming connection from 10.100.100.46:48910
+2021-01-14 09:57:58,183 INFO  [net] New incoming connection from 10.100.100.130:49670
+2021-01-14 09:57:58,190 INFO  [net] New incoming connection from 10.100.100.130:53506
+2021-01-14 09:57:58,187 INFO  [net] New incoming connection from 10.100.100.130:60608
+2021-01-14 09:57:58,201 INFO  [net] New incoming connection from 10.100.100.130:40298
+2021-01-14 09:57:58,188 INFO  [net] New incoming connection from 10.100.100.130:34470
+2021-01-14 09:57:58,184 INFO  [net] New incoming connection from 10.100.100.130:33882
+2021-01-14 09:57:58,194 INFO  [net] New incoming connection from 10.100.100.130:55532
+2021-01-14 09:57:58,190 INFO  [net] New incoming connection from 10.100.100.130:40242
+2021-01-14 09:57:58,186 INFO  [net] New incoming connection from 10.100.100.130:40636
+2021-01-14 09:57:58,187 INFO  [net] New incoming connection from 10.100.100.130:36732
+2021-01-14 09:57:58,193 INFO  [net] New incoming connection from 10.100.100.130:59650
+2021-01-14 09:57:58,185 INFO  [net] New incoming connection from 10.100.100.130:59230
+2021-01-14 09:57:58,186 INFO  [net] New incoming connection from 10.100.100.130:44218
+2021-01-14 09:57:58,193 INFO  [net] New incoming connection from 10.100.100.130:43258
+2021-01-14 09:57:58,190 INFO  [net] New incoming connection from 10.100.100.130:37698
+2021-01-14 09:57:58,191 INFO  [net] New incoming connection from 10.100.100.130:45338
+2021-01-14 09:57:58,708 INFO  [net] New incoming connection from 10.100.100.48:54032
+2021-01-14 09:57:58,703 INFO  [net] New incoming connection from 10.100.100.48:39620
+2021-01-14 09:57:58,721 INFO  [net] New incoming connection from 10.100.100.48:40780
+2021-01-14 09:57:58,708 INFO  [net] New incoming connection from 10.100.100.48:43666
+2021-01-14 09:57:58,711 INFO  [net] New incoming connection from 10.100.100.48:39176
+2021-01-14 09:57:58,711 INFO  [net] New incoming connection from 10.100.100.48:36346
+2021-01-14 09:57:58,703 INFO  [net] New incoming connection from 10.100.100.48:33582
+2021-01-14 09:57:58,714 INFO  [net] New incoming connection from 10.100.100.48:51624
+2021-01-14 09:57:58,713 INFO  [net] New incoming connection from 10.100.100.48:37408
+2021-01-14 09:57:58,710 INFO  [net] New incoming connection from 10.100.100.48:49794
+2021-01-14 09:57:58,707 INFO  [net] New incoming connection from 10.100.100.48:54088
+2021-01-14 09:57:58,706 INFO  [net] New incoming connection from 10.100.100.48:60010
+2021-01-14 09:57:58,713 INFO  [net] New incoming connection from 10.100.100.48:43478
+2021-01-14 09:57:58,709 INFO  [net] New incoming connection from 10.100.100.48:45664
+2021-01-14 09:57:58,710 INFO  [net] New incoming connection from 10.100.100.48:44730
+2021-01-14 09:57:58,706 INFO  [net] New incoming connection from 10.100.100.48:53748
+2021-01-14 09:57:59,193 INFO  [net] New incoming connection from 10.100.100.111:53074
+2021-01-14 09:57:59,185 INFO  [net] New incoming connection from 10.100.100.111:40886
+2021-01-14 09:57:59,182 INFO  [net] New incoming connection from 10.100.100.111:49314
+2021-01-14 09:57:59,189 INFO  [net] New incoming connection from 10.100.100.111:33356
+2021-01-14 09:57:59,200 INFO  [net] New incoming connection from 10.100.100.111:42734
+2021-01-14 09:57:59,182 INFO  [net] New incoming connection from 10.100.100.111:59460
+2021-01-14 09:57:59,187 INFO  [net] New incoming connection from 10.100.100.111:34666
+2021-01-14 09:57:59,182 INFO  [net] New incoming connection from 10.100.100.111:43190
+2021-01-14 09:57:59,190 INFO  [net] New incoming connection from 10.100.100.111:34526
+2021-01-14 09:57:59,185 INFO  [net] New incoming connection from 10.100.100.111:52346
+2021-01-14 09:57:59,186 INFO  [net] New incoming connection from 10.100.100.111:60184
+2021-01-14 09:57:59,185 INFO  [net] New incoming connection from 10.100.100.111:50958
+2021-01-14 09:57:59,188 INFO  [net] New incoming connection from 10.100.100.111:49242
+2021-01-14 09:57:59,193 INFO  [net] New incoming connection from 10.100.100.111:44396
+2021-01-14 09:57:59,190 INFO  [net] New incoming connection from 10.100.100.111:56604
+2021-01-14 09:57:59,190 INFO  [net] New incoming connection from 10.100.100.111:42744
+2021-01-14 09:57:59,695 INFO  [net] New incoming connection from 10.100.100.181:48930
+2021-01-14 09:57:59,677 INFO  [net] New incoming connection from 10.100.100.181:50508
+2021-01-14 09:57:59,677 INFO  [net] New incoming connection from 10.100.100.181:33474
+2021-01-14 09:57:59,682 INFO  [net] New incoming connection from 10.100.100.181:48000
+2021-01-14 09:57:59,683 INFO  [net] New incoming connection from 10.100.100.181:59134
+2021-01-14 09:57:59,686 INFO  [net] New incoming connection from 10.100.100.181:55426
+2021-01-14 09:57:59,685 INFO  [net] New incoming connection from 10.100.100.181:56390
+2021-01-14 09:57:59,680 INFO  [net] New incoming connection from 10.100.100.181:34760
+2021-01-14 09:57:59,684 INFO  [net] New incoming connection from 10.100.100.181:58486
+2021-01-14 09:57:59,684 INFO  [net] New incoming connection from 10.100.100.181:37546
+2021-01-14 09:57:59,687 INFO  [net] New incoming connection from 10.100.100.181:49384
+2021-01-14 09:57:59,680 INFO  [net] New incoming connection from 10.100.100.181:51144
+2021-01-14 09:57:59,683 INFO  [net] New incoming connection from 10.100.100.181:46800
+2021-01-14 09:57:59,678 INFO  [net] New incoming connection from 10.100.100.181:38144
+2021-01-14 09:57:59,682 INFO  [net] New incoming connection from 10.100.100.181:51022
+2021-01-14 09:57:59,687 INFO  [net] New incoming connection from 10.100.100.181:36818
+2021-01-14 09:58:00,184 INFO  [net] New incoming connection from 10.100.100.107:37972
+2021-01-14 09:58:00,198 INFO  [net] New incoming connection from 10.100.100.107:59370
+2021-01-14 09:58:00,179 INFO  [net] New incoming connection from 10.100.100.107:55158
+2021-01-14 09:58:00,184 INFO  [net] New incoming connection from 10.100.100.107:41124
+2021-01-14 09:58:00,187 INFO  [net] New incoming connection from 10.100.100.107:49570
+2021-01-14 09:58:00,189 INFO  [net] New incoming connection from 10.100.100.107:60898
+2021-01-14 09:58:00,181 INFO  [net] New incoming connection from 10.100.100.107:50840
+2021-01-14 09:58:00,189 INFO  [net] New incoming connection from 10.100.100.107:55750
+2021-01-14 09:58:00,191 INFO  [net] New incoming connection from 10.100.100.107:41604
+2021-01-14 09:58:00,188 INFO  [net] New incoming connection from 10.100.100.107:60138
+2021-01-14 09:58:00,181 INFO  [net] New incoming connection from 10.100.100.107:50328
+2021-01-14 09:58:00,187 INFO  [net] New incoming connection from 10.100.100.107:46770
+2021-01-14 09:58:00,182 INFO  [net] New incoming connection from 10.100.100.107:35920
+2021-01-14 09:58:00,184 INFO  [net] New incoming connection from 10.100.100.107:58716
+2021-01-14 09:58:00,184 INFO  [net] New incoming connection from 10.100.100.107:56172
+2021-01-14 09:58:00,189 INFO  [net] New incoming connection from 10.100.100.107:48612
+2021-01-14 09:58:00,656 INFO  [net] New incoming connection from 10.100.100.155:43318
+2021-01-14 09:58:00,649 INFO  [net] New incoming connection from 10.100.100.155:43138
+2021-01-14 09:58:00,667 INFO  [net] New incoming connection from 10.100.100.155:40468
+2021-01-14 09:58:00,658 INFO  [net] New incoming connection from 10.100.100.155:44746
+2021-01-14 09:58:00,649 INFO  [net] New incoming connection from 10.100.100.155:44796
+2021-01-14 09:58:00,654 INFO  [net] New incoming connection from 10.100.100.155:34570
+2021-01-14 09:58:00,661 INFO  [net] New incoming connection from 10.100.100.155:50456
+2021-01-14 09:58:00,657 INFO  [net] New incoming connection from 10.100.100.155:60940
+2021-01-14 09:58:00,658 INFO  [net] New incoming connection from 10.100.100.155:38830
+2021-01-14 09:58:00,653 INFO  [net] New incoming connection from 10.100.100.155:48042
+2021-01-14 09:58:00,657 INFO  [net] New incoming connection from 10.100.100.155:56832
+2021-01-14 09:58:00,656 INFO  [net] New incoming connection from 10.100.100.155:50792
+2021-01-14 09:58:00,653 INFO  [net] New incoming connection from 10.100.100.155:37736
+2021-01-14 09:58:00,652 INFO  [net] New incoming connection from 10.100.100.155:58832
+2021-01-14 09:58:00,655 INFO  [net] New incoming connection from 10.100.100.155:54640
+2021-01-14 09:58:00,661 INFO  [net] New incoming connection from 10.100.100.155:47746
+2021-01-14 09:58:01,169 INFO  [net] New incoming connection from 10.100.100.228:53738
+2021-01-14 09:58:01,158 INFO  [net] New incoming connection from 10.100.100.228:47646
+2021-01-14 09:58:01,166 INFO  [net] New incoming connection from 10.100.100.228:48180
+2021-01-14 09:58:01,163 INFO  [net] New incoming connection from 10.100.100.228:54216
+2021-01-14 09:58:01,165 INFO  [net] New incoming connection from 10.100.100.228:47472
+2021-01-14 09:58:01,178 INFO  [net] New incoming connection from 10.100.100.228:42072
+2021-01-14 09:58:01,168 INFO  [net] New incoming connection from 10.100.100.228:47648
+2021-01-14 09:58:01,165 INFO  [net] New incoming connection from 10.100.100.228:48480
+2021-01-14 09:58:01,166 INFO  [net] New incoming connection from 10.100.100.228:38188
+2021-01-14 09:58:01,166 INFO  [net] New incoming connection from 10.100.100.228:33194
+2021-01-14 09:58:01,161 INFO  [net] New incoming connection from 10.100.100.228:48994
+2021-01-14 09:58:01,163 INFO  [net] New incoming connection from 10.100.100.228:35622
+2021-01-14 09:58:01,168 INFO  [net] New incoming connection from 10.100.100.228:34464
+2021-01-14 09:58:01,163 INFO  [net] New incoming connection from 10.100.100.228:53350
+2021-01-14 09:58:01,170 INFO  [net] New incoming connection from 10.100.100.228:57178
+2021-01-14 09:58:01,161 INFO  [net] New incoming connection from 10.100.100.228:48990
+2021-01-14 09:58:01,682 INFO  [net] New incoming connection from 10.100.100.132:56986
+2021-01-14 09:58:01,675 INFO  [net] New incoming connection from 10.100.100.132:32966
+2021-01-14 09:58:01,678 INFO  [net] New incoming connection from 10.100.100.132:46424
+2021-01-14 09:58:01,679 INFO  [net] New incoming connection from 10.100.100.132:46448
+2021-01-14 09:58:01,679 INFO  [net] New incoming connection from 10.100.100.132:44474
+2021-01-14 09:58:01,692 INFO  [net] New incoming connection from 10.100.100.132:43666
+2021-01-14 09:58:01,671 INFO  [net] New incoming connection from 10.100.100.132:44378
+2021-01-14 09:58:01,677 INFO  [net] New incoming connection from 10.100.100.132:60756
+2021-01-14 09:58:01,679 INFO  [net] New incoming connection from 10.100.100.132:53954
+2021-01-14 09:58:01,675 INFO  [net] New incoming connection from 10.100.100.132:60468
+2021-01-14 09:58:01,681 INFO  [net] New incoming connection from 10.100.100.132:59896
+2021-01-14 09:58:01,683 INFO  [net] New incoming connection from 10.100.100.132:49768
+2021-01-14 09:58:01,673 INFO  [net] New incoming connection from 10.100.100.132:45976
+2021-01-14 09:58:01,677 INFO  [net] New incoming connection from 10.100.100.132:59880
+2021-01-14 09:58:01,679 INFO  [net] New incoming connection from 10.100.100.132:46282
+2021-01-14 09:58:01,676 INFO  [net] New incoming connection from 10.100.100.132:39012
+2021-01-14 09:58:02,189 INFO  [net] New incoming connection from 10.100.100.89:34326
+2021-01-14 09:58:02,189 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,200 INFO  [net] New incoming connection from 10.100.100.89:57042
+2021-01-14 09:58:02,200 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,194 INFO  [net] New incoming connection from 10.100.100.89:48392
+2021-01-14 09:58:02,194 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,197 INFO  [net] New incoming connection from 10.100.100.89:33626
+2021-01-14 09:58:02,197 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,209 INFO  [net] New incoming connection from 10.100.100.89:50754
+2021-01-14 09:58:02,209 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,198 INFO  [net] New incoming connection from 10.100.100.89:44218
+2021-01-14 09:58:02,191 INFO  [net] New incoming connection from 10.100.100.89:46830
+2021-01-14 09:58:02,191 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,198 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,195 INFO  [net] New incoming connection from 10.100.100.89:52522
+2021-01-14 09:58:02,195 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,197 INFO  [net] New incoming connection from 10.100.100.89:50550
+2021-01-14 09:58:02,197 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,192 INFO  [net] New incoming connection from 10.100.100.89:42430
+2021-01-14 09:58:02,193 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,196 INFO  [net] New incoming connection from 10.100.100.89:35970
+2021-01-14 09:58:02,196 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,198 INFO  [net] New incoming connection from 10.100.100.89:40160
+2021-01-14 09:58:02,198 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,194 INFO  [net] New incoming connection from 10.100.100.89:55722
+2021-01-14 09:58:02,194 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,201 INFO  [net] New incoming connection from 10.100.100.89:41804
+2021-01-14 09:58:02,201 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,191 INFO  [net] New incoming connection from 10.100.100.89:49382
+2021-01-14 09:58:02,192 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,195 INFO  [net] New incoming connection from 10.100.100.89:43026
+2021-01-14 09:58:02,195 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:02,200 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:58:17,192 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:58:17,192 INFO  [config] Talking to servers: {6: "10.100.100.63:10006", 14: "10.100.100.228:10014", 3: "10.100.100.233:10003", 1: "10.100.100.4:10001", 5: "10.100.100.163:10005", 12: "10.100.100.107:10012", 0: "10.100.100.241:10000", 2: "10.100.100.75:10002", 16: "10.100.100.89:10016", 7: "10.100.100.46:10007", 11: "10.100.100.181:10011", 15: "10.100.100.132:10015", 13: "10.100.100.155:10013", 9: "10.100.100.48:10009", 8: "10.100.100.130:10008", 4: "10.100.100.238:10004", 10: "10.100.100.111:10010"}
+2021-01-14 09:58:58,741 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610618297, tv_nsec: 214998389 }
+2021-01-14 09:58:58,741 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610618338, tv_nsec: 741325237 }
+2021-01-14 09:58:58,768 INFO  [statistics] DP[Throughput]: 24090.741366598417
+2021-01-14 09:58:58,768 INFO  [statistics] DP[Latency]: 411.1430487804878
+2021-01-14 09:58:58,792 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,775 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,773 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,772 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,778 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,767 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,777 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,771 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:58:58,768 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,775 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,772 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,774 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,777 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,770 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,780 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,775 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,769 WARN  [peer] Disconnected from peer
+2021-01-14 09:58:58,772 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 500
+Setting up: 3.137.139.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.218.144.226
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.171.202
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.170.28
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.129.6.91
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.224.22.123
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.138.173.71
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.188.52
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 52.14.97.154
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.12.104.112
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.119.88
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 3.19.77.102
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.222.176.62
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.188.227.210
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:59:40,209 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 12: "10.100.100.107:4012", 9: "10.100.100.48:4009", 5: "10.100.100.163:4005", 14: "10.100.100.228:4014", 11: "10.100.100.181:4011", 10: "10.100.100.111:4010", 13: "10.100.100.155:4013", 2: "10.100.100.75:4002", 3: "10.100.100.233:4003", 16: "10.100.100.89:4016", 15: "10.100.100.132:4015", 4: "10.100.100.238:4004", 7: "10.100.100.46:4007", 1: "10.100.100.4:4001", 8: "10.100.100.130:4008", 6: "10.100.100.63:4006"}
+2021-01-14 09:59:40,676 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 10: "10.100.100.111:4010", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 7: "10.100.100.46:4007", 12: "10.100.100.107:4012", 8: "10.100.100.130:4008", 11: "10.100.100.181:4011", 1: "0.0.0.0:4001", 15: "10.100.100.132:4015", 16: "10.100.100.89:4016", 4: "10.100.100.238:4004", 6: "10.100.100.63:4006", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009"}
+2021-01-14 09:59:41,194 INFO  [config] Talking to servers: {4: "10.100.100.238:4004", 3: "10.100.100.233:4003", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 0: "10.100.100.241:4000", 10: "10.100.100.111:4010", 6: "10.100.100.63:4006", 5: "10.100.100.163:4005", 1: "10.100.100.4:4001", 15: "10.100.100.132:4015", 13: "10.100.100.155:4013", 11: "10.100.100.181:4011", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 12: "10.100.100.107:4012", 2: "0.0.0.0:4002", 16: "10.100.100.89:4016"}
+2021-01-14 09:59:41,870 INFO  [config] Talking to servers: {6: "10.100.100.63:4006", 7: "10.100.100.46:4007", 15: "10.100.100.132:4015", 2: "10.100.100.75:4002", 11: "10.100.100.181:4011", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 9: "10.100.100.48:4009", 4: "10.100.100.238:4004", 0: "10.100.100.241:4000", 10: "10.100.100.111:4010", 14: "10.100.100.228:4014", 3: "0.0.0.0:4003", 8: "10.100.100.130:4008", 12: "10.100.100.107:4012", 16: "10.100.100.89:4016", 1: "10.100.100.4:4001"}
+2021-01-14 09:59:42,827 INFO  [config] Talking to servers: {14: "10.100.100.228:4014", 3: "10.100.100.233:4003", 0: "10.100.100.241:4000", 9: "10.100.100.48:4009", 2: "10.100.100.75:4002", 15: "10.100.100.132:4015", 1: "10.100.100.4:4001", 13: "10.100.100.155:4013", 8: "10.100.100.130:4008", 10: "10.100.100.111:4010", 4: "0.0.0.0:4004", 12: "10.100.100.107:4012", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 6: "10.100.100.63:4006", 7: "10.100.100.46:4007", 16: "10.100.100.89:4016"}
+2021-01-14 09:59:43,830 INFO  [config] Talking to servers: {13: "10.100.100.155:4013", 4: "10.100.100.238:4004", 15: "10.100.100.132:4015", 7: "10.100.100.46:4007", 9: "10.100.100.48:4009", 16: "10.100.100.89:4016", 12: "10.100.100.107:4012", 0: "10.100.100.241:4000", 1: "10.100.100.4:4001", 5: "0.0.0.0:4005", 8: "10.100.100.130:4008", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 10: "10.100.100.111:4010", 14: "10.100.100.228:4014", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006"}
+2021-01-14 09:59:44,825 INFO  [config] Talking to servers: {16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 3: "10.100.100.233:4003", 9: "10.100.100.48:4009", 2: "10.100.100.75:4002", 12: "10.100.100.107:4012", 11: "10.100.100.181:4011", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 4: "10.100.100.238:4004", 6: "0.0.0.0:4006", 0: "10.100.100.241:4000", 5: "10.100.100.163:4005", 7: "10.100.100.46:4007", 15: "10.100.100.132:4015"}
+2021-01-14 09:59:45,766 INFO  [config] Talking to servers: {14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 12: "10.100.100.107:4012", 10: "10.100.100.111:4010", 13: "10.100.100.155:4013", 8: "10.100.100.130:4008", 3: "10.100.100.233:4003", 0: "10.100.100.241:4000", 5: "10.100.100.163:4005", 11: "10.100.100.181:4011", 2: "10.100.100.75:4002", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 15: "10.100.100.132:4015", 4: "10.100.100.238:4004", 7: "0.0.0.0:4007", 9: "10.100.100.48:4009"}
+2021-01-14 09:59:46,277 INFO  [config] Talking to servers: {9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 5: "10.100.100.163:4005", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 14: "10.100.100.228:4014", 0: "10.100.100.241:4000", 8: "0.0.0.0:4008", 1: "10.100.100.4:4001", 11: "10.100.100.181:4011", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 15: "10.100.100.132:4015", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002"}
+2021-01-14 09:59:47,120 INFO  [config] Talking to servers: {12: "10.100.100.107:4012", 8: "10.100.100.130:4008", 3: "10.100.100.233:4003", 9: "0.0.0.0:4009", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 4: "10.100.100.238:4004", 15: "10.100.100.132:4015", 14: "10.100.100.228:4014", 10: "10.100.100.111:4010", 2: "10.100.100.75:4002", 1: "10.100.100.4:4001", 0: "10.100.100.241:4000", 16: "10.100.100.89:4016", 6: "10.100.100.63:4006", 11: "10.100.100.181:4011", 7: "10.100.100.46:4007"}
+2021-01-14 09:59:48,008 INFO  [config] Talking to servers: {11: "10.100.100.181:4011", 9: "10.100.100.48:4009", 15: "10.100.100.132:4015", 6: "10.100.100.63:4006", 2: "10.100.100.75:4002", 8: "10.100.100.130:4008", 1: "10.100.100.4:4001", 13: "10.100.100.155:4013", 12: "10.100.100.107:4012", 4: "10.100.100.238:4004", 10: "0.0.0.0:4010", 14: "10.100.100.228:4014", 16: "10.100.100.89:4016", 7: "10.100.100.46:4007", 3: "10.100.100.233:4003", 0: "10.100.100.241:4000", 5: "10.100.100.163:4005"}
+2021-01-14 09:59:48,602 INFO  [config] Talking to servers: {2: "10.100.100.75:4002", 9: "10.100.100.48:4009", 1: "10.100.100.4:4001", 14: "10.100.100.228:4014", 8: "10.100.100.130:4008", 10: "10.100.100.111:4010", 12: "10.100.100.107:4012", 15: "10.100.100.132:4015", 4: "10.100.100.238:4004", 11: "0.0.0.0:4011", 3: "10.100.100.233:4003", 6: "10.100.100.63:4006", 5: "10.100.100.163:4005", 0: "10.100.100.241:4000", 16: "10.100.100.89:4016", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007"}
+2021-01-14 09:59:49,091 INFO  [config] Talking to servers: {16: "10.100.100.89:4016", 2: "10.100.100.75:4002", 15: "10.100.100.132:4015", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 12: "0.0.0.0:4012", 4: "10.100.100.238:4004", 6: "10.100.100.63:4006", 9: "10.100.100.48:4009", 1: "10.100.100.4:4001", 10: "10.100.100.111:4010", 0: "10.100.100.241:4000", 11: "10.100.100.181:4011", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 14: "10.100.100.228:4014", 3: "10.100.100.233:4003"}
+2021-01-14 09:59:49,581 INFO  [config] Talking to servers: {12: "10.100.100.107:4012", 14: "10.100.100.228:4014", 1: "10.100.100.4:4001", 16: "10.100.100.89:4016", 11: "10.100.100.181:4011", 5: "10.100.100.163:4005", 10: "10.100.100.111:4010", 13: "0.0.0.0:4013", 2: "10.100.100.75:4002", 6: "10.100.100.63:4006", 4: "10.100.100.238:4004", 3: "10.100.100.233:4003", 15: "10.100.100.132:4015", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 8: "10.100.100.130:4008", 0: "10.100.100.241:4000"}
+2021-01-14 09:59:50,089 INFO  [config] Talking to servers: {0: "10.100.100.241:4000", 15: "10.100.100.132:4015", 4: "10.100.100.238:4004", 11: "10.100.100.181:4011", 3: "10.100.100.233:4003", 10: "10.100.100.111:4010", 8: "10.100.100.130:4008", 6: "10.100.100.63:4006", 9: "10.100.100.48:4009", 7: "10.100.100.46:4007", 12: "10.100.100.107:4012", 1: "10.100.100.4:4001", 16: "10.100.100.89:4016", 14: "0.0.0.0:4014", 5: "10.100.100.163:4005", 2: "10.100.100.75:4002", 13: "10.100.100.155:4013"}
+2021-01-14 09:59:50,560 INFO  [config] Talking to servers: {14: "10.100.100.228:4014", 3: "10.100.100.233:4003", 1: "10.100.100.4:4001", 8: "10.100.100.130:4008", 7: "10.100.100.46:4007", 11: "10.100.100.181:4011", 12: "10.100.100.107:4012", 6: "10.100.100.63:4006", 15: "0.0.0.0:4015", 5: "10.100.100.163:4005", 13: "10.100.100.155:4013", 16: "10.100.100.89:4016", 10: "10.100.100.111:4010", 4: "10.100.100.238:4004", 2: "10.100.100.75:4002", 9: "10.100.100.48:4009", 0: "10.100.100.241:4000"}
+2021-01-14 09:59:51,051 INFO  [config] Talking to servers: {16: "0.0.0.0:4016", 12: "10.100.100.107:4012", 15: "10.100.100.132:4015", 8: "10.100.100.130:4008", 3: "10.100.100.233:4003", 2: "10.100.100.75:4002", 0: "10.100.100.241:4000", 14: "10.100.100.228:4014", 9: "10.100.100.48:4009", 10: "10.100.100.111:4010", 11: "10.100.100.181:4011", 13: "10.100.100.155:4013", 7: "10.100.100.46:4007", 6: "10.100.100.63:4006", 1: "10.100.100.4:4001", 5: "10.100.100.163:4005", 4: "10.100.100.238:4004"}
+2021-01-14 10:00:25,215 INFO  [net] New incoming connection from 10.100.100.241:52982
+2021-01-14 10:00:25,215 INFO  [net] New incoming connection from 10.100.100.241:38208
+2021-01-14 10:00:25,219 INFO  [net] New incoming connection from 10.100.100.241:57118
+2021-01-14 10:00:25,207 INFO  [net] New incoming connection from 10.100.100.241:39922
+2021-01-14 10:00:25,219 INFO  [net] New incoming connection from 10.100.100.241:33602
+2021-01-14 10:00:25,214 INFO  [net] New incoming connection from 10.100.100.241:39158
+2021-01-14 10:00:25,218 INFO  [net] New incoming connection from 10.100.100.241:58594
+2021-01-14 10:00:25,218 INFO  [net] New incoming connection from 10.100.100.241:36008
+2021-01-14 10:00:25,210 INFO  [net] New incoming connection from 10.100.100.241:56720
+2021-01-14 10:00:25,211 INFO  [net] New incoming connection from 10.100.100.241:41422
+2021-01-14 10:00:25,215 INFO  [net] New incoming connection from 10.100.100.241:58670
+2021-01-14 10:00:25,211 INFO  [net] New incoming connection from 10.100.100.241:38402
+2021-01-14 10:00:25,213 INFO  [net] New incoming connection from 10.100.100.241:34598
+2021-01-14 10:00:25,234 INFO  [net] New incoming connection from 10.100.100.241:38810
+2021-01-14 10:00:25,217 INFO  [net] New incoming connection from 10.100.100.241:34940
+2021-01-14 10:00:25,214 INFO  [net] New incoming connection from 10.100.100.241:56484
+2021-01-14 10:00:25,681 INFO  [net] New incoming connection from 10.100.100.4:60394
+2021-01-14 10:00:25,684 INFO  [net] New incoming connection from 10.100.100.4:54268
+2021-01-14 10:00:25,688 INFO  [net] New incoming connection from 10.100.100.4:39336
+2021-01-14 10:00:25,683 INFO  [net] New incoming connection from 10.100.100.4:40916
+2021-01-14 10:00:25,679 INFO  [net] New incoming connection from 10.100.100.4:57800
+2021-01-14 10:00:25,689 INFO  [net] New incoming connection from 10.100.100.4:40354
+2021-01-14 10:00:25,686 INFO  [net] New incoming connection from 10.100.100.4:49182
+2021-01-14 10:00:25,688 INFO  [net] New incoming connection from 10.100.100.4:42518
+2021-01-14 10:00:25,678 INFO  [net] New incoming connection from 10.100.100.4:55262
+2021-01-14 10:00:25,687 INFO  [net] New incoming connection from 10.100.100.4:48570
+2021-01-14 10:00:25,681 INFO  [net] New incoming connection from 10.100.100.4:33252
+2021-01-14 10:00:25,682 INFO  [net] New incoming connection from 10.100.100.4:55806
+2021-01-14 10:00:25,686 INFO  [net] New incoming connection from 10.100.100.4:36456
+2021-01-14 10:00:25,685 INFO  [net] New incoming connection from 10.100.100.4:52882
+2021-01-14 10:00:25,704 INFO  [net] New incoming connection from 10.100.100.4:60518
+2021-01-14 10:00:25,684 INFO  [net] New incoming connection from 10.100.100.4:34960
+2021-01-14 10:00:26,193 INFO  [net] New incoming connection from 10.100.100.75:43672
+2021-01-14 10:00:26,191 INFO  [net] New incoming connection from 10.100.100.75:48122
+2021-01-14 10:00:26,194 INFO  [net] New incoming connection from 10.100.100.75:52566
+2021-01-14 10:00:26,195 INFO  [net] New incoming connection from 10.100.100.75:52782
+2021-01-14 10:00:26,189 INFO  [net] New incoming connection from 10.100.100.75:56422
+2021-01-14 10:00:26,188 INFO  [net] New incoming connection from 10.100.100.75:53112
+2021-01-14 10:00:26,197 INFO  [net] New incoming connection from 10.100.100.75:57830
+2021-01-14 10:00:26,198 INFO  [net] New incoming connection from 10.100.100.75:50338
+2021-01-14 10:00:26,211 INFO  [net] New incoming connection from 10.100.100.75:45476
+2021-01-14 10:00:26,193 INFO  [net] New incoming connection from 10.100.100.75:43854
+2021-01-14 10:00:26,187 INFO  [net] New incoming connection from 10.100.100.75:50508
+2021-01-14 10:00:26,190 INFO  [net] New incoming connection from 10.100.100.75:43464
+2021-01-14 10:00:26,192 INFO  [net] New incoming connection from 10.100.100.75:35910
+2021-01-14 10:00:26,190 INFO  [net] New incoming connection from 10.100.100.75:42982
+2021-01-14 10:00:26,195 INFO  [net] New incoming connection from 10.100.100.75:39778
+2021-01-14 10:00:26,195 INFO  [net] New incoming connection from 10.100.100.75:42382
+2021-01-14 10:00:26,877 INFO  [net] New incoming connection from 10.100.100.233:45112
+2021-01-14 10:00:26,877 INFO  [net] New incoming connection from 10.100.100.233:44020
+2021-01-14 10:00:26,880 INFO  [net] New incoming connection from 10.100.100.233:56878
+2021-01-14 10:00:26,869 INFO  [net] New incoming connection from 10.100.100.233:42984
+2021-01-14 10:00:26,870 INFO  [net] New incoming connection from 10.100.100.233:49468
+2021-01-14 10:00:26,877 INFO  [net] New incoming connection from 10.100.100.233:45130
+2021-01-14 10:00:26,875 INFO  [net] New incoming connection from 10.100.100.233:55062
+2021-01-14 10:00:26,880 INFO  [net] New incoming connection from 10.100.100.233:36734
+2021-01-14 10:00:26,874 INFO  [net] New incoming connection from 10.100.100.233:52670
+2021-01-14 10:00:26,873 INFO  [net] New incoming connection from 10.100.100.233:58856
+2021-01-14 10:00:26,880 INFO  [net] New incoming connection from 10.100.100.233:41938
+2021-01-14 10:00:26,874 INFO  [net] New incoming connection from 10.100.100.233:38272
+2021-01-14 10:00:26,873 INFO  [net] New incoming connection from 10.100.100.233:34622
+2021-01-14 10:00:26,895 INFO  [net] New incoming connection from 10.100.100.233:58510
+2021-01-14 10:00:26,878 INFO  [net] New incoming connection from 10.100.100.233:33668
+2021-01-14 10:00:26,878 INFO  [net] New incoming connection from 10.100.100.233:39388
+2021-01-14 10:00:27,804 INFO  [net] New incoming connection from 10.100.100.238:44528
+2021-01-14 10:00:27,813 INFO  [net] New incoming connection from 10.100.100.238:37276
+2021-01-14 10:00:27,813 INFO  [net] New incoming connection from 10.100.100.238:51480
+2021-01-14 10:00:27,809 INFO  [net] New incoming connection from 10.100.100.238:44724
+2021-01-14 10:00:27,810 INFO  [net] New incoming connection from 10.100.100.238:56528
+2021-01-14 10:00:27,809 INFO  [net] New incoming connection from 10.100.100.238:49410
+2021-01-14 10:00:27,806 INFO  [net] New incoming connection from 10.100.100.238:60322
+2021-01-14 10:00:27,816 INFO  [net] New incoming connection from 10.100.100.238:39260
+2021-01-14 10:00:27,816 INFO  [net] New incoming connection from 10.100.100.238:49510
+2021-01-14 10:00:27,808 INFO  [net] New incoming connection from 10.100.100.238:33112
+2021-01-14 10:00:27,815 INFO  [net] New incoming connection from 10.100.100.238:41360
+2021-01-14 10:00:27,817 INFO  [net] New incoming connection from 10.100.100.238:48818
+2021-01-14 10:00:27,811 INFO  [net] New incoming connection from 10.100.100.238:53970
+2021-01-14 10:00:27,811 INFO  [net] New incoming connection from 10.100.100.238:55862
+2021-01-14 10:00:27,814 INFO  [net] New incoming connection from 10.100.100.238:48900
+2021-01-14 10:00:27,814 INFO  [net] New incoming connection from 10.100.100.238:35484
+2021-01-14 10:00:28,835 INFO  [net] New incoming connection from 10.100.100.163:35458
+2021-01-14 10:00:28,838 INFO  [net] New incoming connection from 10.100.100.163:52252
+2021-01-14 10:00:28,838 INFO  [net] New incoming connection from 10.100.100.163:56700
+2021-01-14 10:00:28,839 INFO  [net] New incoming connection from 10.100.100.163:58178
+2021-01-14 10:00:28,835 INFO  [net] New incoming connection from 10.100.100.163:49298
+2021-01-14 10:00:28,838 INFO  [net] New incoming connection from 10.100.100.163:33090
+2021-01-14 10:00:28,830 INFO  [net] New incoming connection from 10.100.100.163:58890
+2021-01-14 10:00:28,835 INFO  [net] New incoming connection from 10.100.100.163:33654
+2021-01-14 10:00:28,833 INFO  [net] New incoming connection from 10.100.100.163:40350
+2021-01-14 10:00:28,842 INFO  [net] New incoming connection from 10.100.100.163:40196
+2021-01-14 10:00:28,830 INFO  [net] New incoming connection from 10.100.100.163:49604
+2021-01-14 10:00:28,838 INFO  [net] New incoming connection from 10.100.100.163:45578
+2021-01-14 10:00:28,855 INFO  [net] New incoming connection from 10.100.100.163:47946
+2021-01-14 10:00:28,842 INFO  [net] New incoming connection from 10.100.100.163:60842
+2021-01-14 10:00:28,836 INFO  [net] New incoming connection from 10.100.100.163:45846
+2021-01-14 10:00:28,839 INFO  [net] New incoming connection from 10.100.100.163:42590
+2021-01-14 10:00:29,827 INFO  [net] New incoming connection from 10.100.100.63:44060
+2021-01-14 10:00:29,831 INFO  [net] New incoming connection from 10.100.100.63:53932
+2021-01-14 10:00:29,828 INFO  [net] New incoming connection from 10.100.100.63:49636
+2021-01-14 10:00:29,828 INFO  [net] New incoming connection from 10.100.100.63:57008
+2021-01-14 10:00:29,823 INFO  [net] New incoming connection from 10.100.100.63:35914
+2021-01-14 10:00:29,830 INFO  [net] New incoming connection from 10.100.100.63:55156
+2021-01-14 10:00:29,828 INFO  [net] New incoming connection from 10.100.100.63:48142
+2021-01-14 10:00:29,832 INFO  [net] New incoming connection from 10.100.100.63:54488
+2021-01-14 10:00:29,834 INFO  [net] New incoming connection from 10.100.100.63:38962
+2021-01-14 10:00:29,826 INFO  [net] New incoming connection from 10.100.100.63:49456
+2021-01-14 10:00:29,834 INFO  [net] New incoming connection from 10.100.100.63:49166
+2021-01-14 10:00:29,833 INFO  [net] New incoming connection from 10.100.100.63:48034
+2021-01-14 10:00:29,832 INFO  [net] New incoming connection from 10.100.100.63:47028
+2021-01-14 10:00:29,849 INFO  [net] New incoming connection from 10.100.100.63:45238
+2021-01-14 10:00:29,831 INFO  [net] New incoming connection from 10.100.100.63:40180
+2021-01-14 10:00:29,825 INFO  [net] New incoming connection from 10.100.100.63:34510
+2021-01-14 10:00:30,768 INFO  [net] New incoming connection from 10.100.100.46:55560
+2021-01-14 10:00:30,763 INFO  [net] New incoming connection from 10.100.100.46:33228
+2021-01-14 10:00:30,760 INFO  [net] New incoming connection from 10.100.100.46:42424
+2021-01-14 10:00:30,767 INFO  [net] New incoming connection from 10.100.100.46:41888
+2021-01-14 10:00:30,773 INFO  [net] New incoming connection from 10.100.100.46:54710
+2021-01-14 10:00:30,772 INFO  [net] New incoming connection from 10.100.100.46:34216
+2021-01-14 10:00:30,766 INFO  [net] New incoming connection from 10.100.100.46:49378
+2021-01-14 10:00:30,771 INFO  [net] New incoming connection from 10.100.100.46:47746
+2021-01-14 10:00:30,770 INFO  [net] New incoming connection from 10.100.100.46:45636
+2021-01-14 10:00:30,763 INFO  [net] New incoming connection from 10.100.100.46:52086
+2021-01-14 10:00:30,768 INFO  [net] New incoming connection from 10.100.100.46:57762
+2021-01-14 10:00:30,765 INFO  [net] New incoming connection from 10.100.100.46:59110
+2021-01-14 10:00:30,765 INFO  [net] New incoming connection from 10.100.100.46:54472
+2021-01-14 10:00:30,769 INFO  [net] New incoming connection from 10.100.100.46:60974
+2021-01-14 10:00:30,787 INFO  [net] New incoming connection from 10.100.100.46:35096
+2021-01-14 10:00:30,767 INFO  [net] New incoming connection from 10.100.100.46:48938
+2021-01-14 10:00:31,278 INFO  [net] New incoming connection from 10.100.100.130:40252
+2021-01-14 10:00:31,278 INFO  [net] New incoming connection from 10.100.100.130:45344
+2021-01-14 10:00:31,276 INFO  [net] New incoming connection from 10.100.100.130:60640
+2021-01-14 10:00:31,281 INFO  [net] New incoming connection from 10.100.100.130:43278
+2021-01-14 10:00:31,271 INFO  [net] New incoming connection from 10.100.100.130:49698
+2021-01-14 10:00:31,274 INFO  [net] New incoming connection from 10.100.100.130:59258
+2021-01-14 10:00:31,275 INFO  [net] New incoming connection from 10.100.100.130:44238
+2021-01-14 10:00:31,283 INFO  [net] New incoming connection from 10.100.100.130:55558
+2021-01-14 10:00:31,277 INFO  [net] New incoming connection from 10.100.100.130:40694
+2021-01-14 10:00:31,273 INFO  [net] New incoming connection from 10.100.100.130:33916
+2021-01-14 10:00:31,283 INFO  [net] New incoming connection from 10.100.100.130:59706
+2021-01-14 10:00:31,278 INFO  [net] New incoming connection from 10.100.100.130:34518
+2021-01-14 10:00:31,296 INFO  [net] New incoming connection from 10.100.100.130:40334
+2021-01-14 10:00:31,281 INFO  [net] New incoming connection from 10.100.100.130:53564
+2021-01-14 10:00:31,279 INFO  [net] New incoming connection from 10.100.100.130:37708
+2021-01-14 10:00:31,277 INFO  [net] New incoming connection from 10.100.100.130:36774
+2021-01-14 10:00:32,123 INFO  [net] New incoming connection from 10.100.100.48:44738
+2021-01-14 10:00:32,119 INFO  [net] New incoming connection from 10.100.100.48:60042
+2021-01-14 10:00:32,120 INFO  [net] New incoming connection from 10.100.100.48:54110
+2021-01-14 10:00:32,126 INFO  [net] New incoming connection from 10.100.100.48:43516
+2021-01-14 10:00:32,119 INFO  [net] New incoming connection from 10.100.100.48:53770
+2021-01-14 10:00:32,128 INFO  [net] New incoming connection from 10.100.100.48:51672
+2021-01-14 10:00:32,122 INFO  [net] New incoming connection from 10.100.100.48:54064
+2021-01-14 10:00:32,127 INFO  [net] New incoming connection from 10.100.100.48:37454
+2021-01-14 10:00:32,126 INFO  [net] New incoming connection from 10.100.100.48:39222
+2021-01-14 10:00:32,117 INFO  [net] New incoming connection from 10.100.100.48:39654
+2021-01-14 10:00:32,115 INFO  [net] New incoming connection from 10.100.100.48:33606
+2021-01-14 10:00:32,124 INFO  [net] New incoming connection from 10.100.100.48:36368
+2021-01-14 10:00:32,123 INFO  [net] New incoming connection from 10.100.100.48:49828
+2021-01-14 10:00:32,141 INFO  [net] New incoming connection from 10.100.100.48:40820
+2021-01-14 10:00:32,121 INFO  [net] New incoming connection from 10.100.100.48:43700
+2021-01-14 10:00:32,122 INFO  [net] New incoming connection from 10.100.100.48:45694
+2021-01-14 10:00:33,009 INFO  [net] New incoming connection from 10.100.100.111:51002
+2021-01-14 10:00:33,012 INFO  [net] New incoming connection from 10.100.100.111:49274
+2021-01-14 10:00:33,011 INFO  [net] New incoming connection from 10.100.100.111:42748
+2021-01-14 10:00:33,010 INFO  [net] New incoming connection from 10.100.100.111:52404
+2021-01-14 10:00:33,005 INFO  [net] New incoming connection from 10.100.100.111:59486
+2021-01-14 10:00:33,015 INFO  [net] New incoming connection from 10.100.100.111:53086
+2021-01-14 10:00:33,015 INFO  [net] New incoming connection from 10.100.100.111:34578
+2021-01-14 10:00:33,010 INFO  [net] New incoming connection from 10.100.100.111:34688
+2021-01-14 10:00:33,007 INFO  [net] New incoming connection from 10.100.100.111:49354
+2021-01-14 10:00:33,010 INFO  [net] New incoming connection from 10.100.100.111:40940
+2021-01-14 10:00:33,015 INFO  [net] New incoming connection from 10.100.100.111:44410
+2021-01-14 10:00:33,014 INFO  [net] New incoming connection from 10.100.100.111:33404
+2021-01-14 10:00:33,004 INFO  [net] New incoming connection from 10.100.100.111:43220
+2021-01-14 10:00:33,030 INFO  [net] New incoming connection from 10.100.100.111:42770
+2021-01-14 10:00:33,009 INFO  [net] New incoming connection from 10.100.100.111:60210
+2021-01-14 10:00:33,012 INFO  [net] New incoming connection from 10.100.100.111:56618
+2021-01-14 10:00:33,593 INFO  [net] New incoming connection from 10.100.100.181:50534
+2021-01-14 10:00:33,602 INFO  [net] New incoming connection from 10.100.100.181:58510
+2021-01-14 10:00:33,596 INFO  [net] New incoming connection from 10.100.100.181:38162
+2021-01-14 10:00:33,604 INFO  [net] New incoming connection from 10.100.100.181:49412
+2021-01-14 10:00:33,602 INFO  [net] New incoming connection from 10.100.100.181:56402
+2021-01-14 10:00:33,595 INFO  [net] New incoming connection from 10.100.100.181:33506
+2021-01-14 10:00:33,604 INFO  [net] New incoming connection from 10.100.100.181:55466
+2021-01-14 10:00:33,605 INFO  [net] New incoming connection from 10.100.100.181:36852
+2021-01-14 10:00:33,601 INFO  [net] New incoming connection from 10.100.100.181:59168
+2021-01-14 10:00:33,600 INFO  [net] New incoming connection from 10.100.100.181:48028
+2021-01-14 10:00:33,602 INFO  [net] New incoming connection from 10.100.100.181:37586
+2021-01-14 10:00:33,602 INFO  [net] New incoming connection from 10.100.100.181:46828
+2021-01-14 10:00:33,620 INFO  [net] New incoming connection from 10.100.100.181:48970
+2021-01-14 10:00:33,599 INFO  [net] New incoming connection from 10.100.100.181:51192
+2021-01-14 10:00:33,600 INFO  [net] New incoming connection from 10.100.100.181:51054
+2021-01-14 10:00:33,599 INFO  [net] New incoming connection from 10.100.100.181:34808
+2021-01-14 10:00:34,087 INFO  [net] New incoming connection from 10.100.100.107:50850
+2021-01-14 10:00:34,096 INFO  [net] New incoming connection from 10.100.100.107:60932
+2021-01-14 10:00:34,095 INFO  [net] New incoming connection from 10.100.100.107:60166
+2021-01-14 10:00:34,092 INFO  [net] New incoming connection from 10.100.100.107:38010
+2021-01-14 10:00:34,091 INFO  [net] New incoming connection from 10.100.100.107:41160
+2021-01-14 10:00:34,094 INFO  [net] New incoming connection from 10.100.100.107:49602
+2021-01-14 10:00:34,094 INFO  [net] New incoming connection from 10.100.100.107:46802
+2021-01-14 10:00:34,098 INFO  [net] New incoming connection from 10.100.100.107:41634
+2021-01-14 10:00:34,089 INFO  [net] New incoming connection from 10.100.100.107:50368
+2021-01-14 10:00:34,089 INFO  [net] New incoming connection from 10.100.100.107:35952
+2021-01-14 10:00:34,096 INFO  [net] New incoming connection from 10.100.100.107:55778
+2021-01-14 10:00:34,087 INFO  [net] New incoming connection from 10.100.100.107:55206
+2021-01-14 10:00:34,111 INFO  [net] New incoming connection from 10.100.100.107:59402
+2021-01-14 10:00:34,092 INFO  [net] New incoming connection from 10.100.100.107:58756
+2021-01-14 10:00:34,091 INFO  [net] New incoming connection from 10.100.100.107:56196
+2021-01-14 10:00:34,095 INFO  [net] New incoming connection from 10.100.100.107:48640
+2021-01-14 10:00:34,587 INFO  [net] New incoming connection from 10.100.100.155:38858
+2021-01-14 10:00:34,580 INFO  [net] New incoming connection from 10.100.100.155:58844
+2021-01-14 10:00:34,577 INFO  [net] New incoming connection from 10.100.100.155:44826
+2021-01-14 10:00:34,589 INFO  [net] New incoming connection from 10.100.100.155:50474
+2021-01-14 10:00:34,589 INFO  [net] New incoming connection from 10.100.100.155:47764
+2021-01-14 10:00:34,585 INFO  [net] New incoming connection from 10.100.100.155:43360
+2021-01-14 10:00:34,579 INFO  [net] New incoming connection from 10.100.100.155:43186
+2021-01-14 10:00:34,584 INFO  [net] New incoming connection from 10.100.100.155:34606
+2021-01-14 10:00:34,586 INFO  [net] New incoming connection from 10.100.100.155:60984
+2021-01-14 10:00:34,585 INFO  [net] New incoming connection from 10.100.100.155:50808
+2021-01-14 10:00:34,587 INFO  [net] New incoming connection from 10.100.100.155:44784
+2021-01-14 10:00:34,581 INFO  [net] New incoming connection from 10.100.100.155:37760
+2021-01-14 10:00:34,583 INFO  [net] New incoming connection from 10.100.100.155:48086
+2021-01-14 10:00:34,583 INFO  [net] New incoming connection from 10.100.100.155:54658
+2021-01-14 10:00:34,603 INFO  [net] New incoming connection from 10.100.100.155:40518
+2021-01-14 10:00:34,587 INFO  [net] New incoming connection from 10.100.100.155:56878
+2021-01-14 10:00:35,104 INFO  [net] New incoming connection from 10.100.100.228:53774
+2021-01-14 10:00:35,093 INFO  [net] New incoming connection from 10.100.100.228:47680
+2021-01-14 10:00:35,100 INFO  [net] New incoming connection from 10.100.100.228:48208
+2021-01-14 10:00:35,097 INFO  [net] New incoming connection from 10.100.100.228:54226
+2021-01-14 10:00:35,101 INFO  [net] New incoming connection from 10.100.100.228:33232
+2021-01-14 10:00:35,102 INFO  [net] New incoming connection from 10.100.100.228:47668
+2021-01-14 10:00:35,103 INFO  [net] New incoming connection from 10.100.100.228:34504
+2021-01-14 10:00:35,101 INFO  [net] New incoming connection from 10.100.100.228:48524
+2021-01-14 10:00:35,100 INFO  [net] New incoming connection from 10.100.100.228:47506
+2021-01-14 10:00:35,096 INFO  [net] New incoming connection from 10.100.100.228:49018
+2021-01-14 10:00:35,105 INFO  [net] New incoming connection from 10.100.100.228:57214
+2021-01-14 10:00:35,118 INFO  [net] New incoming connection from 10.100.100.228:42088
+2021-01-14 10:00:35,097 INFO  [net] New incoming connection from 10.100.100.228:35650
+2021-01-14 10:00:35,101 INFO  [net] New incoming connection from 10.100.100.228:38226
+2021-01-14 10:00:35,098 INFO  [net] New incoming connection from 10.100.100.228:53378
+2021-01-14 10:00:35,098 INFO  [net] New incoming connection from 10.100.100.228:49048
+2021-01-14 10:00:35,561 INFO  [net] New incoming connection from 10.100.100.132:44396
+2021-01-14 10:00:35,565 INFO  [net] New incoming connection from 10.100.100.132:45994
+2021-01-14 10:00:35,574 INFO  [net] New incoming connection from 10.100.100.132:57024
+2021-01-14 10:00:35,571 INFO  [net] New incoming connection from 10.100.100.132:44514
+2021-01-14 10:00:35,573 INFO  [net] New incoming connection from 10.100.100.132:59928
+2021-01-14 10:00:35,571 INFO  [net] New incoming connection from 10.100.100.132:46466
+2021-01-14 10:00:35,572 INFO  [net] New incoming connection from 10.100.100.132:54004
+2021-01-14 10:00:35,568 INFO  [net] New incoming connection from 10.100.100.132:33020
+2021-01-14 10:00:35,569 INFO  [net] New incoming connection from 10.100.100.132:60790
+2021-01-14 10:00:35,574 INFO  [net] New incoming connection from 10.100.100.132:49804
+2021-01-14 10:00:35,571 INFO  [net] New incoming connection from 10.100.100.132:46484
+2021-01-14 10:00:35,570 INFO  [net] New incoming connection from 10.100.100.132:46296
+2021-01-14 10:00:35,568 INFO  [net] New incoming connection from 10.100.100.132:59902
+2021-01-14 10:00:35,589 INFO  [net] New incoming connection from 10.100.100.132:43696
+2021-01-14 10:00:35,567 INFO  [net] New incoming connection from 10.100.100.132:60496
+2021-01-14 10:00:35,567 INFO  [net] New incoming connection from 10.100.100.132:39032
+2021-01-14 10:00:36,045 INFO  [net] New incoming connection from 10.100.100.89:46840
+2021-01-14 10:00:36,045 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,055 INFO  [net] New incoming connection from 10.100.100.89:41824
+2021-01-14 10:00:36,049 INFO  [net] New incoming connection from 10.100.100.89:52534
+2021-01-14 10:00:36,050 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,045 INFO  [net] New incoming connection from 10.100.100.89:34370
+2021-01-14 10:00:36,056 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,045 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,054 INFO  [net] New incoming connection from 10.100.100.89:33678
+2021-01-14 10:00:36,054 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,053 INFO  [net] New incoming connection from 10.100.100.89:50586
+2021-01-14 10:00:36,053 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,057 INFO  [net] New incoming connection from 10.100.100.89:57088
+2021-01-14 10:00:36,057 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,052 INFO  [net] New incoming connection from 10.100.100.89:48436
+2021-01-14 10:00:36,052 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,053 INFO  [net] New incoming connection from 10.100.100.89:44238
+2021-01-14 10:00:36,053 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,049 INFO  [net] New incoming connection from 10.100.100.89:49422
+2021-01-14 10:00:36,049 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,056 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,052 INFO  [net] New incoming connection from 10.100.100.89:35990
+2021-01-14 10:00:36,052 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,053 INFO  [net] New incoming connection from 10.100.100.89:40180
+2021-01-14 10:00:36,053 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,049 INFO  [net] New incoming connection from 10.100.100.89:55738
+2021-01-14 10:00:36,049 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,072 INFO  [net] New incoming connection from 10.100.100.89:50802
+2021-01-14 10:00:36,072 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,051 INFO  [net] New incoming connection from 10.100.100.89:43056
+2021-01-14 10:00:36,051 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:36,050 INFO  [net] New incoming connection from 10.100.100.89:42484
+2021-01-14 10:00:36,050 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 10:00:51,072 INFO  [app] using log level INFO, got input 0
+2021-01-14 10:00:51,072 INFO  [config] Talking to servers: {14: "10.100.100.228:10014", 1: "10.100.100.4:10001", 4: "10.100.100.238:10004", 7: "10.100.100.46:10007", 3: "10.100.100.233:10003", 13: "10.100.100.155:10013", 10: "10.100.100.111:10010", 11: "10.100.100.181:10011", 16: "10.100.100.89:10016", 2: "10.100.100.75:10002", 12: "10.100.100.107:10012", 0: "10.100.100.241:10000", 9: "10.100.100.48:10009", 6: "10.100.100.63:10006", 5: "10.100.100.163:10005", 15: "10.100.100.132:10015", 8: "10.100.100.130:10008"}
+2021-01-14 10:02:33,223 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610618451, tv_nsec: 94871956 }
+2021-01-14 10:02:33,223 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610618553, tv_nsec: 223522029 }
+2021-01-14 10:02:33,249 INFO  [statistics] DP[Throughput]: 9795.488330502061
+2021-01-14 10:02:33,249 INFO  [statistics] DP[Latency]: 1011.3540113954418
+2021-01-14 10:02:33,253 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 10:02:33,253 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,260 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,260 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,257 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,259 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,256 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,250 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,248 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,258 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,255 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,252 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,254 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,253 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,257 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,279 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,257 WARN  [peer] Disconnected from peer
+2021-01-14 10:02:33,252 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found

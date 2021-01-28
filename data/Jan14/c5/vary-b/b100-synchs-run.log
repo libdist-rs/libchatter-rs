@@ -1,0 +1,257 @@
+DP[Window]: 200
+2021-01-14 11:27:05,786 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 0: "0.0.0.0:4000", 1: "10.100.100.195:4001"}
+2021-01-14 11:27:06,288 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 1: "0.0.0.0:4001", 0: "10.100.100.47:4000"}
+2021-01-14 11:27:06,795 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 1: "10.100.100.195:4001", 0: "10.100.100.47:4000"}
+2021-01-14 11:27:50,814 INFO  [net] New incoming connection from 10.100.100.47:47064
+2021-01-14 11:27:50,803 INFO  [net] New incoming connection from 10.100.100.47:35390
+2021-01-14 11:27:51,280 INFO  [net] New incoming connection from 10.100.100.195:50100
+2021-01-14 11:27:51,266 INFO  [net] New incoming connection from 10.100.100.195:54720
+2021-01-14 11:27:51,809 INFO  [net] New incoming connection from 10.100.100.87:34260
+2021-01-14 11:27:51,809 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:27:51,784 INFO  [net] New incoming connection from 10.100.100.87:47934
+2021-01-14 11:27:51,784 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:27:51,798 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:28:06,766 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:28:06,766 INFO  [config] Talking to servers: {0: "10.100.100.47:10000", 2: "10.100.100.87:10002", 1: "10.100.100.195:10001"}
+2021-01-14 11:36:46,349 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610623686, tv_nsec: 770391758 }
+2021-01-14 11:36:46,349 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610624206, tv_nsec: 349207822 }
+2021-01-14 11:36:46,374 INFO  [statistics] DP[Throughput]: 1924.8282822154379
+2021-01-14 11:36:46,374 INFO  [statistics] DP[Latency]: 103.15875412458755
+2021-01-14 11:36:46,377 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:36:46,410 WARN  [peer] Disconnected from peer
+2021-01-14 11:36:46,392 WARN  [peer] Disconnected from peer
+2021-01-14 11:36:46,400 WARN  [peer] Disconnected from peer
+DP[Window]: 500
+2021-01-14 11:37:21,353 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 0: "0.0.0.0:4000", 1: "10.100.100.195:4001"}
+2021-01-14 11:37:21,873 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 0: "10.100.100.47:4000", 1: "0.0.0.0:4001"}
+2021-01-14 11:37:22,395 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 0: "10.100.100.47:4000", 2: "0.0.0.0:4002"}
+2021-01-14 11:38:06,374 INFO  [net] New incoming connection from 10.100.100.47:47068
+2021-01-14 11:38:06,363 INFO  [net] New incoming connection from 10.100.100.47:35394
+2021-01-14 11:38:06,858 INFO  [net] New incoming connection from 10.100.100.195:54724
+2021-01-14 11:38:06,865 INFO  [net] New incoming connection from 10.100.100.195:50104
+2021-01-14 11:38:07,408 INFO  [net] New incoming connection from 10.100.100.87:34264
+2021-01-14 11:38:07,408 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:38:07,390 INFO  [net] New incoming connection from 10.100.100.87:47938
+2021-01-14 11:38:07,390 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:38:07,397 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:38:22,547 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:38:22,547 INFO  [config] Talking to servers: {1: "10.100.100.195:10001", 0: "10.100.100.47:10000", 2: "10.100.100.87:10002"}
+2021-01-14 11:41:50,736 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610624302, tv_nsec: 551331540 }
+2021-01-14 11:41:50,736 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610624510, tv_nsec: 736151222 }
+2021-01-14 11:41:50,762 INFO  [statistics] DP[Throughput]: 4803.904537937212
+2021-01-14 11:41:50,762 INFO  [statistics] DP[Latency]: 103.32325567443256
+2021-01-14 11:41:50,765 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:41:50,798 WARN  [peer] Disconnected from peer
+2021-01-14 11:41:50,780 WARN  [peer] Disconnected from peer
+2021-01-14 11:41:50,788 WARN  [peer] Disconnected from peer
+DP[Window]: 1000
+2021-01-14 11:42:25,266 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 0: "0.0.0.0:4000", 1: "10.100.100.195:4001"}
+2021-01-14 11:42:25,781 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 2: "10.100.100.87:4002", 1: "0.0.0.0:4001"}
+2021-01-14 11:42:26,305 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 1: "10.100.100.195:4001", 2: "0.0.0.0:4002"}
+2021-01-14 11:43:10,287 INFO  [net] New incoming connection from 10.100.100.47:47072
+2021-01-14 11:43:10,276 INFO  [net] New incoming connection from 10.100.100.47:35398
+2021-01-14 11:43:10,765 INFO  [net] New incoming connection from 10.100.100.195:54726
+2021-01-14 11:43:10,773 INFO  [net] New incoming connection from 10.100.100.195:50110
+2021-01-14 11:43:11,300 INFO  [net] New incoming connection from 10.100.100.87:47940
+2021-01-14 11:43:11,300 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:43:11,319 INFO  [net] New incoming connection from 10.100.100.87:34270
+2021-01-14 11:43:11,319 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:43:11,308 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:43:26,254 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:43:26,254 INFO  [config] Talking to servers: {2: "10.100.100.87:10002", 0: "10.100.100.47:10000", 1: "10.100.100.195:10001"}
+2021-01-14 11:45:10,446 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610624606, tv_nsec: 258715846 }
+2021-01-14 11:45:10,446 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610624710, tv_nsec: 446735254 }
+2021-01-14 11:45:10,472 INFO  [statistics] DP[Throughput]: 9598.992337915659
+2021-01-14 11:45:10,472 INFO  [statistics] DP[Latency]: 103.39109589041095
+2021-01-14 11:45:10,476 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:45:10,491 WARN  [peer] Disconnected from peer
+2021-01-14 11:45:10,510 WARN  [peer] Disconnected from peer
+2021-01-14 11:45:10,499 WARN  [peer] Disconnected from peer
+DP[Window]: 2000
+2021-01-14 11:45:44,987 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.195:4001", 2: "10.100.100.87:4002"}
+2021-01-14 11:45:45,530 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.47:4000", 2: "10.100.100.87:4002"}
+2021-01-14 11:45:45,938 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "0.0.0.0:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:46:29,999 INFO  [net] New incoming connection from 10.100.100.47:35404
+2021-01-14 11:46:30,010 INFO  [net] New incoming connection from 10.100.100.47:47074
+2021-01-14 11:46:30,521 INFO  [net] New incoming connection from 10.100.100.195:50114
+2021-01-14 11:46:30,513 INFO  [net] New incoming connection from 10.100.100.195:54730
+2021-01-14 11:46:30,940 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:46:30,952 INFO  [net] New incoming connection from 10.100.100.87:34272
+2021-01-14 11:46:30,952 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:46:30,932 INFO  [net] New incoming connection from 10.100.100.87:47946
+2021-01-14 11:46:30,932 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:46:45,986 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:46:45,986 INFO  [config] Talking to servers: {0: "10.100.100.47:10000", 1: "10.100.100.195:10001", 2: "10.100.100.87:10002"}
+2021-01-14 11:47:38,249 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610624805, tv_nsec: 990910951 }
+2021-01-14 11:47:38,249 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610624858, tv_nsec: 249713059 }
+2021-01-14 11:47:38,275 INFO  [statistics] DP[Throughput]: 19137.44593557954
+2021-01-14 11:47:38,275 INFO  [statistics] DP[Latency]: 103.6482691730827
+2021-01-14 11:47:38,302 WARN  [peer] Disconnected from peer
+2021-01-14 11:47:38,278 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:47:38,293 WARN  [peer] Disconnected from peer
+2021-01-14 11:47:38,313 WARN  [peer] Disconnected from peer
+DP[Window]: 4000
+2021-01-14 11:48:12,807 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 2: "10.100.100.87:4002", 1: "10.100.100.195:4001"}
+2021-01-14 11:48:13,326 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 1: "0.0.0.0:4001", 2: "10.100.100.87:4002"}
+2021-01-14 11:48:13,850 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 1: "10.100.100.195:4001", 2: "0.0.0.0:4002"}
+2021-01-14 11:48:57,830 INFO  [net] New incoming connection from 10.100.100.47:47080
+2021-01-14 11:48:57,819 INFO  [net] New incoming connection from 10.100.100.47:35406
+2021-01-14 11:48:58,308 INFO  [net] New incoming connection from 10.100.100.195:54734
+2021-01-14 11:48:58,317 INFO  [net] New incoming connection from 10.100.100.195:50118
+2021-01-14 11:48:58,864 INFO  [net] New incoming connection from 10.100.100.87:34278
+2021-01-14 11:48:58,864 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:48:58,852 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:48:58,843 INFO  [net] New incoming connection from 10.100.100.87:47948
+2021-01-14 11:48:58,843 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:49:13,807 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:49:13,807 INFO  [config] Talking to servers: {2: "10.100.100.87:10002", 1: "10.100.100.195:10001", 0: "10.100.100.47:10000"}
+2021-01-14 11:49:40,130 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610624953, tv_nsec: 811566110 }
+2021-01-14 11:49:40,130 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610624980, tv_nsec: 130058633 }
+2021-01-14 11:49:40,155 INFO  [statistics] DP[Throughput]: 37999.89680738752
+2021-01-14 11:49:40,155 INFO  [statistics] DP[Latency]: 104.2401899810019
+2021-01-14 11:49:40,158 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:49:40,194 WARN  [peer] Disconnected from peer
+2021-01-14 11:49:40,183 WARN  [peer] Disconnected from peer
+2021-01-14 11:49:40,173 WARN  [peer] Disconnected from peer
+DP[Window]: 7000
+2021-01-14 11:50:14,707 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 1: "10.100.100.195:4001", 0: "0.0.0.0:4000"}
+2021-01-14 11:50:15,231 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.87:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:50:15,705 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 1: "10.100.100.195:4001", 0: "10.100.100.47:4000"}
+2021-01-14 11:50:59,731 INFO  [net] New incoming connection from 10.100.100.47:47084
+2021-01-14 11:50:59,719 INFO  [net] New incoming connection from 10.100.100.47:35410
+2021-01-14 11:51:00,212 INFO  [net] New incoming connection from 10.100.100.195:54740
+2021-01-14 11:51:00,222 INFO  [net] New incoming connection from 10.100.100.195:50120
+2021-01-14 11:51:00,697 INFO  [net] New incoming connection from 10.100.100.87:47954
+2021-01-14 11:51:00,697 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:51:00,719 INFO  [net] New incoming connection from 10.100.100.87:34280
+2021-01-14 11:51:00,719 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:51:00,707 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:51:15,935 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:51:15,935 INFO  [config] Talking to servers: {0: "10.100.100.47:10000", 1: "10.100.100.195:10001", 2: "10.100.100.87:10002"}
+2021-01-14 11:51:31,180 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625075, tv_nsec: 939825030 }
+2021-01-14 11:51:31,180 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625091, tv_nsec: 180926868 }
+2021-01-14 11:51:31,206 INFO  [statistics] DP[Throughput]: 65618.61541443759
+2021-01-14 11:51:31,206 INFO  [statistics] DP[Latency]: 105.41685931406859
+2021-01-14 11:51:31,209 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:51:31,224 WARN  [peer] Disconnected from peer
+2021-01-14 11:51:31,246 WARN  [peer] Disconnected from peer
+2021-01-14 11:51:31,234 WARN  [peer] Disconnected from peer
+DP[Window]: 10000
+2021-01-14 11:52:05,797 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 1: "10.100.100.195:4001", 0: "0.0.0.0:4000"}
+2021-01-14 11:52:06,346 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 1: "0.0.0.0:4001", 0: "10.100.100.47:4000"}
+2021-01-14 11:52:06,824 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "0.0.0.0:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:52:50,810 INFO  [net] New incoming connection from 10.100.100.47:35414
+2021-01-14 11:52:50,822 INFO  [net] New incoming connection from 10.100.100.47:47088
+2021-01-14 11:52:51,336 INFO  [net] New incoming connection from 10.100.100.195:50124
+2021-01-14 11:52:51,326 INFO  [net] New incoming connection from 10.100.100.195:54744
+2021-01-14 11:52:51,827 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:52:51,816 INFO  [net] New incoming connection from 10.100.100.87:47958
+2021-01-14 11:52:51,816 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:52:51,839 INFO  [net] New incoming connection from 10.100.100.87:34284
+2021-01-14 11:52:51,839 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:53:06,829 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:53:06,829 INFO  [config] Talking to servers: {2: "10.100.100.87:10002", 1: "10.100.100.195:10001", 0: "10.100.100.47:10000"}
+2021-01-14 11:53:17,682 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625186, tv_nsec: 833909932 }
+2021-01-14 11:53:17,682 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625197, tv_nsec: 682123413 }
+2021-01-14 11:53:17,707 INFO  [statistics] DP[Throughput]: 92190.29490446659
+2021-01-14 11:53:17,707 INFO  [statistics] DP[Latency]: 106.8164093590641
+2021-01-14 11:53:17,737 WARN  [peer] Disconnected from peer
+2021-01-14 11:53:17,737 ERROR [peer] Failed to write a message to a peer
+2021-01-14 11:53:17,710 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:53:17,726 WARN  [peer] Disconnected from peer
+2021-01-14 11:53:17,748 WARN  [peer] Disconnected from peer
+2021-01-14 11:53:17,748 ERROR [peer] Failed to write a message to a peer
+DP[Window]: 20000
+2021-01-14 11:53:52,184 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "10.100.100.87:4002", 0: "0.0.0.0:4000"}
+2021-01-14 11:53:52,759 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 1: "0.0.0.0:4001", 2: "10.100.100.87:4002"}
+2021-01-14 11:53:53,233 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "0.0.0.0:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:54:37,197 INFO  [net] New incoming connection from 10.100.100.47:35420
+2021-01-14 11:54:37,209 INFO  [net] New incoming connection from 10.100.100.47:47090
+2021-01-14 11:54:37,740 INFO  [net] New incoming connection from 10.100.100.195:54746
+2021-01-14 11:54:37,751 INFO  [net] New incoming connection from 10.100.100.195:50130
+2021-01-14 11:54:38,236 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:54:38,248 INFO  [net] New incoming connection from 10.100.100.87:34288
+2021-01-14 11:54:38,248 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:54:38,225 INFO  [net] New incoming connection from 10.100.100.87:47962
+2021-01-14 11:54:38,225 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:54:53,182 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:54:53,182 INFO  [config] Talking to servers: {0: "10.100.100.47:10000", 2: "10.100.100.87:10002", 1: "10.100.100.195:10001"}
+2021-01-14 11:55:02,968 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625293, tv_nsec: 186560807 }
+2021-01-14 11:55:02,968 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625302, tv_nsec: 968858596 }
+2021-01-14 11:55:02,994 INFO  [statistics] DP[Throughput]: 102235.69365518526
+2021-01-14 11:55:02,994 INFO  [statistics] DP[Latency]: 191.82256174382562
+2021-01-14 11:55:02,997 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:55:03,013 WARN  [peer] Disconnected from peer
+2021-01-14 11:55:03,034 WARN  [peer] Disconnected from peer
+2021-01-14 11:55:03,023 WARN  [peer] Disconnected from peer
+DP[Window]: 40000
+2021-01-14 11:55:37,586 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "10.100.100.87:4002", 0: "0.0.0.0:4000"}
+2021-01-14 11:55:38,115 INFO  [config] Talking to servers: {2: "10.100.100.87:4002", 0: "10.100.100.47:4000", 1: "0.0.0.0:4001"}
+2021-01-14 11:55:38,639 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.47:4000", 1: "10.100.100.195:4001"}
+2021-01-14 11:56:22,608 INFO  [net] New incoming connection from 10.100.100.47:47094
+2021-01-14 11:56:22,597 INFO  [net] New incoming connection from 10.100.100.47:35424
+2021-01-14 11:56:23,099 INFO  [net] New incoming connection from 10.100.100.195:54752
+2021-01-14 11:56:23,106 INFO  [net] New incoming connection from 10.100.100.195:50132
+2021-01-14 11:56:23,642 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:56:23,634 INFO  [net] New incoming connection from 10.100.100.87:47964
+2021-01-14 11:56:23,634 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:56:23,653 INFO  [net] New incoming connection from 10.100.100.87:34294
+2021-01-14 11:56:23,653 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:56:38,571 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:56:38,571 INFO  [config] Talking to servers: {0: "10.100.100.47:10000", 1: "10.100.100.195:10001", 2: "10.100.100.87:10002"}
+2021-01-14 11:56:48,480 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625398, tv_nsec: 575288300 }
+2021-01-14 11:56:48,480 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625408, tv_nsec: 480717808 }
+2021-01-14 11:56:48,506 INFO  [statistics] DP[Throughput]: 100964.82935871498
+2021-01-14 11:56:48,506 INFO  [statistics] DP[Latency]: 385.9068133186681
+2021-01-14 11:56:48,509 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:56:48,524 WARN  [peer] Disconnected from peer
+2021-01-14 11:56:48,542 WARN  [peer] Disconnected from peer
+2021-01-14 11:56:48,543 ERROR [peer] Failed to write a message to a peer
+2021-01-14 11:56:48,531 WARN  [peer] Disconnected from peer
+2021-01-14 11:56:48,531 ERROR [peer] Failed to write a message to a peer
+DP[Window]: 60000
+2021-01-14 11:57:23,051 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.195:4001", 2: "10.100.100.87:4002"}
+2021-01-14 11:57:23,564 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.87:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:57:24,043 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 1: "10.100.100.195:4001", 0: "10.100.100.47:4000"}
+2021-01-14 11:58:08,059 INFO  [net] New incoming connection from 10.100.100.47:35428
+2021-01-14 11:58:08,070 INFO  [net] New incoming connection from 10.100.100.47:47098
+2021-01-14 11:58:08,556 INFO  [net] New incoming connection from 10.100.100.195:50136
+2021-01-14 11:58:08,551 INFO  [net] New incoming connection from 10.100.100.195:54756
+2021-01-14 11:58:09,046 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:58:09,057 INFO  [net] New incoming connection from 10.100.100.87:34296
+2021-01-14 11:58:09,057 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:58:09,041 INFO  [net] New incoming connection from 10.100.100.87:47970
+2021-01-14 11:58:09,041 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:58:24,021 INFO  [app] using log level INFO, got input 0
+2021-01-14 11:58:24,021 INFO  [config] Talking to servers: {2: "10.100.100.87:10002", 0: "10.100.100.47:10000", 1: "10.100.100.195:10001"}
+2021-01-14 11:58:33,491 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625504, tv_nsec: 25229983 }
+2021-01-14 11:58:33,491 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625513, tv_nsec: 491069105 }
+2021-01-14 11:58:33,516 INFO  [statistics] DP[Throughput]: 105653.60208537887
+2021-01-14 11:58:33,516 INFO  [statistics] DP[Latency]: 545.157198280172
+2021-01-14 11:58:33,519 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 11:58:33,539 WARN  [peer] Disconnected from peer
+2021-01-14 11:58:33,550 WARN  [peer] Disconnected from peer
+2021-01-14 11:58:33,535 WARN  [peer] Disconnected from peer
+DP[Window]: 80000
+2021-01-14 11:59:09,263 INFO  [config] Talking to servers: {1: "10.100.100.195:4001", 2: "10.100.100.87:4002", 0: "0.0.0.0:4000"}
+2021-01-14 11:59:09,796 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.87:4002", 0: "10.100.100.47:4000"}
+2021-01-14 11:59:10,232 INFO  [config] Talking to servers: {0: "10.100.100.47:4000", 2: "0.0.0.0:4002", 1: "10.100.100.195:4001"}
+2021-01-14 11:59:54,269 INFO  [net] New incoming connection from 10.100.100.47:35432
+2021-01-14 11:59:54,279 INFO  [net] New incoming connection from 10.100.100.47:47102
+2021-01-14 11:59:54,788 INFO  [net] New incoming connection from 10.100.100.195:50140
+2021-01-14 11:59:54,785 INFO  [net] New incoming connection from 10.100.100.195:54760
+2021-01-14 11:59:55,235 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:59:55,232 INFO  [net] New incoming connection from 10.100.100.87:47972
+2021-01-14 11:59:55,232 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 11:59:55,246 INFO  [net] New incoming connection from 10.100.100.87:34302
+2021-01-14 11:59:55,246 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 12:00:10,541 INFO  [app] using log level INFO, got input 0
+2021-01-14 12:00:10,541 INFO  [config] Talking to servers: {2: "10.100.100.87:10002", 0: "10.100.100.47:10000", 1: "10.100.100.195:10001"}
+2021-01-14 12:00:20,185 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610625610, tv_nsec: 545834264 }
+2021-01-14 12:00:20,185 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610625620, tv_nsec: 185594797 }
+2021-01-14 12:00:20,212 INFO  [statistics] DP[Throughput]: 103747.39046435189
+2021-01-14 12:00:20,212 INFO  [statistics] DP[Latency]: 731.1078262173783
+2021-01-14 12:00:20,216 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 12:00:20,234 WARN  [peer] Disconnected from peer
+2021-01-14 12:00:20,231 WARN  [peer] Disconnected from peer
+2021-01-14 12:00:20,244 WARN  [peer] Disconnected from peer

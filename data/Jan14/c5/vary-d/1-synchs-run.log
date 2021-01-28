@@ -1,0 +1,152 @@
+DP[Delay]: 50
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:12:11,364 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.130:4001", 2: "10.100.100.48:4002"}
+2021-01-14 09:12:12,382 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.48:4002", 0: "10.100.100.181:4000"}
+2021-01-14 09:12:13,304 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.181:4000", 1: "10.100.100.130:4001"}
+2021-01-14 09:12:56,372 INFO  [net] New incoming connection from 10.100.100.181:57048
+2021-01-14 09:12:56,368 INFO  [net] New incoming connection from 10.100.100.181:52296
+2021-01-14 09:12:57,388 INFO  [net] New incoming connection from 10.100.100.130:33384
+2021-01-14 09:12:57,385 INFO  [net] New incoming connection from 10.100.100.130:35828
+2021-01-14 09:12:58,315 INFO  [net] New incoming connection from 10.100.100.48:56152
+2021-01-14 09:12:58,315 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:12:58,311 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:12:58,314 INFO  [net] New incoming connection from 10.100.100.48:38536
+2021-01-14 09:12:58,314 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:13:13,345 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:13:13,345 INFO  [config] Talking to servers: {1: "10.100.100.130:10001", 0: "10.100.100.181:10000", 2: "10.100.100.48:10002"}
+2021-01-14 09:13:24,477 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610615593, tv_nsec: 363354632 }
+2021-01-14 09:13:24,477 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610615604, tv_nsec: 477031798 }
+2021-01-14 09:13:24,502 INFO  [statistics] DP[Throughput]: 90015.21144239434
+2021-01-14 09:13:24,502 INFO  [statistics] DP[Latency]: 108.67744202319072
+2021-01-14 09:13:24,505 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:13:24,507 WARN  [peer] Disconnected from peer
+2021-01-14 09:13:24,503 WARN  [peer] Disconnected from peer
+2021-01-14 09:13:24,507 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 100
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:13:59,031 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 2: "10.100.100.48:4002", 1: "10.100.100.130:4001"}
+2021-01-14 09:13:59,515 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.48:4002", 0: "10.100.100.181:4000"}
+2021-01-14 09:14:00,014 INFO  [config] Talking to servers: {1: "10.100.100.130:4001", 0: "10.100.100.181:4000", 2: "0.0.0.0:4002"}
+2021-01-14 09:14:44,033 INFO  [net] New incoming connection from 10.100.100.181:57054
+2021-01-14 09:14:44,029 INFO  [net] New incoming connection from 10.100.100.181:52298
+2021-01-14 09:14:44,513 INFO  [net] New incoming connection from 10.100.100.130:35832
+2021-01-14 09:14:44,518 INFO  [net] New incoming connection from 10.100.100.130:33388
+2021-01-14 09:14:45,017 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:14:45,021 INFO  [net] New incoming connection from 10.100.100.48:56154
+2021-01-14 09:14:45,021 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:14:45,022 INFO  [net] New incoming connection from 10.100.100.48:38542
+2021-01-14 09:14:45,022 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:15:00,554 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:15:00,554 INFO  [config] Talking to servers: {0: "10.100.100.181:10000", 1: "10.100.100.130:10001", 2: "10.100.100.48:10002"}
+2021-01-14 09:15:21,638 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610615700, tv_nsec: 558511044 }
+2021-01-14 09:15:21,638 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610615721, tv_nsec: 638571059 }
+2021-01-14 09:15:21,663 INFO  [statistics] DP[Throughput]: 47457.170391741885
+2021-01-14 09:15:21,663 INFO  [statistics] DP[Latency]: 207.99207417033188
+2021-01-14 09:15:21,666 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:15:21,665 WARN  [peer] Disconnected from peer
+2021-01-14 09:15:21,669 WARN  [peer] Disconnected from peer
+2021-01-14 09:15:21,669 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 200
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:15:56,194 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.130:4001", 2: "10.100.100.48:4002"}
+2021-01-14 09:15:56,641 INFO  [config] Talking to servers: {2: "10.100.100.48:4002", 0: "10.100.100.181:4000", 1: "0.0.0.0:4001"}
+2021-01-14 09:15:57,143 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 1: "10.100.100.130:4001", 0: "10.100.100.181:4000"}
+2021-01-14 09:16:41,196 INFO  [net] New incoming connection from 10.100.100.181:57056
+2021-01-14 09:16:41,192 INFO  [net] New incoming connection from 10.100.100.181:52304
+2021-01-14 09:16:41,641 INFO  [net] New incoming connection from 10.100.100.130:35836
+2021-01-14 09:16:41,646 INFO  [net] New incoming connection from 10.100.100.130:33392
+2021-01-14 09:16:42,149 INFO  [net] New incoming connection from 10.100.100.48:56158
+2021-01-14 09:16:42,149 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:16:42,146 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:16:42,151 INFO  [net] New incoming connection from 10.100.100.48:38546
+2021-01-14 09:16:42,151 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:16:57,151 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:16:57,151 INFO  [config] Talking to servers: {1: "10.100.100.130:10001", 2: "10.100.100.48:10002", 0: "10.100.100.181:10000"}
+2021-01-14 09:17:38,344 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610615817, tv_nsec: 155406582 }
+2021-01-14 09:17:38,344 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610615858, tv_nsec: 344336528 }
+2021-01-14 09:17:38,369 INFO  [statistics] DP[Throughput]: 24288.0793774336
+2021-01-14 09:17:38,369 INFO  [statistics] DP[Latency]: 407.552505997601
+2021-01-14 09:17:38,374 WARN  [peer] Disconnected from peer
+2021-01-14 09:17:38,372 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:17:38,371 WARN  [peer] Disconnected from peer
+2021-01-14 09:17:38,376 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+DP[Delay]: 500
+Setting up: 18.220.32.229
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.221.212.187
+node-apollo: no process found
+node-synchs: no process found
+Setting up: 18.191.118.203
+node-apollo: no process found
+node-synchs: no process found
+2021-01-14 09:18:12,852 INFO  [config] Talking to servers: {1: "10.100.100.130:4001", 2: "10.100.100.48:4002", 0: "0.0.0.0:4000"}
+2021-01-14 09:18:13,339 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.48:4002", 0: "10.100.100.181:4000"}
+2021-01-14 09:18:13,814 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.181:4000", 1: "10.100.100.130:4001"}
+2021-01-14 09:18:57,850 INFO  [net] New incoming connection from 10.100.100.181:52308
+2021-01-14 09:18:57,853 INFO  [net] New incoming connection from 10.100.100.181:57060
+2021-01-14 09:18:58,338 INFO  [net] New incoming connection from 10.100.100.130:35840
+2021-01-14 09:18:58,344 INFO  [net] New incoming connection from 10.100.100.130:33396
+2021-01-14 09:18:58,820 INFO  [net] New incoming connection from 10.100.100.48:56164
+2021-01-14 09:18:58,820 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:18:58,822 INFO  [net] New incoming connection from 10.100.100.48:38548
+2021-01-14 09:18:58,822 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:18:58,817 INFO  [net] Connected to all nodes in the protocol
+2021-01-14 09:19:13,797 INFO  [app] using log level INFO, got input 0
+2021-01-14 09:19:13,797 INFO  [config] Talking to servers: {2: "10.100.100.48:10002", 1: "10.100.100.130:10001", 0: "10.100.100.181:10000"}
+2021-01-14 09:20:55,611 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610615953, tv_nsec: 801755063 }
+2021-01-14 09:20:55,611 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610616055, tv_nsec: 611626044 }
+2021-01-14 09:20:55,637 INFO  [statistics] DP[Throughput]: 9826.159196161805
+2021-01-14 09:20:55,637 INFO  [statistics] DP[Latency]: 1007.5521281487405
+2021-01-14 09:20:55,640 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-14 09:20:55,645 WARN  [peer] Disconnected from peer
+2021-01-14 09:20:55,639 WARN  [peer] Disconnected from peer
+2021-01-14 09:20:55,643 WARN  [peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-apollo: no process found
+node-synchs: no process found

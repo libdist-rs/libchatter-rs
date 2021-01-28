@@ -1,0 +1,312 @@
+DP[Window]: 800
+2021-01-18 03:49:11,860 INFO  [app] Successfully decoded the config file
+2021-01-18 03:49:14,479 INFO  [app] Successfully decoded the config file
+2021-01-18 03:49:14,990 INFO  [app] Successfully decoded the config file
+2021-01-18 03:49:19,862 INFO  [net] New incoming connection from 10.100.100.134:35922
+2021-01-18 03:49:19,863 INFO  [net] New incoming connection from 10.100.100.134:34080
+2021-01-18 03:49:22,485 INFO  [net] New incoming connection from 10.100.100.18:47392
+2021-01-18 03:49:22,488 INFO  [net] New incoming connection from 10.100.100.18:49378
+2021-01-18 03:49:22,993 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:49:22,996 INFO  [net] New incoming connection from 10.100.100.19:38496
+2021-01-18 03:49:22,996 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:49:22,996 INFO  [app] Using special apollo client: false
+2021-01-18 03:49:22,992 INFO  [net] New incoming connection from 10.100.100.19:38404
+2021-01-18 03:49:22,992 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:49:22,992 INFO  [app] Using special apollo client: false
+2021-01-18 03:49:22,993 INFO  [app] Using special apollo client: false
+2021-01-18 03:50:15,230 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:50:15,230 INFO  [config] Talking to servers: {0: "10.100.100.134:10000", 1: "10.100.100.18:10001", 2: "10.100.100.19:10002"}
+2021-01-18 03:50:20,255 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610941815, tv_nsec: 234428867 }
+2021-01-18 03:50:20,255 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610941820, tv_nsec: 255945929 }
+2021-01-18 03:50:20,279 WARN  [peer] Disconnected from peer
+2021-01-18 03:50:20,280 WARN  [peer] Disconnected from peer
+2021-01-18 03:50:20,283 WARN  [peer] Disconnected from peer
+2021-01-18 03:50:20,284 INFO  [statistics] DP[Throughput]: 198640.1694317294
+2021-01-18 03:50:20,285 INFO  [statistics] DP[Latency]: 5.891669465400136
+2021-01-18 03:50:20,294 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+DP[Window]: 1000
+2021-01-18 03:50:28,878 INFO  [app] Successfully decoded the config file
+2021-01-18 03:50:32,027 INFO  [app] Successfully decoded the config file
+2021-01-18 03:50:33,257 INFO  [app] Successfully decoded the config file
+2021-01-18 03:50:36,880 INFO  [net] New incoming connection from 10.100.100.134:35928
+2021-01-18 03:50:36,881 INFO  [net] New incoming connection from 10.100.100.134:34082
+2021-01-18 03:50:40,034 INFO  [net] New incoming connection from 10.100.100.18:47394
+2021-01-18 03:50:40,037 INFO  [net] New incoming connection from 10.100.100.18:49384
+2021-01-18 03:50:41,263 INFO  [net] New incoming connection from 10.100.100.19:38502
+2021-01-18 03:50:41,263 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:50:41,260 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:50:41,260 INFO  [app] Using special apollo client: false
+2021-01-18 03:50:41,258 INFO  [net] New incoming connection from 10.100.100.19:38406
+2021-01-18 03:50:41,258 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:50:41,259 INFO  [app] Using special apollo client: false
+2021-01-18 03:50:41,263 INFO  [app] Using special apollo client: false
+2021-01-18 03:51:32,905 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:51:32,905 INFO  [config] Talking to servers: {1: "10.100.100.18:10001", 0: "10.100.100.134:10000", 2: "10.100.100.19:10002"}
+2021-01-18 03:51:37,572 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610941892, tv_nsec: 909786159 }
+2021-01-18 03:51:37,572 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610941897, tv_nsec: 572760228 }
+2021-01-18 03:51:37,601 INFO  [statistics] DP[Throughput]: 210668.33858903882
+2021-01-18 03:51:37,601 INFO  [statistics] DP[Latency]: 18.81237879717939
+2021-01-18 03:51:37,609 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:51:37,598 WARN  [peer] Disconnected from peer
+2021-01-18 03:51:37,595 WARN  [peer] Disconnected from peer
+2021-01-18 03:51:37,594 WARN  [peer] Disconnected from peer
+DP[Window]: 2000
+2021-01-18 03:51:48,341 INFO  [app] Successfully decoded the config file
+2021-01-18 03:51:48,729 INFO  [app] Successfully decoded the config file
+2021-01-18 03:51:48,933 INFO  [app] Successfully decoded the config file
+2021-01-18 03:51:56,351 INFO  [net] New incoming connection from 10.100.100.18:49388
+2021-01-18 03:51:56,348 INFO  [net] New incoming connection from 10.100.100.18:47398
+2021-01-18 03:51:56,728 INFO  [net] New incoming connection from 10.100.100.134:34086
+2021-01-18 03:51:56,727 INFO  [net] New incoming connection from 10.100.100.134:35932
+2021-01-18 03:51:56,939 INFO  [net] New incoming connection from 10.100.100.19:38504
+2021-01-18 03:51:56,935 INFO  [net] New incoming connection from 10.100.100.19:38412
+2021-01-18 03:51:56,935 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:51:56,936 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:51:56,936 INFO  [app] Using special apollo client: false
+2021-01-18 03:51:56,935 INFO  [app] Using special apollo client: false
+2021-01-18 03:51:56,939 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:51:56,939 INFO  [app] Using special apollo client: false
+2021-01-18 03:52:49,136 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:52:49,136 INFO  [config] Talking to servers: {2: "10.100.100.19:10002", 1: "10.100.100.18:10001", 0: "10.100.100.134:10000"}
+2021-01-18 03:52:53,740 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610941969, tv_nsec: 140907581 }
+2021-01-18 03:52:53,740 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610941973, tv_nsec: 740319796 }
+2021-01-18 03:52:53,766 WARN  [peer] Disconnected from peer
+2021-01-18 03:52:53,763 WARN  [peer] Disconnected from peer
+2021-01-18 03:52:53,761 WARN  [peer] Disconnected from peer
+2021-01-18 03:52:53,768 INFO  [statistics] DP[Throughput]: 212977.21408951818
+2021-01-18 03:52:53,768 INFO  [statistics] DP[Latency]: 21.94339557152628
+2021-01-18 03:52:53,776 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+DP[Window]: 4000
+2021-01-18 03:53:03,345 INFO  [app] Successfully decoded the config file
+2021-01-18 03:53:05,168 INFO  [app] Successfully decoded the config file
+2021-01-18 03:53:05,823 INFO  [app] Successfully decoded the config file
+2021-01-18 03:53:11,346 INFO  [net] New incoming connection from 10.100.100.134:35934
+2021-01-18 03:53:11,348 INFO  [net] New incoming connection from 10.100.100.134:34092
+2021-01-18 03:53:13,175 INFO  [net] New incoming connection from 10.100.100.18:49390
+2021-01-18 03:53:13,172 INFO  [net] New incoming connection from 10.100.100.18:47404
+2021-01-18 03:53:13,828 INFO  [net] New incoming connection from 10.100.100.19:38510
+2021-01-18 03:53:13,828 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:53:13,828 INFO  [app] Using special apollo client: false
+2021-01-18 03:53:13,824 INFO  [net] New incoming connection from 10.100.100.19:38414
+2021-01-18 03:53:13,824 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:53:13,824 INFO  [app] Using special apollo client: false
+2021-01-18 03:53:13,825 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:53:13,825 INFO  [app] Using special apollo client: false
+2021-01-18 03:54:08,173 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:54:08,173 INFO  [config] Talking to servers: {2: "10.100.100.19:10002", 1: "10.100.100.18:10001", 0: "10.100.100.134:10000"}
+2021-01-18 03:54:12,965 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942048, tv_nsec: 177499163 }
+2021-01-18 03:54:12,965 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942052, tv_nsec: 965823372 }
+2021-01-18 03:54:12,994 INFO  [statistics] DP[Throughput]: 205062.13805540587
+2021-01-18 03:54:12,994 INFO  [statistics] DP[Latency]: 20.90029473349737
+2021-01-18 03:54:13,003 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:54:12,994 WARN  [peer] Disconnected from peer
+2021-01-18 03:54:12,992 WARN  [peer] Disconnected from peer
+2021-01-18 03:54:12,991 WARN  [peer] Disconnected from peer
+DP[Window]: 7000
+2021-01-18 03:54:18,469 INFO  [app] Successfully decoded the config file
+2021-01-18 03:54:21,063 INFO  [app] Successfully decoded the config file
+2021-01-18 03:54:21,133 INFO  [app] Successfully decoded the config file
+2021-01-18 03:54:26,472 INFO  [net] New incoming connection from 10.100.100.134:34094
+2021-01-18 03:54:26,471 INFO  [net] New incoming connection from 10.100.100.134:35940
+2021-01-18 03:54:29,069 INFO  [net] New incoming connection from 10.100.100.19:38512
+2021-01-18 03:54:29,066 INFO  [net] New incoming connection from 10.100.100.19:38420
+2021-01-18 03:54:29,140 INFO  [net] New incoming connection from 10.100.100.18:49394
+2021-01-18 03:54:29,140 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:54:29,140 INFO  [app] Using special apollo client: false
+2021-01-18 03:54:29,136 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:54:29,136 INFO  [app] Using special apollo client: false
+2021-01-18 03:54:29,137 INFO  [net] New incoming connection from 10.100.100.18:47408
+2021-01-18 03:54:29,137 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:54:29,138 INFO  [app] Using special apollo client: false
+2021-01-18 03:55:20,875 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:55:20,875 INFO  [config] Talking to servers: {2: "10.100.100.19:10002", 1: "10.100.100.18:10001", 0: "10.100.100.134:10000"}
+2021-01-18 03:55:25,151 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942120, tv_nsec: 880093438 }
+2021-01-18 03:55:25,151 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942125, tv_nsec: 151666453 }
+2021-01-18 03:55:25,180 INFO  [statistics] DP[Throughput]: 225783.80297217047
+2021-01-18 03:55:25,180 INFO  [statistics] DP[Latency]: 66.62879023528387
+2021-01-18 03:55:25,188 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:55:25,177 WARN  [peer] Disconnected from peer
+2021-01-18 03:55:25,176 WARN  [peer] Disconnected from peer
+2021-01-18 03:55:25,179 WARN  [peer] Disconnected from peer
+DP[Window]: 10000
+2021-01-18 03:55:29,929 INFO  [app] Successfully decoded the config file
+2021-01-18 03:55:30,712 INFO  [app] Successfully decoded the config file
+2021-01-18 03:55:31,434 INFO  [app] Successfully decoded the config file
+2021-01-18 03:55:37,933 INFO  [net] New incoming connection from 10.100.100.134:34100
+2021-01-18 03:55:37,932 INFO  [net] New incoming connection from 10.100.100.134:35942
+2021-01-18 03:55:38,717 INFO  [net] New incoming connection from 10.100.100.18:47410
+2021-01-18 03:55:38,719 INFO  [net] New incoming connection from 10.100.100.18:49400
+2021-01-18 03:55:39,437 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:55:39,437 INFO  [app] Using special apollo client: false
+2021-01-18 03:55:39,439 INFO  [net] New incoming connection from 10.100.100.19:38518
+2021-01-18 03:55:39,439 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:55:39,439 INFO  [app] Using special apollo client: false
+2021-01-18 03:55:39,436 INFO  [net] New incoming connection from 10.100.100.19:38422
+2021-01-18 03:55:39,436 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:55:39,436 INFO  [app] Using special apollo client: false
+2021-01-18 03:56:32,699 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:56:32,699 INFO  [config] Talking to servers: {1: "10.100.100.18:10001", 2: "10.100.100.19:10002", 0: "10.100.100.134:10000"}
+2021-01-18 03:56:37,208 WARN  [peer] Disconnected from peer
+2021-01-18 03:56:37,207 WARN  [peer] Disconnected from peer
+2021-01-18 03:56:37,179 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942192, tv_nsec: 703517782 }
+2021-01-18 03:56:37,179 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942197, tv_nsec: 179201998 }
+2021-01-18 03:56:37,207 INFO  [statistics] DP[Throughput]: 217842.8934987222
+2021-01-18 03:56:37,207 INFO  [statistics] DP[Latency]: 44.60637787231948
+2021-01-18 03:56:37,218 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:56:37,209 WARN  [peer] Disconnected from peer
+DP[Window]: 20000
+2021-01-18 03:56:42,631 INFO  [app] Successfully decoded the config file
+2021-01-18 03:56:43,652 INFO  [app] Successfully decoded the config file
+2021-01-18 03:56:43,841 INFO  [app] Successfully decoded the config file
+2021-01-18 03:56:50,634 INFO  [net] New incoming connection from 10.100.100.134:35948
+2021-01-18 03:56:50,635 INFO  [net] New incoming connection from 10.100.100.134:34102
+2021-01-18 03:56:51,657 INFO  [net] New incoming connection from 10.100.100.18:49404
+2021-01-18 03:56:51,655 INFO  [net] New incoming connection from 10.100.100.18:47414
+2021-01-18 03:56:51,845 INFO  [net] New incoming connection from 10.100.100.19:38522
+2021-01-18 03:56:51,842 INFO  [net] New incoming connection from 10.100.100.19:38426
+2021-01-18 03:56:51,845 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:56:51,845 INFO  [app] Using special apollo client: false
+2021-01-18 03:56:51,842 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:56:51,843 INFO  [app] Using special apollo client: false
+2021-01-18 03:56:51,843 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:56:51,844 INFO  [app] Using special apollo client: false
+2021-01-18 03:57:44,013 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:57:44,013 INFO  [config] Talking to servers: {1: "10.100.100.18:10001", 2: "10.100.100.19:10002", 0: "10.100.100.134:10000"}
+2021-01-18 03:57:48,481 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942264, tv_nsec: 18067660 }
+2021-01-18 03:57:48,481 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942268, tv_nsec: 481531001 }
+2021-01-18 03:57:48,509 INFO  [statistics] DP[Throughput]: 217987.89990330965
+2021-01-18 03:57:48,509 INFO  [statistics] DP[Latency]: 60.018166850123485
+2021-01-18 03:57:48,517 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:57:48,510 WARN  [peer] Disconnected from peer
+2021-01-18 03:57:48,508 WARN  [peer] Disconnected from peer
+2021-01-18 03:57:48,508 WARN  [peer] Disconnected from peer
+DP[Window]: 40000
+2021-01-18 03:57:54,490 INFO  [app] Successfully decoded the config file
+2021-01-18 03:57:55,028 INFO  [app] Successfully decoded the config file
+2021-01-18 03:57:55,616 INFO  [app] Successfully decoded the config file
+2021-01-18 03:58:02,494 INFO  [net] New incoming connection from 10.100.100.134:35950
+2021-01-18 03:58:02,495 INFO  [net] New incoming connection from 10.100.100.134:34108
+2021-01-18 03:58:03,031 INFO  [net] New incoming connection from 10.100.100.18:47418
+2021-01-18 03:58:03,032 INFO  [net] New incoming connection from 10.100.100.18:49408
+2021-01-18 03:58:03,618 INFO  [net] New incoming connection from 10.100.100.19:38430
+2021-01-18 03:58:03,618 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:58:03,618 INFO  [app] Using special apollo client: false
+2021-01-18 03:58:03,619 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:58:03,619 INFO  [app] Using special apollo client: false
+2021-01-18 03:58:03,620 INFO  [net] New incoming connection from 10.100.100.19:38526
+2021-01-18 03:58:03,620 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:58:03,620 INFO  [app] Using special apollo client: false
+2021-01-18 03:58:55,839 INFO  [app] using log level INFO, got input 0
+2021-01-18 03:58:55,839 INFO  [config] Talking to servers: {2: "10.100.100.19:10002", 1: "10.100.100.18:10001", 0: "10.100.100.134:10000"}
+2021-01-18 03:59:00,092 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942335, tv_nsec: 843271240 }
+2021-01-18 03:59:00,092 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942340, tv_nsec: 92721489 }
+2021-01-18 03:59:00,121 INFO  [statistics] DP[Throughput]: 219867.028733862
+2021-01-18 03:59:00,121 INFO  [statistics] DP[Latency]: 140.29930729925914
+2021-01-18 03:59:00,129 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 03:59:00,123 WARN  [peer] Disconnected from peer
+2021-01-18 03:59:00,121 WARN  [peer] Disconnected from peer
+2021-01-18 03:59:00,121 WARN  [peer] Disconnected from peer
+DP[Window]: 60000
+2021-01-18 03:59:05,706 INFO  [app] Successfully decoded the config file
+2021-01-18 03:59:06,039 INFO  [app] Successfully decoded the config file
+2021-01-18 03:59:06,507 INFO  [app] Successfully decoded the config file
+2021-01-18 03:59:13,711 INFO  [net] New incoming connection from 10.100.100.134:34110
+2021-01-18 03:59:13,710 INFO  [net] New incoming connection from 10.100.100.134:35956
+2021-01-18 03:59:14,042 INFO  [net] New incoming connection from 10.100.100.18:47422
+2021-01-18 03:59:14,043 INFO  [net] New incoming connection from 10.100.100.18:49412
+2021-01-18 03:59:14,509 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:59:14,510 INFO  [app] Using special apollo client: false
+2021-01-18 03:59:14,511 INFO  [net] New incoming connection from 10.100.100.19:38528
+2021-01-18 03:59:14,511 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:59:14,511 INFO  [app] Using special apollo client: false
+2021-01-18 03:59:14,509 INFO  [net] New incoming connection from 10.100.100.19:38436
+2021-01-18 03:59:14,509 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 03:59:14,509 INFO  [app] Using special apollo client: false
+2021-01-18 04:00:07,239 INFO  [app] using log level INFO, got input 0
+2021-01-18 04:00:07,239 INFO  [config] Talking to servers: {1: "10.100.100.18:10001", 0: "10.100.100.134:10000", 2: "10.100.100.19:10002"}
+2021-01-18 04:00:11,599 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942407, tv_nsec: 243285729 }
+2021-01-18 04:00:11,599 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942411, tv_nsec: 599387800 }
+2021-01-18 04:00:11,628 INFO  [statistics] DP[Throughput]: 217033.7114674097
+2021-01-18 04:00:11,628 INFO  [statistics] DP[Latency]: 119.9661854348486
+2021-01-18 04:00:11,636 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 04:00:11,629 WARN  [peer] Disconnected from peer
+2021-01-18 04:00:11,630 WARN  [peer] Disconnected from peer
+2021-01-18 04:00:11,628 WARN  [peer] Disconnected from peer
+DP[Window]: 80000
+2021-01-18 04:00:20,360 INFO  [app] Successfully decoded the config file
+2021-01-18 04:00:20,304 INFO  [app] Successfully decoded the config file
+2021-01-18 04:00:21,282 INFO  [app] Successfully decoded the config file
+2021-01-18 04:00:28,312 INFO  [net] New incoming connection from 10.100.100.18:49414
+2021-01-18 04:00:28,311 INFO  [net] New incoming connection from 10.100.100.18:47428
+2021-01-18 04:00:28,361 INFO  [net] New incoming connection from 10.100.100.134:35958
+2021-01-18 04:00:28,362 INFO  [net] New incoming connection from 10.100.100.134:34116
+2021-01-18 04:00:29,284 INFO  [net] New incoming connection from 10.100.100.19:38438
+2021-01-18 04:00:29,284 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:00:29,284 INFO  [app] Using special apollo client: false
+2021-01-18 04:00:29,285 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:00:29,285 INFO  [app] Using special apollo client: false
+2021-01-18 04:00:29,286 INFO  [net] New incoming connection from 10.100.100.19:38534
+2021-01-18 04:00:29,286 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:00:29,286 INFO  [app] Using special apollo client: false
+2021-01-18 04:01:21,051 INFO  [app] using log level INFO, got input 0
+2021-01-18 04:01:21,051 INFO  [config] Talking to servers: {1: "10.100.100.18:10001", 0: "10.100.100.134:10000", 2: "10.100.100.19:10002"}
+2021-01-18 04:01:25,224 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942481, tv_nsec: 55616391 }
+2021-01-18 04:01:25,225 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942485, tv_nsec: 224989147 }
+2021-01-18 04:01:25,243 INFO  [statistics] DP[Throughput]: 210164.46628309097
+2021-01-18 04:01:25,243 INFO  [statistics] DP[Latency]: 269.8962207305188
+2021-01-18 04:01:25,249 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 04:01:25,242 WARN  [peer] Disconnected from peer
+2021-01-18 04:01:25,243 WARN  [peer] Disconnected from peer
+2021-01-18 04:01:25,242 WARN  [peer] Disconnected from peer
+DP[Window]: 100000
+2021-01-18 04:01:31,019 INFO  [app] Successfully decoded the config file
+2021-01-18 04:01:31,516 INFO  [app] Successfully decoded the config file
+2021-01-18 04:01:32,342 INFO  [app] Successfully decoded the config file
+2021-01-18 04:01:39,023 INFO  [net] New incoming connection from 10.100.100.134:35964
+2021-01-18 04:01:39,024 INFO  [net] New incoming connection from 10.100.100.134:34118
+2021-01-18 04:01:39,520 INFO  [net] New incoming connection from 10.100.100.18:49418
+2021-01-18 04:01:39,520 INFO  [net] New incoming connection from 10.100.100.18:47432
+2021-01-18 04:01:40,346 INFO  [net] New incoming connection from 10.100.100.19:38538
+2021-01-18 04:01:40,346 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:01:40,346 INFO  [app] Using special apollo client: false
+2021-01-18 04:01:40,345 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:01:40,345 INFO  [app] Using special apollo client: false
+2021-01-18 04:01:40,344 INFO  [net] New incoming connection from 10.100.100.19:38442
+2021-01-18 04:01:40,344 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:01:40,344 INFO  [app] Using special apollo client: false
+2021-01-18 04:02:32,750 INFO  [app] using log level INFO, got input 0
+2021-01-18 04:02:32,750 INFO  [config] Talking to servers: {0: "10.100.100.134:10000", 1: "10.100.100.18:10001", 2: "10.100.100.19:10002"}
+2021-01-18 04:02:36,792 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942552, tv_nsec: 754276093 }
+2021-01-18 04:02:36,792 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942556, tv_nsec: 792512485 }
+2021-01-18 04:02:36,811 INFO  [statistics] DP[Throughput]: 225747.5569795717
+2021-01-18 04:02:36,811 INFO  [statistics] DP[Latency]: 270.16847004569877
+2021-01-18 04:02:36,817 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 04:02:36,812 WARN  [peer] Disconnected from peer
+2021-01-18 04:02:36,810 WARN  [peer] Disconnected from peer
+2021-01-18 04:02:36,811 WARN  [peer] Disconnected from peer
+DP[Window]: 120000
+2021-01-18 04:02:42,689 INFO  [app] Successfully decoded the config file
+2021-01-18 04:02:43,190 INFO  [app] Successfully decoded the config file
+2021-01-18 04:02:43,748 INFO  [app] Successfully decoded the config file
+2021-01-18 04:02:50,694 INFO  [net] New incoming connection from 10.100.100.134:34124
+2021-01-18 04:02:50,694 INFO  [net] New incoming connection from 10.100.100.134:35966
+2021-01-18 04:02:51,194 INFO  [net] New incoming connection from 10.100.100.18:47434
+2021-01-18 04:02:51,195 INFO  [net] New incoming connection from 10.100.100.18:49424
+2021-01-18 04:02:51,750 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:02:51,750 INFO  [app] Using special apollo client: false
+2021-01-18 04:02:51,750 INFO  [net] New incoming connection from 10.100.100.19:38448
+2021-01-18 04:02:51,750 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:02:51,750 INFO  [app] Using special apollo client: false
+2021-01-18 04:02:51,751 INFO  [net] New incoming connection from 10.100.100.19:38540
+2021-01-18 04:02:51,751 INFO  [net] Connected to all nodes in the protocol
+2021-01-18 04:02:51,751 INFO  [app] Using special apollo client: false
+2021-01-18 04:03:44,562 INFO  [app] using log level INFO, got input 0
+2021-01-18 04:03:44,562 INFO  [config] Talking to servers: {0: "10.100.100.134:10000", 2: "10.100.100.19:10002", 1: "10.100.100.18:10001"}
+2021-01-18 04:03:49,250 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1610942624, tv_nsec: 566383763 }
+2021-01-18 04:03:49,250 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1610942629, tv_nsec: 250695023 }
+2021-01-18 04:03:49,279 INFO  [statistics] DP[Throughput]: 210394.85749288145
+2021-01-18 04:03:49,279 INFO  [statistics] DP[Latency]: 151.33645712314382
+2021-01-18 04:03:49,287 INFO  [consensus] Closing tx producer channel: send failed because receiver is gone
+2021-01-18 04:03:49,282 WARN  [peer] Disconnected from peer
+2021-01-18 04:03:49,282 WARN  [peer] Disconnected from peer
+2021-01-18 04:03:49,283 WARN  [peer] Disconnected from peer

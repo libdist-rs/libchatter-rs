@@ -1,0 +1,608 @@
+DP[Delay]: 50
+Using: apollo testdata/b400-p0-f4 50 client-apollo
+Setting up: 18.191.211.127
+Setting up: 3.137.191.244
+Setting up: 3.132.213.238
+2021-01-20 17:28:22,019 INFO  [app] Successfully decoded the config file
+Setting up: 18.191.244.126
+2021-01-20 17:28:22,503 INFO  [app] Successfully decoded the config file
+Setting up: 3.128.87.167
+2021-01-20 17:28:22,935 INFO  [app] Successfully decoded the config file
+Setting up: 18.217.95.135
+2021-01-20 17:28:23,392 INFO  [app] Successfully decoded the config file
+Setting up: 3.131.153.239
+2021-01-20 17:28:23,876 INFO  [app] Successfully decoded the config file
+Setting up: 18.221.117.195
+2021-01-20 17:28:24,341 INFO  [app] Successfully decoded the config file
+Setting up: 18.218.183.114
+2021-01-20 17:28:24,838 INFO  [app] Successfully decoded the config file
+2021-01-20 17:28:25,367 INFO  [app] Successfully decoded the config file
+2021-01-20 17:28:25,810 INFO  [app] Successfully decoded the config file
+2021-01-20 17:28:36,012 INFO  [net] New incoming connection from 10.100.100.17:42542
+2021-01-20 17:28:36,022 INFO  [net] New incoming connection from 10.100.100.17:47708
+2021-01-20 17:28:36,018 INFO  [net] New incoming connection from 10.100.100.17:46022
+2021-01-20 17:28:36,032 INFO  [net] New incoming connection from 10.100.100.17:41800
+2021-01-20 17:28:36,026 INFO  [net] New incoming connection from 10.100.100.17:36350
+2021-01-20 17:28:36,021 INFO  [net] New incoming connection from 10.100.100.17:52462
+2021-01-20 17:28:36,029 INFO  [net] New incoming connection from 10.100.100.17:52264
+2021-01-20 17:28:36,020 INFO  [net] New incoming connection from 10.100.100.17:37186
+2021-01-20 17:28:36,496 INFO  [net] New incoming connection from 10.100.100.210:49350
+2021-01-20 17:28:36,496 INFO  [net] New incoming connection from 10.100.100.210:32924
+2021-01-20 17:28:36,487 INFO  [net] New incoming connection from 10.100.100.210:37024
+2021-01-20 17:28:36,504 INFO  [net] New incoming connection from 10.100.100.210:48142
+2021-01-20 17:28:36,492 INFO  [net] New incoming connection from 10.100.100.210:46698
+2021-01-20 17:28:36,500 INFO  [net] New incoming connection from 10.100.100.210:59824
+2021-01-20 17:28:36,495 INFO  [net] New incoming connection from 10.100.100.210:44684
+2021-01-20 17:28:36,496 INFO  [net] New incoming connection from 10.100.100.210:47742
+2021-01-20 17:28:36,942 INFO  [net] New incoming connection from 10.100.100.84:41944
+2021-01-20 17:28:36,942 INFO  [net] New incoming connection from 10.100.100.84:59986
+2021-01-20 17:28:36,933 INFO  [net] New incoming connection from 10.100.100.84:33020
+2021-01-20 17:28:36,952 INFO  [net] New incoming connection from 10.100.100.84:54518
+2021-01-20 17:28:36,946 INFO  [net] New incoming connection from 10.100.100.84:33798
+2021-01-20 17:28:36,940 INFO  [net] New incoming connection from 10.100.100.84:60442
+2021-01-20 17:28:36,949 INFO  [net] New incoming connection from 10.100.100.84:58854
+2021-01-20 17:28:36,942 INFO  [net] New incoming connection from 10.100.100.84:41392
+2021-01-20 17:28:37,390 INFO  [net] New incoming connection from 10.100.100.69:40574
+2021-01-20 17:28:37,395 INFO  [net] New incoming connection from 10.100.100.69:43882
+2021-01-20 17:28:37,405 INFO  [net] New incoming connection from 10.100.100.69:52038
+2021-01-20 17:28:37,386 INFO  [net] New incoming connection from 10.100.100.69:42462
+2021-01-20 17:28:37,399 INFO  [net] New incoming connection from 10.100.100.69:40260
+2021-01-20 17:28:37,402 INFO  [net] New incoming connection from 10.100.100.69:38792
+2021-01-20 17:28:37,394 INFO  [net] New incoming connection from 10.100.100.69:53300
+2021-01-20 17:28:37,395 INFO  [net] New incoming connection from 10.100.100.69:58802
+2021-01-20 17:28:37,876 INFO  [net] New incoming connection from 10.100.100.100:48644
+2021-01-20 17:28:37,891 INFO  [net] New incoming connection from 10.100.100.100:48046
+2021-01-20 17:28:37,872 INFO  [net] New incoming connection from 10.100.100.100:37894
+2021-01-20 17:28:37,885 INFO  [net] New incoming connection from 10.100.100.100:38530
+2021-01-20 17:28:37,881 INFO  [net] New incoming connection from 10.100.100.100:56864
+2021-01-20 17:28:37,881 INFO  [net] New incoming connection from 10.100.100.100:40836
+2021-01-20 17:28:37,880 INFO  [net] New incoming connection from 10.100.100.100:37444
+2021-01-20 17:28:37,887 INFO  [net] New incoming connection from 10.100.100.100:47390
+2021-01-20 17:28:38,345 INFO  [net] New incoming connection from 10.100.100.43:51516
+2021-01-20 17:28:38,344 INFO  [net] New incoming connection from 10.100.100.43:57984
+2021-01-20 17:28:38,335 INFO  [net] New incoming connection from 10.100.100.43:42388
+2021-01-20 17:28:38,340 INFO  [net] New incoming connection from 10.100.100.43:38726
+2021-01-20 17:28:38,354 INFO  [net] New incoming connection from 10.100.100.43:40228
+2021-01-20 17:28:38,348 INFO  [net] New incoming connection from 10.100.100.43:36902
+2021-01-20 17:28:38,351 INFO  [net] New incoming connection from 10.100.100.43:57990
+2021-01-20 17:28:38,343 INFO  [net] New incoming connection from 10.100.100.43:35234
+2021-01-20 17:28:38,824 INFO  [net] New incoming connection from 10.100.100.174:33946
+2021-01-20 17:28:38,833 INFO  [net] New incoming connection from 10.100.100.174:36212
+2021-01-20 17:28:38,834 INFO  [net] New incoming connection from 10.100.100.174:43718
+2021-01-20 17:28:38,830 INFO  [net] New incoming connection from 10.100.100.174:48978
+2021-01-20 17:28:38,843 INFO  [net] New incoming connection from 10.100.100.174:54552
+2021-01-20 17:28:38,838 INFO  [net] New incoming connection from 10.100.100.174:43304
+2021-01-20 17:28:38,832 INFO  [net] New incoming connection from 10.100.100.174:57430
+2021-01-20 17:28:38,833 INFO  [net] New incoming connection from 10.100.100.174:60064
+2021-01-20 17:28:39,367 INFO  [net] New incoming connection from 10.100.100.9:56674
+2021-01-20 17:28:39,357 INFO  [net] New incoming connection from 10.100.100.9:51904
+2021-01-20 17:28:39,366 INFO  [net] New incoming connection from 10.100.100.9:59468
+2021-01-20 17:28:39,361 INFO  [net] New incoming connection from 10.100.100.9:44106
+2021-01-20 17:28:39,375 INFO  [net] New incoming connection from 10.100.100.9:46426
+2021-01-20 17:28:39,374 INFO  [net] New incoming connection from 10.100.100.9:52536
+2021-01-20 17:28:39,365 INFO  [net] New incoming connection from 10.100.100.9:58870
+2021-01-20 17:28:39,365 INFO  [net] New incoming connection from 10.100.100.9:45306
+2021-01-20 17:28:39,821 INFO  [net] New incoming connection from 10.100.100.206:43082
+2021-01-20 17:28:39,821 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,822 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,818 INFO  [net] New incoming connection from 10.100.100.206:47114
+2021-01-20 17:28:39,818 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,818 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,832 INFO  [net] New incoming connection from 10.100.100.206:38826
+2021-01-20 17:28:39,832 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,832 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,813 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,823 INFO  [net] New incoming connection from 10.100.100.206:58894
+2021-01-20 17:28:39,823 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,823 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,813 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,829 INFO  [net] New incoming connection from 10.100.100.206:33946
+2021-01-20 17:28:39,829 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,829 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,826 INFO  [net] New incoming connection from 10.100.100.206:49100
+2021-01-20 17:28:39,826 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,826 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,821 INFO  [net] New incoming connection from 10.100.100.206:40560
+2021-01-20 17:28:39,821 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,821 INFO  [app] Using special apollo client: true
+2021-01-20 17:28:39,821 INFO  [net] New incoming connection from 10.100.100.206:43138
+2021-01-20 17:28:39,821 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:28:39,821 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:25,854 INFO  [app] Successfully decoded the config file
+2021-01-20 17:29:25,882 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,873 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,864 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,874 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,865 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,875 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,885 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,869 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,875 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,870 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,880 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,872 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,872 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,877 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,877 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,868 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,878 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,878 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,882 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,874 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,873 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,873 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,887 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,885 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,881 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,876 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:25,877 INFO  [consensus] Nothing to commit
+2021-01-20 17:29:31,718 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1611163765, tv_nsec: 872638691 }
+2021-01-20 17:29:31,718 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1611163771, tv_nsec: 718840298 }
+2021-01-20 17:29:31,735 INFO  [statistics] DP[Throughput]: 132122.88113279224
+2021-01-20 17:29:31,735 INFO  [statistics] DP[Latency]: 331.1629676716074
+2021-01-20 17:29:31,749 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-20 17:29:31,760 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,770 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,769 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,765 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,779 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,776 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,773 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,769 WARN  [peer] Disconnected from peer
+2021-01-20 17:29:31,768 WARN  [peer] Disconnected from peer
+DP[Delay]: 100
+Using: apollo testdata/b400-p0-f4 100 client-apollo
+Setting up: 18.191.211.127
+Setting up: 3.137.191.244
+Setting up: 3.132.213.238
+2021-01-20 17:29:39,670 INFO  [app] Successfully decoded the config file
+Setting up: 18.191.244.126
+2021-01-20 17:29:39,966 INFO  [app] Successfully decoded the config file
+Setting up: 3.128.87.167
+2021-01-20 17:29:40,462 INFO  [app] Successfully decoded the config file
+Setting up: 18.217.95.135
+2021-01-20 17:29:40,955 INFO  [app] Successfully decoded the config file
+Setting up: 3.131.153.239
+2021-01-20 17:29:41,474 INFO  [app] Successfully decoded the config file
+Setting up: 18.221.117.195
+2021-01-20 17:29:41,938 INFO  [app] Successfully decoded the config file
+Setting up: 18.218.183.114
+2021-01-20 17:29:42,490 INFO  [app] Successfully decoded the config file
+2021-01-20 17:29:42,945 INFO  [app] Successfully decoded the config file
+2021-01-20 17:29:43,458 INFO  [app] Successfully decoded the config file
+2021-01-20 17:29:53,676 INFO  [net] New incoming connection from 10.100.100.17:36362
+2021-01-20 17:29:53,673 INFO  [net] New incoming connection from 10.100.100.17:47724
+2021-01-20 17:29:53,672 INFO  [net] New incoming connection from 10.100.100.17:52472
+2021-01-20 17:29:53,672 INFO  [net] New incoming connection from 10.100.100.17:37214
+2021-01-20 17:29:53,684 INFO  [net] New incoming connection from 10.100.100.17:41818
+2021-01-20 17:29:53,669 INFO  [net] New incoming connection from 10.100.100.17:46040
+2021-01-20 17:29:53,664 INFO  [net] New incoming connection from 10.100.100.17:42558
+2021-01-20 17:29:53,680 INFO  [net] New incoming connection from 10.100.100.17:52274
+2021-01-20 17:29:53,958 INFO  [net] New incoming connection from 10.100.100.210:32938
+2021-01-20 17:29:53,958 INFO  [net] New incoming connection from 10.100.100.210:44702
+2021-01-20 17:29:53,962 INFO  [net] New incoming connection from 10.100.100.210:59840
+2021-01-20 17:29:53,960 INFO  [net] New incoming connection from 10.100.100.210:49372
+2021-01-20 17:29:53,959 INFO  [net] New incoming connection from 10.100.100.210:47764
+2021-01-20 17:29:53,955 INFO  [net] New incoming connection from 10.100.100.210:46714
+2021-01-20 17:29:53,966 INFO  [net] New incoming connection from 10.100.100.210:48156
+2021-01-20 17:29:53,949 INFO  [net] New incoming connection from 10.100.100.210:37030
+2021-01-20 17:29:54,472 INFO  [net] New incoming connection from 10.100.100.84:33814
+2021-01-20 17:29:54,470 INFO  [net] New incoming connection from 10.100.100.84:41962
+2021-01-20 17:29:54,469 INFO  [net] New incoming connection from 10.100.100.84:60006
+2021-01-20 17:29:54,469 INFO  [net] New incoming connection from 10.100.100.84:41398
+2021-01-20 17:29:54,468 INFO  [net] New incoming connection from 10.100.100.84:60468
+2021-01-20 17:29:54,480 INFO  [net] New incoming connection from 10.100.100.84:54536
+2021-01-20 17:29:54,460 INFO  [net] New incoming connection from 10.100.100.84:33030
+2021-01-20 17:29:54,476 INFO  [net] New incoming connection from 10.100.100.84:58868
+2021-01-20 17:29:54,958 INFO  [net] New incoming connection from 10.100.100.69:43896
+2021-01-20 17:29:54,968 INFO  [net] New incoming connection from 10.100.100.69:52052
+2021-01-20 17:29:54,962 INFO  [net] New incoming connection from 10.100.100.69:40284
+2021-01-20 17:29:54,957 INFO  [net] New incoming connection from 10.100.100.69:58808
+2021-01-20 17:29:54,957 INFO  [net] New incoming connection from 10.100.100.69:53312
+2021-01-20 17:29:54,954 INFO  [net] New incoming connection from 10.100.100.69:40600
+2021-01-20 17:29:54,949 INFO  [net] New incoming connection from 10.100.100.69:42478
+2021-01-20 17:29:54,965 INFO  [net] New incoming connection from 10.100.100.69:38808
+2021-01-20 17:29:55,482 INFO  [net] New incoming connection from 10.100.100.100:38544
+2021-01-20 17:29:55,478 INFO  [net] New incoming connection from 10.100.100.100:37458
+2021-01-20 17:29:55,488 INFO  [net] New incoming connection from 10.100.100.100:48062
+2021-01-20 17:29:55,479 INFO  [net] New incoming connection from 10.100.100.100:40848
+2021-01-20 17:29:55,479 INFO  [net] New incoming connection from 10.100.100.100:56882
+2021-01-20 17:29:55,474 INFO  [net] New incoming connection from 10.100.100.100:48666
+2021-01-20 17:29:55,485 INFO  [net] New incoming connection from 10.100.100.100:47404
+2021-01-20 17:29:55,470 INFO  [net] New incoming connection from 10.100.100.100:37912
+2021-01-20 17:29:55,942 INFO  [net] New incoming connection from 10.100.100.43:51528
+2021-01-20 17:29:55,941 INFO  [net] New incoming connection from 10.100.100.43:35240
+2021-01-20 17:29:55,942 INFO  [net] New incoming connection from 10.100.100.43:58002
+2021-01-20 17:29:55,952 INFO  [net] New incoming connection from 10.100.100.43:40252
+2021-01-20 17:29:55,946 INFO  [net] New incoming connection from 10.100.100.43:36932
+2021-01-20 17:29:55,932 INFO  [net] New incoming connection from 10.100.100.43:42394
+2021-01-20 17:29:55,949 INFO  [net] New incoming connection from 10.100.100.43:58000
+2021-01-20 17:29:55,938 INFO  [net] New incoming connection from 10.100.100.43:38748
+2021-01-20 17:29:56,486 INFO  [net] New incoming connection from 10.100.100.174:36228
+2021-01-20 17:29:56,487 INFO  [net] New incoming connection from 10.100.100.174:43736
+2021-01-20 17:29:56,490 INFO  [net] New incoming connection from 10.100.100.174:43320
+2021-01-20 17:29:56,496 INFO  [net] New incoming connection from 10.100.100.174:54574
+2021-01-20 17:29:56,485 INFO  [net] New incoming connection from 10.100.100.174:57452
+2021-01-20 17:29:56,482 INFO  [net] New incoming connection from 10.100.100.174:48984
+2021-01-20 17:29:56,486 INFO  [net] New incoming connection from 10.100.100.174:60074
+2021-01-20 17:29:56,477 INFO  [net] New incoming connection from 10.100.100.174:33964
+2021-01-20 17:29:56,955 INFO  [net] New incoming connection from 10.100.100.9:46442
+2021-01-20 17:29:56,947 INFO  [net] New incoming connection from 10.100.100.9:56696
+2021-01-20 17:29:56,946 INFO  [net] New incoming connection from 10.100.100.9:59478
+2021-01-20 17:29:56,945 INFO  [net] New incoming connection from 10.100.100.9:58894
+2021-01-20 17:29:56,953 INFO  [net] New incoming connection from 10.100.100.9:52540
+2021-01-20 17:29:56,946 INFO  [net] New incoming connection from 10.100.100.9:45326
+2021-01-20 17:29:56,942 INFO  [net] New incoming connection from 10.100.100.9:44126
+2021-01-20 17:29:56,937 INFO  [net] New incoming connection from 10.100.100.9:51916
+2021-01-20 17:29:57,469 INFO  [net] New incoming connection from 10.100.100.206:43098
+2021-01-20 17:29:57,469 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,470 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,470 INFO  [net] New incoming connection from 10.100.100.206:58900
+2021-01-20 17:29:57,470 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,470 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,479 INFO  [net] New incoming connection from 10.100.100.206:38842
+2021-01-20 17:29:57,480 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,469 INFO  [net] New incoming connection from 10.100.100.206:43150
+2021-01-20 17:29:57,469 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,469 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,473 INFO  [net] New incoming connection from 10.100.100.206:49118
+2021-01-20 17:29:57,473 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,474 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,469 INFO  [net] New incoming connection from 10.100.100.206:40570
+2021-01-20 17:29:57,469 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,469 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,480 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,466 INFO  [net] New incoming connection from 10.100.100.206:47140
+2021-01-20 17:29:57,466 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,466 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,461 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,461 INFO  [app] Using special apollo client: true
+2021-01-20 17:29:57,477 INFO  [net] New incoming connection from 10.100.100.206:33970
+2021-01-20 17:29:57,477 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:29:57,477 INFO  [app] Using special apollo client: true
+2021-01-20 17:30:43,455 INFO  [app] Successfully decoded the config file
+2021-01-20 17:30:43,484 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,478 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,475 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,473 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,474 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,475 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,476 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,475 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,479 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,486 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,476 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,477 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,476 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,465 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,481 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,470 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,471 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,481 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,487 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,476 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,478 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,477 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,467 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,468 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,483 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,484 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:43,473 INFO  [consensus] Nothing to commit
+2021-01-20 17:30:50,072 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,065 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,069 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,069 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,067 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,060 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,079 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,022 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1611163843, tv_nsec: 473574355 }
+2021-01-20 17:30:50,022 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1611163850, tv_nsec: 22566317 }
+2021-01-20 17:30:50,040 INFO  [statistics] DP[Throughput]: 130003.51885299811
+2021-01-20 17:30:50,040 INFO  [statistics] DP[Latency]: 34.749933050815606
+2021-01-20 17:30:50,050 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-20 17:30:50,068 WARN  [peer] Disconnected from peer
+2021-01-20 17:30:50,076 WARN  [peer] Disconnected from peer
+DP[Delay]: 200
+Using: apollo testdata/b400-p0-f4 200 client-apollo
+Setting up: 18.191.211.127
+Setting up: 3.137.191.244
+Setting up: 3.132.213.238
+2021-01-20 17:30:58,207 INFO  [app] Successfully decoded the config file
+Setting up: 18.191.244.126
+2021-01-20 17:30:58,752 INFO  [app] Successfully decoded the config file
+Setting up: 3.128.87.167
+2021-01-20 17:30:59,236 INFO  [app] Successfully decoded the config file
+Setting up: 18.217.95.135
+2021-01-20 17:30:59,766 INFO  [app] Successfully decoded the config file
+Setting up: 3.131.153.239
+2021-01-20 17:31:00,251 INFO  [app] Successfully decoded the config file
+Setting up: 18.221.117.195
+2021-01-20 17:31:00,733 INFO  [app] Successfully decoded the config file
+Setting up: 18.218.183.114
+2021-01-20 17:31:01,208 INFO  [app] Successfully decoded the config file
+2021-01-20 17:31:01,729 INFO  [app] Successfully decoded the config file
+2021-01-20 17:31:02,192 INFO  [app] Successfully decoded the config file
+2021-01-20 17:31:12,218 INFO  [net] New incoming connection from 10.100.100.17:52292
+2021-01-20 17:31:12,206 INFO  [net] New incoming connection from 10.100.100.17:46048
+2021-01-20 17:31:12,220 INFO  [net] New incoming connection from 10.100.100.17:41820
+2021-01-20 17:31:12,210 INFO  [net] New incoming connection from 10.100.100.17:47738
+2021-01-20 17:31:12,214 INFO  [net] New incoming connection from 10.100.100.17:36392
+2021-01-20 17:31:12,201 INFO  [net] New incoming connection from 10.100.100.17:42580
+2021-01-20 17:31:12,209 INFO  [net] New incoming connection from 10.100.100.17:37230
+2021-01-20 17:31:12,210 INFO  [net] New incoming connection from 10.100.100.17:52490
+2021-01-20 17:31:12,752 INFO  [net] New incoming connection from 10.100.100.210:48160
+2021-01-20 17:31:12,741 INFO  [net] New incoming connection from 10.100.100.210:46726
+2021-01-20 17:31:12,746 INFO  [net] New incoming connection from 10.100.100.210:49392
+2021-01-20 17:31:12,745 INFO  [net] New incoming connection from 10.100.100.210:32956
+2021-01-20 17:31:12,748 INFO  [net] New incoming connection from 10.100.100.210:59856
+2021-01-20 17:31:12,736 INFO  [net] New incoming connection from 10.100.100.210:37052
+2021-01-20 17:31:12,744 INFO  [net] New incoming connection from 10.100.100.210:44724
+2021-01-20 17:31:12,745 INFO  [net] New incoming connection from 10.100.100.210:47778
+2021-01-20 17:31:13,250 INFO  [net] New incoming connection from 10.100.100.84:58880
+2021-01-20 17:31:13,244 INFO  [net] New incoming connection from 10.100.100.84:41986
+2021-01-20 17:31:13,243 INFO  [net] New incoming connection from 10.100.100.84:60014
+2021-01-20 17:31:13,253 INFO  [net] New incoming connection from 10.100.100.84:54538
+2021-01-20 17:31:13,246 INFO  [net] New incoming connection from 10.100.100.84:33838
+2021-01-20 17:31:13,234 INFO  [net] New incoming connection from 10.100.100.84:33056
+2021-01-20 17:31:13,243 INFO  [net] New incoming connection from 10.100.100.84:41420
+2021-01-20 17:31:13,242 INFO  [net] New incoming connection from 10.100.100.84:60478
+2021-01-20 17:31:13,776 INFO  [net] New incoming connection from 10.100.100.69:38816
+2021-01-20 17:31:13,770 INFO  [net] New incoming connection from 10.100.100.69:43916
+2021-01-20 17:31:13,765 INFO  [net] New incoming connection from 10.100.100.69:40608
+2021-01-20 17:31:13,780 INFO  [net] New incoming connection from 10.100.100.69:52076
+2021-01-20 17:31:13,773 INFO  [net] New incoming connection from 10.100.100.69:40300
+2021-01-20 17:31:13,760 INFO  [net] New incoming connection from 10.100.100.69:42488
+2021-01-20 17:31:13,769 INFO  [net] New incoming connection from 10.100.100.69:58828
+2021-01-20 17:31:13,768 INFO  [net] New incoming connection from 10.100.100.69:53334
+2021-01-20 17:31:14,262 INFO  [net] New incoming connection from 10.100.100.100:47420
+2021-01-20 17:31:14,256 INFO  [net] New incoming connection from 10.100.100.100:56898
+2021-01-20 17:31:14,251 INFO  [net] New incoming connection from 10.100.100.100:48684
+2021-01-20 17:31:14,258 INFO  [net] New incoming connection from 10.100.100.100:38558
+2021-01-20 17:31:14,246 INFO  [net] New incoming connection from 10.100.100.100:37918
+2021-01-20 17:31:14,266 INFO  [net] New incoming connection from 10.100.100.100:48084
+2021-01-20 17:31:14,255 INFO  [net] New incoming connection from 10.100.100.100:40860
+2021-01-20 17:31:14,255 INFO  [net] New incoming connection from 10.100.100.100:37482
+2021-01-20 17:31:14,737 INFO  [net] New incoming connection from 10.100.100.43:51546
+2021-01-20 17:31:14,743 INFO  [net] New incoming connection from 10.100.100.43:58022
+2021-01-20 17:31:14,732 INFO  [net] New incoming connection from 10.100.100.43:38766
+2021-01-20 17:31:14,734 INFO  [net] New incoming connection from 10.100.100.43:35252
+2021-01-20 17:31:14,727 INFO  [net] New incoming connection from 10.100.100.43:42412
+2021-01-20 17:31:14,746 INFO  [net] New incoming connection from 10.100.100.43:40262
+2021-01-20 17:31:14,736 INFO  [net] New incoming connection from 10.100.100.43:58016
+2021-01-20 17:31:14,740 INFO  [net] New incoming connection from 10.100.100.43:36948
+2021-01-20 17:31:15,205 INFO  [net] New incoming connection from 10.100.100.174:43762
+2021-01-20 17:31:15,200 INFO  [net] New incoming connection from 10.100.100.174:49008
+2021-01-20 17:31:15,194 INFO  [net] New incoming connection from 10.100.100.174:33976
+2021-01-20 17:31:15,214 INFO  [net] New incoming connection from 10.100.100.174:54582
+2021-01-20 17:31:15,204 INFO  [net] New incoming connection from 10.100.100.174:36244
+2021-01-20 17:31:15,207 INFO  [net] New incoming connection from 10.100.100.174:43332
+2021-01-20 17:31:15,203 INFO  [net] New incoming connection from 10.100.100.174:57462
+2021-01-20 17:31:15,204 INFO  [net] New incoming connection from 10.100.100.174:60094
+2021-01-20 17:31:15,735 INFO  [net] New incoming connection from 10.100.100.9:52554
+2021-01-20 17:31:15,729 INFO  [net] New incoming connection from 10.100.100.9:56700
+2021-01-20 17:31:15,725 INFO  [net] New incoming connection from 10.100.100.9:44150
+2021-01-20 17:31:15,728 INFO  [net] New incoming connection from 10.100.100.9:45336
+2021-01-20 17:31:15,739 INFO  [net] New incoming connection from 10.100.100.9:46466
+2021-01-20 17:31:15,720 INFO  [net] New incoming connection from 10.100.100.9:51930
+2021-01-20 17:31:15,729 INFO  [net] New incoming connection from 10.100.100.9:59500
+2021-01-20 17:31:15,728 INFO  [net] New incoming connection from 10.100.100.9:58910
+2021-01-20 17:31:16,205 INFO  [net] New incoming connection from 10.100.100.206:58922
+2021-01-20 17:31:16,205 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,199 INFO  [net] New incoming connection from 10.100.100.206:47146
+2021-01-20 17:31:16,199 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,200 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,211 INFO  [net] New incoming connection from 10.100.100.206:33990
+2021-01-20 17:31:16,211 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,205 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,212 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,207 INFO  [net] New incoming connection from 10.100.100.206:49124
+2021-01-20 17:31:16,207 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,203 INFO  [net] New incoming connection from 10.100.100.206:40584
+2021-01-20 17:31:16,203 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,203 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,214 INFO  [net] New incoming connection from 10.100.100.206:38864
+2021-01-20 17:31:16,214 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,214 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,207 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,204 INFO  [net] New incoming connection from 10.100.100.206:43122
+2021-01-20 17:31:16,204 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,204 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,195 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,195 INFO  [app] Using special apollo client: true
+2021-01-20 17:31:16,202 INFO  [net] New incoming connection from 10.100.100.206:43164
+2021-01-20 17:31:16,202 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:31:16,203 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:02,484 INFO  [app] Successfully decoded the config file
+2021-01-20 17:32:02,507 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,513 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,502 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,503 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,516 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,508 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,506 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,509 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,506 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,497 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,505 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,505 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,509 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,516 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,508 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,518 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,511 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,498 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,508 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,506 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,508 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,519 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,512 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,500 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,509 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:02,508 INFO  [consensus] Nothing to commit
+2021-01-20 17:32:08,759 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1611163922, tv_nsec: 503752473 }
+2021-01-20 17:32:08,759 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1611163928, tv_nsec: 759774411 }
+2021-01-20 17:32:08,776 INFO  [statistics] DP[Throughput]: 127884.6218777438
+2021-01-20 17:32:08,776 INFO  [statistics] DP[Latency]: 96.6605407918765
+2021-01-20 17:32:08,787 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-20 17:32:08,807 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,813 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,802 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,817 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,806 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,806 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,797 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,810 WARN  [peer] Disconnected from peer
+2021-01-20 17:32:08,805 WARN  [peer] Disconnected from peer
+DP[Delay]: 500
+Using: apollo testdata/b400-p0-f4 500 client-apollo
+Setting up: 18.191.211.127
+Setting up: 3.137.191.244
+Setting up: 3.132.213.238
+2021-01-20 17:32:16,495 INFO  [app] Successfully decoded the config file
+Setting up: 18.191.244.126
+2021-01-20 17:32:17,002 INFO  [app] Successfully decoded the config file
+Setting up: 3.128.87.167
+2021-01-20 17:32:17,506 INFO  [app] Successfully decoded the config file
+Setting up: 18.217.95.135
+2021-01-20 17:32:17,966 INFO  [app] Successfully decoded the config file
+Setting up: 3.131.153.239
+2021-01-20 17:32:18,455 INFO  [app] Successfully decoded the config file
+Setting up: 18.221.117.195
+2021-01-20 17:32:18,993 INFO  [app] Successfully decoded the config file
+Setting up: 18.218.183.114
+2021-01-20 17:32:19,499 INFO  [app] Successfully decoded the config file
+2021-01-20 17:32:20,017 INFO  [app] Successfully decoded the config file
+2021-01-20 17:32:20,494 INFO  [app] Successfully decoded the config file
+2021-01-20 17:32:30,496 INFO  [net] New incoming connection from 10.100.100.17:37238
+2021-01-20 17:32:30,498 INFO  [net] New incoming connection from 10.100.100.17:47758
+2021-01-20 17:32:30,497 INFO  [net] New incoming connection from 10.100.100.17:52500
+2021-01-20 17:32:30,509 INFO  [net] New incoming connection from 10.100.100.17:41850
+2021-01-20 17:32:30,504 INFO  [net] New incoming connection from 10.100.100.17:52300
+2021-01-20 17:32:30,488 INFO  [net] New incoming connection from 10.100.100.17:42594
+2021-01-20 17:32:30,501 INFO  [net] New incoming connection from 10.100.100.17:36404
+2021-01-20 17:32:30,493 INFO  [net] New incoming connection from 10.100.100.17:46074
+2021-01-20 17:32:30,993 INFO  [net] New incoming connection from 10.100.100.210:44740
+2021-01-20 17:32:30,994 INFO  [net] New incoming connection from 10.100.100.210:32982
+2021-01-20 17:32:31,002 INFO  [net] New incoming connection from 10.100.100.210:48186
+2021-01-20 17:32:30,984 INFO  [net] New incoming connection from 10.100.100.210:37062
+2021-01-20 17:32:30,997 INFO  [net] New incoming connection from 10.100.100.210:59872
+2021-01-20 17:32:30,994 INFO  [net] New incoming connection from 10.100.100.210:49398
+2021-01-20 17:32:30,990 INFO  [net] New incoming connection from 10.100.100.210:46742
+2021-01-20 17:32:30,994 INFO  [net] New incoming connection from 10.100.100.210:47790
+2021-01-20 17:32:31,513 INFO  [net] New incoming connection from 10.100.100.84:60030
+2021-01-20 17:32:31,512 INFO  [net] New incoming connection from 10.100.100.84:60500
+2021-01-20 17:32:31,524 INFO  [net] New incoming connection from 10.100.100.84:54560
+2021-01-20 17:32:31,521 INFO  [net] New incoming connection from 10.100.100.84:58900
+2021-01-20 17:32:31,514 INFO  [net] New incoming connection from 10.100.100.84:41988
+2021-01-20 17:32:31,504 INFO  [net] New incoming connection from 10.100.100.84:33064
+2021-01-20 17:32:31,514 INFO  [net] New incoming connection from 10.100.100.84:41436
+2021-01-20 17:32:31,517 INFO  [net] New incoming connection from 10.100.100.84:33860
+2021-01-20 17:32:31,968 INFO  [net] New incoming connection from 10.100.100.69:53342
+2021-01-20 17:32:31,970 INFO  [net] New incoming connection from 10.100.100.69:58846
+2021-01-20 17:32:31,973 INFO  [net] New incoming connection from 10.100.100.69:40310
+2021-01-20 17:32:31,977 INFO  [net] New incoming connection from 10.100.100.69:38834
+2021-01-20 17:32:31,965 INFO  [net] New incoming connection from 10.100.100.69:40622
+2021-01-20 17:32:31,970 INFO  [net] New incoming connection from 10.100.100.69:43934
+2021-01-20 17:32:31,961 INFO  [net] New incoming connection from 10.100.100.69:42512
+2021-01-20 17:32:31,981 INFO  [net] New incoming connection from 10.100.100.69:52094
+2021-01-20 17:32:32,460 INFO  [net] New incoming connection from 10.100.100.100:40882
+2021-01-20 17:32:32,459 INFO  [net] New incoming connection from 10.100.100.100:37490
+2021-01-20 17:32:32,470 INFO  [net] New incoming connection from 10.100.100.100:48092
+2021-01-20 17:32:32,467 INFO  [net] New incoming connection from 10.100.100.100:47446
+2021-01-20 17:32:32,455 INFO  [net] New incoming connection from 10.100.100.100:48696
+2021-01-20 17:32:32,463 INFO  [net] New incoming connection from 10.100.100.100:38572
+2021-01-20 17:32:32,450 INFO  [net] New incoming connection from 10.100.100.100:37938
+2021-01-20 17:32:32,460 INFO  [net] New incoming connection from 10.100.100.100:56916
+2021-01-20 17:32:32,995 INFO  [net] New incoming connection from 10.100.100.43:35278
+2021-01-20 17:32:32,996 INFO  [net] New incoming connection from 10.100.100.43:58028
+2021-01-20 17:32:33,003 INFO  [net] New incoming connection from 10.100.100.43:58032
+2021-01-20 17:32:32,992 INFO  [net] New incoming connection from 10.100.100.43:38774
+2021-01-20 17:32:32,997 INFO  [net] New incoming connection from 10.100.100.43:51572
+2021-01-20 17:32:33,000 INFO  [net] New incoming connection from 10.100.100.43:36958
+2021-01-20 17:32:32,986 INFO  [net] New incoming connection from 10.100.100.43:42426
+2021-01-20 17:32:33,007 INFO  [net] New incoming connection from 10.100.100.43:40284
+2021-01-20 17:32:33,495 INFO  [net] New incoming connection from 10.100.100.174:36264
+2021-01-20 17:32:33,493 INFO  [net] New incoming connection from 10.100.100.174:57472
+2021-01-20 17:32:33,495 INFO  [net] New incoming connection from 10.100.100.174:60110
+2021-01-20 17:32:33,506 INFO  [net] New incoming connection from 10.100.100.174:54604
+2021-01-20 17:32:33,495 INFO  [net] New incoming connection from 10.100.100.174:43764
+2021-01-20 17:32:33,490 INFO  [net] New incoming connection from 10.100.100.174:49020
+2021-01-20 17:32:33,486 INFO  [net] New incoming connection from 10.100.100.174:33998
+2021-01-20 17:32:33,499 INFO  [net] New incoming connection from 10.100.100.174:43356
+2021-01-20 17:32:34,016 INFO  [net] New incoming connection from 10.100.100.9:59508
+2021-01-20 17:32:34,016 INFO  [net] New incoming connection from 10.100.100.9:58928
+2021-01-20 17:32:34,012 INFO  [net] New incoming connection from 10.100.100.9:44158
+2021-01-20 17:32:34,016 INFO  [net] New incoming connection from 10.100.100.9:45348
+2021-01-20 17:32:34,007 INFO  [net] New incoming connection from 10.100.100.9:51948
+2021-01-20 17:32:34,018 INFO  [net] New incoming connection from 10.100.100.9:56724
+2021-01-20 17:32:34,027 INFO  [net] New incoming connection from 10.100.100.9:46478
+2021-01-20 17:32:34,024 INFO  [net] New incoming connection from 10.100.100.9:52582
+2021-01-20 17:32:34,505 INFO  [net] New incoming connection from 10.100.100.206:43186
+2021-01-20 17:32:34,506 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,506 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,507 INFO  [net] New incoming connection from 10.100.100.206:43138
+2021-01-20 17:32:34,507 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,507 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,506 INFO  [net] New incoming connection from 10.100.100.206:40600
+2021-01-20 17:32:34,506 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,502 INFO  [net] New incoming connection from 10.100.100.206:47162
+2021-01-20 17:32:34,502 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,502 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,507 INFO  [net] New incoming connection from 10.100.100.206:58934
+2021-01-20 17:32:34,506 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,518 INFO  [net] New incoming connection from 10.100.100.206:38882
+2021-01-20 17:32:34,518 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,518 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,514 INFO  [net] New incoming connection from 10.100.100.206:34002
+2021-01-20 17:32:34,514 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,514 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,507 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,507 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,498 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,498 INFO  [app] Using special apollo client: true
+2021-01-20 17:32:34,510 INFO  [net] New incoming connection from 10.100.100.206:49140
+2021-01-20 17:32:34,510 INFO  [net] Connected to all nodes in the protocol
+2021-01-20 17:32:34,510 INFO  [app] Using special apollo client: true
+2021-01-20 17:33:20,492 INFO  [app] Successfully decoded the config file
+2021-01-20 17:33:20,510 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,511 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,522 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,511 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,513 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,519 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,502 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,512 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,507 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,509 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,526 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,522 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,515 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,518 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,505 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,516 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,517 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,527 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,523 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,511 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,507 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:20,520 INFO  [consensus] Nothing to commit
+2021-01-20 17:33:26,355 INFO  [statistics] DP[Start]: SystemTime { tv_sec: 1611164000, tv_nsec: 508407148 }
+2021-01-20 17:33:26,355 INFO  [statistics] DP[End]: SystemTime { tv_sec: 1611164006, tv_nsec: 355175491 }
+2021-01-20 17:33:26,372 INFO  [statistics] DP[Throughput]: 131909.4506152901
+2021-01-20 17:33:26,372 INFO  [statistics] DP[Latency]: 211.87925222108697
+2021-01-20 17:33:26,386 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-20 17:33:26,404 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,406 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,417 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,396 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,406 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,413 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,401 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,410 WARN  [peer] Disconnected from peer
+2021-01-20 17:33:26,407 WARN  [peer] Disconnected from peer

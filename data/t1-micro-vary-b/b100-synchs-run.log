@@ -1,0 +1,203 @@
+DP[Window]: 200
+2021-01-06 21:41:16,757 INFO  [config] Talking to servers: {1: "10.100.100.5:4001", 0: "0.0.0.0:4000", 2: "10.100.100.247:4002"}
+Successfully decoded the config file
+2021-01-06 21:41:17,304 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 1: "0.0.0.0:4001", 0: "10.100.100.110:4000"}
+Successfully decoded the config file
+2021-01-06 21:41:17,852 INFO  [config] Talking to servers: {0: "10.100.100.110:4000", 2: "0.0.0.0:4002", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 21:41:21,747 INFO  [net] New incoming connection from 10.100.100.110:48858
+2021-01-06 21:41:21,749 INFO  [net] New incoming connection from 10.100.100.110:51046
+2021-01-06 21:41:22,307 INFO  [net] New incoming connection from 10.100.100.5:57712
+2021-01-06 21:41:22,321 INFO  [net] New incoming connection from 10.100.100.5:45552
+2021-01-06 21:41:22,856 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:41:22,868 INFO  [net] New incoming connection from 10.100.100.247:41786
+2021-01-06 21:41:22,868 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:41:22,859 INFO  [net] New incoming connection from 10.100.100.247:54858
+2021-01-06 21:41:22,859 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:41:23,844 INFO  [app] using log level INFO, got input 0
+2021-01-06 21:41:23,844 INFO  [config] Talking to servers: {0: "10.100.100.110:10000", 1: "10.100.100.5:10001", 2: "10.100.100.247:10002"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 21:50:21,934 INFO  [statistics] DP[Throughput]: 1858.8348037939056
+2021-01-06 21:50:21,934 INFO  [statistics] DP[Latency]: 106.51438756124388
+2021-01-06 21:50:21,940 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 21:50:21,950 WARN  [peer] Disconnected from peer
+2021-01-06 21:50:21,951 WARN  [peer] Disconnected from peer
+2021-01-06 21:50:21,961 WARN  [peer] Disconnected from peer
+DP[Window]: 500
+2021-01-06 21:50:26,545 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 0: "0.0.0.0:4000", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 21:50:27,051 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 1: "0.0.0.0:4001", 0: "10.100.100.110:4000"}
+Successfully decoded the config file
+2021-01-06 21:50:27,559 INFO  [config] Talking to servers: {0: "10.100.100.110:4000", 1: "10.100.100.5:4001", 2: "0.0.0.0:4002"}
+Successfully decoded the config file
+2021-01-06 21:50:31,535 INFO  [net] New incoming connection from 10.100.100.110:48860
+2021-01-06 21:50:31,538 INFO  [net] New incoming connection from 10.100.100.110:51052
+2021-01-06 21:50:32,051 INFO  [net] New incoming connection from 10.100.100.5:57716
+2021-01-06 21:50:32,064 INFO  [net] New incoming connection from 10.100.100.5:45556
+2021-01-06 21:50:32,562 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:50:32,573 INFO  [net] New incoming connection from 10.100.100.247:41790
+2021-01-06 21:50:32,574 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:50:32,564 INFO  [net] New incoming connection from 10.100.100.247:54862
+2021-01-06 21:50:32,564 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:50:32,587 INFO  [app] using log level INFO, got input 0
+2021-01-06 21:50:32,587 INFO  [config] Talking to servers: {1: "10.100.100.5:10001", 2: "10.100.100.247:10002", 0: "10.100.100.110:10000"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 21:54:24,552 INFO  [statistics] DP[Throughput]: 4318.314513973003
+2021-01-06 21:54:24,552 INFO  [statistics] DP[Latency]: 113.93882611738826
+2021-01-06 21:54:24,595 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 21:54:24,652 WARN  [peer] Disconnected from peer
+2021-01-06 21:54:24,642 WARN  [peer] Disconnected from peer
+2021-01-06 21:54:24,644 WARN  [peer] Disconnected from peer
+DP[Window]: 1000
+2021-01-06 21:54:29,399 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 1: "10.100.100.5:4001", 0: "0.0.0.0:4000"}
+Successfully decoded the config file
+2021-01-06 21:54:29,736 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 0: "10.100.100.110:4000", 1: "0.0.0.0:4001"}
+Successfully decoded the config file
+2021-01-06 21:54:30,225 INFO  [config] Talking to servers: {1: "10.100.100.5:4001", 0: "10.100.100.110:4000", 2: "0.0.0.0:4002"}
+Successfully decoded the config file
+2021-01-06 21:54:34,392 INFO  [net] New incoming connection from 10.100.100.110:48864
+2021-01-06 21:54:34,394 INFO  [net] New incoming connection from 10.100.100.110:51056
+2021-01-06 21:54:34,737 INFO  [net] New incoming connection from 10.100.100.5:57720
+2021-01-06 21:54:34,748 INFO  [net] New incoming connection from 10.100.100.5:45560
+2021-01-06 21:54:35,229 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:54:35,239 INFO  [net] New incoming connection from 10.100.100.247:41796
+2021-01-06 21:54:35,239 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:54:35,231 INFO  [net] New incoming connection from 10.100.100.247:54864
+2021-01-06 21:54:35,231 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:54:36,715 INFO  [app] using log level INFO, got input 0
+2021-01-06 21:54:36,715 INFO  [config] Talking to servers: {0: "10.100.100.110:10000", 1: "10.100.100.5:10001", 2: "10.100.100.247:10002"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 21:57:07,591 INFO  [statistics] DP[Throughput]: 6648.034141101337
+2021-01-06 21:57:07,591 INFO  [statistics] DP[Latency]: 145.73751224877512
+2021-01-06 21:57:07,680 WARN  [peer] Disconnected from peer
+2021-01-06 21:57:07,670 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 21:57:07,690 WARN  [peer] Disconnected from peer
+2021-01-06 21:57:07,682 WARN  [peer] Disconnected from peer
+DP[Window]: 2000
+2021-01-06 21:57:12,322 INFO  [config] Talking to servers: {1: "10.100.100.5:4001", 0: "0.0.0.0:4000", 2: "10.100.100.247:4002"}
+Successfully decoded the config file
+2021-01-06 21:57:12,817 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.247:4002", 0: "10.100.100.110:4000"}
+Successfully decoded the config file
+2021-01-06 21:57:13,311 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.110:4000", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 21:57:17,316 INFO  [net] New incoming connection from 10.100.100.110:48870
+2021-01-06 21:57:17,317 INFO  [net] New incoming connection from 10.100.100.110:51058
+2021-01-06 21:57:17,818 INFO  [net] New incoming connection from 10.100.100.5:57724
+2021-01-06 21:57:17,829 INFO  [net] New incoming connection from 10.100.100.5:45564
+2021-01-06 21:57:18,314 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:57:18,323 INFO  [net] New incoming connection from 10.100.100.247:41798
+2021-01-06 21:57:18,323 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:57:18,316 INFO  [net] New incoming connection from 10.100.100.247:54870
+2021-01-06 21:57:18,316 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 21:57:19,698 INFO  [app] using log level INFO, got input 0
+2021-01-06 21:57:19,698 INFO  [config] Talking to servers: {1: "10.100.100.5:10001", 2: "10.100.100.247:10002", 0: "10.100.100.110:10000"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 22:00:31,550 INFO  [statistics] DP[Throughput]: 5216.829700391532
+2021-01-06 22:00:31,550 INFO  [statistics] DP[Latency]: 375.8664613538646
+2021-01-06 22:00:31,556 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 22:00:31,578 WARN  [peer] Disconnected from peer
+2021-01-06 22:00:31,588 WARN  [peer] Disconnected from peer
+2021-01-06 22:00:31,580 WARN  [peer] Disconnected from peer
+DP[Window]: 4000
+2021-01-06 22:00:37,023 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.5:4001", 2: "10.100.100.247:4002"}
+Successfully decoded the config file
+2021-01-06 22:00:38,038 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 0: "10.100.100.110:4000", 1: "0.0.0.0:4001"}
+Successfully decoded the config file
+2021-01-06 22:00:39,004 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.110:4000", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 22:00:42,018 INFO  [net] New incoming connection from 10.100.100.110:51062
+2021-01-06 22:00:42,017 INFO  [net] New incoming connection from 10.100.100.110:48874
+2021-01-06 22:00:43,039 INFO  [net] New incoming connection from 10.100.100.5:57728
+2021-01-06 22:00:43,049 INFO  [net] New incoming connection from 10.100.100.5:45568
+2021-01-06 22:00:44,017 INFO  [net] New incoming connection from 10.100.100.247:41802
+2021-01-06 22:00:44,017 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:00:44,010 INFO  [net] New incoming connection from 10.100.100.247:54874
+2021-01-06 22:00:44,010 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:00:44,007 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:00:44,504 INFO  [app] using log level INFO, got input 0
+2021-01-06 22:00:44,504 INFO  [config] Talking to servers: {1: "10.100.100.5:10001", 2: "10.100.100.247:10002", 0: "10.100.100.110:10000"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 22:05:47,428 INFO  [statistics] DP[Throughput]: 3309.4096977453464
+2021-01-06 22:05:47,465 INFO  [statistics] DP[Latency]: 1187.4045425457455
+2021-01-06 22:05:47,592 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 22:05:47,602 WARN  [peer] Disconnected from peer
+2021-01-06 22:05:47,612 WARN  [peer] Disconnected from peer
+2021-01-06 22:05:47,604 WARN  [peer] Disconnected from peer
+DP[Window]: 7000
+2021-01-06 22:05:52,227 INFO  [config] Talking to servers: {0: "0.0.0.0:4000", 1: "10.100.100.5:4001", 2: "10.100.100.247:4002"}
+Successfully decoded the config file
+2021-01-06 22:05:52,754 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.247:4002", 0: "10.100.100.110:4000"}
+Successfully decoded the config file
+2021-01-06 22:05:53,252 INFO  [config] Talking to servers: {1: "10.100.100.5:4001", 0: "10.100.100.110:4000", 2: "0.0.0.0:4002"}
+Successfully decoded the config file
+2021-01-06 22:05:57,221 INFO  [net] New incoming connection from 10.100.100.110:48878
+2021-01-06 22:05:57,222 INFO  [net] New incoming connection from 10.100.100.110:51066
+2021-01-06 22:05:57,765 INFO  [net] New incoming connection from 10.100.100.5:45572
+2021-01-06 22:05:57,755 INFO  [net] New incoming connection from 10.100.100.5:57732
+2021-01-06 22:05:58,255 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:05:58,265 INFO  [net] New incoming connection from 10.100.100.247:41808
+2021-01-06 22:05:58,265 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:05:58,256 INFO  [net] New incoming connection from 10.100.100.247:54876
+2021-01-06 22:05:58,257 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:05:59,666 INFO  [app] using log level INFO, got input 0
+2021-01-06 22:05:59,703 INFO  [config] Talking to servers: {2: "10.100.100.247:10002", 1: "10.100.100.5:10001", 0: "10.100.100.110:10000"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 22:10:11,574 INFO  [statistics] DP[Throughput]: 3971.5741747765155
+2021-01-06 22:10:11,586 INFO  [statistics] DP[Latency]: 1744.2254614538547
+2021-01-06 22:10:11,608 WARN  [peer] Disconnected from peer
+2021-01-06 22:10:11,618 WARN  [peer] Disconnected from peer
+2021-01-06 22:10:11,597 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 22:10:11,610 ERROR [peer] Failed to write a message to a peer
+DP[Window]: 10000
+2021-01-06 22:10:16,180 INFO  [config] Talking to servers: {2: "10.100.100.247:4002", 0: "0.0.0.0:4000", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 22:10:16,908 INFO  [config] Talking to servers: {1: "0.0.0.0:4001", 2: "10.100.100.247:4002", 0: "10.100.100.110:4000"}
+Successfully decoded the config file
+2021-01-06 22:10:17,408 INFO  [config] Talking to servers: {2: "0.0.0.0:4002", 0: "10.100.100.110:4000", 1: "10.100.100.5:4001"}
+Successfully decoded the config file
+2021-01-06 22:10:21,175 INFO  [net] New incoming connection from 10.100.100.110:51072
+2021-01-06 22:10:21,172 INFO  [net] New incoming connection from 10.100.100.110:48880
+2021-01-06 22:10:21,919 INFO  [net] New incoming connection from 10.100.100.5:45576
+2021-01-06 22:10:21,908 INFO  [net] New incoming connection from 10.100.100.5:57736
+2021-01-06 22:10:22,421 INFO  [net] New incoming connection from 10.100.100.247:41810
+2021-01-06 22:10:22,421 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:10:22,413 INFO  [net] New incoming connection from 10.100.100.247:54882
+2021-01-06 22:10:22,413 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:10:22,411 INFO  [net] Connected to all nodes in the protocol
+Started timers
+2021-01-06 22:10:23,740 INFO  [app] using log level INFO, got input 0
+2021-01-06 22:10:23,740 INFO  [config] Talking to servers: {0: "10.100.100.110:10000", 1: "10.100.100.5:10001", 2: "10.100.100.247:10002"}
+Successfully decoded the config file
+Successfully decoded the config file
+2021-01-06 22:15:36,624 INFO  [statistics] DP[Throughput]: 3203.0409117421527
+2021-01-06 22:15:36,624 INFO  [statistics] DP[Latency]: 3074.1315768423156
+2021-01-06 22:15:36,825 INFO  [consensus] Closing tx producer channel: channel closed
+2021-01-06 22:15:36,847 WARN  [peer] Disconnected from peer
+2021-01-06 22:15:36,839 WARN  [peer] Disconnected from peer
+2021-01-06 22:15:36,837 WARN  [peer] Disconnected from peer
