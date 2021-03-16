@@ -1,5 +1,5 @@
-use serde::{Serialize};
-use serde_json::{to_vec_pretty};
+use serde::Serialize;
+use serde_json::to_vec_pretty;
 use toml::to_string_pretty;
 use serde_yaml::to_writer;
 use std::fs::File;
@@ -18,7 +18,7 @@ pub fn file_to_ips(filename:String) -> Vec<String> {
 
 pub fn to_bytes(obj: &impl Serialize) -> Vec<u8> {
     let bytes = bincode::serialize(obj).expect("Failed to serialize object");
-    return bytes.to_vec();
+    bytes
 }
 
 pub fn write_json(filename:String, obj :&impl Serialize) {

@@ -5,9 +5,7 @@ use tokio_util::codec::{
     length_delimited::LengthDelimitedCodec
 };
 use bytes::{Bytes, BytesMut};
-use std::io::{
-    Error,
-};
+use std::io::Error;
 use std::sync::Arc;
 use std::borrow::Borrow;
 
