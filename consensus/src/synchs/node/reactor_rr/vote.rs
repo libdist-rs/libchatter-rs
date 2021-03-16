@@ -3,7 +3,8 @@ use crypto::hash::Hash;
 use super::{context::Context, phase::Phase, proposal::{
         on_receive_proposal
     }};
-use std::{collections::{HashMap, HashSet}, sync::Arc};
+use std::sync::Arc;
+use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 
 pub async fn add_vote(c: Certificate, hash: Hash, cx: &mut Context) {
     debug_assert!(c.votes.len() == 1);
@@ -16,7 +17,7 @@ pub async fn add_vote(c: Certificate, hash: Hash, cx: &mut Context) {
     let mut cert_map = match cx.vote_map.remove(&hash) {
         None => {
             log::debug!("First vote");
-            let mut c_map = HashMap::new();
+            let mut c_map = HashMap::default();
             c_map.insert(c.votes[0].origin, c);
             // First vote
             cx.vote_map.insert(hash, c_map);
@@ -65,11 +66,11 @@ pub async fn on_recv_quit_view(v: View, cert: Certificate, cx: &mut Context) {
         return;
     }
 
-    let mut unique_votes = HashSet::new();
+    let mut unique_votes = HashSet::default();
     for vote in &cert.votes {
         let pk = match cx.pub_key_map.get(&vote.origin) {
             None => {
-                log::warn!(target:"consensus", "vote from an unknown origin");
+                log::warn!("vote from an unknown origin");
                 return;
             },
             Some(x) => x,
@@ -121,7 +122,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     log::debug!("Received a vote message: {:?}", c);
 
     if c.votes.len() != 1 {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Invalid number of votes in vote message");
         return false;
     }
@@ -130,7 +131,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     let vote = &c.votes[0];
     let pk = match cx.pub_key_map.get(&vote.origin) {
         None => {
-            log::warn!(target:"consensus", "vote from an unknown origin");
+            log::warn!("vote from an unknown origin");
             return decision;
         },
         Some(x) => x,
@@ -146,12 +147,12 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     }
 
     if !pk.verify(&sign_data, &vote.auth) {
-        log::warn!(target:"consensus", "vote not correctly signed");
+        log::warn!("vote not correctly signed");
         return decision;
     }
 
     if !cx.storage.is_delivered_by_hash(&blk_hash) {
-        log::debug!(target:"consensus", 
+        log::debug!(
             "Received vote for an undelivered block");
         return decision;
     }
@@ -166,7 +167,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
         // We already have a block at this height
         // Check if this is an equivocation
         if x.hash != blk_hash {
-            log::warn!(target:"consensus", "Got an equivocation: {:?}, {:?}", 
+            log::warn!("Got an equivocation: {:?}, {:?}", 
                 x.header, new_block.header);
             return decision;
         } 

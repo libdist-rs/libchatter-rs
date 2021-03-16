@@ -1,0 +1,27 @@
+name: client (synchs)
+version: "1.0"
+author: hermitsage <dth.bht@gmail.com>
+about: Sync HotStuff client
+args:
+    - config:
+        short: c
+        long: config
+        help: the config file containing startup information
+        takes_value: true
+        required: true
+    - debug:
+        short: v
+        multiple: true
+        help: sets the verbosity level
+    - metrics:
+        short: m
+        takes_value: true
+    - window:
+        short: w
+        takes_value: true
+    - ip:
+        short: i
+        long: ip
+        help: A file containing all the ips for the other servers
+        takes_value: true
+        required: true

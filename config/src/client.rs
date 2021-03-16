@@ -4,7 +4,7 @@ use serde::{
 };
 use types::Replica;
 use crypto::Algorithm;
-use std::collections::HashMap;
+use fnv::FnvHashMap as HashMap;
 use super::{
     ParseError,
     is_valid_replica
@@ -73,12 +73,12 @@ impl Client {
 
     pub fn new() -> Client {
         Client {
-            net_map: HashMap::new(),
+            net_map: HashMap::default(),
             block_size: 0,
             crypto_alg: Algorithm::ED25519,
             num_faults: 0,
             num_nodes:0,
-            server_pk: HashMap::new(),
+            server_pk: HashMap::default(),
             payload:0,
             root_cert:Vec::new(),
         }
@@ -130,6 +130,6 @@ impl Client {
             self.net_map.insert(idx, ip);
             idx += 1;
         }
-        log::info!(target:"config", "Talking to servers: {:?}", self.net_map);
+        log::info!("Talking to servers: {:?}", self.net_map);
     }
 }

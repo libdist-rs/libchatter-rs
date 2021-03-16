@@ -6,7 +6,7 @@ use std::sync::Arc;
 
 pub async fn handle_request(sender:Replica, req_id: u64, h: Hash, cx: &mut Context)
 {
-    log::debug!(target:"consensus", 
+    log::debug!(
         "Got a request from {} for {:?}", sender, h);
     let p_arc = match cx.prop_chain.get(&h) {
         None => return,

@@ -1,5 +1,4 @@
 use std::time::SystemTime;
-use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 use config::Client;
 use types::{synchs::ClientMsg, Transaction};
 use tokio::sync::mpsc::channel;
@@ -10,6 +9,7 @@ use std::sync::Arc;
 use util::codec::EnCodec;
 use types::synchs::ClientMsgCodec as Codec;
 use net::tokio_manager::TlsClient as NClient;
+use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 
 pub async fn start(
     c:&Client, 

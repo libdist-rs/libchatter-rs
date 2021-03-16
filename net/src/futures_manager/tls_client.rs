@@ -21,8 +21,8 @@ use tokio_util::codec::{
 use std::{
     io::Error, 
     sync::Arc, 
-    collections::HashMap
 };
+use fnv::FnvHashMap as HashMap;
 use types::{
     Replica, 
     WireReady
@@ -104,7 +104,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
         // I hope no new peers will be added later
         let n = self.peers.len();
         let peers = self.peers.clone();
-        // log::trace!(target:"net", "Using peers: {:?}", peers);
+        // log::trace!("Using peers: {:?}", peers);
         tokio::spawn(async move {
             loop {
                 tokio::select! {
@@ -132,7 +132,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                     },
                     recvd_msg_opt = stream.next() => {
                         if let None = recvd_msg_opt {
-                            log::warn!(target:"manager", "Unified stream closed");
+                            log::warn!("Unified stream closed");
                             std::process::exit(0);
                             // TODO: Handle client disconnection from the server
                         }

@@ -21,7 +21,7 @@ pub async fn reactor_rr(
     mut cli_recv: UnboundedReceiver<Transaction>
 ) {
     let d2 = std::time::Duration::from_millis(2*config.delta);
-    log::debug!(target:"consensus", "Started timers");
+    log::debug!("Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     // Start event loop
     loop {
@@ -44,7 +44,7 @@ pub async fn reactor_rr(
                         }
                     }
                     ProtocolMsg::VoteMsg(v,p) => {
-                        log::debug!(target:"consensus", 
+                        log::debug!(
                         "Received a vote for a proposal: {:?}", v);
                         on_vote(v, p, &mut cx).await;
                     }
@@ -62,7 +62,7 @@ pub async fn reactor_rr(
             },
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
-                log::trace!(target:"consensus", 
+                log::trace!(
                     "Got tx from the client: {:?}", tx_opt);
                 let tx = match tx_opt {
                     None => break,
@@ -76,10 +76,10 @@ pub async fn reactor_rr(
                 // Got something from the timer
                 match b_opt {
                     None => {
-                        log::info!(target:"consensus", "Timer finished");
+                        log::info!("Timer finished");
                     },
                     Some(Ok(b)) => {
-                        log::debug!(target:"consensus", "Timer fired");
+                        log::debug!("Timer fired");
                         on_commit(b.into_inner(), &mut cx).await;
                     },
                     Some(Err(e)) => {

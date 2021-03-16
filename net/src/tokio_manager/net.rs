@@ -8,10 +8,10 @@ use types::{
     WireReady
 };
 use std::{
-    collections::HashMap, 
     marker::PhantomData, 
     sync::Arc
 };
+use fnv::FnvHashMap as HashMap;
 
 pub struct TlsClient<I,O> 
 where I:WireReady,
@@ -34,7 +34,7 @@ O:WireReady,
             .expect("Failed to add the root certificate");
 
         Self{
-            peers: HashMap::new(),
+            peers: HashMap::default(),
             phantom: PhantomData,
             connector: TlsConnector::from(Arc::new(config)),
         }

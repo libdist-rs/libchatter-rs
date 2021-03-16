@@ -8,15 +8,15 @@ use futures::SinkExt;
 
 pub async fn process_message(cx:&mut Context) 
 {
-    log::debug!(target:"message", "Handling proposals {:?}", cx.prop_buf);
+    log::debug!("Handling proposals {:?}", cx.prop_buf);
     while let Some((sender, p)) = cx.prop_buf.pop_front() {
         delivery_check(sender, p, cx).await;
     }
-    log::debug!(target:"message", "Handling relays {:?}", cx.relay_buf);
+    log::debug!("Handling relays {:?}", cx.relay_buf);
     while let Some((sender, p)) = cx.relay_buf.pop_front() {
         delivery_check(sender, p, cx).await;
     }
-    log::debug!(target:"message", "Handling others: {:?}", cx.other_buf);
+    log::debug!("Handling others: {:?}", cx.other_buf);
     while let Some((sender, pmsg)) = cx.other_buf.pop_front() {
         match pmsg {
             ProtocolMsg::Request(rid, h) => {
@@ -49,14 +49,14 @@ pub fn handle_message(sender: Replica, message: ProtocolMsg, cx: &mut Context) {
 pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
     // Check if the proposals are already processed
     if cx.prop_chain.contains_key(&p.block_hash) {
-        log::debug!(target:"message", "Already handled {:?} before", p);
+        log::debug!("Already handled {:?} before", p);
         return;
     }
 
     // Check if the parents are delivered
     let parent_hash = p.block.as_ref().map(|b| b.header.prev);
     if parent_hash.is_none() {
-        log::debug!(target:"consensus", 
+        log::debug!(
             "Block unknown: {:?}", p.block_hash);
         let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, p.block_hash));
         cx.prop_waiting.insert(p.block_hash);
@@ -80,7 +80,7 @@ pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
 
     // Mark this block as delivered, since all its parents are delivered
     let block = p.block.clone().unwrap();
-    log::debug!(target:"consensus", 
+    log::debug!(
         "Block {} is delivered", block.header.height);
     cx.storage.add_delivered_block(block);
 

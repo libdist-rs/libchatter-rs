@@ -49,7 +49,7 @@ pub async fn on_recv_status(cert: Certificate, cx: &mut Context) {
         }
         let pk = match cx.pub_key_map.get(&vote.origin) {
             None => {
-                log::warn!(target:"consensus", "vote from an unknown origin");
+                log::warn!("vote from an unknown origin");
                 return;
             },
             Some(x) => x,

@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 use super::{context::Context, phase::Phase};
 use crypto::hash::EMPTY_HASH;
 use types::{
@@ -14,7 +14,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     let new_block = p.block.clone().unwrap();
     // Check if the author is correct
     if new_block.header.author != cx.next_leader() {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Got a proposal from an incorrect leader for the view");
         return false;
     }
@@ -23,14 +23,14 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     if new_block.header.height == 1 &&
         new_block.header.prev != EMPTY_HASH 
     {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "First block does not extend the genesis block");
         return false;
     }
 
     // Check if the block has sufficient votes
     if new_block.header.height > 1 && p.cert.votes.len() <= cx.num_faults {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Insufficient votes in the proposal, rejecting the proposal");
         return false;
     }
@@ -38,7 +38,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     // Check signature for the proposal
     let pk = cx.pub_key_map.get(&new_block.header.author).unwrap();
     if !pk.verify(&new_block.hash, &p.proof) {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Got an incorrectly signed block");
         return false;
     }
@@ -53,11 +53,11 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
         return true;
     }
     // Otherwise check if all the parent certificates are correctly signed
-    let mut uniq_votes = HashSet::with_capacity(cx.num_faults+1);
+    let mut uniq_votes = HashSet::with_capacity_and_hasher(cx.num_faults+1, Default::default());
     if let CertType::Vote(v, h) = &p.cert.msg {
         // Check if vote message is the same as that in the proposal
         if *h != new_block.header.prev {
-            log::warn!(target:"consensus", 
+            log::warn!(
                     "The message of the vote is not the hash of the proposed block's prev");
             return false;
         } else if *v < cx.view-1 {
@@ -70,19 +70,19 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
         return false;
     }
 
-    log::debug!(target:"consensus", "Checkig certificate: {:?}", p.cert);
+    log::debug!("Checkig certificate: {:?}", p.cert);
     let data = util::io::to_bytes(&p.cert.msg);
     for v in &p.cert.votes {
         // check signature
         let pk = match cx.pub_key_map.get(&v.origin) {
             None => {
-                log::warn!(target:"consensus", "Invalid vote origin");
+                log::warn!("Invalid vote origin");
                 return false;
             }
             Some(x) => x,
         };
         if !pk.verify(&data, &v.auth) {
-            log::warn!(target:"consensus", "Invalid vote signature: {:?}", v);
+            log::warn!("Invalid vote signature: {:?}", v);
             return false;
         }
         // Add this unique vote
@@ -94,7 +94,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
     }
     // Is it extending the last known parent?
     if new_block.header.prev != cx.last_seen_block.hash {
-        log::warn!(target:"consensus", "Parent undelivered");
+        log::warn!("Parent undelivered");
         return false;
         // TODO add delivery
     }
@@ -117,7 +117,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     // On receiving a proposal, check if it is in the same view
     // Check for the validity
     if !check_proposal(p.clone(), cx) {
-        log::warn!(target:"consensus", "Proposal checking failed");
+        log::warn!("Proposal checking failed");
         return decision;
     }
     return on_new_valid_proposal(p, cx).await;
@@ -130,7 +130,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     // Is the parent delivered?
     if !cx.storage.is_delivered_by_hash(&new_block.header.prev) 
     {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "We do not have the parent for this block");
         // TODO: Request and Deliver blocks
         return decision;
@@ -157,7 +157,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     };
 
     // Add self vote to the map
-    let mut new_map = HashMap::new();
+    let mut new_map = HashMap::default();
     new_map.insert(cx.myid, my_vote.clone());
     cx.vote_map.insert(new_block.hash, new_map);
 
@@ -172,7 +172,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
         if let Err(e) = ship.send(
             (ship_nodes, msg))
         {
-            log::warn!(target:"consensus", 
+            log::warn!(
                 "failed to send vote: {}", e);
         }
     });
@@ -188,12 +188,12 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
 
     // wait for voting to finish?
     if let Err(e) = vote_ship.await {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Failed to send vote to the others:{}", e);
         return decision;
     }
 
-    log::debug!(target:"consensus", "Sent a vote to all the nodes");
+    log::debug!("Sent a vote to all the nodes");
     decision
 }
 
@@ -273,7 +273,7 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) -> Arc<Pro
     // A) NOOOO! I learnt it painfully! If the leader commits now, then it must
     // also acknowledge the client now, which becomes a problem!
     // Commit normally, and tell the client after 2\Delta
-    let mut new_vote_map = HashMap::new();
+    let mut new_vote_map = HashMap::default();
     new_vote_map.insert(cx.myid,new_block_cert);
     cx.vote_map.insert(new_block_ref.hash, new_vote_map);
     cx.height = new_block_ref.header.height;

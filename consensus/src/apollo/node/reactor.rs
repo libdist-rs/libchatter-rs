@@ -59,7 +59,7 @@ pub async fn reactor(
             pmsg_opt = net_recv.next() => {
                 // Received a protocol message
                 if let None = pmsg_opt {
-                    log::error!(target:"node", 
+                    log::error!(
                         "Protocol message channel closed");
                     std::process::exit(0);
                 }

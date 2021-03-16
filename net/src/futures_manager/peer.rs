@@ -85,10 +85,10 @@ O: WireReady+'static + Clone+Sync,
                         std::process::exit(0);
                     }
                     if let Err(_e) = internal_ch_in_send.send(InternalInMsg::Ready).await {
-                        log::error!(target:"peer", "Failed to send a message to the internal channel");
+                        log::error!("Failed to send a message to the internal channel");
                     }
                 } else {
-                    log::error!(target:"peer", "Internal message channel closed");
+                    log::error!("Internal message channel closed");
                     std::process::exit(0);
                 }
             }
@@ -101,19 +101,19 @@ O: WireReady+'static + Clone+Sync,
                 tokio::select! {
                     in_opt = reader.next() => {
                         if let None = in_opt {
-                            log::warn!(target:"peer", "Disconnected from peer");
+                            log::warn!("Disconnected from peer");
                             std::process::exit(0);
                         }
                         if let Some(Ok(x)) = in_opt {
                             if let Err(_e) = send_in.send(x).await {
-                                log::warn!(target:"peer", "Error in sending out");
+                                log::warn!("Error in sending out");
                                 std::process::exit(0);
                             }
                         }
                     },
                     out_opt = recv_out.next() => {
                         if let None = out_opt {
-                            log::warn!(target:"peer", "Error in receiving message");
+                            log::warn!("Error in receiving message");
                             std::process::exit(0);
                         }
                         if let Some(x) = out_opt {
@@ -122,7 +122,7 @@ O: WireReady+'static + Clone+Sync,
                             if ready {
                                 buffers.push_back(x);
                                 if let Err(_e) = internal_ch_out_send.send(InternalOutMsg::Batch(buffers)).await {
-                                    log::warn!(target:"net", "Error in sending message out");
+                                    log::warn!("Error in sending message out");
                                     std::process::exit(0);
                                 }
                                 buffers = VecDeque::new();
@@ -135,7 +135,7 @@ O: WireReady+'static + Clone+Sync,
                         if let Some(InternalInMsg::Ready) = internal_ch_recv_opt {
                             ready = true;                                
                         } else {
-                            log::warn!(target:"net", "Error in getting message from int channel");
+                            log::warn!("Error in getting message from int channel");
                             std::process::exit(0);
                         }
                     }

@@ -19,13 +19,13 @@ pub async fn on_commit(p: Arc<Propose>, cx:&mut Context) {
         let payload = Payload::with_payload(payload);
         let msg = ClientMsg::RawNewBlock(
             ship_b.as_ref().clone(), payload);
-        log::debug!(target:"consensus", 
+        log::debug!(
             "sending msg: {:?} to the client", msg);
         if let Err(e) = ship.send(Arc::new(msg)) {
             println!("Error sending the block to the client: {}", e);
             ()
         }
-        log::debug!(target:"consensus", 
+        log::debug!(
             "Committed block and sending it to the client now");
     });
     cx.last_committed_block_ht = b.header.height;

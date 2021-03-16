@@ -1,8 +1,9 @@
 use std::{
-    collections::HashMap, 
     sync::Arc,
     pin::Pin,
 };
+use fnv::FnvHashMap as HashMap;
+
 use log::info;
 use tokio::{
     io::{
@@ -70,13 +71,13 @@ O:WireReady + Clone + Sync + 'static + Unpin,
             .await
             .expect("Failed to collect all readers");
         
-        info!(target:"net", "Connected to all nodes in the protocol");
+        info!("Connected to all nodes in the protocol");
 
         // Create a unified reader stream
         let mut unified_stream = StreamMap::new();
 
         // Create write end points for peers
-        let mut writer_end_points = HashMap::new();
+        let mut writer_end_points = HashMap::default();
         for i in 0..self.num_nodes {
             if i == self.my_id {
                 continue;
@@ -148,7 +149,7 @@ async fn start_conn_all(
     .expect("Failed to listen to protocol messages");
     let node_addr = node_addr.clone();
     let n = node_addr.len();
-    let mut readers = HashMap::with_capacity(n);
+    let mut readers = HashMap::with_capacity_and_hasher(n,Default::default());
     for _i in 1..n {
         // Connect to a new node
         let (mut conn, from) = listener.accept()
@@ -158,7 +159,7 @@ async fn start_conn_all(
         // Set nodelay
         conn.set_nodelay(true).expect("Failed to set nodelay");
         
-        info!(target:"net", "New incoming connection from {}", from);
+        info!("New incoming connection from {}", from);
         
         // Get the ID of the connector
         let mut id_buf = [0 as u8; ID_BYTE_SIZE];
@@ -188,7 +189,7 @@ async fn outgoing_conn(
     // Create bytes of the ID
     let id_buf = my_id.to_be_bytes();
     
-    let mut writers = HashMap::new();
+    let mut writers = HashMap::default();
     for (id, addr) in node_addr {
         let id = *id as Replica;
         
@@ -232,20 +233,20 @@ async fn protocol_event_loop<I,O>(
         tokio::select!{
             opt_in = reading_net.next() => {
                 if let None = opt_in {
-                    log::error!(target:"manager", 
+                    log::error!(
                         "Failed to read a protocol message from a peer");
                     std::process::exit(0);
                 }
                 let (id, msg) = opt_in.unwrap();
                 if let Err(e) = in_send.send((id, msg.init())) {
-                    log::error!(target:"manager", 
+                    log::error!(
                         "Failed to send a protocol message outside the network, with error {}", e);
                     std::process::exit(0);
                 }
             },
             opt_out = out_recv.recv() => {
                 if let None = opt_out {
-                    log::error!(target:"manager", 
+                    log::error!(
                         "Failed to read a protocol message to send outside the network");
                     std::process::exit(0);
                 }
@@ -259,7 +260,7 @@ async fn protocol_event_loop<I,O>(
                 } else {
                     for (id, writer) in &writers {
                         if let Err(e) = writer.send(msg.clone()) {
-                            log::error!(target:"net", "Failed to send msg to peer {} with error {}", id, e);
+                            log::error!("Failed to send msg to peer {} with error {}", id, e);
                             std::process::exit(0);
                             // TODO Handle disconnection from peer
                         }
@@ -284,19 +285,19 @@ async fn cli_manager(addr: String) -> UnboundedReceiver<TcpStream> {
             let conn_opt = cli_sock.accept().await;
             let conn = match conn_opt {
                 Err(e) => {
-                    log::error!(target:"manager", "Failed to accept a connection from the client with error {}", e);
+                    log::error!("Failed to accept a connection from the client with error {}", e);
                     continue;
                 },
                 Ok((conn, from)) => {
                     if let Err(e) = conn.set_nodelay(true) {
-                        log::error!(target:"manager", "Failed to set high speed socket for client: {} with error {}", from, e);
+                        log::error!("Failed to set high speed socket for client: {} with error {}", from, e);
                         continue;
                     }
                     conn
                 }
             };
             if let Err(e) = conn_ch_send.send(conn) {
-                log::error!(target:"manager", "Failed to send out new client connection: {}", e);
+                log::error!("Failed to send out new client connection: {}", e);
                 std::process::exit(0);
             }
         }
@@ -316,27 +317,27 @@ O: WireReady + Clone+Unpin+Sync + 'static,
 {
     let mut read_stream:StreamMap<usize, Pin<Box<dyn Stream<Item=I>+Send>>> = StreamMap::new();
     let mut client_id = 0 as usize;
-    let mut writers = HashMap::new();
+    let mut writers = HashMap::default();
     let mut to_remove = Vec::new();
     loop {
         tokio::select! {
             // We received something from the client
             in_opt = read_stream.next(), if read_stream.len() > 0 => {
                 if let None = in_opt {
-                    log::warn!(target:"manager", "Read stream closed");
+                    log::warn!("Read stream closed");
                     std::process::exit(0);
                 }
                 let (_id, msg) = in_opt.unwrap();
                 let msg = msg.init();
                 if let Err(e) = new_in_ch.send(msg) {
-                    log::error!(target:"manager", "Failed to send an incoming client message outside, with error {}", e);
+                    log::error!("Failed to send an incoming client message outside, with error {}", e);
                     std::process::exit(0);
                 }
             },
             // We have a new client
             conn_opt = new_conn_ch.recv() => {
                 if let None = conn_opt {
-                    log::warn!(target:"manager", "New connection channel closed");
+                    log::warn!("New connection channel closed");
                     std::process::exit(0);
                 }
                 let conn = conn_opt.unwrap();
@@ -361,7 +362,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
             // We have a new message to send to the clients
             out_opt = send_out_ch.recv() => {
                 if let None = out_opt {
-                    log::warn!(target:"manager", "Send out channel closed");
+                    log::warn!("Send out channel closed");
                     std::process::exit(0);
                 }
                 let msg = out_opt.unwrap();

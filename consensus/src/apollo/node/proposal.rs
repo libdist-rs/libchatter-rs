@@ -12,14 +12,14 @@ use futures::SinkExt;
 ///
 /// Note: This will only execute once all the block for of the proposal is delivered
 pub async fn on_receive_proposal(p: Propose, cx: &mut Context) {
-    log::debug!(target:"consensus", 
+    log::debug!(
         "Handling proposal: {:?}", p);
 
     let block = p.block.clone().unwrap();
 
     // Check if the hash in the proposal is for the correct block
     if crypto::hash::ser_and_hash(block.as_ref()) != p.block_hash {
-        log::warn!(target:"consensus", 
+        log::warn!(
             "Invalid hash in the proposal");
         return;
     }
@@ -103,7 +103,7 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
             "Server channel closed with error: {}", e);
     };
 
-    log::debug!(target:"consensus", 
+    log::debug!(
         "Proposing block with hash: {:?}", p.block.clone().unwrap().hash);
 
     let p_arc = Arc::new(p);

@@ -6,12 +6,10 @@ use config::{Node, Client};
 use clap::{load_yaml, App};
 use types::Replica;
 use crypto::Algorithm;
-use std::{
-    collections::HashMap, 
-    error::Error
-};
+use std::error::Error;
 use util::io::*;
 use openssl::{asn1::Asn1Time, bn::{BigNum, MsbOption}, error::ErrorStack, hash::MessageDigest, pkey::{PKey, PKeyRef, Private}, rsa::Rsa, x509::{X509, X509NameBuilder, X509Ref, X509Req, X509ReqBuilder, extension::{AuthorityKeyIdentifier, BasicConstraints, KeyUsage, SubjectAlternativeName, SubjectKeyIdentifier}}};
+use fnv::FnvHashMap as HashMap;
 
 fn new_root_cert() -> Result<(X509, PKey<Private>), ErrorStack> {
     let rsa = Rsa::generate(2048)?;
@@ -184,8 +182,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let mut node:Vec<Node> = Vec::with_capacity(num_nodes);
 
-    let mut pk = HashMap::new();
-    let mut ip = HashMap::new();
+    let mut pk = HashMap::default();
+    let mut ip = HashMap::default();
 
     let (cert, privkey) = new_root_cert()?;
 

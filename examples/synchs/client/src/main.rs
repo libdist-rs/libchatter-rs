@@ -32,7 +32,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         2 | _ => log::set_max_level(log::LevelFilter::Trace),
     }
     
-    log::info!(target:"app", "using log level {}, got input {}", 
+    log::info!("using log level {}, got input {}", 
         log::max_level(), x);
 
     config

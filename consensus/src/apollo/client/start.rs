@@ -1,7 +1,5 @@
-use std::{
-    collections::HashMap, 
-    time::SystemTime
-};
+use std::time::SystemTime;
+use fnv::FnvHashMap as HashMap;
 
 use config::Client;
 use types::{Block, ClientMsg, GENESIS_BLOCK, Height, Transaction};
@@ -32,10 +30,10 @@ impl Context {
         Context {
             pending: 0,
             num_cmds: 0,
-            time_map: HashMap::new(),
-            latency_map: HashMap::new(),
-            height_map: HashMap::new(),
-            hash_map: HashMap::new(),
+            time_map: HashMap::default(),
+            latency_map: HashMap::default(),
+            height_map: HashMap::default(),
+            hash_map: HashMap::default(),
             last_committed_block: genesis_arc.clone(),
             last_block: genesis_arc,
         }
@@ -64,7 +62,7 @@ pub async fn start(
             let tx = new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
-                log::info!(target:"consensus","Closing tx producer channel: {}", e);
+                log::info!("Closing tx producer channel: {}", e);
                 std::process::exit(0);
             }
         }
@@ -77,7 +75,7 @@ pub async fn start(
     cx.num_cmds = 0;
     // Send f blocks worth of transactions first
     let first_send = c.num_faults*c.block_size;
-    log::debug!(target:"consensus", "Sending {} number of transactions initially", first_send);
+    log::debug!("Sending {} number of transactions initially", first_send);
     let mut net_send_p = net_send.clone();
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
@@ -87,7 +85,7 @@ pub async fn start(
     recv
     });
     let first_recv = c.num_faults;
-    log::debug!(target:"consensus", "Receiving first {} blocks", first_recv);
+    log::debug!("Receiving first {} blocks", first_recv);
     let first_recv_b = tokio::spawn(async move{
         let mut cx = cx;
         for _ in 0..(first_recv) {
@@ -114,7 +112,7 @@ pub async fn start(
     let val = first_recv_b.await.unwrap();
     let mut net_recv = val.0;
     let mut cx = val.1;
-    log::debug!(target:"consensus", "Finished sending first few blocks");
+    log::debug!("Finished sending first few blocks");
     let mut new_blocks = Vec::new();
     let start = SystemTime::now();
     loop {

@@ -15,7 +15,7 @@ pub async fn on_finish_propose(
 ) 
 {
     log::debug!(target:"consensus","Finishing proposal: {:?}", p_arc);
-    log::debug!(target:"consensus", 
+    log::debug!(
         "Last seen {:?}", cx.last_seen_block.header);
 
     let new_block = p_arc.block.clone().unwrap();
@@ -53,7 +53,7 @@ pub async fn on_finish_propose(
                 msg
             )
         ).await {
-            log::error!(target:"consensus", 
+            log::error!(
                 "Failed to forward proposal to the next leader: {}", e);
         }
     });
@@ -83,11 +83,11 @@ pub async fn on_finish_propose(
         println!("Failed to forward the block to the next leader: {}", e);
     }
 
-    log::debug!(target:"consensus", "Next leader is: {}", cx.next_leader());
+    log::debug!("Next leader is: {}", cx.next_leader());
 }
 
 pub fn do_commit(cx: &mut Context) -> Option<Arc<Block>> {
-    log::debug!(target:"consensus", "Trying to commit blocks");
+    log::debug!("Trying to commit blocks");
 
     let new_block = cx.last_seen_block.as_ref();
     let last_seen_height = new_block.header.height;
@@ -97,7 +97,7 @@ pub fn do_commit(cx: &mut Context) -> Option<Arc<Block>> {
     // Or return if new_block_ht < f 
     if last_seen_height < cx.num_faults as Height
     {
-        log::info!(target:"consensus", "Nothing to commit");
+        log::info!("Nothing to commit");
         return None;
     }
 
@@ -122,7 +122,7 @@ pub fn do_commit(cx: &mut Context) -> Option<Arc<Block>> {
 /// Based on whether or not Apollo client is enabled or not, notify the client
 /// of the proposal
 pub async fn send_client(p_arc: Arc<Propose>, cx: &Context) {
-    log::debug!(target:"consensus", "Sending {:?} to the client", p_arc);
+    log::debug!("Sending {:?} to the client", p_arc);
 
     let mut cli_send_p = cx.cli_send.clone();
     let ship_p= p_arc.clone();

@@ -4,7 +4,7 @@ use tokio_util::time::DelayQueue;
 use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ClientMsg, synchs::ProtocolMsg, synchs::Propose};
 use config::Node;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
-use std::collections::HashMap;
+use fnv::FnvHashMap as HashMap;
 use crypto::hash::Hash;
 use std::sync::Arc;
 
@@ -71,7 +71,7 @@ impl Context {
                 }
                 _ => panic!("Unimplemented algorithm"),
             },
-            pub_key_map: HashMap::new(),
+            pub_key_map: HashMap::default(),
             myid: config.id,
             num_faults: config.num_faults,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
@@ -79,10 +79,10 @@ impl Context {
             last_leader: 0,
             last_seen_block: genesis_arc.clone(),
             last_committed_block_ht: 0,
-            cert_map: HashMap::new(),
+            cert_map: HashMap::default(),
             view: 0,
             last_seen_cert: Arc::new(Certificate::empty_cert()),
-            vote_map: HashMap::new(),
+            vote_map: HashMap::default(),
             payload:config.payload*config.block_size,
             commit_queue: tokio_util::time::DelayQueue::new(),
             phase: if config.id == 1 { Phase::Propose } else { Phase::ProposeWait },

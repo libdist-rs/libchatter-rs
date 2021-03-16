@@ -1,4 +1,9 @@
-use std::{collections::{HashMap, HashSet, VecDeque}, time::SystemTime};
+use std::{
+    collections::VecDeque, 
+    time::SystemTime
+};
+use fnv::FnvHashMap as HashMap;
+use fnv::FnvHashSet as HashSet;
 use config::Client;
 use types::{Block, ClientMsg, Transaction};
 use futures::channel::mpsc::channel;
@@ -36,10 +41,10 @@ impl Context {
     pub fn new() -> Self {
         Self {
             pending: 0,
-            time_map: HashMap::new(),
-            count_map: HashMap::new(),
-            finished_map: HashSet::new(),
-            latency_map: HashMap::new(),
+            time_map: HashMap::default(),
+            count_map: HashMap::default(),
+            finished_map: HashSet::default(),
+            latency_map: HashMap::default(),
             num_cmds: 0,
         }
     }
@@ -66,7 +71,7 @@ pub async fn start(
             let tx = new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
-                log::info!(target:"consensus", "Closing tx producer channel: {}", e);
+                log::info!("Closing tx producer channel: {}", e);
                 std::process::exit(0);
             }
         }
@@ -90,10 +95,10 @@ pub async fn start(
                         .expect("Failed to send to the client");
                     cx.time_map.insert(hash, SystemTime::now());
                     cx.pending -= 1;
-                    log::trace!(target:"consensus", 
+                    log::trace!(
                         "Sending transaction to the leader");
                 } else {
-                    log::info!(target:"client", "Finished sending messages");
+                    log::info!("Finished sending messages");
                     std::process::exit(0);
                 }
             },
@@ -107,13 +112,13 @@ pub async fn start(
                 } else {
                     panic!("Got invalid block from the nodes: {:?}", block_opt);
                 };
-                log::trace!(target:"consensus", "got a block:{:?}",b);
+                log::trace!("got a block:{:?}",b);
                 new_blocks.push_back(b);
                 while let Ok(Some((_, ClientMsg::NewBlock(p,_)))) = net_recv.try_next() {
                     new_blocks.push_back(p.block.clone().unwrap());
                 }
                 process_blocks(c, now, &mut new_blocks, &mut cx);
-                log::debug!(target:"consensus", "Sending {} commands to the nodes", cx.pending);
+                log::debug!("Sending {} commands to the nodes", cx.pending);
             }
         }
         if cx.num_cmds > m as u128 {
@@ -147,7 +152,7 @@ fn process_blocks(c:&Client, now: SystemTime, new_blocks: &mut VecDeque<Arc<Bloc
             if let Some(old) = cx.time_map.get(t) {
                 cx.latency_map.insert(t.clone(), (old.clone(),now));
             } else {
-                log::warn!(target:"consensus", 
+                log::warn!(
                     "transaction not found in time map");
                 cx.num_cmds -= 1;
             }
