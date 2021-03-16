@@ -5,7 +5,7 @@ use types::{synchs::ClientMsg, Transaction};
 use tokio::sync::mpsc::channel;
 use util::new_dummy_tx;
 use crypto::hash::Hash;
-use crate::statistics;
+use consensus::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
 use types::synchs::ClientMsgCodec as Codec;

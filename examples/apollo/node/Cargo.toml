@@ -10,9 +10,10 @@ edition = "2018"
 config = { package = "config", path="../../../config"}
 util = { package = "util", path="../../../util"}
 consensus = { package = "consensus", path="../../../consensus"}
+apollo = { package = "apollo", path="../../../consensus/apollo"}
 types = { package = "types", path="../../../types"}
 net = { package = "net", path="../../../net"}
-clap = {version = "~2.27.0", features = ["yaml"]}
+clap = {version = "2", features = ["yaml"]}
 tokio = { version = "1.0", features = ["full"] }
 futures = "0.3.8"
 log="*"

@@ -2,11 +2,6 @@ use std::time::SystemTime;
 use fnv::FnvHashMap as HashMap;
 use crypto::hash::Hash;
 
-pub mod apollo;
-pub mod synchs;
-pub mod dummy;
-pub mod optsync;
-
 pub fn statistics(
     now: SystemTime, 
     start:SystemTime, 

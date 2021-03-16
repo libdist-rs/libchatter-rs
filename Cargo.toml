@@ -21,5 +21,9 @@ members = [
     "examples/opt-sync/client",
     "examples/echo-exp/echo",
     "examples/echo-exp/ping",
-    "examples/apollo/normal-client"
+    "examples/apollo/normal-client",
+    "consensus/apollo",
+    "consensus/dummy",
+    "consensus/optsync",
+    "consensus/synchs",
 ]

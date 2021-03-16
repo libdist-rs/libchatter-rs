@@ -1,6 +1,6 @@
 use clap::{load_yaml, App};
 use config::Client;
-use std::{error::Error};
+use std::error::Error;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -45,7 +45,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     
-    consensus::apollo::client::start(
+    apollo::client::start(
         &config, metrics, window).await;
     Ok(())
 }

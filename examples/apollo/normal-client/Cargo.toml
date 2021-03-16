@@ -14,3 +14,4 @@ config = { package = "config", path="../../../config"}
 log="0.4"
 util = { package = "util", path="../../../util"}
 consensus = { package = "consensus", path="../../../consensus"}
+apollo = { package = "apollo", path="../../../consensus/apollo"}

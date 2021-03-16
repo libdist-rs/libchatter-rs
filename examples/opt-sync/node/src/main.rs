@@ -97,7 +97,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     
     // Start the Sync HotStuff consensus protocol
     core_rt.block_on(
-        consensus::synchs::node::reactor(
+        optsync::node::reactor(
             &config,
             net_send,
             net_recv,

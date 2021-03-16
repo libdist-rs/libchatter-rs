@@ -9,7 +9,7 @@ use types::{Block, ClientMsg, Transaction};
 use futures::channel::mpsc::channel;
 use util::new_dummy_tx;
 use crypto::hash::Hash;
-use crate::statistics;
+use consensus::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
 use types::ClientMsgCodec as Codec;

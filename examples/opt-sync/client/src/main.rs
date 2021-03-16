@@ -47,7 +47,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     
-    consensus::optsync::client::start(
+    optsync::client::start(
         &config, metrics, window).await;
     Ok(())
 }

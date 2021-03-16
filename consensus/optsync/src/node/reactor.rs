@@ -1,4 +1,4 @@
-/// The core consensus module used for Sync HotStuff
+/// The core consensus module used for Opt Sync
 /// 
 /// The reactor reacts to all the messages from the network, and talks to the
 /// clients accordingly.
