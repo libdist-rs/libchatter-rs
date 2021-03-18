@@ -5,8 +5,6 @@ M=${4:-"1000000"}
 
 cd libchatter-rs
 
-# sleep 30
-
 ./target/release/$CLI_TYPE \
     --config $TESTDIR/client.json \
     -i cli_ip_file \

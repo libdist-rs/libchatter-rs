@@ -9,10 +9,13 @@
 IN_FILE=${1:-"scripts/aws/aws_ips.log"}
 TESTDIR=${2:-"testdata/b100-n3"}
 W=${3:-"50000"}
+# TYPE is one of ["apollo", "synchs", "synchs-rr", "optsync"]
 TYPE=${4:-"apollo"}
+# CLI_TYPE is one of ["default","client-apollo","client-synchs","normal-client-apollo"]
 CLI_TYPE=${5:-"default"}
 DELAY=${6:-"50"}
 M=${M:-"1000000"}
+SLEEP_TIME=10
 
 if [ $TYPE == "synchs" ]; then 
     CLI_TYPE="client-$TYPE"
@@ -25,6 +28,8 @@ elif [ $TYPE == "apollo" ]; then
     else 
         CLI_TYPE="normal-client-apollo"
     fi
+elif [ $TYPE == "optsync" ]; then
+    CLI_TYPE="client-$TYPE"
 fi
 
 while IFS= read -r line; do
@@ -36,12 +41,11 @@ N=3
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr'
-    # sleep 1
+    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr node-optsync client-optsync'
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY $CLI_TYPE &
 done
 
-sleep 150
+sleep $SLEEP_TIME
 
 echo "Using M: $M"
 
