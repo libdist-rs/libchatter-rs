@@ -1,14 +1,14 @@
+use log::debug;
 use types::{synchs::ClientMsg, Payload, synchs::Propose};
-
-use super::context::Context;
+use crate::node::context::Context;
 use std::sync::Arc;
-// use futures::SinkExt;
 
 /// Commit this block and all its ancestors
 pub async fn on_commit(p: Arc<Propose>, cx:&mut Context) {
     let b = p.block.as_ref().unwrap();
     // Check if we have already committed this block and its ancestors
     if cx.storage.is_committed_by_hash(&b.hash) {
+        debug!("Already committed via a different path");
         return;
     }
 

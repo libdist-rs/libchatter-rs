@@ -1,41 +1,42 @@
+use log::debug;
 use types::{CertType, Certificate, synchs::Propose};
 use crypto::hash::Hash;
-use super::{
-    context::Context, 
-    proposal::{
-        on_receive_proposal
-    }
-};
+use crate::node::context::Context;
 use std::sync::Arc;
 
-pub fn add_vote(mut c: Certificate, hash: Hash, cx: &mut Context) {
-    if cx.cert_map.contains_key(&hash) {
-        log::debug!(target:"consensus","Extra vote received. discarding");
-        return;
-    }
+pub fn add_vote(mut c: Certificate, hash: Hash, cx: &mut Context) -> bool {
+    let mut commit_decision = false;
+    debug!("Waiting for {} votes",(3*cx.num_nodes)/4 as usize);
+
     let mut cert = match cx.vote_map.remove(&hash) {
         None => {
+            debug!("First vote");
             // First vote
             cx.vote_map.insert(hash, c);
-            return;
+            return commit_decision;
         },
         Some(cert) => cert,
     };
     // Add the vote to the certificate
     cert.votes.push(c.votes.pop().unwrap());
     // Promote it to a full certificate if it has f+1 signatures
+    if cert.votes.len() >= (3*cx.num_nodes)/4 {
+        cx.resp_cert.insert(hash, Arc::new(cert.clone()));
+        // Responsive certificate found
+        debug!("Responsive certificate formed");
+        commit_decision = true;
+    }// A weird case for n=3. Optimistic responsiveness requires 2 signatures and even normal certificates require 2 signatures, hence the separation of the two if conditions.
+    // If n>3, we can save a nanocycles by combining this into 1 if-else if-else branch or even match on cert.votes.len() for case >3n/4, case >f default.
     if cert.votes.len() > cx.num_faults {
         cx.cert_map.insert(hash, cert.clone());
-        cx.last_seen_cert = cert;
-    } else {
-        cx.vote_map.insert(hash, cert);
+        cx.last_seen_cert = cert.clone();
     }
+    cx.vote_map.insert(hash, cert);
+    return commit_decision;
 }
 
-pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
+pub async fn on_vote(c: Certificate, p: &mut Propose, cx: &mut Context) -> bool {
     let decision = false;
-    log::debug!(
-        "Received a vote message: {:?}", c);
 
     if c.votes.len() != 1 {
         log::warn!(
@@ -58,7 +59,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     };
 
     if blk_hash != p.block_hash {
-        log::warn!(target:"consensus","Invalid vote message received");
+        log::warn!("Invalid vote message received");
         return decision;
     }
 
@@ -87,17 +88,20 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
                 x.header, new_block.header);
             return decision;
         } 
-        // else {
-        //     log::debug!("We have seen this block before, and have already voted for it");
-        //     // add vote for this
-        //     return decision;
-        // }
     }
 
+    // Already have a responsive certificate, discard extra votes
+    if cx.resp_cert.contains_key(&blk_hash) {
+        log::debug!("Extra vote received. discarding");
+        return decision;
+    }
+
+    log::debug!("Adding a vote");
     // This is a vote for a new delivered block
-    add_vote(c, blk_hash, cx);
+    let commit_decision = add_vote(c, blk_hash, cx);
 
     // Let the reactor know that we have to start the commit timers for this
     // block, if this is a new proposal
-    return on_receive_proposal(Arc::new(p), cx).await;
+    // return on_receive_proposal(Arc::new(p), cx).await;
+    return commit_decision;
 }

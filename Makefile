@@ -48,3 +48,10 @@ synchs-release:
 
 synchs:
 	cargo build --package=node-synchs --package=client-synchs
+
+# ============== OPT SYNC ===============================================
+optsync-release: 
+	cargo build --package=node-optsync --package=client-optsync --release
+
+optsync:
+	cargo build --package=node-optsync --package=client-optsync

@@ -40,7 +40,7 @@ pub async fn on_receive_proposal(p: Propose, cx: &mut Context) {
     // for repeated blocks.
     if let Some(x) = cx.storage.delivered_block_from_ht(block.header.height) {
         if (x.hash != block.hash) && x.header.author == block.header.author {
-            log::warn!(target:"consensus",
+            log::warn!(
                 "Equivocation detected: {:?}, {:?}", cx.storage.delivered_block_from_ht(block.header.height), block);
             return;
         }
@@ -99,7 +99,7 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
             ProtocolMsg::RawNewProposal(ship_p,new_block)
         ))
     ).await {
-        log::warn!(target:"consensus",
+        log::warn!(
             "Server channel closed with error: {}", e);
     };
 

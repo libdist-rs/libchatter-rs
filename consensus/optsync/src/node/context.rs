@@ -1,12 +1,11 @@
 use tokio::sync::mpsc::UnboundedSender;
 use tokio_util::time::DelayQueue;
-// use futures::channel::mpsc::UnboundedSender;
 use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ClientMsg, synchs::ProtocolMsg, synchs::Propose};
 use config::Node;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 use fnv::FnvHashMap as HashMap;
 use crypto::hash::Hash;
-use std::sync::Arc;
+use std::{sync::Arc, time::Duration};
 
 pub struct Context {
     /// Networking context
@@ -18,6 +17,7 @@ pub struct Context {
     pub myid: Replica,
     pub num_faults: usize,
     pub payload:usize,
+    pub d2: Duration,
 
     /// PKI
     pub my_secret_key: Keypair,
@@ -25,6 +25,7 @@ pub struct Context {
 
     /// State context
     pub storage: Storage,
+    pub resp_cert: HashMap<Hash, Arc<Certificate>>, // Contains responsive certificates
     pub cert_map: HashMap<Hash, Certificate>, // Contains all certified blocks
     pub height: Height,
     pub last_leader: Replica,
@@ -67,12 +68,14 @@ impl Context {
             },
             pub_key_map: HashMap::default(),
             myid: config.id,
+            d2: std::time::Duration::from_millis(2*config.delta),
             num_faults: config.num_faults,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
             height: 0,
             last_leader: 0,
             last_seen_block: genesis_arc.clone(),
             last_committed_block_ht: 0,
+            resp_cert: HashMap::default(),
             cert_map: HashMap::default(),
             view: 0,
             last_seen_cert: Certificate::empty_cert(),

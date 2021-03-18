@@ -58,7 +58,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         2 | _ => log::set_max_level(log::LevelFilter::Trace),
     }
 
-    log::info!(target:"app","Successfully decoded the config file");
+    log::info!("Successfully decoded the config file");
 
     let cli_net_rt = tokio::runtime::Builder::new_multi_thread()
         .enable_all()
@@ -100,7 +100,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .build()
         .unwrap();
     
-    log::info!(target:"app","Using special apollo client: {}", is_client_apollo_enabled);
+    log::info!("Using special apollo client: {}", is_client_apollo_enabled);
     // Start the Apollo consensus protocol
     core_rt.block_on(
         apollo::node::reactor(

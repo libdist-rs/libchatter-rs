@@ -111,7 +111,7 @@ O:WireReady + Clone + Sync + 'static + Unpin,
                 tokio::select! {
                     to_send_opt = in_recv.recv() => {
                         if let None = to_send_opt {
-                            log::warn!(target:"manager","Network receiver closed");
+                            log::warn!("Network receiver closed");
                             std::process::exit(0);
                             // Must have occurred because someone dropped the
                             // receiver, indicating a shutdown

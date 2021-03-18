@@ -104,7 +104,7 @@ pub async fn start(
             },
             block_opt = net_recv.next() => {
                 let now = SystemTime::now();
-                log::debug!(target:"consensus",
+                log::debug!(
                     "Got {:?} from the network", block_opt);
                 // Got something from the network
                 let b = if let Some((_, ClientMsg::NewBlock(p,_))) = block_opt {
@@ -130,8 +130,8 @@ pub async fn start(
 }
 
 fn process_blocks(c:&Client, now: SystemTime, new_blocks: &mut VecDeque<Arc<Block>>, cx: &mut Context) {
-    log::debug!(target:"block-processor", "Processing new {:?}", new_blocks);
-    log::debug!(target:"block-processor", "Before processing: {:?}", cx);
+    log::debug!("Processing new {:?}", new_blocks);
+    log::debug!("Before processing: {:?}", cx);
     for b in new_blocks.into_iter() {
         // Check if the block is valid?
         if !cx.count_map.contains_key(&b.hash) {
@@ -159,5 +159,5 @@ fn process_blocks(c:&Client, now: SystemTime, new_blocks: &mut VecDeque<Arc<Bloc
         }
         cx.finished_map.insert(b.hash);
     }
-    log::debug!(target:"block-processor", "After processing: {:?}", cx);
+    log::debug!("After processing: {:?}", cx);
 }

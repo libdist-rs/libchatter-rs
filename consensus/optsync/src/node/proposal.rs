@@ -1,5 +1,5 @@
 use std::collections::HashSet;
-use super::context::Context;
+use crate::node::context::Context;
 use crypto::hash::EMPTY_HASH;
 use types::{
     Block, CertType, Certificate, Transaction, Vote, 
@@ -66,7 +66,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
         return false;
     }
 
-    log::debug!("Checkig certificate: {:?}", p.cert);
+    log::debug!("Checking certificate: {:?}", p.cert);
     let data = util::io::to_bytes(&p.cert.msg);
     for v in &p.cert.votes {
         // check signature
@@ -101,8 +101,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     let decision = false;
     let new_block = p.block.clone().unwrap();
 
-    log::debug!(target: "consensus", 
-        "Received a proposal: {}", new_block.header.height);
+    log::debug!("Received a proposal: {}", new_block.header.height);
 
     if cx.storage.is_delivered_by_hash(&new_block.hash) {
         log::debug!("We have already processed this block last time");
@@ -115,6 +114,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
         log::warn!("Proposal checking failed");
         return decision;
     }
+
     return on_new_valid_proposal(p, cx).await;
 }
     
@@ -147,6 +147,9 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
             my_vote.votes.push(v);
         },
     };
+    if let Some(x) = cx.vote_map.insert(p.block_hash, my_vote.clone()) {
+        panic!("Already have a vote: {:?}", x);
+    }
 
     decision = true;
 
@@ -182,7 +185,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     decision
 }
 
-pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) -> Arc<Propose> {
+pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
     // Build the proposal
     let parent = &cx.last_seen_block;
     let mut new_block = Block::with_tx(txs);
@@ -263,5 +266,7 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) -> Arc<Pro
     // The view remains the same
     broadcast.await.expect("failed to broadcast the proposal");
 
-    Arc::new(p)
+    let p = Arc::new(p);
+    // Leader setting the timer now
+    cx.commit_queue.insert(p, cx.d2);
 }

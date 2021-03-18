@@ -59,7 +59,7 @@ O: WireReady+'static + Clone+Sync,
         e: impl Encoder<Arc<O>> + Send + 'static
     ) -> Self 
     {
-        log::trace!(target:"net/peer", "Creating a new peer");
+        log::trace!("Creating a new peer");
         // channels used by the peer to talk to the sockets: 
         // the send is used to get message from the outside and send it to the
         // network
@@ -81,7 +81,7 @@ O: WireReady+'static + Clone+Sync,
                 if let Some(InternalOutMsg::Batch(to_send)) = opt {
                     let mut s = stream::iter(to_send.into_iter().map(Ok));
                     if let Err(_e) = writer.send_all(&mut s).await {
-                        log::error!(target:"peer","Failed to write a message to a peer");
+                        log::error!("Failed to write a message to a peer");
                         std::process::exit(0);
                     }
                     if let Err(_e) = internal_ch_in_send.send(InternalInMsg::Ready).await {

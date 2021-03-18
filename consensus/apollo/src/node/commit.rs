@@ -14,9 +14,8 @@ pub async fn on_finish_propose(
     cx: &mut Context
 ) 
 {
-    log::debug!(target:"consensus","Finishing proposal: {:?}", p_arc);
-    log::debug!(
-        "Last seen {:?}", cx.last_seen_block.header);
+    log::debug!("Finishing proposal: {:?}", p_arc);
+    log::debug!("Last seen {:?}", cx.last_seen_block.header);
 
     let new_block = p_arc.block.clone().unwrap();
 
@@ -129,7 +128,7 @@ pub async fn send_client(p_arc: Arc<Propose>, cx: &Context) {
     let cli_send = tokio::spawn(async move {
         let res = cli_send_p.send(ship_p).await;
         if let Err(e) = res {
-            log::error!(target:"consensus",
+            log::error!(
                 "Error sending to the clients: {}", e);
         }
     });

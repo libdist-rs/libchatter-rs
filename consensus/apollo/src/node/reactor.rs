@@ -84,7 +84,7 @@ pub async fn reactor(
         if cx.storage.get_tx_pool_size() >= block_size && 
             cx.next_leader() == myid 
         {
-            log::debug!(target:"consensus",
+            log::debug!(
                 "I {} am the leader and, I am proposing", cx.myid);
             let txs = cx.storage.cleave(block_size);
             do_propose(txs, &mut cx).await;

@@ -6,3 +6,4 @@ mod proposal;
 mod blame;
 mod vote;
 mod commit;
+mod process;

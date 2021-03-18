@@ -42,8 +42,7 @@ pub async fn reactor(
                 log::debug!(
                     "Received protocol message: {:?}", protmsg);
                 if let ProtocolMsg::NewProposal(p) = protmsg {
-                    log::debug!(
-                        "Received a proposal: {:?}", p);
+                    log::debug!("Received a proposal: {:?}", p);
                     let p = Arc::new(p);
                     let decision = on_receive_proposal(p.clone(), &mut cx).await;
                     log::debug!(

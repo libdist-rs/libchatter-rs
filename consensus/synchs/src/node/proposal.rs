@@ -66,7 +66,7 @@ pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {
         return false;
     }
 
-    log::debug!("Checkig certificate: {:?}", p.cert);
+    log::debug!("Checking certificate: {:?}", p.cert);
     let data = util::io::to_bytes(&p.cert.msg);
     for v in &p.cert.votes {
         // check signature
@@ -101,8 +101,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
     let decision = false;
     let new_block = p.block.clone().unwrap();
 
-    log::debug!(target: "consensus", 
-        "Received a proposal: {}", new_block.header.height);
+    log::debug!("Received a proposal: {}", new_block.header.height);
 
     if cx.storage.is_delivered_by_hash(&new_block.hash) {
         log::debug!("We have already processed this block last time");

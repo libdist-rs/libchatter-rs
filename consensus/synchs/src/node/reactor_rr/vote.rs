@@ -11,7 +11,7 @@ pub async fn add_vote(c: Certificate, hash: Hash, cx: &mut Context) {
     log::debug!("Adding vote {:?}", c);
 
     if cx.cert_map.contains_key(&hash) {
-        log::debug!(target:"consensus","Extra vote received. discarding");
+        log::debug!("Extra vote received. discarding");
         return;
     }
     let mut cert_map = match cx.vote_map.remove(&hash) {
@@ -142,7 +142,7 @@ pub async fn on_vote(c: Certificate, mut p: Propose, cx: &mut Context) -> bool {
     };
 
     if blk_hash != p.block_hash {
-        log::warn!(target:"consensus","Invalid vote message received");
+        log::warn!("Invalid vote message received");
         return decision;
     }
 

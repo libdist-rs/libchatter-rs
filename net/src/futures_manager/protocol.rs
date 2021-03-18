@@ -255,8 +255,7 @@ async fn protocol_event_loop<I,O>(
                 let (to, msg) = opt_out.unwrap();
                 if to < num_nodes {
                     if let Err(_e) = writers[&to].clone().send(msg).await {
-                        log::error!(target:"manager",
-                            "Failed to send msg to peer {}", to);
+                        log::error!("Failed to send msg to peer {}", to);
                         std::process::exit(0);
                     }
                 } else {
@@ -370,7 +369,7 @@ O: WireReady + Clone+Unpin+Sync + 'static,
                 let msg = out_opt.unwrap();
                 for (id, writer) in &writers {
                     if let Err(e) = writer.clone().send(msg.clone()).await {
-                        log::info!(target:"net","Disconnected from client with error: {}", e);
+                        log::info!("Disconnected from client with error: {}", e);
                         to_remove.push(*id);
                     }
                 }

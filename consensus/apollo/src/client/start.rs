@@ -133,13 +133,13 @@ pub async fn start(
             },
             block_opt = net_recv.next() => {
                 let now = SystemTime::now();
-                log::debug!(target:"consensus",
+                log::debug!(
                     "Got something from the network");
                 if let None = block_opt {
                     panic!("invalid content received from the server");
                 }
                 let (_, b) = block_opt.unwrap();
-                log::debug!(target:"consensus","Got a client message: {:?}", b);
+                log::debug!("Got a client message: {:?}", b);
                 let blk = match b {
                     ClientMsg::NewBlock(p, _pl) => p.block.unwrap(),
                     _ => continue,

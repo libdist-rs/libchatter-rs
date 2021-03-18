@@ -62,8 +62,7 @@ pub async fn start(
                 }
             },
             block_opt = net_recv.recv() => {
-                log::debug!(target:"consensus",
-                    "Got {:?} from the network", block_opt);
+                log::debug!("Got {:?} from the network", block_opt);
                 // Got something from the network
                 if let Some((_, b)) = block_opt {
                     let b = match b {

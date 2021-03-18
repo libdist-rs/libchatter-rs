@@ -9,10 +9,10 @@ use tokio::sync::mpsc::{
 };
 use types::{Replica, Transaction, synchs::ClientMsg, synchs::ProtocolMsg};
 use config::Node;
-use super::{
+use crate::node::{
     commit::on_commit, 
-    proposal::*, 
-    vote::on_vote,
+    proposal::do_propose,
+    process::process_msg,
     context::Context,
 };
 use tokio_stream::StreamExt;
@@ -25,7 +25,6 @@ pub async fn reactor(
     cli_send: UnboundedSender<Arc<ClientMsg>>,
     mut cli_recv: UnboundedReceiver<Transaction>
 ) {
-    let d2 = std::time::Duration::from_millis(2*config.delta);
     log::debug!("Started timers");
     let mut cx = Context::new(config, net_send, cli_send);
     let block_size = config.block_size;
@@ -39,24 +38,7 @@ pub async fn reactor(
                     None => break,
                     Some((_, x)) => x,
                 };
-                log::debug!(
-                    "Received protocol message: {:?}", protmsg);
-                if let ProtocolMsg::NewProposal(p) = protmsg {
-                    log::debug!(
-                        "Received a proposal: {:?}", p);
-                    let p = Arc::new(p);
-                    let decision = on_receive_proposal(p.clone(), &mut cx).await;
-                    log::debug!(
-                        "Decision for the incoming proposal is {}", decision);
-                    if decision {
-                        cx.commit_queue.insert(p, d2);
-                    }
-                }
-                else if let ProtocolMsg::VoteMsg(v,p) = protmsg {
-                    log::debug!(
-                        "Received a vote for a proposal: {:?}", v);
-                    on_vote(v, p, &mut cx).await;
-                }
+                process_msg(&mut cx, protmsg).await;
             },
             tx_opt = cli_recv.recv() => {
                 // We received a message from the client
@@ -77,7 +59,7 @@ pub async fn reactor(
                         log::info!("Timer finished");
                     },
                     Some(Ok(b)) => {
-                        log::debug!("Timer fired");
+                        log::debug!("2Delta timer finished");
                         on_commit(b.into_inner(), &mut cx).await;
                     },
                     Some(Err(e)) => {
@@ -95,9 +77,7 @@ pub async fn reactor(
         {
             log::debug!("I {} am the leader and, I am proposing", cx.myid);
             let txs = cx.storage.cleave(block_size);
-            let p = do_propose(txs, &mut cx).await;
-            // Leader setting the timer now
-            cx.commit_queue.insert(p, d2);
+            do_propose(txs, &mut cx).await;
         }
     }
 }
