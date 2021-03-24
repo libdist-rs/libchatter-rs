@@ -11,6 +11,4 @@ cd libchatter-rs
 ./target/release/node-optsync \
     --config $TESTDIR/nodes-$ID.json \
     --ip ips_file \
-    --delta "$DELAY" \
-    --sleep 5 \
-    $CLI_TYPE &
+    --sleep 5 &
