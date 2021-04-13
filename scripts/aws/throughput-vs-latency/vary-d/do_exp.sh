@@ -28,12 +28,12 @@ for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
     echo "Setting up: $ip"
-    ssh arch@$ip 'killall node-apollo node-synchs'
+    ssh arch@$ip 'killall node-apollo node-synchs node-optsync'
     # sleep 1
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY &
 done
 
-sleep 180
+sleep 120
 
 client=${ACTUAL_IPS[$N]}
 ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TESTDIR $W $CLI_TYPE
@@ -41,5 +41,5 @@ ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TE
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs'
+    ssh arch@$ip 'killall node-apollo node-synchs node-optsync'
 done

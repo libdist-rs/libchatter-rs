@@ -22,9 +22,9 @@ DELAY=50
 for f in ${F[@]};do
     N=$(( (2*$f)+1 ))
     echo "DP[Faults]: $f"
-    bash scripts/aws/throughput-vs-latency/vary-f/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$f" "$W" "synchs" "$N" "$d"
+    bash scripts/aws/throughput-vs-latency/vary-f/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$f" "$W" "optsync" "$N" "$d"
     sleep 2
-done &>> $1/$f-synchs-run.log
+done &>> $1/$f-optsync-run.log
 
 for f in ${F[@]};do
     N=$(( (2*$f)+1 ))

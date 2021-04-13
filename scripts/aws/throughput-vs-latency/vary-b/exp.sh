@@ -30,23 +30,23 @@ SW5_List=(8000 10000 20000 40000 60000 80000 100000 120000 150000)
 # ======
 # SYNCHS 
 # ======
-for w in ${SW_List[@]}; do
-    echo "DP[Window]: $w"
-    bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b100-n3" $w "synchs"
-    sleep 2
-done >> $1/b100-synchs-run.log
+# for w in ${SW_List[@]}; do
+#     echo "DP[Window]: $w"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b100-n3" $w "synchs"
+#     sleep 2
+# done >> $1/b100-synchs-run.log
 
-for w in ${SW2_List[@]}; do
-    echo "DP[Window]: $w"
-    bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b400-n3" $w "synchs"
-    sleep 2
-done >> $1/b400-synchs-run.log
+# for w in ${SW2_List[@]}; do
+#     echo "DP[Window]: $w"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b400-n3" $w "synchs"
+#     sleep 2
+# done >> $1/b400-synchs-run.log
 
-for w in ${SW3_List[@]}; do
-    echo "DP[Window]: $w"
-    bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b800-n3" $w "synchs"
-    sleep 2
-done >> $1/b800-synchs-run.log
+# for w in ${SW3_List[@]}; do
+#     echo "DP[Window]: $w"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b800-n3" $w "synchs"
+#     sleep 2
+# done >> $1/b800-synchs-run.log
 
 # for w in ${SW4_List[@]}; do
 #     echo "DP[Window]: $w"

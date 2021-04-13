@@ -1,0 +1,338 @@
+DP[Window]: 200
+2021-03-25 03:07:54,525 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:07:54,864 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:07:55,298 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:07:59,531 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44934
+2021-03-25 03:07:59,568 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55204
+2021-03-25 03:07:59,828 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40292
+2021-03-25 03:07:59,825 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60018
+2021-03-25 03:08:00,301 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:00,302 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:00,298 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40872
+2021-03-25 03:08:00,298 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:00,298 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:00,339 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36208
+2021-03-25 03:08:00,339 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:00,339 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:08:05,918 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:08:20,621 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641685, tv_nsec: 923072779 }
+2021-03-25 03:08:20,621 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641700, tv_nsec: 621294235 }
+2021-03-25 03:08:20,649 INFO  [consensus] DP[Throughput]: 68035.64655720886
+2021-03-25 03:08:20,649 INFO  [consensus] DP[Latency]: 3.236781289656131
+2021-03-25 03:08:20,666 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:08:20,662 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:08:20,703 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:08:20,665 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+DP[Window]: 500
+2021-03-25 03:08:25,588 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:25,840 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:26,533 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:30,632 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55208
+2021-03-25 03:08:30,595 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44938
+2021-03-25 03:08:30,802 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60022
+2021-03-25 03:08:30,805 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40296
+2021-03-25 03:08:31,573 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36212
+2021-03-25 03:08:31,573 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:31,573 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:31,532 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40876
+2021-03-25 03:08:31,532 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:31,533 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:31,536 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:31,536 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:08:36,261 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:08:44,927 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641716, tv_nsec: 266326633 }
+2021-03-25 03:08:44,927 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641724, tv_nsec: 927225980 }
+2021-03-25 03:08:44,955 INFO  [consensus] DP[Throughput]: 115403.25778594917
+2021-03-25 03:08:44,955 INFO  [consensus] DP[Latency]: 2.5193637593347047
+2021-03-25 03:08:44,970 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:08:45,009 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:08:44,968 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:08:44,971 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 1000
+2021-03-25 03:08:49,993 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:50,830 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:51,504 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:08:55,036 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55212
+2021-03-25 03:08:54,999 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44942
+2021-03-25 03:08:55,792 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60026
+2021-03-25 03:08:55,795 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40300
+2021-03-25 03:08:56,503 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40880
+2021-03-25 03:08:56,503 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:56,504 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:56,544 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36216
+2021-03-25 03:08:56,544 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:56,544 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:08:56,507 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:08:56,507 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:09:01,527 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:09:10,016 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641741, tv_nsec: 532128319 }
+2021-03-25 03:09:10,016 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641750, tv_nsec: 16144047 }
+2021-03-25 03:09:10,044 INFO  [consensus] DP[Throughput]: 117853.5061763384
+2021-03-25 03:09:10,044 INFO  [consensus] DP[Latency]: 2.808442289055288
+2021-03-25 03:09:10,060 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:09:10,058 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:10,098 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:10,061 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 2000
+2021-03-25 03:09:14,880 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:15,347 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:16,109 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:19,923 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55216
+2021-03-25 03:09:19,886 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44946
+2021-03-25 03:09:20,312 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40304
+2021-03-25 03:09:20,308 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60030
+2021-03-25 03:09:21,149 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36220
+2021-03-25 03:09:21,149 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:21,149 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:09:21,112 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:21,112 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:09:21,108 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40884
+2021-03-25 03:09:21,108 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:21,109 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:09:26,110 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:09:34,751 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641766, tv_nsec: 115478858 }
+2021-03-25 03:09:34,751 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641774, tv_nsec: 751935578 }
+2021-03-25 03:09:34,780 INFO  [consensus] DP[Throughput]: 115793.78354135955
+2021-03-25 03:09:34,780 INFO  [consensus] DP[Latency]: 2.9790280066556805
+2021-03-25 03:09:34,795 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:09:34,833 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:34,796 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:34,792 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 4000
+2021-03-25 03:09:39,446 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:40,145 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:40,500 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:09:44,452 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44950
+2021-03-25 03:09:44,489 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55220
+2021-03-25 03:09:45,111 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40308
+2021-03-25 03:09:45,107 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60034
+2021-03-25 03:09:45,499 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40888
+2021-03-25 03:09:45,499 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:45,499 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:09:45,502 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:45,502 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:09:45,540 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36224
+2021-03-25 03:09:45,540 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:09:45,540 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:09:50,541 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:09:59,093 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641790, tv_nsec: 546051942 }
+2021-03-25 03:09:59,093 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641799, tv_nsec: 93721494 }
+2021-03-25 03:09:59,121 INFO  [consensus] DP[Throughput]: 116992.82405764204
+2021-03-25 03:09:59,121 INFO  [consensus] DP[Latency]: 3.3739150173597223
+2021-03-25 03:09:59,136 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:09:59,137 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:59,134 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:09:59,174 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 7000
+2021-03-25 03:10:03,789 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:04,334 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:04,796 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:08,795 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44954
+2021-03-25 03:10:08,832 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55224
+2021-03-25 03:10:09,299 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40312
+2021-03-25 03:10:09,295 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60038
+2021-03-25 03:10:09,798 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:09,799 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:09,836 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36228
+2021-03-25 03:10:09,836 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:09,836 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:09,795 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40892
+2021-03-25 03:10:09,795 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:09,795 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:10:15,075 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:10:23,902 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641815, tv_nsec: 80500148 }
+2021-03-25 03:10:23,902 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641823, tv_nsec: 902113944 }
+2021-03-25 03:10:23,930 INFO  [consensus] DP[Throughput]: 113372.79358721091
+2021-03-25 03:10:23,930 INFO  [consensus] DP[Latency]: 4.489462880362672
+2021-03-25 03:10:23,945 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:10:23,946 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:10:23,983 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:10:23,942 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 10000
+2021-03-25 03:10:28,831 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:30,070 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:30,605 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:33,837 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44958
+2021-03-25 03:10:33,874 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55228
+2021-03-25 03:10:35,110 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36232
+2021-03-25 03:10:35,069 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40896
+2021-03-25 03:10:35,570 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40316
+2021-03-25 03:10:35,608 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:35,608 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:35,567 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60042
+2021-03-25 03:10:35,567 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:35,567 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:35,570 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:35,570 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:10:40,020 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:10:48,590 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641840, tv_nsec: 25543035 }
+2021-03-25 03:10:48,590 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641848, tv_nsec: 590338634 }
+2021-03-25 03:10:48,618 INFO  [consensus] DP[Throughput]: 116773.2479356277
+2021-03-25 03:10:48,618 INFO  [consensus] DP[Latency]: 5.7911330325084815
+2021-03-25 03:10:48,633 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:10:48,634 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:10:48,672 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:10:48,631 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 20000
+2021-03-25 03:10:53,362 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:53,832 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:54,353 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:10:58,405 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55232
+2021-03-25 03:10:58,368 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44962
+2021-03-25 03:10:58,798 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40320
+2021-03-25 03:10:58,794 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60046
+2021-03-25 03:10:59,393 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36236
+2021-03-25 03:10:59,393 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:59,393 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:59,355 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:59,356 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:10:59,352 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40900
+2021-03-25 03:10:59,352 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:10:59,352 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:11:04,418 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:11:13,180 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641864, tv_nsec: 422931240 }
+2021-03-25 03:11:13,180 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641873, tv_nsec: 180277658 }
+2021-03-25 03:11:13,208 INFO  [consensus] DP[Throughput]: 114207.08423093466
+2021-03-25 03:11:13,208 INFO  [consensus] DP[Latency]: 9.664041729698816
+2021-03-25 03:11:13,223 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:11:13,224 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:11:13,261 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:11:13,221 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 40000
+2021-03-25 03:11:19,463 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:19,867 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:20,236 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:24,469 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44966
+2021-03-25 03:11:24,507 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55236
+2021-03-25 03:11:24,832 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40324
+2021-03-25 03:11:24,829 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60050
+2021-03-25 03:11:25,239 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:25,240 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:11:25,236 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40904
+2021-03-25 03:11:25,236 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:25,236 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:11:25,277 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36240
+2021-03-25 03:11:25,277 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:25,277 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:11:30,265 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:11:38,661 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641890, tv_nsec: 270774177 }
+2021-03-25 03:11:38,661 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641898, tv_nsec: 661292014 }
+2021-03-25 03:11:38,689 INFO  [consensus] DP[Throughput]: 119123.39850973609
+2021-03-25 03:11:38,689 INFO  [consensus] DP[Latency]: 18.370077448181952
+2021-03-25 03:11:38,704 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:11:38,705 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:11:38,702 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:11:38,743 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 60000
+2021-03-25 03:11:43,523 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:44,075 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:44,544 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:11:48,566 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55240
+2021-03-25 03:11:48,529 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44970
+2021-03-25 03:11:49,041 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40328
+2021-03-25 03:11:49,037 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60054
+2021-03-25 03:11:49,584 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36244
+2021-03-25 03:11:49,584 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:49,546 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:49,547 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:11:49,543 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40908
+2021-03-25 03:11:49,543 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:11:49,543 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:11:49,584 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:11:54,860 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:12:03,512 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641914, tv_nsec: 865902698 }
+2021-03-25 03:12:03,512 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641923, tv_nsec: 512181691 }
+2021-03-25 03:12:03,540 INFO  [consensus] DP[Throughput]: 115646.85812353824
+2021-03-25 03:12:03,540 INFO  [consensus] DP[Latency]: 27.743119165129038
+2021-03-25 03:12:03,555 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:12:03,594 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:03,556 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:03,553 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 80000
+2021-03-25 03:12:08,102 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:08,640 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:09,042 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:13,146 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55244
+2021-03-25 03:12:13,109 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44974
+2021-03-25 03:12:13,602 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60058
+2021-03-25 03:12:13,606 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40332
+2021-03-25 03:12:14,042 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40912
+2021-03-25 03:12:14,042 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:14,042 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:12:14,083 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36248
+2021-03-25 03:12:14,083 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:14,083 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:12:14,045 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:14,046 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:12:19,383 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:12:27,719 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641939, tv_nsec: 388436356 }
+2021-03-25 03:12:27,719 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641947, tv_nsec: 719706121 }
+2021-03-25 03:12:27,747 INFO  [consensus] DP[Throughput]: 120008.59751298667
+2021-03-25 03:12:27,747 INFO  [consensus] DP[Latency]: 53.93014570564419
+2021-03-25 03:12:27,762 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:12:27,760 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:27,801 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:27,764 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 100000
+2021-03-25 03:12:32,569 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:33,057 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:33,639 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:37,576 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44978
+2021-03-25 03:12:37,613 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55248
+2021-03-25 03:12:38,019 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60062
+2021-03-25 03:12:38,023 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40336
+2021-03-25 03:12:38,679 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36252
+2021-03-25 03:12:38,679 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:38,679 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:12:38,638 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40916
+2021-03-25 03:12:38,638 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:38,639 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:12:38,642 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:12:38,642 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:12:43,891 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:12:52,415 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641963, tv_nsec: 896176401 }
+2021-03-25 03:12:52,415 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641972, tv_nsec: 415443346 }
+2021-03-25 03:12:52,443 INFO  [consensus] DP[Throughput]: 117391.08616463245
+2021-03-25 03:12:52,443 INFO  [consensus] DP[Latency]: 65.41505130558772
+2021-03-25 03:12:52,458 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:12:52,497 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:52,456 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:12:52,460 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 120000
+2021-03-25 03:12:58,326 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:58,867 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:12:59,286 INFO  [node_apollo] Successfully decoded the config file
+2021-03-25 03:13:03,370 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:55252
+2021-03-25 03:13:03,332 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.247:44982
+2021-03-25 03:13:03,828 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:60066
+2021-03-25 03:13:03,832 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.213:40340
+2021-03-25 03:13:04,285 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:40920
+2021-03-25 03:13:04,285 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:13:04,285 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:13:04,326 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.11:36256
+2021-03-25 03:13:04,326 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:13:04,326 INFO  [node_apollo] Using special apollo client: true
+2021-03-25 03:13:04,288 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-03-25 03:13:04,289 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-03-25 03:13:09,333 INFO  [client_apollo] Successfully decoded the config file
+2021-03-25 03:13:17,908 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1616641989, tv_nsec: 338618790 }
+2021-03-25 03:13:17,908 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1616641997, tv_nsec: 908927518 }
+2021-03-25 03:13:17,936 INFO  [consensus] DP[Throughput]: 116297.21071117054
+2021-03-25 03:13:17,936 INFO  [consensus] DP[Latency]: 77.94797346852573
+2021-03-25 03:13:17,953 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-03-25 03:13:17,950 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:13:17,991 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-03-25 03:13:17,954 WARN  [net::futures_manager::peer] Disconnected from peer

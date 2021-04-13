@@ -2,6 +2,7 @@ ID=$1
 TESTDIR=${2:-"testdata/b100-n3"}
 DELAY=${3:-"50"}
 CLI_TYPE=${4:-"client-apollo"}
+SLEEP=${SLEEP:-"5"}
 
 cd libchatter-rs
 
@@ -10,5 +11,4 @@ cd libchatter-rs
 
 ./target/release/node-optsync \
     --config $TESTDIR/nodes-$ID.json \
-    --ip ips_file \
-    --sleep 5 &
+    --ip ips_file &

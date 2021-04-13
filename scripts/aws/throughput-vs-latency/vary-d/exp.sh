@@ -18,22 +18,23 @@ F=${F:-"1"}
 DELAY=(50 100 200 500)
 # W=(10000 20000 40000 80000)
 W=(40000 80000)
+# W=(80000)
 # SW=(10000 20000 40000 80000)
 
 N=$(( (2*$F)+1 ))
 
-for w in ${SW[@]}; do
-for d in ${DELAY[@]};do
-    echo "DP[Delay]: $d"
-    bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$w" "synchs" "$N" "$d"
-    sleep 2 # Sleep after an experiment so that the OS releases the socket
-done &>> $1/$w-$F-synchs-run.log
-done
+# for w in ${W[@]}; do
+# for d in ${DELAY[@]};do
+#     echo "DP[Delay]: $d"
+#     bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$w" "optsync" "$N" "$d"
+#     sleep 2 # Sleep after an experiment so that the OS releases the socket
+# done &>> $1/$w-$F-optsync-run.log
+# done
 
 for w in ${W[@]}; do
 for d in ${DELAY[@]};do
     echo "DP[Delay]: $d"
     bash scripts/aws/throughput-vs-latency/vary-d/do_exp.sh "scripts/aws/aws_ips.log" "testdata/b400-p0-f$F" "$w" "apollo" "$N" "$d"
     sleep 2 # Sleep after an experiment so that the OS releases the socket
-done >> $1/$w-$F-apollo-run.log
+done &>> $1/$w-$F-apollo-run.log
 done
