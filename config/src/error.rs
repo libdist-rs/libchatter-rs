@@ -5,7 +5,7 @@ pub enum ParseError {
     // f, n
     IncorrectFaults(usize, usize),
     // r
-    InvalidMapEntry(u16),
+    InvalidMapEntry(usize),
     // pk_size
     InvalidPkSize(usize),
     // sk_size

@@ -155,7 +155,7 @@ pub async fn on_new_valid_proposal(p: Arc<Propose>, cx: &mut Context) -> bool {
 
     // Create a scope and send the proposal to other nodes
     let ship = cx.net_send.clone();
-    let ship_nodes = cx.num_nodes as u16;
+    let ship_nodes = cx.num_nodes;
     let ship_v = ProtocolMsg::VoteMsg(my_vote, p.as_ref().clone());
     let vote_ship = tokio::spawn(async move {
         let msg = Arc::new(ship_v);
@@ -241,7 +241,7 @@ pub async fn do_propose(txs: Vec<Arc<Transaction>>, cx: &mut Context) {
 
     // Ship the proposal
     let ship = cx.net_send.clone();
-    let ship_num = cx.num_nodes as u16;
+    let ship_num = cx.num_nodes;
     let ship_p = ProtocolMsg::RawNewProposal(p.clone(), new_block_ref.as_ref().clone());
     let broadcast = tokio::spawn(async move {
         if let Err(e) = ship.send(

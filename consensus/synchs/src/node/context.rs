@@ -111,7 +111,7 @@ impl Context {
 
     /// Leader of a view
     pub fn leader_of_view(&self) -> Replica {
-        (self.view % self.num_nodes as u64) as u16
+        self.view % self.num_nodes
     }
 }
 

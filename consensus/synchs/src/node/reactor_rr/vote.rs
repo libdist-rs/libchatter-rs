@@ -107,7 +107,7 @@ pub async fn on_quit_view(cert: Arc<Certificate>, cx: &mut Context) {
     cx.last_seen_cert = cert.clone();
 
     // Broadcast the certificate to indicate a quit view, if the others have not already quit the view
-    cx.net_send.send((cx.num_nodes as u16, Arc::new(ProtocolMsg::ChangeView(cx.view,cert.as_ref().clone())))).unwrap();
+    cx.net_send.send((cx.num_nodes, Arc::new(ProtocolMsg::ChangeView(cx.view,cert.as_ref().clone())))).unwrap();
     // Go to the next view
     cx.view += 1;
     cx.phase = Phase::NextView(cx.view);

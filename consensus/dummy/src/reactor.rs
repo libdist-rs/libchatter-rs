@@ -28,7 +28,7 @@ pub async fn reactor(
      });
      let mut num_new_tx:u64 = 0;
      let mut height:Height = 1;
-     let send_all = config.num_nodes as u16;
+     let send_all = config.num_nodes;
      let mut txs = Vec::with_capacity(config.block_size);
      loop {
          // let txs = &mut txs;

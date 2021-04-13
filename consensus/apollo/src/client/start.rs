@@ -80,7 +80,7 @@ pub async fn start(
     let first_send_tx = tokio::spawn(async move{
     for _ in 0..(first_send) {
         let next = recv.recv().await.unwrap();
-        net_send_p.send((send_id as u16,next)).await.unwrap();
+        net_send_p.send((send_id,next)).await.unwrap();
     }
     recv
     });
@@ -121,7 +121,7 @@ pub async fn start(
                 if let Some(x) = tx_opt {
                     let tx = x.as_ref();
                     let hash = crypto::hash::ser_and_hash(tx);
-                    net_send.send((send_id as u16,x)).await
+                    net_send.send((send_id,x)).await
                         .expect("Failed to send to the client");
                     cx.time_map.insert(hash, SystemTime::now());
                     cx.pending -= 1;
@@ -182,7 +182,7 @@ fn handle_new_blocks(c: &Client, blocks: &mut Vec<Arc<Block>>, cx: &mut Context,
         if !cx.hash_map.contains_key(&cx.last_block.header.prev) {
             println!("Do not have parent for this block {:?}, yet", cx.last_block);
             }
-            let commit_block = cx.height_map.get(&(b.header.height-c.num_faults as u64))
+            let commit_block = cx.height_map.get(&(b.header.height-c.num_faults))
                 .expect("Must be in the height map");
             if cx.last_committed_block.hash != commit_block.header.prev {
                 panic!("Hash chain broken by new blocks");

@@ -61,7 +61,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .unwrap();
     
     // Setup client network
-    let client_network = net::tokio_manager::Protocol::<Transaction, ClientMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
+    let client_network = net::tokio_manager::Protocol::<Transaction, ClientMsg>::new(config.id, config.num_nodes, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
     let (cli_send, cli_recv) = 
     cli_net_rt.block_on(
         client_network.client_setup(
@@ -77,7 +77,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     .unwrap();
 
     // Setup networking
-    let protocol_network = net::tokio_manager::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes as u16, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
+    let protocol_network = net::tokio_manager::Protocol::<ProtocolMsg, ProtocolMsg>::new(config.id, config.num_nodes, config.root_cert.clone(), config.my_cert.clone(), config.my_cert_key.clone());
 
     // Setup the protocol network
     let (net_send, net_recv) = 

@@ -9,8 +9,8 @@ use std::sync::Arc;
 
 pub struct Context {
     /// Config context
-    pub num_nodes: u16,
-    pub num_faults: u16,
+    pub num_nodes: usize,
+    pub num_faults: usize,
     pub myid: Replica,
     pub pub_key_map:HashMap<Replica, PublicKey>,
     pub my_secret_key: Keypair,
@@ -46,9 +46,9 @@ impl Context {
         net_send: UnboundedSender<(Replica, Arc<ProtocolMsg>)>,
         cli_send: UnboundedSender<Arc<Propose>>) -> Self {
         let mut c = Context{
-            num_nodes: config.num_nodes as u16,
+            num_nodes: config.num_nodes,
             relay_buf: VecDeque::new(),
-            num_faults: config.num_faults as u16,
+            num_faults: config.num_faults,
             myid: config.id,
             my_secret_key: match config.crypto_alg {
                 crypto::Algorithm::ED25519 => {
