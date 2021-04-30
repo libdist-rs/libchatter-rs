@@ -53,6 +53,11 @@ impl WireReady for Block {
         self.hash = self.compute_hash();
         self
     }
+
+    fn to_bytes(&self) -> Vec<u8> {
+        let bytes = bincode::serialize(self).expect("Failed to serialize Block");
+        bytes
+    }
 }
 
 #[derive(Serialize, Deserialize, Clone)]

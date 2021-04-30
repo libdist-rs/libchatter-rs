@@ -1,9 +1,3 @@
-mod propose;
-pub use propose::*;
-
-mod proto;
-pub use proto::*;
-
 pub type Transaction = super::Transaction;
 pub type Certificate = super::Certificate;
 pub type CertType = super::CertType;
@@ -15,3 +9,7 @@ pub type Height = crate::Height;
 pub type Storage = super::Storage;
 pub type View = crate::View;
 pub type Payload = super::Payload;
+
+pub type ProtocolMsg = super::synchs::ProtocolMsg;
+pub type Propose = super::synchs::Propose;
+pub type ClientMsg = super::synchs::ClientMsg;

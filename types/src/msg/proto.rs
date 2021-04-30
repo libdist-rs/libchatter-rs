@@ -1,6 +1,4 @@
-use bytes::BytesMut;
 use serde::{Serialize, Deserialize};
-use tokio_util::codec::{Decoder, LengthDelimitedCodec};
 use crate::{Block, Payload, Propose, Vote, WireReady};
 use crypto::hash::Hash;
 use std::sync::Arc;
@@ -51,6 +49,11 @@ impl WireReady for ProtocolMsg {
             _x => _x,
         }
     }
+
+    fn to_bytes(&self) -> Vec<u8> {
+        let bytes = bincode::serialize(self).expect("Failed to serialize protocol message");
+        bytes
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -90,30 +93,9 @@ impl WireReady for ClientMsg {
             _x => _x,
         }
     }
-}
 
-pub struct ClientMsgCodec (pub LengthDelimitedCodec);
-
-impl ClientMsgCodec {
-    pub fn new() -> Self {
-        ClientMsgCodec(LengthDelimitedCodec::new())
-    }
-}
-
-impl Decoder for ClientMsgCodec {
-    type Item = ClientMsg;
-    type Error = std::io::Error;
-
-    fn decode(&mut self, src: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
-        match self.0.decode(src)? {
-            Some(data) => Ok(Some(ClientMsg::from_bytes(&data))),
-            None => Ok(None),
-        }
-    }
-}
-
-impl std::clone::Clone for ClientMsgCodec {
-    fn clone(&self) -> Self {
-        ClientMsgCodec::new()
+    fn to_bytes(&self) -> Vec<u8> {
+        let bytes = bincode::serialize(self).expect("Failed to serialize client message");
+        bytes
     }
 }
