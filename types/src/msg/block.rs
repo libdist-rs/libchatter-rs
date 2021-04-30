@@ -1,6 +1,6 @@
 use serde::{Serialize, Deserialize};
 use super::{Transaction, Certificate};
-use crate::{WireReady, protocol::{Replica, Height}};
+use crate::{BlockTrait, WireReady, protocol::{Replica, Height}};
 use crypto::hash::{EMPTY_HASH, Hash};
 use std::{sync::Arc, borrow::Borrow};
 
@@ -10,7 +10,7 @@ pub struct Block {
     pub body: Body,
 
     // Cache
-    #[serde(skip_serializing, skip_deserializing)]
+    #[serde(skip)]
     pub hash: Hash,
 }
 
@@ -44,7 +44,7 @@ pub const GENESIS_BLOCK: Block = Block{
 
 impl WireReady for Block {
     fn from_bytes(data: &[u8]) -> Self {
-        let c:Block = bincode::deserialize(data)
+        let c:Self = bincode::deserialize(data)
             .expect("failed to decode the block");
         c.init()
     }
@@ -57,6 +57,20 @@ impl WireReady for Block {
     fn to_bytes(&self) -> Vec<u8> {
         let bytes = bincode::serialize(self).expect("Failed to serialize Block");
         bytes
+    }
+}
+
+impl BlockTrait for Block {
+    fn get_hash(&self) -> Hash {
+        self.hash
+    }
+
+    fn get_height(&self) -> Height {
+        self.header.height
+    }
+
+    fn get_author(&self) -> Replica {
+        self.header.author
     }
 }
 

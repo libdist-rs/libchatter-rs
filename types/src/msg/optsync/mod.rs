@@ -6,7 +6,7 @@ pub type Vote = super::Vote;
 pub type Block = super::Block;
 pub const GENESIS_BLOCK: Block = super::GENESIS_BLOCK;
 pub type Height = crate::Height;
-pub type Storage = super::Storage;
+pub type Storage = super::Storage<Block, Transaction>;
 pub type View = crate::View;
 pub type Payload = super::Payload;
 

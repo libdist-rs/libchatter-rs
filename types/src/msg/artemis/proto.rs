@@ -1,5 +1,6 @@
 use serde::{Serialize, Deserialize};
-use crate::{Block, Payload, Propose, Vote, WireReady};
+use super::{Block, Payload, Propose, Vote};
+use crate::WireReady;
 use crypto::hash::Hash;
 use std::sync::Arc;
 
@@ -32,12 +33,12 @@ impl WireReady for ProtocolMsg {
     fn init(self) -> Self {
         match self {
             ProtocolMsg::RawNewProposal(mut prop, mut block) => {
-                block.hash = block.compute_hash();
+                block.blk.hash = block.blk.compute_hash();
                 prop.block = Some(Arc::new(block));
                 ProtocolMsg::NewProposal(prop)
             },
             ProtocolMsg::RawResponse(_i, mut prop, mut block) => {
-                block.hash = block.compute_hash();
+                block.blk.hash = block.blk.compute_hash();
                 prop.block = Some(Arc::new(block));
                 ProtocolMsg::Response(_i, prop)
             },
@@ -81,12 +82,12 @@ impl WireReady for ClientMsg {
     fn init(self) -> Self {
         match self {
             ClientMsg::RawNewBlock(mut prop, mut block, payload) => {
-                block.hash = block.compute_hash();
+                block.blk.hash = block.blk.compute_hash();
                 prop.block = Some(Arc::new(block));
                 ClientMsg::NewBlock(prop, payload)
             },
             ClientMsg::RawResponse(h, mut prop, mut block) => {
-                block.hash = block.compute_hash();
+                block.blk.hash = block.blk.compute_hash();
                 prop.block = Some(Arc::new(block));
                 ClientMsg::Response(h, prop)
             }

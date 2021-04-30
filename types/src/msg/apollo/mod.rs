@@ -8,5 +8,5 @@ pub type Vote = super::Vote;
 pub type Propose = super::Propose;
 pub type ProtocolMsg = super::ProtocolMsg;
 pub type Replica = crate::Replica;
-pub type Storage = super::Storage;
+pub type Storage = super::Storage<Block, Transaction>;
 pub type Payload = super::Payload;

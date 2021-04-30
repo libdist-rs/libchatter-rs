@@ -1,7 +1,7 @@
 use crypto::hash::Hash;
 use serde::{Serialize, Deserialize};
 
-use crate::WireReady;
+use crate::{TxTrait, WireReady};
 
 #[derive(Serialize, Deserialize, Debug,Clone)]
 pub struct Transaction {
@@ -27,7 +27,7 @@ impl Transaction {
 
 impl WireReady for Transaction {
     fn from_bytes(data: &[u8]) -> Self {
-        let c:Transaction = bincode::deserialize(data)
+        let c:Self = bincode::deserialize(data)
             .expect("failed to decode the block");
         c.init()
     }
@@ -39,5 +39,11 @@ impl WireReady for Transaction {
     fn to_bytes(&self) -> Vec<u8> {
         let bytes = bincode::serialize(self).expect("Failed to serialize transaction");
         bytes
+    }
+}
+
+impl TxTrait for Transaction {
+    fn get_hash(&self) -> Hash {
+        self.compute_hash()
     }
 }
