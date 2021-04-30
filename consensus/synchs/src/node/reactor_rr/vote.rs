@@ -1,4 +1,4 @@
-use types::{CertType, Certificate, View, synchs::{Propose, ProtocolMsg}};
+use types::synchs_rr::{CertType, Certificate, View, Propose, ProtocolMsg};
 use crypto::hash::Hash;
 use super::{context::Context, phase::Phase, proposal::{
         on_receive_proposal

@@ -1,12 +1,9 @@
 use std::collections::HashSet;
 use crate::node::context::Context;
 use crypto::hash::EMPTY_HASH;
-use types::{
+use types::optsync::{
     Block, CertType, Certificate, Transaction, Vote, 
-    synchs::{
-        Propose, 
-        ProtocolMsg
-    }
+    Propose, ProtocolMsg,
 };
 use std::sync::Arc;
 

@@ -1,4 +1,4 @@
-use types::{synchs::ClientMsg, Payload, synchs::Propose};
+use types::synchs_rr::{ClientMsg, Payload, Propose};
 
 use super::context::Context;
 use std::sync::Arc;

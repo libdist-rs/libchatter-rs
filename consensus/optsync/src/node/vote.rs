@@ -1,5 +1,5 @@
 use log::debug;
-use types::{CertType, Certificate, synchs::Propose};
+use types::optsync::{CertType, Certificate, Propose};
 use crypto::hash::Hash;
 use crate::node::context::Context;
 use std::sync::Arc;

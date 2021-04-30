@@ -7,7 +7,7 @@ use tokio::sync::mpsc::{
     UnboundedSender, 
     UnboundedReceiver
 };
-use types::{Replica, Transaction, synchs::ClientMsg, synchs::ProtocolMsg};
+use types::synchs_rr::{Replica, Transaction, ClientMsg, ProtocolMsg};
 use config::Node;
 use super::{commit::on_commit, context::Context, phase::Phase, proposal::*, status::{do_status, on_recv_status}, vote::*};
 use tokio_stream::StreamExt;

@@ -2,8 +2,8 @@ use clap::{load_yaml, App};
 use tokio::{io::{AsyncReadExt}, net::{TcpListener}};
 use tokio_stream::{StreamExt};
 use tokio_util::codec::{FramedRead, FramedWrite};
-use types::{Block};
-use util::codec::{EnCodec, tx::{Codec as TxCodec}};
+use types::sinkexp::Block;
+use util::codec::{EnCodec, Decodec};
 use std::{error::Error, time::SystemTime};
 use futures::{SinkExt};
 
@@ -66,7 +66,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         (r1,w1,r2,w2)
     };
 
-    let mut read1 = FramedRead::new(r1, TxCodec::new());
+    let mut read1 = FramedRead::new(r1, Decodec::new());
     let mut write2 = FramedWrite::new(w2, EnCodec::new());
 
     // write2.send();

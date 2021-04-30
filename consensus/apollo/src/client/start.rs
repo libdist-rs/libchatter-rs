@@ -2,14 +2,13 @@ use std::time::SystemTime;
 use fnv::FnvHashMap as HashMap;
 
 use config::Client;
-use types::{Block, ClientMsg, GENESIS_BLOCK, Height, Transaction};
+use types::apollo::{Block, ClientMsg, GENESIS_BLOCK, Height, Transaction};
 use tokio::sync::mpsc::channel;
-use util::new_dummy_tx;
 use crypto::hash::Hash;
 use consensus::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
-use types::ClientMsgCodec;
+use util::codec::Decodec;
 use futures::{SinkExt, StreamExt};
 use net::futures_manager::TlsClient;
 
@@ -50,7 +49,7 @@ pub async fn start(
     let servers = c.net_map.clone();
     let send_id = c.num_nodes;
     let (mut net_send,mut net_recv) = 
-        client_network.setup(servers, EnCodec::new(), ClientMsgCodec::new()).await;
+        client_network.setup(servers, EnCodec::new(), Decodec::<ClientMsg>::new()).await;
 
     let payload = c.payload;
     // Start with the sink implementation
@@ -59,7 +58,7 @@ pub async fn start(
     tokio::spawn(async move{
         let mut i = 0;
         loop {
-            let tx = new_dummy_tx(i,payload);
+            let tx = Transaction::new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
                 log::info!("Closing tx producer channel: {}", e);

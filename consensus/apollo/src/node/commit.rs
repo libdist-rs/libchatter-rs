@@ -1,4 +1,4 @@
-use types::{Block, Height, Propose, ProtocolMsg};
+use types::apollo::{Block, Height, Propose, ProtocolMsg};
 use std::sync::Arc;
 use super::context::Context;
 use futures::SinkExt;

@@ -1,8 +1,7 @@
-use types::{synchs::ClientMsg, Payload, synchs::Propose};
+use types::synchs::{ClientMsg, Payload, Propose};
 
 use super::context::Context;
 use std::sync::Arc;
-// use futures::SinkExt;
 
 /// Commit this block and all its ancestors
 pub async fn on_commit(p: Arc<Propose>, cx:&mut Context) {

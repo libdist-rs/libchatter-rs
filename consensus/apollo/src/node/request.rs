@@ -1,5 +1,5 @@
 use crypto::hash::Hash;
-use types::{ProtocolMsg, Replica};
+use types::apollo::{ProtocolMsg, Replica};
 use futures::SinkExt;
 use super::context::Context;
 use std::sync::Arc;

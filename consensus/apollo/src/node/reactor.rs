@@ -9,17 +9,10 @@ use futures::channel::mpsc::{
     unbounded as unbounded_channel,
 };
 use futures::{StreamExt, SinkExt};
-// use tokio::sync::mpsc::{
-//     unbounded_channel, 
-//     UnboundedSender, 
-//     UnboundedReceiver
-// };
-use types::{ClientMsg, Payload, ProtocolMsg, Replica, Transaction};
+use types::apollo::{ClientMsg, Payload, ProtocolMsg, Replica, Transaction};
 use config::Node;
 use super::{context::Context, proposal::*,message::*};
-use std::{
-    sync::Arc, 
-};
+use std::sync::Arc;
 
 pub async fn reactor(
     config:&Node,

@@ -1,13 +1,8 @@
 use std::collections::HashSet;
 use super::context::Context;
 use crypto::hash::EMPTY_HASH;
-use types::{
-    Block, CertType, Certificate, Transaction, Vote, 
-    synchs::{
-        Propose, 
-        ProtocolMsg
-    }
-};
+use types::synchs::{Block, CertType, Certificate, Transaction, Vote, 
+        Propose, ProtocolMsg};
 use std::sync::Arc;
 
 pub fn check_proposal(p: Arc<Propose>, cx:&Context) -> bool {

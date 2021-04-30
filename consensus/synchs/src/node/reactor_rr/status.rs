@@ -1,4 +1,4 @@
-use types::{CertType, Certificate, Replica, synchs::ProtocolMsg};
+use types::synchs_rr::{CertType, Certificate, Replica, ProtocolMsg};
 use std::{collections::HashSet, sync::Arc};
 use super::{context::Context, phase::Phase};
 

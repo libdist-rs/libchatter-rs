@@ -3,7 +3,7 @@ use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 // use tokio::sync::mpsc::UnboundedSender;
 use futures::channel::mpsc::UnboundedSender;
-use types::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Replica, Storage};
+use types::apollo::{Block, GENESIS_BLOCK, Propose, ProtocolMsg, Replica, Storage};
 use config::Node;
 use std::sync::Arc;
 

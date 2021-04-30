@@ -5,14 +5,13 @@ use std::{
 use fnv::FnvHashMap as HashMap;
 use fnv::FnvHashSet as HashSet;
 use config::Client;
-use types::{Block, ClientMsg, Transaction};
+use types::apollo::{Block, ClientMsg, Transaction};
 use futures::channel::mpsc::channel;
-use util::new_dummy_tx;
 use crypto::hash::Hash;
 use consensus::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
-use types::ClientMsgCodec as Codec;
+use util::codec::Decodec;
 use net::futures_manager::TlsClient as NClient;
 use futures::{SinkExt, StreamExt};
 
@@ -59,7 +58,7 @@ pub async fn start(
     let servers = c.net_map.clone();
     let send_id = c.num_nodes;
     let (mut net_send, mut net_recv) = 
-        client_network.setup(servers, EnCodec::new(), Codec::new()).await;
+        client_network.setup(servers, EnCodec::new(), Decodec::<ClientMsg>::new()).await;
 
     // Start with the sink implementation
     let (mut send, mut recv) = channel(util::CHANNEL_SIZE);
@@ -68,7 +67,7 @@ pub async fn start(
     tokio::spawn(async move{
         let mut i = 0;
         loop {
-            let tx = new_dummy_tx(i,payload);
+            let tx = Transaction::new_dummy_tx(i,payload);
             i += 1;
             if let Err(e) = send.send(Arc::new(tx)).await {
                 log::info!("Closing tx producer channel: {}", e);

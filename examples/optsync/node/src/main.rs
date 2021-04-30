@@ -4,7 +4,7 @@ use clap::{
 };
 use config::Node;
 use std::error::Error;
-use types::{synchs::ClientMsg, Transaction, synchs::ProtocolMsg};
+use types::optsync::{ClientMsg, Transaction, ProtocolMsg};
 
 fn main() -> Result<(), Box<dyn Error>> {
     let yaml = load_yaml!("cli.yml");
@@ -67,7 +67,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         client_network.client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
-            util::codec::tx::Codec::new()
+            util::codec::Decodec::new()
         )
     );
 
@@ -85,7 +85,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         protocol_network.server_setup(
             config.net_map.clone(), 
             util::codec::EnCodec::new(), 
-            util::codec::synchs::Codec::new()
+            util::codec::Decodec::new()
         )
     );
 

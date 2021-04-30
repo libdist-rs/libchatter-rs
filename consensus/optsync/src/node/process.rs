@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use types::synchs::ProtocolMsg;
+use types::optsync::ProtocolMsg;
 use crate::node::{
     context::Context,
     proposal::on_receive_proposal,

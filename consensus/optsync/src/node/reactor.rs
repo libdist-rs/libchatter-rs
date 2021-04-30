@@ -7,7 +7,7 @@ use tokio::sync::mpsc::{
     UnboundedSender, 
     UnboundedReceiver
 };
-use types::{Replica, Transaction, synchs::ClientMsg, synchs::ProtocolMsg};
+use types::optsync::{Replica, Transaction, ClientMsg, ProtocolMsg};
 use config::Node;
 use crate::node::{
     commit::on_commit, 

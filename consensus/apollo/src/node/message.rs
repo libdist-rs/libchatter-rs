@@ -1,4 +1,4 @@
-use types::{Propose, ProtocolMsg, Replica};
+use types::apollo::{Propose, ProtocolMsg, Replica};
 
 use super::context::Context;
 use super::proposal::on_receive_proposal;

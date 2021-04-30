@@ -1,4 +1,4 @@
-use types::{CertType, Certificate, synchs::Propose};
+use types::synchs::{CertType, Certificate, Propose};
 use crypto::hash::Hash;
 use super::{
     context::Context, 

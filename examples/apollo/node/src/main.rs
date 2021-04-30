@@ -1,7 +1,7 @@
 // use futures::prelude::*;
 use clap::{load_yaml, App};
 use config::Node;
-use types::{ClientMsg, ProtocolMsg, Transaction};
+use types::apollo::{ClientMsg, ProtocolMsg, Transaction};
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -72,7 +72,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         cli_network.client_setup(
             config.client_ip(),
             util::codec::EnCodec::new(),
-            util::codec::tx::Codec::new(),
+            util::codec::Decodec::new(),
         )
     );
 
@@ -90,7 +90,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         protocol_network.server_setup(
             config.net_map.clone(), 
             util::codec::EnCodec::new(), 
-            util::codec::proto::Codec::new()
+            util::codec::Decodec::new()
         )
     );
 

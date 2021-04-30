@@ -1,7 +1,7 @@
 use tokio::sync::mpsc::UnboundedSender;
 use tokio_util::time::DelayQueue;
 // use futures::channel::mpsc::UnboundedSender;
-use types::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, synchs::ClientMsg, synchs::ProtocolMsg, synchs::Propose};
+use types::synchs::{Block, Certificate, GENESIS_BLOCK, Height, Replica, Storage, View, ClientMsg, ProtocolMsg, Propose};
 use config::Node;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 use fnv::FnvHashMap as HashMap;

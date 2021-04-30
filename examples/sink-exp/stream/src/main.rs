@@ -6,8 +6,8 @@ use util::codec::EnCodec;
 use std::{error::Error, time::SystemTime};
 use std::fs::File;
 use std::{io, io::BufRead};
-use util::new_dummy_tx;
 use std::time::Duration;
+use types::sinkexp::Transaction;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -51,7 +51,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let latest = std::time::SystemTime::now();
     times.push(latest);
     for i in 0..total {
-        let tx = new_dummy_tx(i,0);
+        let tx = Transaction::new_dummy_tx(i,0);
         for w in 0..senders.len() {
             senders[w].send(tx.clone()).await
                 .expect("Failed to send to one of the relayers");

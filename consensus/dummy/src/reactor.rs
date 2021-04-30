@@ -1,5 +1,5 @@
 use tokio::sync::mpsc::{Sender, Receiver};
-use types::{Block, Height, Propose, ProtocolMsg, Replica, Transaction};
+use types::dummy::{Block, Height, Propose, ProtocolMsg, Replica, Transaction};
 use config::Node;
 use std::sync::Arc;
 

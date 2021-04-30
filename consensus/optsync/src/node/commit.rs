@@ -1,5 +1,5 @@
 use log::debug;
-use types::{synchs::ClientMsg, Payload, synchs::Propose};
+use types::optsync::{ClientMsg, Payload, Propose};
 use crate::node::context::Context;
 use std::sync::Arc;
 

@@ -5,7 +5,8 @@ use tokio_util::codec::{FramedRead};
 use std::{error::Error, time::SystemTime};
 use std::fs::File;
 use std::{io, io::BufRead};
-use util::{codec::block::Codec};
+use util::codec::Decodec;
+use types::sinkexp::Block;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -54,7 +55,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             .into_split();
         _wr.write(&indicator).await
             .expect("failed to write the indicator byte");
-        let reader = FramedRead::new(rd, Codec::new());
+        let reader = FramedRead::new(rd, Decodec::<Block>::new());
         receivers.push(reader);
     }
     let mut times = Vec::new();

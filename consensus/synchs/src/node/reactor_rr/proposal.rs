@@ -1,12 +1,9 @@
 use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 use super::{context::Context, phase::Phase};
 use crypto::hash::EMPTY_HASH;
-use types::{
+use types::synchs_rr::{
     Block, CertType, Certificate, Transaction, Vote, 
-    synchs::{
-        Propose, 
-        ProtocolMsg
-    }
+    Propose, ProtocolMsg
 };
 use std::sync::Arc;
 

@@ -1,4 +1,5 @@
-use types::{Block, Propose, ProtocolMsg, Transaction, WireReady};
+use types::apollo::{Block, Propose, ProtocolMsg, Transaction};
+use types::WireReady;
 use super::{
     context::Context, 
     commit::on_finish_propose
