@@ -6,12 +6,15 @@ use linked_hash_map::LinkedHashMap;
 use std::sync::Arc;
 
 
-// TODO: Use storage
+/// Storage holds on to all the blocks and transactions
+/// Disable feature `mempool` if the end program does not need any client.
+/// Eg., RandPiper, OptRand, or protocols that only require a bunch of servers to do something, with no inputs from clients.
 pub struct Storage<B,T> {
     all_delivered_blocks_by_hash: HashMap<Hash,Arc<B>>,
     all_delivered_blocks_by_ht: HashMap<Height,Arc<B>>,
     committed_blocks_by_hash: HashSet<Hash>,
     committed_blocks_by_ht: HashSet<Height>,
+    #[cfg(feature="mempool")]
     pending_tx: LinkedHashMap<Hash,Arc<T>>,
 }
 
@@ -26,6 +29,7 @@ T: TxTrait,
             all_delivered_blocks_by_ht: HashMap::new(),
             committed_blocks_by_hash: HashSet::new(),
             committed_blocks_by_ht: HashSet::new(),
+            #[cfg(feature="mempool")]
             pending_tx: LinkedHashMap::with_capacity(space),
         }
     }
@@ -115,7 +119,8 @@ T: TxTrait,
 
     /// Cleave removes block size number of transactions from the tx pool
     ///
-    /// Used for block creation
+    /// Used to create blocks from the pending transactions
+    #[cfg(feature="mempool")]
     pub fn cleave(&mut self, block_size: usize) -> Vec<Arc<T>> {
         let mut txs = Vec::with_capacity(block_size);
         for _i in 0..block_size {
@@ -131,6 +136,7 @@ T: TxTrait,
     }
 
     /// Clear removes the transaction hashes from the pool
+    #[cfg(feature="mempool")]
     pub fn clear(&mut self, tx_hashes: &Vec<Hash>) {
         for h in tx_hashes {
             self.pending_tx.remove(h);
@@ -138,6 +144,7 @@ T: TxTrait,
     }
 
     /// Adds a transaction to the pool
+    #[cfg(feature="mempool")]
     pub fn add_transaction(&mut self, t: T) {
         let tx_hash = t.get_hash();
         let t_rc = Arc::new(t);
@@ -147,6 +154,7 @@ T: TxTrait,
     /// Returns the number of transactions currently in the tx pool
     ///
     /// Used to determine if we are ready to propose
+    #[cfg(feature="mempool")]
     pub fn get_tx_pool_size(&self) -> usize {
         self.pending_tx.len()
     }

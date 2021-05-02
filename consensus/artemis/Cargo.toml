@@ -1,0 +1,32 @@
+[package]
+name = "artemis"
+version = "0.1.0"
+authors = ["hermitsage <dth.bht@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+config = { package = "config", path="../../config"}
+consensus = { package = "consensus", path="../"}
+types = { package = "types", path="../../types"}
+crypto = { package = "crypto", path="../../crypto"}
+net = { package = "net", path="../../net"}
+util = { package = "util", path="../../util"}
+tokio = { version = "1.0", features = ["full"] }
+futures = "^0.3"
+bytes = "1.0"
+tokio-util = "0.6"
+tokio-stream = "0.1"
+serde = "1.0.70"
+log="*"
+priority-queue="1"
+fnv = "1"
+
+[features]
+# Should the code include heavy parallelism?
+# Use if there are more than 2 cores in the machine
+# This will create three multi-threaded work stealing runtimes
+default=["parallel"]
+# default=[]
+parallel=[]

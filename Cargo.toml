@@ -9,21 +9,31 @@ members = [
     "consensus",
     "net",
     "util",
+    # Sink Experiment modules
     "examples/sink-exp/relay",
     "examples/sink-exp/sink",
     "examples/sink-exp/stream",
-    "examples/apollo/node",
-    "examples/synchs/node-rr",
-    "examples/synchs/node",
-    "examples/optsync/node",
-    "examples/apollo/client",
-    "examples/synchs/client",
-    "examples/optsync/client",
+    # Ping modules
     "examples/echo-exp/echo",
     "examples/echo-exp/ping",
-    "examples/apollo/normal-client",
+    # Apollo modules
     "consensus/apollo",
-    "consensus/dummy",
-    "consensus/optsync",
+    "examples/apollo/node",
+    "examples/apollo/client",
+    "examples/apollo/normal-client",
+    # Sync HotStuff modules
     "consensus/synchs",
+    "examples/synchs/node-rr",
+    "examples/synchs/node",
+    "examples/synchs/client",
+    # Opt Sync modules
+    "consensus/optsync",
+    "examples/optsync/node",
+    "examples/optsync/client",
+    # Artemis modules
+    "consensus/artemis",
+    "examples/artemis/node",
+    "examples/artemis/client",
+    # Dummy consensus module
+    "consensus/dummy",
 ]

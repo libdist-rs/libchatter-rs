@@ -14,3 +14,7 @@ linked-hash-map = "0.5"
 tokio-util = {version = "0.6", features= ["codec"]}
 bytes = "1.0"
 log = "0.4"
+
+[features]
+default=["mempool"]
+mempool=[]

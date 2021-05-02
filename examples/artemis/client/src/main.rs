@@ -1,6 +1,6 @@
 use clap::{load_yaml, App};
 use config::Client;
-use std::error::Error;
+use std::{error::Error, sync::Arc};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -45,7 +45,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let window:usize = m.value_of("window").unwrap_or("1000")
         .parse().unwrap();
     
+    let config = Arc::new(config);
     artemis::client::start(
-        &config, metrics, window).await;
+        config, metrics, window).await;
     Ok(())
 }

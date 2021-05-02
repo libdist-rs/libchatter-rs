@@ -1,4 +1,8 @@
 # Things to improve in the library
 
-- [ ] Separate all the consensus implementations into separate packages
-- [ ] Move from std. Hashmap to FnvHashMap
+- [ ] Implement Artemis Full protocol
+- [ ] Implement randomized leader protocol for
+    - [ ] Apollo node
+    - [ ] Apollo client
+    - [ ] Artemis node
+    - [ ] Artemis client

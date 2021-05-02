@@ -1,11 +1,14 @@
-.PHONY: testdata tools apollo apollo-release synchs synchs-release sink-exp sink-exp-release release debug
+.PHONY: testdata apollo apollo-release synchs synchs-release sink-exp sink-exp-release
 
+.PHONY: release
 release:
 	cargo build --all --release
 
+.PHONY: debug
 debug:
 	cargo build --all
 
+.PHONY: tools
 tools:
 	cargo build --package=genconfig --release
 
@@ -55,3 +58,10 @@ optsync-release:
 
 optsync:
 	cargo build --package=node-optsync --package=client-optsync
+
+.PHONY: artemis artemis-release
+artemis-release: 
+	cargo build --package=node-artemis --package=client-artemis --release
+
+artemis:
+	cargo build --package=node-artemis --package=client-artemis

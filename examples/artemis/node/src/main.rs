@@ -100,7 +100,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .build()
         .unwrap();
     
-    log::info!("Using special apollo client: {}", is_client_apollo_enabled);
+    log::info!("Using special artemis client: {}", is_client_apollo_enabled);
     // Start the Apollo consensus protocol
     core_rt.block_on(
         artemis::node::reactor(
