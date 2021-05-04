@@ -9,12 +9,12 @@ use std::{collections::VecDeque, sync::Arc};
 pub async fn try_round_vote(cx: &mut Context) {
     // I am not the next round leader, return
     if cx.myid() != cx.round_leader {
-        log::debug!("I {} am not the leader for {}", cx.myid(), cx.round_leader);
+        log::trace!("I {} am not the leader for {}", cx.myid(), cx.round_leader);
         return;
     }
     // Do I have any new blocks that I can vote for?
     if cx.last_seen_block.get_height() <= cx.last_voted_block.get_height() {
-        log::debug!("I {} do not have any new blocks", cx.myid());
+        log::trace!("I {} do not have any new blocks", cx.myid());
         return;
     }
     log::debug!("I am the round leader and I have new blocks to vote for");
