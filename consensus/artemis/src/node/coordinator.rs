@@ -13,7 +13,7 @@ pub async fn do_new_block(txs: Vec<Arc<Transaction>>, cx:&mut Context)
     new_block.blk.header.height = cx.last_seen_block.get_height()+1;
     new_block.sig.origin = cx.myid();
     let mut new_block = new_block.init();
-    new_block.sign(&cx.my_secret_key());
+    new_block.sign(&cx.my_secret_key);
 
     // Send this new block to everyone
     let msg = Arc::new(ProtocolMsg::RawNewBlock(new_block.clone()));

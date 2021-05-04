@@ -19,7 +19,7 @@ pub struct Context {
     /// Map of node IDs and public keys 
     pub pub_key_map: HashMap<Replica, PublicKey>,
     /// My Secret Key
-    my_secret_key: Arc<Keypair>,
+    pub my_secret_key: Arc<Keypair>,
     /// Whether or not our client supports UCR or not.
     /// If yes, UCR is enabled, and we send the block on proposing.
     /// If no, UCR is disabled, and we notify the client on committing.
@@ -203,10 +203,6 @@ impl Context {
         (self.eligible_leaders[idx], idx)
     }
 
-    pub(crate) fn next_of(&self, prev: Replica) -> Replica {
-        (prev+1)%self.num_nodes
-    }
-
     /// Returns the number of nodes
     #[inline]
     pub const fn num_nodes(&self) -> usize {
@@ -223,12 +219,6 @@ impl Context {
     #[inline]
     pub const fn myid(&self) -> usize {
         self.myid
-    }
-
-    /// Returns the secret key of this node
-    #[inline]
-    pub fn my_secret_key(&self) -> Arc<Keypair> {
-        self.my_secret_key.clone()
     }
 
     /// Returns whether the clients are special or not
