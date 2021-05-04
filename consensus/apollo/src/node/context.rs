@@ -1,4 +1,5 @@
-use std::collections::{HashMap, HashSet, VecDeque};
+use std::collections::VecDeque;
+use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 // use tokio::sync::mpsc::UnboundedSender;
@@ -66,7 +67,7 @@ impl Context {
                 }
                 _ => panic!("Unimplemented algorithm"),
             },
-            pub_key_map: HashMap::with_capacity(config.num_nodes),
+            pub_key_map: HashMap::default(),
             net_send,
             cli_send,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
@@ -75,9 +76,9 @@ impl Context {
             is_client_apollo_enabled: false,
             payload: config.payload*config.block_size,
             req_ctr:0,
-            prop_waiting:HashSet::new(),
-            prop_waiting_parent: HashMap::new(),
-            prop_chain: HashMap::new(),
+            prop_waiting:HashSet::default(),
+            prop_waiting_parent: HashMap::default(),
+            prop_chain: HashMap::default(),
             prop_buf: VecDeque::new(),
             other_buf: VecDeque::new(),
         };

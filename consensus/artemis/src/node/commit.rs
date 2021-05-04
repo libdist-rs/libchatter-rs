@@ -5,10 +5,10 @@ use super::*;
 /// Caller needs to ensure that `cx.round > cx.num_faults()`
 pub fn do_commit(cx: &mut Context) {
     log::debug!("Trying to commit");
-    debug_assert!(cx.round > cx.num_faults());
+    debug_assert!(cx.round() > cx.num_faults());
 
     // Get the r-f^th vote
-    let commit_round = cx.round - cx.num_faults();
+    let commit_round = cx.round() - cx.num_faults();
     let v = cx.vote_chain.get(&commit_round).unwrap();    
 
     let mut com_hash = v.hash;

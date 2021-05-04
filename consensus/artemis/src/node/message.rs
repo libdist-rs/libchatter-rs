@@ -33,7 +33,7 @@ pub async fn process_message(cx:&mut Context)
         update_delivery(cx, block, sender).await;
     }
     // Try dealing with any votes that got ready
-    while let Some(v) = cx.vote_ready.remove(&cx.round) {
+    while let Some(v) = cx.vote_ready.remove(&cx.round()) {
         on_receive_round_vote(cx, v).await;
     }
     while let Some((sender, msg)) = cx.other_buf.pop_front() {

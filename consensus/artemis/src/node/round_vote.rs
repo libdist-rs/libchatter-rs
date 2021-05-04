@@ -25,7 +25,7 @@ pub async fn try_round_vote(cx: &mut Context) {
 pub async fn do_round_vote(cx: &mut Context) {
     let mut v = UCRVote::new();
     v.hash = cx.last_seen_block.get_hash();
-    v.round = cx.round;
+    v.round = cx.round();
     v.view = cx.view;
     v.compute_sig(&cx.my_secret_key());
     // Multicast the vote
@@ -53,12 +53,12 @@ pub async fn do_round_vote(cx: &mut Context) {
 /// Also checks if we got votes from the future/past
 pub async fn try_receive_round_vote(cx:&mut Context, from: Replica, ucr_vote: UCRVote) {
     // We may get multiple votes from relay and do_round_vote
-    if cx.round > ucr_vote.round {
-        log::debug!("Discarding duplicate votes for round {}, already in round {}", ucr_vote.round, cx.round);
+    if cx.round() > ucr_vote.round {
+        log::debug!("Discarding duplicate votes for round {}, already in round {}", ucr_vote.round, cx.round());
         return;
     }
     // Is this the correct round?
-    if cx.round < ucr_vote.round {
+    if cx.round() < ucr_vote.round {
         // We got a ucr_vote from the future
         log::debug!("Got a vote from the future");
         // What TODO? Keep it ready until we move to this round
@@ -98,7 +98,7 @@ pub async fn on_receive_round_vote(cx:&mut Context, ucr_vote: UCRVote) {
     cx.vote_chain.insert(ucr_vote.round, Arc::new(ucr_vote.clone()));
 
     // Trigger commit rule
-    if cx.round > cx.num_faults() {
+    if cx.round() > cx.num_faults() {
         do_commit(cx);
     }
 
@@ -112,8 +112,7 @@ pub async fn on_receive_round_vote(cx:&mut Context, ucr_vote: UCRVote) {
     let job = cx.c_send(cx.next_round_leader(), msg).await;
     
     // Update leaders, and round
-    log::debug!("Going to the next round  {}", cx.round+1);
-    cx.round += 1;
-    cx.round_leader = cx.next_round_leader();
+    cx.update_round();
+    log::debug!("Going to the next round  {}", cx.round());
     job.await.unwrap();
 }

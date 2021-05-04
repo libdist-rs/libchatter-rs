@@ -1,10 +1,12 @@
-use std::collections::{HashMap, VecDeque};
+use std::{collections::VecDeque, convert::TryInto};
 use crypto::hash::Hash;
 use crypto::{Keypair, PublicKey, ed25519, secp256k1};
 use futures::channel::mpsc::UnboundedSender;
 use types::artemis::{Block, ClientMsg, GENESIS_BLOCK, ProtocolMsg, Replica, Round, Storage, UCRVote, View};
 use config::Node;
 use std::sync::Arc;
+use fnv::FnvHashMap as HashMap;
+use linked_hash_map::LinkedHashMap;
 
 /// Config context
 pub struct Context {
@@ -36,12 +38,16 @@ pub struct Context {
     
     /// The current round leader
     pub round_leader: Replica,
+    /// The last f leaders
+    last_f_leaders: LinkedHashMap<Replica,()>,
+    /// Eligible leaders
+    eligible_leaders: Vec<Replica>,
     /// The current view leader
     pub view_leader: Replica,
     /// The current view
     pub view: View,
     /// The current round
-    pub round: Round,
+    round: Round,
     /// The last observed block
     pub last_seen_block: Arc<Block>,
     /// The last block for which we have seen vote messages for
@@ -107,23 +113,25 @@ impl Context {
                 }
                 _ => panic!("Unimplemented algorithm"),
             },
-            pub_key_map: HashMap::with_capacity(config.num_nodes),
+            pub_key_map: HashMap::default(),
             net_send,
             cli_send,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
             view_leader: 0,
-            round_leader:0,
+            round_leader:config.num_faults-1,
+            last_f_leaders: LinkedHashMap::with_capacity(config.num_nodes),
+            eligible_leaders: Vec::with_capacity(config.num_nodes),
             view:0,
             round: 0,
             last_seen_block: genesis_arc.clone(),
             last_voted_block: genesis_arc,
             is_client_apollo_enabled: apollo_enabled,
             req_ctr:0,
-            vote_waiting:HashMap::new(),
-            vote_ready:HashMap::new(),
-            vote_chain: HashMap::new(),
-            block_parent_waiting:HashMap::new(),
-            undelivered_blocks:HashMap::new(),
+            vote_waiting:HashMap::default(),
+            vote_ready:HashMap::default(),
+            vote_chain: HashMap::default(),
+            block_parent_waiting:HashMap::default(),
+            undelivered_blocks:HashMap::default(),
             block_processing_waiting: VecDeque::new(),
             response_waiting: VecDeque::new(),
             other_buf: VecDeque::new(),
@@ -151,45 +159,88 @@ impl Context {
         c.storage.add_delivered_block(
             c.last_seen_block.clone()
         );
+        // Initialize the leaders
+        for i in 0..config.num_faults {
+            c.last_f_leaders.insert(i, ());
+        }
+        for i in config.num_faults..config.num_nodes {
+            c.eligible_leaders.push(i);
+        }
+        log::info!("Using last f leaders: {:?}", c.last_f_leaders);
+        log::info!("Using eligible leaders: {:?}", c.eligible_leaders);
         c
     }
 
+    /// Goes to the next round
+    pub(crate) fn update_round(&mut self) {
+        // First update the round leader
+        let (new_leader, idx) = self.compute_next_round_leader();
+        self.round_leader = new_leader;
+        // Then update the round
+        // This order is important, otherwise, some other parts of the code may call next_round_leader() and changing the round before setting cx.round_leader = cx.next_round_leader() will cause problems (I LEARNT IT THE HARD WAY)
+        self.round += 1;
+        // Make the f^th leader elligible again
+        let (eligible_again,_) = self.last_f_leaders.pop_front().unwrap();
+        self.last_f_leaders.insert(self.round_leader, ());
+        self.eligible_leaders[idx] = eligible_again;
+    }
+
     /// Returns the next round leader
-    pub fn next_round_leader(&self) -> Replica {
-        self.next_of(self.round_leader)
+    /// This function will be called several times before finally updating the round leader
+    /// When changing the leader do not change the following variables:
+    /// - round
+    /// - eligible_leaders
+    pub(crate) fn next_round_leader(&self) -> Replica {
+        let (leader, _) = self.compute_next_round_leader();
+        leader
+    }
+
+    /// This is a private function that returns both the next leader and its index in the eligible leaders vector
+    fn compute_next_round_leader(&self) -> (Replica, usize) {
+        let data = (self.round+1).to_be_bytes();
+        let h = crypto::hash::do_hash(&data);
+        let idx = usize::from_be_bytes(h[24..].try_into().unwrap()) % self.eligible_leaders.len();
+        (self.eligible_leaders[idx], idx)
     }
 
     pub(crate) fn next_of(&self, prev: Replica) -> Replica {
         (prev+1)%self.num_nodes
     }
 
-    // Returns the number of nodes
+    /// Returns the number of nodes
     #[inline]
     pub const fn num_nodes(&self) -> usize {
         self.num_nodes
     }
 
-    // Returns the number of faults (f)
+    /// Returns the number of faults (f)
     #[inline]
     pub const fn num_faults(&self) -> usize {
         self.num_faults
     }
 
-    // Returns the ID of this node
+    /// Returns the ID of this node
     #[inline]
     pub const fn myid(&self) -> usize {
         self.myid
     }
 
-    // Returns the secret key of this node
+    /// Returns the secret key of this node
     #[inline]
     pub fn my_secret_key(&self) -> Arc<Keypair> {
         self.my_secret_key.clone()
     }
 
-    // Returns whether the clients are special or not
+    /// Returns whether the clients are special or not
     #[inline]
     pub const fn is_client_apollo_enabled(&self) -> bool {
         self.is_client_apollo_enabled
+    }
+
+    /// Returns the current round 
+    /// We want to ensure read only access to this value
+    #[inline]
+    pub const fn round(&self) -> Round {
+        self.round
     }
 }

@@ -101,18 +101,18 @@ async fn try_new_round(v: UCRVote,
     ts: SystemTime,
 ) 
 {
-    if cx.round < v.round {
+    if cx.round() < v.round {
         log::debug!("We got a vote from the future");
         // TODO
         cx.future_msgs.insert(v.round, (v, block_vec));
         return;
     }
-    if cx.round > v.round {
+    if cx.round() > v.round {
         log::warn!("We got a vote from a round that we have already processed for");
         return;
     }
     new_round(v, block_vec, cx, ts).await;
-    while let Some((v, block_vec)) = cx.future_msgs.remove(&cx.round) {
+    while let Some((v, block_vec)) = cx.future_msgs.remove(&cx.round()) {
         new_round(v, block_vec, cx, ts).await;
     }
 }
@@ -130,7 +130,7 @@ async fn new_round(v: UCRVote,
     }
     if v.round < cx.config.num_faults {
         // Nothing to commit
-        cx.round += 1;
+        cx.update_round();
         return;
     }
 
@@ -149,5 +149,5 @@ async fn new_round(v: UCRVote,
     }
 
     // At the end, move to the next round
-    cx.round += 1;
+    cx.update_round();
 }

@@ -1,10 +1,8 @@
-use std::collections::{HashMap, HashSet};
-
+use fnv::{FnvHashMap as HashMap, FnvHashSet as HashSet};
 use crate::{BlockTrait, Height, TxTrait};
 use crypto::hash::Hash;
 use linked_hash_map::LinkedHashMap;
 use std::sync::Arc;
-
 
 /// Storage holds on to all the blocks and transactions
 /// Disable feature `mempool` if the end program does not need any client.
@@ -25,10 +23,10 @@ T: TxTrait,
 {
     pub fn new(space: usize) -> Self {
         Storage{
-            all_delivered_blocks_by_hash: HashMap::new(),
-            all_delivered_blocks_by_ht: HashMap::new(),
-            committed_blocks_by_hash: HashSet::new(),
-            committed_blocks_by_ht: HashSet::new(),
+            all_delivered_blocks_by_hash: HashMap::default(),
+            all_delivered_blocks_by_ht: HashMap::default(),
+            committed_blocks_by_hash: HashSet::default(),
+            committed_blocks_by_ht: HashSet::default(),
             #[cfg(feature="mempool")]
             pending_tx: LinkedHashMap::with_capacity(space),
         }

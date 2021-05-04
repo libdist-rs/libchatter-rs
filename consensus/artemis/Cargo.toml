@@ -22,6 +22,7 @@ serde = "1.0.70"
 log="*"
 priority-queue="1"
 fnv = "1"
+linked-hash-map = "0.5"
 
 [features]
 # Should the code include heavy parallelism?
