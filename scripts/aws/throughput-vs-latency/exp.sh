@@ -30,6 +30,8 @@ elif [ $TYPE == "apollo" ]; then
     fi
 elif [ $TYPE == "optsync" ]; then
     CLI_TYPE="client-$TYPE"
+elif [ $TYPE == "artemis" ]; then
+    CLI_TYPE="client-artemis"
 fi
 
 while IFS= read -r line; do
@@ -55,5 +57,5 @@ ssh arch@$client 'bash -ls --' < scripts/aws/throughput-vs-latency/client.sh $TE
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr'
+    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr node-artemis &>/dev/null'
 done

@@ -1,8 +1,10 @@
 # A script to test quickly
 
+set -e
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
 make artemis
 make artemis-release
-killall node-artemis &> /dev/null
 
 TESTDIR=${TESTDIR:="testdata/b100-n3"}
 TYPE=${TYPE:="release"}
@@ -24,13 +26,12 @@ W=${W:="80000"}
     --sleep 20 \
     -s $1 &> 2.log &
 
-sleep 60
+sleep 15
 # Nodes must be ready by now
 ./target/$TYPE/client-artemis \
     --config $TESTDIR/client.json \
     -i cli_ip_file \
     -w $W \
-    -m 1000000 $1
+    -m 1000000 $1 &> client.log &
 
-# Client has finished; Kill the nodes
-killall ./target/$TYPE/node-artemis &> /dev/null
+wait

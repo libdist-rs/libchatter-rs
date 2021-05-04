@@ -14,7 +14,7 @@ fi
 # sleep 30
 # echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
 
-./target/release/node-apollo \
+./target/release/node-artemis \
     --config $TESTDIR/nodes-$ID.json \
     --ip ips_file \
     --delta "$DELAY" \
