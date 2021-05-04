@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 use super::{Transaction, Certificate};
 use crate::{BlockTrait, WireReady, protocol::{Replica, Height}};
 use crypto::hash::{EMPTY_HASH, Hash};
-use std::{sync::Arc, borrow::Borrow};
+use std::sync::Arc;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Block {
@@ -83,7 +83,7 @@ impl Body {
     pub fn new(txs: Vec<Arc<Transaction>>) -> Self {
         let mut hashes = Vec::new();
         for tx in txs {
-            hashes.push(crypto::hash::ser_and_hash(tx.borrow() as &Transaction));
+            hashes.push(crypto::hash::ser_and_hash(tx.as_ref()));
         }
         Self{
             tx_hashes: hashes,

@@ -1,8 +1,5 @@
 use types::apollo::{Propose, ProtocolMsg, Replica};
-
-use super::context::Context;
-use super::proposal::on_receive_proposal;
-use super::{blame::on_receive_blame, request::handle_request};
+use super::*;
 use std::sync::Arc;
 use futures::SinkExt;
 
@@ -20,7 +17,7 @@ pub async fn process_message(cx:&mut Context)
     while let Some((sender, pmsg)) = cx.other_buf.pop_front() {
         match pmsg {
             ProtocolMsg::Request(rid, h) => {
-                handle_request(sender, rid, h, cx).await;
+                on_recv_request(sender, rid, h, cx).await;
             }
             ProtocolMsg::Blame(v) => {
                 on_receive_blame(v, cx).await;
@@ -48,7 +45,7 @@ pub fn handle_message(sender: Replica, message: ProtocolMsg, cx: &mut Context) {
 
 pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
     // Check if the proposals are already processed
-    if cx.prop_chain.contains_key(&p.block_hash) {
+    if cx.prop_chain_by_round.contains_key(&p.round) {
         log::debug!("Already handled {:?} before", p);
         return;
     }
@@ -59,7 +56,7 @@ pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
         log::debug!(
             "Block unknown: {:?}", p.block_hash);
         let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, p.block_hash));
-        cx.prop_waiting.insert(p.block_hash);
+        cx.prop_waiting.insert(p.block_hash, p);
         cx.net_send.send((sender, msg)).await.unwrap();
         return;
     }
@@ -85,11 +82,12 @@ pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
     cx.storage.add_delivered_block(block);
 
     let mut block_hash = p.block_hash;
-    on_receive_proposal(p, cx).await;
+    on_receive_proposal(Arc::new(p), cx).await;
     cx.prop_waiting.remove(&block_hash);
 
-    while let Some(p_new) = cx.prop_waiting_parent.remove(&block_hash) {
+    while let Some(mut p_new) = cx.prop_waiting_parent.remove(&block_hash) {
         block_hash = p_new.block_hash;
-        on_receive_proposal(p_new, cx).await;
+        p_new.block = Some(cx.storage.delivered_block_from_hash(&block_hash).unwrap());
+        on_receive_proposal(Arc::new(p_new), cx).await;
     }
 }

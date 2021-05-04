@@ -25,8 +25,7 @@ pub async fn reactor(
     // Optimization to improve latency when the payloads are high
     let (send, mut recv) = unbounded_channel();
 
-    let mut cx = Context::new(config, net_send, send);
-    cx.is_client_apollo_enabled = is_client_apollo_enabled;
+    let mut cx = Context::new(config, net_send, send, is_client_apollo_enabled);
 
     let block_size = config.block_size;
     let myid = config.id;
@@ -37,7 +36,7 @@ pub async fn reactor(
         .enable_all()
         .build()
         .unwrap();
-    rt.spawn(async move {
+    let payload_adder = async move {
         let mut cli_send = cli_send_p;
         loop {
             let prop_arc = recv.next().await.unwrap();
@@ -46,7 +45,8 @@ pub async fn reactor(
             let bl = prop.block.as_ref().unwrap().as_ref().clone();
             cli_send.send(Arc::new(ClientMsg::RawNewBlock(prop, bl, payload))).await.unwrap();
         }
-    });
+    };
+    rt.spawn(payload_adder);
     loop {
         tokio::select! {
             pmsg_opt = net_recv.next() => {
@@ -75,12 +75,12 @@ pub async fn reactor(
         }
         // Do we have sufficient commands, and are we the next leader?
         if cx.storage.get_tx_pool_size() >= block_size && 
-            cx.next_leader() == myid 
+            cx.round_leader() == myid 
         {
             log::debug!(
-                "I {} am the leader and, I am proposing", cx.myid);
+                "I {} am the leader and, I am proposing", cx.myid());
             let txs = cx.storage.cleave(block_size);
             do_propose(txs, &mut cx).await;
-        } 
+        }
     }
 }

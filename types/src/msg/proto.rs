@@ -10,8 +10,7 @@ pub enum ProtocolMsg {
     RawNewProposal(Propose, Block),
     NewProposal(Propose),
 
-    /// Raw Relay
-    // RawRelay(Propose, Block),
+    /// Relay
     Relay(Propose),
 
     Blame(Vote),

@@ -38,7 +38,6 @@ pub async fn do_round_vote(cx: &mut Context) {
         block_vec.push_front(b.as_ref().clone());
         tail = b.blk.header.prev;
     }
-    // panic!("Unimplemented block vector creation");
     let block_vec = block_vec.into_iter().map(|b|{
         (b,Payload::empty())
     }).collect();
@@ -60,11 +59,22 @@ pub async fn try_receive_round_vote(cx:&mut Context, from: Replica, ucr_vote: UC
     // Is this the correct round?
     if cx.round() < ucr_vote.round {
         // We got a ucr_vote from the future
-        log::debug!("Got a vote from the future");
+        log::debug!("Got a vote for round {} from the future for {}", ucr_vote.round, cx.round());
         // What TODO? Keep it ready until we move to this round
-        cx.vote_ready.insert(ucr_vote.round, ucr_vote);
+        if cx.storage.is_delivered_by_hash(&ucr_vote.hash) {
+            cx.vote_ready.insert(ucr_vote.round, ucr_vote);
+        } else {
+            // I don't have the chain for this. Ask chain from the sender
+            let msg = Arc::new(ProtocolMsg::Request(cx.req_ctr, ucr_vote.hash));
+            let job = cx.c_send(from, msg).await;
+            cx.vote_waiting.insert(ucr_vote.hash, ucr_vote);
+            job.await.unwrap();
+        }
+        // cx.vote_ready.insert(ucr_vote.round, ucr_vote);
         return;
     }
+
+    // cx.future_votes.remove(&cx.round());
     // Do I have the chain?
     if !cx.storage.is_delivered_by_hash(&ucr_vote.hash) {
         // I don't have the chain for this. Ask chain from the sender
@@ -74,6 +84,7 @@ pub async fn try_receive_round_vote(cx:&mut Context, from: Replica, ucr_vote: UC
         job.await.unwrap();
         return;
     }
+
     // I have the chain
     on_receive_round_vote(cx, ucr_vote).await;
 }

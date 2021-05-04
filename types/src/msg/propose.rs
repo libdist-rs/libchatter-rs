@@ -8,7 +8,7 @@ pub struct Propose {
     pub proof: Vec<u8>,
     pub block_hash: Hash,
 
-    #[serde(skip_serializing, skip_deserializing)]
+    #[serde(skip)]
     pub block: Option<Arc<Block>>,
 }
 
