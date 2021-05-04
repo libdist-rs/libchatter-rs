@@ -9,9 +9,9 @@
 IN_FILE=${1:-"scripts/aws/aws_ips.log"}
 TESTDIR=${2:-"testdata/b100-n3"}
 W=${3:-"50000"}
-# TYPE is one of ["apollo", "synchs", "synchs-rr", "optsync"]
+# TYPE is one of ["apollo", "synchs", "synchs-rr", "optsync", "artemis"]
 TYPE=${4:-"apollo"}
-# CLI_TYPE is one of ["default","client-apollo","client-synchs","normal-client-apollo"]
+# CLI_TYPE is one of ["default","client-apollo","client-synchs","normal-client-apollo", "artemis"]
 CLI_TYPE=${5:-"default"}
 DELAY=${6:-"50"}
 M=${M:-"1000000"}
