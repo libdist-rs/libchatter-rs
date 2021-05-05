@@ -49,6 +49,10 @@ pub async fn process_message(cx:&mut Context)
             _ => panic!("unreachable"),
         }
     }
+    // Try dealing with any votes that got ready or are from the future
+    while let Some(v) = cx.vote_ready.remove(&cx.round()) {
+        on_receive_round_vote(cx, v).await;
+    }
 }
 
 /// Take a block and check if this block is delivered
