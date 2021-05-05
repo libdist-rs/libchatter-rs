@@ -9,5 +9,7 @@ done < $FILE
 
 for ip in "${IPS[@]}"
 do
-    ssh -t arch@$ip 'bash -ls' < scripts/aws/update.sh
+    ssh -t arch@$ip 'bash -ls' < scripts/aws/update.sh &
 done
+
+wait

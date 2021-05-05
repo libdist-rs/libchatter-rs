@@ -83,15 +83,15 @@ SW5_List=(8000 10000 20000 40000 60000 80000 100000 120000 150000)
 
 # for w in ${W4_List[@]}; do
 #     echo "DP[Window]: $w"
-#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b2000-n3" $w "apollo"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b1600-n3" $w "apollo"
 #     sleep 2
-# done >> $1/b2000-apollo-run.log
+# done >> $1/b1600-apollo-run.log
 
 # for w in ${W5_List[@]}; do
 #     echo "DP[Window]: $w"
-#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b4000-n3" $w "apollo"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b3200-n3" $w "apollo"
 #     sleep 2
-# done >> $1/b4000-apollo-run.log
+# done >> $1/b3200-apollo-run.log
 
 # =======
 # OPTSYNC
@@ -113,6 +113,18 @@ SW5_List=(8000 10000 20000 40000 60000 80000 100000 120000 150000)
 #     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b800-n3" $w "optsync"
 #     sleep 2
 # done >> $1/b800-optsync-run.log
+
+# for w in ${SW4_List[@]}; do
+#     echo "DP[Window]: $w"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b1600-n3" $w "optsync"
+#     sleep 2
+# done >> $1/b1600-optsync-run.log
+
+# for w in ${SW5_List[@]}; do
+#     echo "DP[Window]: $w"
+#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b3200-n3" $w "optsync"
+#     sleep 2
+# done >> $1/b3200-optsync-run.log
 
 # =========
 # SYNCHS-RR
@@ -201,14 +213,14 @@ for w in ${W3_List[@]}; do
     sleep 2
 done >> $1/b800-artemis-run.log
 
-# for w in ${W4_List[@]}; do
-#     echo "DP[Window]: $w"
-#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b2000-n3" $w "apollo"
-#     sleep 2
-# done >> $1/b2000-apollo-run.log
+for w in ${W4_List[@]}; do
+    echo "DP[Window]: $w"
+    bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b1600-n3" $w "artemis"
+    sleep 2
+done >> $1/b1600-artemis-run.log
 
-# for w in ${W5_List[@]}; do
-#     echo "DP[Window]: $w"
-#     bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b4000-n3" $w "apollo"
-#     sleep 2
-# done >> $1/b4000-apollo-run.log
+for w in ${W5_List[@]}; do
+    echo "DP[Window]: $w"
+    bash scripts/aws/throughput-vs-latency/exp.sh "scripts/aws/aws_ips.log" "testdata/b3200-n3" $w "artemis"
+    sleep 2
+done >> $1/b3200-artemis-run.log

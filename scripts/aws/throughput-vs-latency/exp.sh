@@ -15,7 +15,7 @@ TYPE=${4:-"apollo"}
 CLI_TYPE=${5:-"default"}
 DELAY=${6:-"50"}
 M=${M:-"1000000"}
-SLEEP_TIME=10
+SLEEP_TIME=20
 
 if [ $TYPE == "synchs" ]; then 
     CLI_TYPE="client-$TYPE"
@@ -43,7 +43,7 @@ N=3
 for((i=0;i<$N;i++))
 do
     ip=${ACTUAL_IPS[$i]}
-    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr node-optsync client-optsync'
+    ssh arch@$ip 'killall node-apollo node-synchs node-synchs-rr node-optsync client-optsync node-artemis client-artemis'
     ssh arch@$ip 'bash -ls --' < scripts/aws/throughput-vs-latency/$TYPE.sh $i $TESTDIR $DELAY $CLI_TYPE &
 done
 
