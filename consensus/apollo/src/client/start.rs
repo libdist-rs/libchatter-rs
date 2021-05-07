@@ -1,6 +1,6 @@
 use std::time::SystemTime;
 use config::Client;
-use types::{BlockTrait, apollo::{ClientMsg, Propose, Transaction}};
+use types::apollo::{ClientMsg, Propose, Transaction};
 use tokio::sync::mpsc::channel;
 use consensus::statistics;
 use std::sync::Arc;
@@ -143,13 +143,10 @@ fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
     while let Some(p) = cx.future_msgs.remove(&cx.round) {
         let b = p.block.clone().unwrap();
         cx.storage.add_delivered_block(b.clone());
-        if c.num_faults > b.header.height {
-            continue;
-        }
         if !cx.storage.is_delivered_by_hash(&b.header.prev) {
             panic!("Do not have parent for this block {:?}, yet",b);
         }
-        let commit_round = b.get_height() - c.num_faults;
+        let commit_round = cx.round - c.num_faults;
         let commit_block = cx.storage.delivered_block_from_ht(commit_round)
             .expect("Must be in the height map");
         

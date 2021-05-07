@@ -115,5 +115,6 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
 
     cx.last_seen_block = block.clone();
     cx.update_round();
+
     job.await.expect("Concurrent relaying failed");
 }

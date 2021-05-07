@@ -1,11 +1,10 @@
-use types::BlockTrait;
 use super::context::Context;
 
 pub async fn do_commit(cx: &mut Context) {
     log::debug!("Trying to commit blocks");
 
     // Add all parents if not committed already
-    let commit_round = cx.last_seen_block.get_height() - cx.num_faults();
+    let commit_round = cx.round() - cx.num_faults();
     let p = cx.prop_chain_by_round.get(&commit_round).unwrap();
     let mut hash = p.block_hash;
     while !cx.storage.is_committed_by_hash(&hash) {
