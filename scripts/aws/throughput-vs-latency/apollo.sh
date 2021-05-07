@@ -12,7 +12,7 @@ else
 fi
 
 # sleep 30
-# echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
+echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$DELAY" -s"
 
 ./target/release/node-apollo \
     --config $TESTDIR/nodes-$ID.json \

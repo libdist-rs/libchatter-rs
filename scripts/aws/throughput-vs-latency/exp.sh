@@ -15,7 +15,7 @@ TYPE=${4:-"apollo"}
 CLI_TYPE=${5:-"default"}
 DELAY=${6:-"50"}
 M=${M:-"1000000"}
-SLEEP_TIME=20
+SLEEP_TIME=30
 
 if [ $TYPE == "synchs" ]; then 
     CLI_TYPE="client-$TYPE"

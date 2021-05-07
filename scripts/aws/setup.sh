@@ -14,11 +14,15 @@ source $HOME/.cargo/env
 # Remove install script
 rm -rf script.sh
 
-# Clone our code
-git clone https://github.com/adithyabhatkajake/libchatter-rs.git
+if [ ! -d libchatter-rs ]; then 
+    # Clone our code
+    git clone https://github.com/adithyabhatkajake/libchatter-rs.git
+fi
 
 # Get into our code
 cd libchatter-rs
+
+git pull origin master
 
 # Build experiments
 cargo build --all --release
