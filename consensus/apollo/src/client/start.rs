@@ -1,50 +1,20 @@
 use std::time::SystemTime;
-use fnv::FnvHashMap as HashMap;
-
 use config::Client;
-use types::apollo::{Block, ClientMsg, GENESIS_BLOCK, Height, Transaction};
+use types::{BlockTrait, apollo::{ClientMsg, Propose, Transaction}};
 use tokio::sync::mpsc::channel;
-use crypto::hash::Hash;
 use consensus::statistics;
 use std::sync::Arc;
 use util::codec::EnCodec;
 use util::codec::Decodec;
 use futures::{SinkExt, StreamExt};
 use net::futures_manager::TlsClient;
-
-struct Context {
-    pub pending: usize,
-    pub num_cmds: u128,
-    pub time_map: HashMap<Hash, SystemTime>,
-    pub latency_map: HashMap<Hash, (SystemTime, SystemTime)>,
-    pub height_map:HashMap<Height, Arc<Block>>,
-    pub hash_map:HashMap<Hash, Arc<Block>>,
-    pub last_committed_block: Arc<Block>,
-    pub last_block:Arc<Block>, 
-}
-
-impl Context {
-    pub fn new() -> Self {
-        let genesis_arc = Arc::new(GENESIS_BLOCK);
-        Context {
-            pending: 0,
-            num_cmds: 0,
-            time_map: HashMap::default(),
-            latency_map: HashMap::default(),
-            height_map: HashMap::default(),
-            hash_map: HashMap::default(),
-            last_committed_block: genesis_arc.clone(),
-            last_block: genesis_arc,
-        }
-    }
-}
+use super::*;
 
 pub async fn start(
     c:&Client, 
     metric: u64,
     window: usize,
 ) {
-
     let mut client_network = TlsClient::<ClientMsg, Transaction>::new(c.root_cert.clone());
     let servers = c.net_map.clone();
     let send_id = c.num_nodes;
@@ -88,22 +58,20 @@ pub async fn start(
     let first_recv_b = tokio::spawn(async move{
         let mut cx = cx;
         for _ in 0..(first_recv) {
-            let (_, b) = net_recv.next().await.unwrap();
-            let blk = match b {
-                ClientMsg::NewBlock(p,_pl) => p.block.unwrap(),
+            let (_, msg) = net_recv.next().await.unwrap();
+            let prop = match msg {
+                ClientMsg::NewBlock(p,_pl) => p,
                 _ => continue,
             };
-            let b = blk;
-            let is_in_ht_map = cx.height_map.contains_key(&b.header.height);
-            let is_in_hash_map = cx.hash_map.contains_key(&b.hash);
-            if is_in_ht_map && !is_in_ht_map {
-                panic!("Got equivocating blocks");
+            update_props(prop, &mut cx);
+            while let Some(p) = cx.future_msgs.remove(&cx.round) {
+                let b = p.block.clone().unwrap();
+                if !cx.storage.is_delivered_by_hash(&b.header.prev) {
+                    panic!("Got an undelivered block");
+                }
+                cx.storage.add_delivered_block(b);
+                cx.round += 1;
             }
-            if is_in_hash_map {
-                continue;
-            }
-            cx.height_map.insert(b.header.height, b.clone());
-            cx.hash_map.insert(b.hash, b);
         }
         (net_recv, cx)
     });
@@ -112,7 +80,6 @@ pub async fn start(
     let mut net_recv = val.0;
     let mut cx = val.1;
     log::debug!("Finished sending first few blocks");
-    let mut new_blocks = Vec::new();
     let start = SystemTime::now();
     loop {
         tokio::select! {
@@ -137,19 +104,17 @@ pub async fn start(
                 if let None = block_opt {
                     panic!("invalid content received from the server");
                 }
-                let (_, b) = block_opt.unwrap();
-                log::debug!("Got a client message: {:?}", b);
-                let blk = match b {
-                    ClientMsg::NewBlock(p, _pl) => p.block.unwrap(),
+                let (_, msg) = block_opt.unwrap();
+                log::debug!("Got a client message: {:?}", msg);
+                let prop = match msg {
+                    ClientMsg::NewBlock(p, _pl) => p,
                     _ => continue,
                 };
-                let b = blk;
-                new_blocks.push(b);
+                update_props(prop, &mut cx);
                 while let Ok(Some((_, ClientMsg::NewBlock(p,_)))) = net_recv.try_next() {
-                    let b = p.block.clone().unwrap();
-                    new_blocks.push(b);
+                    update_props(p, &mut cx);
                 }
-                handle_new_blocks(c, &mut new_blocks, &mut cx, now);
+                handle_new_blocks(c, &mut cx, now);
             } 
         }
         if cx.num_cmds > m as u128 {
@@ -160,46 +125,45 @@ pub async fn start(
     }
 }
 
-fn handle_new_blocks(c: &Client, blocks: &mut Vec<Arc<Block>>, cx: &mut Context, now: SystemTime) {
-    for b in blocks {
-        let is_in_ht_map = cx.height_map.contains_key(&b.header.height);
-        let is_in_hash_map = cx.hash_map.contains_key(&b.hash);
-        if is_in_ht_map && 
-        !is_in_ht_map {
-            // Got equivocating blocks
-            panic!("Got equivocating blocks");
+fn update_props(p: Propose, cx:&mut Context) {
+    if p.round < cx.round {
+        if cx.storage.is_delivered_by_hash(&p.block_hash) {
+            log::warn!("Got a block {} from the past - {}", p.round, cx.round);
+            return;
+        } else {
+            // Someone equivocated.
+            panic!("equivocation detected");
         }
-        if is_in_hash_map {
+    }
+    cx.future_msgs.insert(p.round, p);
+}
+
+// Handle future blocks
+fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
+    while let Some(p) = cx.future_msgs.remove(&cx.round) {
+        let b = p.block.clone().unwrap();
+        cx.storage.add_delivered_block(b.clone());
+        if c.num_faults > b.header.height {
             continue;
         }
-        cx.last_block = b.clone();
-        cx.height_map.insert(b.header.height,b.clone());
-        cx.hash_map.insert(b.hash, b.clone());
-        if c.num_faults+1 > b.header.height as usize {
-            continue;
+        if !cx.storage.is_delivered_by_hash(&b.header.prev) {
+            panic!("Do not have parent for this block {:?}, yet",b);
         }
-        if !cx.hash_map.contains_key(&cx.last_block.header.prev) {
-            println!("Do not have parent for this block {:?}, yet", cx.last_block);
+        let commit_round = b.get_height() - c.num_faults;
+        let commit_block = cx.storage.delivered_block_from_ht(commit_round)
+            .expect("Must be in the height map");
+        
+        // Use f+1 rule to commit the block
+        cx.pending += c.block_size;
+        cx.num_cmds += c.block_size as u128;
+        for t in &commit_block.body.tx_hashes {
+            if let Some(old) = cx.time_map.get(t) {
+                cx.latency_map.insert(t.clone(), (old.clone(), now));
+            } else {
+                // Transaction not found in time map
+                cx.num_cmds -= 1;
             }
-            let commit_block = cx.height_map.get(&(b.header.height-c.num_faults))
-                .expect("Must be in the height map");
-            if cx.last_committed_block.hash != commit_block.header.prev {
-                panic!("Hash chain broken by new blocks");
-                // TODO: Add delivery
-            }
-            cx.last_committed_block = commit_block.clone();
-            // println!("got a block:{:?}",b);
-                
-            // Use f+1 rule to commit the block
-            cx.pending += c.block_size;
-            cx.num_cmds += c.block_size as u128;
-            for t in &commit_block.body.tx_hashes {
-                if let Some(old) = cx.time_map.get(t) {
-                    cx.latency_map.insert(t.clone(), (old.clone(), now));
-                } else {
-                    // Transaction not found in time map
-                    cx.num_cmds -= 1;
-                }
-            }
+        }
+        cx.round += 1;
     }
 }

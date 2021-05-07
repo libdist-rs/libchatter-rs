@@ -100,6 +100,9 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
         }
     }
 
+    let msg = Arc::new(ProtocolMsg::Relay(p.as_ref().clone()));
+    let job = cx.c_send(cx.next_leader(), msg).await;
+
     // Remove transactions from the pool
     cx.storage.clear(&block.body.tx_hashes);
     cx.prop_chain_by_hash.insert(p.block_hash, p.clone());
@@ -110,11 +113,7 @@ pub async fn on_receive_proposal(p: Arc<Propose>, cx: &mut Context) {
         do_commit(cx).await;
     }
 
-    // Should we send this to the client
-    if cx.is_client_apollo_enabled() {
-        cx.multicast_client(p).await;
-    }
-
     cx.last_seen_block = block.clone();
     cx.update_round();
+    job.await.expect("Concurrent relaying failed");
 }
