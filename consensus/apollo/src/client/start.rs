@@ -147,8 +147,10 @@ fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
         if !cx.storage.is_delivered_by_hash(&b.header.prev) {
             panic!("Do not have parent for this block {:?}, yet",b);
         }
+        cx.pending += c.block_size;
         if cx.round <= c.num_faults {
-            panic!("Should never happen");
+            cx.round += 1;
+            return;
         }
         log::debug!("Adding block ht:{} in round {}", b.header.height, cx.round);
         let commit_round = cx.round - c.num_faults;
@@ -156,7 +158,6 @@ fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
             .expect(format!("Must be in the height map:cxr: {}, cmr:{}", cx.round, commit_round).as_str());
         
         // Use f+1 rule to commit the block
-        cx.pending += c.block_size;
         cx.num_cmds += c.block_size as u128;
         for t in &commit_block.body.tx_hashes {
             if let Some(old) = cx.time_map.get(t) {
