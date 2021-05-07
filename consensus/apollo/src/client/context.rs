@@ -25,7 +25,7 @@ impl Context {
             time_map: HashMap::default(),
             latency_map: HashMap::default(),
             storage: Storage::new(100_000),
-            round:0,
+            round:1,
             future_msgs: HashMap::default(),
         };
         cx.storage.add_delivered_block(genesis_arc.clone());

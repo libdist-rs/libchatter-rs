@@ -48,7 +48,7 @@ pub async fn try_receive_proposal(p: Propose, from:Replica, cx:&mut Context) {
     }
     if cx.round() < p.round {
         log::debug!("Got a proposal from the future");
-        cx.future_msgs.insert(p.round, p);
+        cx.future_msgs.insert(p.round, (from,p));
         return;
     }
     let b_hash = p.block.as_ref().map(|b| b.hash).unwrap();

@@ -32,6 +32,10 @@ pub async fn process_message(cx:&mut Context)
             },
         };
     }
+
+    while let Some((sender, p)) = cx.future_msgs.remove(&cx.round()) {
+        delivery_check(sender, p, cx).await;
+    }
 }
 
 pub fn handle_message(sender: Replica, message: ProtocolMsg, cx: &mut Context) {
@@ -82,12 +86,20 @@ pub async fn delivery_check(sender:Replica, p: Propose, cx: &mut Context) {
     cx.storage.add_delivered_block(block);
 
     let mut block_hash = p.block_hash;
-    on_receive_proposal(Arc::new(p), cx).await;
+    if cx.round() < p.round {
+        cx.future_msgs.insert(p.round, (sender, p));
+    } else {
+        try_receive_proposal(p, sender, cx).await;
+    }
     cx.prop_waiting.remove(&block_hash);
 
     while let Some(mut p_new) = cx.prop_waiting_parent.remove(&block_hash) {
         block_hash = p_new.block_hash;
         p_new.block = Some(cx.storage.delivered_block_from_hash(&block_hash).unwrap());
-        on_receive_proposal(Arc::new(p_new), cx).await;
+        if cx.round() < p_new.round {
+            cx.future_msgs.insert(p_new.round, (sender, p_new));
+        } else {
+            try_receive_proposal(p_new, sender, cx).await;
+        }
     }
 }

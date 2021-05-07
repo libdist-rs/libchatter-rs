@@ -30,7 +30,7 @@ pub struct Context {
     pub prop_buf: VecDeque<(Replica, Propose)>,
     pub relay_buf: VecDeque<(Replica, Propose)>,
     pub other_buf: VecDeque<(Replica, ProtocolMsg)>,
-    pub future_msgs: HashMap<Round, Propose>,
+    pub future_msgs: HashMap<Round, (Replica, Propose)>,
 
     /// Storage context
     /// Where the blockchain and transactions are stored
@@ -86,7 +86,7 @@ impl Context {
             cli_send,
             storage: Storage::new(EXTRA_SPACE*config.block_size),
             round_leader: 0,
-            round: 0,
+            round: 1,
             future_msgs: HashMap::default(),
             last_seen_block: Arc::new(GENESIS_BLOCK),
             is_client_apollo_enabled: is_apollo_enabled,

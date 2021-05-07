@@ -73,6 +73,7 @@ pub async fn start(
                 cx.round += 1;
             }
         }
+        log::info!("Finally at round {}", cx.round);
         (net_recv, cx)
     });
     let mut recv = first_send_tx.await.unwrap();
@@ -147,11 +148,12 @@ fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
             panic!("Do not have parent for this block {:?}, yet",b);
         }
         if cx.round <= c.num_faults {
-            continue;
+            panic!("Should never happen");
         }
+        log::debug!("Adding block ht:{} in round {}", b.header.height, cx.round);
         let commit_round = cx.round - c.num_faults;
         let commit_block = cx.storage.delivered_block_from_ht(commit_round)
-            .expect("Must be in the height map");
+            .expect(format!("Must be in the height map:cxr: {}, cmr:{}", cx.round, commit_round).as_str());
         
         // Use f+1 rule to commit the block
         cx.pending += c.block_size;
