@@ -146,6 +146,9 @@ fn handle_new_blocks(c: &Client, cx: &mut Context, now: SystemTime) {
         if !cx.storage.is_delivered_by_hash(&b.header.prev) {
             panic!("Do not have parent for this block {:?}, yet",b);
         }
+        if cx.round <= c.num_faults {
+            continue;
+        }
         let commit_round = cx.round - c.num_faults;
         let commit_block = cx.storage.delivered_block_from_ht(commit_round)
             .expect("Must be in the height map");
