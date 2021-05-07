@@ -122,7 +122,7 @@ impl Context {
             last_f_leaders: LinkedHashMap::with_capacity(config.num_nodes),
             eligible_leaders: Vec::with_capacity(config.num_nodes),
             view:0,
-            round: 0,
+            round: 1,
             last_seen_block: genesis_arc.clone(),
             last_voted_block: genesis_arc,
             is_client_apollo_enabled: apollo_enabled,

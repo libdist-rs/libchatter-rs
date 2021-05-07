@@ -128,11 +128,17 @@ async fn new_round(v: UCRVote,
         cx.pending += b.blk.body.tx_hashes.len();
         cx.storage.add_delivered_block(Arc::new(b));
     }
-    if v.round < cx.config.num_faults {
+    let v = Arc::new(v);
+    cx.prop_chain.insert(v.round, v.clone());
+    if v.round <= cx.config.num_faults {
         // Nothing to commit
         cx.update_round();
         return;
     }
+    
+    let com_round = v.round - cx.config.num_faults;
+    let v = cx.prop_chain.get(&com_round)
+        .expect("Must have in prop map");
 
     let mut com_hash = v.hash;
     while !cx.storage.is_committed_by_hash(&com_hash) {

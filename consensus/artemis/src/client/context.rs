@@ -19,6 +19,8 @@ pub(crate) struct Context {
     pub latency_map: HashMap<Hash, (SystemTime, SystemTime)>,
     /// To hold all of our blocks
     pub storage: Storage,
+    /// Prop chain
+    pub prop_chain: HashMap<Round, Arc<UCRVote>>,
     /// The current round
     round: Round,
     /// The current round leader
@@ -41,7 +43,8 @@ impl Context {
             time_map: HashMap::default(),
             latency_map: HashMap::default(),
             storage: Storage::new(100_000),
-            round: 0,
+            round: 1,
+            prop_chain:HashMap::default(),
             round_leader:config.num_faults-1,
             future_msgs: HashMap::default(),
             last_f_leaders: LinkedHashMap::with_capacity(config.num_nodes),
