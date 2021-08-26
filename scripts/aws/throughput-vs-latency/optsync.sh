@@ -11,4 +11,5 @@ cd libchatter-rs
 
 ./target/release/node-optsync \
     --config $TESTDIR/nodes-$ID.json \
+    --sleep 140 \
     --ip ips_file &

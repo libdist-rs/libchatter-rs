@@ -1,0 +1,1188 @@
+DP[Window]: 200
+2021-05-07 05:47:59,404 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:47:59,646 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:00,228 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:00,944 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:01,292 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:01,709 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:02,166 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:02,793 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:48:03,283 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:48:13,412 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39694
+2021-05-07 05:48:13,410 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55652
+2021-05-07 05:48:13,419 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60366
+2021-05-07 05:48:13,411 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46032
+2021-05-07 05:48:13,414 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52752
+2021-05-07 05:48:13,414 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59314
+2021-05-07 05:48:13,416 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:32990
+2021-05-07 05:48:13,411 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51180
+2021-05-07 05:48:13,658 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58248
+2021-05-07 05:48:13,656 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60706
+2021-05-07 05:48:13,665 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38418
+2021-05-07 05:48:13,657 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54680
+2021-05-07 05:48:13,661 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52936
+2021-05-07 05:48:13,659 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38178
+2021-05-07 05:48:13,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46786
+2021-05-07 05:48:13,657 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39794
+2021-05-07 05:48:14,242 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49142
+2021-05-07 05:48:14,249 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57098
+2021-05-07 05:48:14,241 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56274
+2021-05-07 05:48:14,244 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37758
+2021-05-07 05:48:14,245 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45296
+2021-05-07 05:48:14,243 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59034
+2021-05-07 05:48:14,246 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40476
+2021-05-07 05:48:14,241 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59932
+2021-05-07 05:48:14,961 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59644
+2021-05-07 05:48:14,954 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55532
+2021-05-07 05:48:14,951 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45968
+2021-05-07 05:48:14,953 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33054
+2021-05-07 05:48:14,956 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36430
+2021-05-07 05:48:14,952 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54064
+2021-05-07 05:48:14,955 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50358
+2021-05-07 05:48:14,958 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35712
+2021-05-07 05:48:15,304 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41202
+2021-05-07 05:48:15,302 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51848
+2021-05-07 05:48:15,302 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51548
+2021-05-07 05:48:15,311 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46576
+2021-05-07 05:48:15,306 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38642
+2021-05-07 05:48:15,307 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39812
+2021-05-07 05:48:15,305 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35276
+2021-05-07 05:48:15,308 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53598
+2021-05-07 05:48:15,722 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52010
+2021-05-07 05:48:15,728 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50730
+2021-05-07 05:48:15,721 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37776
+2021-05-07 05:48:15,719 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40788
+2021-05-07 05:48:15,725 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59750
+2021-05-07 05:48:15,720 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48846
+2021-05-07 05:48:15,719 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36320
+2021-05-07 05:48:15,723 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33810
+2021-05-07 05:48:16,176 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47712
+2021-05-07 05:48:16,181 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38776
+2021-05-07 05:48:16,177 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53156
+2021-05-07 05:48:16,186 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60094
+2021-05-07 05:48:16,181 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35516
+2021-05-07 05:48:16,177 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56482
+2021-05-07 05:48:16,179 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52930
+2021-05-07 05:48:16,183 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58886
+2021-05-07 05:48:16,804 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44166
+2021-05-07 05:48:16,799 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48624
+2021-05-07 05:48:16,805 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35476
+2021-05-07 05:48:16,809 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45668
+2021-05-07 05:48:16,800 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37534
+2021-05-07 05:48:16,801 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48332
+2021-05-07 05:48:16,802 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59690
+2021-05-07 05:48:16,800 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47320
+2021-05-07 05:48:17,291 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34656
+2021-05-07 05:48:17,291 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59162
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,295 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53800
+2021-05-07 05:48:17,295 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,299 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47530
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46920
+2021-05-07 05:48:17,290 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,293 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37204
+2021-05-07 05:48:17,293 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,293 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:39998
+2021-05-07 05:48:17,293 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:48:17,296 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33960
+2021-05-07 05:48:17,296 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:48:33,307 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:48:33,307 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:49:02,610 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366513, tv_nsec: 484309194 }
+2021-05-07 05:49:02,610 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366542, tv_nsec: 610847042 }
+2021-05-07 05:49:02,639 INFO  [consensus] DP[Throughput]: 34336.38440720728
+2021-05-07 05:49:02,639 INFO  [consensus] DP[Latency]: 5.185620437956205
+2021-05-07 05:49:02,643 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:49:02,642 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,648 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,651 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,646 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,646 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,646 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,649 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,650 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:49:02,646 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 2000
+2021-05-07 05:50:35,035 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:35,626 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:36,165 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:36,648 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:37,211 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:37,654 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:38,111 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:38,922 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:50:39,426 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:50:49,038 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46038
+2021-05-07 05:50:49,039 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39700
+2021-05-07 05:50:49,042 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52758
+2021-05-07 05:50:49,041 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59320
+2021-05-07 05:50:49,038 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51188
+2021-05-07 05:50:49,044 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:32996
+2021-05-07 05:50:49,046 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60372
+2021-05-07 05:50:49,037 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55658
+2021-05-07 05:50:49,625 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54686
+2021-05-07 05:50:49,626 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38184
+2021-05-07 05:50:49,628 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52942
+2021-05-07 05:50:49,628 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46792
+2021-05-07 05:50:49,626 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58254
+2021-05-07 05:50:49,632 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38424
+2021-05-07 05:50:49,625 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39800
+2021-05-07 05:50:49,623 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60712
+2021-05-07 05:50:50,174 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59040
+2021-05-07 05:50:50,172 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56286
+2021-05-07 05:50:50,176 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45302
+2021-05-07 05:50:50,173 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49148
+2021-05-07 05:50:50,175 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37764
+2021-05-07 05:50:50,180 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57104
+2021-05-07 05:50:50,177 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40488
+2021-05-07 05:50:50,172 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59940
+2021-05-07 05:50:50,650 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33062
+2021-05-07 05:50:50,651 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55538
+2021-05-07 05:50:50,652 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50364
+2021-05-07 05:50:50,653 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36442
+2021-05-07 05:50:50,658 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59650
+2021-05-07 05:50:50,656 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35718
+2021-05-07 05:50:50,650 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54076
+2021-05-07 05:50:50,649 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45976
+2021-05-07 05:50:51,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51554
+2021-05-07 05:50:51,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41214
+2021-05-07 05:50:51,216 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35288
+2021-05-07 05:50:51,217 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38654
+2021-05-07 05:50:51,218 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39820
+2021-05-07 05:50:51,219 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53604
+2021-05-07 05:50:51,223 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46588
+2021-05-07 05:50:51,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51854
+2021-05-07 05:50:51,659 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37782
+2021-05-07 05:50:51,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52016
+2021-05-07 05:50:51,661 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33818
+2021-05-07 05:50:51,658 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48852
+2021-05-07 05:50:51,657 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40794
+2021-05-07 05:50:51,666 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50736
+2021-05-07 05:50:51,663 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59756
+2021-05-07 05:50:51,656 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36326
+2021-05-07 05:50:52,114 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53162
+2021-05-07 05:50:52,117 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52936
+2021-05-07 05:50:52,119 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38784
+2021-05-07 05:50:52,118 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35522
+2021-05-07 05:50:52,123 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60100
+2021-05-07 05:50:52,115 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56488
+2021-05-07 05:50:52,120 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58892
+2021-05-07 05:50:52,114 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47718
+2021-05-07 05:50:52,923 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37542
+2021-05-07 05:50:52,925 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59696
+2021-05-07 05:50:52,923 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48344
+2021-05-07 05:50:52,927 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44178
+2021-05-07 05:50:52,931 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45674
+2021-05-07 05:50:52,928 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35482
+2021-05-07 05:50:52,923 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47326
+2021-05-07 05:50:52,922 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48632
+2021-05-07 05:50:53,424 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46926
+2021-05-07 05:50:53,424 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,425 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34662
+2021-05-07 05:50:53,425 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,426 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40006
+2021-05-07 05:50:53,426 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,428 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53806
+2021-05-07 05:50:53,428 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,427 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37210
+2021-05-07 05:50:53,427 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,432 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,429 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33968
+2021-05-07 05:50:53,430 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,424 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59170
+2021-05-07 05:50:53,424 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:50:53,423 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47536
+2021-05-07 05:50:53,423 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:51:09,494 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:51:09,494 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:51:33,345 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366669, tv_nsec: 520454489 }
+2021-05-07 05:51:33,345 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366693, tv_nsec: 345222156 }
+2021-05-07 05:51:33,401 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,402 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,403 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,395 INFO  [consensus] DP[Throughput]: 41977.32435331371
+2021-05-07 05:51:33,395 INFO  [consensus] DP[Latency]: 46.79491250874913
+2021-05-07 05:51:33,407 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,404 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,402 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,406 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,398 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:51:33,399 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:51:33,402 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 4000
+2021-05-07 05:51:41,087 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:41,567 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:42,142 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:42,685 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:43,212 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:43,754 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:44,300 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:44,860 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:51:45,408 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:51:55,095 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52762
+2021-05-07 05:51:55,094 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59322
+2021-05-07 05:51:55,096 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:32998
+2021-05-07 05:51:55,089 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55660
+2021-05-07 05:51:55,091 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51190
+2021-05-07 05:51:55,091 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46040
+2021-05-07 05:51:55,092 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39702
+2021-05-07 05:51:55,099 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60374
+2021-05-07 05:51:55,569 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46794
+2021-05-07 05:51:55,570 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52944
+2021-05-07 05:51:55,566 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54688
+2021-05-07 05:51:55,566 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39802
+2021-05-07 05:51:55,565 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60714
+2021-05-07 05:51:55,567 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38186
+2021-05-07 05:51:55,567 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58256
+2021-05-07 05:51:55,574 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38426
+2021-05-07 05:51:56,154 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45304
+2021-05-07 05:51:56,149 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59942
+2021-05-07 05:51:56,152 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37766
+2021-05-07 05:51:56,155 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40492
+2021-05-07 05:51:56,150 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49152
+2021-05-07 05:51:56,149 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56290
+2021-05-07 05:51:56,152 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59042
+2021-05-07 05:51:56,158 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57106
+2021-05-07 05:51:56,686 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45978
+2021-05-07 05:51:56,690 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36446
+2021-05-07 05:51:56,693 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35722
+2021-05-07 05:51:56,687 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33064
+2021-05-07 05:51:56,688 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55540
+2021-05-07 05:51:56,689 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50366
+2021-05-07 05:51:56,687 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54080
+2021-05-07 05:51:56,695 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59654
+2021-05-07 05:51:57,219 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38658
+2021-05-07 05:51:57,222 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53606
+2021-05-07 05:51:57,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39822
+2021-05-07 05:51:57,215 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51856
+2021-05-07 05:51:57,216 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51556
+2021-05-07 05:51:57,218 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35292
+2021-05-07 05:51:57,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46592
+2021-05-07 05:51:57,217 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41218
+2021-05-07 05:51:57,761 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52018
+2021-05-07 05:51:57,762 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33820
+2021-05-07 05:51:57,763 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59758
+2021-05-07 05:51:57,757 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40796
+2021-05-07 05:51:57,757 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36328
+2021-05-07 05:51:57,759 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37784
+2021-05-07 05:51:57,758 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48854
+2021-05-07 05:51:57,766 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50738
+2021-05-07 05:51:58,307 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35524
+2021-05-07 05:51:58,308 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38786
+2021-05-07 05:51:58,309 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58894
+2021-05-07 05:51:58,303 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53164
+2021-05-07 05:51:58,302 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47720
+2021-05-07 05:51:58,304 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56490
+2021-05-07 05:51:58,305 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52938
+2021-05-07 05:51:58,312 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60102
+2021-05-07 05:51:58,865 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35484
+2021-05-07 05:51:58,864 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44182
+2021-05-07 05:51:58,859 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48634
+2021-05-07 05:51:58,860 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47328
+2021-05-07 05:51:58,860 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37546
+2021-05-07 05:51:58,862 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59698
+2021-05-07 05:51:58,861 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48348
+2021-05-07 05:51:58,869 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45676
+2021-05-07 05:51:59,409 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37212
+2021-05-07 05:51:59,409 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,411 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53808
+2021-05-07 05:51:59,411 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,412 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33970
+2021-05-07 05:51:59,412 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46928
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59172
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47538
+2021-05-07 05:51:59,406 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,409 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40008
+2021-05-07 05:51:59,409 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,414 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:51:59,408 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34664
+2021-05-07 05:51:59,408 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:52:15,333 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:52:15,333 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:52:37,651 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366735, tv_nsec: 359711568 }
+2021-05-07 05:52:37,651 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366757, tv_nsec: 651167474 }
+2021-05-07 05:52:37,721 INFO  [consensus] DP[Throughput]: 44864.723247206646
+2021-05-07 05:52:37,721 INFO  [consensus] DP[Latency]: 87.8491600839916
+2021-05-07 05:52:37,731 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:52:37,736 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,731 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,738 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,737 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,734 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,734 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,739 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,734 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:52:37,735 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 7000
+2021-05-07 05:52:45,657 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:46,149 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:46,716 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:47,168 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:47,701 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:48,200 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:48,632 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:49,220 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:52:49,848 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:52:59,662 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51192
+2021-05-07 05:52:59,665 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59324
+2021-05-07 05:52:59,662 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39704
+2021-05-07 05:52:59,666 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52766
+2021-05-07 05:52:59,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46042
+2021-05-07 05:52:59,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55662
+2021-05-07 05:52:59,667 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33000
+2021-05-07 05:52:59,670 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60376
+2021-05-07 05:53:00,148 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39806
+2021-05-07 05:53:00,152 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52946
+2021-05-07 05:53:00,151 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46796
+2021-05-07 05:53:00,148 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58258
+2021-05-07 05:53:00,149 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38188
+2021-05-07 05:53:00,148 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54690
+2021-05-07 05:53:00,147 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60716
+2021-05-07 05:53:00,156 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38428
+2021-05-07 05:53:00,723 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59944
+2021-05-07 05:53:00,726 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37768
+2021-05-07 05:53:00,724 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49156
+2021-05-07 05:53:00,729 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45306
+2021-05-07 05:53:00,725 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59044
+2021-05-07 05:53:00,723 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56294
+2021-05-07 05:53:00,728 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40496
+2021-05-07 05:53:00,732 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57110
+2021-05-07 05:53:01,169 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54084
+2021-05-07 05:53:01,169 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33066
+2021-05-07 05:53:01,175 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36450
+2021-05-07 05:53:01,172 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55542
+2021-05-07 05:53:01,173 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50368
+2021-05-07 05:53:01,177 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35724
+2021-05-07 05:53:01,170 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45982
+2021-05-07 05:53:01,179 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59656
+2021-05-07 05:53:01,707 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38662
+2021-05-07 05:53:01,705 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41222
+2021-05-07 05:53:01,709 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39824
+2021-05-07 05:53:01,710 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53608
+2021-05-07 05:53:01,706 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35296
+2021-05-07 05:53:01,705 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51558
+2021-05-07 05:53:01,704 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51858
+2021-05-07 05:53:01,713 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46596
+2021-05-07 05:53:02,202 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40798
+2021-05-07 05:53:02,205 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52020
+2021-05-07 05:53:02,203 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48856
+2021-05-07 05:53:02,207 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33822
+2021-05-07 05:53:02,205 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37786
+2021-05-07 05:53:02,208 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59760
+2021-05-07 05:53:02,202 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36330
+2021-05-07 05:53:02,211 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50740
+2021-05-07 05:53:02,636 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56492
+2021-05-07 05:53:02,640 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38788
+2021-05-07 05:53:02,639 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35526
+2021-05-07 05:53:02,636 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53166
+2021-05-07 05:53:02,637 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52940
+2021-05-07 05:53:02,641 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58896
+2021-05-07 05:53:02,635 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47722
+2021-05-07 05:53:02,644 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60104
+2021-05-07 05:53:03,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59700
+2021-05-07 05:53:03,222 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48352
+2021-05-07 05:53:03,226 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44186
+2021-05-07 05:53:03,222 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37548
+2021-05-07 05:53:03,227 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35486
+2021-05-07 05:53:03,221 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48638
+2021-05-07 05:53:03,230 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45678
+2021-05-07 05:53:03,222 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47330
+2021-05-07 05:53:03,846 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59174
+2021-05-07 05:53:03,846 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,849 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37214
+2021-05-07 05:53:03,849 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,847 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34666
+2021-05-07 05:53:03,847 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,846 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46930
+2021-05-07 05:53:03,846 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,851 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40010
+2021-05-07 05:53:03,852 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,854 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53810
+2021-05-07 05:53:03,854 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,852 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33972
+2021-05-07 05:53:03,852 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,857 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:53:03,849 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47540
+2021-05-07 05:53:03,849 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:53:19,801 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:53:19,801 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:53:42,289 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366799, tv_nsec: 828691639 }
+2021-05-07 05:53:42,289 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366822, tv_nsec: 289306226 }
+2021-05-07 05:53:42,361 INFO  [consensus] DP[Throughput]: 44526.83145094564
+2021-05-07 05:53:42,361 INFO  [consensus] DP[Latency]: 155.670097990201
+2021-05-07 05:53:42,368 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:53:42,373 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,375 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,376 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,373 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,373 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,373 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,377 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,369 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:53:42,378 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 10000
+2021-05-07 05:53:50,240 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:50,760 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:51,246 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:51,795 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:52,216 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:52,796 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:53,225 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:53,810 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:53:54,282 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:54:04,244 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39706
+2021-05-07 05:54:04,244 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51194
+2021-05-07 05:54:04,251 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60378
+2021-05-07 05:54:04,243 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46044
+2021-05-07 05:54:04,242 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55666
+2021-05-07 05:54:04,248 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52770
+2021-05-07 05:54:04,247 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59326
+2021-05-07 05:54:04,249 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33004
+2021-05-07 05:54:04,761 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58260
+2021-05-07 05:54:04,760 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39808
+2021-05-07 05:54:04,762 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38190
+2021-05-07 05:54:04,760 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54692
+2021-05-07 05:54:04,768 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38430
+2021-05-07 05:54:04,763 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46798
+2021-05-07 05:54:04,759 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60720
+2021-05-07 05:54:04,764 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52948
+2021-05-07 05:54:05,254 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49158
+2021-05-07 05:54:05,253 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59946
+2021-05-07 05:54:05,262 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57112
+2021-05-07 05:54:05,253 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56298
+2021-05-07 05:54:05,256 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37770
+2021-05-07 05:54:05,255 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59048
+2021-05-07 05:54:05,258 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40500
+2021-05-07 05:54:05,258 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45308
+2021-05-07 05:54:05,797 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55544
+2021-05-07 05:54:05,796 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54088
+2021-05-07 05:54:05,799 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50370
+2021-05-07 05:54:05,805 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59658
+2021-05-07 05:54:05,795 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45984
+2021-05-07 05:54:05,796 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33068
+2021-05-07 05:54:05,800 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36454
+2021-05-07 05:54:05,802 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35726
+2021-05-07 05:54:06,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41226
+2021-05-07 05:54:06,219 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51860
+2021-05-07 05:54:06,222 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35300
+2021-05-07 05:54:06,228 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46600
+2021-05-07 05:54:06,225 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53612
+2021-05-07 05:54:06,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51560
+2021-05-07 05:54:06,223 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38666
+2021-05-07 05:54:06,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39826
+2021-05-07 05:54:06,798 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40800
+2021-05-07 05:54:06,799 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48858
+2021-05-07 05:54:06,802 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37788
+2021-05-07 05:54:06,802 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52022
+2021-05-07 05:54:06,808 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50742
+2021-05-07 05:54:06,799 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36332
+2021-05-07 05:54:06,805 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59762
+2021-05-07 05:54:06,804 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33824
+2021-05-07 05:54:07,229 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53168
+2021-05-07 05:54:07,230 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52942
+2021-05-07 05:54:07,238 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60106
+2021-05-07 05:54:07,229 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56494
+2021-05-07 05:54:07,228 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47724
+2021-05-07 05:54:07,232 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35528
+2021-05-07 05:54:07,234 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58898
+2021-05-07 05:54:07,233 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38790
+2021-05-07 05:54:07,811 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48356
+2021-05-07 05:54:07,819 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45680
+2021-05-07 05:54:07,811 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47332
+2021-05-07 05:54:07,812 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59702
+2021-05-07 05:54:07,810 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48640
+2021-05-07 05:54:07,810 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37550
+2021-05-07 05:54:07,816 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35488
+2021-05-07 05:54:07,815 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44190
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59176
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,281 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34670
+2021-05-07 05:54:08,281 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,283 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40012
+2021-05-07 05:54:08,283 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,289 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46932
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,283 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37216
+2021-05-07 05:54:08,284 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47542
+2021-05-07 05:54:08,280 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,286 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53812
+2021-05-07 05:54:08,286 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:54:08,287 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33974
+2021-05-07 05:54:08,287 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:54:24,345 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:54:24,345 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:54:46,945 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366864, tv_nsec: 369653553 }
+2021-05-07 05:54:46,945 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366886, tv_nsec: 945143926 }
+2021-05-07 05:54:47,020 INFO  [consensus] DP[Throughput]: 44300.2558737819
+2021-05-07 05:54:47,024 INFO  [consensus] DP[Latency]: 222.85795320467952
+2021-05-07 05:54:47,033 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,038 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,028 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:54:47,030 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,036 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,033 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,033 ERROR [net::tokio_manager::peer] Failed to write a message to a peer
+2021-05-07 05:54:47,037 ERROR [net::tokio_manager::peer] Failed to write a message to a peer
+2021-05-07 05:54:47,034 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:54:47,035 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 20000
+2021-05-07 05:54:54,820 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:55,268 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:55,822 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:56,265 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:56,848 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:57,329 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:57,843 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:58,357 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:54:59,025 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:55:08,827 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59330
+2021-05-07 05:55:08,823 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46046
+2021-05-07 05:55:08,824 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39708
+2021-05-07 05:55:08,829 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33006
+2021-05-07 05:55:08,828 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52772
+2021-05-07 05:55:08,824 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51196
+2021-05-07 05:55:08,822 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55668
+2021-05-07 05:55:08,832 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60380
+2021-05-07 05:55:09,272 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52950
+2021-05-07 05:55:09,268 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54694
+2021-05-07 05:55:09,271 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46800
+2021-05-07 05:55:09,269 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58262
+2021-05-07 05:55:09,268 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39810
+2021-05-07 05:55:09,267 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60722
+2021-05-07 05:55:09,270 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38192
+2021-05-07 05:55:09,276 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38432
+2021-05-07 05:55:09,830 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56304
+2021-05-07 05:55:09,834 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37772
+2021-05-07 05:55:09,835 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45310
+2021-05-07 05:55:09,831 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49160
+2021-05-07 05:55:09,836 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40506
+2021-05-07 05:55:09,830 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59948
+2021-05-07 05:55:09,832 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59050
+2021-05-07 05:55:09,839 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57114
+2021-05-07 05:55:10,272 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35728
+2021-05-07 05:55:10,267 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55546
+2021-05-07 05:55:10,266 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33072
+2021-05-07 05:55:10,269 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36458
+2021-05-07 05:55:10,266 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54092
+2021-05-07 05:55:10,265 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45986
+2021-05-07 05:55:10,268 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50372
+2021-05-07 05:55:10,274 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59660
+2021-05-07 05:55:10,851 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51562
+2021-05-07 05:55:10,856 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39828
+2021-05-07 05:55:10,854 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38670
+2021-05-07 05:55:10,857 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53616
+2021-05-07 05:55:10,852 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41230
+2021-05-07 05:55:10,851 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51862
+2021-05-07 05:55:10,853 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35304
+2021-05-07 05:55:10,860 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46606
+2021-05-07 05:55:11,332 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48862
+2021-05-07 05:55:11,338 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33826
+2021-05-07 05:55:11,338 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59764
+2021-05-07 05:55:11,334 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52024
+2021-05-07 05:55:11,331 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40802
+2021-05-07 05:55:11,333 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36334
+2021-05-07 05:55:11,335 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37790
+2021-05-07 05:55:11,342 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50744
+2021-05-07 05:55:11,850 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35530
+2021-05-07 05:55:11,852 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38794
+2021-05-07 05:55:11,852 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58902
+2021-05-07 05:55:11,847 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53170
+2021-05-07 05:55:11,847 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56496
+2021-05-07 05:55:11,847 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47728
+2021-05-07 05:55:11,849 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52944
+2021-05-07 05:55:11,856 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60108
+2021-05-07 05:55:12,362 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44196
+2021-05-07 05:55:12,358 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37552
+2021-05-07 05:55:12,358 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48360
+2021-05-07 05:55:12,363 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35490
+2021-05-07 05:55:12,358 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47334
+2021-05-07 05:55:12,357 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48642
+2021-05-07 05:55:12,360 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59704
+2021-05-07 05:55:12,367 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45682
+2021-05-07 05:55:13,029 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53814
+2021-05-07 05:55:13,029 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,027 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37218
+2021-05-07 05:55:13,028 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46934
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,030 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33976
+2021-05-07 05:55:13,030 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,025 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34672
+2021-05-07 05:55:13,025 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59178
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47544
+2021-05-07 05:55:13,024 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,026 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40014
+2021-05-07 05:55:13,026 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:55:13,032 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:55:29,043 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:55:29,043 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:55:51,220 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366929, tv_nsec: 67979701 }
+2021-05-07 05:55:51,220 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620366951, tv_nsec: 220127834 }
+2021-05-07 05:55:51,297 INFO  [consensus] DP[Throughput]: 45146.86313920741
+2021-05-07 05:55:51,297 INFO  [consensus] DP[Latency]: 437.34410958904107
+2021-05-07 05:55:51,319 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,322 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,320 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,322 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,315 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:55:51,323 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,316 ERROR [net::tokio_manager::peer] Failed to write a message to a peer
+2021-05-07 05:55:51,319 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,319 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:55:51,324 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 40000
+2021-05-07 05:55:59,190 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:55:59,615 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:00,114 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:00,659 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:01,221 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:01,751 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:02,315 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:02,870 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:56:03,278 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:56:13,197 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52774
+2021-05-07 05:56:13,193 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51198
+2021-05-07 05:56:13,193 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46048
+2021-05-07 05:56:13,194 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39710
+2021-05-07 05:56:13,199 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33008
+2021-05-07 05:56:13,197 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59332
+2021-05-07 05:56:13,201 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60382
+2021-05-07 05:56:13,192 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55670
+2021-05-07 05:56:13,619 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52952
+2021-05-07 05:56:13,615 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39812
+2021-05-07 05:56:13,616 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58264
+2021-05-07 05:56:13,623 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38434
+2021-05-07 05:56:13,615 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54696
+2021-05-07 05:56:13,614 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60724
+2021-05-07 05:56:13,618 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46802
+2021-05-07 05:56:13,616 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38194
+2021-05-07 05:56:14,126 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45312
+2021-05-07 05:56:14,121 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59952
+2021-05-07 05:56:14,122 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49162
+2021-05-07 05:56:14,121 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56308
+2021-05-07 05:56:14,126 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40510
+2021-05-07 05:56:14,129 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57116
+2021-05-07 05:56:14,124 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37774
+2021-05-07 05:56:14,123 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59052
+2021-05-07 05:56:14,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33074
+2021-05-07 05:56:14,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54096
+2021-05-07 05:56:14,661 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55548
+2021-05-07 05:56:14,659 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45988
+2021-05-07 05:56:14,663 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36462
+2021-05-07 05:56:14,666 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35730
+2021-05-07 05:56:14,668 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59662
+2021-05-07 05:56:14,662 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50374
+2021-05-07 05:56:15,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51564
+2021-05-07 05:56:15,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41234
+2021-05-07 05:56:15,227 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38674
+2021-05-07 05:56:15,231 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53618
+2021-05-07 05:56:15,235 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46610
+2021-05-07 05:56:15,231 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39830
+2021-05-07 05:56:15,226 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51864
+2021-05-07 05:56:15,228 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35310
+2021-05-07 05:56:15,753 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40804
+2021-05-07 05:56:15,758 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33828
+2021-05-07 05:56:15,759 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59768
+2021-05-07 05:56:15,754 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48864
+2021-05-07 05:56:15,761 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50746
+2021-05-07 05:56:15,752 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36336
+2021-05-07 05:56:15,757 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52026
+2021-05-07 05:56:15,755 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37792
+2021-05-07 05:56:16,318 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47730
+2021-05-07 05:56:16,323 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38796
+2021-05-07 05:56:16,319 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56498
+2021-05-07 05:56:16,319 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53172
+2021-05-07 05:56:16,327 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60110
+2021-05-07 05:56:16,326 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58904
+2021-05-07 05:56:16,322 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35532
+2021-05-07 05:56:16,320 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52946
+2021-05-07 05:56:16,876 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44200
+2021-05-07 05:56:16,871 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47336
+2021-05-07 05:56:16,871 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48366
+2021-05-07 05:56:16,871 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37554
+2021-05-07 05:56:16,877 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35492
+2021-05-07 05:56:16,880 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45684
+2021-05-07 05:56:16,871 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48644
+2021-05-07 05:56:16,873 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59706
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46936
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59180
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,282 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33978
+2021-05-07 05:56:17,283 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,285 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,282 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53816
+2021-05-07 05:56:17,282 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,278 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34674
+2021-05-07 05:56:17,278 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47546
+2021-05-07 05:56:17,277 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37220
+2021-05-07 05:56:17,280 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:56:17,279 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40016
+2021-05-07 05:56:17,279 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:56:33,320 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:56:33,320 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:56:55,682 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620366993, tv_nsec: 344034930 }
+2021-05-07 05:56:55,682 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620367015, tv_nsec: 682953642 }
+2021-05-07 05:56:55,727 INFO  [consensus] DP[Throughput]: 44769.40056470894
+2021-05-07 05:56:55,727 INFO  [consensus] DP[Latency]: 874.7822587741226
+2021-05-07 05:56:55,744 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:56:55,756 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,753 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,747 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,751 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,750 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,751 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,755 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,753 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:56:55,751 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 60000
+2021-05-07 05:57:03,441 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:03,955 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:04,607 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:05,223 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:05,738 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:06,263 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:06,751 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:07,214 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:57:07,710 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:57:17,447 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59334
+2021-05-07 05:57:17,444 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51200
+2021-05-07 05:57:17,449 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33010
+2021-05-07 05:57:17,444 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46050
+2021-05-07 05:57:17,453 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60384
+2021-05-07 05:57:17,444 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55672
+2021-05-07 05:57:17,445 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39712
+2021-05-07 05:57:17,450 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52776
+2021-05-07 05:57:17,958 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46804
+2021-05-07 05:57:17,955 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39814
+2021-05-07 05:57:17,963 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38436
+2021-05-07 05:57:17,956 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58266
+2021-05-07 05:57:17,956 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38196
+2021-05-07 05:57:17,955 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54698
+2021-05-07 05:57:17,959 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52954
+2021-05-07 05:57:17,954 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60726
+2021-05-07 05:57:18,617 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37776
+2021-05-07 05:57:18,620 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40516
+2021-05-07 05:57:18,614 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59954
+2021-05-07 05:57:18,622 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57118
+2021-05-07 05:57:18,614 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56312
+2021-05-07 05:57:18,616 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59054
+2021-05-07 05:57:18,619 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45314
+2021-05-07 05:57:18,615 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49164
+2021-05-07 05:57:19,230 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36466
+2021-05-07 05:57:19,232 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35732
+2021-05-07 05:57:19,234 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59664
+2021-05-07 05:57:19,224 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33076
+2021-05-07 05:57:19,227 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54100
+2021-05-07 05:57:19,227 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55550
+2021-05-07 05:57:19,229 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50376
+2021-05-07 05:57:19,225 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45992
+2021-05-07 05:57:19,745 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38678
+2021-05-07 05:57:19,748 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53620
+2021-05-07 05:57:19,742 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51566
+2021-05-07 05:57:19,751 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46614
+2021-05-07 05:57:19,743 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41238
+2021-05-07 05:57:19,745 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35314
+2021-05-07 05:57:19,748 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39834
+2021-05-07 05:57:19,742 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51866
+2021-05-07 05:57:20,269 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52028
+2021-05-07 05:57:20,272 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59770
+2021-05-07 05:57:20,266 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40808
+2021-05-07 05:57:20,275 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50748
+2021-05-07 05:57:20,267 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48866
+2021-05-07 05:57:20,268 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37794
+2021-05-07 05:57:20,266 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36338
+2021-05-07 05:57:20,271 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33830
+2021-05-07 05:57:20,758 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35534
+2021-05-07 05:57:20,755 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56500
+2021-05-07 05:57:20,761 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58906
+2021-05-07 05:57:20,764 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60112
+2021-05-07 05:57:20,755 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53174
+2021-05-07 05:57:20,761 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38798
+2021-05-07 05:57:20,758 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52948
+2021-05-07 05:57:20,755 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47732
+2021-05-07 05:57:21,223 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45686
+2021-05-07 05:57:21,215 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47338
+2021-05-07 05:57:21,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35496
+2021-05-07 05:57:21,215 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37556
+2021-05-07 05:57:21,216 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59708
+2021-05-07 05:57:21,215 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48370
+2021-05-07 05:57:21,219 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44204
+2021-05-07 05:57:21,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48646
+2021-05-07 05:57:21,712 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37222
+2021-05-07 05:57:21,712 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,717 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,709 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59182
+2021-05-07 05:57:21,709 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,714 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33980
+2021-05-07 05:57:21,715 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,709 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46938
+2021-05-07 05:57:21,709 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,708 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47548
+2021-05-07 05:57:21,708 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,711 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40018
+2021-05-07 05:57:21,711 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,714 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53818
+2021-05-07 05:57:21,714 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:57:21,710 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34676
+2021-05-07 05:57:21,710 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:57:37,799 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:57:37,799 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:57:59,978 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620367057, tv_nsec: 823138074 }
+2021-05-07 05:57:59,978 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620367079, tv_nsec: 978185603 }
+2021-05-07 05:58:00,031 INFO  [consensus] DP[Throughput]: 45140.95484069318
+2021-05-07 05:58:00,031 INFO  [consensus] DP[Latency]: 1288.4496400359965
+2021-05-07 05:58:00,055 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,044 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:58:00,053 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,054 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,050 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,053 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,047 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,050 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,050 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:58:00,051 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 80000
+2021-05-07 05:58:07,809 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:08,249 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:08,849 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:09,298 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:09,745 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:10,212 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:10,722 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:11,271 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:58:11,661 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:58:21,812 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46052
+2021-05-07 05:58:21,820 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60386
+2021-05-07 05:58:21,812 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51202
+2021-05-07 05:58:21,818 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33012
+2021-05-07 05:58:21,813 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39714
+2021-05-07 05:58:21,815 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59336
+2021-05-07 05:58:21,817 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52780
+2021-05-07 05:58:21,811 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55674
+2021-05-07 05:58:22,249 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54700
+2021-05-07 05:58:22,249 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39816
+2021-05-07 05:58:22,256 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38438
+2021-05-07 05:58:22,249 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58268
+2021-05-07 05:58:22,253 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52956
+2021-05-07 05:58:22,250 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38198
+2021-05-07 05:58:22,252 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46806
+2021-05-07 05:58:22,248 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60730
+2021-05-07 05:58:22,856 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56318
+2021-05-07 05:58:22,856 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59956
+2021-05-07 05:58:22,864 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57120
+2021-05-07 05:58:22,857 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49166
+2021-05-07 05:58:22,861 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40522
+2021-05-07 05:58:22,859 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37778
+2021-05-07 05:58:22,858 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59056
+2021-05-07 05:58:22,861 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45316
+2021-05-07 05:58:23,299 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33080
+2021-05-07 05:58:23,307 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59666
+2021-05-07 05:58:23,299 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54104
+2021-05-07 05:58:23,300 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55552
+2021-05-07 05:58:23,304 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35734
+2021-05-07 05:58:23,301 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50378
+2021-05-07 05:58:23,302 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36470
+2021-05-07 05:58:23,298 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45994
+2021-05-07 05:58:23,748 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51568
+2021-05-07 05:58:23,756 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46618
+2021-05-07 05:58:23,748 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41242
+2021-05-07 05:58:23,753 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53622
+2021-05-07 05:58:23,749 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35318
+2021-05-07 05:58:23,753 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39836
+2021-05-07 05:58:23,751 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38682
+2021-05-07 05:58:23,747 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51868
+2021-05-07 05:58:24,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40812
+2021-05-07 05:58:24,215 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48868
+2021-05-07 05:58:24,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59772
+2021-05-07 05:58:24,223 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50750
+2021-05-07 05:58:24,218 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52030
+2021-05-07 05:58:24,217 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37798
+2021-05-07 05:58:24,220 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33832
+2021-05-07 05:58:24,214 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36340
+2021-05-07 05:58:24,726 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53176
+2021-05-07 05:58:24,731 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58908
+2021-05-07 05:58:24,734 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60114
+2021-05-07 05:58:24,726 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56502
+2021-05-07 05:58:24,729 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35536
+2021-05-07 05:58:24,727 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52950
+2021-05-07 05:58:24,730 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38800
+2021-05-07 05:58:24,725 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47734
+2021-05-07 05:58:25,271 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37558
+2021-05-07 05:58:25,272 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47340
+2021-05-07 05:58:25,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45688
+2021-05-07 05:58:25,273 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59710
+2021-05-07 05:58:25,272 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48374
+2021-05-07 05:58:25,276 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44208
+2021-05-07 05:58:25,277 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35498
+2021-05-07 05:58:25,271 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48648
+2021-05-07 05:58:25,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46940
+2021-05-07 05:58:25,660 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59184
+2021-05-07 05:58:25,660 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,667 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,660 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34678
+2021-05-07 05:58:25,661 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,665 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33982
+2021-05-07 05:58:25,665 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,663 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37224
+2021-05-07 05:58:25,663 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,662 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40020
+2021-05-07 05:58:25,662 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,665 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53820
+2021-05-07 05:58:25,665 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:58:25,659 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47550
+2021-05-07 05:58:25,659 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:58:41,687 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:58:41,687 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 05:59:03,619 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620367121, tv_nsec: 711089477 }
+2021-05-07 05:59:03,619 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620367143, tv_nsec: 619642219 }
+2021-05-07 05:59:03,659 INFO  [consensus] DP[Throughput]: 45648.839144118756
+2021-05-07 05:59:03,659 INFO  [consensus] DP[Latency]: 1668.8614648535147
+2021-05-07 05:59:03,673 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:59:03,685 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,681 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,684 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,680 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,680 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,683 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,680 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,677 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 05:59:03,683 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 100000
+2021-05-07 05:59:11,563 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:12,008 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:12,510 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:12,986 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:13,576 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:14,306 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:14,661 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:15,104 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 05:59:15,630 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 05:59:25,572 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33014
+2021-05-07 05:59:25,566 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46054
+2021-05-07 05:59:25,571 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52782
+2021-05-07 05:59:25,574 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60388
+2021-05-07 05:59:25,567 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39716
+2021-05-07 05:59:25,570 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59338
+2021-05-07 05:59:25,565 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55676
+2021-05-07 05:59:25,566 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51204
+2021-05-07 05:59:26,012 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52958
+2021-05-07 05:59:26,015 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38440
+2021-05-07 05:59:26,008 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58270
+2021-05-07 05:59:26,008 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54702
+2021-05-07 05:59:26,011 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46808
+2021-05-07 05:59:26,006 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60732
+2021-05-07 05:59:26,009 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38200
+2021-05-07 05:59:26,010 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39818
+2021-05-07 05:59:26,524 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40526
+2021-05-07 05:59:26,519 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49168
+2021-05-07 05:59:26,524 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45318
+2021-05-07 05:59:26,518 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56324
+2021-05-07 05:59:26,522 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37780
+2021-05-07 05:59:26,526 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57122
+2021-05-07 05:59:26,518 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59958
+2021-05-07 05:59:26,520 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59058
+2021-05-07 05:59:26,993 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35736
+2021-05-07 05:59:26,987 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33082
+2021-05-07 05:59:26,990 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36474
+2021-05-07 05:59:26,988 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55554
+2021-05-07 05:59:26,986 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45996
+2021-05-07 05:59:26,987 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54108
+2021-05-07 05:59:26,995 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59668
+2021-05-07 05:59:26,989 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50380
+2021-05-07 05:59:27,588 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53624
+2021-05-07 05:59:27,587 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39840
+2021-05-07 05:59:27,583 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41248
+2021-05-07 05:59:27,591 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46622
+2021-05-07 05:59:27,585 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38688
+2021-05-07 05:59:27,582 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51870
+2021-05-07 05:59:27,584 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35322
+2021-05-07 05:59:27,582 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51570
+2021-05-07 05:59:28,315 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59774
+2021-05-07 05:59:28,319 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50752
+2021-05-07 05:59:28,310 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48870
+2021-05-07 05:59:28,310 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40814
+2021-05-07 05:59:28,313 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52032
+2021-05-07 05:59:28,315 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33834
+2021-05-07 05:59:28,310 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36342
+2021-05-07 05:59:28,312 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37800
+2021-05-07 05:59:28,671 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58910
+2021-05-07 05:59:28,670 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38802
+2021-05-07 05:59:28,666 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53178
+2021-05-07 05:59:28,674 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60116
+2021-05-07 05:59:28,669 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35538
+2021-05-07 05:59:28,666 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56504
+2021-05-07 05:59:28,667 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52952
+2021-05-07 05:59:28,665 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47736
+2021-05-07 05:59:29,110 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35500
+2021-05-07 05:59:29,105 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48378
+2021-05-07 05:59:29,113 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45690
+2021-05-07 05:59:29,109 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44212
+2021-05-07 05:59:29,104 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37560
+2021-05-07 05:59:29,104 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48650
+2021-05-07 05:59:29,106 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59712
+2021-05-07 05:59:29,105 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47342
+2021-05-07 05:59:29,634 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33984
+2021-05-07 05:59:29,635 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,629 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46942
+2021-05-07 05:59:29,629 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,630 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34680
+2021-05-07 05:59:29,630 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,634 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53822
+2021-05-07 05:59:29,634 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,632 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37226
+2021-05-07 05:59:29,632 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,629 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59186
+2021-05-07 05:59:29,629 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,640 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,631 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40022
+2021-05-07 05:59:29,631 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:59:29,631 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47552
+2021-05-07 05:59:29,631 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 05:59:45,670 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 05:59:45,670 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 06:00:07,128 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620367185, tv_nsec: 694042101 }
+2021-05-07 06:00:07,128 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620367207, tv_nsec: 128222403 }
+2021-05-07 06:00:07,169 INFO  [consensus] DP[Throughput]: 46659.12042863061
+2021-05-07 06:00:07,170 INFO  [consensus] DP[Latency]: 2022.2038526147385
+2021-05-07 06:00:07,203 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 06:00:07,215 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,217 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,218 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,213 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,209 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,215 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,212 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,213 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:00:07,213 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 120000
+2021-05-07 06:00:14,324 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "0.0.0.0:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:14,896 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "0.0.0.0:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:15,271 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "0.0.0.0:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:15,835 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "0.0.0.0:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:16,277 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "0.0.0.0:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:16,936 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:17,404 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "0.0.0.0:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:17,921 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "0.0.0.0:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "10.100.100.127:4008"}
+2021-05-07 06:00:18,466 INFO  [config::node] Talking to servers: {5: "10.100.100.252:4005", 4: "10.100.100.81:4004", 7: "10.100.100.239:4007", 6: "10.100.100.172:4006", 1: "10.100.100.193:4001", 0: "10.100.100.102:4000", 3: "10.100.100.82:4003", 2: "10.100.100.23:4002", 8: "0.0.0.0:4008"}
+2021-05-07 06:00:28,331 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:59340
+2021-05-07 06:00:28,328 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:39718
+2021-05-07 06:00:28,328 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:51206
+2021-05-07 06:00:28,327 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:55678
+2021-05-07 06:00:28,336 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:60390
+2021-05-07 06:00:28,332 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:52786
+2021-05-07 06:00:28,333 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:33016
+2021-05-07 06:00:28,328 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.102:46056
+2021-05-07 06:00:28,898 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:46810
+2021-05-07 06:00:28,896 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:58272
+2021-05-07 06:00:28,895 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:39820
+2021-05-07 06:00:28,897 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38202
+2021-05-07 06:00:28,894 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:60734
+2021-05-07 06:00:28,903 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:38444
+2021-05-07 06:00:28,895 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:54704
+2021-05-07 06:00:28,900 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.193:52960
+2021-05-07 06:00:29,281 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:37782
+2021-05-07 06:00:29,279 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:49170
+2021-05-07 06:00:29,278 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59960
+2021-05-07 06:00:29,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:59060
+2021-05-07 06:00:29,286 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:57124
+2021-05-07 06:00:29,277 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:56328
+2021-05-07 06:00:29,283 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:45320
+2021-05-07 06:00:29,284 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.23:40530
+2021-05-07 06:00:29,837 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:55556
+2021-05-07 06:00:29,836 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:54112
+2021-05-07 06:00:29,839 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:36478
+2021-05-07 06:00:29,838 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:50382
+2021-05-07 06:00:29,835 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:45998
+2021-05-07 06:00:29,844 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:59670
+2021-05-07 06:00:29,836 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:33084
+2021-05-07 06:00:29,842 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.82:35738
+2021-05-07 06:00:30,283 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:38692
+2021-05-07 06:00:30,281 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:41252
+2021-05-07 06:00:30,282 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:35326
+2021-05-07 06:00:30,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51872
+2021-05-07 06:00:30,280 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:51572
+2021-05-07 06:00:30,289 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:46626
+2021-05-07 06:00:30,285 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:39842
+2021-05-07 06:00:30,286 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.81:53626
+2021-05-07 06:00:30,943 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:52034
+2021-05-07 06:00:30,940 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:48872
+2021-05-07 06:00:30,939 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:40816
+2021-05-07 06:00:30,941 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:37802
+2021-05-07 06:00:30,939 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:36344
+2021-05-07 06:00:30,948 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:50754
+2021-05-07 06:00:30,945 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:33836
+2021-05-07 06:00:30,945 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.252:59776
+2021-05-07 06:00:31,411 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:35540
+2021-05-07 06:00:31,407 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:47740
+2021-05-07 06:00:31,409 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52954
+2021-05-07 06:00:31,408 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56506
+2021-05-07 06:00:31,416 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:60118
+2021-05-07 06:00:31,413 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58912
+2021-05-07 06:00:31,408 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:53180
+2021-05-07 06:00:31,412 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:38804
+2021-05-07 06:00:31,922 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48382
+2021-05-07 06:00:31,922 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:47344
+2021-05-07 06:00:31,924 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:59714
+2021-05-07 06:00:31,921 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:48652
+2021-05-07 06:00:31,930 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:45692
+2021-05-07 06:00:31,922 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:37562
+2021-05-07 06:00:31,927 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:35502
+2021-05-07 06:00:31,927 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.239:44216
+2021-05-07 06:00:32,470 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:37228
+2021-05-07 06:00:32,470 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,467 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:34682
+2021-05-07 06:00:32,468 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,467 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:59188
+2021-05-07 06:00:32,467 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,469 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:40024
+2021-05-07 06:00:32,469 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,474 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,466 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:47554
+2021-05-07 06:00:32,466 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,466 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:46944
+2021-05-07 06:00:32,467 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,472 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:33988
+2021-05-07 06:00:32,473 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 06:00:32,472 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.127:53824
+2021-05-07 06:00:32,472 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 06:00:48,519 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 06:00:48,519 INFO  [config::client] Talking to servers: {5: "10.100.100.252:10005", 4: "10.100.100.81:10004", 7: "10.100.100.239:10007", 6: "10.100.100.172:10006", 1: "10.100.100.193:10001", 0: "10.100.100.102:10000", 3: "10.100.100.82:10003", 2: "10.100.100.23:10002", 8: "10.100.100.127:10008"}
+2021-05-07 06:01:10,343 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620367248, tv_nsec: 543001856 }
+2021-05-07 06:01:10,343 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620367270, tv_nsec: 343759538 }
+2021-05-07 06:01:10,404 INFO  [consensus] DP[Throughput]: 45874.55237052343
+2021-05-07 06:01:10,404 INFO  [consensus] DP[Latency]: 2375.258613138686
+2021-05-07 06:01:10,424 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 06:01:10,436 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,433 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,439 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,434 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,430 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,434 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,438 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,436 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 06:01:10,434 WARN  [net::tokio_manager::peer] Disconnected from peer

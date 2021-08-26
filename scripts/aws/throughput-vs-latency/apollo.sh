@@ -18,4 +18,5 @@ echo "Using arguments: --config $TESTDIR/nodes-$ID.json --ip ips_file --delta "$
     --config $TESTDIR/nodes-$ID.json \
     --ip ips_file \
     --delta "$DELAY" \
+    --sleep 140 \
     $CLI_TYPE &
