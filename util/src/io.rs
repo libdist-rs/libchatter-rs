@@ -5,6 +5,13 @@ use serde_yaml::to_writer;
 use std::fs::File;
 use std::io::{self,prelude::*};
 
+pub enum FileType {
+    JSON,
+    BIN,
+    TOML,
+    YAML,
+}
+
 pub fn file_to_ips(filename:String) -> Vec<String> {
     let f = File::open(filename).expect("Failed to open the file");
     let mut ips = Vec::new();

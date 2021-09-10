@@ -1,0 +1,189 @@
+DP[Window]: 800
+2021-05-07 10:04:50,980 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:04:51,976 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:04:52,911 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:04:58,981 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39274
+2021-05-07 10:04:58,991 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38442
+2021-05-07 10:04:59,974 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38352
+2021-05-07 10:04:59,969 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50644
+2021-05-07 10:05:00,914 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:00,915 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:00,915 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:00,915 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:05:00,919 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60386
+2021-05-07 10:05:00,919 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:00,919 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:00,920 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:00,920 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:05:00,924 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45918
+2021-05-07 10:05:00,924 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:00,924 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:00,925 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:00,925 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:05:23,552 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:05:27,309 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620381923, tv_nsec: 555963005 }
+2021-05-07 10:05:27,309 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620381927, tv_nsec: 309946324 }
+2021-05-07 10:05:27,335 INFO  [consensus] DP[Throughput]: 266490.26247311354
+2021-05-07 10:05:27,335 INFO  [consensus] DP[Latency]: 3.6192123150739706
+2021-05-07 10:05:27,335 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+DP[Window]: 4000
+2021-05-07 10:05:36,436 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:05:38,105 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:05:39,071 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:05:44,437 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39276
+2021-05-07 10:05:44,447 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38444
+2021-05-07 10:05:46,098 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50646
+2021-05-07 10:05:46,103 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38354
+2021-05-07 10:05:47,078 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60388
+2021-05-07 10:05:47,078 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:47,078 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:47,078 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:47,078 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:05:47,073 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:47,073 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:47,073 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:47,073 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:05:47,083 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45920
+2021-05-07 10:05:47,083 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:05:47,083 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:05:47,084 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:05:47,084 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:06:09,263 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:06:12,384 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620381969, tv_nsec: 267378680 }
+2021-05-07 10:06:12,384 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620381972, tv_nsec: 384218110 }
+2021-05-07 10:06:12,415 INFO  [consensus] DP[Throughput]: 320966.16539530875
+2021-05-07 10:06:12,415 INFO  [consensus] DP[Latency]: 12.004603158736506
+2021-05-07 10:06:12,415 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:06:12,427 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:06:12,416 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:06:12,421 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 10000
+2021-05-07 10:06:21,422 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:06:23,164 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:06:23,955 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:06:29,424 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39278
+2021-05-07 10:06:29,434 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38446
+2021-05-07 10:06:31,157 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50648
+2021-05-07 10:06:31,162 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38356
+2021-05-07 10:06:31,958 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:06:31,958 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:06:31,958 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:06:31,958 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:06:31,968 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45922
+2021-05-07 10:06:31,968 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:06:31,968 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:06:31,968 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:06:31,968 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:06:31,962 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60390
+2021-05-07 10:06:31,962 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:06:31,963 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:06:31,963 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:06:31,963 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:06:53,251 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:06:56,351 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620382013, tv_nsec: 255158569 }
+2021-05-07 10:06:56,351 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620382016, tv_nsec: 351421648 }
+2021-05-07 10:06:56,380 INFO  [consensus] DP[Throughput]: 323099.16001165484
+2021-05-07 10:06:56,380 INFO  [consensus] DP[Latency]: 26.63468012794882
+2021-05-07 10:06:56,380 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:06:56,389 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:06:56,384 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:06:56,395 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 40000
+2021-05-07 10:07:03,773 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:04,916 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:05,917 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:11,774 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39280
+2021-05-07 10:07:11,785 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38448
+2021-05-07 10:07:12,909 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50650
+2021-05-07 10:07:12,913 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38360
+2021-05-07 10:07:13,920 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:13,920 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:13,920 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:13,920 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:07:13,930 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45924
+2021-05-07 10:07:13,924 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60392
+2021-05-07 10:07:13,924 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:13,924 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:13,925 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:13,925 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:07:13,930 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:13,930 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:13,931 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:13,931 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:07:35,606 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:07:39,062 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620382055, tv_nsec: 610276217 }
+2021-05-07 10:07:39,062 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620382059, tv_nsec: 62933050 }
+2021-05-07 10:07:39,097 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:07:39,092 INFO  [consensus] DP[Throughput]: 290095.4390910937
+2021-05-07 10:07:39,092 INFO  [consensus] DP[Latency]: 121.49646765175719
+2021-05-07 10:07:39,092 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:07:39,101 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:07:39,108 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 80000
+2021-05-07 10:07:45,197 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:46,037 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:46,613 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:07:53,209 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38450
+2021-05-07 10:07:53,198 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39282
+2021-05-07 10:07:54,033 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38362
+2021-05-07 10:07:54,028 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50654
+2021-05-07 10:07:54,621 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60394
+2021-05-07 10:07:54,621 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:54,621 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:54,621 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:54,621 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:07:54,627 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45928
+2021-05-07 10:07:54,627 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:54,627 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:54,627 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:54,627 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:07:54,616 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:07:54,616 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:07:54,616 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:07:54,616 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:08:16,699 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:08:20,250 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620382096, tv_nsec: 703544581 }
+2021-05-07 10:08:20,251 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620382100, tv_nsec: 250993594 }
+2021-05-07 10:08:20,284 INFO  [consensus] DP[Throughput]: 282682.005104269
+2021-05-07 10:08:20,284 INFO  [consensus] DP[Latency]: 257.2525717989629
+2021-05-07 10:08:20,284 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:08:20,300 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:08:20,294 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:08:20,289 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 120000
+2021-05-07 10:08:27,329 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:08:28,198 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:08:29,073 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 10:08:35,342 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:38452
+2021-05-07 10:08:35,331 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.86:39284
+2021-05-07 10:08:36,194 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:38364
+2021-05-07 10:08:36,189 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.160:50656
+2021-05-07 10:08:37,087 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:45930
+2021-05-07 10:08:37,087 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:08:37,087 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:08:37,087 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:08:37,087 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:08:37,081 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.236:60398
+2021-05-07 10:08:37,081 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:08:37,081 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:08:37,081 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:08:37,081 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+2021-05-07 10:08:37,076 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:08:37,076 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 10:08:37,076 INFO  [artemis::node::context] Using last f leaders: {0: ()}
+2021-05-07 10:08:37,076 INFO  [artemis::node::context] Using eligible leaders: [1, 2]
+Using M: 1000000
+2021-05-07 10:08:59,280 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 10:09:02,463 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620382139, tv_nsec: 283982404 }
+2021-05-07 10:09:02,463 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620382142, tv_nsec: 463349095 }
+2021-05-07 10:09:02,489 INFO  [consensus] DP[Throughput]: 317547.51751596556
+2021-05-07 10:09:02,489 INFO  [consensus] DP[Latency]: 333.005471473851
+2021-05-07 10:09:02,489 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:09:02,501 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:09:02,508 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 10:09:02,496 WARN  [net::futures_manager::peer] Disconnected from peer

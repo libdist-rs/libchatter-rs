@@ -1,0 +1,1260 @@
+DP[Window]: 2000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:30,485 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:30,889 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:31,347 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:31,895 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:32,470 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:33,072 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:33,520 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:34,160 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:23:34,660 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:23:44,484 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51120
+2021-05-07 05:23:44,483 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55596
+2021-05-07 05:23:44,484 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52694
+2021-05-07 05:23:44,488 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39636
+2021-05-07 05:23:44,493 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32930
+2021-05-07 05:23:44,488 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45974
+2021-05-07 05:23:44,496 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60308
+2021-05-07 05:23:44,490 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59252
+2021-05-07 05:23:44,885 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39738
+2021-05-07 05:23:44,889 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58190
+2021-05-07 05:23:44,886 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52876
+2021-05-07 05:23:44,885 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60646
+2021-05-07 05:23:44,889 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54618
+2021-05-07 05:23:44,891 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46726
+2021-05-07 05:23:44,891 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38118
+2021-05-07 05:23:44,897 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38360
+2021-05-07 05:23:45,354 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59872
+2021-05-07 05:23:45,358 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49086
+2021-05-07 05:23:45,355 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45240
+2021-05-07 05:23:45,358 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56148
+2021-05-07 05:23:45,363 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40350
+2021-05-07 05:23:45,366 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57032
+2021-05-07 05:23:45,360 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58970
+2021-05-07 05:23:45,360 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37700
+2021-05-07 05:23:45,900 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45912
+2021-05-07 05:23:45,900 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53942
+2021-05-07 05:23:45,904 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55474
+2021-05-07 05:23:45,909 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35656
+2021-05-07 05:23:45,904 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:32994
+2021-05-07 05:23:45,912 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59586
+2021-05-07 05:23:45,907 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36308
+2021-05-07 05:23:45,906 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50292
+2021-05-07 05:23:46,473 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51786
+2021-05-07 05:23:46,477 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41086
+2021-05-07 05:23:46,475 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39754
+2021-05-07 05:23:46,482 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53534
+2021-05-07 05:23:46,479 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38526
+2021-05-07 05:23:46,477 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51484
+2021-05-07 05:23:46,480 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35158
+2021-05-07 05:23:46,486 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46458
+2021-05-07 05:23:47,072 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36262
+2021-05-07 05:23:47,074 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40732
+2021-05-07 05:23:47,073 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33750
+2021-05-07 05:23:47,076 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48788
+2021-05-07 05:23:47,081 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59690
+2021-05-07 05:23:47,085 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50672
+2021-05-07 05:23:47,078 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51952
+2021-05-07 05:23:47,078 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37716
+2021-05-07 05:23:47,521 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47652
+2021-05-07 05:23:47,521 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56422
+2021-05-07 05:23:47,529 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58828
+2021-05-07 05:23:47,522 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38718
+2021-05-07 05:23:47,525 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53094
+2021-05-07 05:23:47,533 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60028
+2021-05-07 05:23:47,527 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35460
+2021-05-07 05:23:47,527 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52872
+2021-05-07 05:23:48,157 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48564
+2021-05-07 05:23:48,158 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47260
+2021-05-07 05:23:48,161 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48212
+2021-05-07 05:23:48,158 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44046
+2021-05-07 05:23:48,166 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35412
+2021-05-07 05:23:48,161 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37476
+2021-05-07 05:23:48,170 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45606
+2021-05-07 05:23:48,163 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59628
+2021-05-07 05:23:48,655 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59106
+2021-05-07 05:23:48,655 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,655 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,658 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34596
+2021-05-07 05:23:48,658 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,658 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,655 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53742
+2021-05-07 05:23:48,656 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,656 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,654 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47474
+2021-05-07 05:23:48,654 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,654 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,663 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33902
+2021-05-07 05:23:48,663 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,664 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,658 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46854
+2021-05-07 05:23:48,658 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,658 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,661 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37138
+2021-05-07 05:23:48,661 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,661 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,666 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,666 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:23:48,660 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39940
+2021-05-07 05:23:48,661 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:23:48,661 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:24:04,637 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:24:04,743 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:24:11,786 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365044, tv_nsec: 743809841 }
+2021-05-07 05:24:11,786 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365051, tv_nsec: 786427680 }
+2021-05-07 05:24:11,797 INFO  [consensus] DP[Throughput]: 45158.77579481989
+2021-05-07 05:24:11,797 INFO  [consensus] DP[Latency]: 2519.585873926222
+2021-05-07 05:24:11,808 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:24:11,809 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,814 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,810 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,812 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,819 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,816 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,818 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,816 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:24:11,821 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 4000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:19,386 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:19,925 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:20,326 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:20,909 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:21,496 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:21,880 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:22,415 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:22,940 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:24:23,399 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:24:33,389 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45976
+2021-05-07 05:24:33,385 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55598
+2021-05-07 05:24:33,389 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39638
+2021-05-07 05:24:33,386 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52696
+2021-05-07 05:24:33,391 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59254
+2021-05-07 05:24:33,385 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51122
+2021-05-07 05:24:33,394 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32932
+2021-05-07 05:24:33,397 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60310
+2021-05-07 05:24:33,926 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38120
+2021-05-07 05:24:33,924 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54620
+2021-05-07 05:24:33,920 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60648
+2021-05-07 05:24:33,932 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38362
+2021-05-07 05:24:33,927 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46728
+2021-05-07 05:24:33,924 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58192
+2021-05-07 05:24:33,921 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52878
+2021-05-07 05:24:33,920 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39740
+2021-05-07 05:24:34,336 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56152
+2021-05-07 05:24:34,336 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49088
+2021-05-07 05:24:34,340 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58974
+2021-05-07 05:24:34,332 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59874
+2021-05-07 05:24:34,338 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37702
+2021-05-07 05:24:34,346 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57034
+2021-05-07 05:24:34,335 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45242
+2021-05-07 05:24:34,343 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40354
+2021-05-07 05:24:34,917 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:32996
+2021-05-07 05:24:34,913 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45914
+2021-05-07 05:24:34,920 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50294
+2021-05-07 05:24:34,925 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59588
+2021-05-07 05:24:34,917 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55476
+2021-05-07 05:24:34,920 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36314
+2021-05-07 05:24:34,913 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53948
+2021-05-07 05:24:34,922 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35658
+2021-05-07 05:24:35,506 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35162
+2021-05-07 05:24:35,503 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51486
+2021-05-07 05:24:35,503 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41090
+2021-05-07 05:24:35,500 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51788
+2021-05-07 05:24:35,501 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39756
+2021-05-07 05:24:35,508 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53536
+2021-05-07 05:24:35,513 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46462
+2021-05-07 05:24:35,505 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38530
+2021-05-07 05:24:35,885 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37718
+2021-05-07 05:24:35,879 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36264
+2021-05-07 05:24:35,883 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48790
+2021-05-07 05:24:35,885 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51954
+2021-05-07 05:24:35,880 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33752
+2021-05-07 05:24:35,888 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59694
+2021-05-07 05:24:35,879 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40734
+2021-05-07 05:24:35,891 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50674
+2021-05-07 05:24:36,415 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47654
+2021-05-07 05:24:36,420 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53096
+2021-05-07 05:24:36,422 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52874
+2021-05-07 05:24:36,422 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35462
+2021-05-07 05:24:36,428 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60030
+2021-05-07 05:24:36,416 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38720
+2021-05-07 05:24:36,424 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58830
+2021-05-07 05:24:36,416 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56426
+2021-05-07 05:24:36,937 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48566
+2021-05-07 05:24:36,942 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37478
+2021-05-07 05:24:36,944 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59630
+2021-05-07 05:24:36,938 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47262
+2021-05-07 05:24:36,939 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44050
+2021-05-07 05:24:36,947 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35414
+2021-05-07 05:24:36,941 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48216
+2021-05-07 05:24:36,950 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45608
+2021-05-07 05:24:37,392 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47476
+2021-05-07 05:24:37,399 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39942
+2021-05-07 05:24:37,399 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,399 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,397 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46856
+2021-05-07 05:24:37,397 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,397 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,393 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,393 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,396 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34598
+2021-05-07 05:24:37,397 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,402 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33904
+2021-05-07 05:24:37,402 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,402 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,405 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,405 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,399 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37140
+2021-05-07 05:24:37,399 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,399 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,397 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,394 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53744
+2021-05-07 05:24:37,394 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,394 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:24:37,393 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59108
+2021-05-07 05:24:37,393 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:24:37,393 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:24:53,460 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:24:53,560 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:25:05,248 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365093, tv_nsec: 560800999 }
+2021-05-07 05:25:05,248 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365105, tv_nsec: 248852856 }
+2021-05-07 05:25:05,259 INFO  [consensus] DP[Throughput]: 32858.76933973292
+2021-05-07 05:25:05,260 INFO  [consensus] DP[Latency]: 4523.667107575738
+2021-05-07 05:25:05,286 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:25:05,308 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,308 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,301 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,313 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,302 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,306 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,311 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,309 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:05,304 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 7000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:13,263 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:13,764 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:14,308 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:14,848 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:15,552 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:16,091 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:16,499 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:16,997 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:25:17,501 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:25:27,263 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51124
+2021-05-07 05:25:27,271 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32934
+2021-05-07 05:25:27,266 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39640
+2021-05-07 05:25:27,263 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52698
+2021-05-07 05:25:27,269 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59258
+2021-05-07 05:25:27,266 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45978
+2021-05-07 05:25:27,262 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55600
+2021-05-07 05:25:27,275 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60312
+2021-05-07 05:25:27,759 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39742
+2021-05-07 05:25:27,763 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58194
+2021-05-07 05:25:27,760 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52880
+2021-05-07 05:25:27,763 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54622
+2021-05-07 05:25:27,766 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46730
+2021-05-07 05:25:27,759 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60650
+2021-05-07 05:25:27,772 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38364
+2021-05-07 05:25:27,765 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38122
+2021-05-07 05:25:28,314 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59876
+2021-05-07 05:25:28,315 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45244
+2021-05-07 05:25:28,323 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40358
+2021-05-07 05:25:28,318 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49090
+2021-05-07 05:25:28,318 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56156
+2021-05-07 05:25:28,321 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37704
+2021-05-07 05:25:28,326 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57036
+2021-05-07 05:25:28,321 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58976
+2021-05-07 05:25:28,852 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53952
+2021-05-07 05:25:28,856 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55480
+2021-05-07 05:25:28,862 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35660
+2021-05-07 05:25:28,859 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36318
+2021-05-07 05:25:28,865 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59590
+2021-05-07 05:25:28,856 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:32998
+2021-05-07 05:25:28,852 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45916
+2021-05-07 05:25:28,859 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50296
+2021-05-07 05:25:29,564 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53538
+2021-05-07 05:25:29,558 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41094
+2021-05-07 05:25:29,556 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39758
+2021-05-07 05:25:29,561 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38534
+2021-05-07 05:25:29,559 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51488
+2021-05-07 05:25:29,555 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51790
+2021-05-07 05:25:29,561 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35166
+2021-05-07 05:25:29,567 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46466
+2021-05-07 05:25:30,090 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40736
+2021-05-07 05:25:30,096 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48792
+2021-05-07 05:25:30,101 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59696
+2021-05-07 05:25:30,096 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51956
+2021-05-07 05:25:30,105 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50676
+2021-05-07 05:25:30,092 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36266
+2021-05-07 05:25:30,098 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37720
+2021-05-07 05:25:30,093 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33754
+2021-05-07 05:25:30,501 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56428
+2021-05-07 05:25:30,501 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38722
+2021-05-07 05:25:30,509 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58832
+2021-05-07 05:25:30,507 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35464
+2021-05-07 05:25:30,504 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53100
+2021-05-07 05:25:30,500 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47656
+2021-05-07 05:25:30,506 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52878
+2021-05-07 05:25:30,513 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60032
+2021-05-07 05:25:30,998 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48220
+2021-05-07 05:25:31,004 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35416
+2021-05-07 05:25:30,995 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47264
+2021-05-07 05:25:30,996 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44054
+2021-05-07 05:25:30,999 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37480
+2021-05-07 05:25:31,008 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45610
+2021-05-07 05:25:30,995 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48568
+2021-05-07 05:25:31,001 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59632
+2021-05-07 05:25:31,496 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59110
+2021-05-07 05:25:31,496 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,496 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,497 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53746
+2021-05-07 05:25:31,497 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,499 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34600
+2021-05-07 05:25:31,500 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,500 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,505 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33906
+2021-05-07 05:25:31,505 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,505 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,498 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,508 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,508 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,502 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37142
+2021-05-07 05:25:31,502 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,503 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,500 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46858
+2021-05-07 05:25:31,500 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,500 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,496 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47478
+2021-05-07 05:25:31,496 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,496 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:25:31,502 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39944
+2021-05-07 05:25:31,502 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:25:31,503 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:25:47,576 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:25:47,676 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:25:56,877 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365147, tv_nsec: 676889963 }
+2021-05-07 05:25:56,877 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365156, tv_nsec: 877315625 }
+2021-05-07 05:25:56,888 INFO  [consensus] DP[Throughput]: 46366.11562027096
+2021-05-07 05:25:56,888 INFO  [consensus] DP[Latency]: 1884.7409819310435
+2021-05-07 05:25:56,902 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:25:56,906 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,904 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,913 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,908 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,903 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,911 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,915 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,910 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:25:56,910 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 10000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:04,378 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:04,818 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:05,449 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:05,829 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:06,429 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:06,890 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:07,366 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:07,799 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:08,311 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:26:18,386 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32936
+2021-05-07 05:26:18,383 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59260
+2021-05-07 05:26:18,378 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52700
+2021-05-07 05:26:18,389 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60314
+2021-05-07 05:26:18,377 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51126
+2021-05-07 05:26:18,380 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39644
+2021-05-07 05:26:18,381 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45980
+2021-05-07 05:26:18,376 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55602
+2021-05-07 05:26:18,816 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52882
+2021-05-07 05:26:18,822 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46732
+2021-05-07 05:26:18,828 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38368
+2021-05-07 05:26:18,819 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54624
+2021-05-07 05:26:18,815 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39744
+2021-05-07 05:26:18,819 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58196
+2021-05-07 05:26:18,815 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60652
+2021-05-07 05:26:18,821 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38126
+2021-05-07 05:26:19,464 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40364
+2021-05-07 05:26:19,461 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37706
+2021-05-07 05:26:19,456 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45246
+2021-05-07 05:26:19,467 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57038
+2021-05-07 05:26:19,459 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56162
+2021-05-07 05:26:19,455 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59878
+2021-05-07 05:26:19,459 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49092
+2021-05-07 05:26:19,462 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58978
+2021-05-07 05:26:19,842 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35662
+2021-05-07 05:26:19,840 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36322
+2021-05-07 05:26:19,846 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59592
+2021-05-07 05:26:19,833 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53956
+2021-05-07 05:26:19,837 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33000
+2021-05-07 05:26:19,840 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50298
+2021-05-07 05:26:19,837 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55482
+2021-05-07 05:26:19,833 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45918
+2021-05-07 05:26:20,441 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53540
+2021-05-07 05:26:20,438 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38538
+2021-05-07 05:26:20,433 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39760
+2021-05-07 05:26:20,444 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46470
+2021-05-07 05:26:20,436 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51490
+2021-05-07 05:26:20,435 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41098
+2021-05-07 05:26:20,431 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51792
+2021-05-07 05:26:20,438 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35170
+2021-05-07 05:26:20,890 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33756
+2021-05-07 05:26:20,898 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59698
+2021-05-07 05:26:20,895 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51958
+2021-05-07 05:26:20,902 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50678
+2021-05-07 05:26:20,889 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40738
+2021-05-07 05:26:20,893 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48794
+2021-05-07 05:26:20,889 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36268
+2021-05-07 05:26:20,895 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37722
+2021-05-07 05:26:21,367 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38724
+2021-05-07 05:26:21,367 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56430
+2021-05-07 05:26:21,375 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58834
+2021-05-07 05:26:21,373 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35466
+2021-05-07 05:26:21,379 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60034
+2021-05-07 05:26:21,373 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52880
+2021-05-07 05:26:21,371 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53102
+2021-05-07 05:26:21,366 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47658
+2021-05-07 05:26:21,807 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35418
+2021-05-07 05:26:21,799 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44058
+2021-05-07 05:26:21,810 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45612
+2021-05-07 05:26:21,799 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47268
+2021-05-07 05:26:21,801 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37482
+2021-05-07 05:26:21,804 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59634
+2021-05-07 05:26:21,797 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48572
+2021-05-07 05:26:21,801 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48224
+2021-05-07 05:26:22,306 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53748
+2021-05-07 05:26:22,306 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,306 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,311 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37144
+2021-05-07 05:26:22,311 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,311 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,314 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33908
+2021-05-07 05:26:22,314 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,314 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,317 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,317 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,309 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46860
+2021-05-07 05:26:22,305 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59112
+2021-05-07 05:26:22,305 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,305 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,309 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,309 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,305 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47480
+2021-05-07 05:26:22,308 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34602
+2021-05-07 05:26:22,308 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,309 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,311 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39948
+2021-05-07 05:26:22,311 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,311 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:26:22,305 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:26:22,305 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:26:38,391 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:26:38,495 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:26:49,298 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365198, tv_nsec: 495795845 }
+2021-05-07 05:26:49,298 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365209, tv_nsec: 298498188 }
+2021-05-07 05:26:49,322 INFO  [consensus] DP[Throughput]: 38253.20617741286
+2021-05-07 05:26:49,322 INFO  [consensus] DP[Latency]: 2914.616330056771
+2021-05-07 05:26:49,340 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:26:49,360 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,357 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,350 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,359 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,351 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,354 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,356 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,356 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:26:49,348 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 20000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:56,983 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:57,437 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:58,056 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:58,537 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:59,048 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:26:59,635 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:00,145 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:00,595 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:01,152 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:27:10,981 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51128
+2021-05-07 05:27:10,991 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32938
+2021-05-07 05:27:10,988 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59262
+2021-05-07 05:27:10,983 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52702
+2021-05-07 05:27:10,995 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60316
+2021-05-07 05:27:10,985 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45982
+2021-05-07 05:27:10,982 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55604
+2021-05-07 05:27:10,985 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39646
+2021-05-07 05:27:11,439 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46734
+2021-05-07 05:27:11,444 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38370
+2021-05-07 05:27:11,432 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39746
+2021-05-07 05:27:11,433 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52884
+2021-05-07 05:27:11,436 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58198
+2021-05-07 05:27:11,438 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38128
+2021-05-07 05:27:11,431 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60654
+2021-05-07 05:27:11,436 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54626
+2021-05-07 05:27:12,062 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59880
+2021-05-07 05:27:12,065 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45248
+2021-05-07 05:27:12,069 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37708
+2021-05-07 05:27:12,072 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40368
+2021-05-07 05:27:12,076 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57040
+2021-05-07 05:27:12,066 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49094
+2021-05-07 05:27:12,066 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56166
+2021-05-07 05:27:12,070 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58980
+2021-05-07 05:27:12,552 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35664
+2021-05-07 05:27:12,543 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53960
+2021-05-07 05:27:12,549 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36326
+2021-05-07 05:27:12,557 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59594
+2021-05-07 05:27:12,547 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33002
+2021-05-07 05:27:12,546 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55484
+2021-05-07 05:27:12,551 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50300
+2021-05-07 05:27:12,544 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45920
+2021-05-07 05:27:13,058 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38542
+2021-05-07 05:27:13,053 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39762
+2021-05-07 05:27:13,064 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46474
+2021-05-07 05:27:13,061 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53542
+2021-05-07 05:27:13,055 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41104
+2021-05-07 05:27:13,056 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51492
+2021-05-07 05:27:13,051 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51794
+2021-05-07 05:27:13,058 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35174
+2021-05-07 05:27:13,633 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40740
+2021-05-07 05:27:13,635 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33758
+2021-05-07 05:27:13,640 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51960
+2021-05-07 05:27:13,643 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59700
+2021-05-07 05:27:13,646 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50680
+2021-05-07 05:27:13,640 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37724
+2021-05-07 05:27:13,637 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48796
+2021-05-07 05:27:13,633 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36270
+2021-05-07 05:27:14,155 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58836
+2021-05-07 05:27:14,159 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60038
+2021-05-07 05:27:14,147 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56432
+2021-05-07 05:27:14,153 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35468
+2021-05-07 05:27:14,147 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38726
+2021-05-07 05:27:14,150 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53104
+2021-05-07 05:27:14,152 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52882
+2021-05-07 05:27:14,146 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47660
+2021-05-07 05:27:14,594 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44062
+2021-05-07 05:27:14,602 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35420
+2021-05-07 05:27:14,593 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47270
+2021-05-07 05:27:14,606 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45614
+2021-05-07 05:27:14,597 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37484
+2021-05-07 05:27:14,599 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59636
+2021-05-07 05:27:14,596 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48228
+2021-05-07 05:27:14,593 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48574
+2021-05-07 05:27:15,147 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53750
+2021-05-07 05:27:15,147 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,147 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,155 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33912
+2021-05-07 05:27:15,155 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,155 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,158 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,158 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,152 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37148
+2021-05-07 05:27:15,152 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,146 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59114
+2021-05-07 05:27:15,146 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,146 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,153 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,150 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46862
+2021-05-07 05:27:15,150 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,150 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,149 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34604
+2021-05-07 05:27:15,149 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,150 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,152 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39950
+2021-05-07 05:27:15,152 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,153 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:27:15,146 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47482
+2021-05-07 05:27:15,146 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:27:15,146 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:27:31,235 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:27:31,342 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:27:42,973 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365251, tv_nsec: 342255801 }
+2021-05-07 05:27:42,973 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365262, tv_nsec: 973475286 }
+2021-05-07 05:27:42,992 INFO  [consensus] DP[Throughput]: 39318.23319040394
+2021-05-07 05:27:42,992 INFO  [consensus] DP[Latency]: 4301.207896457397
+2021-05-07 05:27:43,006 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:27:43,021 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,031 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,030 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,028 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,026 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,022 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,019 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,024 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:27:43,026 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 40000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:50,987 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:51,494 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:52,124 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:52,835 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:53,304 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:53,827 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:54,411 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:54,885 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:27:55,409 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:28:04,995 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32940
+2021-05-07 05:28:04,990 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45984
+2021-05-07 05:28:04,992 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59264
+2021-05-07 05:28:04,998 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60318
+2021-05-07 05:28:04,986 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51130
+2021-05-07 05:28:04,989 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39648
+2021-05-07 05:28:04,987 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52706
+2021-05-07 05:28:04,985 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55606
+2021-05-07 05:28:05,496 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46736
+2021-05-07 05:28:05,493 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54628
+2021-05-07 05:28:05,502 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38372
+2021-05-07 05:28:05,495 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38130
+2021-05-07 05:28:05,489 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39748
+2021-05-07 05:28:05,493 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58200
+2021-05-07 05:28:05,490 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52886
+2021-05-07 05:28:05,489 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60656
+2021-05-07 05:28:06,137 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37710
+2021-05-07 05:28:06,134 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56170
+2021-05-07 05:28:06,140 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40372
+2021-05-07 05:28:06,137 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58982
+2021-05-07 05:28:06,143 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57042
+2021-05-07 05:28:06,130 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59882
+2021-05-07 05:28:06,134 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49096
+2021-05-07 05:28:06,133 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45250
+2021-05-07 05:28:06,844 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33004
+2021-05-07 05:28:06,846 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36330
+2021-05-07 05:28:06,852 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59596
+2021-05-07 05:28:06,847 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50302
+2021-05-07 05:28:06,849 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35666
+2021-05-07 05:28:06,840 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53964
+2021-05-07 05:28:06,844 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55486
+2021-05-07 05:28:06,839 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45922
+2021-05-07 05:28:07,318 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53544
+2021-05-07 05:28:07,312 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51494
+2021-05-07 05:28:07,314 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38548
+2021-05-07 05:28:07,316 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35178
+2021-05-07 05:28:07,312 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41108
+2021-05-07 05:28:07,323 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46478
+2021-05-07 05:28:07,310 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39764
+2021-05-07 05:28:07,309 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51796
+2021-05-07 05:28:07,835 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59702
+2021-05-07 05:28:07,832 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37726
+2021-05-07 05:28:07,832 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51962
+2021-05-07 05:28:07,839 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50682
+2021-05-07 05:28:07,826 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40742
+2021-05-07 05:28:07,829 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48798
+2021-05-07 05:28:07,827 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33760
+2021-05-07 05:28:07,826 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36272
+2021-05-07 05:28:08,421 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58838
+2021-05-07 05:28:08,416 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53106
+2021-05-07 05:28:08,418 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52884
+2021-05-07 05:28:08,418 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35470
+2021-05-07 05:28:08,425 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60040
+2021-05-07 05:28:08,412 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56434
+2021-05-07 05:28:08,413 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38728
+2021-05-07 05:28:08,412 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47662
+2021-05-07 05:28:08,887 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37486
+2021-05-07 05:28:08,889 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59638
+2021-05-07 05:28:08,892 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35422
+2021-05-07 05:28:08,896 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45616
+2021-05-07 05:28:08,883 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47272
+2021-05-07 05:28:08,887 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48232
+2021-05-07 05:28:08,884 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44068
+2021-05-07 05:28:08,883 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48576
+2021-05-07 05:28:09,407 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46864
+2021-05-07 05:28:09,407 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,407 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,411 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39952
+2021-05-07 05:28:09,412 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,412 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,411 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37150
+2021-05-07 05:28:09,411 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,414 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33914
+2021-05-07 05:28:09,414 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,415 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,411 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,417 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,418 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,404 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59116
+2021-05-07 05:28:09,405 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,405 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,406 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53752
+2021-05-07 05:28:09,406 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,407 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,408 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34606
+2021-05-07 05:28:09,409 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,409 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:09,405 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47484
+2021-05-07 05:28:09,405 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:09,405 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:28:25,446 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:28:25,550 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:28:32,338 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365305, tv_nsec: 550200890 }
+2021-05-07 05:28:32,338 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365312, tv_nsec: 338143519 }
+2021-05-07 05:28:32,349 INFO  [consensus] DP[Throughput]: 53712.59303847602
+2021-05-07 05:28:32,349 INFO  [consensus] DP[Latency]: 2166.2778649361762
+2021-05-07 05:28:32,367 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:28:32,379 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,381 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,376 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,377 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,376 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,370 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,374 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,371 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:28:32,368 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 60000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:40,130 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:40,582 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:41,098 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:41,630 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:42,030 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:42,523 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:43,111 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:43,561 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:28:44,023 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:28:54,129 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51132
+2021-05-07 05:28:54,135 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59266
+2021-05-07 05:28:54,133 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45986
+2021-05-07 05:28:54,138 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32942
+2021-05-07 05:28:54,142 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60320
+2021-05-07 05:28:54,132 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39650
+2021-05-07 05:28:54,130 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52708
+2021-05-07 05:28:54,128 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55608
+2021-05-07 05:28:54,582 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54632
+2021-05-07 05:28:54,578 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39750
+2021-05-07 05:28:54,585 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46738
+2021-05-07 05:28:54,582 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58202
+2021-05-07 05:28:54,590 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38374
+2021-05-07 05:28:54,584 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38132
+2021-05-07 05:28:54,579 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52888
+2021-05-07 05:28:54,577 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60658
+2021-05-07 05:28:55,109 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56174
+2021-05-07 05:28:55,111 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37712
+2021-05-07 05:28:55,105 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59884
+2021-05-07 05:28:55,117 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57044
+2021-05-07 05:28:55,114 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40376
+2021-05-07 05:28:55,108 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49098
+2021-05-07 05:28:55,111 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58984
+2021-05-07 05:28:55,106 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45252
+2021-05-07 05:28:55,634 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53968
+2021-05-07 05:28:55,641 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36334
+2021-05-07 05:28:55,638 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33006
+2021-05-07 05:28:55,644 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35668
+2021-05-07 05:28:55,647 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59598
+2021-05-07 05:28:55,634 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45924
+2021-05-07 05:28:55,638 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55488
+2021-05-07 05:28:55,641 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50304
+2021-05-07 05:28:56,037 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51496
+2021-05-07 05:28:56,039 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38552
+2021-05-07 05:28:56,046 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46482
+2021-05-07 05:28:56,042 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53546
+2021-05-07 05:28:56,036 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41112
+2021-05-07 05:28:56,033 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51798
+2021-05-07 05:28:56,034 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39766
+2021-05-07 05:28:56,039 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35182
+2021-05-07 05:28:56,521 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40744
+2021-05-07 05:28:56,528 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51964
+2021-05-07 05:28:56,532 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59704
+2021-05-07 05:28:56,536 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50684
+2021-05-07 05:28:56,523 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36274
+2021-05-07 05:28:56,527 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48800
+2021-05-07 05:28:56,530 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37728
+2021-05-07 05:28:56,524 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33764
+2021-05-07 05:28:57,112 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56436
+2021-05-07 05:28:57,119 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35472
+2021-05-07 05:28:57,121 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58840
+2021-05-07 05:28:57,116 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53108
+2021-05-07 05:28:57,119 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52886
+2021-05-07 05:28:57,125 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60042
+2021-05-07 05:28:57,112 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47664
+2021-05-07 05:28:57,113 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38730
+2021-05-07 05:28:57,559 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47274
+2021-05-07 05:28:57,563 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37488
+2021-05-07 05:28:57,567 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35424
+2021-05-07 05:28:57,571 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45618
+2021-05-07 05:28:57,562 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48238
+2021-05-07 05:28:57,558 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48578
+2021-05-07 05:28:57,565 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59640
+2021-05-07 05:28:57,560 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44072
+2021-05-07 05:28:58,017 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59118
+2021-05-07 05:28:58,017 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,017 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,023 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37152
+2021-05-07 05:28:58,023 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,023 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,021 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46868
+2021-05-07 05:28:58,021 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,021 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,026 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33916
+2021-05-07 05:28:58,026 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,026 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,029 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,029 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,016 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47486
+2021-05-07 05:28:58,016 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,017 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,020 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34608
+2021-05-07 05:28:58,020 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,020 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,023 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39954
+2021-05-07 05:28:58,023 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,023 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:28:58,018 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53754
+2021-05-07 05:28:58,018 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:28:58,018 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:29:14,093 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:29:14,196 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:29:23,929 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365354, tv_nsec: 196459906 }
+2021-05-07 05:29:23,929 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365363, tv_nsec: 929769881 }
+2021-05-07 05:29:23,941 INFO  [consensus] DP[Throughput]: 44541.271274985775
+2021-05-07 05:29:23,941 INFO  [consensus] DP[Latency]: 4492.857153072193
+2021-05-07 05:29:23,957 WARN  [net::futures_manager::peer] Error in receiving message
+2021-05-07 05:29:23,968 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,978 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,974 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,976 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,973 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,965 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,971 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,974 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:29:23,968 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 80000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:32,038 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:32,555 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:33,062 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:33,658 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:34,026 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:34,593 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:34,984 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:35,519 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:29:35,943 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:29:46,037 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51134
+2021-05-07 05:29:46,052 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60322
+2021-05-07 05:29:46,046 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32944
+2021-05-07 05:29:46,041 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39652
+2021-05-07 05:29:46,041 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45988
+2021-05-07 05:29:46,043 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59268
+2021-05-07 05:29:46,039 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55610
+2021-05-07 05:29:46,039 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52710
+2021-05-07 05:29:46,550 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39752
+2021-05-07 05:29:46,556 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38134
+2021-05-07 05:29:46,562 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38376
+2021-05-07 05:29:46,554 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54634
+2021-05-07 05:29:46,556 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46740
+2021-05-07 05:29:46,550 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60660
+2021-05-07 05:29:46,554 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58204
+2021-05-07 05:29:46,551 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52890
+2021-05-07 05:29:47,068 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59886
+2021-05-07 05:29:47,075 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58986
+2021-05-07 05:29:47,081 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57046
+2021-05-07 05:29:47,072 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49100
+2021-05-07 05:29:47,077 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40380
+2021-05-07 05:29:47,072 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56178
+2021-05-07 05:29:47,074 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37714
+2021-05-07 05:29:47,070 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45254
+2021-05-07 05:29:47,661 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53972
+2021-05-07 05:29:47,670 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35670
+2021-05-07 05:29:47,665 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55490
+2021-05-07 05:29:47,665 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33010
+2021-05-07 05:29:47,668 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50306
+2021-05-07 05:29:47,679 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59600
+2021-05-07 05:29:47,661 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45926
+2021-05-07 05:29:47,668 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36338
+2021-05-07 05:29:48,036 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35186
+2021-05-07 05:29:48,043 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46486
+2021-05-07 05:29:48,033 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41116
+2021-05-07 05:29:48,030 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51800
+2021-05-07 05:29:48,039 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53550
+2021-05-07 05:29:48,034 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51498
+2021-05-07 05:29:48,036 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38556
+2021-05-07 05:29:48,032 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39768
+2021-05-07 05:29:48,591 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40746
+2021-05-07 05:29:48,597 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37730
+2021-05-07 05:29:48,604 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50686
+2021-05-07 05:29:48,594 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48802
+2021-05-07 05:29:48,591 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36276
+2021-05-07 05:29:48,600 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59706
+2021-05-07 05:29:48,597 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51966
+2021-05-07 05:29:48,593 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33766
+2021-05-07 05:29:48,985 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56438
+2021-05-07 05:29:48,990 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52888
+2021-05-07 05:29:48,997 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60044
+2021-05-07 05:29:48,991 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35474
+2021-05-07 05:29:48,993 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58842
+2021-05-07 05:29:48,988 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53110
+2021-05-07 05:29:48,985 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47666
+2021-05-07 05:29:48,986 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38732
+2021-05-07 05:29:49,517 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47276
+2021-05-07 05:29:49,523 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59642
+2021-05-07 05:29:49,529 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45622
+2021-05-07 05:29:49,525 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35426
+2021-05-07 05:29:49,520 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48242
+2021-05-07 05:29:49,521 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37490
+2021-05-07 05:29:49,516 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48580
+2021-05-07 05:29:49,518 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44076
+2021-05-07 05:29:49,941 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59120
+2021-05-07 05:29:49,941 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,941 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,953 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,953 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,947 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39956
+2021-05-07 05:29:49,947 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,942 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46870
+2021-05-07 05:29:49,942 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,942 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,944 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34610
+2021-05-07 05:29:49,944 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,947 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,944 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,950 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33918
+2021-05-07 05:29:49,950 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,947 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37154
+2021-05-07 05:29:49,947 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,947 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,940 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47488
+2021-05-07 05:29:49,941 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,950 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,942 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53756
+2021-05-07 05:29:49,942 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:29:49,943 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:29:49,941 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:30:06,056 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:30:06,158 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:30:17,080 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365406, tv_nsec: 158416918 }
+2021-05-07 05:30:17,081 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365417, tv_nsec: 80970170 }
+2021-05-07 05:30:17,102 INFO  [consensus] DP[Throughput]: 34915.187978613845
+2021-05-07 05:30:17,103 INFO  [consensus] DP[Latency]: 3028.0161630782222
+2021-05-07 05:30:17,121 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:30:17,146 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,137 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,141 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,145 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,134 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,140 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,137 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,141 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:30:17,143 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 100000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:25,112 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:25,675 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:26,231 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:26,894 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:27,297 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:27,814 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:28,282 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:28,946 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:30:29,492 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:30:39,111 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51136
+2021-05-07 05:30:39,114 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39654
+2021-05-07 05:30:39,120 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32946
+2021-05-07 05:30:39,115 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45990
+2021-05-07 05:30:39,111 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55612
+2021-05-07 05:30:39,123 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60324
+2021-05-07 05:30:39,117 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59270
+2021-05-07 05:30:39,113 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52712
+2021-05-07 05:30:39,671 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39754
+2021-05-07 05:30:39,676 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38136
+2021-05-07 05:30:39,674 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58206
+2021-05-07 05:30:39,674 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54636
+2021-05-07 05:30:39,677 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46742
+2021-05-07 05:30:39,683 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38378
+2021-05-07 05:30:39,670 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60662
+2021-05-07 05:30:39,672 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52892
+2021-05-07 05:30:40,238 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59888
+2021-05-07 05:30:40,244 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58988
+2021-05-07 05:30:40,246 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40386
+2021-05-07 05:30:40,241 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49102
+2021-05-07 05:30:40,241 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56184
+2021-05-07 05:30:40,250 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57048
+2021-05-07 05:30:40,240 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45256
+2021-05-07 05:30:40,244 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37716
+2021-05-07 05:30:40,898 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53976
+2021-05-07 05:30:40,901 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55492
+2021-05-07 05:30:40,906 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35672
+2021-05-07 05:30:40,903 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50308
+2021-05-07 05:30:40,901 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33012
+2021-05-07 05:30:40,897 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45928
+2021-05-07 05:30:40,909 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59602
+2021-05-07 05:30:40,903 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36342
+2021-05-07 05:30:41,305 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35192
+2021-05-07 05:30:41,308 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53552
+2021-05-07 05:30:41,303 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41120
+2021-05-07 05:30:41,303 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51500
+2021-05-07 05:30:41,305 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38560
+2021-05-07 05:30:41,299 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51802
+2021-05-07 05:30:41,312 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46492
+2021-05-07 05:30:41,301 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39770
+2021-05-07 05:30:41,813 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40748
+2021-05-07 05:30:41,817 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48804
+2021-05-07 05:30:41,822 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59708
+2021-05-07 05:30:41,819 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37732
+2021-05-07 05:30:41,813 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36278
+2021-05-07 05:30:41,819 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51968
+2021-05-07 05:30:41,825 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50688
+2021-05-07 05:30:41,815 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33768
+2021-05-07 05:30:42,284 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56440
+2021-05-07 05:30:42,292 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58844
+2021-05-07 05:30:42,289 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52890
+2021-05-07 05:30:42,287 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53114
+2021-05-07 05:30:42,283 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47668
+2021-05-07 05:30:42,285 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38734
+2021-05-07 05:30:42,296 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60046
+2021-05-07 05:30:42,290 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35476
+2021-05-07 05:30:42,950 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59644
+2021-05-07 05:30:42,944 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47278
+2021-05-07 05:30:42,953 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35428
+2021-05-07 05:30:42,947 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48246
+2021-05-07 05:30:42,948 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37492
+2021-05-07 05:30:42,944 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48582
+2021-05-07 05:30:42,946 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44080
+2021-05-07 05:30:42,956 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45624
+2021-05-07 05:30:43,492 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39958
+2021-05-07 05:30:43,492 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,493 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,490 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34612
+2021-05-07 05:30:43,490 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,490 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,495 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33920
+2021-05-07 05:30:43,495 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,495 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,487 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59122
+2021-05-07 05:30:43,487 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,487 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,490 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46872
+2021-05-07 05:30:43,490 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,490 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,498 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,498 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,492 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37156
+2021-05-07 05:30:43,492 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,493 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,486 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47490
+2021-05-07 05:30:43,486 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,486 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:30:43,488 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53758
+2021-05-07 05:30:43,488 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:30:43,489 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:30:59,443 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:30:59,547 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:31:08,004 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365459, tv_nsec: 547108431 }
+2021-05-07 05:31:08,004 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365468, tv_nsec: 4677365 }
+2021-05-07 05:31:08,022 INFO  [consensus] DP[Throughput]: 49420.58448021631
+2021-05-07 05:31:08,022 INFO  [consensus] DP[Latency]: 2179.373196675423
+2021-05-07 05:31:08,037 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:31:08,042 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,045 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,049 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,046 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,051 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,046 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,039 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,042 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:31:08,048 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 120000
+Using arguments: --config testdata/b800-n9/nodes-0.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:15,991 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-1.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:16,476 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-2.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:16,953 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-3.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:17,427 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-4.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:17,926 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-5.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:18,492 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-6.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:18,953 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-7.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:19,465 INFO  [node_apollo] Successfully decoded the config file
+Using arguments: --config testdata/b800-n9/nodes-8.json --ip ips_file --delta 50 -s
+2021-05-07 05:31:20,006 INFO  [node_apollo] Successfully decoded the config file
+2021-05-07 05:31:29,994 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:45992
+2021-05-07 05:31:29,991 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:51138
+2021-05-07 05:31:30,000 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:32948
+2021-05-07 05:31:29,994 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:39656
+2021-05-07 05:31:29,993 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:52714
+2021-05-07 05:31:29,991 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:55614
+2021-05-07 05:31:29,997 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:59272
+2021-05-07 05:31:30,003 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.102:60326
+2021-05-07 05:31:30,472 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:39756
+2021-05-07 05:31:30,475 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:58208
+2021-05-07 05:31:30,477 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38138
+2021-05-07 05:31:30,478 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:46744
+2021-05-07 05:31:30,475 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:54638
+2021-05-07 05:31:30,474 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:52896
+2021-05-07 05:31:30,471 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:60666
+2021-05-07 05:31:30,483 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.193:38380
+2021-05-07 05:31:30,960 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:59892
+2021-05-07 05:31:30,963 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:56188
+2021-05-07 05:31:30,968 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:40390
+2021-05-07 05:31:30,965 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:58990
+2021-05-07 05:31:30,963 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:49104
+2021-05-07 05:31:30,962 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:45258
+2021-05-07 05:31:30,965 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:37718
+2021-05-07 05:31:30,971 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.23:57050
+2021-05-07 05:31:31,432 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:53980
+2021-05-07 05:31:31,437 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:36346
+2021-05-07 05:31:31,437 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:50310
+2021-05-07 05:31:31,435 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:55494
+2021-05-07 05:31:31,435 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:33014
+2021-05-07 05:31:31,440 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:35674
+2021-05-07 05:31:31,431 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:45930
+2021-05-07 05:31:31,443 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.82:59604
+2021-05-07 05:31:31,932 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:41124
+2021-05-07 05:31:31,933 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51502
+2021-05-07 05:31:31,938 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:53554
+2021-05-07 05:31:31,935 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:35196
+2021-05-07 05:31:31,929 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:51804
+2021-05-07 05:31:31,935 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:38564
+2021-05-07 05:31:31,931 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:39772
+2021-05-07 05:31:31,941 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.81:46496
+2021-05-07 05:31:32,491 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:40750
+2021-05-07 05:31:32,494 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:48806
+2021-05-07 05:31:32,494 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:33770
+2021-05-07 05:31:32,491 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:36280
+2021-05-07 05:31:32,497 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:51970
+2021-05-07 05:31:32,500 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:59710
+2021-05-07 05:31:32,497 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:37734
+2021-05-07 05:31:32,503 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.252:50690
+2021-05-07 05:31:32,957 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:53116
+2021-05-07 05:31:32,954 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:56442
+2021-05-07 05:31:32,959 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:52892
+2021-05-07 05:31:32,954 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:47670
+2021-05-07 05:31:32,960 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:35478
+2021-05-07 05:31:32,962 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:58846
+2021-05-07 05:31:32,956 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:38736
+2021-05-07 05:31:32,966 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.172:60048
+2021-05-07 05:31:33,463 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:47280
+2021-05-07 05:31:33,466 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:37494
+2021-05-07 05:31:33,465 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:44086
+2021-05-07 05:31:33,471 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:35432
+2021-05-07 05:31:33,466 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48250
+2021-05-07 05:31:33,468 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:59646
+2021-05-07 05:31:33,462 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:48584
+2021-05-07 05:31:33,475 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.239:45626
+2021-05-07 05:31:34,002 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:59124
+2021-05-07 05:31:34,002 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,002 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,005 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:46876
+2021-05-07 05:31:34,005 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,005 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,005 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:34614
+2021-05-07 05:31:34,005 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,005 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,007 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:39960
+2021-05-07 05:31:34,007 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,007 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,010 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:33922
+2021-05-07 05:31:34,010 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,010 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,007 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:37160
+2021-05-07 05:31:34,007 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,004 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:53760
+2021-05-07 05:31:34,004 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,004 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,001 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.127:47492
+2021-05-07 05:31:34,001 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,008 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,002 INFO  [node_apollo] Using special apollo client: true
+2021-05-07 05:31:34,013 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 05:31:34,013 INFO  [node_apollo] Using special apollo client: true
+Using M: 1000000
+2021-05-07 05:31:49,979 INFO  [client_apollo] Successfully decoded the config file
+2021-05-07 05:31:50,074 INFO  [apollo::client::start] Finally at round 5
+2021-05-07 05:31:59,975 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620365510, tv_nsec: 75023708 }
+2021-05-07 05:31:59,975 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620365519, tv_nsec: 975245069 }
+2021-05-07 05:31:59,986 INFO  [consensus] DP[Throughput]: 45028.99316535797
+2021-05-07 05:31:59,988 INFO  [consensus] DP[Latency]: 4637.313797535649
+2021-05-07 05:32:00,004 INFO  [apollo::client::start] Closing tx producer channel: channel closed
+2021-05-07 05:32:00,020 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,025 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,023 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,024 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,030 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,027 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,027 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,028 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 05:32:00,031 WARN  [net::futures_manager::peer] Disconnected from peer

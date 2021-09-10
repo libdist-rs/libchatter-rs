@@ -1,0 +1,567 @@
+DP[Window]: 10000
+Using: optsync testdata/b400-p0-f4 100 client-synchs
+Setting up: 18.223.247.100
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 18.222.223.170
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 52.194.226.113
+2021-05-07 12:22:37,823 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "0.0.0.0:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:22:38,330 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "0.0.0.0:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.231.92.184
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 44.192.13.231
+2021-05-07 12:22:42,071 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "0.0.0.0:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.52.240.169
+2021-05-07 12:22:43,132 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "0.0.0.0:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.169.207.0
+2021-05-07 12:22:44,184 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "0.0.0.0:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:22:44,799 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.78.189.234
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 3.96.142.63
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+2021-05-07 12:22:49,260 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "0.0.0.0:4008"}
+2021-05-07 12:22:49,645 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "0.0.0.0:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:22:50,002 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "0.0.0.0:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:23:07,904 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56692
+2021-05-07 12:23:07,908 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51952
+2021-05-07 12:23:08,017 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:36462
+2021-05-07 12:23:08,161 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:39780
+2021-05-07 12:23:08,266 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58644
+2021-05-07 12:23:08,415 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37104
+2021-05-07 12:23:08,366 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52306
+2021-05-07 12:23:08,419 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:41314
+2021-05-07 12:23:08,484 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51752
+2021-05-07 12:23:08,529 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:35540
+2021-05-07 12:23:08,460 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:32960
+2021-05-07 12:23:08,678 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37910
+2021-05-07 12:23:08,777 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:47850
+2021-05-07 12:23:08,877 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:51360
+2021-05-07 12:23:08,993 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:49690
+2021-05-07 12:23:08,972 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:57436
+2021-05-07 12:23:12,273 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:47076
+2021-05-07 12:23:12,445 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:43190
+2021-05-07 12:23:12,688 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:33368
+2021-05-07 12:23:12,685 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:40398
+2021-05-07 12:23:12,841 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:34856
+2021-05-07 12:23:12,917 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:56400
+2021-05-07 12:23:12,983 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:37956
+2021-05-07 12:23:13,142 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:49556
+2021-05-07 12:23:13,225 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:42180
+2021-05-07 12:23:13,301 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:53840
+2021-05-07 12:23:13,482 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38232
+2021-05-07 12:23:13,501 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:58958
+2021-05-07 12:23:13,577 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:46872
+2021-05-07 12:23:13,718 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:40276
+2021-05-07 12:23:13,826 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38440
+2021-05-07 12:23:13,824 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:35566
+2021-05-07 12:23:14,348 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:36886
+2021-05-07 12:23:14,516 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:35110
+2021-05-07 12:23:14,753 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49310
+2021-05-07 12:23:14,746 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:39702
+2021-05-07 12:23:14,898 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:60830
+2021-05-07 12:23:14,902 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:41934
+2021-05-07 12:23:14,938 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:45868
+2021-05-07 12:23:15,040 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49992
+2021-05-07 12:23:15,077 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42032
+2021-05-07 12:23:15,202 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:54178
+2021-05-07 12:23:15,247 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:51048
+2021-05-07 12:23:15,306 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:44634
+2021-05-07 12:23:15,264 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42654
+2021-05-07 12:23:15,451 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:54040
+2021-05-07 12:23:15,627 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:47926
+2021-05-07 12:23:15,515 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:38862
+2021-05-07 12:23:19,360 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:44920
+2021-05-07 12:23:19,370 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:53794
+2021-05-07 12:23:19,460 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:46620
+2021-05-07 12:23:19,654 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:41848
+2021-05-07 12:23:19,688 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:39662
+2021-05-07 12:23:19,727 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:35488
+2021-05-07 12:23:19,848 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41386
+2021-05-07 12:23:19,885 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:54500
+2021-05-07 12:23:19,886 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:55398
+2021-05-07 12:23:19,991 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:38272
+2021-05-07 12:23:20,134 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59486
+2021-05-07 12:23:20,218 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41638
+2021-05-07 12:23:20,116 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:32814
+2021-05-07 12:23:20,267 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:48088
+2021-05-07 12:23:20,267 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:20,502 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:45596
+2021-05-07 12:23:20,502 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:20,482 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59224
+2021-05-07 12:23:20,700 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:42990
+2021-05-07 12:23:20,675 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:35908
+2021-05-07 12:23:20,675 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:20,645 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:57620
+2021-05-07 12:23:20,864 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:53446
+2021-05-07 12:23:20,864 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:21,068 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40090
+2021-05-07 12:23:21,068 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:21,091 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40846
+2021-05-07 12:23:21,091 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:21,123 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46036
+2021-05-07 12:23:21,123 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:21,447 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46268
+2021-05-07 12:23:21,447 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:21,331 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:23:35,000 INFO  [client_synchs] using log level INFO, got input 0
+2021-05-07 12:23:35,001 INFO  [config::client] Talking to servers: {5: "13.0.1.239:10005", 4: "12.0.134.189:10004", 7: "15.0.79.81:10007", 6: "14.0.233.16:10006", 1: "10.100.100.220:10001", 0: "10.100.100.172:10000", 3: "11.0.111.53:10003", 2: "11.0.109.224:10002", 8: "16.0.18.133:10008"}
+2021-05-07 12:26:21,548 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620390216, tv_nsec: 501948597 }
+2021-05-07 12:26:21,548 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620390381, tv_nsec: 548329512 }
+2021-05-07 12:26:21,579 INFO  [consensus] DP[Throughput]: 6061.326485645346
+2021-05-07 12:26:21,579 INFO  [consensus] DP[Latency]: 1640.3045281887246
+2021-05-07 12:26:21,583 INFO  [synchs::client::start] Closing tx producer channel: channel closed
+2021-05-07 12:26:21,598 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,602 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,625 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,608 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,623 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,654 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,596 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,634 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:26:21,667 WARN  [net::tokio_manager::peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+DP[Window]: 60000
+Using: optsync testdata/b400-p0-f4 100 client-synchs
+Setting up: 18.223.247.100
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 18.222.223.170
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 52.194.226.113
+2021-05-07 12:26:37,256 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "0.0.0.0:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:26:37,774 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "0.0.0.0:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.231.92.184
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 44.192.13.231
+2021-05-07 12:26:41,596 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "0.0.0.0:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.52.240.169
+2021-05-07 12:26:42,618 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "0.0.0.0:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.169.207.0
+2021-05-07 12:26:43,743 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "0.0.0.0:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:26:44,085 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.78.189.234
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 3.96.142.63
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+2021-05-07 12:26:49,206 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "0.0.0.0:4008"}
+2021-05-07 12:26:49,660 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "0.0.0.0:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:26:49,989 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "0.0.0.0:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:27:07,336 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56696
+2021-05-07 12:27:07,339 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51954
+2021-05-07 12:27:07,448 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:36464
+2021-05-07 12:27:07,594 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:39782
+2021-05-07 12:27:07,698 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58646
+2021-05-07 12:27:07,858 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37106
+2021-05-07 12:27:07,799 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52308
+2021-05-07 12:27:07,862 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:41316
+2021-05-07 12:27:07,913 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51754
+2021-05-07 12:27:07,893 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:32962
+2021-05-07 12:27:07,973 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:35542
+2021-05-07 12:27:08,122 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37912
+2021-05-07 12:27:08,221 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:47852
+2021-05-07 12:27:08,322 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:51364
+2021-05-07 12:27:08,435 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:49692
+2021-05-07 12:27:08,416 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:57438
+2021-05-07 12:27:11,797 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:47078
+2021-05-07 12:27:11,965 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:43192
+2021-05-07 12:27:12,200 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:33370
+2021-05-07 12:27:12,196 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:40400
+2021-05-07 12:27:12,352 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:34858
+2021-05-07 12:27:12,426 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:56402
+2021-05-07 12:27:12,492 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:37958
+2021-05-07 12:27:12,653 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:49558
+2021-05-07 12:27:12,712 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:42182
+2021-05-07 12:27:12,789 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:53842
+2021-05-07 12:27:12,970 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38234
+2021-05-07 12:27:12,989 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:58960
+2021-05-07 12:27:13,065 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:46876
+2021-05-07 12:27:13,203 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:40278
+2021-05-07 12:27:13,310 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38442
+2021-05-07 12:27:13,312 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:35568
+2021-05-07 12:27:13,909 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:36888
+2021-05-07 12:27:14,082 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:35112
+2021-05-07 12:27:14,183 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:60832
+2021-05-07 12:27:14,312 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49312
+2021-05-07 12:27:14,358 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42034
+2021-05-07 12:27:14,317 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:39704
+2021-05-07 12:27:14,471 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:41936
+2021-05-07 12:27:14,530 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:51052
+2021-05-07 12:27:14,588 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:44636
+2021-05-07 12:27:14,508 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:45870
+2021-05-07 12:27:14,610 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49994
+2021-05-07 12:27:14,544 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42658
+2021-05-07 12:27:14,770 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:54180
+2021-05-07 12:27:14,725 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:54042
+2021-05-07 12:27:14,906 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:47928
+2021-05-07 12:27:14,796 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:38866
+2021-05-07 12:27:19,307 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:44922
+2021-05-07 12:27:19,317 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:53796
+2021-05-07 12:27:19,409 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:46622
+2021-05-07 12:27:19,604 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:41850
+2021-05-07 12:27:19,636 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:39666
+2021-05-07 12:27:19,675 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:35490
+2021-05-07 12:27:19,864 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41388
+2021-05-07 12:27:19,901 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:54504
+2021-05-07 12:27:19,836 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:55400
+2021-05-07 12:27:19,940 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:38274
+2021-05-07 12:27:20,157 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59488
+2021-05-07 12:27:20,241 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41640
+2021-05-07 12:27:20,140 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:32816
+2021-05-07 12:27:20,252 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:48090
+2021-05-07 12:27:20,253 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:20,489 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:45598
+2021-05-07 12:27:20,490 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:20,506 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59226
+2021-05-07 12:27:20,658 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:35910
+2021-05-07 12:27:20,722 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:42994
+2021-05-07 12:27:20,686 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:20,670 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:57622
+2021-05-07 12:27:20,847 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:53448
+2021-05-07 12:27:20,847 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:21,051 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40092
+2021-05-07 12:27:21,051 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:21,060 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40848
+2021-05-07 12:27:21,060 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:21,094 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46038
+2021-05-07 12:27:21,094 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:21,417 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46270
+2021-05-07 12:27:21,417 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:21,303 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:27:34,862 INFO  [client_synchs] using log level INFO, got input 0
+2021-05-07 12:27:34,862 INFO  [config::client] Talking to servers: {5: "13.0.1.239:10005", 4: "12.0.134.189:10004", 7: "15.0.79.81:10007", 6: "14.0.233.16:10006", 1: "10.100.100.220:10001", 0: "10.100.100.172:10000", 3: "11.0.111.53:10003", 2: "11.0.109.224:10002", 8: "16.0.18.133:10008"}
+2021-05-07 12:30:15,162 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620390456, tv_nsec: 356878926 }
+2021-05-07 12:30:15,162 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620390615, tv_nsec: 162629928 }
+2021-05-07 12:30:15,193 INFO  [consensus] DP[Throughput]: 6299.519971335301
+2021-05-07 12:30:15,193 INFO  [consensus] DP[Latency]: 9245.151981207517
+2021-05-07 12:30:15,198 INFO  [synchs::client::start] Closing tx producer channel: channel closed
+2021-05-07 12:30:15,215 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,219 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,243 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,240 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,225 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,271 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,251 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,214 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:30:15,289 WARN  [net::tokio_manager::peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+DP[Window]: 100000
+Using: optsync testdata/b400-p0-f4 100 client-synchs
+Setting up: 18.223.247.100
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 18.222.223.170
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 52.194.226.113
+2021-05-07 12:30:30,448 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "0.0.0.0:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:30:30,990 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "0.0.0.0:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.231.92.184
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 44.192.13.231
+2021-05-07 12:30:34,728 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "0.0.0.0:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 13.52.240.169
+2021-05-07 12:30:35,843 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "0.0.0.0:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.169.207.0
+2021-05-07 12:30:37,312 INFO  [config::node] Talking to servers: {5: "0.0.0.0:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:30:37,296 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "0.0.0.0:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 54.78.189.234
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+Setting up: 3.96.142.63
+node-apollo: no process found
+node-synchs: no process found
+node-artemis: no process found
+node-optsync: no process found
+2021-05-07 12:30:41,916 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "0.0.0.0:4008"}
+2021-05-07 12:30:42,387 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "0.0.0.0:4007", 6: "14.0.233.16:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:30:42,786 INFO  [config::node] Talking to servers: {5: "13.0.1.239:4005", 4: "12.0.134.189:4004", 7: "15.0.79.81:4007", 6: "0.0.0.0:4006", 1: "10.100.100.220:4001", 0: "10.100.100.172:4000", 3: "11.0.111.53:4003", 2: "11.0.109.224:4002", 8: "16.0.18.133:4008"}
+2021-05-07 12:31:00,527 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:56698
+2021-05-07 12:31:00,530 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51956
+2021-05-07 12:31:00,640 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:36466
+2021-05-07 12:31:00,784 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:39784
+2021-05-07 12:31:00,890 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:58648
+2021-05-07 12:31:00,988 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:52310
+2021-05-07 12:31:01,077 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37108
+2021-05-07 12:31:01,102 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:51756
+2021-05-07 12:31:01,082 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:41318
+2021-05-07 12:31:01,083 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.172:32964
+2021-05-07 12:31:01,191 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:35544
+2021-05-07 12:31:01,341 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:37914
+2021-05-07 12:31:01,440 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:47854
+2021-05-07 12:31:01,540 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:51366
+2021-05-07 12:31:01,654 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:49694
+2021-05-07 12:31:01,636 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.220:57440
+2021-05-07 12:31:04,929 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:47080
+2021-05-07 12:31:05,101 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:43194
+2021-05-07 12:31:05,334 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:33372
+2021-05-07 12:31:05,346 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:40402
+2021-05-07 12:31:05,496 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:34862
+2021-05-07 12:31:05,570 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:56404
+2021-05-07 12:31:05,635 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:37960
+2021-05-07 12:31:05,795 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.109.224:49560
+2021-05-07 12:31:05,939 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:42184
+2021-05-07 12:31:06,016 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:53844
+2021-05-07 12:31:06,197 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38236
+2021-05-07 12:31:06,214 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:58962
+2021-05-07 12:31:06,291 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:46878
+2021-05-07 12:31:06,429 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:40280
+2021-05-07 12:31:06,536 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:38444
+2021-05-07 12:31:06,538 INFO  [net::tokio_manager::protocol] New incoming connection from 12.0.134.189:35570
+2021-05-07 12:31:07,412 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:60834
+2021-05-07 12:31:07,459 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:36890
+2021-05-07 12:31:07,592 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42036
+2021-05-07 12:31:07,631 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:35114
+2021-05-07 12:31:07,763 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:51058
+2021-05-07 12:31:07,822 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:44640
+2021-05-07 12:31:07,864 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49314
+2021-05-07 12:31:07,786 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:42660
+2021-05-07 12:31:07,864 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:39706
+2021-05-07 12:31:07,957 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:54044
+2021-05-07 12:31:08,017 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:41938
+2021-05-07 12:31:08,139 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:47930
+2021-05-07 12:31:08,028 INFO  [net::tokio_manager::protocol] New incoming connection from 13.0.1.239:38872
+2021-05-07 12:31:08,054 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:45872
+2021-05-07 12:31:08,156 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:49996
+2021-05-07 12:31:08,320 INFO  [net::tokio_manager::protocol] New incoming connection from 11.0.111.53:54182
+2021-05-07 12:31:12,016 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:44924
+2021-05-07 12:31:12,028 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:53798
+2021-05-07 12:31:12,117 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:46624
+2021-05-07 12:31:12,317 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:41852
+2021-05-07 12:31:12,349 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:39670
+2021-05-07 12:31:12,384 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:35492
+2021-05-07 12:31:12,589 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41390
+2021-05-07 12:31:12,550 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:55402
+2021-05-07 12:31:12,625 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:54506
+2021-05-07 12:31:12,654 INFO  [net::tokio_manager::protocol] New incoming connection from 16.0.18.133:38276
+2021-05-07 12:31:12,868 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59490
+2021-05-07 12:31:12,951 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:41642
+2021-05-07 12:31:12,842 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:32818
+2021-05-07 12:31:13,050 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:48092
+2021-05-07 12:31:13,050 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,287 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:45600
+2021-05-07 12:31:13,287 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,216 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:59228
+2021-05-07 12:31:13,432 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:42996
+2021-05-07 12:31:13,443 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:35912
+2021-05-07 12:31:13,443 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,378 INFO  [net::tokio_manager::protocol] New incoming connection from 15.0.79.81:57624
+2021-05-07 12:31:13,641 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:53450
+2021-05-07 12:31:13,641 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,848 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40094
+2021-05-07 12:31:13,848 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,866 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:40850
+2021-05-07 12:31:13,866 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:13,904 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46040
+2021-05-07 12:31:13,904 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:14,224 INFO  [net::tokio_manager::protocol] New incoming connection from 14.0.233.16:46272
+2021-05-07 12:31:14,224 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:14,110 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 12:31:27,583 INFO  [client_synchs] using log level INFO, got input 0
+2021-05-07 12:31:27,583 INFO  [config::client] Talking to servers: {5: "13.0.1.239:10005", 4: "12.0.134.189:10004", 7: "15.0.79.81:10007", 6: "14.0.233.16:10006", 1: "10.100.100.220:10001", 0: "10.100.100.172:10000", 3: "11.0.111.53:10003", 2: "11.0.109.224:10002", 8: "16.0.18.133:10008"}
+2021-05-07 12:34:07,323 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620390689, tv_nsec: 82065661 }
+2021-05-07 12:34:07,323 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620390847, tv_nsec: 323498513 }
+2021-05-07 12:34:07,354 INFO  [consensus] DP[Throughput]: 6321.985222009799
+2021-05-07 12:34:07,354 INFO  [consensus] DP[Latency]: 15031.282195121952
+2021-05-07 12:34:07,358 INFO  [synchs::client::start] Closing tx producer channel: channel closed
+2021-05-07 12:34:07,405 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,376 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,387 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,380 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,404 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,432 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,378 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,413 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 12:34:07,445 WARN  [net::tokio_manager::peer] Disconnected from peer
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found
+node-apollo: no process found
+node-synchs: no process found
+node-optsync: no process found
+node-artemis: no process found

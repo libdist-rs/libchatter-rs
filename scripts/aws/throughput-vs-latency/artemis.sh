@@ -12,4 +12,5 @@ cd libchatter-rs
     --config $TESTDIR/nodes-$ID.json \
     --ip ips_file \
     --delta "$DELAY" \
+    --sleep 140 \
     $CLI_TYPE &

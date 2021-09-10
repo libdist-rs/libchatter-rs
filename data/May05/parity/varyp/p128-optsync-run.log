@@ -1,0 +1,145 @@
+DP[Window]: 800
+2021-05-07 10:30:59,177 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:30:59,662 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:31:00,256 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:31:07,200 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38518
+2021-05-07 10:31:07,178 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39348
+2021-05-07 10:31:07,643 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50722
+2021-05-07 10:31:07,647 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38426
+2021-05-07 10:31:08,259 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:31:08,281 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:45994
+2021-05-07 10:31:08,281 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:31:08,264 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60464
+2021-05-07 10:31:08,264 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:31:30,240 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:31:30,240 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:31:34,635 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383490, tv_nsec: 244536769 }
+2021-05-07 10:31:34,635 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383494, tv_nsec: 635907712 }
+2021-05-07 10:31:34,687 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:31:34,662 INFO  [consensus] DP[Throughput]: 227810.40658718956
+2021-05-07 10:31:34,662 INFO  [consensus] DP[Latency]: 2.4779478208716514
+2021-05-07 10:31:34,665 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:31:34,670 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:31:34,666 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+DP[Window]: 7000
+2021-05-07 10:31:39,355 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:31:39,852 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:31:40,361 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:31:47,378 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38522
+2021-05-07 10:31:47,356 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39350
+2021-05-07 10:31:47,833 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50724
+2021-05-07 10:31:47,837 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38430
+2021-05-07 10:31:48,386 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:45996
+2021-05-07 10:31:48,386 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:31:48,364 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:31:48,369 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60466
+2021-05-07 10:31:48,369 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:32:10,358 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:32:10,358 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:32:13,873 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383530, tv_nsec: 362688832 }
+2021-05-07 10:32:13,873 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383533, tv_nsec: 873773599 }
+2021-05-07 10:32:13,900 INFO  [consensus] DP[Throughput]: 284926.18845394003
+2021-05-07 10:32:13,900 INFO  [consensus] DP[Latency]: 22.035122950819673
+2021-05-07 10:32:13,903 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:32:13,926 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:32:13,903 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:32:13,908 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 20000
+2021-05-07 10:32:18,350 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:32:18,837 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:32:19,279 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:32:26,351 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39352
+2021-05-07 10:32:26,373 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38524
+2021-05-07 10:32:26,822 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38432
+2021-05-07 10:32:26,818 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50726
+2021-05-07 10:32:27,305 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:45998
+2021-05-07 10:32:27,305 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:32:27,287 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60468
+2021-05-07 10:32:27,287 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:32:27,282 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:32:49,345 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:32:49,345 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:32:52,535 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383569, tv_nsec: 348872207 }
+2021-05-07 10:32:52,535 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383572, tv_nsec: 535036607 }
+2021-05-07 10:32:52,564 INFO  [consensus] DP[Throughput]: 313982.5427714904
+2021-05-07 10:32:52,564 INFO  [consensus] DP[Latency]: 54.21353858456617
+2021-05-07 10:32:52,569 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:32:52,592 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:32:52,569 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:32:52,574 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 40000
+2021-05-07 10:32:57,251 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:32:57,762 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:32:58,216 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:33:05,275 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38526
+2021-05-07 10:33:05,252 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39354
+2021-05-07 10:33:05,746 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38436
+2021-05-07 10:33:05,742 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50728
+2021-05-07 10:33:06,218 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:33:06,223 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60470
+2021-05-07 10:33:06,223 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:33:06,241 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:46000
+2021-05-07 10:33:06,241 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:33:28,159 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:33:28,159 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:33:31,296 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383608, tv_nsec: 163609035 }
+2021-05-07 10:33:31,296 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383611, tv_nsec: 296459625 }
+2021-05-07 10:33:31,322 INFO  [consensus] DP[Throughput]: 319325.7933184742
+2021-05-07 10:33:31,322 INFO  [consensus] DP[Latency]: 110.87239204318273
+2021-05-07 10:33:31,326 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:33:31,328 ERROR [net::tokio_manager::peer] Failed to write a message to a peer
+2021-05-07 10:33:31,328 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:33:31,332 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:33:31,350 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 80000
+2021-05-07 10:33:35,905 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:33:36,437 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:33:36,981 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:33:43,929 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38528
+2021-05-07 10:33:43,906 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39356
+2021-05-07 10:33:44,421 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38438
+2021-05-07 10:33:44,417 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50730
+2021-05-07 10:33:45,006 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:46002
+2021-05-07 10:33:45,006 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:33:44,988 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60472
+2021-05-07 10:33:44,988 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:33:44,983 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:34:07,005 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:34:07,006 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:34:10,216 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383647, tv_nsec: 9686167 }
+2021-05-07 10:34:10,216 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383650, tv_nsec: 216580247 }
+2021-05-07 10:34:10,242 INFO  [consensus] DP[Throughput]: 311952.9286106013
+2021-05-07 10:34:10,242 INFO  [consensus] DP[Latency]: 235.59082666933227
+2021-05-07 10:34:10,270 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:34:10,246 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:34:10,252 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:34:10,247 WARN  [net::tokio_manager::peer] Disconnected from peer
+DP[Window]: 120000
+2021-05-07 10:34:14,805 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "0.0.0.0:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:34:15,328 INFO  [config::node] Talking to servers: {1: "0.0.0.0:4001", 0: "10.100.100.86:4000", 2: "10.100.100.236:4002"}
+2021-05-07 10:34:15,809 INFO  [config::node] Talking to servers: {1: "10.100.100.160:4001", 0: "10.100.100.86:4000", 2: "0.0.0.0:4002"}
+2021-05-07 10:34:22,830 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:38530
+2021-05-07 10:34:22,807 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.86:39358
+2021-05-07 10:34:23,311 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:38440
+2021-05-07 10:34:23,307 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.160:50732
+2021-05-07 10:34:23,816 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:60474
+2021-05-07 10:34:23,816 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:34:23,812 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 10:34:23,835 INFO  [net::tokio_manager::protocol] New incoming connection from 10.100.100.236:46004
+2021-05-07 10:34:23,835 INFO  [net::tokio_manager::protocol] Connected to all nodes in the protocol
+Using M: 1000000
+2021-05-07 10:34:45,808 INFO  [client_optsync] using log level INFO, got input 0
+2021-05-07 10:34:45,808 INFO  [config::client] Talking to servers: {1: "10.100.100.160:10001", 0: "10.100.100.86:10000", 2: "10.100.100.236:10002"}
+2021-05-07 10:34:48,840 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620383685, tv_nsec: 812363160 }
+2021-05-07 10:34:48,840 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620383688, tv_nsec: 840641236 }
+2021-05-07 10:34:48,868 INFO  [consensus] DP[Throughput]: 330352.7532456369
+2021-05-07 10:34:48,868 INFO  [consensus] DP[Latency]: 322.63895841663333
+2021-05-07 10:34:48,871 INFO  [optsync::client::start] Closing tx producer channel: channel closed
+2021-05-07 10:34:48,879 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:34:48,898 WARN  [net::tokio_manager::peer] Disconnected from peer
+2021-05-07 10:34:48,875 WARN  [net::tokio_manager::peer] Disconnected from peer
