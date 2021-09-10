@@ -1,7 +1,8 @@
-use serde::Serialize;
-use async_trait::async_trait;
+use serde::{Serialize, de::DeserializeOwned};
 
-pub trait ConfigCommon {
+pub trait Config {
+    type PeerId;
+
     /// Returns the number of nodes
     fn get_num_nodes(&self) -> usize;
 
@@ -10,20 +11,10 @@ pub trait ConfigCommon {
 
     /// Returns the Id of the node
     /// The Id of a node satisfies 0 <= Id < num_nodes
-    fn get_id(&self) -> usize;
+    fn get_id(&self) -> Self::PeerId;
 }
 
-/// Network configuration
-pub trait Config: Serialize + ConfigCommon {
-    const NUM_RETRIES: usize;
-    const NO_DELAY: bool;
-    const CONNECTION_SLEEP_TIME: u64;
-
-    fn get_listen_addr(&self) -> String;
-    fn get_node_addr(&self, id: &usize) -> String;
-}
-
-pub trait Message: Send + Sync + Serialize + 'static
+pub trait Message: Send + Sync + Serialize + DeserializeOwned + 'static
 {
     /// How to decode from bytes
     fn from_bytes(data: &[u8]) -> Self;
@@ -35,13 +26,18 @@ pub trait Message: Send + Sync + Serialize + 'static
     fn to_bytes(&self) -> Vec<u8>;
 }
 
-#[async_trait]
-pub trait Communication {
-    type Config;
+pub trait Context {
+}
 
-    async fn init(config: Self::Config) -> Self;
-    fn send(sender: usize, msg: impl Message);
-    fn concurrent_send(sender:usize, msg: impl Message);
-    fn broadcast(msg: impl Message);
-    fn concurrent_broadcast(msg: impl Message);
+pub trait Communication {
+    type Config: Config;
+    type SendMsg: Message;
+    type RecvMsg: Message;
+    type Context: Context;
+
+    fn init(config: Self::Config, ctx: Self::Context) -> Result<Box<Self>, String>;
+    fn send(&self, sender: &<Self::Config as Config>::PeerId, msg: Self::SendMsg);
+    fn concurrent_send(&self, sender:usize, msg: Self::SendMsg);
+    fn broadcast(&self, msg: Self::SendMsg);
+    fn concurrent_broadcast(&self, msg: Self::SendMsg);
 }
