@@ -1,0 +1,804 @@
+DP[Window]: 1600
+2021-05-07 14:41:12,439 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:13,053 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:16,726 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:17,601 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:18,802 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:19,001 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:23,691 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:24,276 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:24,570 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:41:26,519 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45066
+2021-05-07 14:41:26,511 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47272
+2021-05-07 14:41:26,623 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59964
+2021-05-07 14:41:26,779 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46888
+2021-05-07 14:41:26,849 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56760
+2021-05-07 14:41:26,957 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34740
+2021-05-07 14:41:27,083 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60188
+2021-05-07 14:41:27,125 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54528
+2021-05-07 14:41:27,135 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54384
+2021-05-07 14:41:27,116 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41404
+2021-05-07 14:41:27,238 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50286
+2021-05-07 14:41:27,396 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38510
+2021-05-07 14:41:27,464 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34920
+2021-05-07 14:41:27,571 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45296
+2021-05-07 14:41:27,699 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46572
+2021-05-07 14:41:27,731 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34616
+2021-05-07 14:41:30,886 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44060
+2021-05-07 14:41:31,053 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36340
+2021-05-07 14:41:31,285 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35742
+2021-05-07 14:41:31,260 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54458
+2021-05-07 14:41:31,453 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58576
+2021-05-07 14:41:31,585 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44484
+2021-05-07 14:41:31,496 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:46998
+2021-05-07 14:41:31,699 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39294
+2021-05-07 14:41:31,735 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60060
+2021-05-07 14:41:31,769 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39934
+2021-05-07 14:41:31,963 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46670
+2021-05-07 14:41:31,977 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53842
+2021-05-07 14:41:32,022 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36700
+2021-05-07 14:41:32,167 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50136
+2021-05-07 14:41:32,287 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43568
+2021-05-07 14:41:32,341 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39484
+2021-05-07 14:41:32,991 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56346
+2021-05-07 14:41:33,094 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45896
+2021-05-07 14:41:33,154 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51486
+2021-05-07 14:41:33,274 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57510
+2021-05-07 14:41:33,388 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53686
+2021-05-07 14:41:33,454 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59266
+2021-05-07 14:41:33,508 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47658
+2021-05-07 14:41:33,369 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54156
+2021-05-07 14:41:33,558 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56086
+2021-05-07 14:41:33,435 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51052
+2021-05-07 14:41:33,630 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50350
+2021-05-07 14:41:33,691 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36266
+2021-05-07 14:41:33,621 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58928
+2021-05-07 14:41:33,753 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49244
+2021-05-07 14:41:33,815 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48314
+2021-05-07 14:41:33,836 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38046
+2021-05-07 14:41:37,798 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43724
+2021-05-07 14:41:37,813 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36448
+2021-05-07 14:41:37,901 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52516
+2021-05-07 14:41:38,114 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44360
+2021-05-07 14:41:38,142 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56114
+2021-05-07 14:41:38,145 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47658
+2021-05-07 14:41:38,320 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34510
+2021-05-07 14:41:38,485 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56506
+2021-05-07 14:41:38,516 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39962
+2021-05-07 14:41:38,489 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60514
+2021-05-07 14:41:38,772 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38734
+2021-05-07 14:41:38,852 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34206
+2021-05-07 14:41:38,720 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54042
+2021-05-07 14:41:38,882 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51236
+2021-05-07 14:41:38,882 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:38,882 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:38,883 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:38,883 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,106 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57562
+2021-05-07 14:41:39,106 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,106 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,106 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,106 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,094 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50306
+2021-05-07 14:41:39,280 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35148
+2021-05-07 14:41:39,323 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38754
+2021-05-07 14:41:39,291 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,292 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,292 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,292 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,323 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44450
+2021-05-07 14:41:39,482 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37914
+2021-05-07 14:41:39,482 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,482 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,482 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,482 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,682 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51106
+2021-05-07 14:41:39,682 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,683 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,683 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,683 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,668 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58940
+2021-05-07 14:41:39,668 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,669 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,669 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,669 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,770 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56034
+2021-05-07 14:41:39,770 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,771 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,771 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,771 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:40,039 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39330
+2021-05-07 14:41:40,039 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:40,040 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:40,040 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:40,040 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:41:39,908 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:41:39,908 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:41:39,908 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:41:39,908 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:41:54,374 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:43:55,086 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,074 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,090 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,094 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,085 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,116 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,123 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,088 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,119 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:43:55,033 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620398515, tv_nsec: 863549618 }
+2021-05-07 14:43:55,033 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620398635, tv_nsec: 33549872 }
+2021-05-07 14:43:55,066 INFO  [consensus] DP[Throughput]: 8398.086748903968
+2021-05-07 14:43:55,066 INFO  [consensus] DP[Latency]: 567.6374100719424
+2021-05-07 14:43:55,066 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+DP[Window]: 4000
+2021-05-07 14:44:13,380 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:13,879 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:17,653 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:18,381 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:19,575 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:19,807 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:24,498 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:24,968 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:25,848 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:44:27,565 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59966
+2021-05-07 14:44:28,062 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50288
+2021-05-07 14:44:27,453 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47274
+2021-05-07 14:44:27,950 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54530
+2021-05-07 14:44:27,792 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56762
+2021-05-07 14:44:28,290 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34922
+2021-05-07 14:44:27,462 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45068
+2021-05-07 14:44:27,958 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54386
+2021-05-07 14:44:27,722 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46890
+2021-05-07 14:44:27,896 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34742
+2021-05-07 14:44:28,221 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38512
+2021-05-07 14:44:28,395 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45298
+2021-05-07 14:44:28,026 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60190
+2021-05-07 14:44:28,057 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41406
+2021-05-07 14:44:28,522 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46574
+2021-05-07 14:44:28,553 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34618
+2021-05-07 14:44:31,812 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44064
+2021-05-07 14:44:31,980 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36342
+2021-05-07 14:44:32,211 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35744
+2021-05-07 14:44:32,195 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54460
+2021-05-07 14:44:32,382 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58578
+2021-05-07 14:44:32,480 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39296
+2021-05-07 14:44:32,427 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:47000
+2021-05-07 14:44:32,515 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44486
+2021-05-07 14:44:32,549 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39936
+2021-05-07 14:44:32,663 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60062
+2021-05-07 14:44:32,743 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46672
+2021-05-07 14:44:32,756 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53844
+2021-05-07 14:44:32,803 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36702
+2021-05-07 14:44:32,948 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50138
+2021-05-07 14:44:33,070 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43570
+2021-05-07 14:44:33,121 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39486
+2021-05-07 14:44:33,763 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56348
+2021-05-07 14:44:33,901 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45898
+2021-05-07 14:44:33,927 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51488
+2021-05-07 14:44:34,080 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57512
+2021-05-07 14:44:34,157 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53688
+2021-05-07 14:44:34,260 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59268
+2021-05-07 14:44:34,140 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54158
+2021-05-07 14:44:34,313 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47660
+2021-05-07 14:44:34,331 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56088
+2021-05-07 14:44:34,404 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50352
+2021-05-07 14:44:34,466 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36268
+2021-05-07 14:44:34,423 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58930
+2021-05-07 14:44:34,613 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38048
+2021-05-07 14:44:34,616 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48316
+2021-05-07 14:44:34,558 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49248
+2021-05-07 14:44:34,240 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51054
+2021-05-07 14:44:38,619 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43726
+2021-05-07 14:44:38,631 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36450
+2021-05-07 14:44:38,727 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52518
+2021-05-07 14:44:38,938 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44362
+2021-05-07 14:44:38,967 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56116
+2021-05-07 14:44:38,974 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47660
+2021-05-07 14:44:39,176 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56508
+2021-05-07 14:44:39,206 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39964
+2021-05-07 14:44:39,144 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34512
+2021-05-07 14:44:39,314 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60516
+2021-05-07 14:44:39,470 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38736
+2021-05-07 14:44:39,548 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34210
+2021-05-07 14:44:39,414 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54046
+2021-05-07 14:44:39,786 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50308
+2021-05-07 14:44:40,016 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38756
+2021-05-07 14:44:40,016 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44452
+2021-05-07 14:44:40,145 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51238
+2021-05-07 14:44:40,145 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,146 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,146 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,146 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:40,376 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57566
+2021-05-07 14:44:40,376 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,376 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,377 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,377 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:40,526 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35150
+2021-05-07 14:44:40,526 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,526 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,527 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,527 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:40,736 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37918
+2021-05-07 14:44:40,736 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,736 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,737 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,737 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:40,936 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51108
+2021-05-07 14:44:40,936 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,937 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,937 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,937 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:40,924 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58942
+2021-05-07 14:44:40,924 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:40,925 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:40,925 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:40,925 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:41,041 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56036
+2021-05-07 14:44:41,041 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:41,042 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:41,042 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:41,042 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:41,310 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39332
+2021-05-07 14:44:41,310 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:41,311 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:41,311 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:41,311 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:44:41,179 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:44:41,179 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:44:41,179 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:44:41,180 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:44:55,091 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:46:05,437 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620398696, tv_nsec: 595061669 }
+2021-05-07 14:46:05,437 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620398765, tv_nsec: 437549534 }
+2021-05-07 14:46:05,475 INFO  [consensus] DP[Throughput]: 14549.154614576624
+2021-05-07 14:46:05,475 INFO  [consensus] DP[Latency]: 649.9698572284345
+2021-05-07 14:46:05,475 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 14:46:05,482 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,494 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,495 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,503 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,499 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,532 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,497 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,524 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:46:05,523 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 10000
+2021-05-07 14:46:20,008 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:20,547 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:24,340 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:25,205 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:26,356 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:26,650 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:31,523 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:31,987 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:32,310 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:46:34,079 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47276
+2021-05-07 14:46:34,087 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45070
+2021-05-07 14:46:34,191 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59968
+2021-05-07 14:46:34,348 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46892
+2021-05-07 14:46:34,418 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56764
+2021-05-07 14:46:34,523 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34744
+2021-05-07 14:46:34,621 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54532
+2021-05-07 14:46:34,630 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54388
+2021-05-07 14:46:34,653 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60192
+2021-05-07 14:46:34,683 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41408
+2021-05-07 14:46:34,735 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50290
+2021-05-07 14:46:34,893 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38514
+2021-05-07 14:46:34,962 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34924
+2021-05-07 14:46:35,069 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45300
+2021-05-07 14:46:35,197 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46576
+2021-05-07 14:46:35,227 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34620
+2021-05-07 14:46:38,499 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44066
+2021-05-07 14:46:38,665 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36344
+2021-05-07 14:46:38,899 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35746
+2021-05-07 14:46:38,888 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54462
+2021-05-07 14:46:39,073 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58580
+2021-05-07 14:46:39,118 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:47002
+2021-05-07 14:46:39,207 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44488
+2021-05-07 14:46:39,305 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39298
+2021-05-07 14:46:39,354 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60064
+2021-05-07 14:46:39,375 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39938
+2021-05-07 14:46:39,568 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46674
+2021-05-07 14:46:39,582 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53846
+2021-05-07 14:46:39,630 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36704
+2021-05-07 14:46:39,774 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50140
+2021-05-07 14:46:39,894 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43572
+2021-05-07 14:46:39,947 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39488
+2021-05-07 14:46:40,542 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56350
+2021-05-07 14:46:40,707 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51490
+2021-05-07 14:46:40,743 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45900
+2021-05-07 14:46:40,922 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57514
+2021-05-07 14:46:40,940 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53690
+2021-05-07 14:46:40,937 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54160
+2021-05-07 14:46:41,109 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59270
+2021-05-07 14:46:41,118 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56092
+2021-05-07 14:46:41,162 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47662
+2021-05-07 14:46:41,096 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51056
+2021-05-07 14:46:41,191 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50356
+2021-05-07 14:46:41,253 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36270
+2021-05-07 14:46:41,273 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58932
+2021-05-07 14:46:41,405 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38050
+2021-05-07 14:46:41,407 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49250
+2021-05-07 14:46:41,471 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48318
+2021-05-07 14:46:45,644 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43728
+2021-05-07 14:46:45,655 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36452
+2021-05-07 14:46:45,749 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52520
+2021-05-07 14:46:45,968 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44366
+2021-05-07 14:46:45,997 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56118
+2021-05-07 14:46:45,998 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47662
+2021-05-07 14:46:46,196 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56510
+2021-05-07 14:46:46,226 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39966
+2021-05-07 14:46:46,178 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34514
+2021-05-07 14:46:46,351 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60518
+2021-05-07 14:46:46,483 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38738
+2021-05-07 14:46:46,563 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34212
+2021-05-07 14:46:46,426 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54048
+2021-05-07 14:46:46,610 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51240
+2021-05-07 14:46:46,610 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:46,610 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:46,610 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:46,610 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:46,803 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50310
+2021-05-07 14:46:46,842 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57568
+2021-05-07 14:46:46,842 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:46,842 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:46,842 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:46,842 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,034 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38758
+2021-05-07 14:46:47,005 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35152
+2021-05-07 14:46:47,005 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,006 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,006 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,006 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,033 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44454
+2021-05-07 14:46:47,206 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37920
+2021-05-07 14:46:47,206 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,206 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,206 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,206 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,406 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51110
+2021-05-07 14:46:47,406 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,406 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,406 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,406 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,400 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58944
+2021-05-07 14:46:47,400 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,400 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,400 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,401 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,502 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56038
+2021-05-07 14:46:47,502 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,502 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,502 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,502 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,642 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,642 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,643 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,643 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:46:47,773 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39334
+2021-05-07 14:46:47,773 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:46:47,774 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:46:47,774 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:46:47,774 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:47:02,159 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:48:08,121 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620398823, tv_nsec: 662849967 }
+2021-05-07 14:48:08,121 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620398888, tv_nsec: 121308057 }
+2021-05-07 14:48:08,179 INFO  [consensus] DP[Throughput]: 15526.278934606766
+2021-05-07 14:48:08,179 INFO  [consensus] DP[Latency]: 1092.8799060751398
+2021-05-07 14:48:08,179 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 14:48:08,204 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,208 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,187 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,198 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,199 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,236 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,201 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,228 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:48:08,228 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 40000
+2021-05-07 14:48:23,064 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:23,511 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:27,225 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:28,098 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:29,281 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:29,540 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:34,351 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:34,835 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:35,195 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:48:37,145 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45072
+2021-05-07 14:48:37,136 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47278
+2021-05-07 14:48:37,247 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59970
+2021-05-07 14:48:37,404 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46894
+2021-05-07 14:48:37,582 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54534
+2021-05-07 14:48:37,590 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54392
+2021-05-07 14:48:37,474 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56766
+2021-05-07 14:48:37,581 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34746
+2021-05-07 14:48:37,712 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60194
+2021-05-07 14:48:37,694 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50292
+2021-05-07 14:48:37,740 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41410
+2021-05-07 14:48:37,851 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38516
+2021-05-07 14:48:38,026 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45302
+2021-05-07 14:48:37,920 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34926
+2021-05-07 14:48:38,160 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46578
+2021-05-07 14:48:38,186 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34622
+2021-05-07 14:48:41,384 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44068
+2021-05-07 14:48:41,549 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36346
+2021-05-07 14:48:41,779 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35748
+2021-05-07 14:48:41,756 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54464
+2021-05-07 14:48:41,945 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58582
+2021-05-07 14:48:41,991 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:47004
+2021-05-07 14:48:42,083 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44490
+2021-05-07 14:48:42,197 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39302
+2021-05-07 14:48:42,231 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60066
+2021-05-07 14:48:42,268 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39940
+2021-05-07 14:48:42,462 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46676
+2021-05-07 14:48:42,475 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53848
+2021-05-07 14:48:42,522 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36706
+2021-05-07 14:48:42,666 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50142
+2021-05-07 14:48:42,787 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43574
+2021-05-07 14:48:42,841 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39490
+2021-05-07 14:48:43,468 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56352
+2021-05-07 14:48:43,634 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45902
+2021-05-07 14:48:43,634 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51492
+2021-05-07 14:48:43,813 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57516
+2021-05-07 14:48:43,864 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53694
+2021-05-07 14:48:43,839 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54162
+2021-05-07 14:48:43,990 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59272
+2021-05-07 14:48:44,032 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56094
+2021-05-07 14:48:44,044 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47664
+2021-05-07 14:48:43,973 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51058
+2021-05-07 14:48:44,103 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50358
+2021-05-07 14:48:44,165 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36272
+2021-05-07 14:48:44,155 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58934
+2021-05-07 14:48:44,308 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38052
+2021-05-07 14:48:44,301 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49252
+2021-05-07 14:48:44,356 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48320
+2021-05-07 14:48:48,472 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43730
+2021-05-07 14:48:48,481 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36454
+2021-05-07 14:48:48,577 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52522
+2021-05-07 14:48:48,797 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44368
+2021-05-07 14:48:48,826 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56120
+2021-05-07 14:48:48,826 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47664
+2021-05-07 14:48:49,042 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56512
+2021-05-07 14:48:49,073 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39968
+2021-05-07 14:48:49,008 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34516
+2021-05-07 14:48:49,177 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60520
+2021-05-07 14:48:49,337 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38740
+2021-05-07 14:48:49,417 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34214
+2021-05-07 14:48:49,285 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54052
+2021-05-07 14:48:49,500 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51242
+2021-05-07 14:48:49,500 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:49,501 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:49,501 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:49,501 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:49,724 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57570
+2021-05-07 14:48:49,724 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:49,725 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:49,725 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:49,725 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:49,658 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50312
+2021-05-07 14:48:49,893 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38760
+2021-05-07 14:48:49,876 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35154
+2021-05-07 14:48:49,876 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:49,876 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:49,876 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:49,876 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:49,888 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44456
+2021-05-07 14:48:50,086 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37922
+2021-05-07 14:48:50,086 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,086 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,087 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,087 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:50,285 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51112
+2021-05-07 14:48:50,285 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,285 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,286 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,286 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:50,270 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58946
+2021-05-07 14:48:50,270 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,270 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,271 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,271 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:50,367 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56040
+2021-05-07 14:48:50,367 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,368 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,368 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,368 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:50,641 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39336
+2021-05-07 14:48:50,642 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,642 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,642 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,642 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:48:50,510 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:48:50,510 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:48:50,511 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:48:50,511 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:49:05,019 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:50:27,147 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620398946, tv_nsec: 509866992 }
+2021-05-07 14:50:27,147 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620399027, tv_nsec: 147847291 }
+2021-05-07 14:50:27,219 INFO  [consensus] DP[Throughput]: 12440.787781144869
+2021-05-07 14:50:27,231 INFO  [consensus] DP[Latency]: 3599.315025917065
+2021-05-07 14:50:27,284 WARN  [net::futures_manager::tls_client] Network receiver closed
+2021-05-07 14:50:27,306 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,315 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,295 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,307 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,311 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,343 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,336 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,309 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:50:27,336 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 80000
+2021-05-07 14:50:42,765 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:43,240 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:47,144 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:47,969 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:49,228 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:49,411 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:54,750 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:55,285 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:55,635 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:50:56,836 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47280
+2021-05-07 14:50:56,844 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45074
+2021-05-07 14:50:56,949 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59972
+2021-05-07 14:50:57,107 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46896
+2021-05-07 14:50:57,314 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54536
+2021-05-07 14:50:57,177 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56768
+2021-05-07 14:50:57,323 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54394
+2021-05-07 14:50:57,283 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34748
+2021-05-07 14:50:57,411 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60196
+2021-05-07 14:50:57,427 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50294
+2021-05-07 14:50:57,442 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41412
+2021-05-07 14:50:57,585 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38518
+2021-05-07 14:50:57,759 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45304
+2021-05-07 14:50:57,887 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46580
+2021-05-07 14:50:57,654 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34928
+2021-05-07 14:50:57,918 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34624
+2021-05-07 14:51:01,302 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44070
+2021-05-07 14:51:01,471 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36348
+2021-05-07 14:51:01,701 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35750
+2021-05-07 14:51:01,693 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54466
+2021-05-07 14:51:01,875 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58586
+2021-05-07 14:51:02,007 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44492
+2021-05-07 14:51:01,920 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:47006
+2021-05-07 14:51:02,066 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39304
+2021-05-07 14:51:02,155 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60068
+2021-05-07 14:51:02,140 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39942
+2021-05-07 14:51:02,329 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46678
+2021-05-07 14:51:02,342 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53850
+2021-05-07 14:51:02,389 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36708
+2021-05-07 14:51:02,534 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50144
+2021-05-07 14:51:02,654 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43576
+2021-05-07 14:51:02,708 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39492
+2021-05-07 14:51:03,417 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56354
+2021-05-07 14:51:03,508 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45904
+2021-05-07 14:51:03,585 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51494
+2021-05-07 14:51:03,687 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57520
+2021-05-07 14:51:03,816 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53696
+2021-05-07 14:51:03,867 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59274
+2021-05-07 14:51:03,918 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47668
+2021-05-07 14:51:03,791 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54164
+2021-05-07 14:51:03,983 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56096
+2021-05-07 14:51:03,849 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51060
+2021-05-07 14:51:04,116 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36274
+2021-05-07 14:51:04,031 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58936
+2021-05-07 14:51:04,076 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50360
+2021-05-07 14:51:04,166 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49254
+2021-05-07 14:51:04,232 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48322
+2021-05-07 14:51:04,284 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38054
+2021-05-07 14:51:08,865 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43732
+2021-05-07 14:51:08,878 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36456
+2021-05-07 14:51:08,967 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52524
+2021-05-07 14:51:09,181 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44370
+2021-05-07 14:51:09,215 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56122
+2021-05-07 14:51:09,216 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47666
+2021-05-07 14:51:09,392 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34518
+2021-05-07 14:51:09,492 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56514
+2021-05-07 14:51:09,524 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39970
+2021-05-07 14:51:09,566 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60522
+2021-05-07 14:51:09,774 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38742
+2021-05-07 14:51:09,854 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34216
+2021-05-07 14:51:09,710 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54054
+2021-05-07 14:51:09,928 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51244
+2021-05-07 14:51:09,928 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:09,929 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:09,929 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:09,929 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,095 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50314
+2021-05-07 14:51:10,157 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57572
+2021-05-07 14:51:10,158 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,158 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,158 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,158 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,324 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38762
+2021-05-07 14:51:10,302 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35156
+2021-05-07 14:51:10,302 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,303 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,303 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,303 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,323 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44458
+2021-05-07 14:51:10,513 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37924
+2021-05-07 14:51:10,513 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,514 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,514 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,514 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,713 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51114
+2021-05-07 14:51:10,713 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,713 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,713 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,713 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,712 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58948
+2021-05-07 14:51:10,713 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,713 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,713 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,713 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,805 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56042
+2021-05-07 14:51:10,807 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,807 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,807 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,808 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:11,087 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39338
+2021-05-07 14:51:11,087 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:11,087 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:11,088 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:11,088 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:51:10,956 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:51:10,956 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:51:10,957 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:51:10,957 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:51:25,407 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:52:37,259 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620399086, tv_nsec: 879407909 }
+2021-05-07 14:52:37,259 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620399157, tv_nsec: 259372003 }
+2021-05-07 14:52:37,315 INFO  [consensus] DP[Throughput]: 14219.956103747427
+2021-05-07 14:52:37,315 INFO  [consensus] DP[Latency]: 5716.423346322942
+2021-05-07 14:52:37,317 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 14:52:37,346 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,348 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,335 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,351 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,355 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,384 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,377 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,350 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:52:37,376 WARN  [net::futures_manager::peer] Disconnected from peer
+DP[Window]: 120000
+2021-05-07 14:52:52,013 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:52:52,481 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:52:56,295 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:52:57,208 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:52:58,300 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:52:58,554 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:53:03,407 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:53:03,979 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:53:04,333 INFO  [node_artemis] Successfully decoded the config file
+2021-05-07 14:53:06,085 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:47282
+2021-05-07 14:53:06,094 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:45076
+2021-05-07 14:53:06,197 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:59974
+2021-05-07 14:53:06,354 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:46898
+2021-05-07 14:53:06,555 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54538
+2021-05-07 14:53:06,425 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:56772
+2021-05-07 14:53:06,564 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:54398
+2021-05-07 14:53:06,530 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:34750
+2021-05-07 14:53:06,658 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:60198
+2021-05-07 14:53:06,667 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:50296
+2021-05-07 14:53:06,690 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.156:41414
+2021-05-07 14:53:06,824 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:38520
+2021-05-07 14:53:07,128 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:46582
+2021-05-07 14:53:07,000 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:45306
+2021-05-07 14:53:06,893 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34930
+2021-05-07 14:53:07,160 INFO  [net::futures_manager::protocol] New incoming connection from 10.100.100.31:34626
+2021-05-07 14:53:10,456 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44072
+2021-05-07 14:53:10,621 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:36350
+2021-05-07 14:53:10,851 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:35752
+2021-05-07 14:53:10,843 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:54468
+2021-05-07 14:53:11,025 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:58588
+2021-05-07 14:53:11,071 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:47008
+2021-05-07 14:53:11,160 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:44496
+2021-05-07 14:53:11,307 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.157.69:60070
+2021-05-07 14:53:11,306 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39306
+2021-05-07 14:53:11,376 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39944
+2021-05-07 14:53:11,573 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:46680
+2021-05-07 14:53:11,589 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:53854
+2021-05-07 14:53:11,633 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:36710
+2021-05-07 14:53:11,779 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:50146
+2021-05-07 14:53:11,896 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:43578
+2021-05-07 14:53:11,953 INFO  [net::futures_manager::protocol] New incoming connection from 12.0.32.38:39494
+2021-05-07 14:53:12,488 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56356
+2021-05-07 14:53:12,650 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:45906
+2021-05-07 14:53:12,652 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:51496
+2021-05-07 14:53:12,828 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:57524
+2021-05-07 14:53:12,884 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:53698
+2021-05-07 14:53:13,007 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:59278
+2021-05-07 14:53:12,872 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:54166
+2021-05-07 14:53:13,061 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:47670
+2021-05-07 14:53:13,059 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:56098
+2021-05-07 14:53:12,989 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:51062
+2021-05-07 14:53:13,130 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:50362
+2021-05-07 14:53:13,191 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:36276
+2021-05-07 14:53:13,174 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:58938
+2021-05-07 14:53:13,339 INFO  [net::futures_manager::protocol] New incoming connection from 11.0.194.235:38056
+2021-05-07 14:53:13,371 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:48324
+2021-05-07 14:53:13,316 INFO  [net::futures_manager::protocol] New incoming connection from 13.0.188.62:49256
+2021-05-07 14:53:17,514 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:43734
+2021-05-07 14:53:17,529 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:36458
+2021-05-07 14:53:17,613 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:52526
+2021-05-07 14:53:17,820 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:44372
+2021-05-07 14:53:17,846 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:56124
+2021-05-07 14:53:17,858 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:47668
+2021-05-07 14:53:18,023 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:34520
+2021-05-07 14:53:18,186 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:56516
+2021-05-07 14:53:18,218 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:39972
+2021-05-07 14:53:18,191 INFO  [net::futures_manager::protocol] New incoming connection from 16.0.178.87:60524
+2021-05-07 14:53:18,475 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38744
+2021-05-07 14:53:18,556 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:34218
+2021-05-07 14:53:18,424 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:54056
+2021-05-07 14:53:18,628 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51246
+2021-05-07 14:53:18,628 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:18,629 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:18,629 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:18,629 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:18,797 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:50316
+2021-05-07 14:53:18,860 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:57574
+2021-05-07 14:53:18,860 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:18,860 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:18,860 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:18,860 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,023 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:38764
+2021-05-07 14:53:19,021 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:35158
+2021-05-07 14:53:19,021 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,022 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,022 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,022 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,025 INFO  [net::futures_manager::protocol] New incoming connection from 15.0.190.225:44460
+2021-05-07 14:53:19,228 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:37928
+2021-05-07 14:53:19,229 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,229 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,229 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,229 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,428 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:51116
+2021-05-07 14:53:19,428 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,428 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,428 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,428 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,414 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:58950
+2021-05-07 14:53:19,414 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,414 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,414 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,414 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,511 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:56044
+2021-05-07 14:53:19,511 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,511 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,512 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,512 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,650 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,650 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,650 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,651 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+2021-05-07 14:53:19,781 INFO  [net::futures_manager::protocol] New incoming connection from 14.0.253.129:39340
+2021-05-07 14:53:19,781 INFO  [net::futures_manager::protocol] Connected to all nodes in the protocol
+2021-05-07 14:53:19,781 INFO  [node_artemis] Using special artemis client: true
+2021-05-07 14:53:19,781 INFO  [artemis::node::context] Using last f leaders: {0: (), 1: (), 2: (), 3: ()}
+2021-05-07 14:53:19,781 INFO  [artemis::node::context] Using eligible leaders: [4, 5, 6, 7, 8]
+Using M: 1000000
+2021-05-07 14:53:34,067 INFO  [client_artemis] Successfully decoded the config file
+2021-05-07 14:54:59,849 INFO  [consensus] DP[Start]: SystemTime { tv_sec: 1620399215, tv_nsec: 592858188 }
+2021-05-07 14:54:59,849 INFO  [consensus] DP[End]: SystemTime { tv_sec: 1620399299, tv_nsec: 849609764 }
+2021-05-07 14:54:59,919 INFO  [consensus] DP[Throughput]: 11896.969456457507
+2021-05-07 14:54:59,931 INFO  [consensus] DP[Latency]: 8867.521335794094
+2021-05-07 14:54:59,932 INFO  [artemis::client::start] Closing tx producer channel: channel closed
+2021-05-07 14:54:59,949 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,961 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,960 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,965 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,970 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,998 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,990 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,963 WARN  [net::futures_manager::peer] Disconnected from peer
+2021-05-07 14:54:59,996 WARN  [net::futures_manager::peer] Disconnected from peer
