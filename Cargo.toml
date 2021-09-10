@@ -9,7 +9,7 @@ members = [
     "consensus",
     "net",
     "util",
-    "comm",
+    # "comm", (WIP: Do not enable unless testing)
     # Sink Experiment modules
     "examples/sink-exp/relay",
     "examples/sink-exp/sink",
