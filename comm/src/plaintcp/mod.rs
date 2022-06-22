@@ -1,6 +1,3 @@
-pub type PORT = u16;
-pub type IP = std::net::IpAddr;
-
 mod tcp;
 pub use tcp::*;
 
@@ -9,6 +6,9 @@ pub use config::*;
 
 mod context;
 pub use context::*;
+
+mod conn;
+pub use conn::*;
 
 #[cfg(test)]
 mod test;

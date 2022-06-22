@@ -1,6 +1,7 @@
 #[derive(Debug)]
 pub enum NetError {
     Generic(String),
+    IoErr(String),
 }
 
 impl std::fmt::Display for NetError {
@@ -16,5 +17,11 @@ impl std::error::Error for NetError {
 impl std::convert::From<String> for NetError {
     fn from(str: String) -> Self {
         NetError::Generic(str)
+    }
+}
+
+impl std::convert::From<std::io::Error> for NetError {
+    fn from(io_err: std::io::Error) -> Self {
+        NetError::IoErr(io_err.to_string())
     }
 }

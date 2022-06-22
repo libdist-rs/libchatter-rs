@@ -1,20 +1,74 @@
+use std::ops::Add;
+
+use fnv::FnvHashMap;
 use serde::{Serialize, Deserialize};
 
-use super::{PORT, IP};
+type Port = u16;
+type IpAddr = std::net::IpAddr;
+type Address = std::net::SocketAddr;
 
-/// The config struct has a lifetime as long as the bytes from which it is deserialized is valid
-/// NOTE: In general, try to use &' str if most of the struct is strings, otherwise use Strings
-/// Pros: Zero copy after loading the bytes from which it is deserialized.
-/// Cons: Some extra memory may also be kept alive if the bytes buffer is large
-#[derive(Debug, Serialize, Deserialize, Default, Clone)]
-pub struct TcpConfig {
-    // The port in which I should listen to, the caller will listen at `0.0.0.0:<my_port>`
-    // If None is used, a default port requested from the OS is assigned
-    my_port: Option<PORT>,
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct TcpConfig<Id> 
+where
+    Id: std::cmp::Eq + std::hash::Hash,
+{
+    my_id: Id,
 
-    // My Ip: If some(ip) is specified, then the ip is used. Eg. 127.0.0.1
-    // Otherwise, "0.0.0.0" is used.
-    my_ip: Option<IP>,
+    // Seed connections
+    seed_connections: FnvHashMap<Id, Address>,
+}
+
+impl<Id> TcpConfig<Id> 
+where
+    Id: std::cmp::Eq+ std::hash::Hash + Copy,
+{
+
+    pub fn new(id: Id) -> Self {
+        let my_conn = Address::new(std::net::IpAddr::V4(std::net::Ipv4Addr::new(0, 0,0,0)), 0);
+        let mut map = FnvHashMap::default();
+        map.insert(id.clone(), my_conn);
+        Self { my_id: id, seed_connections: map }
+    }
+
+    pub fn set_port(&mut self, port: Port) {
+        let addr = self
+                                        .seed_connections
+                                        .get_mut(&self.my_id)
+                                        .unwrap();
+        *addr = Address::new(addr.ip(), port);
+    }
+
+    pub fn set_ip(&mut self, ip: IpAddr) {
+        let addr = self
+                                        .seed_connections
+                                        .get_mut(&self.my_id)
+                                        .unwrap();
+        *addr = Address::new(ip, addr.port());
+    }
+
+    pub fn add_peer(&mut self, id: Id, addr: Address) {
+        self.seed_connections.insert(id, addr);
+    }
+
+    pub fn add_peers(&mut self, peers: FnvHashMap<Id, Address>) {
+        for (id, addr) in peers {
+            self.add_peer(id, addr);
+        }
+    }
+
+    pub fn get_peers(&self) -> &FnvHashMap<Id, Address> {
+        &self.seed_connections
+    }
+
+    pub fn get_id(&self) -> &Id {
+        &self.my_id
+    }
+
+    pub fn get_my_addr(&self) -> Address {
+       *self.seed_connections
+            .get(&self.my_id)
+            .unwrap()
+    }
 }
 
     // // SAFETY: Keep these strings alive until the config is alive
