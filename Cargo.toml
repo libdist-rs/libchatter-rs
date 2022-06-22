@@ -10,7 +10,7 @@ members = [
     "net",
     "discovery",
     "util",
-    # "comm", (WIP: Do not enable unless testing)
+    "comm", #(WIP: Do not enable unless testing)
     # Sink Experiment modules
     "examples/sink-exp/relay",
     "examples/sink-exp/sink",

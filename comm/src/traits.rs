@@ -1,43 +1,40 @@
 use serde::{Serialize, de::DeserializeOwned};
-
-pub trait Config {
-    type PeerId;
-
-    /// Returns the number of nodes
-    fn get_num_nodes(&self) -> usize;
-
-    /// Returns the number of faults tolerated by the system
-    fn get_num_faults(&self) -> usize;
-
-    /// Returns the Id of the node
-    /// The Id of a node satisfies 0 <= Id < num_nodes
-    fn get_id(&self) -> Self::PeerId;
-}
+use async_trait::async_trait;
+use crate::NetError;
 
 pub trait Message: Send + Sync + Serialize + DeserializeOwned + 'static
 {
     /// How to decode from bytes
     fn from_bytes(data: &[u8]) -> Self;
 
-    /// How to initialize self
-    fn init(self) -> Self;
-
     // How to encode self to bytes
     fn to_bytes(&self) -> Vec<u8>;
 }
 
-pub trait Context {
+/// Networking channel abstraction
+pub trait NetSender<PeerId, Out> 
+where
+    Out: Message,
+{
+    /// This function sends message `msg` to `sender` asynchronously
+    fn send(&self, sender: &PeerId, msg: Out);
+
+    /// This function sends `msg` to `sender` synchronously
+    fn blocking_send(&self, sender:&PeerId, msg: Out);
+    
+    /// This function sends `msg` to all **known** nodes asynchronously.
+    /// Messages sent to nodes that are currently disconnected will be sent once they are re-connected.
+    fn broadcast(&self, msg: Out);
+
+    /// This function sends `msg` to all **known** nodes synchronously.
+    /// Messages sent to nodes that are currently disconnected will be sent once they are re-connected.
+    fn blocking_broadcast(&self, msg: Out);
 }
 
-pub trait Communication {
-    type Config: Config;
-    type SendMsg: Message;
-    type RecvMsg: Message;
-    type Context: Context;
-
-    fn init(config: Self::Config, ctx: Self::Context) -> Result<Box<Self>, String>;
-    fn send(&self, sender: &<Self::Config as Config>::PeerId, msg: Self::SendMsg);
-    fn concurrent_send(&self, sender:usize, msg: Self::SendMsg);
-    fn broadcast(&self, msg: Self::SendMsg);
-    fn concurrent_broadcast(&self, msg: Self::SendMsg);
+#[async_trait]
+pub trait NetReceiver<In> 
+where
+    In: Message,
+{
+    async fn recv(&mut self) -> NetError;
 }
