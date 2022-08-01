@@ -1,19 +1,16 @@
-use std::marker::PhantomData;
-use tokio::select;
+use std::{marker::PhantomData, net::SocketAddr};
+use tokio::{select, net::TcpListener, sync::mpsc::unbounded_channel};
 
-use crate::{Message, NetResult, NetSender, NetReceiver, plaintcp::Connection};
-use super::{TcpConfig, TcpContext};
+use crate::{Message, NetResult, NetSender, NetReceiver, plaintcp::Peer, Identifier};
+use super::{TcpConfig, TcpContext, NetMsg};
 
 #[derive(Debug)]
 pub struct TcpCommunication<SendMsg, RecvMsg, Id> 
 where
-    Id: std::cmp::Eq+ std::hash::Hash,
+    Id: Identifier,
 {
     config: TcpConfig<Id>,
     ctx: TcpContext,
-
-    /// The runtime used to spawn connection tasks
-    handle: tokio::runtime::Handle,
     
     /// Phantom data used to hold these markers
     _x: PhantomData<SendMsg>,
@@ -24,65 +21,58 @@ impl<SendMsg, RecvMsg, Id> TcpCommunication<SendMsg, RecvMsg, Id>
 where 
     SendMsg: Message,
     RecvMsg: Message,
-    Id: std::cmp::Eq+ std::hash::Hash + Copy + Send + Sync + 'static + PartialEq,
+    Id: Identifier,
 {
     pub fn init(
         config: TcpConfig<Id>, 
         ctx: TcpContext, 
-        handle: tokio::runtime::Handle
     ) -> Self 
     {
         Self {
             config,
             ctx,
-            handle,
             _x: PhantomData,
             _y: PhantomData,
         }
     }
 
-    pub fn start(&mut self) -> NetResult<(Box<dyn NetSender<Id, SendMsg>>, Box<dyn NetReceiver<RecvMsg>>)> {
+    pub fn start(&mut self) -> NetResult<(Box<dyn NetSender<Id, SendMsg>>, Box<dyn NetReceiver<NetMsg<Id, SendMsg, RecvMsg>>>)> {
+        let (in_send, in_recv) = unbounded_channel();
+        let (out_send, out_recv) = unbounded_channel();
+
         log::info!("Opening local socket at: {}", self.config.get_my_addr());
         let config = self.config.clone();
-        let handle = self.handle.clone();
         let ctx = self.ctx.clone();
-        self.handle.spawn(async move {
+        let handle = ctx.get_handle().clone();
+        tokio::spawn(async move {
             let my_id = config.get_id().clone();
             for (peer_id, peer_addr) in config.get_peers() {
                 if *peer_id == my_id {
-                    println!("Skipping mine");
+                    log::debug!("Skipping mine");
                     continue;
                 }
                 // Start the connection loop
-                let new_handle = handle.clone();
                 let conn_addr = *peer_addr;
                 let new_ctx = ctx.clone();
-                handle.spawn(async move {
-                    let mut conn = Connection::new(new_ctx, new_handle, conn_addr);
-                    let res = conn.start().await;
-                    if res.is_err() {
-                        log::error!("Connection with {} failed with {}", conn_addr, res.unwrap_err().to_string());
-                    } else {
-                        log::info!("Shutting down connection with {}", conn_addr);
-                    }
+                tokio::spawn(async move {
+                    let mut peer = Peer::new(*peer_id, new_ctx, conn_addr);
+                    let (peer_send, peer_recv) = peer.start().await;
                 });
             }
-            let server_sock = tokio::net::TcpListener::bind(config.get_my_addr())
+            let server_sock = TcpListener::bind(config.get_my_addr())
                                                 .await
                                                 .expect("Failed to bind to server socket");
             loop {
                 select! {
                     sock = server_sock.accept() => {
                         log::info!("Got a new connection from {:?}", sock.unwrap());
-                        tokio::time::sleep(std::time::Duration::from_secs(20)).await;
-                        todo!("On new connection logic");
+                        
                     }
                 }
             }
         });
         // todo!("Implement Tcp-comm start");
-        Err("error string".to_string().into())
-        // Ok(())
+        Ok(Box::new(send_in), Box::new(recv_from_conn))
     }
 }
 

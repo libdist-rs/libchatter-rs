@@ -38,3 +38,14 @@ where
 {
     async fn recv(&mut self) -> NetError;
 }
+
+pub trait Identifier: 
+    std::cmp::Eq + 
+    std::hash::Hash + 
+    std::clone::Clone + 
+    Send + 
+    Sync + 
+    'static
+{
+
+}

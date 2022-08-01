@@ -1,46 +1,70 @@
-use std::net::SocketAddr;
+use tokio::{net::{TcpStream, tcp::{OwnedReadHalf, OwnedWriteHalf}}, sync::mpsc::{unbounded_channel, UnboundedSender, UnboundedReceiver}};
+use tokio_util::codec::{FramedRead, FramedWrite};
+use crate::{Message, Decodec, EnCodec, plaintcp::PeerConnectionMsg};
+use tokio_stream::{StreamExt};
+use futures::sink::SinkExt;
 
-use tokio::runtime::Handle;
-
-use crate::NetResult;
-
-use super::TcpContext;
-
-pub struct Connection {
-    handle: Handle,
-    peer: SocketAddr,
-    ctx: TcpContext,
+pub struct TcpConnection<SendMsg, RecvMsg>
+where
+    SendMsg: Message,
+    RecvMsg: Message,
+{
+    reader: FramedRead<OwnedReadHalf, Decodec<RecvMsg>>,
+    writer: FramedWrite<OwnedWriteHalf, EnCodec<SendMsg>>,
 }
 
-impl Connection {
-    pub fn new(ctx: TcpContext, handle: Handle, peer_socket: SocketAddr) -> Self {
-        Self { handle, peer: peer_socket, ctx }
+impl<SendMsg, RecvMsg> TcpConnection<SendMsg, RecvMsg>
+where
+    SendMsg: Message,
+    RecvMsg: Message,
+{
+    pub fn new(stream: TcpStream) -> Self {
+        let (read_sock, write_sock) = stream.into_split();
+        let decoder = Decodec::new();
+        let reader = FramedRead::new(read_sock, decoder);
+
+        let encoder = EnCodec::new();
+        let writer = FramedWrite::new(write_sock, encoder);
+        Self { reader, writer }
     }
 
-    pub async fn start(&mut self) -> NetResult<()> {
-        log::info!("Attempting connection to {}", self.peer);
-        let mut retries:usize = 0;
-        while retries < self.ctx.get_retries()  {
-            let sock = if self.peer.is_ipv4() {
-                tokio::net::TcpSocket::new_v4()?
-            } else {
-                tokio::net::TcpSocket::new_v6()?
-            };
-            let stream_res = sock.connect(self.peer).await;
-            if stream_res.is_err() {
-                log::warn!("Connection with {} failed. Retrying...", self.peer);
-                retries += 1;
-                tokio::time::sleep(self.ctx.get_retry_duration()).await;
-                continue;
+    pub fn start(&mut self) -> (UnboundedSender<PeerConnectionMsg<SendMsg,RecvMsg>>,UnboundedReceiver<PeerConnectionMsg<SendMsg, RecvMsg>>) 
+    {
+        let (conn_in, conn_in_recv) = unbounded_channel::<PeerConnectionMsg<SendMsg, RecvMsg>>();
+        let (conn_out_in, conn_out) = unbounded_channel();
+        let writer = self.writer;
+        let reader = self.reader;
+        tokio::spawn(async move {
+            loop {
+                tokio::select! {
+                    in_msg = conn_in_recv.recv() => {
+                        if let None = in_msg {
+                            log::warn!("Broken receiver to connection. Shutting down connection");
+                            break;
+                        }
+                        let msg = in_msg.unwrap();
+                        if let PeerConnectionMsg::SendMsg(msg_to_send) = msg {
+                            writer.send(msg_to_send).await;
+                        } else {
+                            log::warn!("Invalid Net Message received by the peer");
+                        }
+                    }
+                    new_msg = reader.next() => {
+                        if let None = new_msg {
+                            conn_out_in.send(PeerConnectionMsg::ConnectionError("Connection closed".into()));
+                            break;
+                        }
+                        let new_msg = new_msg.unwrap();
+                        if let Err(e) = new_msg {
+                            conn_out_in.send(PeerConnectionMsg::ConnectionError(e.into()));
+                            break;
+                        }
+                        let new_msg = new_msg.unwrap();
+                        conn_out_in.send(PeerConnectionMsg::NewMsg(new_msg));
+                    }
+                }
             }
-            log::info!("Connected to {}", self.peer);
-            let stream = stream_res.unwrap();
-            stream.set_nodelay(true)?;
-            retries = 0;
-            // Create a framed reader
-            tokio::time::sleep(std::time::Duration::from_secs(10)).await;
-            todo!("Connection logic");
-        }
-        Ok(())
+        });
+        (conn_in, conn_out)
     }
 }

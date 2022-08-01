@@ -16,6 +16,13 @@ simple_logger = "2"
 log = "0"
 tracing = "0.1"
 derive_builder = "0"
+bytes = "1"
+tokio-stream = "0"
+futures = "0"
+
+[dependencies.tokio-util]
+version = "0"
+featuers = ["codec"]
 
 [dependencies.tokio]
 features = ["net"]

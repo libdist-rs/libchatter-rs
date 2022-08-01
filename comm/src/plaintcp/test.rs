@@ -1,10 +1,12 @@
 use fnv::FnvHashMap;
 use serde::{Serialize, Deserialize};
 use simple_logger::SimpleLogger;
-use crate::{NetResult, plaintcp::{TcpContext, TcpCommunication}, Message};
+use crate::{NetResult, plaintcp::{TcpContext, TcpCommunication}, Message, Identifier};
 use super::TcpConfig;
 
 type Id = usize;
+
+impl Identifier for Id {}
 
 const BASE_PORT: u16 = 7_000;
 
@@ -14,7 +16,7 @@ fn get_ids(num_nodes: usize) -> Vec<Id> {
 
 fn test_local_node_configs(num_nodes:usize) -> Vec<TcpConfig<Id>>
 where
-    Id: std::cmp::Eq+ std::hash::Hash,
+    Id: Identifier,
 {
     let ids = get_ids(num_nodes);
     let mut configs: Vec<_> = (0..num_nodes)
@@ -26,7 +28,7 @@ where
         .collect();
     let mut address_map: FnvHashMap<_, _> = FnvHashMap::default();
     for i in 0..num_nodes {
-        let addr = configs[i].get_my_addr();
+        let addr = configs[i].get_my_addr().clone();
         address_map.insert(ids[i], addr);
     }
     for i in 0..num_nodes {
@@ -53,6 +55,15 @@ impl Message for TestMsg {
     }
 }
 
+/// `test_ctx` tests the context creation and runs N nodes and waits for them to get connected.
+///
+/// # Panics
+///
+/// Panics if .
+///
+/// # Errors
+///
+/// This function will return an error if .
 #[test]
 fn test_ctx() -> NetResult<()>
 {
@@ -64,10 +75,10 @@ fn test_ctx() -> NetResult<()>
     let configs = test_local_node_configs(N);
     let mut comm: Vec<_> = (0..N)
         .map(|i| {
+            let ctx = TcpContext::new(handle.clone());
             TcpCommunication::<TestMsg, TestMsg, Id>::init(
                 configs[i].clone(),
-                TcpContext::default(),
-                handle.clone(),
+                ctx,
           )
         }).collect();
     let _x : Vec<_> = comm.iter_mut()

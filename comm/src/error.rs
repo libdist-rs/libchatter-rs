@@ -1,6 +1,7 @@
 #[derive(Debug)]
 pub enum NetError {
     Generic(String),
+    GenericStr(&'static str),
     IoErr(String),
 }
 
@@ -17,6 +18,12 @@ impl std::error::Error for NetError {
 impl std::convert::From<String> for NetError {
     fn from(str: String) -> Self {
         NetError::Generic(str)
+    }
+}
+
+impl std::convert::From<&'static str> for NetError {
+    fn from(str: &'static str) -> Self {
+        NetError::GenericStr(str)
     }
 }
 
