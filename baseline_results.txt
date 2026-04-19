@@ -1,0 +1,111 @@
+========================================================================
+  libchatter-rs baseline stress test -- canonical reference numbers
+========================================================================
+
+Captured by  : ./target/release/stress-test  (workspace member `stress-test/`)
+Protocols    : Apollo (FC 2023), Artemis, Sync HotStuff, Opt Sync
+Transport    : 127.0.0.1 (loopback, TLS)
+Block size   : 400 tx
+Payload      : 0 B (header-only transactions)
+Window       : 10 000 in-flight tx
+Total tx     : 50 000
+Build        : release (lto default profile)
+
+Machine      : Apple M1 Pro, 10 cores
+OS           : macOS 26.4.1 (Darwin 25.4.0)
+Toolchain    : rustc 1.91.1 (ed61e7d7e 2025-11-07)
+
+These numbers are the reference point for the libapollo-rs extraction.
+After migrating apollo/artemis/synchs/optsync onto libnet-rs / libcrypto-rs
+/ libstorage-rs / libmempool-rs, re-run the harness and compare. Any
+regression >10% on throughput or >2x on latency should block the merge.
+
+============= libchatter-rs baseline stress test ==============
+Protocols: Apollo, Artemis, Sync HotStuff, Opt Sync.     Loopback (127.0.0.1), release build.
+
+┌───────────────────────────────────────────────────────────────
+│ Apollo (n=3, f=1, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     37449.32 tx/s
+│ Avg Latency    :       271.48 ms/tx
+│ Wall elapsed   :         1.38 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Apollo (n=7, f=3, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     23415.28 tx/s
+│ Avg Latency    :       541.01 ms/tx
+│ Wall elapsed   :         2.04 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Artemis (n=3, f=1, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     25057.52 tx/s
+│ Avg Latency    :       405.93 ms/tx
+│ Wall elapsed   :         2.03 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Artemis (n=7, f=3, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     21872.56 tx/s
+│ Avg Latency    :       505.99 ms/tx
+│ Wall elapsed   :         2.34 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Sync HotStuff (n=3, f=1, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     24458.08 tx/s
+│ Avg Latency    :       390.87 ms/tx
+│ Wall elapsed   :         2.08 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Sync HotStuff (n=7, f=3, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     23571.94 tx/s
+│ Avg Latency    :       411.42 ms/tx
+│ Wall elapsed   :         2.17 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Opt Sync (n=3, f=1, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     42227.29 tx/s
+│ Avg Latency    :       225.33 ms/tx
+│ Wall elapsed   :         1.22 s
+└───────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────
+│ Opt Sync (n=7, f=3, blk=400, payload=0B, window=10000, txs=50000)
+├───────────────────────────────────────────────────────────────
+│ Throughput     :     24202.63 tx/s
+│ Avg Latency    :       406.95 ms/tx
+│ Wall elapsed   :         2.11 s
+└───────────────────────────────────────────────────────────────
+
+┌──────────────────────────────────────────────────────────────────────────────────────────
+│ Protocol            N    f   blk     txs       Throughput          Latency
+├──────────────────────────────────────────────────────────────────────────────────────────
+│ Apollo              3    1   400   50000   37449.32 tx/s      271.48 ms
+│ Apollo              7    3   400   50000   23415.28 tx/s      541.01 ms
+│ Artemis             3    1   400   50000   25057.52 tx/s      405.93 ms
+│ Artemis             7    3   400   50000   21872.56 tx/s      505.99 ms
+│ Sync HotStuff       3    1   400   50000   24458.08 tx/s      390.87 ms
+│ Sync HotStuff       7    3   400   50000   23571.94 tx/s      411.42 ms
+│ Opt Sync            3    1   400   50000   42227.29 tx/s      225.33 ms
+│ Opt Sync            7    3   400   50000   24202.63 tx/s      406.95 ms
+└──────────────────────────────────────────────────────────────────────────────────────────
+
+Note on latency
+---------------
+The reported `Avg Latency` is end-to-end from the moment the client fires a
+transaction until the client observes the containing block. Because the test
+keeps a 10 000-tx window in flight and the cluster drains faster than it
+proposes blocks, latency here is dominated by *queueing* (a tx waits for
+~`window / throughput` seconds in the client before it gets batched). To
+measure raw commit latency, rerun with `-w 1` or a window far smaller than
+one block.

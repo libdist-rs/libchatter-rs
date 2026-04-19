@@ -1,0 +1,9 @@
+[package]
+name = "stress-test"
+version = "0.1.0"
+authors = ["hermitsage <dth.bht@gmail.com>"]
+edition = "2018"
+description = "Baseline throughput/latency stress test harness for Apollo, Artemis, Sync HotStuff, and Opt Sync"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
